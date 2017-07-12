@@ -6,6 +6,6 @@
 
 int         main(void)
 {
-    std::cout << "Hello World!" << std::endl;
+    std::cout << "Hello World I'm About to build an Abstract Gui Library!" << std::endl;
     return 0;
 }
