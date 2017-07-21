@@ -1,0 +1,1 @@
+/usr/bin/c++  -fPIC -g  -shared -Wl,-soname,libSFMLRender.so -o libSFMLRender.so CMakeFiles/SFMLRender.dir/library.cpp.o 
