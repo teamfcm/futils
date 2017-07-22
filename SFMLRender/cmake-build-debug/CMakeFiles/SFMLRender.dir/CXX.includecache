@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ganz/Work/futils/SFMLRender/library.cpp
+library.h
+/home/ganz/Work/futils/SFMLRender/library.h
+iostream
+-
+
+/home/ganz/Work/futils/SFMLRender/library.h
+

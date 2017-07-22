@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/3.7.2/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6d4d3/fast"
-/usr/bin/make -f CMakeFiles/cmTC_6d4d3.dir/build.make CMakeFiles/cmTC_6d4d3.dir/build
-make[1] : on entre dans le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_6d4d3.dir/testCCompiler.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_6d4d3.dir/testCCompiler.c.o   -c /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_6d4d3
-/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6d4d3.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_6d4d3.dir/testCCompiler.c.o  -o cmTC_6d4d3 
-make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_424f4/fast"
+/usr/bin/make -f CMakeFiles/cmTC_424f4.dir/build.make CMakeFiles/cmTC_424f4.dir/build
+make[1] : on entre dans le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_424f4.dir/testCCompiler.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_424f4.dir/testCCompiler.c.o   -c /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_424f4
+/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_424f4.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_424f4.dir/testCCompiler.c.o  -o cmTC_424f4 
+make[1] : on quitte le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_50c5d/fast"
-/usr/bin/make -f CMakeFiles/cmTC_50c5d.dir/build.make CMakeFiles/cmTC_50c5d.dir/build
-make[1] : on entre dans le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_50c5d.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_50c5d.dir/CMakeCCompilerABI.c.o   -c /opt/clion/bin/cmake/share/cmake-3.7/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_50c5d
-/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50c5d.dir/link.txt --verbose=1
-/usr/bin/cc      -v CMakeFiles/cmTC_50c5d.dir/CMakeCCompilerABI.c.o  -o cmTC_50c5d  
+Run Build Command:"/usr/bin/make" "cmTC_53620/fast"
+/usr/bin/make -f CMakeFiles/cmTC_53620.dir/build.make CMakeFiles/cmTC_53620.dir/build
+make[1] : on entre dans le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_53620.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_53620.dir/CMakeCCompilerABI.c.o   -c /opt/clion/bin/cmake/share/cmake-3.7/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_53620
+/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53620.dir/link.txt --verbose=1
+/usr/bin/cc      -v CMakeFiles/cmTC_53620.dir/CMakeCCompilerABI.c.o  -o cmTC_53620  
 Utilisation des specs internes.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper
@@ -59,24 +59,24 @@ Modèle de thread: posix
 gcc version 7.1.1 20170621 (GCC) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_50c5d' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4F8UMV.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_50c5d /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbegin.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_50c5d.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtend.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_50c5d' '-mtune=generic' '-march=x86-64'
-make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_53620' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccysRErv.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_53620 /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbegin.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_53620.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtend.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_53620' '-mtune=generic' '-march=x86-64'
+make[1] : on quitte le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_50c5d/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_50c5d.dir/build.make CMakeFiles/cmTC_50c5d.dir/build]
-  ignore line: [make[1] : on entre dans le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »]
-  ignore line: [Building C object CMakeFiles/cmTC_50c5d.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_50c5d.dir/CMakeCCompilerABI.c.o   -c /opt/clion/bin/cmake/share/cmake-3.7/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_50c5d]
-  ignore line: [/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_50c5d.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_50c5d.dir/CMakeCCompilerABI.c.o  -o cmTC_50c5d  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_53620/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_53620.dir/build.make CMakeFiles/cmTC_53620.dir/build]
+  ignore line: [make[1] : on entre dans le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »]
+  ignore line: [Building C object CMakeFiles/cmTC_53620.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc     -o CMakeFiles/cmTC_53620.dir/CMakeCCompilerABI.c.o   -c /opt/clion/bin/cmake/share/cmake-3.7/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_53620]
+  ignore line: [/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_53620.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc      -v CMakeFiles/cmTC_53620.dir/CMakeCCompilerABI.c.o  -o cmTC_53620  ]
   ignore line: [Utilisation des specs internes.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper]
@@ -86,13 +86,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.1.1 20170621 (GCC) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_50c5d' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/cc4F8UMV.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_50c5d /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbegin.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_50c5d.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtend.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_53620' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccysRErv.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_53620 /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbegin.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_53620.dir/CMakeCCompilerABI.c.o -lgcc --as-needed -lgcc_s --no-as-needed -lc -lgcc --as-needed -lgcc_s --no-as-needed /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtend.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/cc4F8UMV.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccysRErv.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -106,7 +106,7 @@ Parsed C implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_50c5d] ==> ignore
+    arg [cmTC_53620] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbegin.o] ==> ignore
@@ -115,7 +115,7 @@ Parsed C implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../..]
-    arg [CMakeFiles/cmTC_50c5d.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_53620.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--as-needed] ==> ignore
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -144,17 +144,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a6f2c/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a6f2c.dir/build.make CMakeFiles/cmTC_a6f2c.dir/build
-make[1] : on entre dans le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_a6f2c.dir/feature_tests.c.o
-/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_a6f2c.dir/feature_tests.c.o   -c /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_a6f2c
-/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6f2c.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_a6f2c.dir/feature_tests.c.o  -o cmTC_a6f2c 
-make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_72356/fast"
+/usr/bin/make -f CMakeFiles/cmTC_72356.dir/build.make CMakeFiles/cmTC_72356.dir/build
+make[1] : on entre dans le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_72356.dir/feature_tests.c.o
+/usr/bin/cc    -std=c11 -o CMakeFiles/cmTC_72356.dir/feature_tests.c.o   -c /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_72356
+/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_72356.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_72356.dir/feature_tests.c.o  -o cmTC_72356 
+make[1] : on quitte le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -164,17 +164,17 @@ make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_80c23/fast"
-/usr/bin/make -f CMakeFiles/cmTC_80c23.dir/build.make CMakeFiles/cmTC_80c23.dir/build
-make[1] : on entre dans le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_80c23.dir/feature_tests.c.o
-/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_80c23.dir/feature_tests.c.o   -c /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_80c23
-/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_80c23.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_80c23.dir/feature_tests.c.o  -o cmTC_80c23 
-make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_15c36/fast"
+/usr/bin/make -f CMakeFiles/cmTC_15c36.dir/build.make CMakeFiles/cmTC_15c36.dir/build
+make[1] : on entre dans le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_15c36.dir/feature_tests.c.o
+/usr/bin/cc    -std=c99 -o CMakeFiles/cmTC_15c36.dir/feature_tests.c.o   -c /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_15c36
+/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15c36.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_15c36.dir/feature_tests.c.o  -o cmTC_15c36 
+make[1] : on quitte le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -184,17 +184,17 @@ make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_13246/fast"
-/usr/bin/make -f CMakeFiles/cmTC_13246.dir/build.make CMakeFiles/cmTC_13246.dir/build
-make[1] : on entre dans le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
-Building C object CMakeFiles/cmTC_13246.dir/feature_tests.c.o
-/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_13246.dir/feature_tests.c.o   -c /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/feature_tests.c
-Linking C executable cmTC_13246
-/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13246.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_13246.dir/feature_tests.c.o  -o cmTC_13246 
-make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_eabc2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_eabc2.dir/build.make CMakeFiles/cmTC_eabc2.dir/build
+make[1] : on entre dans le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
+Building C object CMakeFiles/cmTC_eabc2.dir/feature_tests.c.o
+/usr/bin/cc    -std=c90 -o CMakeFiles/cmTC_eabc2.dir/feature_tests.c.o   -c /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/feature_tests.c
+Linking C executable cmTC_eabc2
+/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eabc2.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_eabc2.dir/feature_tests.c.o  -o cmTC_eabc2 
+make[1] : on quitte le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -202,30 +202,30 @@ make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_a2de8/fast"
-/usr/bin/make -f CMakeFiles/cmTC_a2de8.dir/build.make CMakeFiles/cmTC_a2de8.dir/build
-make[1] : on entre dans le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_a2de8.dir/testCXXCompiler.cxx.o
-/usr/bin/c++      -o CMakeFiles/cmTC_a2de8.dir/testCXXCompiler.cxx.o -c /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_a2de8
-/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a2de8.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_a2de8.dir/testCXXCompiler.cxx.o  -o cmTC_a2de8 
-make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_e5065/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e5065.dir/build.make CMakeFiles/cmTC_e5065.dir/build
+make[1] : on entre dans le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_e5065.dir/testCXXCompiler.cxx.o
+/usr/bin/c++      -o CMakeFiles/cmTC_e5065.dir/testCXXCompiler.cxx.o -c /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_e5065
+/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5065.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_e5065.dir/testCXXCompiler.cxx.o  -o cmTC_e5065 
+make[1] : on quitte le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5915a/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5915a.dir/build.make CMakeFiles/cmTC_5915a.dir/build
-make[1] : on entre dans le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_5915a.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++      -o CMakeFiles/cmTC_5915a.dir/CMakeCXXCompilerABI.cpp.o -c /opt/clion/bin/cmake/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_5915a
-/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5915a.dir/link.txt --verbose=1
-/usr/bin/c++       -v CMakeFiles/cmTC_5915a.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_5915a  
+Run Build Command:"/usr/bin/make" "cmTC_93c5c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_93c5c.dir/build.make CMakeFiles/cmTC_93c5c.dir/build
+make[1] : on entre dans le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_93c5c.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++      -o CMakeFiles/cmTC_93c5c.dir/CMakeCXXCompilerABI.cpp.o -c /opt/clion/bin/cmake/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_93c5c
+/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93c5c.dir/link.txt --verbose=1
+/usr/bin/c++       -v CMakeFiles/cmTC_93c5c.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_93c5c  
 Utilisation des specs internes.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper
@@ -235,24 +235,24 @@ Modèle de thread: posix
 gcc version 7.1.1 20170621 (GCC) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5915a' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTwHYao.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_5915a /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbegin.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_5915a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtend.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5915a' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_93c5c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmmoAtP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_93c5c /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbegin.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_93c5c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtend.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_93c5c' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1] : on quitte le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_5915a/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_5915a.dir/build.make CMakeFiles/cmTC_5915a.dir/build]
-  ignore line: [make[1] : on entre dans le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »]
-  ignore line: [Building CXX object CMakeFiles/cmTC_5915a.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_5915a.dir/CMakeCXXCompilerABI.cpp.o -c /opt/clion/bin/cmake/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_5915a]
-  ignore line: [/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5915a.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_5915a.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_5915a  ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_93c5c/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_93c5c.dir/build.make CMakeFiles/cmTC_93c5c.dir/build]
+  ignore line: [make[1] : on entre dans le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »]
+  ignore line: [Building CXX object CMakeFiles/cmTC_93c5c.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++      -o CMakeFiles/cmTC_93c5c.dir/CMakeCXXCompilerABI.cpp.o -c /opt/clion/bin/cmake/share/cmake-3.7/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_93c5c]
+  ignore line: [/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_93c5c.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++       -v CMakeFiles/cmTC_93c5c.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_93c5c  ]
   ignore line: [Utilisation des specs internes.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper]
@@ -262,13 +262,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.1.1 20170621 (GCC) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/:/lib/../lib/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_5915a' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccTwHYao.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_5915a /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbegin.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_5915a.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtend.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'cmTC_93c5c' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2 -plugin /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper -plugin-opt=-fresolution=/tmp/ccmmoAtP.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_93c5c /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crt1.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbegin.o -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1 -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib -L/lib/../lib -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../.. CMakeFiles/cmTC_93c5c.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtend.o /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crtn.o]
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccTwHYao.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccmmoAtP.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -282,7 +282,7 @@ Parsed CXX implicit link information from above output:
     arg [-dynamic-linker] ==> ignore
     arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_5915a] ==> ignore
+    arg [cmTC_93c5c] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../lib/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/crtbegin.o] ==> ignore
@@ -291,7 +291,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/lib/../lib] ==> dir [/lib/../lib]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../..] ==> dir [/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../..]
-    arg [CMakeFiles/cmTC_5915a.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_93c5c.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -318,17 +318,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_fa070/fast"
-/usr/bin/make -f CMakeFiles/cmTC_fa070.dir/build.make CMakeFiles/cmTC_fa070.dir/build
-make[1] : on entre dans le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_fa070.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_fa070.dir/feature_tests.cxx.o -c /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_fa070
-/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fa070.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_fa070.dir/feature_tests.cxx.o  -o cmTC_fa070 
-make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_0d237/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0d237.dir/build.make CMakeFiles/cmTC_0d237.dir/build
+make[1] : on entre dans le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_0d237.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++14 -o CMakeFiles/cmTC_0d237.dir/feature_tests.cxx.o -c /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_0d237
+/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d237.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_0d237.dir/feature_tests.cxx.o  -o cmTC_0d237 
+make[1] : on quitte le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -391,17 +391,17 @@ make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e0b9f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e0b9f.dir/build.make CMakeFiles/cmTC_e0b9f.dir/build
-make[1] : on entre dans le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_e0b9f.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_e0b9f.dir/feature_tests.cxx.o -c /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_e0b9f
-/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e0b9f.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_e0b9f.dir/feature_tests.cxx.o  -o cmTC_e0b9f 
-make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_68482/fast"
+/usr/bin/make -f CMakeFiles/cmTC_68482.dir/build.make CMakeFiles/cmTC_68482.dir/build
+make[1] : on entre dans le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_68482.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++11 -o CMakeFiles/cmTC_68482.dir/feature_tests.cxx.o -c /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_68482
+/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68482.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_68482.dir/feature_tests.cxx.o  -o cmTC_68482 
+make[1] : on quitte le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -464,17 +464,17 @@ make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp
+Change Dir: /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ecfce/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ecfce.dir/build.make CMakeFiles/cmTC_ecfce.dir/build
-make[1] : on entre dans le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
-Building CXX object CMakeFiles/cmTC_ecfce.dir/feature_tests.cxx.o
-/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_ecfce.dir/feature_tests.cxx.o -c /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_ecfce
-/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ecfce.dir/link.txt --verbose=1
-/usr/bin/c++        CMakeFiles/cmTC_ecfce.dir/feature_tests.cxx.o  -o cmTC_ecfce 
-make[1] : on quitte le répertoire « /home/ganz/Work/futils/SFMLRender/cmake-build-debug/CMakeFiles/CMakeTmp »
+Run Build Command:"/usr/bin/make" "cmTC_bd520/fast"
+/usr/bin/make -f CMakeFiles/cmTC_bd520.dir/build.make CMakeFiles/cmTC_bd520.dir/build
+make[1] : on entre dans le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
+Building CXX object CMakeFiles/cmTC_bd520.dir/feature_tests.cxx.o
+/usr/bin/c++     -std=c++98 -o CMakeFiles/cmTC_bd520.dir/feature_tests.cxx.o -c /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_bd520
+/opt/clion/bin/cmake/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd520.dir/link.txt --verbose=1
+/usr/bin/c++        CMakeFiles/cmTC_bd520.dir/feature_tests.cxx.o  -o cmTC_bd520 
+make[1] : on quitte le répertoire « /home/ganz/Work/futils/Demo/cmake-build-debug/CMakeFiles/CMakeTmp »
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers

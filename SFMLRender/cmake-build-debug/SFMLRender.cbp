@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/ganz/Work/futils/SFMLRender/IRender.hpp">
+			<Option target="SFMLRender"/>
+		</Unit>
 		<Unit filename="/home/ganz/Work/futils/SFMLRender/library.cpp">
 			<Option target="SFMLRender"/>
 		</Unit>

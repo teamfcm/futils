@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ganz/Work/futils/Demo/SFMLRender.hpp
+string
+-
+functional
+-
+unordered_map
+-
+
+/home/ganz/Work/futils/Demo/main.cpp
+iostream
+-
+SFMLRender.hpp
+/home/ganz/Work/futils/Demo/SFMLRender.hpp
+
