@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/DynamicLibrary.hpp
+string
+-
+typeinfo
+-
+dlfcn.h
+-
+
+../include/fender.h
+
+/home/ganz/Work/teamfcm/futils/demo/main.cpp
+iostream
+-
+dlfcn.h
+-
+fender.h
+/home/ganz/Work/teamfcm/futils/demo/fender.h
+DynamicLibrary.hpp
+/home/ganz/Work/teamfcm/futils/demo/DynamicLibrary.hpp
+
