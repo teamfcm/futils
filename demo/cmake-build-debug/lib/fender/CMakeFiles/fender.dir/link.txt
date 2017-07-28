@@ -1,1 +1,0 @@
-/usr/bin/c++  -fPIC -g  -shared -Wl,-soname,libfender.so -o ../release/libfender.so CMakeFiles/fender.dir/src/sfml/SFMLRender.cpp.o 

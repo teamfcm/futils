@@ -8,6 +8,7 @@
 #include <string>
 #include <typeinfo>
 #include <dlfcn.h>
+#include <exception>
 
 namespace futils
 {
@@ -19,7 +20,9 @@ namespace futils
         DynamicLibrary(std::string const &path, int mode = RTLD_LAZY):
                 _path(path), _handle(dlopen(_path.c_str(), mode))
         {
-
+            std::cout << "Loading " + _path  + " ..." << std::endl;
+            if (_handle == nullptr)
+                throw std::domain_error("Cannot find " + path);
         }
 
         template    <typename T, typename ...Args>
@@ -35,12 +38,6 @@ namespace futils
             return func(args...);
         };
     };
-//    template    <typename T, int mode = RTLD_LAZY, typename ...Args>
-//    T           *dlload(std::string const &libraryPath, Args ...args)
-//    {
-//        auto renderer = create(args...);
-//        return renderer;
-//    }
 }
 
 #endif //DEMO_DLLOADER_HPP

@@ -1,1 +1,0 @@
-/usr/bin/c++   -g   CMakeFiles/demo.dir/main.cpp.o  -o ../demo -Wl,-rpath,/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/release lib/release/libfender.so -ldl 
