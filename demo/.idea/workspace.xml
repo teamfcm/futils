@@ -22,13 +22,16 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="demo" />
+  </component>
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="DynamicLibrary.hpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/include/DynamicLibrary.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+            <state relative-caret-position="196">
+              <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
               <folding>
                 <element signature="e#92#109#0" expanded="true" />
                 <element signature="e#462#492#0" expanded="true" />
@@ -45,6 +48,7 @@
         <option value="$PROJECT_DIR$/include/lib/fender/sdaisd" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/include/dlloader.hpp" />
+        <option value="$PROJECT_DIR$/include/fender.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/include/DynamicLibrary.hpp" />
       </list>
@@ -346,12 +350,12 @@
       <option name="presentableId" value="Default" />
       <updated>1501245642318</updated>
       <workItem from="1501245643531" duration="3106000" />
-      <workItem from="1501248788508" duration="2710000" />
+      <workItem from="1501248788508" duration="4304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5816000" />
+    <option name="totallyTimeSpent" value="7410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="20" width="1880" height="824" extended-state="0" />
@@ -362,13 +366,13 @@
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32947233" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.49250534" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5074946" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3989704" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -395,8 +399,8 @@
         <state relative-caret-position="140">
           <caret line="7" column="54" lean-forward="true" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
           <folding>
-            <marker date="1501252412527" expanded="true" signature="9:88" ph="..." />
-            <marker date="1501252412527" expanded="true" signature="102:340" ph="{...}" />
+            <marker date="1501254173200" expanded="true" signature="9:88" ph="..." />
+            <marker date="1501254173200" expanded="true" signature="102:340" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -410,13 +414,113 @@
         </state>
       </provider>
     </entry>
+    <entry file="file:///usr/include/c++/7.1.1/bits/basic_string.tcc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="755">
+          <caret line="1170" column="62" lean-forward="true" selection-start-line="1170" selection-start-column="62" selection-end-line="1170" selection-end-column="62" />
+          <folding>
+            <marker date="1498028167132" expanded="true" signature="0:1106" ph="//..." />
+            <marker date="1498028167132" expanded="true" signature="1108:1274" ph="/**...*/" />
+            <marker date="1498028167132" expanded="true" signature="1276:1584" ph="//..." />
+            <marker date="1498028167132" expanded="true" signature="1744:52839" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="1810:1870" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="false" signature="1991:2051" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="2155:3887" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="3891:3951" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="4123:4932" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="5147:5207" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="false" signature="5212:5242" ph="&lt;_InIterator&gt;" />
+            <marker date="1498028167132" expanded="true" signature="5393:6068" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="6072:6132" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="false" signature="6137:6167" ph="&lt;_InIterator&gt;" />
+            <marker date="1498028167132" expanded="true" signature="6320:6951" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="6955:7015" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="7117:7321" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="7325:7385" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="7484:7943" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="7947:8007" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="8094:8728" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="8732:8792" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="8943:9441" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="9445:9505" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="9608:9814" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="9818:9878" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="9974:10140" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="10144:10204" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="10344:10641" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="10645:10705" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="false" signature="10710:10743" ph="&lt;_InputIterator&gt;" />
+            <marker date="1498028167132" expanded="true" signature="10980:11137" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="11141:11201" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="11379:11992" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="11996:12056" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="12249:13527" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="13531:13591" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="13762:14021" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="14060:37557" ph="..." />
+            <marker date="1498028167132" expanded="false" signature="37599:37659" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="37800:38184" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="38188:38248" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="38375:38707" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="38711:38771" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="38970:39909" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="39913:39973" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="40146:40465" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="40469:40529" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="40729:41092" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="41096:41156" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="41330:41571" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="41575:41635" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="41843:42074" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="42078:42138" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="42345:42656" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="42660:42720" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="42932:43119" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="43123:43183" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="43369:43502" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="43506:43566" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="43777:44077" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="44081:44141" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="44326:44572" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="44576:44636" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="44770:45104" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="45108:45168" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="45343:45748" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="45752:45812" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="45924:46260" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="46264:46324" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="46452:46831" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="46835:46895" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="47044:47369" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="47423:47483" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="47631:49813" ph="{...}" />
+            <marker date="1498028167132" expanded="false" signature="49817:49877" ph="&lt;_CharT,_Traits,_Alloc&gt;" />
+            <marker date="1498028167132" expanded="true" signature="50035:51720" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <marker date="1501248756287" expanded="true" signature="0:37" ph="//..." />
+            <marker date="1501248756287" expanded="false" signature="48:84" ph="..." />
+            <marker date="1501248756287" expanded="true" signature="151:197" ph="{...}" />
+            <marker date="1501248756287" expanded="true" signature="261:329" ph="{...}" />
+            <marker date="1501248756287" expanded="true" signature="364:420" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/include/fender.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="60">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
           <folding>
-            <marker date="1501243884620" expanded="true" signature="68:194" ph="{...}" />
-            <marker date="1501243884620" expanded="true" signature="92:191" ph="{...}" />
+            <marker date="1501253673294" expanded="true" signature="68:194" ph="{...}" />
+            <marker date="1501253673294" expanded="true" signature="92:191" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -424,18 +528,18 @@
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding>
-            <marker date="1501252412527" expanded="true" signature="9:88" ph="..." />
-            <marker date="1501252412527" expanded="true" signature="102:340" ph="{...}" />
+            <marker date="1501254173200" expanded="true" signature="9:88" ph="..." />
+            <marker date="1501254173200" expanded="true" signature="102:340" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/DynamicLibrary.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+        <state relative-caret-position="196">
+          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
           <folding>
             <element signature="e#92#109#0" expanded="true" />
             <element signature="e#462#492#0" expanded="true" />
