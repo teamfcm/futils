@@ -1,7 +1,9 @@
 # Prerequisites
 *.d
 *.idea
-cmake-build-debug
+*cmake-build-debug
+*demo
+*libfender.so
 
 # Compiled Object files
 *.slo

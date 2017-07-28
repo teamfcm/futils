@@ -4,7 +4,7 @@
 #include "DynamicLibrary.hpp"
 
 int main() {
-    auto fenderDLL = futils::DynamicLibrary("");
+    auto fenderDLL = futils::DynamicLibrary("./lib/fender/release/libfender.so");
     auto renderer = fenderDLL.execute<fender::IRender, std::string>("create", "config.json");
     if (renderer)
         renderer->hello();

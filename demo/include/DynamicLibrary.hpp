@@ -18,9 +18,9 @@ namespace futils
         std::string     _path;
     public:
         DynamicLibrary(std::string const &path, int mode = RTLD_LAZY):
-                _path(path), _handle(dlopen(_path.c_str(), mode))
+                _path(path)
         {
-            std::cout << "Loading " + _path  + " ..." << std::endl;
+            _handle = dlopen(path.c_str(), mode);
             if (_handle == nullptr)
                 throw std::domain_error("Cannot find " + path);
         }
