@@ -14,8 +14,6 @@ namespace fender
     {
     public:
         SFMLRender(std::string const &string);
-
-        virtual void        hello() override;
     };
 }
 

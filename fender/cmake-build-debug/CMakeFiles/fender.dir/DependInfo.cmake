@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/ganz/Work/teamfcm/futils/fender/src/Manager.cpp" "/home/ganz/Work/teamfcm/futils/fender/cmake-build-debug/CMakeFiles/fender.dir/src/Manager.cpp.o"
   "/home/ganz/Work/teamfcm/futils/fender/src/sfml/SFMLRender.cpp" "/home/ganz/Work/teamfcm/futils/fender/cmake-build-debug/CMakeFiles/fender.dir/src/sfml/SFMLRender.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
@@ -11,6 +12,7 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../release"
+  "../include"
   )
 
 # Targets to which this target links.

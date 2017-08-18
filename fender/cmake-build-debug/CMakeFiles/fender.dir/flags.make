@@ -6,5 +6,5 @@ CXX_FLAGS = -g -fPIC   -std=gnu++14
 
 CXX_DEFINES = -Dfender_EXPORTS
 
-CXX_INCLUDES = -I/home/ganz/Work/teamfcm/futils/fender/release 
+CXX_INCLUDES = -I/home/ganz/Work/teamfcm/futils/fender/release -I/home/ganz/Work/teamfcm/futils/fender/include 
 

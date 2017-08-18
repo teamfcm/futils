@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include "SFMLRender.hpp"
+#include "flog.hpp"
 
 extern "C" fender::SFMLRender* create(std::string const &config)
 {
@@ -13,9 +14,4 @@ extern "C" fender::SFMLRender* create(std::string const &config)
 fender::SFMLRender::SFMLRender(std::string const &configFile)
 {
     std::cout << "Parsing " + configFile + " ... " << std::endl;
-}
-
-void fender::SFMLRender::hello()
-{
-    std::cout << "SFML: Hello World !" << std::endl;
 }

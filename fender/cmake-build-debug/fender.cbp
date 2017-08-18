@@ -45,6 +45,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/ganz/Work/teamfcm/futils/fender/release"/>
+					<Add directory="/home/ganz/Work/teamfcm/futils/fender/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/backward"/>
@@ -68,6 +69,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/ganz/Work/teamfcm/futils/fender/release"/>
+					<Add directory="/home/ganz/Work/teamfcm/futils/fender/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/backward"/>
@@ -85,6 +87,9 @@
 			</Target>
 		</Build>
 		<Unit filename="/home/ganz/Work/teamfcm/futils/fender/release/fender.h">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/fender/src/Manager.cpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/ganz/Work/teamfcm/futils/fender/src/sfml/SFMLRender.cpp">

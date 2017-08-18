@@ -123,6 +123,33 @@ fender/fast:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/build
 .PHONY : fender/fast
 
+src/Manager.o: src/Manager.cpp.o
+
+.PHONY : src/Manager.o
+
+# target to build an object file
+src/Manager.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Manager.cpp.o
+.PHONY : src/Manager.cpp.o
+
+src/Manager.i: src/Manager.cpp.i
+
+.PHONY : src/Manager.i
+
+# target to preprocess a source file
+src/Manager.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Manager.cpp.i
+.PHONY : src/Manager.cpp.i
+
+src/Manager.s: src/Manager.cpp.s
+
+.PHONY : src/Manager.s
+
+# target to generate assembly for a file
+src/Manager.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Manager.cpp.s
+.PHONY : src/Manager.cpp.s
+
 src/sfml/SFMLRender.o: src/sfml/SFMLRender.cpp.o
 
 .PHONY : src/sfml/SFMLRender.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... fender"
+	@echo "... src/Manager.o"
+	@echo "... src/Manager.i"
+	@echo "... src/Manager.s"
 	@echo "... src/sfml/SFMLRender.o"
 	@echo "... src/sfml/SFMLRender.i"
 	@echo "... src/sfml/SFMLRender.s"
