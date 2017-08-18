@@ -23,12 +23,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CursesRender.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ncurses/CursesRender.cpp">
+      <file leaf-file-name="SFMLRender.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/sfml/SFMLRender.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-              <folding />
+            <state relative-caret-position="613">
+              <caret line="37" column="4" lean-forward="false" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+              <folding>
+                <element signature="e#39#58#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -51,13 +53,13 @@
         <option value="$PROJECT_DIR$/src/SFMLRender.hpp" />
         <option value="$PROJECT_DIR$/src/IScene.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/sfml/SFMLRender.cpp" />
         <option value="$PROJECT_DIR$/src/Manager.cpp" />
         <option value="$PROJECT_DIR$/include/flog.hpp" />
         <option value="$PROJECT_DIR$/release/fender.h" />
         <option value="$PROJECT_DIR$/src/ncurses/CursesRender.hpp" />
-        <option value="$PROJECT_DIR$/src/sfml/SFMLRender.hpp" />
         <option value="$PROJECT_DIR$/src/ncurses/CursesRender.cpp" />
+        <option value="$PROJECT_DIR$/src/sfml/SFMLRender.hpp" />
+        <option value="$PROJECT_DIR$/src/sfml/SFMLRender.cpp" />
       </list>
     </option>
   </component>
@@ -437,14 +439,16 @@
       <workItem from="1503059559821" duration="244000" />
       <workItem from="1503060281761" duration="985000" />
       <workItem from="1503069380303" duration="11000" />
+      <workItem from="1503091925979" duration="127000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5189000" />
+    <option name="totallyTimeSpent" value="5316000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="20" width="1880" height="1021" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -482,8 +486,34 @@
     <entry file="file://$PROJECT_DIR$/src/ncurses/CursesRender.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
+          <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <folding>
+            <marker date="1503078647270" expanded="true" signature="0:37" ph="//..." />
+            <marker date="1503078647270" expanded="false" signature="48:127" ph="..." />
+            <marker date="1503078647270" expanded="true" signature="210:258" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="326:379" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="436:481" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="523:543" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="619:655" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="705:722" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ncurses/CursesRender.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
           <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-          <folding />
+          <folding>
+            <marker date="1503078647270" expanded="true" signature="0:37" ph="//..." />
+            <marker date="1503078647270" expanded="false" signature="48:127" ph="..." />
+            <marker date="1503078647270" expanded="true" signature="210:258" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="326:379" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="436:481" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="523:543" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="619:655" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="705:722" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -568,24 +598,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="63" lean-forward="false" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/IScene.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sfml/SFMLRender.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="8" column="36" lean-forward="false" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
         </state>
       </provider>
     </entry>
@@ -619,19 +635,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/sfml/SFMLRender.hpp">
+    <entry file="file://$PROJECT_DIR$/src/ncurses/CursesRender.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="16" column="59" lean-forward="false" selection-start-line="16" selection-start-column="59" selection-end-line="16" selection-end-column="59" />
+        <state relative-caret-position="360">
+          <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+          <folding>
+            <marker date="1503078647270" expanded="true" signature="0:37" ph="//..." />
+            <marker date="1503078647270" expanded="false" signature="48:127" ph="..." />
+            <marker date="1503078647270" expanded="true" signature="210:258" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="326:379" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="436:481" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="523:543" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="619:655" ph="{...}" />
+            <marker date="1503078647270" expanded="true" signature="705:722" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="51" lean-forward="true" selection-start-line="9" selection-start-column="51" selection-end-line="9" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ncurses/CursesRender.cpp">
+    <entry file="file://$PROJECT_DIR$/src/sfml/SFMLRender.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="14" lean-forward="false" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
-          <folding />
+        <state relative-caret-position="360">
+          <caret line="19" column="43" lean-forward="false" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+          <folding>
+            <marker date="1503092040375" expanded="true" signature="0:37" ph="//..." />
+            <marker date="1503092040375" expanded="false" signature="110:139" ph="..." />
+            <marker date="1503092040375" expanded="true" signature="158:500" ph="{...}" />
+            <marker date="1503092040375" expanded="true" signature="202:497" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/sfml/SFMLRender.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="613">
+          <caret line="37" column="4" lean-forward="false" selection-start-line="37" selection-start-column="4" selection-end-line="37" selection-end-column="4" />
+          <folding>
+            <element signature="e#39#58#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

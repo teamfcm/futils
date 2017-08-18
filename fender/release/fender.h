@@ -37,6 +37,7 @@ namespace fender
         virtual void    openWindow(int x, int y) = 0;
         virtual void    closeWindow() = 0;
         virtual void    write(int x, int y, std::string const &) = 0;
+        virtual void    refresh() = 0;
     };
 
     class Manager

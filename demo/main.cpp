@@ -6,7 +6,8 @@
 #include "flog.hpp"
 #include "Factory.hpp"
 
-int main() {
+int main()
+{
     START_LOG("logfile.txt");
     auto fenderDLL = futils::DynamicLibrary("./lib/fender/release/libfender.so");
     fender::ISceneFactory *factory = new demo::Factory{};

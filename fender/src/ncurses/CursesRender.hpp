@@ -17,6 +17,7 @@ namespace fender
         virtual void    openWindow(int x, int y) override;
         virtual void    closeWindow() override;
         virtual void    write(int x, int y, std::string const &msg) override;
+        virtual void    refresh() override;
     };
 }
 

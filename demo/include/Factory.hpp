@@ -33,7 +33,7 @@ namespace demo
                 this->renderer->openWindow(200, 200);
         }
         virtual void    update() override {
-            this->renderer->write(0, 0, "Coucou");
+            this->renderer->write(10, 5, "Coucou");
         };
     };
 

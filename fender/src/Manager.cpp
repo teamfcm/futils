@@ -15,7 +15,7 @@ extern "C" fender::Manager *manager(fender::ISceneFactory &fact)
 
 fender::Manager::Manager(ISceneFactory &fact): sceneFactory(fact)
 {
-    this->renderer = std::make_unique<fender::CursesRender>("config.json");
+    this->renderer = std::make_unique<fender::SFMLRender>("config.json");
 }
 
 void    fender::Manager::loadConfig(std::string const &configFile)
@@ -38,6 +38,7 @@ void    fender::Manager::start()
         while (scene->isDone() == false)
         {
             scene->update();
+            this->renderer->refresh();
             usleep(500000);
         }
     }

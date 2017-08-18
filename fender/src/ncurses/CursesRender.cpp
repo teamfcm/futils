@@ -24,6 +24,11 @@ void    fender::CursesRender::openWindow(int x, int y)
     noraw();
 }
 
+void    fender::CursesRender::refresh()
+{
+    ::refresh();
+}
+
 void    fender::CursesRender::write(int x, int y, std::string const &msg)
 {
     mvprintw(x, y, msg.c_str());
