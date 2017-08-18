@@ -4,6 +4,9 @@
 
 # include "fender.h"
 # include "flog.hpp"
+# include "sfml/SFMLRender.hpp"
+# include "ncurses/CursesRender.hpp"
+# include <unistd.h>
 
 extern "C" fender::Manager *manager(fender::ISceneFactory &fact)
 {
@@ -12,7 +15,7 @@ extern "C" fender::Manager *manager(fender::ISceneFactory &fact)
 
 fender::Manager::Manager(ISceneFactory &fact): sceneFactory(fact)
 {
-    std::cout << "coucou" << std::endl;
+    this->renderer = std::make_unique<fender::CursesRender>("config.json");
 }
 
 void    fender::Manager::loadConfig(std::string const &configFile)
@@ -29,7 +32,15 @@ void    fender::Manager::start()
 {
     auto scene = this->sceneFactory.build("intro");
     if (scene)
-        scene->update();
+    {
+        scene->provideRenderer(*this->renderer);
+        scene->init();
+        while (scene->isDone() == false)
+        {
+            scene->update();
+            usleep(500000);
+        }
+    }
 }
 
 void    fender::Manager::run()

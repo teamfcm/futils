@@ -13,5 +13,6 @@ extern "C" fender::SFMLRender* create(std::string const &config)
 
 fender::SFMLRender::SFMLRender(std::string const &configFile)
 {
-    std::cout << "Parsing " + configFile + " ... " << std::endl;
+    LOUT("SFML Render parsing " + configFile);
+
 }
