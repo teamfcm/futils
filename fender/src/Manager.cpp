@@ -35,11 +35,12 @@ void    fender::Manager::start()
     {
         scene->provideRenderer(*this->renderer);
         scene->init();
-        while (scene->isDone() == false)
+        while (scene->isDone() == false
+                && this->renderer->isRunning())
         {
             scene->update();
             this->renderer->refresh();
-            usleep(500000);
+            usleep(5000);
         }
     }
 }

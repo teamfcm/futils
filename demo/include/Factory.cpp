@@ -3,10 +3,13 @@
 //
 
 #include "Factory.hpp"
+#include "AllScenes.hpp"
 
 demo::Factory::Factory()
 {
-    buildFunctions["intro"] = [this](){ return std::make_unique<demo::Intro>(this->env); };
+    buildFunctions["intro"] = [this](){
+        return std::make_unique<demo::scenes::Splashscreen>(this->env);
+    };
 }
 
 fender::upScene demo::Factory::build(std::string const &name)

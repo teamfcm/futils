@@ -1,0 +1,13 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/demo.dir/main.cpp.o"
+  "CMakeFiles/demo.dir/include/Factory.cpp.o"
+  "CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o"
+  "CMakeFiles/demo.dir/include/Demo.cpp.o"
+  "../demo.pdb"
+  "../demo"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/demo.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

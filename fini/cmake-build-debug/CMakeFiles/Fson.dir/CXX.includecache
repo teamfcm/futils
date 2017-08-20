@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ganz/Work/teamfcm/futils/Fson/Fini.hpp
+iostream
+-
+fstream
+-
+algorithm
+-
+string
+-
+unordered_map
+-
+list
+-
+vector
+-
+iomanip
+-
+map
+-
+
+/home/ganz/Work/teamfcm/futils/Fson/main.cpp
+iostream
+-
+Fini.hpp
+/home/ganz/Work/teamfcm/futils/Fson/Fini.hpp
+

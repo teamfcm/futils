@@ -15,10 +15,10 @@ namespace fender
         IRender         *renderer{nullptr};
     public:
         virtual ~IScene() {};
+        void            provideRenderer(IRender &renderer);
         virtual bool    isDone() = 0;
         virtual void    update() = 0;
         virtual void    init() = 0;
-        void            provideRenderer(IRender &renderer);
     };
 
     using upScene = std::unique_ptr<IScene>;
@@ -34,10 +34,12 @@ namespace fender
     {
     public:
         virtual ~IRender() {};
-        virtual void    openWindow(int x, int y) = 0;
+        virtual bool    isRunning() = 0;
+        virtual void    openWindow() = 0;
         virtual void    closeWindow() = 0;
         virtual void    write(int x, int y, std::string const &) = 0;
         virtual void    refresh() = 0;
+        virtual void    resize(int x, int y) = 0;
     };
 
     class Manager

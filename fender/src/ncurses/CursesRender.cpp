@@ -17,7 +17,7 @@ fender::CursesRender::CursesRender(std::string const &configFile)
     LOUT("Ncurses Render parsing " + configFile);
 }
 
-void    fender::CursesRender::openWindow(int x, int y)
+void    fender::CursesRender::openWindow()
 {
     initscr();
     noecho();

@@ -1,0 +1,20 @@
+{
+  "minimalConfig":{
+    "name":"User123",
+    "window":{
+      "width":1200,
+      "height":800
+    },
+    "listOfElems":[
+      12,
+      13,
+      14,
+      15,
+      17,
+      {
+        "item":"value",
+        "item2":"value"
+      }
+    ]
+  }
+}
