@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/ganz/Work/teamfcm/futils/Fson/Fini.hpp
+/home/ganz/Work/teamfcm/futils/fini/Fini.hpp
 iostream
 -
 fstream
@@ -26,9 +26,11 @@ iomanip
 map
 -
 
-/home/ganz/Work/teamfcm/futils/Fson/main.cpp
+/home/ganz/Work/teamfcm/futils/fini/main.cpp
 iostream
 -
 Fini.hpp
-/home/ganz/Work/teamfcm/futils/Fson/Fini.hpp
+/home/ganz/Work/teamfcm/futils/fini/Fini.hpp
+unistd.h
+-
 
