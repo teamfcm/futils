@@ -4,17 +4,20 @@
 #include "DynamicLibrary.hpp"
 #include "flog.hpp"
 #include "Factory.hpp"
+#include "Fini.hpp"
 
 int main()
 {
-    START_LOG("logfile.txt");
-    auto manager = futils::DynamicLibrary("./lib/fender/release/libfender.so")
+    futils::INI config("config/config.ini");
+
+    START_LOG(config["global"]["logfile"]);
+    auto manager = futils::DynamicLibrary(config["global"]["fenderPath"])
             .execute<fender::Manager, fender::ISceneFactory &>
                     ("manager", *(new demo::Factory));
     if (manager)
     {
-        manager->loadConfig("config/config.json");
-        manager->loadTimeline("scenes/timeline.json");
+        manager->loadConfig("config/manager.ini");
+        manager->loadTimeline("scenes/timeline.ini");
         manager->start();
     }
     return 0;

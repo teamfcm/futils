@@ -21,6 +21,7 @@ CMakeFiles/demo.dir/main.cpp.o
  ../include/Demo.hpp
  ../include/DynamicLibrary.hpp
  ../include/Factory.hpp
+ ../include/Fini.hpp
  ../include/ForwardScenes.hpp
  ../include/fender.h
  ../include/flog.hpp

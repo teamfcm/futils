@@ -20,6 +20,7 @@ CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/fender.h
 CMakeFiles/demo.dir/main.cpp.o: ../include/Demo.hpp
 CMakeFiles/demo.dir/main.cpp.o: ../include/DynamicLibrary.hpp
 CMakeFiles/demo.dir/main.cpp.o: ../include/Factory.hpp
+CMakeFiles/demo.dir/main.cpp.o: ../include/Fini.hpp
 CMakeFiles/demo.dir/main.cpp.o: ../include/ForwardScenes.hpp
 CMakeFiles/demo.dir/main.cpp.o: ../include/fender.h
 CMakeFiles/demo.dir/main.cpp.o: ../include/flog.hpp

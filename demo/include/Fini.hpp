@@ -32,10 +32,10 @@ namespace futils
 
         struct Token
         {
-            std::string name;
-            std::string value;
-            std::string content;
-            int         lineNbr;
+            std::string name{""};
+            std::string value{""};
+            std::string content{""};
+            int         lineNbr{-1};
             void    operator = (std::string const &val)
             {
                 if (val[0] == '\"' && val[val.size() - 1] == '\"')
@@ -48,6 +48,8 @@ namespace futils
             {
                 value = std::to_string(nbr);
             }
+
+            operator std::string() { return this->value; }
         };
 
         friend std::ostream &operator << (std::ostream &os, Token const &tok)
@@ -60,9 +62,9 @@ namespace futils
         {
             std::string         name;
             int                 lineNbr;
-            std::string         content;
-            std::unordered_map<std::string, Token>  tokens;
-            std::map<int, Token *>                  tokenLineIndex;
+            std::string         content{""};
+            std::unordered_map<std::string, Token>  tokens{};
+            std::map<int, Token *>                  tokenLineIndex{};
 
             void                set(Token *ptr)
             {

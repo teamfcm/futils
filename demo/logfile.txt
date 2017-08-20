@@ -3,6 +3,6 @@ Start log in logfile.txt
 [1] In fender::SFMLRender::SFMLRender(const string&)
 SFML Render parsing config.json
 [2] In void fender::Manager::loadConfig(const string&)
-loading config from config/config.json
+loading config from config/manager.ini
 [3] In void fender::Manager::loadTimeline(const string&)
-loading timeline from scenes/timeline.json
+loading timeline from scenes/timeline.ini
