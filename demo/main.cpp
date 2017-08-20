@@ -5,19 +5,21 @@
 #include "flog.hpp"
 #include "Factory.hpp"
 #include "Fini.hpp"
+#include <typeinfo>
 
 int main()
 {
     futils::INI config("config/config.ini");
+    auto global{config["global"]};
 
-    START_LOG(config["global"]["logfile"]);
-    auto manager = futils::DynamicLibrary(config["global"]["fenderPath"])
+    START_LOG(global["logfile"]);
+    auto manager = futils::DynamicLibrary(global["fenderPath"])
             .execute<fender::Manager, fender::ISceneFactory &>
                     ("manager", *(new demo::Factory));
     if (manager)
     {
-        manager->loadConfig("config/manager.ini");
-        manager->loadTimeline("scenes/timeline.ini");
+        manager->loadConfig(global["fenderConfigPath"]);
+        manager->loadTimeline(global["timelineConfigPath"]);
         manager->start();
     }
     return 0;
