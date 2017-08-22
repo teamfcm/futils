@@ -10,6 +10,11 @@ demo::scenes::Splashscreen::Splashscreen(demo::Demo &e):
 
 }
 
+void    demo::scenes::Splashscreen::init()
+{
+    this->renderer->openWindow();
+}
+
 void    demo::scenes::Splashscreen::update()
 {
 

@@ -3,6 +3,7 @@
 
 CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o: ../Scenes/Headers/Splashscreen.hpp
 CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o: ../include/Demo.hpp
+CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o: ../include/Fini.hpp
 CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o: ../include/fender.h
 CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o: ../Scenes/Intro/Splashscreen.cpp
 
@@ -14,6 +15,7 @@ CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/AllScenes.hpp
 CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/Demo.hpp
 CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/Factory.cpp
 CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/Factory.hpp
+CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/Fini.hpp
 CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/ForwardScenes.hpp
 CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/fender.h
 

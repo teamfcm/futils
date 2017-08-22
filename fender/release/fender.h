@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 # include <memory>
+# include "Fini.hpp"
 
 namespace fender
 {
@@ -47,6 +48,8 @@ namespace fender
         using upRenderer = std::unique_ptr<IRender>;
         ISceneFactory   &sceneFactory;
         upRenderer      renderer;
+        futils::INI     config;
+        futils::INI     timeline;
 
         void    run();
     public:

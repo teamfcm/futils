@@ -6,6 +6,26 @@
 
 #IncludeRegexTransform: 
 
+../lib/fender/include/Fini.hpp
+iostream
+-
+fstream
+-
+algorithm
+-
+string
+-
+unordered_map
+-
+list
+-
+vector
+-
+iomanip
+-
+map
+-
+
 ../lib/fender/include/flog.hpp
 iostream
 -
@@ -29,6 +49,8 @@ string
 -
 memory
 -
+Fini.hpp
+../lib/fender/release/Fini.hpp
 
 /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/IScene.cpp
 fender.h

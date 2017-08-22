@@ -13,7 +13,9 @@ extern "C" fender::Manager *manager(fender::ISceneFactory &fact)
     return new fender::Manager(fact);
 }
 
-fender::Manager::Manager(ISceneFactory &fact): sceneFactory(fact)
+fender::Manager::Manager(ISceneFactory &fact): sceneFactory(fact),
+                                               config("config/fender.ini"),
+                                               timeline("Scenes/timeline.ini")
 {
     this->renderer = std::make_unique<fender::SFMLRender>("config.json");
 }

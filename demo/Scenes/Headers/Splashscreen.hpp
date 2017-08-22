@@ -21,9 +21,7 @@ namespace demo
             virtual ~Splashscreen() {};
             virtual bool    isDone() override { return this->done; }
             virtual void    update() override;
-            virtual void    init() override {
-                this->renderer->openWindow();
-            }
+            virtual void    init() override;
         };
     }
 }

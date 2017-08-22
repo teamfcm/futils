@@ -60,22 +60,22 @@ namespace futils
 
         struct  Section
         {
-            std::string         name{""};
-            int                 lineNbr{-1};
+            std::string         name;
+            int                 lineNbr;
             std::string         content{""};
             std::unordered_map<std::string, Token>  tokens{};
-            std::map<int, std::string>                  tokenLineIndex{};
+            std::map<int, Token *>                  tokenLineIndex{};
 
             void                set(Token *ptr)
             {
                 this->tokens[ptr->name] = *ptr;
-                this->tokenLineIndex[ptr->lineNbr] = ptr->name;
+                this->tokenLineIndex[ptr->lineNbr] = &this->tokens[ptr->name];
             }
 
             void                set(Token const &ref, int linenbr)
             {
                 this->tokens[ref.name] = ref;
-                this->tokenLineIndex[linenbr] = ref.name;
+                this->tokenLineIndex[linenbr] = &this->tokens[ref.name];
             }
 
             Token   &operator [] (std::string const &name)
@@ -87,11 +87,10 @@ namespace futils
             {
                 for (auto const &tok: this->tokenLineIndex)
                 {
-                    auto actualToken = this->tokens.at(tok.second);
-                    if (actualToken.name != "")
-                        file << actualToken.name << "=" << actualToken.value << std::endl;
+                    if (tok.second->name != "")
+                        file << tok.second->name << "=" << tok.second->value << std::endl;
                     else
-                        file << actualToken.content << std::endl;
+                        file << tok.second->content << std::endl;
                 }
                 if (content != "")
                     file << content << std::endl;
@@ -99,9 +98,9 @@ namespace futils
         };
 
         std::vector<char>   forbiddenCharacters{' ', '\n'};
-        std::list<Line>     content{};
+        std::list<Line>     content;
         std::string         input{""};
-        std::string         filepath{""};
+        std::string         filepath;
         std::fstream        iniFile;
         std::unordered_map<std::string, Section>        sections;
         std::unordered_map<std::string, std::string>    globalTokens;
@@ -235,7 +234,7 @@ namespace futils
         }
 
     public:
-        INI(std::string const &file): filepath(file)
+        INI(std::string const &file = ""): filepath(file)
         {
             if (file != "")
                 this->preLoad();
