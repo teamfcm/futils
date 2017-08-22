@@ -30,38 +30,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="21" column="50" lean-forward="false" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="flog.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/flog.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="840">
-              <caret line="42" column="9" lean-forward="false" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.ini" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/config.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Splashscreen.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scenes/Intro/Splashscreen.cpp">
           <provider selected="true" editor-type-id="text-editor">
@@ -75,9 +43,41 @@
       <file leaf-file-name="Fini.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/Fini.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="1100">
+              <caret line="55" column="64" lean-forward="false" selection-start-line="55" selection-start-column="64" selection-end-line="55" selection-end-column="64" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="futils.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/fender/include/futils.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/config.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Manager.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/fender/src/Manager.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="386">
+              <caret line="45" column="50" lean-forward="false" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
+              <folding>
+                <element signature="e#39#59#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -85,20 +85,39 @@
       <file leaf-file-name="Fini.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fender/include/Fini.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="56" column="12" lean-forward="true" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Manager.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/fender/src/Manager.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
+            <state relative-caret-position="1120">
+              <caret line="56" column="66" lean-forward="false" selection-start-line="56" selection-start-column="66" selection-end-line="56" selection-end-column="66" />
               <folding>
-                <element signature="e#39#59#0" expanded="true" />
+                <marker date="1503442376542" expanded="true" signature="282:9794" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="304:9791" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="645:1411" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="1500:1595" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="1629:3154" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="1960:2087" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="2168:2287" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="2360:2418" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="2501:2562" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="2650:3144" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="3664:3787" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="3870:3977" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="4058:4159" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="4241:4355" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="4427:4527" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="4571:6470" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="6539:6936" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="7008:7449" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="7489:7753" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="7800:8360" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="8183:8199" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="8286:8350" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="8425:8497" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="8522:8568" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="8629:8783" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="8823:8914" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="8981:9033" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="9090:9466" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="9504:9595" ph="{...}" />
+                <marker date="1503442376542" expanded="true" signature="9634:9709" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -107,8 +126,8 @@
       <file leaf-file-name="fender.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fender/release/fender.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
-              <caret line="49" column="29" lean-forward="false" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
+            <state relative-caret-position="1380">
+              <caret line="69" column="27" lean-forward="false" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
               <folding>
                 <element signature="e#51#71#0" expanded="true" />
               </folding>
@@ -121,16 +140,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="100">
               <caret line="5" column="141" lean-forward="false" selection-start-line="5" selection-start-column="141" selection-end-line="5" selection-end-column="141" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fender.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/fender.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -201,12 +210,12 @@
         <option value="$PROJECT_DIR$/include/DynamicLibrary.hpp" />
         <option value="$PROJECT_DIR$/config/fender.ini" />
         <option value="$PROJECT_DIR$/Scenes/Intro/Splashscreen.cpp" />
-        <option value="$PROJECT_DIR$/lib/fender/release/fender.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/lib/fender/src/Manager.cpp" />
         <option value="$PROJECT_DIR$/include/Fini.hpp" />
         <option value="$PROJECT_DIR$/lib/fender/include/Fini.hpp" />
         <option value="$PROJECT_DIR$/config/config.ini" />
+        <option value="$PROJECT_DIR$/lib/fender/release/fender.h" />
+        <option value="$PROJECT_DIR$/lib/fender/src/Manager.cpp" />
       </list>
     </option>
   </component>
@@ -696,11 +705,12 @@
       <workItem from="1503431266066" duration="5595000" />
       <workItem from="1503440606165" duration="173000" />
       <workItem from="1503441517956" duration="236000" />
+      <workItem from="1503443022001" duration="116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78625000" />
+    <option name="totallyTimeSpent" value="79314000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="29" width="1920" height="1051" extended-state="6" />
@@ -963,8 +973,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/fender/include/futils.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="400">
+          <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1050,16 +1061,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fender/release/fender.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="49" column="29" lean-forward="false" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
-          <folding>
-            <element signature="e#51#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -1078,37 +1079,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fender/src/Manager.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="34" column="31" lean-forward="false" selection-start-line="34" selection-start-column="31" selection-end-line="34" selection-end-column="31" />
-          <folding>
-            <element signature="e#39#59#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/Fini.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state relative-caret-position="1100">
+          <caret line="55" column="64" lean-forward="false" selection-start-line="55" selection-start-column="64" selection-end-line="55" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/fender/include/Fini.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="56" column="12" lean-forward="true" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="1120">
+          <caret line="56" column="66" lean-forward="false" selection-start-line="56" selection-start-column="66" selection-end-line="56" selection-end-column="66" />
+          <folding>
+            <marker date="1503442376542" expanded="true" signature="282:9794" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="304:9791" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="645:1411" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="1500:1595" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="1629:3154" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="1960:2087" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="2168:2287" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="2360:2418" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="2501:2562" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="2650:3144" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="3664:3787" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="3870:3977" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="4058:4159" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="4241:4355" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="4427:4527" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="4571:6470" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="6539:6936" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="7008:7449" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="7489:7753" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="7800:8360" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="8183:8199" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="8286:8350" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="8425:8497" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="8522:8568" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="8629:8783" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="8823:8914" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="8981:9033" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="9090:9466" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="9504:9595" ph="{...}" />
+            <marker date="1503442376542" expanded="true" signature="9634:9709" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/config.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="7" column="14" lean-forward="false" selection-start-line="7" selection-start-column="14" selection-end-line="7" selection-end-column="14" />
+        <state relative-caret-position="300">
+          <caret line="15" column="23" lean-forward="false" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fender/release/fender.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1380">
+          <caret line="69" column="27" lean-forward="false" selection-start-line="69" selection-start-column="27" selection-end-line="69" selection-end-column="27" />
+          <folding>
+            <element signature="e#51#71#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/Manager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="45" column="50" lean-forward="false" selection-start-line="45" selection-start-column="50" selection-end-line="45" selection-end-column="50" />
+          <folding>
+            <element signature="e#39#59#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,2 +1,6 @@
 [0] In int main()
 Start log in logfile.txt
+[1] In void fender::Manager::runConfigBuild()
+SmartMode detected. Running auto conf...
+[2] In void fender::Manager::runConfigBuild()
+Calling runConfigBuild : WindowName

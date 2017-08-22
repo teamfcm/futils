@@ -49,18 +49,25 @@ namespace fender
         using upRenderer = std::unique_ptr<IRender>;
         using upINIProxy = std::unique_ptr<futils::INI::INIProxy>;
         using renderBuilder = std::function<upRenderer(void)>;
+        using configFunc = std::function<void(void)>;
 
         ISceneFactory                   &sceneFactory;
         upRenderer                      renderer;
         upINIProxy                      config;
         futils::INI                     timeline;
         std::unordered_map<std::string, renderBuilder>  renderingBuilders;
+        std::unordered_map<std::string, configFunc>     configFunctions;
+
+        std::string                     _windowName{"Undefined"};
 
         void    runConfigBuild();
         void    run();
     public:
         Manager(ISceneFactory &fact, futils::INI::INIProxy *config);
         void    start();
+
+        void    setWindowName(std::string const &name)
+        {this->_windowName = name;}
     };
 }
 
