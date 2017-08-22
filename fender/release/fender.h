@@ -4,6 +4,7 @@
 # include <iostream>
 # include <string>
 # include <memory>
+# include <functional>
 # include "Fini.hpp"
 
 namespace fender
@@ -46,16 +47,19 @@ namespace fender
     class Manager
     {
         using upRenderer = std::unique_ptr<IRender>;
-        ISceneFactory   &sceneFactory;
-        upRenderer      renderer;
-        futils::INI     config;
-        futils::INI     timeline;
+        using upINIProxy = std::unique_ptr<futils::INI::INIProxy>;
+        using renderBuilder = std::function<upRenderer(void)>;
 
+        ISceneFactory                   &sceneFactory;
+        upRenderer                      renderer;
+        upINIProxy                      config;
+        futils::INI                     timeline;
+        std::unordered_map<std::string, renderBuilder>  renderingBuilders;
+
+        void    runConfigBuild();
         void    run();
     public:
-        Manager(ISceneFactory &fact);
-        void    loadTimeline(std::string const &);
-        void    loadConfig(std::string const &);
+        Manager(ISceneFactory &fact, futils::INI::INIProxy *config);
         void    start();
     };
 }

@@ -23,7 +23,7 @@ namespace fender
         sf::Texture electricityTexture;
         float       progress{0.0};
     public:
-        SFMLRender(std::string const &string);
+        SFMLRender();
         virtual void    openWindow() override;
         virtual void    closeWindow() override;
         virtual void    write(int x, int y, std::string const &msg) override;

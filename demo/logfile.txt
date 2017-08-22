@@ -1,6 +1,2 @@
 [0] In int main()
 Start log in logfile.txt
-[1] In fender::SFMLRender::SFMLRender(const string&)
-SFML Render parsing config.json
-[2] In void fender::Manager::loadTimeline(const string&)
-loading timeline from scenes/timeline.ini

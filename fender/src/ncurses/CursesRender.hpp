@@ -13,7 +13,7 @@ namespace fender
     class CursesRender : public IRender
     {
     public:
-        CursesRender(std::string const &string);
+        CursesRender();
         virtual void    openWindow() override;
         virtual void    closeWindow() override;
         virtual void    write(int x, int y, std::string const &msg) override;

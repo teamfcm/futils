@@ -67,6 +67,8 @@ string
 -
 memory
 -
+functional
+-
 Fini.hpp
 ../include/Fini.hpp
 
@@ -148,6 +150,8 @@ iostream
 string
 -
 memory
+-
+functional
 -
 Fini.hpp
 /home/ganz/Work/teamfcm/futils/demo/include/Fini.hpp

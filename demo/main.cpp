@@ -15,11 +15,13 @@ int main()
     auto dllpath = config["global"]["fenderPath"];
     START_LOG(global["logfile"]);
     auto manager = futils::DynamicLibrary(dllpath)
-            .execute<fender::Manager, fender::ISceneFactory &>
-                    ("manager", *(new demo::Factory));
+                           .execute<fender::Manager,
+                                   fender::ISceneFactory &,
+                                   futils::INI::INIProxy *>
+                                   ("manager", *(new demo::Factory),
+                                    config.proxy());
     if (manager)
     {
-        manager->loadTimeline(config["global"]["timelinePath"]);
         manager->start();
     }
 

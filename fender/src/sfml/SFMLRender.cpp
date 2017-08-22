@@ -8,14 +8,14 @@
 #include "SFMLRender.hpp"
 #include "flog.hpp"
 
-extern "C" fender::SFMLRender* create(std::string const &config)
+extern "C" fender::SFMLRender* create()
 {
-    return new fender::SFMLRender(config);
+    return new fender::SFMLRender();
 }
 
-fender::SFMLRender::SFMLRender(std::string const &configFile)
+fender::SFMLRender::SFMLRender()
 {
-    LOUT("SFML Render parsing " + configFile);
+
 }
 
 void    fender::SFMLRender::openWindow()

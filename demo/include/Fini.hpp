@@ -49,7 +49,12 @@ namespace futils
                 value = std::to_string(nbr);
             }
 
-            operator std::string() { return this->value; }
+            void    operator = (bool b) {
+                value = b == true ? "true" : "false";
+            }
+
+            operator std::string() const { return this->value; }
+            explicit operator bool() const { return this->value == "true"; }
         };
 
         friend std::ostream &operator << (std::ostream &os, Token const &tok)
@@ -81,6 +86,11 @@ namespace futils
             Token   &operator [] (std::string const &name)
             {
                 return this->tokens[name];
+            }
+
+            const Token &operator [] (std::string const &name) const
+            {
+                return this->tokens.at(name);
             }
 
             void                writeContentTo(std::ofstream &file) const
@@ -235,6 +245,26 @@ namespace futils
         }
 
     public:
+        class   INIProxy
+        {
+            std::unordered_map<std::string, Section> const &_sections;
+            std::list<Line>                          const &_content;
+        public:
+            INIProxy(std::unordered_map<std::string, Section> const &sections,
+                     std::list<Line> const &content):
+                    _sections(sections),
+                    _content(content)
+            {
+
+            }
+
+            const Section   &operator [] (std::string const &name) const
+            {
+                return this->_sections.at(name);
+            }
+        };
+
+
         INI(std::string const &file): filepath(file)
         {
             if (file != "")
@@ -284,6 +314,12 @@ namespace futils
             if (this->iniFile.is_open())
                 this->iniFile.close();
         }
+
+        INIProxy    *proxy()
+        {
+            return new INIProxy(this->sections, this->content);
+        }
+
 
         std::string const &getFilePath() const { return this->filepath; }
     };

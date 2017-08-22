@@ -6,28 +6,41 @@
 # include "flog.hpp"
 # include "sfml/SFMLRender.hpp"
 # include "ncurses/CursesRender.hpp"
+# include "Fini.hpp"
 # include <unistd.h>
 
-extern "C" fender::Manager *manager(fender::ISceneFactory &fact)
+extern "C"
+fender::Manager *manager(fender::ISceneFactory &fact,
+                         futils::INI::INIProxy *configProxy)
 {
-    return new fender::Manager(fact);
+    return new fender::Manager(fact, configProxy);
 }
 
-fender::Manager::Manager(ISceneFactory &fact): sceneFactory(fact),
-                                               config("config/fender.ini"),
-                                               timeline("Scenes/timeline.ini")
+fender::Manager::Manager(ISceneFactory &fact,
+                         futils::INI::INIProxy *configProxy):
+        sceneFactory(fact),
+        config(configProxy),
+        timeline("Scenes/timeline.ini")
 {
-    this->renderer = std::make_unique<fender::SFMLRender>("config.json");
+    this->renderingBuilders["SFML"] = []()
+    {
+        return std::make_unique<fender::SFMLRender>();
+    };
+    this->renderingBuilders["NCURSES"] = []()
+    {
+        return std::make_unique<fender::CursesRender>();
+    };
+    auto conf = *this->config;
+
+    if (conf["fender"]["SmartMode"] == true)
+        this->runConfigBuild();
 }
 
-void    fender::Manager::loadConfig(std::string const &configFile)
+void fender::Manager::runConfigBuild()
 {
-    LOUT("loading config from " + configFile);
-}
+    auto conf = *this->config;
 
-void    fender::Manager::loadTimeline(std::string const &timelineFile)
-{
-    LOUT("loading timeline from " + timelineFile);
+    this->renderer = this->renderingBuilders[conf["fender"]["RenderLibrary"]]();
 }
 
 void    fender::Manager::start()

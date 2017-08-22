@@ -7,14 +7,14 @@
 #include "CursesRender.hpp"
 #include "flog.hpp"
 
-extern "C" fender::CursesRender* createCursesRenderer(std::string const &config)
+extern "C" fender::CursesRender* createCursesRenderer()
 {
-    return new fender::CursesRender(config);
+    return new fender::CursesRender();
 }
 
-fender::CursesRender::CursesRender(std::string const &configFile)
+fender::CursesRender::CursesRender()
 {
-    LOUT("Ncurses Render parsing " + configFile);
+
 }
 
 void    fender::CursesRender::openWindow()

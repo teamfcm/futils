@@ -49,6 +49,8 @@ string
 -
 memory
 -
+functional
+-
 Fini.hpp
 ../lib/fender/release/Fini.hpp
 
@@ -65,6 +67,8 @@ sfml/SFMLRender.hpp
 /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/sfml/SFMLRender.hpp
 ncurses/CursesRender.hpp
 /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ncurses/CursesRender.hpp
+Fini.hpp
+/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/Fini.hpp
 unistd.h
 -
 

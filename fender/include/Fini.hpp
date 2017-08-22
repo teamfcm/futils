@@ -49,7 +49,12 @@ namespace futils
                 value = std::to_string(nbr);
             }
 
-            operator std::string() { return this->value; }
+            void    operator = (bool b) {
+                value = b == true ? "true" : "false";
+            }
+
+            operator std::string() const { return this->value; }
+            operator bool() const { return this->value == "true"; }
         };
 
         friend std::ostream &operator << (std::ostream &os, Token const &tok)
@@ -60,22 +65,22 @@ namespace futils
 
         struct  Section
         {
-            std::string         name;
-            int                 lineNbr;
+            std::string         name{""};
+            int                 lineNbr{-1};
             std::string         content{""};
             std::unordered_map<std::string, Token>  tokens{};
-            std::map<int, Token *>                  tokenLineIndex{};
+            std::map<int, std::string>                  tokenLineIndex{};
 
             void                set(Token *ptr)
             {
                 this->tokens[ptr->name] = *ptr;
-                this->tokenLineIndex[ptr->lineNbr] = &this->tokens[ptr->name];
+                this->tokenLineIndex[ptr->lineNbr] = ptr->name;
             }
 
             void                set(Token const &ref, int linenbr)
             {
                 this->tokens[ref.name] = ref;
-                this->tokenLineIndex[linenbr] = &this->tokens[ref.name];
+                this->tokenLineIndex[linenbr] = ref.name;
             }
 
             Token   &operator [] (std::string const &name)
@@ -83,14 +88,20 @@ namespace futils
                 return this->tokens[name];
             }
 
+            const Token &operator [] (std::string const &name) const
+            {
+                return this->tokens.at(name);
+            }
+
             void                writeContentTo(std::ofstream &file) const
             {
                 for (auto const &tok: this->tokenLineIndex)
                 {
-                    if (tok.second->name != "")
-                        file << tok.second->name << "=" << tok.second->value << std::endl;
+                    auto actualToken = this->tokens.at(tok.second);
+                    if (actualToken.name != "")
+                        file << actualToken.name << "=" << actualToken.value << std::endl;
                     else
-                        file << tok.second->content << std::endl;
+                        file << actualToken.content << std::endl;
                 }
                 if (content != "")
                     file << content << std::endl;
@@ -98,9 +109,9 @@ namespace futils
         };
 
         std::vector<char>   forbiddenCharacters{' ', '\n'};
-        std::list<Line>     content;
+        std::list<Line>     content{};
         std::string         input{""};
-        std::string         filepath;
+        std::string         filepath{""};
         std::fstream        iniFile;
         std::unordered_map<std::string, Section>        sections;
         std::unordered_map<std::string, std::string>    globalTokens;
@@ -234,7 +245,27 @@ namespace futils
         }
 
     public:
-        INI(std::string const &file = ""): filepath(file)
+        class   INIProxy
+        {
+            std::unordered_map<std::string, Section> const &_sections;
+            std::list<Line>                          const &_content;
+        public:
+            INIProxy(std::unordered_map<std::string, Section> const &sections,
+                     std::list<Line> const &content):
+                    _sections(sections),
+                    _content(content)
+            {
+
+            }
+
+            const Section   &operator [] (std::string const &name) const
+            {
+                return this->_sections.at(name);
+            }
+        };
+
+
+        INI(std::string const &file): filepath(file)
         {
             if (file != "")
                 this->preLoad();
@@ -283,6 +314,12 @@ namespace futils
             if (this->iniFile.is_open())
                 this->iniFile.close();
         }
+
+        INIProxy    *proxy()
+        {
+            return new INIProxy(this->sections, this->content);
+        }
+
 
         std::string const &getFilePath() const { return this->filepath; }
     };
