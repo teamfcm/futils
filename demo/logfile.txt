@@ -1,6 +1,16 @@
-[0] In int main()
+     [0] In int main()
 Start log in logfile.txt
-[1] In void fender::Manager::runConfigBuild()
+     [1] In fender::Manager::Manager(fender::ISceneFactory&, futils::INI::INIProxy*)
+Selected RenderLibrary : SFML
+     [2]	Renderer Built Successfully.
+     [3] In void fender::IRender::SmartModeInit(const futils::INI::INIProxy&, const string&)
 SmartMode detected. Running auto conf...
-[2] In void fender::Manager::runConfigBuild()
-Calling runConfigBuild : WindowName
+     [4]	Checking if scope fender exists...
+     [5]	Found ! Starting configuration...
+     [6]	Setting AllowWindowResize to false
+     [7]	Setting WindowHeight to 900
+     [8]	Setting WindowHorizontalAlign to Center
+     [9]	Setting WindowName to Fengine Demo (alpha v.1)
+     [10]	Setting WindowStyle to Borderless
+     [11]	Setting WindowVerticalAlign to Center
+     [12]	Setting WindowWidth to 1600

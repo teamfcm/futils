@@ -12,18 +12,14 @@ int main()
     futils::INI config("config/config.ini");
     auto global{config["global"]};
 
-    auto dllpath = config["global"]["fenderPath"];
-    START_LOG(global["logfile"]);
-    auto manager = futils::DynamicLibrary(dllpath)
+    START_LOG(config["global"]["logfile"]);
+    auto manager = futils::DynamicLibrary(config["global"]["fenderPath"])
                            .execute<fender::Manager,
                                    fender::ISceneFactory &,
                                    futils::INI::INIProxy *>
                                    ("manager", *(new demo::Factory),
                                     config.proxy());
     if (manager)
-    {
         manager->start();
-    }
-
     return 0;
 }

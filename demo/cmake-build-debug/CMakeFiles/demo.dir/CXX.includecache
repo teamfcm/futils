@@ -71,6 +71,8 @@ functional
 -
 Fini.hpp
 ../include/Fini.hpp
+futils.hpp
+../include/futils.hpp
 
 ../include/flog.hpp
 iostream
@@ -86,6 +88,8 @@ futils.hpp
 
 ../include/futils.hpp
 mutex
+-
+functional
 -
 
 /home/ganz/Work/teamfcm/futils/demo/Scenes/Intro/Splashscreen.cpp
@@ -155,6 +159,14 @@ functional
 -
 Fini.hpp
 /home/ganz/Work/teamfcm/futils/demo/include/Fini.hpp
+futils.hpp
+/home/ganz/Work/teamfcm/futils/demo/include/futils.hpp
+
+/home/ganz/Work/teamfcm/futils/demo/include/futils.hpp
+mutex
+-
+functional
+-
 
 /home/ganz/Work/teamfcm/futils/demo/main.cpp
 iostream

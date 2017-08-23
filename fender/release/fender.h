@@ -6,6 +6,7 @@
 # include <memory>
 # include <functional>
 # include "Fini.hpp"
+# include "futils.hpp"
 
 namespace fender
 {
@@ -35,6 +36,33 @@ namespace fender
     class   IRender
     {
     public:
+        enum class          WindowStyle
+        {
+            BORDERLESS,
+            NORMAL,
+            FULLSCREEN
+        };
+
+        enum class          Align
+        {
+            LEFT,
+            CENTER,
+            RIGHT,
+            TOP,
+            BOTTOM
+        };
+
+    protected:
+
+        using funcMap = std::map<std::string, futils::voidStringFunc>;
+
+        futils::Vec2d<int>      _windowSize;
+        std::string             _windowName;
+        WindowStyle             _windowStyle;
+        bool                    _resizable;
+        futils::Vec2d<Align>    _windowAlign;
+        funcMap                 configFunctions;
+    public:
         virtual ~IRender() {};
         virtual bool    isRunning() = 0;
         virtual void    openWindow() = 0;
@@ -42,6 +70,49 @@ namespace fender
         virtual void    write(int x, int y, std::string const &) = 0;
         virtual void    refresh() = 0;
         virtual void    resize(int x, int y) = 0;
+
+        void            SmartModeInit(futils::INI::INIProxy const &conf,
+                                      std::string const &confScope = "fender");
+
+        const futils::Vec2d<int> get_windowSize() const {
+            return _windowSize;
+        }
+
+        void set_windowSize(const futils::Vec2d<int> &_windowSize) {
+            IRender::_windowSize = _windowSize;
+        }
+
+        const std::string &get_windowName() const {
+            return _windowName;
+        }
+
+        void set_windowName(const std::string &_windowName) {
+            IRender::_windowName = _windowName;
+        }
+
+        fender::IRender::WindowStyle get_windowStyle() const {
+            return _windowStyle;
+        }
+
+        void    set_windowStyle(fender::IRender::WindowStyle _windowStyle) {
+            IRender::_windowStyle = _windowStyle;
+        }
+
+        bool is_resizable() const {
+            return _resizable;
+        }
+
+        void set_resizable(bool _resizable) {
+            IRender::_resizable = _resizable;
+        }
+
+        const futils::Vec2d<fender::IRender::Align> &get_windowAlign() const {
+            return _windowAlign;
+        }
+
+        void set_windowAlign(const futils::Vec2d<fender::IRender::Align> &_windowAlign) {
+            IRender::_windowAlign = _windowAlign;
+        }
     };
 
     class Manager

@@ -27,6 +27,7 @@ namespace flog
     class   Log
     {
     private:
+        std::string     previousFunc{""};
         std::string     filename;
         std::ofstream   file;
         std::mutex      mutex;
@@ -50,8 +51,16 @@ namespace flog
         {
             futils::ScopeLock   lock{this->mutex};
 
-            this->file << "[" << this->line << "] In " << func
-                       << std::endl << obj << std::endl;
+            if (this->previousFunc != func)
+            {
+                this->previousFunc = func;
+                this->file << std::setw(6) << "[" << this->line << "] In " << func
+                           << std::endl << obj << std::endl;
+            }
+            else
+            {
+                this->file << std::setw(6) << "[" << this->line << "]\t" << obj << std::endl;
+            }
             this->line++;
         }
 
@@ -60,8 +69,17 @@ namespace flog
         {
             futils::ScopeLock   lock{this->mutex};
 
-            std::cout << "--> In " + func << std::endl
-                      << obj << std::endl;
+            if (this->previousFunc != func)
+            {
+                this->previousFunc = func;
+                std::cout << "--> In " + func << std::endl
+                          << obj << std::endl;
+            }
+            else
+            {
+                std::cout << "-->\t" << obj << std::endl;
+            }
+
         }
 
         template    <typename T>
@@ -69,8 +87,17 @@ namespace flog
         {
             futils::ScopeLock   lock{this->mutex};
 
-            std::cerr << "==> In " + func << std::endl
-                      << obj << std::endl;
+            if (this->previousFunc != func)
+            {
+                this->previousFunc = func;
+                std::cerr << "==> In " + func << std::endl
+                          << obj << std::endl;
+            }
+            else
+            {
+                std::cerr << "==>\t" << obj << std::endl;
+            }
+
         }
 
         template    <typename T>

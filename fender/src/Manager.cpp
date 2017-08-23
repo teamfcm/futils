@@ -31,25 +31,15 @@ fender::Manager::Manager(ISceneFactory &fact,
         return std::make_unique<fender::CursesRender>();
     };
 
+    auto global = (*this->config)["global"];
     auto conf = (*this->config)["fender"];
-
-    this->configFunctions["WindowName"] = [this, conf]()
-    {this->setWindowName(conf["WindowName"]);};
-
+    std::string renderLibrary = global["RenderLibrary"];
+    LOUT("Selected RenderLibrary : " + renderLibrary);
+    if (!(this->renderer = this->renderingBuilders[renderLibrary]()))
+        throw std::runtime_error("Failed To Build " + global["RenderLibrary"]);
+    LOUT("Renderer Built Successfully.");
     if (conf["SmartMode"] == true)
-        this->runConfigBuild();
-}
-
-void fender::Manager::runConfigBuild()
-{
-    auto conf = (*this->config)["fender"];
-    LOUT("SmartMode detected. Running auto conf...");
-    this->renderer = this->renderingBuilders[conf["RenderLibrary"]]();
-    for (auto func: this->configFunctions)
-    {
-        LOUT("Calling runConfigBuild : " + func.first);
-        func.second();
-    }
+        this->renderer->SmartModeInit(*this->config);
 }
 
 void    fender::Manager::start()

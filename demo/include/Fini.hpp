@@ -54,7 +54,8 @@ namespace futils
             }
 
             operator std::string() const { return this->value; }
-            explicit operator bool() const { return this->value == "true"; }
+            explicit operator bool() const {
+                return this->value == "true"; }
         };
 
         friend std::ostream &operator << (std::ostream &os, Token const &tok)

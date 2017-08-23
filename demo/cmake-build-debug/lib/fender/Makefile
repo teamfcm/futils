@@ -125,6 +125,33 @@ fender/fast:
 	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/build
 .PHONY : fender/fast
 
+src/IRender.o: src/IRender.cpp.o
+
+.PHONY : src/IRender.o
+
+# target to build an object file
+src/IRender.cpp.o:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/IRender.cpp.o
+.PHONY : src/IRender.cpp.o
+
+src/IRender.i: src/IRender.cpp.i
+
+.PHONY : src/IRender.i
+
+# target to preprocess a source file
+src/IRender.cpp.i:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/IRender.cpp.i
+.PHONY : src/IRender.cpp.i
+
+src/IRender.s: src/IRender.cpp.s
+
+.PHONY : src/IRender.s
+
+# target to generate assembly for a file
+src/IRender.cpp.s:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/IRender.cpp.s
+.PHONY : src/IRender.cpp.s
+
 src/IScene.o: src/IScene.cpp.o
 
 .PHONY : src/IScene.o
@@ -242,6 +269,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... fender"
+	@echo "... src/IRender.o"
+	@echo "... src/IRender.i"
+	@echo "... src/IRender.s"
 	@echo "... src/IScene.o"
 	@echo "... src/IScene.i"
 	@echo "... src/IScene.s"

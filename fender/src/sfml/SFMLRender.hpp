@@ -16,12 +16,6 @@ namespace fender
     {
         sf::RenderWindow  win;
         sf::Event   events;
-        sf::Texture texture;
-        sf::Sprite  logo;
-        sf::RectangleShape  back{sf::Vector2f{250, 10}};
-        sf::RectangleShape  prog{sf::Vector2f{0, 10}};
-        sf::Texture electricityTexture;
-        float       progress{0.0};
     public:
         SFMLRender();
         virtual void    openWindow() override;
