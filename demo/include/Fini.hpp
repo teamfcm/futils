@@ -87,6 +87,16 @@ namespace futils
 
             Token   &operator [] (std::string const &name)
             {
+                if (this->tokens.find(name) == this->tokens.end())
+                {
+//                    This creates a solve for a petty bug
+//                    Better solution is to change from map to vector
+//                    and use capacity, reserve and size functions
+                    auto line = this->tokenLineIndex.end()->first + 1;
+                    this->tokens[name].name = name;
+                    this->tokens[name].lineNbr = line;
+                    this->tokenLineIndex[line] = name;
+                }
                 return this->tokens[name];
             }
 
@@ -180,7 +190,6 @@ namespace futils
                 }
                 else
                 {
-                    std::cerr << "Comment : " << line << std::endl;
                     if (mostRecentSection == "")
                     {
                         auto sec = new Section;
@@ -296,6 +305,14 @@ namespace futils
 
         Section   &operator [] (std::string const &name)
         {
+            if (this->sections.find(name) == this->sections.end())
+            {
+                auto line = this->sectionIndexTable.end()->first;
+                this->sections[name].lineNbr = line;
+                this->sections[name].name = name;
+                this->sections[name].content = "";
+                this->sectionIndexTable[line] = &this->sections[name];
+            }
             return this->sections[name];
         }
 
