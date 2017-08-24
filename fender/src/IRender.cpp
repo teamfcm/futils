@@ -16,11 +16,11 @@ void    fender::IRender::SmartModeInit(futils::INI::INIProxy const &proxyConf,
     this->configFunctions["WindowStyle"] = [this](std::string const &value)
     {
         if (value == "Borderless")
-            this->_windowStyle = fender::IRender::WindowStyle::BORDERLESS;
+            this->_windowStyle = fender::WindowStyle::BORDERLESS;
         else if (value == "Normal")
-            this->_windowStyle = fender::IRender::WindowStyle::NORMAL;
+            this->_windowStyle = fender::WindowStyle::NORMAL;
         else if (value == "Fullscreen")
-            this->_windowStyle = fender::IRender::WindowStyle::FULLSCREEN;
+            this->_windowStyle = fender::WindowStyle::FULLSCREEN;
         else
             throw std::runtime_error("Invalid WindowStyle Parameter:\t" + value);
     };
@@ -44,22 +44,22 @@ void    fender::IRender::SmartModeInit(futils::INI::INIProxy const &proxyConf,
     this->configFunctions["WindowHorizontalAlign"] = [this](std::string const &value)
     {
         if (value == "Center")
-            this->_windowAlign.X = fender::IRender::Align::CENTER;
+            this->_windowAlign.X = fender::Align::CENTER;
         else if (value == "Left")
-            this->_windowAlign.X = fender::IRender::Align::LEFT;
+            this->_windowAlign.X = fender::Align::LEFT;
         else if (value == "Right")
-            this->_windowAlign.X = fender::IRender::Align::RIGHT;
+            this->_windowAlign.X = fender::Align::RIGHT;
         else
             throw std::runtime_error("Invalid Argument :\t" + value);
     };
     this->configFunctions["WindowVerticalAlign"] = [this](std::string const &value)
     {
         if (value == "Center")
-            this->_windowAlign.Y = fender::IRender::Align::CENTER;
+            this->_windowAlign.Y = fender::Align::CENTER;
         else if (value == "Top")
-            this->_windowAlign.Y = fender::IRender::Align::TOP;
+            this->_windowAlign.Y = fender::Align::TOP;
         else if (value == "Bottom")
-            this->_windowAlign.Y = fender::IRender::Align::BOTTOM;
+            this->_windowAlign.Y = fender::Align::BOTTOM;
         else
             throw std::runtime_error("Invalid Argument :\t" + value);    };
 

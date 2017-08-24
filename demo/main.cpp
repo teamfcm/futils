@@ -4,8 +4,6 @@
 #include "DynamicLibrary.hpp"
 #include "flog.hpp"
 #include "Factory.hpp"
-#include "Fini.hpp"
-#include <typeinfo>
 
 int main()
 {
@@ -21,5 +19,6 @@ int main()
                                     config.proxy());
     if (manager)
         manager->start();
+    config.save("tmp.ini");
     return 0;
 }

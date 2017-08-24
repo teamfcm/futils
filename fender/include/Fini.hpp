@@ -14,6 +14,7 @@
 # include <vector>
 # include <iomanip>
 # include <map>
+# include "flog.hpp"
 
 namespace futils
 {
@@ -69,7 +70,7 @@ namespace futils
             int                 lineNbr{-1};
             std::string         content{""};
             std::unordered_map<std::string, Token>  tokens{};
-            std::map<int, std::string>                  tokenLineIndex{};
+            std::map<int, std::string>              tokenLineIndex{};
 
             void                set(Token *ptr)
             {
@@ -156,7 +157,7 @@ namespace futils
             std::string line;
             std::string mostRecentSection{""};
 
-            while ( getline (this->iniFile, line) )
+            while (getline(this->iniFile, line))
             {
                 content.push_back({nbr, line});
                 if (isSectionString(line))
@@ -315,6 +316,7 @@ namespace futils
                 this->iniFile.close();
         }
 
+//        Don't forget to store in a smart pointer. Could return a SP as well.
         INIProxy    *proxy()
         {
             return new INIProxy(this->sections, this->content);

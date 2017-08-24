@@ -25,6 +25,8 @@ iomanip
 -
 map
 -
+flog.hpp
+../lib/fender/include/flog.hpp
 
 ../lib/fender/include/flog.hpp
 iostream

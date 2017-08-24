@@ -14,6 +14,7 @@
 # include <vector>
 # include <iomanip>
 # include <map>
+# include "flog.hpp"
 
 namespace futils
 {
@@ -99,7 +100,7 @@ namespace futils
                 for (auto const &tok: this->tokenLineIndex)
                 {
                     auto actualToken = this->tokens.at(tok.second);
-                    if (actualToken.name != "")
+                    if (actualToken.name[0] != '#')
                         file << actualToken.name << "=" << actualToken.value << std::endl;
                     else
                         file << actualToken.content << std::endl;
@@ -179,10 +180,11 @@ namespace futils
                 }
                 else
                 {
+                    std::cerr << "Comment : " << line << std::endl;
                     if (mostRecentSection == "")
                     {
                         auto sec = new Section;
-                        sec->name = "";
+                        sec->name = "#" + std::to_string(nbr);
                         sec->content = line;
                         sec->lineNbr = nbr;
                         this->sectionIndexTable[nbr] = sec;
@@ -190,7 +192,7 @@ namespace futils
                     else
                     {
                         auto tok = new Token;
-                        tok->name = "";
+                        tok->name = "#" + std::to_string(nbr);
                         tok->content = line;
                         tok->lineNbr = nbr;
                         this->sections[mostRecentSection].set(tok);
@@ -224,6 +226,7 @@ namespace futils
             outputFile.open(file);
             if (outputFile.is_open())
             {
+                LOUT("Saved INI " + this->filepath + " to " + file);
                 for (auto const &sec: this->sectionIndexTable)
                 {
                     if (sec.second->name != "")

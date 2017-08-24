@@ -14,3 +14,5 @@ SmartMode detected. Running auto conf...
      [10]	Setting WindowStyle to Borderless
      [11]	Setting WindowVerticalAlign to Center
      [12]	Setting WindowWidth to 1600
+     [13] In void futils::INI::writeContentTo(const string&) const
+Saved INI config/config.ini to tmp.ini

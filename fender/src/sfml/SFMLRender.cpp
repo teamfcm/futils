@@ -24,21 +24,21 @@ void    fender::SFMLRender::openWindow()
     auto windowStyle = static_cast<int>(sf::Style::None);
     if (this->_resizable)
         windowStyle |= sf::Style::Resize;
-    if (this->_windowStyle != fender::IRender::WindowStyle::BORDERLESS)
+    if (this->_windowStyle != fender::WindowStyle::BORDERLESS)
         windowStyle |= sf::Style::Titlebar | sf::Style::Close;
-    if (this->_windowStyle == fender::IRender::WindowStyle::FULLSCREEN)
+    if (this->_windowStyle == fender::WindowStyle::FULLSCREEN)
         windowStyle |= sf::Style::Fullscreen;
     this->win.create(sf::VideoMode(this->_windowSize.X, this->_windowSize.Y),
                      this->_windowName, windowStyle);
     int xAlign = 0;
     int yAlign = 0;
-    if (_windowAlign.X == fender::IRender::Align::CENTER)
+    if (_windowAlign.X == fender::Align::CENTER)
         xAlign = mode.width / 2 - win.getSize().x / 2;
-    if (_windowAlign.Y == fender::IRender::Align::CENTER)
+    if (_windowAlign.Y == fender::Align::CENTER)
         yAlign = mode.height / 2 - win.getSize().y / 2;
-    if (_windowAlign.X == fender::IRender::Align::RIGHT)
+    if (_windowAlign.X == fender::Align::RIGHT)
         xAlign = mode.width - win.getSize().x;
-    if (_windowAlign.Y == fender::IRender::Align::BOTTOM)
+    if (_windowAlign.Y == fender::Align::BOTTOM)
         yAlign = mode.width - win.getSize().y;
     this->win.setPosition(sf::Vector2i(xAlign, yAlign));
 //    if (!this->texture.loadFromFile("assets/images/fengine.png"))
