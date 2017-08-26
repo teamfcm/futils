@@ -39,6 +39,11 @@ namespace futils
             int         lineNbr{-1};
             void    operator = (std::string const &val)
             {
+                if (val == "")
+                    throw std::runtime_error("Missing argument for "
+                                             + this->name
+                                             + " line "
+                                             + std::to_string(this->lineNbr));
                 if (val[0] == '\"' && val[val.size() - 1] == '\"')
                     value = val;
                 else
@@ -57,6 +62,9 @@ namespace futils
             operator std::string() const { return this->value; }
             explicit operator bool() const {
                 return this->value == "true"; }
+            explicit operator int() const {
+                return std::stoi(this->value);
+            }
         };
 
         friend std::ostream &operator << (std::ostream &os, Token const &tok)
@@ -65,6 +73,7 @@ namespace futils
             return os;
         }
 
+    public:
         struct  Section
         {
             std::string         name{""};
@@ -120,6 +129,7 @@ namespace futils
             }
         };
 
+    private:
         std::vector<char>   forbiddenCharacters{' ', '\n'};
         std::list<Line>     content{};
         std::string         input{""};

@@ -61,7 +61,12 @@ void    fender::IRender::SmartModeInit(futils::INI::INIProxy const &proxyConf,
         else if (value == "Bottom")
             this->_windowAlign.Y = fender::Align::BOTTOM;
         else
-            throw std::runtime_error("Invalid Argument :\t" + value);    };
+            throw std::runtime_error("Invalid Argument :\t" + value);
+    };
+    this->configFunctions["AssetsPath"] = [this](std::string const &value)
+    {
+        this->_assetsPath = value;
+    };
 
     LOUT("SmartMode detected. Running auto conf...");
     LOUT("Checking if scope " + confScope + " exists...");

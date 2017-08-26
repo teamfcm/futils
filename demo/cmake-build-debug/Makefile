@@ -136,32 +136,32 @@ fender/fast:
 	$(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/build
 .PHONY : fender/fast
 
-Scenes/Intro/Splashscreen.o: Scenes/Intro/Splashscreen.cpp.o
+Scenes/Splashscreen.o: Scenes/Splashscreen.cpp.o
 
-.PHONY : Scenes/Intro/Splashscreen.o
+.PHONY : Scenes/Splashscreen.o
 
 # target to build an object file
-Scenes/Intro/Splashscreen.cpp.o:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o
-.PHONY : Scenes/Intro/Splashscreen.cpp.o
+Scenes/Splashscreen.cpp.o:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o
+.PHONY : Scenes/Splashscreen.cpp.o
 
-Scenes/Intro/Splashscreen.i: Scenes/Intro/Splashscreen.cpp.i
+Scenes/Splashscreen.i: Scenes/Splashscreen.cpp.i
 
-.PHONY : Scenes/Intro/Splashscreen.i
+.PHONY : Scenes/Splashscreen.i
 
 # target to preprocess a source file
-Scenes/Intro/Splashscreen.cpp.i:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.i
-.PHONY : Scenes/Intro/Splashscreen.cpp.i
+Scenes/Splashscreen.cpp.i:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.i
+.PHONY : Scenes/Splashscreen.cpp.i
 
-Scenes/Intro/Splashscreen.s: Scenes/Intro/Splashscreen.cpp.s
+Scenes/Splashscreen.s: Scenes/Splashscreen.cpp.s
 
-.PHONY : Scenes/Intro/Splashscreen.s
+.PHONY : Scenes/Splashscreen.s
 
 # target to generate assembly for a file
-Scenes/Intro/Splashscreen.cpp.s:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.s
-.PHONY : Scenes/Intro/Splashscreen.cpp.s
+Scenes/Splashscreen.cpp.s:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.s
+.PHONY : Scenes/Splashscreen.cpp.s
 
 include/Demo.o: include/Demo.cpp.o
 
@@ -254,9 +254,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... demo"
 	@echo "... fender"
-	@echo "... Scenes/Intro/Splashscreen.o"
-	@echo "... Scenes/Intro/Splashscreen.i"
-	@echo "... Scenes/Intro/Splashscreen.s"
+	@echo "... Scenes/Splashscreen.o"
+	@echo "... Scenes/Splashscreen.i"
+	@echo "... Scenes/Splashscreen.s"
 	@echo "... include/Demo.o"
 	@echo "... include/Demo.i"
 	@echo "... include/Demo.s"

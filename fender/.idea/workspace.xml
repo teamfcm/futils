@@ -35,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fender.h" pinned="false" current-in-tab="false">
+      <file leaf-file-name="fender.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/release/fender.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2380">
-              <caret line="119" column="47" lean-forward="false" selection-start-line="119" selection-start-column="47" selection-end-line="119" selection-end-column="47" />
+            <state relative-caret-position="320">
+              <caret line="69" column="11" lean-forward="false" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
               <folding>
                 <element signature="e#51#71#0" expanded="true" />
               </folding>
@@ -77,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Manager.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Manager.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Manager.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="268">
+            <state relative-caret-position="760">
               <caret line="38" column="78" lean-forward="false" selection-start-line="38" selection-start-column="78" selection-end-line="38" selection-end-column="78" />
               <folding>
                 <element signature="e#39#59#0" expanded="true" />
@@ -102,8 +102,8 @@
       <file leaf-file-name="IRender.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/IRender.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+            <state relative-caret-position="1240">
+              <caret line="62" column="12" lean-forward="false" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -122,8 +122,8 @@
       <file leaf-file-name="Fini.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/Fini.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1100">
-              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+            <state relative-caret-position="1320">
+              <caret line="66" column="11" lean-forward="false" selection-start-line="66" selection-start-column="11" selection-end-line="66" selection-end-column="11" />
               <folding />
             </state>
           </provider>
@@ -135,6 +135,7 @@
     <findStrings>
       <find>curses</find>
       <find>fender</find>
+      <find>Section</find>
     </findStrings>
     <replaceStrings>
       <replace>SFML</replace>
@@ -149,14 +150,14 @@
         <option value="$PROJECT_DIR$/src/IScene.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/include/flog.hpp" />
-        <option value="$PROJECT_DIR$/release/fender.h" />
         <option value="$PROJECT_DIR$/src/sfml/SFMLRender.hpp" />
         <option value="$PROJECT_DIR$/src/ncurses/CursesRender.hpp" />
         <option value="$PROJECT_DIR$/src/ncurses/CursesRender.cpp" />
         <option value="$PROJECT_DIR$/src/sfml/SFMLRender.cpp" />
+        <option value="$PROJECT_DIR$/src/Manager.cpp" />
         <option value="$PROJECT_DIR$/src/IRender.cpp" />
         <option value="$PROJECT_DIR$/include/Fini.hpp" />
-        <option value="$PROJECT_DIR$/src/Manager.cpp" />
+        <option value="$PROJECT_DIR$/release/fender.h" />
       </list>
     </option>
   </component>
@@ -545,11 +546,18 @@
       <workItem from="1503569108189" duration="363000" />
       <workItem from="1503569554690" duration="19000" />
       <workItem from="1503609313331" duration="15000" />
+      <workItem from="1503613405048" duration="32000" />
+      <workItem from="1503652321739" duration="7000" />
+      <workItem from="1503698348570" duration="11000" />
+      <workItem from="1503752897493" duration="878000" />
+      <workItem from="1503753888624" duration="6000" />
+      <workItem from="1503778698239" duration="9000" />
+      <workItem from="1503779755314" duration="8000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6876000" />
+    <option name="totallyTimeSpent" value="7827000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="29" width="1920" height="1051" extended-state="0" />
@@ -927,16 +935,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/release/fender.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2380">
-          <caret line="119" column="47" lean-forward="false" selection-start-line="119" selection-start-column="47" selection-end-line="119" selection-end-column="47" />
-          <folding>
-            <element signature="e#51#71#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/sfml/SFMLRender.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -979,28 +977,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Manager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="38" column="78" lean-forward="false" selection-start-line="38" selection-start-column="78" selection-end-line="38" selection-end-column="78" />
+          <folding>
+            <element signature="e#39#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/IRender.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
+        <state relative-caret-position="1240">
+          <caret line="62" column="12" lean-forward="false" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/Fini.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1100">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+        <state relative-caret-position="1320">
+          <caret line="66" column="11" lean-forward="false" selection-start-line="66" selection-start-column="11" selection-end-line="66" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Manager.cpp">
+    <entry file="file://$PROJECT_DIR$/release/fender.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="38" column="78" lean-forward="false" selection-start-line="38" selection-start-column="78" selection-end-line="38" selection-end-column="78" />
+        <state relative-caret-position="320">
+          <caret line="69" column="11" lean-forward="false" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
           <folding>
-            <element signature="e#39#59#0" expanded="true" />
+            <element signature="e#51#71#0" expanded="true" />
           </folding>
         </state>
       </provider>

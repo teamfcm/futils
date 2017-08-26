@@ -105,28 +105,28 @@ CMakeFiles/demo.dir/include/Factory.cpp.o.provides: CMakeFiles/demo.dir/include/
 CMakeFiles/demo.dir/include/Factory.cpp.o.provides.build: CMakeFiles/demo.dir/include/Factory.cpp.o
 
 
-CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o: CMakeFiles/demo.dir/flags.make
-CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o: ../Scenes/Intro/Splashscreen.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o -c /home/ganz/Work/teamfcm/futils/demo/Scenes/Intro/Splashscreen.cpp
+CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: CMakeFiles/demo.dir/flags.make
+CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: ../Scenes/Splashscreen.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o -c /home/ganz/Work/teamfcm/futils/demo/Scenes/Splashscreen.cpp
 
-CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ganz/Work/teamfcm/futils/demo/Scenes/Intro/Splashscreen.cpp > CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.i
+CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ganz/Work/teamfcm/futils/demo/Scenes/Splashscreen.cpp > CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.i
 
-CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ganz/Work/teamfcm/futils/demo/Scenes/Intro/Splashscreen.cpp -o CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.s
+CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ganz/Work/teamfcm/futils/demo/Scenes/Splashscreen.cpp -o CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.s
 
-CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o.requires:
+CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o.requires:
 
-.PHONY : CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o.requires
+.PHONY : CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o.requires
 
-CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o.provides: CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o.requires
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o.provides.build
-.PHONY : CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o.provides
+CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o.provides: CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o.requires
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o.provides.build
+.PHONY : CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o.provides
 
-CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o.provides.build: CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o
+CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o.provides.build: CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o
 
 
 CMakeFiles/demo.dir/include/Demo.cpp.o: CMakeFiles/demo.dir/flags.make
@@ -157,7 +157,7 @@ CMakeFiles/demo.dir/include/Demo.cpp.o.provides.build: CMakeFiles/demo.dir/inclu
 demo_OBJECTS = \
 "CMakeFiles/demo.dir/main.cpp.o" \
 "CMakeFiles/demo.dir/include/Factory.cpp.o" \
-"CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o" \
+"CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o" \
 "CMakeFiles/demo.dir/include/Demo.cpp.o"
 
 # External object files for target demo
@@ -165,7 +165,7 @@ demo_EXTERNAL_OBJECTS =
 
 ../demo: CMakeFiles/demo.dir/main.cpp.o
 ../demo: CMakeFiles/demo.dir/include/Factory.cpp.o
-../demo: CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o
+../demo: CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o
 ../demo: CMakeFiles/demo.dir/include/Demo.cpp.o
 ../demo: CMakeFiles/demo.dir/build.make
 ../demo: lib/release/libfender.so
@@ -180,7 +180,7 @@ CMakeFiles/demo.dir/build: ../demo
 
 CMakeFiles/demo.dir/requires: CMakeFiles/demo.dir/main.cpp.o.requires
 CMakeFiles/demo.dir/requires: CMakeFiles/demo.dir/include/Factory.cpp.o.requires
-CMakeFiles/demo.dir/requires: CMakeFiles/demo.dir/Scenes/Intro/Splashscreen.cpp.o.requires
+CMakeFiles/demo.dir/requires: CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o.requires
 CMakeFiles/demo.dir/requires: CMakeFiles/demo.dir/include/Demo.cpp.o.requires
 
 .PHONY : CMakeFiles/demo.dir/requires

@@ -5,6 +5,6 @@
 #ifndef DEMO_ALLSCENES_HPP
 #define DEMO_ALLSCENES_HPP
 
-# include "Splashscreen.hpp"
+# include "../Scenes/Splashscreen.hpp"
 
 #endif //DEMO_ALLSCENES_HPP

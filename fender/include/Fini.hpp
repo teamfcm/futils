@@ -64,6 +64,7 @@ namespace futils
             return os;
         }
 
+    public:
         struct  Section
         {
             std::string         name{""};

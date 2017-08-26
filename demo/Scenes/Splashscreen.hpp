@@ -15,10 +15,12 @@ namespace demo
         class   Splashscreen : public fender::IScene
         {
             demo::Demo   &env;
-            bool    done{false};
+            bool            done{false};
+            fender::Layout  layout;
         public:
-            Splashscreen(demo::Demo &);
-            virtual ~Splashscreen() {};
+            Splashscreen(demo::Demo &,
+                         std::string const &sceneFolder = "Scenes/");
+            ~Splashscreen(){this->layout.save();}
             virtual bool    isDone() override { return this->done; }
             virtual void    update() override;
             virtual void    init() override;

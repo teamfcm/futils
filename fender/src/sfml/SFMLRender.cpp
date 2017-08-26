@@ -28,19 +28,20 @@ void    fender::SFMLRender::openWindow()
         windowStyle |= sf::Style::Titlebar | sf::Style::Close;
     if (this->_windowStyle == fender::WindowStyle::FULLSCREEN)
         windowStyle |= sf::Style::Fullscreen;
-    this->win.create(sf::VideoMode(this->_windowSize.X, this->_windowSize.Y),
-                     this->_windowName, windowStyle);
     int xAlign = 0;
     int yAlign = 0;
     if (_windowAlign.X == fender::Align::CENTER)
-        xAlign = mode.width / 2 - win.getSize().x / 2;
+        xAlign = mode.width / 2 - this->_windowSize.X / 2;
     if (_windowAlign.Y == fender::Align::CENTER)
-        yAlign = mode.height / 2 - win.getSize().y / 2;
+        yAlign = mode.height / 2 - this->_windowSize.Y / 2;
     if (_windowAlign.X == fender::Align::RIGHT)
-        xAlign = mode.width - win.getSize().x;
+        xAlign = mode.width - this->_windowSize.X;
     if (_windowAlign.Y == fender::Align::BOTTOM)
-        yAlign = mode.width - win.getSize().y;
+        yAlign = mode.width - this->_windowSize.Y;
+    this->win.create(sf::VideoMode(this->_windowSize.X, this->_windowSize.Y),
+                     this->_windowName, windowStyle);
     this->win.setPosition(sf::Vector2i(xAlign, yAlign));
+
 //    if (!this->texture.loadFromFile("assets/images/fengine.png"))
 //    {
 //        LERR("Cannot load file fengine.png");
@@ -82,7 +83,7 @@ void    fender::SFMLRender::refresh()
             this->win.close();
         if (this->events.type == sf::Event::KeyPressed)
         {
-            if (this->events.key.code == sf::Keyboard::Escape)
+            if (this->events.key.code == sf::Keyboard::Return)
             {
                 std::cout << "the escape key was pressed" << std::endl;
                 std::cout << "control:" << this->events.key.control << std::endl;

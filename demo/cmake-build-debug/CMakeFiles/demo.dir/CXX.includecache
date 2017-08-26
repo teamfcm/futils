@@ -6,12 +6,6 @@
 
 #IncludeRegexTransform: 
 
-../Scenes/Headers/Splashscreen.hpp
-fender.h
-../Scenes/Headers/fender.h
-Demo.hpp
-../Scenes/Headers/Demo.hpp
-
 ../include/Demo.hpp
 
 ../include/DynamicLibrary.hpp
@@ -71,6 +65,8 @@ memory
 -
 functional
 -
+cxxabi.h
+-
 Fini.hpp
 ../include/Fini.hpp
 futils.hpp
@@ -94,13 +90,19 @@ mutex
 functional
 -
 
-/home/ganz/Work/teamfcm/futils/demo/Scenes/Intro/Splashscreen.cpp
+/home/ganz/Work/teamfcm/futils/demo/Scenes/Splashscreen.cpp
 Splashscreen.hpp
-/home/ganz/Work/teamfcm/futils/demo/Scenes/Intro/Splashscreen.hpp
+/home/ganz/Work/teamfcm/futils/demo/Scenes/Splashscreen.hpp
+
+/home/ganz/Work/teamfcm/futils/demo/Scenes/Splashscreen.hpp
+fender.h
+/home/ganz/Work/teamfcm/futils/demo/Scenes/fender.h
+Demo.hpp
+/home/ganz/Work/teamfcm/futils/demo/Scenes/Demo.hpp
 
 /home/ganz/Work/teamfcm/futils/demo/include/AllScenes.hpp
-Splashscreen.hpp
-/home/ganz/Work/teamfcm/futils/demo/include/Splashscreen.hpp
+../Scenes/Splashscreen.hpp
+/home/ganz/Work/teamfcm/futils/demo/Scenes/Splashscreen.hpp
 
 /home/ganz/Work/teamfcm/futils/demo/include/Demo.cpp
 Demo.hpp
@@ -160,6 +162,8 @@ string
 memory
 -
 functional
+-
+cxxabi.h
 -
 Fini.hpp
 /home/ganz/Work/teamfcm/futils/demo/include/Fini.hpp
