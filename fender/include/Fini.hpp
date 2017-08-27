@@ -325,6 +325,16 @@ namespace futils
 
 
         std::string const &getFilePath() const { return this->filepath; }
+        std::vector<std::string>    getScopeList() const
+        {
+            std::vector<std::string>    result;
+
+            for (auto const &name: this->sectionIndexTable)
+            {
+                result.push_back(name.second->name);
+            }
+            return result;
+        }
     };
 }
 

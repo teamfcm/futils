@@ -67,6 +67,10 @@ void    fender::IRender::SmartModeInit(futils::INI::INIProxy const &proxyConf,
     {
         this->_assetsPath = value;
     };
+    this->configFunctions["EditorMode"] = [this](std::string const &value)
+    {
+        this->_editorMode = value == "true";
+    };
 
     LOUT("SmartMode detected. Running auto conf...");
     LOUT("Checking if scope " + confScope + " exists...");

@@ -9,13 +9,17 @@ SmartMode detected. Running auto conf...
      [5]	Found ! Starting configuration...
      [6]	Setting AllowWindowResize to false
      [7]	Setting AssetsPath to assets/
-     [8]	Setting WindowHeight to 900
-     [9]	Setting WindowHorizontalAlign to Center
-     [10]	Setting WindowName to Fengine Demo (alpha v.1)
-     [11]	Setting WindowStyle to Borderless
-     [12]	Setting WindowVerticalAlign to Center
-     [13]	Setting WindowWidth to 1660
-     [14] In fender::Bar::Bar(futils::INI::Section&)
-An error occured while loading Bar loadingBar:	Missing argument
-     [15] In void futils::INI::writeContentTo(const string&) const
+     [8]	Setting EditorMode to true
+     [9]	Setting WindowHeight to 576
+     [10]	Setting WindowHorizontalAlign to Center
+     [11]	Setting WindowName to Fengine Demo (alpha v.1)
+     [12]	Setting WindowStyle to Borderless
+     [13]	Setting WindowVerticalAlign to Center
+     [14]	Setting WindowWidth to 1024
+     [15] In virtual void fender::SFMLRender::loadCurrentLayout()
+SFMLRender:	Loading Bar loadingBar
+     [16]	SFMLRender:	Loading Popup popup
+     [17]	SFMLRender:	Loading AnimatedImage logo
+     [18]	SFMLRender:	Loading Button exit
+     [19] In void futils::INI::writeContentTo(const string&) const
 Saved INI Scenes/Splashscreen.ini to Scenes/Splashscreen.ini

@@ -20,6 +20,7 @@ namespace fender
         virtual void    refresh() override;
         virtual void    resize(int x, int y) override {}
         virtual bool    isRunning() override {}
+        virtual void    loadCurrentLayout() override {}
     };
 }
 

@@ -41,20 +41,35 @@ void    fender::SFMLRender::openWindow()
     this->win.create(sf::VideoMode(this->_windowSize.X, this->_windowSize.Y),
                      this->_windowName, windowStyle);
     this->win.setPosition(sf::Vector2i(xAlign, yAlign));
+    this->initFactory();
+}
 
-//    if (!this->texture.loadFromFile("assets/images/fengine.png"))
-//    {
-//        LERR("Cannot load file fengine.png");
-//    }
-//    this->electricityTexture.loadFromFile("assets/textures/electricity.jpg");
-//    this->logo.setTexture(this->texture);
-//    this->texture.setSmooth(true);
-//    this->back.setFillColor(sf::Color::White);
-//    this->prog.setTexture(&this->electricityTexture);
-//    this->back.setPosition(200, 320);
-//    this->prog.setPosition(200, 320);
-//    this->logo.setPosition(85, -55);
-//    this->logo.setScale(sf::Vector2f{0.3, 0.3});
+void    fender::SFMLRender::initFactory()
+{
+    this->elementFactory["AnimatedImage"] = [this](fender::Element &src)
+    {
+        auto *obj = dynamic_cast<fender::AnimatedImage *>(&src);
+        if (obj)
+            this->create<types::AnimatedImage>(*obj);
+    };
+    this->elementFactory["Bar"] = [this](fender::Element &src)
+    {
+        auto *obj = dynamic_cast<fender::Bar *>(&src);
+        if (obj)
+            this->create<types::Bar>(*obj);
+    };
+    this->elementFactory["Button"] = [this](fender::Element &src)
+    {
+        auto *obj = dynamic_cast<fender::Button *>(&src);
+        if (obj)
+            this->create<types::Button>(*obj);
+    };
+    this->elementFactory["Popup"] = [this](fender::Element &src)
+    {
+        auto *obj = dynamic_cast<fender::Popup *>(&src);
+        if (obj)
+            this->create<types::Popup>(*obj);
+    };
 }
 
 void    fender::SFMLRender::closeWindow()
@@ -70,11 +85,17 @@ bool    fender::SFMLRender::isRunning()
 void    fender::SFMLRender::refresh()
 {
     this->win.clear(sf::Color::Black);
-    // draw everything here...
-//    this->win.draw(this->logo);
-//    this->win.draw(this->back);
-//    this->win.draw(this->prog);
-    // end the current frame
+    if (this->currentLayout->isVisible())
+    {
+        for (auto &pair: this->elements)
+        {
+            auto &elem = *pair.second;
+            elem.update();
+            if (!elem.src.isVisible())
+                continue ;
+            elem.draw(this->win);
+        }
+    }
     this->win.display();
 
     while (this->win.pollEvent(this->events))
@@ -94,11 +115,6 @@ void    fender::SFMLRender::refresh()
             }
         }
     }
-
-//    this->prog.setSize(sf::Vector2f(this->progress * 250.0 / 100.0, 10));
-//    this->progress += 0.1;
-//    if (this->progress >= 100)
-//        this->win.close();
 }
 
 void    fender::SFMLRender::resize(int x, int y)
@@ -109,4 +125,16 @@ void    fender::SFMLRender::resize(int x, int y)
 void    fender::SFMLRender::write(int x, int y, std::string const &msg)
 {
 
+}
+
+void    fender::SFMLRender::loadCurrentLayout()
+{
+    fonts["jedi"].loadFromFile("assets/fonts/jedi.ttf");
+    fonts["pixel"].loadFromFile("assets/fonts/pixel.ttf");
+    fonts["game"].loadFromFile("assets/fonts/game.ttf");
+    for (auto const &pair: this->currentLayout->getElements())
+    {
+        LOUT("SFMLRender:\tLoading " + pair.second->getType() + " " + pair.second->getName());
+        this->elementFactory[pair.second->getType()](*pair.second);
+    }
 }

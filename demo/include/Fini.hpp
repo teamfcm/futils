@@ -45,9 +45,13 @@ namespace futils
                                              + " line "
                                              + std::to_string(this->lineNbr));
                 if (val[0] == '\"' && val[val.size() - 1] == '\"')
+                {
                     value = val;
+                    value.erase(0, 1);
+                    value = value.substr(0, value.size() - 1);
+                }
                 else
-                    value = "\"" + val + "\"";
+                    value = val;
             }
 
             void    operator = (int nbr)
@@ -353,6 +357,16 @@ namespace futils
 
 
         std::string const &getFilePath() const { return this->filepath; }
+        std::vector<std::string>    getScopeList() const
+        {
+            std::vector<std::string>    result;
+
+            for (auto const &name: this->sectionIndexTable)
+            {
+                result.push_back(name.second->name);
+            }
+            return result;
+        }
     };
 }
 

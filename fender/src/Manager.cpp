@@ -54,7 +54,7 @@ void    fender::Manager::start()
         {
             scene->update();
             this->renderer->refresh();
-            usleep(5000);
+            usleep(100000);
         }
     }
 }
