@@ -46,7 +46,7 @@ mutex
 functional
 -
 
-../lib/fender/release/fender.h
+../lib/fender/release/fender.hpp
 iostream
 -
 string
@@ -63,20 +63,20 @@ futils.hpp
 ../lib/fender/release/futils.hpp
 
 /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/IRender.cpp
-fender.h
-/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/fender.h
+fender.hpp
+/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/fender.hpp
 futils.hpp
 /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/futils.hpp
 flog.hpp
 /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/flog.hpp
 
 /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/IScene.cpp
-fender.h
-/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/fender.h
+fender.hpp
+/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/fender.hpp
 
 /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/Manager.cpp
-fender.h
-/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/fender.h
+fender.hpp
+/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/fender.hpp
 flog.hpp
 /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/flog.hpp
 sfml/SFMLRender.hpp
@@ -101,8 +101,8 @@ flog.hpp
 /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ncurses/CursesRender.hpp
 string
 -
-fender.h
-/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ncurses/fender.h
+fender.hpp
+/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ncurses/fender.hpp
 
 /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/sfml/SFMLRender.cpp
 iostream
@@ -123,6 +123,6 @@ SFML/Graphics.hpp
 -
 string
 -
-fender.h
-/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/sfml/fender.h
+fender.hpp
+/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/sfml/fender.hpp
 

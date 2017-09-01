@@ -4,19 +4,19 @@
 lib/fender/CMakeFiles/fender.dir/src/IRender.cpp.o: ../lib/fender/include/Fini.hpp
 lib/fender/CMakeFiles/fender.dir/src/IRender.cpp.o: ../lib/fender/include/flog.hpp
 lib/fender/CMakeFiles/fender.dir/src/IRender.cpp.o: ../lib/fender/include/futils.hpp
-lib/fender/CMakeFiles/fender.dir/src/IRender.cpp.o: ../lib/fender/release/fender.h
+lib/fender/CMakeFiles/fender.dir/src/IRender.cpp.o: ../lib/fender/release/fender.hpp
 lib/fender/CMakeFiles/fender.dir/src/IRender.cpp.o: ../lib/fender/src/IRender.cpp
 
 lib/fender/CMakeFiles/fender.dir/src/IScene.cpp.o: ../lib/fender/include/Fini.hpp
 lib/fender/CMakeFiles/fender.dir/src/IScene.cpp.o: ../lib/fender/include/flog.hpp
 lib/fender/CMakeFiles/fender.dir/src/IScene.cpp.o: ../lib/fender/include/futils.hpp
-lib/fender/CMakeFiles/fender.dir/src/IScene.cpp.o: ../lib/fender/release/fender.h
+lib/fender/CMakeFiles/fender.dir/src/IScene.cpp.o: ../lib/fender/release/fender.hpp
 lib/fender/CMakeFiles/fender.dir/src/IScene.cpp.o: ../lib/fender/src/IScene.cpp
 
 lib/fender/CMakeFiles/fender.dir/src/Manager.cpp.o: ../lib/fender/include/Fini.hpp
 lib/fender/CMakeFiles/fender.dir/src/Manager.cpp.o: ../lib/fender/include/flog.hpp
 lib/fender/CMakeFiles/fender.dir/src/Manager.cpp.o: ../lib/fender/include/futils.hpp
-lib/fender/CMakeFiles/fender.dir/src/Manager.cpp.o: ../lib/fender/release/fender.h
+lib/fender/CMakeFiles/fender.dir/src/Manager.cpp.o: ../lib/fender/release/fender.hpp
 lib/fender/CMakeFiles/fender.dir/src/Manager.cpp.o: ../lib/fender/src/Manager.cpp
 lib/fender/CMakeFiles/fender.dir/src/Manager.cpp.o: ../lib/fender/src/ncurses/CursesRender.hpp
 lib/fender/CMakeFiles/fender.dir/src/Manager.cpp.o: ../lib/fender/src/sfml/SFMLRender.hpp
@@ -24,14 +24,14 @@ lib/fender/CMakeFiles/fender.dir/src/Manager.cpp.o: ../lib/fender/src/sfml/SFMLR
 lib/fender/CMakeFiles/fender.dir/src/ncurses/CursesRender.cpp.o: ../lib/fender/include/Fini.hpp
 lib/fender/CMakeFiles/fender.dir/src/ncurses/CursesRender.cpp.o: ../lib/fender/include/flog.hpp
 lib/fender/CMakeFiles/fender.dir/src/ncurses/CursesRender.cpp.o: ../lib/fender/include/futils.hpp
-lib/fender/CMakeFiles/fender.dir/src/ncurses/CursesRender.cpp.o: ../lib/fender/release/fender.h
+lib/fender/CMakeFiles/fender.dir/src/ncurses/CursesRender.cpp.o: ../lib/fender/release/fender.hpp
 lib/fender/CMakeFiles/fender.dir/src/ncurses/CursesRender.cpp.o: ../lib/fender/src/ncurses/CursesRender.cpp
 lib/fender/CMakeFiles/fender.dir/src/ncurses/CursesRender.cpp.o: ../lib/fender/src/ncurses/CursesRender.hpp
 
 lib/fender/CMakeFiles/fender.dir/src/sfml/SFMLRender.cpp.o: ../lib/fender/include/Fini.hpp
 lib/fender/CMakeFiles/fender.dir/src/sfml/SFMLRender.cpp.o: ../lib/fender/include/flog.hpp
 lib/fender/CMakeFiles/fender.dir/src/sfml/SFMLRender.cpp.o: ../lib/fender/include/futils.hpp
-lib/fender/CMakeFiles/fender.dir/src/sfml/SFMLRender.cpp.o: ../lib/fender/release/fender.h
+lib/fender/CMakeFiles/fender.dir/src/sfml/SFMLRender.cpp.o: ../lib/fender/release/fender.hpp
 lib/fender/CMakeFiles/fender.dir/src/sfml/SFMLRender.cpp.o: ../lib/fender/src/sfml/SFMLRender.cpp
 lib/fender/CMakeFiles/fender.dir/src/sfml/SFMLRender.cpp.o: ../lib/fender/src/sfml/SFMLRender.hpp
 

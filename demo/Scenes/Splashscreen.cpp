@@ -3,7 +3,7 @@
 //
 
 # include "Splashscreen.hpp"
-#include "../lib/fender/release/fender.h"
+# include "fender.hpp"
 
 demo::scenes::Splashscreen::Splashscreen(demo::Demo &e,
                                          std::string const &sceneFolder):
@@ -12,14 +12,16 @@ demo::scenes::Splashscreen::Splashscreen(demo::Demo &e,
 {
     this->name = "Splashscreen";
     layout.rename("Splashscreen");
+    fender::Event   quit(fender::Keyboard::Escape);
+    this->eventSystem.add(quit, [this](){
+        this->done = true;
+    });
 }
 
 void    demo::scenes::Splashscreen::init()
 {
     this->renderer->openWindow();
-//    register layout will just make it known to the renderer
     this->renderer->registerLayout(this->layout);
-//    if you want to use it, you need to say it !
     this->renderer->useLayout("Splashscreen");
     auto logo = this->layout.get<fender::AnimatedImage>("logo");
     auto loadingBar = this->layout.get<fender::Bar>("loadingBar");
@@ -34,7 +36,13 @@ void    demo::scenes::Splashscreen::init()
 void    demo::scenes::Splashscreen::update()
 {
     auto &loadingBar = this->layout.get<fender::Bar>("loadingBar");
-    loadingBar.increment(rand() % 4);
     if (loadingBar.done())
-        this->done = true;
+    {
+        loadingBar.setLabel("Press Enter to Quit");
+    }
+    else
+    {
+        loadingBar.setLabel(" (" + std::to_string(loadingBar.getCurrent()) + " %)");
+        loadingBar.increment();
+    }
 }

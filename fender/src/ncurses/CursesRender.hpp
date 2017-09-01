@@ -6,7 +6,7 @@
 #define FENDER_CURSESRENDER_HPP
 
 # include <string>
-# include "fender.h"
+# include "fender.hpp"
 
 namespace fender
 {
@@ -21,6 +21,7 @@ namespace fender
         virtual void    resize(int x, int y) override {}
         virtual bool    isRunning() override {}
         virtual void    loadCurrentLayout() override {}
+        virtual void    pollEvents() override {}
     };
 }
 

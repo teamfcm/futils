@@ -5,7 +5,7 @@
 #ifndef DEMO_INTRO_HPP
 #define DEMO_INTRO_HPP
 
-# include "fender.h"
+# include "fender.hpp"
 # include "Demo.hpp"
 
 namespace demo
@@ -14,9 +14,10 @@ namespace demo
     {
         class   Splashscreen : public fender::IScene
         {
-            demo::Demo   &env;
-            bool            done{false};
-            fender::Layout  layout;
+            demo::Demo          &env;
+            bool                done{false};
+            fender::Layout      layout;
+            fender::EventSystem eventSystem;
         public:
             Splashscreen(demo::Demo &,
                          std::string const &sceneFolder = "Scenes/");

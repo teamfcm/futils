@@ -15,7 +15,7 @@ extern "C" fender::SFMLRender* create()
 
 fender::SFMLRender::SFMLRender()
 {
-
+    this->initFactory();
 }
 
 void    fender::SFMLRender::openWindow()
@@ -41,7 +41,6 @@ void    fender::SFMLRender::openWindow()
     this->win.create(sf::VideoMode(this->_windowSize.X, this->_windowSize.Y),
                      this->_windowName, windowStyle);
     this->win.setPosition(sf::Vector2i(xAlign, yAlign));
-    this->initFactory();
 }
 
 void    fender::SFMLRender::initFactory()
@@ -97,23 +96,29 @@ void    fender::SFMLRender::refresh()
         }
     }
     this->win.display();
+}
 
-    while (this->win.pollEvent(this->events))
+void    fender::SFMLRender::pollEvents()
+{
+    sf::Event   event;
+    while (this->win.pollEvent(event))
     {
-        if (this->events.type == sf::Event::Closed)
-            this->win.close();
-        if (this->events.type == sf::Event::KeyPressed)
+        if (event.key.code == sf::Keyboard::Escape)
         {
-            if (this->events.key.code == sf::Keyboard::Return)
-            {
-                std::cout << "the escape key was pressed" << std::endl;
-                std::cout << "control:" << this->events.key.control << std::endl;
-                std::cout << "alt:" << this->events.key.alt << std::endl;
-                std::cout << "shift:" << this->events.key.shift << std::endl;
-                std::cout << "system:" << this->events.key.system << std::endl;
-                this->win.close();
-            }
+            fender::Event ev({{fender::Keyboard::Escape, fender::State::Down}});
+            this->_eventSystem.emit(ev);
         }
+//        {
+//            if (this->events.key.code == sf::Keyboard::Return)
+//            {
+//                std::cout << "the escape key was pressed" << std::endl;
+//                std::cout << "control:" << this->events.key.control << std::endl;
+//                std::cout << "alt:" << this->events.key.alt << std::endl;
+//                std::cout << "shift:" << this->events.key.shift << std::endl;
+//                std::cout << "system:" << this->events.key.system << std::endl;
+//                this->win.close();
+//            }
+//        }
     }
 }
 
@@ -129,6 +134,7 @@ void    fender::SFMLRender::write(int x, int y, std::string const &msg)
 
 void    fender::SFMLRender::loadCurrentLayout()
 {
+//    This should be in a LoaderObject for smooth preloading.
     fonts["jedi"].loadFromFile("assets/fonts/jedi.ttf");
     fonts["pixel"].loadFromFile("assets/fonts/pixel.ttf");
     fonts["game"].loadFromFile("assets/fonts/game.ttf");

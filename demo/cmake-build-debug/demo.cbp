@@ -164,7 +164,7 @@
 		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/include/futils.hpp">
 			<Option target="demo"/>
 		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/release/fender.h">
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/release/fender.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/IRender.cpp">

@@ -8,10 +8,24 @@
 # include <SFML/Window.hpp>
 # include <SFML/Graphics.hpp>
 # include <string>
-# include "fender.h"
+# include "fender.hpp"
 
 namespace fender
 {
+    class       EventMap
+    {
+        using Predicat = std::function<bool(void)>;
+        using Action = std::function<void(void)>;
+        std::vector<std::pair<Predicat, Action>>    events;
+    public:
+        EventMap();
+
+        void    add(Predicat const &pred, Action const &act)
+        {
+            events.emplace_back(std::make_pair(pred, act));
+        }
+    };
+
     namespace types
     {
         class BaseElement
@@ -43,17 +57,22 @@ namespace fender
         class AnimatedImage : public BaseElement
         {
             fender::AnimatedImage   &src;
+            sf::Texture             texture;
         public:
             AnimatedImage(fender::AnimatedImage &src):
                     BaseElement(src),
                     src(src)
             {
-
+                if (!this->texture.loadFromFile(this->src.getFilepath()))
+                    this->texture.loadFromFile("assets/images/undefined.jpg");
             }
 
             virtual void    init() override
             {
                 this->rectangle.setOutlineColor(sf::Color::Cyan);
+                this->texture.loadFromFile("assets/images/" + this->src.getFilepath());
+                this->rectangle.setTexture(&this->texture);
+                this->rectangle.setFillColor(sf::Color::White);
             }
 
             virtual void    update() override
@@ -94,18 +113,10 @@ namespace fender
                 float   x = this->rectangle.getSize().x;
                 float   y = this->rectangle.getSize().y;
                 float   ratio = (float)this->src.getCurrent() / (float)this->src.getMaximum();
-                if (ratio > 0.8)
-                    this->progress.setFillColor(sf::Color::Green);
-                else if (ratio > 0.6)
-                    this->progress.setFillColor(sf::Color::Blue);
-                else if (ratio > 0.4)
-                    this->progress.setFillColor(sf::Color::Yellow);
-                else if (ratio > 0.2)
-                    this->progress.setFillColor(sf::Color::Red);
+                this->progress.setFillColor(sf::Color{.r = ratio * 127, .g = ratio * 255, .b = ratio * 189});
                 ratio *= x;
                 this->progress.setSize(sf::Vector2f(ratio, y));
-                this->text.setString(this->src.getLabel() + std::to_string(this->src.getCurrent())
-                                     + " %");
+                this->text.setString(this->src.getLabel());
             }
 
             virtual void    draw(sf::RenderWindow &win) override
@@ -118,8 +129,10 @@ namespace fender
 
         class Popup : public BaseElement
         {
+            sf::Text            title;
+            sf::Text            message;
         public:
-            fender::Popup             &src;
+            fender::Popup       &src;
             Popup(fender::Popup &src):
                     BaseElement(src),
                     src(src)
@@ -130,6 +143,12 @@ namespace fender
             virtual void    init() override
             {
                 this->rectangle.setOutlineColor(sf::Color::Magenta);
+                this->title = this->text;
+                this->message = this->text;
+                this->title.setString(this->src.getTitle());
+                this->message.setString(this->src.getMessage());
+                this->title.move(- this->rectangle.getSize().x / 2, - this->rectangle.getSize().y / 2);
+                this->message.move(-this->rectangle.getSize().x /2, 0);
             }
 
             virtual void    update() override
@@ -140,6 +159,8 @@ namespace fender
             virtual void    draw(sf::RenderWindow &win) override
             {
                 BaseElement::draw(win);
+                win.draw(this->title);
+                win.draw(this->message);
             }
         };
 
@@ -228,6 +249,7 @@ namespace fender
         virtual void    resize(int x, int y) override;
         virtual bool    isRunning() override;
         virtual void    loadCurrentLayout() override;
+        virtual void    pollEvents() override;
     };
 }
 

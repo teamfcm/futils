@@ -2,7 +2,7 @@
 // Created by ganz on 18/08/17.
 //
 
-# include "fender.h"
+# include "fender.hpp"
 
 void fender::IScene::provideRenderer(IRender &renderer)
 {

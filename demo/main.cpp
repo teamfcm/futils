@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "fender.h"
+#include "fender.hpp"
 #include "DynamicLibrary.hpp"
 #include "flog.hpp"
 #include "Factory.hpp"

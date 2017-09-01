@@ -125,12 +125,23 @@ namespace fender
 
     class   AnimatedImage : public Element
     {
+        std::string         filepath{"undefined.jpg"};
     public:
         AnimatedImage(futils::INI::Section &sec):
                 Element(sec)
         {
-
+            try
+            {
+                LOAD(filepath, std::string)
+            }
+            catch (std::exception const &error)
+            {
+                SAVE(filepath, filepath)
+                LERR("An error occured while loading AnimatedImage " + name);
+            }
         }
+
+        std::string const   &getFilepath() const {return this->filepath;}
     };
 
     class   Bar : public Element
@@ -163,7 +174,8 @@ namespace fender
         void    increment(int add = 1) { this->current += add; }
         bool    done() const { return this->current >= this->maximum; }
         std::string const &getLabel() const {return this->label;}
-        void    setLabel(std::string const &lab) {SetAndSave(label, lab)}
+        void    setLabel(std::string const &lab) {this->label = lab;}
+        void    setLabelAndSave(std::string const &lab) {SetAndSave(label, lab)}
         int     getMinimum() const {return this->minimum;}
         int     getMaximum() const {return this->maximum;}
         int     getCurrent() const {return this->current;}
@@ -190,7 +202,8 @@ namespace fender
                 LERR("An error occured while loading Popup " + sec.name + ":\t" + error.what());
             }
         }
-
+        std::string const &getTitle() const {return this->title;}
+        std::string const &getMessage() const {return this->message;}
     };
 
     class Button : public Element
@@ -292,7 +305,197 @@ namespace fender
         void                setVisible(bool b) {this->visible = b;}
         bool                isVisible() const { return this->visible; }
     };
-
+    
+    enum class State : int
+    {
+        Undefined = 1,
+        Up = 2,
+        Down = 4,
+        GoingUp = 8,
+        GoingDown = 16,
+        Starting = 32,
+        Occuring = 64,
+        Ending = 128,
+    };
+    
+    enum class Keyboard : int
+    {
+        Undefined = 0,
+        A = 1, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
+        F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,
+        ArrowUp, ArrowDown, ArrowLeft, ArrowRight,
+        Return, Backspace, Space, Escape, Delete, Tab, LCtrl, RCtrl, LShift, RShift,
+        Num1, Num2, Num3, Num4, Num5, Num6, Num7, Num8, Num9, Num0,
+        Capslock, PageUp, PageDown,
+        Ampersand, Hashtag, Quote, DoubleQuote, Dash, Underscore,
+        LParenthesis, RParenthesis, LBracket, RBracket, LSquareBracket, RSquareBracket,
+        Colon, SemiColon, QuestionMark, ExclamationMark, Comma, Dot, Percent, Asterisk,
+        Slash, BackSlash,
+        NBR_SUPPORTED_KEYBOARD_KEYS
+    };
+    
+    enum class Mouse : int
+    {
+        Undefined = 0,
+        LButton = 1,
+        RButton,
+        MouseWheelUp,
+        MouseWheelDown,
+        MouseWheelButton,
+        NBR_SUPPORTED_MOUSE_KEYS
+    };
+    
+    class   Event
+    {
+        std::string                                 _label{""};
+        std::vector<std::pair<Keyboard, State>>     _keyboardKeys;
+        std::vector<std::pair<Mouse, State>>        _mouseKeys;
+        int                                         _identifier{0};
+        void                                        updateIdentifier()
+        {
+            std::function<int(int, int)> pairing = [this](int a, int b){
+                return (int)((0.5)*(a + b)*(a + b + 1) + b);
+            };
+            auto keyboardId = pairing(static_cast<int>(this->_keyboardKeys.front().first),
+                                      static_cast<int>(this->_keyboardKeys.front().second));
+            if (_keyboardKeys.size() > 1)
+                for (auto mIter = std::next(_keyboardKeys.begin());
+                     mIter != _keyboardKeys.end(); ++mIter)
+                    keyboardId = pairing(keyboardId, pairing(static_cast<int>(mIter->first),
+                                                             static_cast<int>(mIter->second)));
+            if (this->_mouseKeys.size() == 0)
+            {
+                this->_identifier = keyboardId;
+                return ;
+            }
+            auto mouseId = pairing(static_cast<int>(this->_mouseKeys.front().first),
+                                   static_cast<int>(this->_mouseKeys.front().second));
+            if (_mouseKeys.size() > 1)
+                for (auto mIter = std::next(_mouseKeys.begin());
+                     mIter != _mouseKeys.end(); ++mIter)
+                    mouseId = pairing(mouseId, pairing(static_cast<int>(mIter->first),
+                                                       static_cast<int>(mIter->second)));
+            this->_identifier = pairing(keyboardId, mouseId);
+        };
+        
+    public:
+        Event(Mouse key)
+        {
+            this->_mouseKeys.push_back(std::make_pair(key, fender::State::Down));
+            this->updateIdentifier();
+        }
+        Event(Keyboard key)
+        {
+            this->_keyboardKeys.push_back(std::make_pair(key, fender::State::Down));
+            this->updateIdentifier();
+        }
+        Event(std::vector<std::pair<Keyboard, State>> const &keyboardVec,
+              std::vector<std::pair<Mouse, State>> const &mouseVec = {}):
+                _keyboardKeys(keyboardVec),
+                _mouseKeys(mouseVec)
+        {
+            this->updateIdentifier();
+        }
+        
+   
+        
+        int         getIdentifier() const {return this->_identifier;}
+        void        setLabel(std::string const &label) {this->_label = label;}
+        std::string getLabel() const {return this->_label;}
+    };
+    
+    template    <typename T>
+    class       Mediator
+    {
+        std::list<T *>      clients;
+        
+//        Private constructor for Singleton pattern
+        Mediator() {}
+        
+        template        <typename MsgType>
+        decltype(auto)  getMap()
+        {
+            static auto  *map = new std::list<T *>();
+            return *map;
+        }
+    public:
+        static Mediator    &get() {
+            static auto *inst = new Mediator<T>();
+            return *inst;
+        };
+        
+        void        registerClient(T &client)
+        {
+            this->clients.push_front(&client);
+            LOUT("New client registered.");
+        }
+        
+        void        unregisterClient(T &client)
+        {
+            this->clients.remove(&client);
+        }
+        
+        template    <typename MsgType>
+        void        requestMsgType(T &client) {
+//            if (this->clients.find(&client) == this->clients.end())
+//                throw std::runtime_error("Unregistered clients cannot request Messages.");
+            this->getMap<MsgType>().push_back(&client);
+        }
+        
+        template    <typename MsgType>
+        void        forgetMsgType(T &client) {
+            this->getMap<MsgType>().remove(&client);
+        }
+        
+        template    <typename MsgType>
+        void        send(MsgType &msg)
+        {
+            auto &clients = this->getMap<MsgType>();
+            for (auto client : clients)
+                client->receive(msg);
+        }
+    };
+    
+    class   EventSystem
+    {
+        Mediator<EventSystem>   &_mediator;
+        std::unordered_map<fender::Keyboard, std::function<void(void)>> actions;
+        std::unordered_map<int, std::function<void(void)>>     eventFunctions;
+        std::unordered_map<int, fender::Event *>          requestedEvents;
+    public:
+        EventSystem():
+                _mediator(Mediator<EventSystem>::get())
+        {
+            _mediator.registerClient(*this);
+        }
+        ~EventSystem(){
+            _mediator.unregisterClient(*this);
+        }
+        
+        void        emit(fender::Event event)
+        {
+            _mediator.send<Event>(event);
+        }
+        
+        void        receive(fender::Event &event)
+        {
+            if (this->eventFunctions.find(event.getIdentifier()) != this->eventFunctions.end())
+                this->eventFunctions[event.getIdentifier()]();
+        }
+        
+        void        add(fender::Event &event)
+        {
+            this->_mediator.requestMsgType<Event>(*this);
+            this->requestedEvents[event.getIdentifier()] = &event;
+        }
+        
+        void        add(fender::Event &event, std::function<void(void)> func)
+        {
+            this->add(event);
+            this->eventFunctions[event.getIdentifier()] = func;
+        };
+    };
+    
     class   IRender
     {
     protected:
@@ -308,6 +511,8 @@ namespace fender
         std::unordered_map<std::string, const fender::Layout *>   knownLayouts;
         const fender::Layout          *currentLayout{nullptr};
         bool                    _editorMode{false};
+        fender::EventSystem     _eventSystem;
+        
     public:
         virtual ~IRender() {};
         virtual bool    isRunning() = 0;
@@ -317,6 +522,7 @@ namespace fender
         virtual void    refresh() = 0;
         virtual void    resize(int x, int y) = 0;
         virtual void    loadCurrentLayout() = 0;
+        virtual void    pollEvents() = 0;
 
         void            SmartModeInit(futils::INI::INIProxy const &conf,
                                       std::string const &confScope = "fender");

@@ -2,7 +2,7 @@
 // Created by ganz on 16/08/17.
 //
 
-# include "fender.h"
+# include "fender.hpp"
 # include "flog.hpp"
 # include "sfml/SFMLRender.hpp"
 # include "ncurses/CursesRender.hpp"
@@ -52,9 +52,10 @@ void    fender::Manager::start()
         while (scene->isDone() == false
                 && this->renderer->isRunning())
         {
+            this->renderer->pollEvents();
             scene->update();
             this->renderer->refresh();
-            usleep(100000);
+            usleep(20000);
         }
     }
 }

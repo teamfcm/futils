@@ -2,24 +2,29 @@
 Start log in logfile.txt
      [1] In fender::Manager::Manager(fender::ISceneFactory&, futils::INI::INIProxy*)
 Selected RenderLibrary : SFML
-     [2]	Renderer Built Successfully.
-     [3] In void fender::IRender::SmartModeInit(const futils::INI::INIProxy&, const string&)
+     [2] In void fender::Mediator<T>::registerClient(T&) [with T = fender::EventSystem]
+New client registered.
+     [3] In fender::Manager::Manager(fender::ISceneFactory&, futils::INI::INIProxy*)
+Renderer Built Successfully.
+     [4] In void fender::IRender::SmartModeInit(const futils::INI::INIProxy&, const string&)
 SmartMode detected. Running auto conf...
-     [4]	Checking if scope fender exists...
-     [5]	Found ! Starting configuration...
-     [6]	Setting AllowWindowResize to false
-     [7]	Setting AssetsPath to assets/
-     [8]	Setting EditorMode to true
-     [9]	Setting WindowHeight to 576
-     [10]	Setting WindowHorizontalAlign to Center
-     [11]	Setting WindowName to Fengine Demo (alpha v.1)
-     [12]	Setting WindowStyle to Borderless
-     [13]	Setting WindowVerticalAlign to Center
-     [14]	Setting WindowWidth to 1024
-     [15] In virtual void fender::SFMLRender::loadCurrentLayout()
+     [5]	Checking if scope fender exists...
+     [6]	Found ! Starting configuration...
+     [7]	Setting AllowWindowResize to false
+     [8]	Setting AssetsPath to assets/
+     [9]	Setting EditorMode to false
+     [10]	Setting WindowHeight to 576
+     [11]	Setting WindowHorizontalAlign to Center
+     [12]	Setting WindowName to Fengine Demo (alpha v.1)
+     [13]	Setting WindowStyle to Borderless
+     [14]	Setting WindowVerticalAlign to Center
+     [15]	Setting WindowWidth to 1024
+     [16] In void fender::Mediator<T>::registerClient(T&) [with T = fender::EventSystem]
+New client registered.
+     [17] In virtual void fender::SFMLRender::loadCurrentLayout()
 SFMLRender:	Loading Bar loadingBar
-     [16]	SFMLRender:	Loading Popup popup
-     [17]	SFMLRender:	Loading AnimatedImage logo
-     [18]	SFMLRender:	Loading Button exit
-     [19] In void futils::INI::writeContentTo(const string&) const
+     [18]	SFMLRender:	Loading Popup popup
+     [19]	SFMLRender:	Loading AnimatedImage logo
+     [20]	SFMLRender:	Loading Button exit
+     [21] In void futils::INI::writeContentTo(const string&) const
 Saved INI Scenes/Splashscreen.ini to Scenes/Splashscreen.ini
