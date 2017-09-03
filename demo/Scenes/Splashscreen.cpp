@@ -13,8 +13,9 @@ demo::scenes::Splashscreen::Splashscreen(demo::Demo &e,
 {
     this->name = "Splashscreen";
     layout.rename("Splashscreen");
-    this->eventSystem.setRole(fender::MediatorRole::Receiver);
+    this->eventSystem.setRole(fender::MediatorRole::Client);
     auto    &leaveScene = *this->eventSystem.createInputEvent("QuitSplashscreen");
+    leaveScene.addKey(fender::Input::Escape);
     leaveScene.start = [this](){
         this->done = true;
     };

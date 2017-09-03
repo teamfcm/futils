@@ -84,7 +84,7 @@ namespace fender
         int         getLifespan() const { return this->_lifespan; }
         
 //        Can the event start ?
-        std::function<bool(void)>   isReady;
+        std::function<bool(void)>   isReady{[](){return true;}};
 //        Trigger the event
         std::function<void(void)>   start;
 //        If isReady() failse, onFailure is called
@@ -153,6 +153,20 @@ namespace fender
                 }
             throw std::runtime_error("In " + std::string(__PRETTY_FUNCTION__) + ":\tInvalid input key");
         }
+        
+        void        addKey(fender::Input key)
+        {
+            this->_inputKeys.emplace_back(Command{.key = key, .state = State::Down});
+        }
+        
+        void        matchInput(fender::Input key)
+        {
+            if (key == this->_inputKeys[0].key)
+            {
+                if (this->isReady())
+                    this->start();
+            }
+        }
     };
     
 //    Event that doesn't bind to user input but rather logical data change
@@ -168,9 +182,8 @@ namespace fender
     
     enum class  MediatorRole
     {
-        Emitter,
-        Receiver,
-        EmitterReceiver
+        Client,
+        Provider
     };
     
     template    <typename T>
@@ -228,6 +241,7 @@ namespace fender
         void            pause(){this->paused = true;}
         void            unpause(){this->paused = false;}
         void            setRole(MediatorRole role) { this->_role = role;}
+        MediatorRole    getRole() const {return this->_role;}
         
         void            receive(EventSystem &, spInputEvent event)
         {
@@ -236,7 +250,7 @@ namespace fender
         
         spInputEvent    createInputEvent(std::string const &name)
         {
-            if (this->_role == MediatorRole::Emitter)
+            if (this->_role == MediatorRole::Provider)
                 return nullptr;
             if (this->_events.find(name) != this->_events.end())
                 return this->_events.at(name);
@@ -244,6 +258,11 @@ namespace fender
             this->_mediator.send<spInputEvent>(*this, this->_events.at(name));
             return this->_events.at(name);
         }
+    
+        std::unordered_map<std::string, spInputEvent>   &getInputEvents()
+        {
+            return this->_events;
+        };
     };
     
     class       IScene

@@ -16,10 +16,10 @@ SmartMode detected. Running auto conf...
      [12]	Setting WindowStyle to Borderless
      [13]	Setting WindowVerticalAlign to Center
      [14]	Setting WindowWidth to 1024
-     [15] In fender::EventSystem::receive(fender::EventSystem&, fender::EventSystem::spInputEvent)::<lambda()>
-COUCOUCOUCOUCOCUO
-     [16] In virtual void fender::SFMLRender::loadCurrentLayout()
+     [15] In virtual void fender::SFMLRender::loadCurrentLayout()
 SFMLRender:	Loading Bar loadingBar
-     [17]	SFMLRender:	Loading Popup popup
-     [18]	SFMLRender:	Loading AnimatedImage logo
-     [19]	SFMLRender:	Loading Button exit
+     [16]	SFMLRender:	Loading Popup popup
+     [17]	SFMLRender:	Loading AnimatedImage logo
+     [18]	SFMLRender:	Loading Button exit
+     [19] In void futils::INI::writeContentTo(const string&) const
+Saved INI Scenes/Splashscreen.ini to Scenes/Splashscreen.ini

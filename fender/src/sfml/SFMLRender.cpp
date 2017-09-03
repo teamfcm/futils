@@ -13,7 +13,7 @@ extern "C" fender::SFMLRender* create()
     return new fender::SFMLRender();
 }
 
-static const std::unordered_map<sf::Keyboard::Key, fender::Input> fenderCodes =
+static std::unordered_map<sf::Keyboard::Key, fender::Input> fenderCodes =
         {
                {sf::Keyboard::Escape, fender::Input::Escape},
                {sf::Keyboard::Space, fender::Input::Space},
@@ -48,7 +48,7 @@ static const std::unordered_map<sf::Keyboard::Key, fender::Input> fenderCodes =
 fender::SFMLRender::SFMLRender()
 {
     this->initFactory();
-    this->_eventSystem.setRole(fender::MediatorRole::Emitter);
+    this->_eventSystem.setRole(fender::MediatorRole::Provider);
 }
 
 void    fender::SFMLRender::openWindow()
@@ -179,11 +179,13 @@ void    fender::SFMLRender::pollEvents()
     this->updateChangingKeys();
     while (this->win.pollEvent(sfEvent))
     {
-//        for (auto &pair: this->_eventSystem.getKnownEvents())
-//        {
-//            auto &ev = *pair.second;
-//            ev.matchCommand(this->makeCommand(sfEvent));
-//        }
+        for (auto &pair: this->_eventSystem.getInputEvents())
+        {
+            auto &ev = *pair.second;
+            if (sfEvent.type == sf::Event::KeyPressed
+                || sfEvent.type == sf::Event::KeyReleased)
+                ev.matchInput(fenderCodes[sfEvent.key.code]);
+        }
     }
 }
 
