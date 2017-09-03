@@ -200,9 +200,8 @@ namespace fender
         std::unordered_map<std::string, std::function<void(fender::Element &)>>  elementFactory;
         std::unordered_map<std::string, sf::Font>                   fonts;
         std::unordered_map<std::string, upBaseElem>                 elements;
-
-        sf::RenderWindow  win;
-        sf::Event   events;
+        sf::RenderWindow                                            win;
+        std::unordered_map<sf::Keyboard::Key, fender::State>        keys;
 
         void            initFactory();
         template        <typename ElemType, typename SrcType>
@@ -240,6 +239,11 @@ namespace fender
                     .insert(std::pair<std::string, std::unique_ptr<ElemType>>
                                     (src.getName(), &elem));
         };
+        
+        fender::Command makeCommand(sf::Event const &);
+        void            updateChangingKeys();
+        void            resetKeys();
+        
     public:
         SFMLRender();
         virtual void    openWindow() override;

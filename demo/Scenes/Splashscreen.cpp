@@ -4,6 +4,7 @@
 
 # include "Splashscreen.hpp"
 # include "fender.hpp"
+#include "../lib/fender/release/fender.hpp"
 
 demo::scenes::Splashscreen::Splashscreen(demo::Demo &e,
                                          std::string const &sceneFolder):
@@ -12,10 +13,11 @@ demo::scenes::Splashscreen::Splashscreen(demo::Demo &e,
 {
     this->name = "Splashscreen";
     layout.rename("Splashscreen");
-    fender::Event   quit(fender::Keyboard::Escape);
-    this->eventSystem.add(quit, [this](){
+    this->eventSystem.setRole(fender::MediatorRole::Receiver);
+    auto    &leaveScene = *this->eventSystem.createInputEvent("QuitSplashscreen");
+    leaveScene.start = [this](){
         this->done = true;
-    });
+    };
 }
 
 void    demo::scenes::Splashscreen::init()
@@ -31,6 +33,15 @@ void    demo::scenes::Splashscreen::init()
         this->done = true;
     };
     this->layout.setVisible(true);
+    fender::InputEvent  fillProgressBar(fender::Input::Space);
+//    This way, if Event->IsReady() returns false, we still keep the event for
+//    several frames, and we'll try again each time
+//    Until the event dies and we remove it from the system
+    fillProgressBar.setLifespan(10);
+    fillProgressBar.start = [this](){
+        auto &loadingBar = this->layout.get<fender::Bar>("loadingBar");
+        loadingBar.increment();
+    };
 }
 
 void    demo::scenes::Splashscreen::update()

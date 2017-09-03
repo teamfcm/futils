@@ -17,7 +17,6 @@ namespace demo
             demo::Demo          &env;
             bool                done{false};
             fender::Layout      layout;
-            fender::EventSystem eventSystem;
         public:
             Splashscreen(demo::Demo &,
                          std::string const &sceneFolder = "Scenes/");

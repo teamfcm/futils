@@ -13,9 +13,42 @@ extern "C" fender::SFMLRender* create()
     return new fender::SFMLRender();
 }
 
+static const std::unordered_map<sf::Keyboard::Key, fender::Input> fenderCodes =
+        {
+               {sf::Keyboard::Escape, fender::Input::Escape},
+               {sf::Keyboard::Space, fender::Input::Space},
+               {sf::Keyboard::A, fender::Input::A},
+               {sf::Keyboard::B, fender::Input::B},
+               {sf::Keyboard::C, fender::Input::C},
+               {sf::Keyboard::D, fender::Input::D},
+               {sf::Keyboard::E, fender::Input::E},
+               {sf::Keyboard::F, fender::Input::F},
+               {sf::Keyboard::G, fender::Input::G},
+               {sf::Keyboard::H, fender::Input::H},
+               {sf::Keyboard::I, fender::Input::I},
+               {sf::Keyboard::J, fender::Input::J},
+               {sf::Keyboard::K, fender::Input::K},
+               {sf::Keyboard::L, fender::Input::L},
+               {sf::Keyboard::M, fender::Input::M},
+               {sf::Keyboard::N, fender::Input::N},
+               {sf::Keyboard::O, fender::Input::O},
+               {sf::Keyboard::P, fender::Input::P},
+               {sf::Keyboard::Q, fender::Input::Q},
+               {sf::Keyboard::R, fender::Input::R},
+               {sf::Keyboard::S, fender::Input::S},
+               {sf::Keyboard::T, fender::Input::T},
+               {sf::Keyboard::U, fender::Input::U},
+               {sf::Keyboard::V, fender::Input::V},
+               {sf::Keyboard::W, fender::Input::W},
+               {sf::Keyboard::X, fender::Input::X},
+               {sf::Keyboard::Y, fender::Input::Y},
+               {sf::Keyboard::Z, fender::Input::Z},
+        };
+
 fender::SFMLRender::SFMLRender()
 {
     this->initFactory();
+    this->_eventSystem.setRole(fender::MediatorRole::Emitter);
 }
 
 void    fender::SFMLRender::openWindow()
@@ -98,26 +131,58 @@ void    fender::SFMLRender::refresh()
     this->win.display();
 }
 
+void fender::SFMLRender::updateChangingKeys()
+{
+//    for (auto &pair: this->keys)
+//    {
+//        if (pair.second == fender::State::GoingUp)
+//            pair.second = fender::State::Up;
+//        else if (pair.second == fender::State::GoingDown)
+//            pair.second = fender::State::Down;
+//    }
+}
+
+inline fender::Command fender::SFMLRender::makeCommand(sf::Event const &event)
+{
+    return {};
+    if (event.type == sf::Event::KeyPressed
+        && this->keys[event.key.code] != fender::State::Down)
+    {
+        this->keys[event.key.code] = fender::State::GoingDown;
+        return {.key = fenderCodes.at(event.key.code),
+                .state = fender::State::GoingDown};
+    }
+    else if (event.type == sf::Event::KeyReleased)
+    {
+        this->keys[event.key.code] = fender::State::GoingUp;
+        return {.key = fenderCodes.at(event.key.code),
+                .state = fender::State::GoingUp};
+    }
+}
+
+void    fender::SFMLRender::resetKeys()
+{
+//    if (this->_eventSystem.getKnownEvents().empty())
+//        return ;
+//    for (auto &pair: this->_eventSystem.getKnownEvents())
+//    {
+//        pair.second->reset();
+//    }
+}
+
 void    fender::SFMLRender::pollEvents()
 {
-    sf::Event   event;
-    while (this->win.pollEvent(event))
+    sf::Event   sfEvent;
+//    This function will update already down keys to update from GoingDown to Down
+//    and from GoingUp to Up
+    this->resetKeys();
+    this->updateChangingKeys();
+    while (this->win.pollEvent(sfEvent))
     {
-        if (event.key.code == sf::Keyboard::Escape)
-        {
-            fender::Event ev({{fender::Keyboard::Escape, fender::State::Down}});
-            this->_eventSystem.emit(ev);
-        }
+//        for (auto &pair: this->_eventSystem.getKnownEvents())
 //        {
-//            if (this->events.key.code == sf::Keyboard::Return)
-//            {
-//                std::cout << "the escape key was pressed" << std::endl;
-//                std::cout << "control:" << this->events.key.control << std::endl;
-//                std::cout << "alt:" << this->events.key.alt << std::endl;
-//                std::cout << "shift:" << this->events.key.shift << std::endl;
-//                std::cout << "system:" << this->events.key.system << std::endl;
-//                this->win.close();
-//            }
+//            auto &ev = *pair.second;
+//            ev.matchCommand(this->makeCommand(sfEvent));
 //        }
     }
 }
