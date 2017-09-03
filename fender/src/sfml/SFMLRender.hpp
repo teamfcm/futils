@@ -201,7 +201,7 @@ namespace fender
         std::unordered_map<std::string, sf::Font>                   fonts;
         std::unordered_map<std::string, upBaseElem>                 elements;
         sf::RenderWindow                                            win;
-        std::unordered_map<sf::Keyboard::Key, fender::State>        keys;
+        std::unordered_map<sf::Keyboard::Key, fender::State>        inputs;
 
         void            initFactory();
         template        <typename ElemType, typename SrcType>

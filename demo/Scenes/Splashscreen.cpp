@@ -15,7 +15,14 @@ demo::scenes::Splashscreen::Splashscreen(demo::Demo &e,
     layout.rename("Splashscreen");
     this->eventSystem.setRole(fender::MediatorRole::Client);
     auto    &leaveScene = *this->eventSystem.createInputEvent("QuitSplashscreen");
-    leaveScene.addKey(fender::Input::Escape);
+    leaveScene.addKey(fender::Input::Escape, fender::State::GoingDown);
+    leaveScene.isReady = [this](){
+        auto &bar = this->layout.get<fender::Bar>("loadingBar");
+        return (bar.getCurrent() >= bar.getMaximum());
+    };
+    leaveScene.onFailure = [this](){
+        LERR("Cannot quit when loading bar is not complete...");
+    };
     leaveScene.start = [this](){
         this->done = true;
     };
@@ -50,7 +57,7 @@ void    demo::scenes::Splashscreen::update()
     auto &loadingBar = this->layout.get<fender::Bar>("loadingBar");
     if (loadingBar.done())
     {
-        loadingBar.setLabel("Press Enter to Quit");
+        loadingBar.setLabel("Press Escape to Quit");
     }
     else
     {

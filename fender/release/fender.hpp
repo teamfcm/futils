@@ -95,9 +95,9 @@ namespace fender
     
     enum class  InputEventMode : int
     {
-//        As long as the input keys are in the correct state at the same time in memory
+//        As long as the input inputs are in the correct state at the same time in memory
         Simple,
-//        If the input keys are all in the correct state at the same frame
+//        If the input inputs are all in the correct state at the same frame
         Simultaneous,
 //        If the input are set to true sequentially, any error restarts the sequence
         Sequential
@@ -107,6 +107,7 @@ namespace fender
     {
         int                         _identifier{0};
         std::vector<Command>        _inputKeys;
+        unsigned int                _matchedKeys{0};
         InputEventMode              _mode{InputEventMode::Simple};
         void                        updateIdentifier()
         {
@@ -123,7 +124,6 @@ namespace fender
                                                         static_cast<int>(mIter->state)));
             
         };
-    
     public:
 //        Hollow ctor for later usage
         InputEvent()
@@ -154,18 +154,36 @@ namespace fender
             throw std::runtime_error("In " + std::string(__PRETTY_FUNCTION__) + ":\tInvalid input key");
         }
         
-        void        addKey(fender::Input key)
+        void        addKey(fender::Input key, fender::State state = fender::State::Down)
         {
-            this->_inputKeys.emplace_back(Command{.key = key, .state = State::Down});
+            this->_inputKeys.emplace_back(Command{.key = key, .state = state});
+        }
+
+        void        trigger()
+        {
+            if (this->isReady())
+                this->start();
+            else
+                this->onFailure();
         }
         
-        void        matchInput(fender::Input key)
+        void                reset()
         {
-            if (key == this->_inputKeys[0].key)
+            this->_matchedKeys = 0;
+        }
+        
+        void                matchInput(Command command)
+        {
+            for (auto &com: this->_inputKeys)
             {
-                if (this->isReady())
-                    this->start();
+                if (com == command)
+                {
+                    this->_matchedKeys++;
+                    LOUT("Matched " + std::to_string(this->_matchedKeys) + " out of " + std::to_string(this->_inputKeys.size()));
+                }
             }
+            if (this->_matchedKeys == this->_inputKeys.size())
+                this->trigger();
         }
     };
     

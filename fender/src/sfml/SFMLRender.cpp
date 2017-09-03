@@ -17,6 +17,20 @@ static std::unordered_map<sf::Keyboard::Key, fender::Input> fenderCodes =
         {
                {sf::Keyboard::Escape, fender::Input::Escape},
                {sf::Keyboard::Space, fender::Input::Space},
+               {sf::Keyboard::LControl, fender::Input::LCtrl},
+               {sf::Keyboard::RControl, fender::Input::RCtrl},
+               {sf::Keyboard::LAlt, fender::Input::Alt},
+               {sf::Keyboard::LShift, fender::Input::LShift},
+               {sf::Keyboard::F1, fender::Input::F1},
+               {sf::Keyboard::F2, fender::Input::F2},
+               {sf::Keyboard::F3, fender::Input::F3},
+               {sf::Keyboard::F4, fender::Input::F4},
+               {sf::Keyboard::F5, fender::Input::F5},
+               {sf::Keyboard::F6, fender::Input::F6},
+               {sf::Keyboard::F7, fender::Input::F7},
+               {sf::Keyboard::F8, fender::Input::F8},
+               {sf::Keyboard::F9, fender::Input::F9},
+               {sf::Keyboard::F10, fender::Input::F10},
                {sf::Keyboard::A, fender::Input::A},
                {sf::Keyboard::B, fender::Input::B},
                {sf::Keyboard::C, fender::Input::C},
@@ -133,47 +147,55 @@ void    fender::SFMLRender::refresh()
 
 void fender::SFMLRender::updateChangingKeys()
 {
-//    for (auto &pair: this->keys)
-//    {
-//        if (pair.second == fender::State::GoingUp)
-//            pair.second = fender::State::Up;
-//        else if (pair.second == fender::State::GoingDown)
-//            pair.second = fender::State::Down;
-//    }
+    for (auto &pair: this->inputs)
+    {
+        if (pair.second == fender::State::GoingUp)
+            pair.second = fender::State::Up;
+        else if (pair.second == fender::State::GoingDown)
+            pair.second = fender::State::Down;
+    }
 }
 
 inline fender::Command fender::SFMLRender::makeCommand(sf::Event const &event)
 {
-    return {};
-    if (event.type == sf::Event::KeyPressed
-        && this->keys[event.key.code] != fender::State::Down)
-    {
-        this->keys[event.key.code] = fender::State::GoingDown;
-        return {.key = fenderCodes.at(event.key.code),
-                .state = fender::State::GoingDown};
+    try {
+        if (event.type == sf::Event::KeyPressed
+            && this->inputs[event.key.code] != fender::State::Down) {
+            this->inputs[event.key.code] = fender::State::GoingDown;
+            if (event.key.control)
+                this->inputs[sf::Keyboard::LControl] = fender::State::GoingDown;
+            if (event.key.alt)
+                this->inputs[sf::Keyboard::LAlt] = fender::State::GoingUp;
+            return {.key = fenderCodes.at(event.key.code),
+                    .state = fender::State::GoingDown};
+        } else if (event.type == sf::Event::KeyReleased) {
+            this->inputs[event.key.code] = fender::State::GoingUp;
+            if (event.key.control)
+                this->inputs[sf::Keyboard::LControl] = fender::State::GoingUp;
+            if (event.key.alt)
+                this->inputs[sf::Keyboard::LAlt] = fender::State::GoingUp;
+            return {.key = fenderCodes.at(event.key.code),
+                    .state = fender::State::GoingUp};
+        }
     }
-    else if (event.type == sf::Event::KeyReleased)
+    catch (const std::exception &error)
     {
-        this->keys[event.key.code] = fender::State::GoingUp;
-        return {.key = fenderCodes.at(event.key.code),
-                .state = fender::State::GoingUp};
+        LERR("SFML Library does not yet support the required key.");
     }
 }
 
 void    fender::SFMLRender::resetKeys()
 {
-//    if (this->_eventSystem.getKnownEvents().empty())
-//        return ;
-//    for (auto &pair: this->_eventSystem.getKnownEvents())
-//    {
-//        pair.second->reset();
-//    }
+    if (this->_eventSystem.getInputEvents().empty())
+        return ;
+    for (auto &pair: this->_eventSystem.getInputEvents())
+        pair.second->reset();
 }
 
 void    fender::SFMLRender::pollEvents()
 {
     sf::Event   sfEvent;
-//    This function will update already down keys to update from GoingDown to Down
+//    This function will update already down inputs to update from GoingDown to Down
 //    and from GoingUp to Up
     this->resetKeys();
     this->updateChangingKeys();
@@ -184,7 +206,7 @@ void    fender::SFMLRender::pollEvents()
             auto &ev = *pair.second;
             if (sfEvent.type == sf::Event::KeyPressed
                 || sfEvent.type == sf::Event::KeyReleased)
-                ev.matchInput(fenderCodes[sfEvent.key.code]);
+                ev.matchInput(this->makeCommand(sfEvent));
         }
     }
 }
