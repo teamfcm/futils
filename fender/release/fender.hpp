@@ -73,6 +73,7 @@ namespace fender
 
     class       Event
     {
+    protected:
         std::string                 _label{""};
         int                         _lifespan{1};
     public:
@@ -86,11 +87,11 @@ namespace fender
 //        Can the event start ?
         std::function<bool(void)>   isReady{[](){return true;}};
 //        Trigger the event
-        std::function<void(void)>   start;
+        std::function<void(void)>   start{[](){}};
 //        If isReady() failse, onFailure is called
-        std::function<void(void)>   onFailure;
+        std::function<void(void)>   onFailure{[](){}};
 //        If the event dies without ever being started, call onDeath()
-        std::function<void(void)>   onDeath;
+        std::function<void(void)>   onDeath{[](){}};
     };
     
     enum class  InputEventMode : int
@@ -126,9 +127,9 @@ namespace fender
         };
     public:
 //        Hollow ctor for later usage
-        InputEvent()
+        InputEvent(std::string const &label)
         {
-        
+            this->_label = label;
         }
 //        Simple Constructor for single key DOWN InputEvent
         InputEvent(Input key)
@@ -177,10 +178,7 @@ namespace fender
             for (auto &com: this->_inputKeys)
             {
                 if (com == command)
-                {
                     this->_matchedKeys++;
-                    LOUT("Matched " + std::to_string(this->_matchedKeys) + " out of " + std::to_string(this->_inputKeys.size()));
-                }
             }
             if (this->_matchedKeys == this->_inputKeys.size())
                 this->trigger();
@@ -272,7 +270,7 @@ namespace fender
                 return nullptr;
             if (this->_events.find(name) != this->_events.end())
                 return this->_events.at(name);
-            this->_events[name] = std::make_shared<InputEvent>();
+            this->_events[name] = std::make_shared<InputEvent>(name);
             this->_mediator.send<spInputEvent>(*this, this->_events.at(name));
             return this->_events.at(name);
         }
@@ -408,9 +406,9 @@ namespace fender
 
     class       Bar : public Element
     {
-        int             minimum{0};
-        int             maximum{100};
-        int             current{minimum};
+        float             minimum{0};
+        float             maximum{100};
+        float             current{minimum};
         std::string     label{"Undefined"};
         bool            displayLabel{true};
         bool            displayStatus{true};
@@ -433,14 +431,14 @@ namespace fender
             }
         }
 
-        void    increment(int add = 1) { this->current += add; }
+        void    increment(float add = 1) { this->current += add; }
         bool    done() const { return this->current >= this->maximum; }
         std::string const &getLabel() const {return this->label;}
         void    setLabel(std::string const &lab) {this->label = lab;}
         void    setLabelAndSave(std::string const &lab) {SetAndSave(label, lab)}
-        int     getMinimum() const {return this->minimum;}
-        int     getMaximum() const {return this->maximum;}
-        int     getCurrent() const {return this->current;}
+        float     getMinimum() const {return this->minimum;}
+        float     getMaximum() const {return this->maximum;}
+        float     getCurrent() const {return this->current;}
     };
 
     class       Popup : public Element

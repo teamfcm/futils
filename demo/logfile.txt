@@ -18,10 +18,6 @@ SmartMode detected. Running auto conf...
      [14]	Setting WindowWidth to 1024
      [15] In virtual void fender::SFMLRender::loadCurrentLayout()
 SFMLRender:	Loading Bar loadingBar
-     [16]	SFMLRender:	Loading Popup popup
-     [17]	SFMLRender:	Loading AnimatedImage logo
-     [18]	SFMLRender:	Loading Button exit
-     [19] In void fender::InputEvent::matchInput(fender::Command)
-Matched 1 out of 1
-     [20] In void futils::INI::writeContentTo(const string&) const
+     [16]	SFMLRender:	Loading AnimatedImage logo
+     [17] In void futils::INI::writeContentTo(const string&) const
 Saved INI Scenes/Splashscreen.ini to Scenes/Splashscreen.ini

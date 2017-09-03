@@ -44,6 +44,7 @@ fender::Manager::Manager(ISceneFactory &fact,
 
 void    fender::Manager::start()
 {
+//    This should be from a ini file
     auto scene = this->sceneFactory.build("intro");
     if (scene)
     {

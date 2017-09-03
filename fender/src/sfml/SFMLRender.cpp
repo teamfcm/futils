@@ -162,18 +162,10 @@ inline fender::Command fender::SFMLRender::makeCommand(sf::Event const &event)
         if (event.type == sf::Event::KeyPressed
             && this->inputs[event.key.code] != fender::State::Down) {
             this->inputs[event.key.code] = fender::State::GoingDown;
-            if (event.key.control)
-                this->inputs[sf::Keyboard::LControl] = fender::State::GoingDown;
-            if (event.key.alt)
-                this->inputs[sf::Keyboard::LAlt] = fender::State::GoingUp;
             return {.key = fenderCodes.at(event.key.code),
                     .state = fender::State::GoingDown};
         } else if (event.type == sf::Event::KeyReleased) {
             this->inputs[event.key.code] = fender::State::GoingUp;
-            if (event.key.control)
-                this->inputs[sf::Keyboard::LControl] = fender::State::GoingUp;
-            if (event.key.alt)
-                this->inputs[sf::Keyboard::LAlt] = fender::State::GoingUp;
             return {.key = fenderCodes.at(event.key.code),
                     .state = fender::State::GoingUp};
         }

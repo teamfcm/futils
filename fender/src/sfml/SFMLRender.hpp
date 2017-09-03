@@ -117,6 +117,13 @@ namespace fender
                 ratio *= x;
                 this->progress.setSize(sf::Vector2f(ratio, y));
                 this->text.setString(this->src.getLabel());
+                text.setPosition(rectangle.getPosition().x +
+                                 rectangle.getSize().x / 2.0 -
+                                 text.getString().getSize() / 3.0 *
+                                 text.getCharacterSize(),
+                                 rectangle.getPosition().y +
+                                 rectangle.getSize().y / 2.0 -
+                                 text.getCharacterSize() / 2.0);
             }
 
             virtual void    draw(sf::RenderWindow &win) override
@@ -215,7 +222,8 @@ namespace fender
             rectangle.setPosition(src.getPosition().X * this->_windowSize.X / 100.0,
                                   src.getPosition().Y * this->_windowSize.Y / 100.0);
             rectangle.setOutlineColor(sf::Color::White);
-            rectangle.setOutlineThickness(4);
+            if (this->_editorMode)
+                rectangle.setOutlineThickness(4);
             rectangle.setFillColor(sf::Color::Transparent);
 
             text.setFont(this->fonts["game"]);

@@ -20,11 +20,18 @@ demo::scenes::Splashscreen::Splashscreen(demo::Demo &e,
         auto &bar = this->layout.get<fender::Bar>("loadingBar");
         return (bar.getCurrent() >= bar.getMaximum());
     };
-    leaveScene.onFailure = [this](){
-        LERR("Cannot quit when loading bar is not complete...");
-    };
     leaveScene.start = [this](){
         this->done = true;
+    };
+    auto    &decreaseBar = *this->eventSystem.createInputEvent("DecreaseBar");
+    decreaseBar.addKey(fender::Input::Space, fender::State::GoingDown);
+    decreaseBar.isReady = [this](){
+        auto &bar = this->layout.get<fender::Bar>("loadingBar");
+        return (bar.getCurrent() < bar.getMaximum());
+    };
+    decreaseBar.start = [this](){
+        auto &bar = this->layout.get<fender::Bar>("loadingBar");
+        bar.increment(-10);
     };
 }
 
@@ -35,21 +42,12 @@ void    demo::scenes::Splashscreen::init()
     this->renderer->useLayout("Splashscreen");
     auto logo = this->layout.get<fender::AnimatedImage>("logo");
     auto loadingBar = this->layout.get<fender::Bar>("loadingBar");
-    auto popup = this->layout.get<fender::Popup>("popup");
-    auto button = this->layout.get<fender::Button>("exit");
-    button.onClick = [this](){
-        this->done = true;
-    };
+//    auto popup = this->layout.get<fender::Popup>("popup");
+//    auto button = this->layout.get<fender::Button>("exit");
+//    button.onClick = [this](){
+//        this->done = true;
+//    };
     this->layout.setVisible(true);
-    fender::InputEvent  fillProgressBar(fender::Input::Space);
-//    This way, if Event->IsReady() returns false, we still keep the event for
-//    several frames, and we'll try again each time
-//    Until the event dies and we remove it from the system
-    fillProgressBar.setLifespan(10);
-    fillProgressBar.start = [this](){
-        auto &loadingBar = this->layout.get<fender::Bar>("loadingBar");
-        loadingBar.increment();
-    };
 }
 
 void    demo::scenes::Splashscreen::update()
@@ -57,11 +55,11 @@ void    demo::scenes::Splashscreen::update()
     auto &loadingBar = this->layout.get<fender::Bar>("loadingBar");
     if (loadingBar.done())
     {
-        loadingBar.setLabel("Press Escape to Quit");
+        loadingBar.setLabel("Press Any Key");
     }
     else
     {
-        loadingBar.setLabel(" (" + std::to_string(loadingBar.getCurrent()) + " %)");
-        loadingBar.increment();
+        loadingBar.setLabel(" Loading (" + std::to_string(static_cast<int>(loadingBar.getCurrent())) + " %)");
+        loadingBar.increment(0.5);
     }
 }
