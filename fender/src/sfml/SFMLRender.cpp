@@ -116,6 +116,12 @@ void    fender::SFMLRender::initFactory()
         if (obj)
             this->create<types::Popup>(*obj);
     };
+    this->elementFactory["Message"] = [this](fender::Element &src)
+    {
+        auto *obj = dynamic_cast<fender::Message *>(&src);
+        if (obj)
+            this->create<types::Message>(*obj);
+    };
 }
 
 void    fender::SFMLRender::closeWindow()
@@ -139,7 +145,7 @@ void    fender::SFMLRender::refresh()
             elem.update();
             if (!elem.src.isVisible())
                 continue ;
-            elem.draw(this->win);
+            elem.drawAll(this->win);
         }
     }
     this->win.display();
@@ -219,6 +225,7 @@ void    fender::SFMLRender::loadCurrentLayout()
     fonts["jedi"].loadFromFile("assets/fonts/jedi.ttf");
     fonts["pixel"].loadFromFile("assets/fonts/pixel.ttf");
     fonts["game"].loadFromFile("assets/fonts/game.ttf");
+    fonts["code"].loadFromFile("assets/fonts/code.ttf");
     for (auto const &pair: this->currentLayout->getElements())
     {
         LOUT("SFMLRender:\tLoading " + pair.second->getType() + " " + pair.second->getName());

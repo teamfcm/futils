@@ -71,6 +71,10 @@ void    fender::IRender::SmartModeInit(futils::INI::INIProxy const &proxyConf,
     {
         this->_editorMode = value == "true";
     };
+    this->configFunctions["SystemFont"] = [this](std::string const &value)
+    {
+        this->_systemFont = value;
+    };
 
     LOUT("SmartMode detected. Running auto conf...");
     LOUT("Checking if scope " + confScope + " exists...");

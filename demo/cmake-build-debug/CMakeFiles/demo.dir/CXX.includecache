@@ -87,7 +87,11 @@ futils.hpp
 ../include/futils.hpp
 mutex
 -
+chrono
+-
 functional
+-
+random
 -
 
 /home/ganz/Work/teamfcm/futils/demo/Scenes/Splashscreen.cpp
@@ -189,7 +193,11 @@ futils.hpp
 /home/ganz/Work/teamfcm/futils/demo/include/futils.hpp
 mutex
 -
+chrono
+-
 functional
+-
+random
 -
 
 /home/ganz/Work/teamfcm/futils/demo/lib/fender/release/fender.hpp

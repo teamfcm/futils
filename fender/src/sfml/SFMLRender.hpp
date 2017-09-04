@@ -38,11 +38,20 @@ namespace fender
             virtual ~BaseElement() {}
             virtual void    update() {}
             virtual void    init() {}
-            virtual void    draw(sf::RenderWindow &win)
+            virtual void    drawAll(sf::RenderWindow &win)
+            {
+                this->drawRect(win);
+                this->drawText(win);
+            }
+            virtual void    drawRect(sf::RenderWindow &win)
             {
                 win.draw(this->rectangle);
+            }
+            virtual void    drawText(sf::RenderWindow &win)
+            {
                 win.draw(this->text);
             }
+            
             fender::Element     &src;
             BaseElement(fender::Element &src): src(src)
             {
@@ -54,6 +63,34 @@ namespace fender
             sf::Text &getLabel() {return this->label;};
         };
 
+        class   Message : public BaseElement
+        {
+            sf::Text        text;
+            fender::Message &src;
+        public:
+            Message(fender::Message &src):
+                    BaseElement(src),
+                    src(src)
+            {
+            
+            }
+            
+            virtual void    init() override
+            {
+            
+            }
+    
+            virtual void    update() override
+            {
+
+            }
+    
+            virtual void    drawAll(sf::RenderWindow &win) override
+            {
+
+            }
+        };
+        
         class AnimatedImage : public BaseElement
         {
             fender::AnimatedImage   &src;
@@ -73,16 +110,17 @@ namespace fender
                 this->texture.loadFromFile("assets/images/" + this->src.getFilepath());
                 this->rectangle.setTexture(&this->texture);
                 this->rectangle.setFillColor(sf::Color::White);
+                this->rectangle.setFillColor(sf::Color(255, 255, 255, 0));
             }
 
             virtual void    update() override
             {
-
+                this->rectangle.setFillColor(sf::Color(255, 255, 255, this->src.getAlpha()));
             }
 
-            virtual void    draw(sf::RenderWindow &win) override
+            virtual void    drawAll(sf::RenderWindow &win) override
             {
-                BaseElement::draw(win);
+                BaseElement::drawAll(win);
             }
         };
 
@@ -97,7 +135,7 @@ namespace fender
             {
 
             }
-
+    
             virtual void    init() override
             {
                 progress = this->rectangle;
@@ -107,7 +145,7 @@ namespace fender
                 progress.setSize(sf::Vector2f(0, this->rectangle.getSize().y));
                 progress.setPosition(this->rectangle.getPosition());
             }
-
+    
             virtual void    update() override
             {
                 float   x = this->rectangle.getSize().x;
@@ -125,11 +163,14 @@ namespace fender
                                  rectangle.getSize().y / 2.0 -
                                  text.getCharacterSize() / 2.0);
             }
-
-            virtual void    draw(sf::RenderWindow &win) override
+    
+            virtual void    drawAll(sf::RenderWindow &win) override
             {
-                BaseElement::draw(win);
-                win.draw(this->progress);
+                if (this->src.barIsVisible())
+                {
+                    win.draw(this->progress);
+                    BaseElement::drawRect(win);
+                }
                 win.draw(this->text);
             }
         };
@@ -163,9 +204,9 @@ namespace fender
 
             }
 
-            virtual void    draw(sf::RenderWindow &win) override
+            virtual void    drawAll(sf::RenderWindow &win) override
             {
-                BaseElement::draw(win);
+                BaseElement::drawAll(win);
                 win.draw(this->title);
                 win.draw(this->message);
             }
@@ -193,9 +234,9 @@ namespace fender
 
             }
 
-            virtual void    draw(sf::RenderWindow &win) override
+            virtual void    drawAll(sf::RenderWindow &win) override
             {
-                BaseElement::draw(win);
+                BaseElement::drawAll(win);
             }
         };
     }
@@ -226,7 +267,7 @@ namespace fender
                 rectangle.setOutlineThickness(4);
             rectangle.setFillColor(sf::Color::Transparent);
 
-            text.setFont(this->fonts["game"]);
+            text.setFont(this->fonts[this->_systemFont]);
             text.setCharacterSize(18);
             text.setFillColor(sf::Color::Red);
             text.setPosition(rectangle.getPosition().x +

@@ -14,6 +14,8 @@ demo::scenes::Splashscreen::Splashscreen(demo::Demo &e,
     this->name = "Splashscreen";
     layout.rename("Splashscreen");
     this->eventSystem.setRole(fender::MediatorRole::Client);
+    auto &version = this->layout.get<fender::Message>("version");
+    version.setContent("Version 1.0");
     auto    &leaveScene = *this->eventSystem.createInputEvent("QuitSplashscreen");
     leaveScene.addKey(fender::Input::Escape, fender::State::GoingDown);
     leaveScene.isReady = [this](){
@@ -27,11 +29,17 @@ demo::scenes::Splashscreen::Splashscreen(demo::Demo &e,
     decreaseBar.addKey(fender::Input::Space, fender::State::GoingDown);
     decreaseBar.isReady = [this](){
         auto &bar = this->layout.get<fender::Bar>("loadingBar");
-        return (bar.getCurrent() < bar.getMaximum());
+        return (bar.getCurrent() < bar.getMaximum() && !bar.barIsVisible());
     };
     decreaseBar.start = [this](){
         auto &bar = this->layout.get<fender::Bar>("loadingBar");
-        bar.increment(-10);
+            bar.increment(-10);
+    };
+    auto &tmpBarController = *this->eventSystem.createInputEvent("TmpBar");
+    tmpBarController.addKey(fender::Input::Q, fender::State::GoingDown);
+    tmpBarController.start = [this](){
+        auto &tmpBar = this->layout.get<fender::Bar>("tmpBar");
+        tmpBar.increment(1);
     };
 }
 
@@ -41,6 +49,7 @@ void    demo::scenes::Splashscreen::init()
     this->renderer->registerLayout(this->layout);
     this->renderer->useLayout("Splashscreen");
     auto logo = this->layout.get<fender::AnimatedImage>("logo");
+    logo.setAlpha(0);
     auto loadingBar = this->layout.get<fender::Bar>("loadingBar");
 //    auto popup = this->layout.get<fender::Popup>("popup");
 //    auto button = this->layout.get<fender::Button>("exit");
@@ -53,13 +62,22 @@ void    demo::scenes::Splashscreen::init()
 void    demo::scenes::Splashscreen::update()
 {
     auto &loadingBar = this->layout.get<fender::Bar>("loadingBar");
+    auto &logo = this->layout.get<fender::AnimatedImage>("logo");
+    
+    futils::FloatingRange<double>   incrementRange(0.1, 2);
+    loadingBar.showBar();
     if (loadingBar.done())
     {
-        loadingBar.setLabel("Press Any Key");
+        loadingBar.setLabel("Press the escape key");
+        loadingBar.hideBar();
     }
     else
     {
-        loadingBar.setLabel(" Loading (" + std::to_string(static_cast<int>(loadingBar.getCurrent())) + " %)");
-        loadingBar.increment(0.5);
+        int currentFloor = static_cast<int>(loadingBar.getCurrent());
+        loadingBar.setLabel(" Loading (" + std::to_string(currentFloor) + "."
+                            + std::to_string(static_cast<int>((loadingBar.getCurrent() - currentFloor) * 100))
+                            + " %)");
+        loadingBar.increment(incrementRange.getRandom());
+        logo.setAlpha(currentFloor * 2.5);
     }
 }

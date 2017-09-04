@@ -282,7 +282,7 @@ namespace futils
                     _sections(sections),
                     _content(content)
             {
-
+            
             }
 
             const Section   &operator [] (std::string const &name) const

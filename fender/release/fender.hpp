@@ -330,8 +330,7 @@ namespace fender
         TOP,
         BOTTOM
     };
-
-
+    
     class       Element
     {
     protected:
@@ -341,6 +340,7 @@ namespace fender
         bool                    visible{true};
         futils::Vec2d<int>      position{0, 0};
         futils::Vec2d<int>      size{100, 100};
+        int                     alpha{255};
 
     public:
         Element(futils::INI::Section &sec): fileObject(sec), name(sec.name)
@@ -381,11 +381,45 @@ namespace fender
             SetAndSave(size.X, vec.X);
             SetAndSave(size.Y, vec.Y);
         }
+        void                setAlpha(int alpha) {this->alpha = alpha;}
+        int                 getAlpha() const {return this->alpha;}
     };
-
+    
+    class       Message : public Element
+    {
+        std::string         font;
+        std::string         content;
+    public:
+        Message(futils::INI::Section &sec):
+                Element(sec)
+        {
+            try
+            {
+                LOAD(font, std::string)
+            }
+            catch (std::exception const &error)
+            {
+                SAVE(font, font);
+                LERR("An error occured while loading Text " + name);
+            }
+        }
+        
+        void        setFont(std::string const &font)
+        {
+            this->font = font;
+        }
+        void        setContent(std::string const &content)
+        {
+            this->content = content;
+        }
+        std::string const &getFont() const {return this->font;}
+        std::string const &getContent() const {return this->content;}
+    };
+    
     class       AnimatedImage : public Element
     {
         std::string         filepath{"undefined.jpg"};
+        int                 alpha{255};
     public:
         AnimatedImage(futils::INI::Section &sec):
                 Element(sec)
@@ -400,8 +434,10 @@ namespace fender
                 LERR("An error occured while loading AnimatedImage " + name);
             }
         }
-
+    
         std::string const   &getFilepath() const {return this->filepath;}
+        void                setAlpha(int alpha) {this->alpha = alpha;}
+        int                 getAlpha() const {return this->alpha;}
     };
 
     class       Bar : public Element
@@ -412,6 +448,7 @@ namespace fender
         std::string     label{"Undefined"};
         bool            displayLabel{true};
         bool            displayStatus{true};
+        bool            visibleBar{true};
     public:
         Bar(futils::INI::Section &sec):
                 Element(sec)
@@ -431,7 +468,13 @@ namespace fender
             }
         }
 
-        void    increment(float add = 1) { this->current += add; }
+        void    increment(float add = 1) {
+            this->current += add;
+            if (this->current < this->minimum)
+                this->current = this->minimum;
+            if (this->current > this->maximum)
+                this->current = this->maximum;
+        }
         bool    done() const { return this->current >= this->maximum; }
         std::string const &getLabel() const {return this->label;}
         void    setLabel(std::string const &lab) {this->label = lab;}
@@ -439,6 +482,9 @@ namespace fender
         float     getMinimum() const {return this->minimum;}
         float     getMaximum() const {return this->maximum;}
         float     getCurrent() const {return this->current;}
+        void      hideBar() {this->visibleBar = false;}
+        void      showBar() {this->visibleBar = true;}
+        bool      barIsVisible() const {return this->visibleBar;}
     };
 
     class       Popup : public Element
@@ -581,6 +627,7 @@ namespace fender
         const fender::Layout          *currentLayout{nullptr};
         bool                    _editorMode{false};
         fender::EventSystem     _eventSystem;
+        std::string             _systemFont{"default"};
         
     public:
         virtual ~IRender() {};
