@@ -7,6 +7,7 @@
 
 int main()
 {
+//    TODO: Remember to add goToBinDir();
     futils::INI config("config/config.ini");
     auto global{config["global"]};
 

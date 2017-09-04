@@ -65,14 +65,13 @@ namespace fender
 
         class   Message : public BaseElement
         {
-            sf::Text        text;
             fender::Message &src;
         public:
             Message(fender::Message &src):
                     BaseElement(src),
                     src(src)
             {
-            
+                this->text.setString(src.getContent());
             }
             
             virtual void    init() override
@@ -82,12 +81,12 @@ namespace fender
     
             virtual void    update() override
             {
-
+            
             }
     
             virtual void    drawAll(sf::RenderWindow &win) override
             {
-
+                BaseElement::drawAll(win);
             }
         };
         

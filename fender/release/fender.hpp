@@ -387,8 +387,8 @@ namespace fender
     
     class       Message : public Element
     {
-        std::string         font;
-        std::string         content;
+        std::string         font{"Undefined"};
+        std::string         content{"Undefined"};
     public:
         Message(futils::INI::Section &sec):
                 Element(sec)
@@ -566,6 +566,8 @@ namespace fender
             {this->create<fender::Popup>(name);};
             elementFactory["Button"] = [this](std::string const &name)
             {this->create<fender::Button>(name);};
+            elementFactory["Message"] = [this](std::string const &name)
+            {this->create<fender::Message>(name);};
         };
 
     public:
@@ -576,6 +578,8 @@ namespace fender
             for (auto const &name: this->ini.getScopeList())
             {
                 auto type = ini[name]["type"].value;
+                if (elementFactory.find(type) == elementFactory.end())
+                    LERR("You forgot to add a function for creating " + type);
                 this->elementFactory[type](name);
             }
         }

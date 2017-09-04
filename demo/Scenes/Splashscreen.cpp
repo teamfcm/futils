@@ -15,7 +15,7 @@ demo::scenes::Splashscreen::Splashscreen(demo::Demo &e,
     layout.rename("Splashscreen");
     this->eventSystem.setRole(fender::MediatorRole::Client);
     auto &version = this->layout.get<fender::Message>("version");
-    version.setContent("Version 1.0");
+    version.setContent("fender version 1.0");
     auto    &leaveScene = *this->eventSystem.createInputEvent("QuitSplashscreen");
     leaveScene.addKey(fender::Input::Escape, fender::State::GoingDown);
     leaveScene.isReady = [this](){
