@@ -27,36 +27,5 @@ SFMLRender:	Loading Bar loadingBar
 Saved INI Scenes/Splashscreen.ini to Scenes/Splashscreen.ini
      [21] In void fender::Manager::start()
 Starting scene menu
-     [22] In fender::Command fender::SFMLRender::makeCommand(const sf::Event&)
-SFML Library does not yet support the required key.
-     [23]	SFML Library does not yet support the required key.
-     [24]	SFML Library does not yet support the required key.
-     [25]	SFML Library does not yet support the required key.
-     [26]	SFML Library does not yet support the required key.
-     [27]	SFML Library does not yet support the required key.
-     [28]	SFML Library does not yet support the required key.
-     [29]	SFML Library does not yet support the required key.
-     [30]	SFML Library does not yet support the required key.
-     [31]	SFML Library does not yet support the required key.
-     [32]	SFML Library does not yet support the required key.
-     [33]	SFML Library does not yet support the required key.
-     [34]	SFML Library does not yet support the required key.
-     [35]	SFML Library does not yet support the required key.
-     [36]	SFML Library does not yet support the required key.
-     [37]	SFML Library does not yet support the required key.
-     [38]	SFML Library does not yet support the required key.
-     [39]	SFML Library does not yet support the required key.
-     [40]	SFML Library does not yet support the required key.
-     [41]	SFML Library does not yet support the required key.
-     [42]	SFML Library does not yet support the required key.
-     [43]	SFML Library does not yet support the required key.
-     [44]	SFML Library does not yet support the required key.
-     [45]	SFML Library does not yet support the required key.
-     [46]	SFML Library does not yet support the required key.
-     [47]	SFML Library does not yet support the required key.
-     [48]	SFML Library does not yet support the required key.
-     [49]	SFML Library does not yet support the required key.
-     [50]	SFML Library does not yet support the required key.
-     [51]	SFML Library does not yet support the required key.
-     [52]	SFML Library does not yet support the required key.
-     [53]	SFML Library does not yet support the required key.
+     [22] In void futils::INI::writeContentTo(const string&) const
+Saved INI Scenes/Menu.ini to Scenes/Menu.ini

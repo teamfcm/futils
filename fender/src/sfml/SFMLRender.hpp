@@ -305,6 +305,7 @@ namespace fender
         virtual void    changeScene() override {
             this->currentLayout = nullptr;
             this->elements.clear();
+            this->_eventSystem.clear();
         };
     };
 }

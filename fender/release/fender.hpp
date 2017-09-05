@@ -255,6 +255,7 @@ namespace fender
             _mediator.unregisterClient(*this);
         }
         
+        void            clear() {this->_events.clear();}
         void            pause(){this->paused = true;}
         void            unpause(){this->paused = false;}
         void            setRole(MediatorRole role) { this->_role = role;}
