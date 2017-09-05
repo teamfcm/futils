@@ -173,41 +173,57 @@ namespace fender
                 win.draw(this->text);
             }
         };
-
+        
         class Popup : public BaseElement
         {
-            sf::Text            title;
-            sf::Text            message;
+            sf::Text                title;
+            sf::Text                message;
+            sf::Text                realMessage;
+            sf::Texture             bgTexture;
+            sf::Sprite              bg;
+            int                     currentIndex{1};
         public:
             fender::Popup       &src;
             Popup(fender::Popup &src):
                     BaseElement(src),
                     src(src)
             {
-
+                this->bgTexture.loadFromFile("assets/images/" + src.getBackground());
+                this->bg.setTexture(bgTexture);
             }
 
             virtual void    init() override
             {
-                this->rectangle.setOutlineColor(sf::Color::Magenta);
+                this->rectangle.setOutlineColor(sf::Color::Black);
                 this->title = this->text;
                 this->message = this->text;
                 this->title.setString(this->src.getTitle());
                 this->message.setString(this->src.getMessage());
-                this->title.move(- this->rectangle.getSize().x / 2, - this->rectangle.getSize().y / 2);
-                this->message.move(-this->rectangle.getSize().x /2, 0);
+                this->title.move(0, - this->rectangle.getSize().y / 3);
+                this->message.move(-this->rectangle.getSize().x / 3, 0);
+                this->bg.setPosition(this->rectangle.getPosition());
+                auto local = this->bg.getLocalBounds();
+                float scaleX = this->rectangle.getSize().x / local.width;
+                float scaleY = this->rectangle.getSize().y / local.height;
+                this->bg.setScale(scaleX, scaleY);
+                this->realMessage = this->message;
+                this->realMessage.setString(this->message.getString()[0]);
             }
 
             virtual void    update() override
             {
-
+                if (!this->src.isVisible())
+                    return ;
+                if (this->realMessage.getString().getSize() < this->message.getString().getSize())
+                    this->realMessage.setString(this->message.getString().substring(0, currentIndex++));
             }
 
             virtual void    drawAll(sf::RenderWindow &win) override
             {
                 BaseElement::drawAll(win);
+                win.draw(this->bg);
                 win.draw(this->title);
-                win.draw(this->message);
+                win.draw(this->realMessage);
             }
         };
 

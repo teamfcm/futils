@@ -211,7 +211,10 @@ void    fender::SFMLRender::pollEvents()
 
 void    fender::SFMLRender::resize(int x, int y)
 {
-    this->win.setSize(sf::Vector2u(x, y));
+    this->_windowSize.X = x;
+    this->_windowSize.Y = y;
+    this->win.close();
+    this->openWindow();
 }
 
 void    fender::SFMLRender::write(int x, int y, std::string const &msg)

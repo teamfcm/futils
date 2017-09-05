@@ -10,22 +10,16 @@ SmartMode detected. Running auto conf...
      [6]	Setting AllowWindowResize to false
      [7]	Setting AssetsPath to assets/
      [8]	Setting EditorMode to false
-     [9]	Setting SystemFont to jedi
-     [10]	Setting WindowHeight to 400
+     [9]	Setting SystemFont to game
+     [10]	Setting WindowHeight to 600
      [11]	Setting WindowHorizontalAlign to Center
      [12]	Setting WindowName to Fengine Demo (alpha v.1)
      [13]	Setting WindowStyle to Borderless
-     [14]	Setting WindowVerticalAlign to Top
-     [15]	Setting WindowWidth to 400
+     [14]	Setting WindowVerticalAlign to Center
+     [15]	Setting WindowWidth to 800
      [16] In void fender::Manager::start()
-Starting scene splashscreen
-     [17] In virtual void fender::SFMLRender::loadCurrentLayout()
-SFMLRender:	Loading Bar loadingBar
-     [18]	SFMLRender:	Loading AnimatedImage logo
-     [19]	SFMLRender:	Loading Message version
-     [20] In void futils::INI::writeContentTo(const string&) const
-Saved INI Scenes/Splashscreen.ini to Scenes/Splashscreen.ini
-     [21] In void fender::Manager::start()
 Starting scene menu
-     [22] In void futils::INI::writeContentTo(const string&) const
+     [17] In virtual void fender::SFMLRender::loadCurrentLayout()
+SFMLRender:	Loading Popup QuitPopup
+     [18] In void futils::INI::writeContentTo(const string&) const
 Saved INI Scenes/Menu.ini to Scenes/Menu.ini

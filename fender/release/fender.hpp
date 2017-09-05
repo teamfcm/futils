@@ -7,6 +7,7 @@
 # include <functional>
 # include <cxxabi.h>
 # include <stack>
+# include "flog.hpp"
 # include "Fini.hpp"
 # include "futils.hpp"
 
@@ -491,8 +492,10 @@ namespace fender
 
     class       Popup : public Element
     {
-        std::string     title{"Undefined Popup"};
-        std::string     message{"Error this popup is not initialized."};
+        std::string                 title{"Undefined Popup"};
+        std::string                 message{"Error this popup is not initialized."};
+        std::string                 background{"Undefined.jpg"};
+        std::vector<futils::Choice> choices;
     public:
         Popup(futils::INI::Section &sec):
                 Element(sec)
@@ -501,6 +504,9 @@ namespace fender
             {
                 LOAD(message, std::string)
                 LOAD(title, std::string)
+                LOAD(background, std::string)
+                for (int i = 0; i < sec["choices"].size(); i++)
+                    this->choices.emplace_back(sec["choices"].get(i));
             }
             catch (std::exception const &error)
             {
@@ -511,6 +517,19 @@ namespace fender
         }
         std::string const &getTitle() const {return this->title;}
         std::string const &getMessage() const {return this->message;}
+        std::string const &getBackground() const {return this->background;}
+        void                addChoice(futils::Choice option)
+        {
+            this->choices.push_back(option);
+        }
+        std::vector<std::string>    getChoices() const
+        {
+            std::vector<std::string>    result;
+            
+            for (auto &choice: this->choices)
+                result.push_back(choice.getLabel());
+            return result;
+        }
     };
 
     class       Button : public Element

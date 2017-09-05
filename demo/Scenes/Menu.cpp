@@ -14,17 +14,26 @@ demo::scenes::Menu::Menu(demo::Demo &e,
     this->eventSystem.setRole(fender::MediatorRole::Client);
     auto    &leaveScene = *this->eventSystem.createInputEvent("QuitMenu");
     leaveScene.addKey(fender::Input::Escape, fender::State::GoingDown);
+    auto &popup = this->layout.get<fender::Popup>("QuitPopup");
+    popup.hide();
     leaveScene.start = [this](){
-        this->done = true;
+        auto &popup = this->layout.get<fender::Popup>("QuitPopup");
+        if (popup.isVisible())
+        {
+            popup.hide();
+            this->done = true;
+        }
+        else
+            popup.show();
     };
 }
 
 void    demo::scenes::Menu::init()
 {
-//    this->renderer->registerLayout(this->layout);
-//    this->renderer->useLayout("Menu");
-//    auto loadingBar = this->layout.get<fender::Bar>("loadingBar");
-//    this->layout.setVisible(true);
+    this->renderer->resize(1600, 900);
+    this->renderer->registerLayout(this->layout);
+    this->renderer->useLayout("Menu");
+    this->layout.setVisible(true);
 }
 
 void    demo::scenes::Menu::update()

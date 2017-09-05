@@ -49,6 +49,8 @@ functional
 -
 random
 -
+unordered_map
+-
 
 ../lib/fender/release/fender.hpp
 iostream
@@ -63,6 +65,8 @@ cxxabi.h
 -
 stack
 -
+flog.hpp
+../lib/fender/release/flog.hpp
 Fini.hpp
 ../lib/fender/release/Fini.hpp
 futils.hpp

@@ -14,6 +14,7 @@
 # include <vector>
 # include <iomanip>
 # include <map>
+# include "flog.hpp"
 
 namespace futils
 {
@@ -32,21 +33,54 @@ namespace futils
 
         struct Token
         {
-            std::string name;
-            std::string value;
-            std::string content;
-            int         lineNbr;
+            Token() = default;
+            Token(std::string const &name, std::string const &value): name(name), value(value)
+            {
+                if (this->value.find(","))
+                    this->list = futils::string::split(value, ',');
+            }
+            std::string name{""};
+            std::string value{""};
+            std::string content{""};
+            std::vector<std::string>    list{};
+            int         size() {return this->list.size();}
+            int         lineNbr{-1};
             void    operator = (std::string const &val)
             {
+                if (val == "")
+                    throw std::runtime_error("Missing argument for "
+                                             + this->name
+                                             + " line "
+                                             + std::to_string(this->lineNbr));
                 if (val[0] == '\"' && val[val.size() - 1] == '\"')
+                {
                     value = val;
+                    value.erase(0, 1);
+                    value = value.substr(0, value.size() - 1);
+                }
                 else
-                    value = "\"" + val + "\"";
+                    value = val;
             }
-
+            
             void    operator = (int nbr)
             {
                 value = std::to_string(nbr);
+            }
+
+            void    operator = (bool b) {
+                value = b == true ? "true" : "false";
+            }
+    
+            std::string const &get(int idx)
+            {
+                return this->list[idx];
+            }
+    
+            operator std::string() const {return this->value;}
+            explicit operator bool() const {
+                return this->value == "true"; }
+            explicit operator int() const {
+                return std::stoi(this->value);
             }
         };
 
@@ -56,49 +90,67 @@ namespace futils
             return os;
         }
 
+    public:
         struct  Section
         {
-            std::string         name;
-            int                 lineNbr;
-            std::string         content;
-            std::unordered_map<std::string, Token>  tokens;
-            std::map<int, Token *>                  tokenLineIndex;
+            std::string         name{""};
+            int                 lineNbr{-1};
+            std::string         content{""};
+            std::unordered_map<std::string, Token>  tokens{};
+            std::map<int, std::string>                  tokenLineIndex{};
 
             void                set(Token *ptr)
             {
                 this->tokens[ptr->name] = *ptr;
-                this->tokenLineIndex[ptr->lineNbr] = &this->tokens[ptr->name];
+                this->tokenLineIndex[ptr->lineNbr] = ptr->name;
             }
 
             void                set(Token const &ref, int linenbr)
             {
                 this->tokens[ref.name] = ref;
-                this->tokenLineIndex[linenbr] = &this->tokens[ref.name];
+                this->tokenLineIndex[linenbr] = ref.name;
             }
 
             Token   &operator [] (std::string const &name)
             {
+                if (this->tokens.find(name) == this->tokens.end())
+                {
+//                    This creates a solve for a petty bug
+//                    Better solution is to change from map to vector
+//                    and use capacity, reserve and size functions
+                    auto line = this->tokenLineIndex.end()->first + 1;
+                    this->tokens[name].name = name;
+                    this->tokens[name].lineNbr = line;
+                    this->tokenLineIndex[line] = name;
+                }
                 return this->tokens[name];
+            }
+
+            const Token &operator [] (std::string const &name) const
+            {
+                return this->tokens.at(name);
             }
 
             void                writeContentTo(std::ofstream &file) const
             {
                 for (auto const &tok: this->tokenLineIndex)
                 {
-                    if (tok.second->name != "")
-                        file << tok.second->name << "=" << tok.second->value << std::endl;
+                    auto actualToken = this->tokens.at(tok.second);
+                    if (actualToken.name[0] != '#')
+                        file << actualToken.name << "=" << actualToken.value << std::endl;
                     else
-                        file << tok.second->content << std::endl;
+                        file << actualToken.content << std::endl;
                 }
                 if (content != "")
                     file << content << std::endl;
             }
         };
 
+    private:
         std::vector<char>   forbiddenCharacters{' ', '\n'};
-        std::list<Line>     content;
+        std::list<Line>     content{};
         std::string         input{""};
-        std::string         filepath;
+        std::string         filepath{""};
         std::fstream        iniFile;
         std::unordered_map<std::string, Section>        sections;
         std::unordered_map<std::string, std::string>    globalTokens;
@@ -168,7 +220,7 @@ namespace futils
                     if (mostRecentSection == "")
                     {
                         auto sec = new Section;
-                        sec->name = "";
+                        sec->name = "#" + std::to_string(nbr);
                         sec->content = line;
                         sec->lineNbr = nbr;
                         this->sectionIndexTable[nbr] = sec;
@@ -176,7 +228,7 @@ namespace futils
                     else
                     {
                         auto tok = new Token;
-                        tok->name = "";
+                        tok->name = "#" + std::to_string(nbr);
                         tok->content = line;
                         tok->lineNbr = nbr;
                         this->sections[mostRecentSection].set(tok);
@@ -210,6 +262,7 @@ namespace futils
             outputFile.open(file);
             if (outputFile.is_open())
             {
+                LOUT("Saved INI " + this->filepath + " to " + file);
                 for (auto const &sec: this->sectionIndexTable)
                 {
                     if (sec.second->name != "")
@@ -219,17 +272,43 @@ namespace futils
             }
         }
 
-    public:
-        INI(std::string const &file): filepath(file)
+        void        preLoad()
         {
-            iniFile.open(filepath);
+            iniFile.open(this->filepath);
             if (iniFile.is_open())
                 this->loadINI();
             else
             {
-                iniFile.open(filepath, std::fstream::out);
+                iniFile.open(this->filepath, std::fstream::out);
                 this->loadINI();
             }
+        }
+
+    public:
+        class   INIProxy
+        {
+            std::unordered_map<std::string, Section> const &_sections;
+            std::list<Line>                          const &_content;
+        public:
+            INIProxy(std::unordered_map<std::string, Section> const &sections,
+                     std::list<Line> const &content):
+                    _sections(sections),
+                    _content(content)
+            {
+            
+            }
+
+            const Section   &operator [] (std::string const &name) const
+            {
+                return this->_sections.at(name);
+            }
+        };
+
+
+        INI(std::string const &file): filepath(file)
+        {
+            if (file != "")
+                this->preLoad();
         }
 
         ~INI()
@@ -253,7 +332,53 @@ namespace futils
 
         Section   &operator [] (std::string const &name)
         {
+            if (this->sections.find(name) == this->sections.end())
+            {
+                auto line = this->sectionIndexTable.end()->first;
+                this->sections[name].lineNbr = line;
+                this->sections[name].name = name;
+                this->sections[name].content = "";
+                this->sectionIndexTable[line] = &this->sections[name];
+            }
             return this->sections[name];
+        }
+
+        void    reset(std::string const &file)
+        {
+            this->sections.clear();
+            this->content.clear();
+            this->sectionIndexTable.clear();
+            if (this->iniFile.is_open())
+                this->iniFile.close();
+            this->globalTokens.clear();
+            this->input.clear();
+            this->filepath = file;
+            if (file != "")
+                this->preLoad();
+        }
+
+        void    closeFile()
+        {
+            if (this->iniFile.is_open())
+                this->iniFile.close();
+        }
+
+        INIProxy    *proxy()
+        {
+            return new INIProxy(this->sections, this->content);
+        }
+
+
+        std::string const &getFilePath() const { return this->filepath; }
+        std::vector<std::string>    getScopeList() const
+        {
+            std::vector<std::string>    result;
+
+            for (auto const &name: this->sectionIndexTable)
+            {
+                result.push_back(name.second->name);
+            }
+            return result;
         }
     };
 }

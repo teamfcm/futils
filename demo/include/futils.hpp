@@ -9,6 +9,7 @@
 # include <chrono>
 # include <functional>
 # include <random>
+# include <unordered_map>
 
 namespace futils
 {
@@ -17,6 +18,16 @@ namespace futils
     template        <typename __Key, typename __ValueType>
     using umap = std::unordered_map<__Key, __ValueType>;
 
+    class   Choice
+    {
+        std::string label{"Undefined"};
+    public:
+        Choice() = default;
+        Choice(std::string const &label): label(label) {}
+        std::string const &getLabel() const {return this->label;}
+        voidFunc    action{[](){}};
+    };
+    
     class   ScopeLock
     {
         std::mutex  &owned;
@@ -100,7 +111,6 @@ namespace futils
             return gen(rng);
         }
     };
-    
     
     namespace string
     {

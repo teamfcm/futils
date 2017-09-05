@@ -36,9 +36,9 @@ fender::Manager::Manager(ISceneFactory &fact,
     std::string renderLibrary = global["RenderLibrary"];
     LOUT("Selected RenderLibrary : " + renderLibrary);
     if (!(this->renderer = this->renderingBuilders[renderLibrary]()))
-        throw std::runtime_error("Failed To Build " + global["RenderLibrary"]);
+        throw std::runtime_error("Failed To Build " + std::string(global["RenderLibrary"]));
     LOUT("Renderer Built Successfully.");
-    if (conf["SmartMode"] == true)
+    if (static_cast<bool>(conf["SmartMode"]) == true)
         this->renderer->SmartModeInit(*this->config);
     this->loadTimeline();
 }
