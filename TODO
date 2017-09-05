@@ -1,0 +1,6 @@
+TODO
++ Faire un bouton
++ Detecter le clique
++ Appeler les fonctions liees aux boutons
++ Faire des objets composites : Popup + Boutons
++ Faire des EventMap pour pouvoir remplacer des bindings (popup)

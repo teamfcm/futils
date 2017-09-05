@@ -26,6 +26,11 @@ demo::scenes::Menu::Menu(demo::Demo &e,
         else
             popup.show();
     };
+    auto &quit = this->layout.get<fender::Button>("ZQuitButton");
+    quit.onClick = [this](){
+        auto &leaveScene = *this->eventSystem.createInputEvent("QuitMenu");
+        leaveScene.start();
+    };
 }
 
 void    demo::scenes::Menu::init()

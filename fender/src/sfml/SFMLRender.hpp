@@ -176,6 +176,7 @@ namespace fender
         
         class Popup : public BaseElement
         {
+            sf::RectangleShape      mask;
             sf::Text                title;
             sf::Text                message;
             sf::Text                realMessage;
@@ -188,6 +189,9 @@ namespace fender
                     BaseElement(src),
                     src(src)
             {
+                this->mask.setPosition(0, 0);
+                this->mask.setSize(sf::Vector2f(2000, 2000));
+                this->mask.setFillColor(sf::Color(125, 125, 125, 125));
                 this->bgTexture.loadFromFile("assets/images/" + src.getBackground());
                 this->bg.setTexture(bgTexture);
             }
@@ -220,6 +224,7 @@ namespace fender
 
             virtual void    drawAll(sf::RenderWindow &win) override
             {
+                win.draw(this->mask);
                 BaseElement::drawAll(win);
                 win.draw(this->bg);
                 win.draw(this->title);
@@ -229,13 +234,15 @@ namespace fender
 
         class Button : public BaseElement
         {
+            sf::Text            label;
+            sf::Text            hover;
         public:
             fender::Button             &src;
             Button(fender::Button &src):
                     BaseElement(src),
                     src(src)
             {
-
+                this->text.setString(src.getName());
             }
 
             virtual void    init() override
@@ -246,7 +253,7 @@ namespace fender
 
             virtual void    update() override
             {
-
+            
             }
 
             virtual void    drawAll(sf::RenderWindow &win) override
@@ -255,7 +262,7 @@ namespace fender
             }
         };
     }
-
+    
     class SFMLRender : public IRender
     {
         using upBaseElem = std::unique_ptr<types::BaseElement>;

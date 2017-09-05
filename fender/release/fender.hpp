@@ -344,6 +344,7 @@ namespace fender
         futils::Vec2d<int>      position{0, 0};
         futils::Vec2d<int>      size{100, 100};
         int                     alpha{255};
+        int                     zIndex{0};
 
     public:
         Element(futils::INI::Section &sec): fileObject(sec), name(sec.name)
@@ -355,6 +356,7 @@ namespace fender
                 LOAD(size.X, int)
                 LOAD(size.Y, int)
                 LOAD(visible, bool)
+                LOAD(zIndex, int)
             }
             catch (std::exception const &error)
             {
@@ -363,14 +365,19 @@ namespace fender
                 SAVE(size.X, size.X)
                 SAVE(size.Y, size.Y)
                 SAVE(visible, visible)
+                SAVE(zIndex, zIndex)
                 LERR("An error occured while loading Element " + name + ":\t" + error.what());
             }
         }
         virtual ~Element() {}
-
+        
         bool    isVisible() const {return this->visible;}
         void    show(){SetAndSave(visible, true)}
         void    hide(){SetAndSave(visible, false)}
+        void    setZIndex(int index) {
+            this->zIndex = index;
+        }
+        int     getZIndex() const {return this->zIndex;}
         const std::string &getName() const {return name;}
         const std::string &getType() const {return type;}
         void setType(const std::string &str) {SetAndSave(type, str)}
@@ -536,8 +543,8 @@ namespace fender
     {
         std::string                 label{"HoverMe"};
     public:
-        std::function<void(void)>   onClick;
-        std::function<void(void)>   onHover;
+        std::function<void(void)>   onClick{[](){}};
+        std::function<void(void)>   onHover{[](){}};
 
         Button(futils::INI::Section &sec):
                 Element(sec)
@@ -552,6 +559,8 @@ namespace fender
                 LERR("An error occured while loading Button " + sec.name + ":\t" + error.what());
             }
         }
+        
+        std::string const &getLabel() const {return this->label;}
     };
 
     class       Layout

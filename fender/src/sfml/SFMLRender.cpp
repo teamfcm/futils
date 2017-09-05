@@ -206,6 +206,23 @@ void    fender::SFMLRender::pollEvents()
                 || sfEvent.type == sf::Event::KeyReleased)
                 ev.matchInput(this->makeCommand(sfEvent));
         }
+        static bool pressed = true;
+        if (sfEvent.type == sf::Event::MouseButtonPressed && pressed)
+        {
+            pressed = false;
+            auto position = sf::Vector2f(sfEvent.mouseButton.x, sfEvent.mouseButton.y);
+            for (auto &pair: this->elements)
+            {
+                if (dynamic_cast<types::Button *>(pair.second.get()) == nullptr)
+                    continue ;
+                auto &elem = *dynamic_cast<types::Button *>(pair.second.get());
+                LOUT("Click on " + elem.src.getName());
+                if (elem.getRectangle().getGlobalBounds().contains(sf::Vector2f(position)))
+                    elem.src.onClick();
+            }
+        }
+        if (sfEvent.type == sf::Event::MouseButtonReleased)
+            pressed = true;
     }
 }
 
