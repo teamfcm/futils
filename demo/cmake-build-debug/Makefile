@@ -136,6 +136,33 @@ fender/fast:
 	$(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/build
 .PHONY : fender/fast
 
+Scenes/Menu.o: Scenes/Menu.cpp.o
+
+.PHONY : Scenes/Menu.o
+
+# target to build an object file
+Scenes/Menu.cpp.o:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Menu.cpp.o
+.PHONY : Scenes/Menu.cpp.o
+
+Scenes/Menu.i: Scenes/Menu.cpp.i
+
+.PHONY : Scenes/Menu.i
+
+# target to preprocess a source file
+Scenes/Menu.cpp.i:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Menu.cpp.i
+.PHONY : Scenes/Menu.cpp.i
+
+Scenes/Menu.s: Scenes/Menu.cpp.s
+
+.PHONY : Scenes/Menu.s
+
+# target to generate assembly for a file
+Scenes/Menu.cpp.s:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Menu.cpp.s
+.PHONY : Scenes/Menu.cpp.s
+
 Scenes/Splashscreen.o: Scenes/Splashscreen.cpp.o
 
 .PHONY : Scenes/Splashscreen.o
@@ -254,6 +281,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... demo"
 	@echo "... fender"
+	@echo "... Scenes/Menu.o"
+	@echo "... Scenes/Menu.i"
+	@echo "... Scenes/Menu.s"
 	@echo "... Scenes/Splashscreen.o"
 	@echo "... Scenes/Splashscreen.i"
 	@echo "... Scenes/Splashscreen.s"

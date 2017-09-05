@@ -40,23 +40,32 @@ fender::Manager::Manager(ISceneFactory &fact,
     LOUT("Renderer Built Successfully.");
     if (conf["SmartMode"] == true)
         this->renderer->SmartModeInit(*this->config);
+    this->loadTimeline();
+}
+
+void    fender::Manager::loadTimeline()
+{
+    this->sceneList = futils::string::split(this->timeline["timeline"]["list"],
+                                            ',');
 }
 
 void    fender::Manager::start()
 {
-//    TODO: This should be from a ini file
-    auto scene = this->sceneFactory.build("intro");
-    if (scene)
+    for (auto &sceneName: this->sceneList)
     {
-        scene->provideRenderer(*this->renderer);
-        scene->init();
-        while (scene->isDone() == false
-                && this->renderer->isRunning())
-        {
-            this->renderer->pollEvents();
-            scene->update();
-            this->renderer->refresh();
-            usleep(20000);
+        LOUT("Starting scene " + sceneName);
+        auto scene = this->sceneFactory.build(sceneName);
+        if (scene) {
+            this->renderer->changeScene();
+            scene->provideRenderer(*this->renderer);
+            scene->init();
+            while (scene->isDone() == false
+                   && this->renderer->isRunning()) {
+                this->renderer->pollEvents();
+                scene->update();
+                this->renderer->refresh();
+                usleep(20000);
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ namespace demo
     namespace scenes
     {
         class   Splashscreen;
+        class   Menu;
     }
 }
 

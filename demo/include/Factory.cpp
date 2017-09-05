@@ -7,8 +7,11 @@
 
 demo::Factory::Factory()
 {
-    buildFunctions["intro"] = [this](){
+    buildFunctions["splashscreen"] = [this](){
         return std::make_unique<demo::scenes::Splashscreen>(this->env);
+    };
+    buildFunctions["menu"] = [this](){
+        return std::make_unique<demo::scenes::Menu>(this->env);
     };
 }
 

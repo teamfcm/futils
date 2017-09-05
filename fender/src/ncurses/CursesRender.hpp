@@ -22,6 +22,7 @@ namespace fender
         virtual bool    isRunning() override {}
         virtual void    loadCurrentLayout() override {}
         virtual void    pollEvents() override {}
+        virtual void    changeScene() override {}
     };
 }
 

@@ -137,7 +137,7 @@ bool    fender::SFMLRender::isRunning()
 void    fender::SFMLRender::refresh()
 {
     this->win.clear(sf::Color::Black);
-    if (this->currentLayout->isVisible())
+    if (this->currentLayout && this->currentLayout->isVisible())
     {
         for (auto &pair: this->elements)
         {

@@ -6,5 +6,6 @@
 #define DEMO_ALLSCENES_HPP
 
 # include "../Scenes/Splashscreen.hpp"
+# include "../Scenes/Menu.hpp"
 
 #endif //DEMO_ALLSCENES_HPP

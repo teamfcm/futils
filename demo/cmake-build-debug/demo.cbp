@@ -134,6 +134,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/Scenes/Menu.cpp">
+			<Option target="demo"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/Scenes/Menu.hpp">
+			<Option target="demo"/>
+		</Unit>
 		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/Scenes/Splashscreen.cpp">
 			<Option target="demo"/>
 		</Unit>

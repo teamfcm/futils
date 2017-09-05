@@ -3,8 +3,6 @@
 //
 
 # include "Splashscreen.hpp"
-# include "fender.hpp"
-#include "../lib/fender/release/fender.hpp"
 
 demo::scenes::Splashscreen::Splashscreen(demo::Demo &e,
                                          std::string const &sceneFolder):
@@ -33,7 +31,7 @@ demo::scenes::Splashscreen::Splashscreen(demo::Demo &e,
     };
     decreaseBar.start = [this](){
         auto &bar = this->layout.get<fender::Bar>("loadingBar");
-            bar.increment(-10);
+        bar.increment(-10);
     };
     auto &tmpBarController = *this->eventSystem.createInputEvent("TmpBar");
     tmpBarController.addKey(fender::Input::Q, fender::State::GoingDown);

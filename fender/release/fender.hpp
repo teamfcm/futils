@@ -6,6 +6,7 @@
 # include <memory>
 # include <functional>
 # include <cxxabi.h>
+# include <stack>
 # include "Fini.hpp"
 # include "futils.hpp"
 
@@ -643,7 +644,8 @@ namespace fender
         virtual void    resize(int x, int y) = 0;
         virtual void    loadCurrentLayout() = 0;
         virtual void    pollEvents() = 0;
-
+        virtual void    changeScene() = 0;
+        
         void            SmartModeInit(futils::INI::INIProxy const &conf,
                                       std::string const &confScope = "fender");
         void            registerLayout(fender::Layout const &layout)
@@ -720,9 +722,11 @@ namespace fender
         std::unordered_map<std::string, configFunc>     configFunctions;
 
         std::string                     _windowName{"Undefined"};
+        std::vector<std::string>         sceneList;
 
         void    runConfigBuild();
         void    run();
+        void    loadTimeline();
     public:
         Manager(ISceneFactory &fact, futils::INI::INIProxy *config);
         void    start();
