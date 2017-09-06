@@ -13,51 +13,54 @@ extern "C" fender::SFMLRender* create()
     return new fender::SFMLRender();
 }
 
+// Anonymous namespace => Only access from this file. Also you can collapse the scope which is nice.
+namespace {
 static std::unordered_map<sf::Keyboard::Key, fender::Input> fenderCodes =
         {
-               {sf::Keyboard::Escape, fender::Input::Escape},
-               {sf::Keyboard::Space, fender::Input::Space},
-               {sf::Keyboard::LControl, fender::Input::LCtrl},
-               {sf::Keyboard::RControl, fender::Input::RCtrl},
-               {sf::Keyboard::LAlt, fender::Input::Alt},
-               {sf::Keyboard::LShift, fender::Input::LShift},
-               {sf::Keyboard::F1, fender::Input::F1},
-               {sf::Keyboard::F2, fender::Input::F2},
-               {sf::Keyboard::F3, fender::Input::F3},
-               {sf::Keyboard::F4, fender::Input::F4},
-               {sf::Keyboard::F5, fender::Input::F5},
-               {sf::Keyboard::F6, fender::Input::F6},
-               {sf::Keyboard::F7, fender::Input::F7},
-               {sf::Keyboard::F8, fender::Input::F8},
-               {sf::Keyboard::F9, fender::Input::F9},
-               {sf::Keyboard::F10, fender::Input::F10},
-               {sf::Keyboard::A, fender::Input::A},
-               {sf::Keyboard::B, fender::Input::B},
-               {sf::Keyboard::C, fender::Input::C},
-               {sf::Keyboard::D, fender::Input::D},
-               {sf::Keyboard::E, fender::Input::E},
-               {sf::Keyboard::F, fender::Input::F},
-               {sf::Keyboard::G, fender::Input::G},
-               {sf::Keyboard::H, fender::Input::H},
-               {sf::Keyboard::I, fender::Input::I},
-               {sf::Keyboard::J, fender::Input::J},
-               {sf::Keyboard::K, fender::Input::K},
-               {sf::Keyboard::L, fender::Input::L},
-               {sf::Keyboard::M, fender::Input::M},
-               {sf::Keyboard::N, fender::Input::N},
-               {sf::Keyboard::O, fender::Input::O},
-               {sf::Keyboard::P, fender::Input::P},
-               {sf::Keyboard::Q, fender::Input::Q},
-               {sf::Keyboard::R, fender::Input::R},
-               {sf::Keyboard::S, fender::Input::S},
-               {sf::Keyboard::T, fender::Input::T},
-               {sf::Keyboard::U, fender::Input::U},
-               {sf::Keyboard::V, fender::Input::V},
-               {sf::Keyboard::W, fender::Input::W},
-               {sf::Keyboard::X, fender::Input::X},
-               {sf::Keyboard::Y, fender::Input::Y},
-               {sf::Keyboard::Z, fender::Input::Z},
+                {sf::Keyboard::Escape,   fender::Input::Escape},
+                {sf::Keyboard::Space,    fender::Input::Space},
+                {sf::Keyboard::LControl, fender::Input::LCtrl},
+                {sf::Keyboard::RControl, fender::Input::RCtrl},
+                {sf::Keyboard::LAlt,     fender::Input::Alt},
+                {sf::Keyboard::LShift,   fender::Input::LShift},
+                {sf::Keyboard::F1,       fender::Input::F1},
+                {sf::Keyboard::F2,       fender::Input::F2},
+                {sf::Keyboard::F3,       fender::Input::F3},
+                {sf::Keyboard::F4,       fender::Input::F4},
+                {sf::Keyboard::F5,       fender::Input::F5},
+                {sf::Keyboard::F6,       fender::Input::F6},
+                {sf::Keyboard::F7,       fender::Input::F7},
+                {sf::Keyboard::F8,       fender::Input::F8},
+                {sf::Keyboard::F9,       fender::Input::F9},
+                {sf::Keyboard::F10,      fender::Input::F10},
+                {sf::Keyboard::A,        fender::Input::A},
+                {sf::Keyboard::B,        fender::Input::B},
+                {sf::Keyboard::C,        fender::Input::C},
+                {sf::Keyboard::D,        fender::Input::D},
+                {sf::Keyboard::E,        fender::Input::E},
+                {sf::Keyboard::F,        fender::Input::F},
+                {sf::Keyboard::G,        fender::Input::G},
+                {sf::Keyboard::H,        fender::Input::H},
+                {sf::Keyboard::I,        fender::Input::I},
+                {sf::Keyboard::J,        fender::Input::J},
+                {sf::Keyboard::K,        fender::Input::K},
+                {sf::Keyboard::L,        fender::Input::L},
+                {sf::Keyboard::M,        fender::Input::M},
+                {sf::Keyboard::N,        fender::Input::N},
+                {sf::Keyboard::O,        fender::Input::O},
+                {sf::Keyboard::P,        fender::Input::P},
+                {sf::Keyboard::Q,        fender::Input::Q},
+                {sf::Keyboard::R,        fender::Input::R},
+                {sf::Keyboard::S,        fender::Input::S},
+                {sf::Keyboard::T,        fender::Input::T},
+                {sf::Keyboard::U,        fender::Input::U},
+                {sf::Keyboard::V,        fender::Input::V},
+                {sf::Keyboard::W,        fender::Input::W},
+                {sf::Keyboard::X,        fender::Input::X},
+                {sf::Keyboard::Y,        fender::Input::Y},
+                {sf::Keyboard::Z,        fender::Input::Z},
         };
+}
 
 fender::SFMLRender::SFMLRender()
 {
@@ -65,6 +68,7 @@ fender::SFMLRender::SFMLRender()
     this->_eventSystem.setRole(fender::MediatorRole::Provider);
 }
 
+// TODO: Should have a class Window for simpler opening and provide functions for creation, placement etc...
 void    fender::SFMLRender::openWindow()
 {
     auto mode = sf::VideoMode::getDesktopMode();
@@ -77,6 +81,7 @@ void    fender::SFMLRender::openWindow()
         windowStyle |= sf::Style::Fullscreen;
     int xAlign = 0;
     int yAlign = 0;
+//    TODO: Create utils for centering (inline functions)
     if (_windowAlign.X == fender::Align::CENTER)
         xAlign = mode.width / 2 - this->_windowSize.X / 2;
     if (_windowAlign.Y == fender::Align::CENTER)
@@ -92,6 +97,7 @@ void    fender::SFMLRender::openWindow()
 
 void    fender::SFMLRender::initFactory()
 {
+//    There is unfortunately no obvious way to write this function as a loop
     this->elementFactory["AnimatedImage"] = [this](fender::Element &src)
     {
         auto *obj = dynamic_cast<fender::AnimatedImage *>(&src);
@@ -205,6 +211,7 @@ void    fender::SFMLRender::pollEvents()
                 || sfEvent.type == sf::Event::KeyReleased)
                 ev.matchInput(this->makeCommand(sfEvent));
         }
+//        TODO: Move pressed boolean to class member
         static bool pressed = true;
         if (sfEvent.type == sf::Event::MouseButtonPressed && pressed)
         {
@@ -226,12 +233,15 @@ void    fender::SFMLRender::pollEvents()
 
 void    fender::SFMLRender::resize(int x, int y)
 {
+    if (x == this->_windowSize.X && y == this->_windowSize.Y)
+        return ;
     this->_windowSize.X = x;
     this->_windowSize.Y = y;
     this->win.close();
     this->openWindow();
 }
 
+// TODO : Use this function, maybe ?
 void    fender::SFMLRender::write(int x, int y, std::string const &msg)
 {
 
@@ -239,7 +249,8 @@ void    fender::SFMLRender::write(int x, int y, std::string const &msg)
 
 void    fender::SFMLRender::loadCurrentLayout()
 {
-//    This should be in a LoaderObject for smooth preloading.
+//    TODO: This should be in a LoaderObject for smooth preloading.
+//    TODO: This should be inside the SFMLRender
     fonts["jedi"].loadFromFile("assets/fonts/jedi.ttf");
     fonts["pixel"].loadFromFile("assets/fonts/pixel.ttf");
     fonts["game"].loadFromFile("assets/fonts/game.ttf");

@@ -70,6 +70,7 @@ void    fender::Manager::start()
     }
 }
 
+// TODO : Use this function at the end of start.
 void    fender::Manager::run()
 {
 

@@ -12,20 +12,6 @@
 
 namespace fender
 {
-    class       EventMap
-    {
-        using Predicat = std::function<bool(void)>;
-        using Action = std::function<void(void)>;
-        std::vector<std::pair<Predicat, Action>>    events;
-    public:
-        EventMap();
-
-        void    add(Predicat const &pred, Action const &act)
-        {
-            events.emplace_back(std::make_pair(pred, act));
-        }
-    };
-    
     namespace elements
     {
         struct   BaseElement
@@ -68,6 +54,7 @@ namespace fender
         };
     }
 
+    
 // Layout Objects are independant from each other, allowing for a Popup Object
 // to contain a Message Element, two Button Elements and a Progress Bar
     namespace layoutObjects
@@ -114,17 +101,17 @@ namespace fender
                 this->base.text.setString(src.getContent());
             }
         
-            virtual void    init() override
+            virtual void    init() final
             {
             
             }
         
-            virtual void    update() override
+            virtual void    update() final
             {
             
             }
         
-            virtual void    drawAll(sf::RenderWindow &win) override
+            virtual void    drawAll(sf::RenderWindow &win) final
             {
                 BaseObject::drawAll(win);
             }
@@ -142,18 +129,18 @@ namespace fender
                 this->base.text.setString(src.getName());
             }
         
-            virtual void    init() override
+            virtual void    init() final
             {
                 this->base.rectangle.setOutlineColor(sf::Color::Blue);
                 this->base.rectangle.setFillColor(sf::Color::White);
             }
         
-            virtual void    update() override
+            virtual void    update() final
             {
             
             }
         
-            virtual void    drawAll(sf::RenderWindow &win) override
+            virtual void    drawAll(sf::RenderWindow &win) final
             {
                 BaseObject::drawAll(win);
             }
@@ -172,7 +159,7 @@ namespace fender
                     this->elem.texture.loadFromFile("assets/images/undefined.jpg");
             }
         
-            virtual void    init() override
+            virtual void    init() final
             {
                 this->base.rectangle.setOutlineColor(sf::Color::Cyan);
                 this->elem.texture.loadFromFile("assets/images/" + this->src.getFilepath());
@@ -181,13 +168,13 @@ namespace fender
                 this->base.rectangle.setFillColor(sf::Color(255, 255, 255, 0));
             }
 
-//            TODO: Change override for final in leaf elements
-            virtual void    update() override
+//            TODO: Change final for final in leaf elements
+            virtual void    update() final
             {
                 this->base.rectangle.setFillColor(sf::Color(255, 255, 255, this->src.getAlpha()));
             }
         
-            virtual void    drawAll(sf::RenderWindow &win) override
+            virtual void    drawAll(sf::RenderWindow &win) final
             {
                 BaseObject::drawAll(win);
             }
@@ -205,7 +192,7 @@ namespace fender
             
             }
         
-            virtual void    init() override
+            virtual void    init() final
             {
                 this->elem.progress = this->base.rectangle;
                 this->elem.progress.setOutlineThickness(0);
@@ -215,12 +202,14 @@ namespace fender
                 this->elem.progress.setPosition(this->base.rectangle.getPosition());
             }
         
-            virtual void    update() override
+            virtual void    update() final
             {
                 float   x = this->base.rectangle.getSize().x;
                 float   y = this->base.rectangle.getSize().y;
                 float   ratio = (float)this->src.getCurrent() / (float)this->src.getMaximum();
-                this->elem.progress.setFillColor(sf::Color{.r = ratio * 127, .g = ratio * 255, .b = ratio * 189});
+                this->elem.progress.setFillColor(sf::Color{.r = (sf::Uint8)(ratio * 127),
+                        .g = (sf::Uint8)(ratio * 255),
+                        .b = (sf::Uint8)(ratio * 189)});
                 ratio *= x;
                 this->elem.progress.setSize(sf::Vector2f(ratio, y));
                 this->base.text.setString(this->src.getLabel());
@@ -233,7 +222,7 @@ namespace fender
                                  this->base.text.getCharacterSize() / 2.0);
             }
         
-            virtual void    drawAll(sf::RenderWindow &win) override
+            virtual void    drawAll(sf::RenderWindow &win) final
             {
                 if (this->src.barIsVisible())
                 {
@@ -261,7 +250,7 @@ namespace fender
                 this->elem.bg.setTexture(this->elem.bgTexture);
             }
             
-            virtual void    init() override
+            virtual void    init() final
             {
                 this->base.rectangle.setOutlineColor(sf::Color::Black);
                 this->elem.title = this->base.text;
@@ -283,7 +272,7 @@ namespace fender
                 }
             }
         
-            virtual void    update() override
+            virtual void    update() final
             {
                 if (!this->src.isVisible())
                     return ;
@@ -292,7 +281,7 @@ namespace fender
                     this->elem.message.displayedText.setString(this->elem.message.text.getString().substring(0, this->elem.message.currentIndex++));
             }
         
-            virtual void    drawAll(sf::RenderWindow &win) override
+            virtual void    drawAll(sf::RenderWindow &win) final
             {
                 win.draw(this->elem.mask);
                 BaseObject::drawAll(win);
@@ -323,11 +312,13 @@ namespace fender
         template        <typename ElemType, typename SrcType>
         void            create(SrcType &src)
         {
+//            TODO: Obviously this function cannot stay that way.
+//            TODO: Create utils for centering text, objetcs etc... (probably goes with elements encapsulation)
             auto &elem = *(new ElemType(src));
             auto &rectangle = elem.getRectangle();
             auto &text = elem.getText();
-            rectangle.setSize(sf::Vector2f{src.getSize().X * this->_windowSize.X / 100.0,
-                                           src.getSize().Y * this->_windowSize.Y / 100.0});
+            rectangle.setSize(sf::Vector2f{(float)(src.getSize().X * this->_windowSize.X / 100.0),
+                                           (float)(src.getSize().Y * this->_windowSize.Y / 100.0)});
             rectangle.setPosition(src.getPosition().X * this->_windowSize.X / 100.0,
                                   src.getPosition().Y * this->_windowSize.Y / 100.0);
             rectangle.setOutlineColor(sf::Color::White);
@@ -364,15 +355,15 @@ namespace fender
         
     public:
         SFMLRender();
-        virtual void    openWindow() override;
-        virtual void    closeWindow() override;
-        virtual void    write(int x, int y, std::string const &msg) override;
-        virtual void    refresh() override;
-        virtual void    resize(int x, int y) override;
-        virtual bool    isRunning() override;
-        virtual void    loadCurrentLayout() override;
-        virtual void    pollEvents() override;
-        virtual void    changeScene() override {
+        virtual void    openWindow() final;
+        virtual void    closeWindow() final;
+        virtual void    write(int x, int y, std::string const &msg) final;
+        virtual void    refresh() final;
+        virtual void    resize(int x, int y) final;
+        virtual bool    isRunning() final;
+        virtual void    loadCurrentLayout() final;
+        virtual void    pollEvents() final;
+        virtual void    changeScene() final {
             this->currentLayout = nullptr;
             this->elements.clear();
             this->_eventSystem.clear();
