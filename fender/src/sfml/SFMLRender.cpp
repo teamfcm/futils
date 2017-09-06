@@ -136,12 +136,13 @@ bool    fender::SFMLRender::isRunning()
 
 void    fender::SFMLRender::refresh()
 {
+//    TODO: Abstract colors and Background
     this->win.clear(sf::Color::Black);
     if (this->currentLayout && this->currentLayout->isVisible())
     {
-        for (auto &pair: this->elements)
+        for (auto it=this->indexMap.begin(); it!=this->indexMap.end(); ++it)
         {
-            auto &elem = *pair.second;
+            auto &elem = *this->elements[it->second];
             elem.update();
             if (!elem.src.isVisible())
                 continue ;
@@ -193,8 +194,6 @@ void    fender::SFMLRender::resetKeys()
 void    fender::SFMLRender::pollEvents()
 {
     sf::Event   sfEvent;
-//    This function will update already down inputs to update from GoingDown to Down
-//    and from GoingUp to Up
     this->resetKeys();
     this->updateChangingKeys();
     while (this->win.pollEvent(sfEvent))
@@ -216,7 +215,6 @@ void    fender::SFMLRender::pollEvents()
                 if (dynamic_cast<types::Button *>(pair.second.get()) == nullptr)
                     continue ;
                 auto &elem = *dynamic_cast<types::Button *>(pair.second.get());
-                LOUT("Click on " + elem.src.getName());
                 if (elem.getRectangle().getGlobalBounds().contains(sf::Vector2f(position)))
                     elem.src.onClick();
             }

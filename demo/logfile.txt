@@ -22,7 +22,5 @@ Starting scene menu
      [17] In virtual void fender::SFMLRender::loadCurrentLayout()
 SFMLRender:	Loading Button ZQuitButton
      [18]	SFMLRender:	Loading Popup QuitPopup
-     [19] In virtual void fender::SFMLRender::pollEvents()
-Click on ZQuitButton
-     [20] In void futils::INI::writeContentTo(const string&) const
+     [19] In void futils::INI::writeContentTo(const string&) const
 Saved INI Scenes/Menu.ini to Scenes/Menu.ini

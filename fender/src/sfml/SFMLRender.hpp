@@ -191,7 +191,7 @@ namespace fender
             {
                 this->mask.setPosition(0, 0);
                 this->mask.setSize(sf::Vector2f(2000, 2000));
-                this->mask.setFillColor(sf::Color(125, 125, 125, 125));
+                this->mask.setFillColor(sf::Color(125, 125, 125, 100));
                 this->bgTexture.loadFromFile("assets/images/" + src.getBackground());
                 this->bg.setTexture(bgTexture);
             }
@@ -218,7 +218,8 @@ namespace fender
             {
                 if (!this->src.isVisible())
                     return ;
-                if (this->realMessage.getString().getSize() < this->message.getString().getSize())
+                if (this->realMessage.getString().getSize() <
+                    this->message.getString().getSize())
                     this->realMessage.setString(this->message.getString().substring(0, currentIndex++));
             }
 
@@ -270,6 +271,7 @@ namespace fender
         std::unordered_map<std::string, std::function<void(fender::Element &)>>  elementFactory;
         std::unordered_map<std::string, sf::Font>                   fonts;
         std::unordered_map<std::string, upBaseElem>                 elements;
+        std::multimap<int, std::string>                             indexMap;
         sf::RenderWindow                                            win;
         std::unordered_map<sf::Keyboard::Key, fender::State>        inputs;
 
@@ -309,6 +311,7 @@ namespace fender
             this->elements
                     .insert(std::pair<std::string, std::unique_ptr<ElemType>>
                                     (src.getName(), &elem));
+            this->indexMap.insert(std::make_pair(src.getZIndex(), src.getName()));
         };
         
         fender::Command makeCommand(sf::Event const &);
