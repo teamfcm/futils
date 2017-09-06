@@ -96,31 +96,31 @@ void    fender::SFMLRender::initFactory()
     {
         auto *obj = dynamic_cast<fender::AnimatedImage *>(&src);
         if (obj)
-            this->create<types::AnimatedImage>(*obj);
+            this->create<layoutObjects::AnimatedImage>(*obj);
     };
     this->elementFactory["Bar"] = [this](fender::Element &src)
     {
         auto *obj = dynamic_cast<fender::Bar *>(&src);
         if (obj)
-            this->create<types::Bar>(*obj);
+            this->create<layoutObjects::Bar>(*obj);
     };
     this->elementFactory["Button"] = [this](fender::Element &src)
     {
         auto *obj = dynamic_cast<fender::Button *>(&src);
         if (obj)
-            this->create<types::Button>(*obj);
+            this->create<layoutObjects::Button>(*obj);
     };
     this->elementFactory["Popup"] = [this](fender::Element &src)
     {
         auto *obj = dynamic_cast<fender::Popup *>(&src);
         if (obj)
-            this->create<types::Popup>(*obj);
+            this->create<layoutObjects::Popup>(*obj);
     };
     this->elementFactory["Message"] = [this](fender::Element &src)
     {
         auto *obj = dynamic_cast<fender::Message *>(&src);
         if (obj)
-            this->create<types::Message>(*obj);
+            this->create<layoutObjects::Message>(*obj);
     };
 }
 
@@ -212,9 +212,9 @@ void    fender::SFMLRender::pollEvents()
             auto position = sf::Vector2f(sfEvent.mouseButton.x, sfEvent.mouseButton.y);
             for (auto &pair: this->elements)
             {
-                if (dynamic_cast<types::Button *>(pair.second.get()) == nullptr)
+                if (dynamic_cast<layoutObjects::Button *>(pair.second.get()) == nullptr)
                     continue ;
-                auto &elem = *dynamic_cast<types::Button *>(pair.second.get());
+                auto &elem = *dynamic_cast<layoutObjects::Button *>(pair.second.get());
                 if (elem.getRectangle().getGlobalBounds().contains(sf::Vector2f(position)))
                     elem.src.onClick();
             }

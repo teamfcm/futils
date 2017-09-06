@@ -17,7 +17,7 @@ namespace futils
     using voidStringFunc = std::function<void(std::string const &)>;
     template        <typename __Key, typename __ValueType>
     using umap = std::unordered_map<__Key, __ValueType>;
-
+    
     class   Choice
     {
         std::string label{"Undefined"};

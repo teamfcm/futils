@@ -25,17 +25,62 @@ namespace fender
             events.emplace_back(std::make_pair(pred, act));
         }
     };
-
-    namespace types
+    
+    namespace elements
     {
-        class BaseElement
+        struct   BaseElement
         {
-        protected:
             sf::RectangleShape  rectangle;
             sf::Text            text;
             sf::Text            label;
+        };
+        
+        struct   Message 
+        {
+            sf::Text                text;
+            sf::Text                displayedText;
+            int                     currentIndex{0};
+        };
+        
+        struct   AnimatedImage 
+        {
+            sf::Texture             texture;
+        };
+        
+        struct   Popup 
+        {
+            elements::Message       message;
+            sf::RectangleShape      mask;
+            sf::Text                title;
+            sf::Texture             bgTexture;
+            sf::Sprite              bg;
+        };
+        
+        struct   Button 
+        {
+            sf::Text            label;
+            sf::Text            hover;
+        };
+        
+        struct   Bar 
+        {
+            sf::RectangleShape      progress;
+        };
+    }
+
+// Layout Objects are independant from each other, allowing for a Popup Object
+// to contain a Message Element, two Button Elements and a Progress Bar
+    namespace layoutObjects
+    {
+        class   BaseObject
+        {
+        protected:
+            elements::BaseElement   base;
         public:
-            virtual ~BaseElement() {}
+            fender::Element         &src;
+            BaseObject(fender::Element &src): src(src) {}
+            
+            virtual ~BaseObject() {}
             virtual void    update() {}
             virtual void    init() {}
             virtual void    drawAll(sf::RenderWindow &win)
@@ -45,232 +90,231 @@ namespace fender
             }
             virtual void    drawRect(sf::RenderWindow &win)
             {
-                win.draw(this->rectangle);
+                win.draw(this->base.rectangle);
             }
             virtual void    drawText(sf::RenderWindow &win)
             {
-                win.draw(this->text);
+                win.draw(this->base.text);
             }
-            
-            fender::Element     &src;
-            BaseElement(fender::Element &src): src(src)
-            {
-
-            }
-
-            sf::RectangleShape &getRectangle() {return this->rectangle;};
-            sf::Text &getText() {return this->text;};
-            sf::Text &getLabel() {return this->label;};
+        
+            sf::RectangleShape &getRectangle() {return this->base.rectangle;};
+            sf::Text &getText() {return this->base.text;};
+            sf::Text &getLabel() {return this->base.label;};
         };
-
-        class   Message : public BaseElement
+    
+        class   Message : public BaseObject
         {
-            fender::Message &src;
+            elements::Message   elem;
+            fender::Message     &src;
         public:
             Message(fender::Message &src):
-                    BaseElement(src),
+                    BaseObject(src),
                     src(src)
             {
-                this->text.setString(src.getContent());
+                this->base.text.setString(src.getContent());
             }
-            
+        
             virtual void    init() override
             {
             
             }
-    
+        
             virtual void    update() override
             {
             
             }
-    
+        
             virtual void    drawAll(sf::RenderWindow &win) override
             {
-                BaseElement::drawAll(win);
+                BaseObject::drawAll(win);
             }
         };
-        
-        class AnimatedImage : public BaseElement
+    
+        class   Button : public BaseObject
         {
+            elements::Button            elem;
+        public:
+            fender::Button             &src;
+            Button(fender::Button &src):
+                    BaseObject(src),
+                    src(src)
+            {
+                this->base.text.setString(src.getName());
+            }
+        
+            virtual void    init() override
+            {
+                this->base.rectangle.setOutlineColor(sf::Color::Blue);
+                this->base.rectangle.setFillColor(sf::Color::White);
+            }
+        
+            virtual void    update() override
+            {
+            
+            }
+        
+            virtual void    drawAll(sf::RenderWindow &win) override
+            {
+                BaseObject::drawAll(win);
+            }
+        };
+    
+        class   AnimatedImage : public BaseObject
+        {
+            elements::AnimatedImage elem;
             fender::AnimatedImage   &src;
-            sf::Texture             texture;
         public:
             AnimatedImage(fender::AnimatedImage &src):
-                    BaseElement(src),
+                    BaseObject(src),
                     src(src)
             {
-                if (!this->texture.loadFromFile(this->src.getFilepath()))
-                    this->texture.loadFromFile("assets/images/undefined.jpg");
+                if (!this->elem.texture.loadFromFile(this->src.getFilepath()))
+                    this->elem.texture.loadFromFile("assets/images/undefined.jpg");
             }
-
+        
             virtual void    init() override
             {
-                this->rectangle.setOutlineColor(sf::Color::Cyan);
-                this->texture.loadFromFile("assets/images/" + this->src.getFilepath());
-                this->rectangle.setTexture(&this->texture);
-                this->rectangle.setFillColor(sf::Color::White);
-                this->rectangle.setFillColor(sf::Color(255, 255, 255, 0));
+                this->base.rectangle.setOutlineColor(sf::Color::Cyan);
+                this->elem.texture.loadFromFile("assets/images/" + this->src.getFilepath());
+                this->base.rectangle.setTexture(&this->elem.texture);
+                this->base.rectangle.setFillColor(sf::Color::White);
+                this->base.rectangle.setFillColor(sf::Color(255, 255, 255, 0));
             }
 
+//            TODO: Change override for final in leaf elements
             virtual void    update() override
             {
-                this->rectangle.setFillColor(sf::Color(255, 255, 255, this->src.getAlpha()));
+                this->base.rectangle.setFillColor(sf::Color(255, 255, 255, this->src.getAlpha()));
             }
-
+        
             virtual void    drawAll(sf::RenderWindow &win) override
             {
-                BaseElement::drawAll(win);
+                BaseObject::drawAll(win);
             }
         };
-
-        class Bar : public BaseElement
+    
+        class   Bar : public BaseObject
         {
-            sf::RectangleShape      progress;
+            elements::Bar           elem;
         public:
             fender::Bar             &src;
             Bar(fender::Bar &src):
-                    BaseElement(src),
+                    BaseObject(src),
                     src(src)
             {
-
+            
             }
-    
+        
             virtual void    init() override
             {
-                progress = this->rectangle;
-                progress.setOutlineThickness(0);
-                progress.setFillColor(sf::Color{.a = 255, .r = 200, .g = 50, .b = 50});
-                text.setFillColor(sf::Color::White);
-                progress.setSize(sf::Vector2f(0, this->rectangle.getSize().y));
-                progress.setPosition(this->rectangle.getPosition());
+                this->elem.progress = this->base.rectangle;
+                this->elem.progress.setOutlineThickness(0);
+                this->elem.progress.setFillColor(sf::Color{.a = 255, .r = 200, .g = 50, .b = 50});
+                this->base.text.setFillColor(sf::Color::White);
+                this->elem.progress.setSize(sf::Vector2f(0, this->base.rectangle.getSize().y));
+                this->elem.progress.setPosition(this->base.rectangle.getPosition());
             }
-    
+        
             virtual void    update() override
             {
-                float   x = this->rectangle.getSize().x;
-                float   y = this->rectangle.getSize().y;
+                float   x = this->base.rectangle.getSize().x;
+                float   y = this->base.rectangle.getSize().y;
                 float   ratio = (float)this->src.getCurrent() / (float)this->src.getMaximum();
-                this->progress.setFillColor(sf::Color{.r = ratio * 127, .g = ratio * 255, .b = ratio * 189});
+                this->elem.progress.setFillColor(sf::Color{.r = ratio * 127, .g = ratio * 255, .b = ratio * 189});
                 ratio *= x;
-                this->progress.setSize(sf::Vector2f(ratio, y));
-                this->text.setString(this->src.getLabel());
-                text.setPosition(rectangle.getPosition().x +
-                                 rectangle.getSize().x / 2.0 -
-                                 text.getString().getSize() / 3.0 *
-                                 text.getCharacterSize(),
-                                 rectangle.getPosition().y +
-                                 rectangle.getSize().y / 2.0 -
-                                 text.getCharacterSize() / 2.0);
+                this->elem.progress.setSize(sf::Vector2f(ratio, y));
+                this->base.text.setString(this->src.getLabel());
+                base.text.setPosition(this->base.rectangle.getPosition().x +
+                                 this->base.rectangle.getSize().x / 2.0 -
+                                 this->base.text.getString().getSize() / 3.0 *
+                                 this->base.text.getCharacterSize(),
+                                 this->base.rectangle.getPosition().y +
+                                 this->base.rectangle.getSize().y / 2.0 -
+                                 this->base.text.getCharacterSize() / 2.0);
             }
-    
+        
             virtual void    drawAll(sf::RenderWindow &win) override
             {
                 if (this->src.barIsVisible())
                 {
-                    win.draw(this->progress);
-                    BaseElement::drawRect(win);
+                    win.draw(this->elem.progress);
+                    BaseObject::drawRect(win);
                 }
-                win.draw(this->text);
+                win.draw(this->base.text);
             }
         };
-        
-        class Popup : public BaseElement
+    
+        class   Popup : public BaseObject
         {
-            sf::RectangleShape      mask;
-            sf::Text                title;
-            sf::Text                message;
-            sf::Text                realMessage;
-            sf::Texture             bgTexture;
-            sf::Sprite              bg;
-            int                     currentIndex{1};
+            elements::Popup                 elem;
+            std::vector<elements::Button>   choices;
         public:
             fender::Popup       &src;
             Popup(fender::Popup &src):
-                    BaseElement(src),
+                    BaseObject(src),
                     src(src)
             {
-                this->mask.setPosition(0, 0);
-                this->mask.setSize(sf::Vector2f(2000, 2000));
-                this->mask.setFillColor(sf::Color(125, 125, 125, 100));
-                this->bgTexture.loadFromFile("assets/images/" + src.getBackground());
-                this->bg.setTexture(bgTexture);
+                this->elem.mask.setPosition(0, 0);
+                this->elem.mask.setSize(sf::Vector2f(2000, 2000));
+                this->elem.mask.setFillColor(sf::Color(125, 125, 125, 150));
+                this->elem.bgTexture.loadFromFile("assets/images/" + src.getBackground());
+                this->elem.bg.setTexture(this->elem.bgTexture);
             }
-
+            
             virtual void    init() override
             {
-                this->rectangle.setOutlineColor(sf::Color::Black);
-                this->title = this->text;
-                this->message = this->text;
-                this->title.setString(this->src.getTitle());
-                this->message.setString(this->src.getMessage());
-                this->title.move(0, - this->rectangle.getSize().y / 3);
-                this->message.move(-this->rectangle.getSize().x / 3, 0);
-                this->bg.setPosition(this->rectangle.getPosition());
-                auto local = this->bg.getLocalBounds();
-                float scaleX = this->rectangle.getSize().x / local.width;
-                float scaleY = this->rectangle.getSize().y / local.height;
-                this->bg.setScale(scaleX, scaleY);
-                this->realMessage = this->message;
-                this->realMessage.setString(this->message.getString()[0]);
+                this->base.rectangle.setOutlineColor(sf::Color::Black);
+                this->elem.title = this->base.text;
+                this->elem.message.text = this->base.text;
+                this->elem.title.setString(this->src.getTitle());
+                this->elem.message.text.setString(this->src.getMessage());
+                this->elem.title.move(0, - this->base.rectangle.getSize().y / 3);
+                this->elem.message.text.move(-this->base.rectangle.getSize().x / 3, 0);
+                this->elem.bg.setPosition(this->base.rectangle.getPosition());
+                auto local = this->elem.bg.getLocalBounds();
+                float scaleX = this->base.rectangle.getSize().x / local.width;
+                float scaleY = this->base.rectangle.getSize().y / local.height;
+                this->elem.bg.setScale(scaleX, scaleY);
+                this->elem.message.displayedText = this->elem.message.text;
+                this->elem.message.displayedText.setString(this->elem.message.text.getString()[0]);
+                for (auto &choice: this->src.getChoices())
+                {
+                    (void)choice;
+                }
             }
-
+        
             virtual void    update() override
             {
                 if (!this->src.isVisible())
                     return ;
-                if (this->realMessage.getString().getSize() <
-                    this->message.getString().getSize())
-                    this->realMessage.setString(this->message.getString().substring(0, currentIndex++));
+                if (this->elem.message.displayedText.getString().getSize() <
+                    this->elem.message.text.getString().getSize())
+                    this->elem.message.displayedText.setString(this->elem.message.text.getString().substring(0, this->elem.message.currentIndex++));
             }
-
+        
             virtual void    drawAll(sf::RenderWindow &win) override
             {
-                win.draw(this->mask);
-                BaseElement::drawAll(win);
-                win.draw(this->bg);
-                win.draw(this->title);
-                win.draw(this->realMessage);
-            }
-        };
-
-        class Button : public BaseElement
-        {
-            sf::Text            label;
-            sf::Text            hover;
-        public:
-            fender::Button             &src;
-            Button(fender::Button &src):
-                    BaseElement(src),
-                    src(src)
-            {
-                this->text.setString(src.getName());
-            }
-
-            virtual void    init() override
-            {
-                this->rectangle.setOutlineColor(sf::Color::Blue);
-                this->rectangle.setFillColor(sf::Color::White);
-            }
-
-            virtual void    update() override
-            {
-            
-            }
-
-            virtual void    drawAll(sf::RenderWindow &win) override
-            {
-                BaseElement::drawAll(win);
+                win.draw(this->elem.mask);
+                BaseObject::drawAll(win);
+                win.draw(this->elem.bg);
+                win.draw(this->elem.title);
+                win.draw(this->elem.message.displayedText);
+                for (auto &button: this->choices)
+                {
+                    //            TODO: Obviously elements should be classes with encapsulation methods such as draw
+                    (void)button;
+                }
             }
         };
     }
     
     class SFMLRender : public IRender
     {
-        using upBaseElem = std::unique_ptr<types::BaseElement>;
+        using upBaseObj = std::unique_ptr<layoutObjects::BaseObject>;
 
         std::unordered_map<std::string, std::function<void(fender::Element &)>>  elementFactory;
         std::unordered_map<std::string, sf::Font>                   fonts;
-        std::unordered_map<std::string, upBaseElem>                 elements;
+        std::unordered_map<std::string, upBaseObj>                 elements;
         std::multimap<int, std::string>                             indexMap;
         sf::RenderWindow                                            win;
         std::unordered_map<sf::Keyboard::Key, fender::State>        inputs;
