@@ -673,7 +673,8 @@ namespace fender
         virtual void    resize(int x, int y) = 0;
         virtual void    loadCurrentLayout() = 0;
         virtual void    pollEvents() = 0;
-        virtual void    changeScene() = 0;
+        virtual void    changeScene(futils::INI::INIProxy *config = nullptr,
+                                    std::string const &scope = "fender") = 0;
         
         void            SmartModeInit(futils::INI::INIProxy const &conf,
                                       std::string const &confScope = "fender");

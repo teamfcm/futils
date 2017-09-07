@@ -367,11 +367,15 @@ namespace fender
         virtual bool    isRunning() final;
         virtual void    loadCurrentLayout() final;
         virtual void    pollEvents() final;
-        virtual void    changeScene() final {
+        virtual void    changeScene(futils::INI::INIProxy *config = nullptr,
+                                    std::string const &scope = "config") final
+        {
             this->currentLayout = nullptr;
             this->elements.clear();
             this->_eventSystem.clear();
             this->indexMap.clear();
+            if (config)
+                this->SmartModeInit(*config, scope);
         };
     };
 }

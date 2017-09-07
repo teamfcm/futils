@@ -22,7 +22,7 @@ namespace fender
         virtual bool    isRunning() override {}
         virtual void    loadCurrentLayout() override {}
         virtual void    pollEvents() override {}
-        virtual void    changeScene() override {}
+        virtual void    changeScene(futils::INI::INIProxy *config = nullptr, std::string const &scope = "config") override {}
     };
 }
 

@@ -53,7 +53,7 @@ void    fender::Manager::start()
 {
     for (auto &sceneName: this->sceneList)
     {
-        this->renderer->changeScene();
+        this->renderer->changeScene(this->timeline.proxy(), sceneName);
         LOUT("Starting scene " + sceneName);
         auto scene = this->sceneFactory.build(sceneName);
         if (scene) {

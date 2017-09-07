@@ -97,6 +97,7 @@ void    fender::SFMLRender::openWindow()
 
 void    fender::SFMLRender::initFactory()
 {
+
 //    There is unfortunately no obvious way to write this function as a loop
     this->elementFactory["AnimatedImage"] = [this](fender::Element &src)
     {
