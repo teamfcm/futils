@@ -21,19 +21,25 @@ namespace fender
             sf::Text            label;
         };
         
-        struct   Message 
+        struct   Message
         {
             sf::Text                text;
             sf::Text                displayedText;
             int                     currentIndex{0};
         };
         
-        struct   AnimatedImage 
+        struct   AnimatedImage
         {
             sf::Texture             texture;
         };
-        
-        struct   Popup 
+    
+        struct   Button
+        {
+            sf::Text            label;
+            sf::Text            hover;
+        };
+
+        struct   Popup
         {
             elements::Message       message;
             sf::RectangleShape      mask;
@@ -42,18 +48,11 @@ namespace fender
             sf::Sprite              bg;
         };
         
-        struct   Button 
-        {
-            sf::Text            label;
-            sf::Text            hover;
-        };
-        
-        struct   Bar 
+        struct   Bar
         {
             sf::RectangleShape      progress;
         };
     }
-
     
 // Layout Objects are independant from each other, allowing for a Popup Object
 // to contain a Message Element, two Button Elements and a Progress Bar
@@ -300,13 +299,18 @@ namespace fender
     class SFMLRender : public IRender
     {
         using upBaseObj = std::unique_ptr<layoutObjects::BaseObject>;
+        using ElementFactory = std::unordered_map<std::string, std::function<void(fender::Element &)>>;
+        using FontMap = std::unordered_map<std::string, sf::Font>;
+        using ElementMap = std::unordered_map<std::string, upBaseObj>;
+        using ElementIndexMap = std::multimap<int, layoutObjects::BaseObject *>;
+        using InputMap = std::unordered_map<sf::Keyboard::Key, fender::State>;
 
-        std::unordered_map<std::string, std::function<void(fender::Element &)>>  elementFactory;
-        std::unordered_map<std::string, sf::Font>                   fonts;
-        std::unordered_map<std::string, upBaseObj>                 elements;
-        std::multimap<int, std::string>                             indexMap;
-        sf::RenderWindow                                            win;
-        std::unordered_map<sf::Keyboard::Key, fender::State>        inputs;
+        ElementFactory          elementFactory;
+        FontMap                 fonts;
+        ElementMap              elements;
+        ElementIndexMap         indexMap;
+        sf::RenderWindow        win;
+        InputMap                inputs;
 
         void            initFactory();
         template        <typename ElemType, typename SrcType>
@@ -346,7 +350,7 @@ namespace fender
             this->elements
                     .insert(std::pair<std::string, std::unique_ptr<ElemType>>
                                     (src.getName(), &elem));
-            this->indexMap.insert(std::make_pair(src.getZIndex(), src.getName()));
+            this->indexMap.insert(std::make_pair(src.getZIndex(), &elem));
         };
         
         fender::Command makeCommand(sf::Event const &);
@@ -367,6 +371,7 @@ namespace fender
             this->currentLayout = nullptr;
             this->elements.clear();
             this->_eventSystem.clear();
+            this->indexMap.clear();
         };
     };
 }

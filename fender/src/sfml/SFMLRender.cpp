@@ -13,7 +13,7 @@ extern "C" fender::SFMLRender* create()
     return new fender::SFMLRender();
 }
 
-// Anonymous namespace => Only access from this file. Also you can collapse the scope which is nice.
+// Input Anonymous namespace => Only access from this file. Also you can collapse the scope which is nice.
 namespace {
 static std::unordered_map<sf::Keyboard::Key, fender::Input> fenderCodes =
         {
@@ -148,7 +148,7 @@ void    fender::SFMLRender::refresh()
     {
         for (auto it=this->indexMap.begin(); it!=this->indexMap.end(); ++it)
         {
-            auto &elem = *this->elements[it->second];
+            auto &elem = *it->second;
             elem.update();
             if (!elem.src.isVisible())
                 continue ;
@@ -200,6 +200,7 @@ void    fender::SFMLRender::resetKeys()
 void    fender::SFMLRender::pollEvents()
 {
     sf::Event   sfEvent;
+    
     this->resetKeys();
     this->updateChangingKeys();
     while (this->win.pollEvent(sfEvent))
@@ -217,13 +218,16 @@ void    fender::SFMLRender::pollEvents()
         {
             pressed = false;
             auto position = sf::Vector2f(sfEvent.mouseButton.x, sfEvent.mouseButton.y);
-            for (auto &pair: this->elements)
+            for (auto it = this->indexMap.rbegin(); it != this->indexMap.rend(); it++)
             {
-                if (dynamic_cast<layoutObjects::Button *>(pair.second.get()) == nullptr)
+                auto elem = dynamic_cast<layoutObjects::Button *>(it->second);
+                if (elem == nullptr)
                     continue ;
-                auto &elem = *dynamic_cast<layoutObjects::Button *>(pair.second.get());
-                if (elem.getRectangle().getGlobalBounds().contains(sf::Vector2f(position)))
-                    elem.src.onClick();
+                if (elem->getRectangle().getGlobalBounds().contains(sf::Vector2f(position)))
+                {
+                    elem->src.onClick();
+                    break ;
+                }
             }
         }
         if (sfEvent.type == sf::Event::MouseButtonReleased)

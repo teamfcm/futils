@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.hpp" line="318" mnemonic="0" />
+    <bookmark url="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.hpp" line="322" mnemonic="0" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -33,44 +33,41 @@
       <file leaf-file-name="SFMLRender.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5489">
-              <caret line="366" column="3" lean-forward="false" selection-start-line="366" selection-start-column="3" selection-end-line="366" selection-end-column="3" />
+            <state relative-caret-position="406">
+              <caret line="352" column="73" lean-forward="false" selection-start-line="352" selection-start-column="73" selection-end-line="352" selection-end-column="73" />
               <folding>
-                <element signature="e#257#417#1" expanded="false" />
-                <element signature="e#436#619#1" expanded="false" />
-                <element signature="e#638#726#1" expanded="false" />
-                <element signature="e#745#997#1" expanded="false" />
-                <element signature="e#1016#1130#1" expanded="false" />
-                <element signature="e#1149#1228#1" expanded="false" />
-                <element signature="e#1781#1929#0" expanded="false" />
-                <element signature="e#1942#2065#0" expanded="false" />
-                <element signature="e#2078#2196#0" expanded="false" />
-                <element signature="e#2579#2764#0" expanded="false" />
+                <element signature="e#637#724#1" expanded="false" />
+                <element signature="e#1133#1211#1" expanded="false" />
+                <element signature="e#1763#1911#0" expanded="false" />
+                <element signature="e#1924#2047#0" expanded="false" />
+                <element signature="e#2060#2178#0" expanded="false" />
+                <element signature="e#2561#2746#0" expanded="false" />
+                <element signature="e#2952#3074#0" expanded="false" />
+                <element signature="e#3263#3443#0" expanded="false" />
+                <element signature="e#3465#3661#0" expanded="false" />
+                <element signature="e#3776#3898#0" expanded="false" />
+                <element signature="e#4087#4386#0" expanded="false" />
+                <element signature="e#4408#4847#0" expanded="false" />
+                <element signature="e#4849#5078#0" expanded="false" />
+                <element signature="e#5100#5222#0" expanded="false" />
+                <element signature="e#5552#6072#0" expanded="false" />
+                <element signature="e#6094#7256#0" expanded="false" />
+                <element signature="e#7278#7581#0" expanded="false" />
+                <element signature="e#11392#11429#0" expanded="false" />
+                <element signature="e#14029#14231#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SFMLRender.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SFMLRender.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="95" column="1" lean-forward="true" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
+            <state relative-caret-position="156">
+              <caret line="223" column="36" lean-forward="true" selection-start-line="223" selection-start-column="36" selection-end-line="223" selection-end-column="36" />
               <folding>
-                <element signature="e#345#3008#0" expanded="false" />
-                <element signature="e#3010#3135#0" expanded="false" />
-                <element signature="e#3137#4403#0" expanded="false" />
+                <element signature="e#351#3014#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Manager.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/fender/src/Manager.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="72" column="48" lean-forward="false" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -85,67 +82,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="fender.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/fender/release/fender.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="32" column="15" lean-forward="true" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Menu.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scenes/Menu.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="futils.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/futils.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="18" selection-end-line="20" selection-end-column="18" />
-              <folding>
-                <element signature="e#88#105#0" expanded="true" />
-                <marker date="1504718524380" expanded="true" signature="674:694" ph="{...}" />
-                <marker date="1504718524380" expanded="true" signature="809:846" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="timeline.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scenes/timeline.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="1" column="9" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.ini" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/config/config.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="21" column="15" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>smart</find>
-      <find>Splashscreen</find>
-      <find>Manager</find>
       <find>stack</find>
       <find>refresh</find>
       <find>IRender</find>
@@ -173,6 +113,9 @@
       <find>Popup</find>
       <find>types</find>
       <find>override</find>
+      <find>BaseElement</find>
+      <find>mask</find>
+      <find>pair</find>
     </findStrings>
     <replaceStrings>
       <replace>Element</replace>
@@ -244,7 +187,6 @@
         <option value="$PROJECT_DIR$/include/AllScenes.hpp" />
         <option value="$PROJECT_DIR$/lib/fender/src/IRender.cpp" />
         <option value="$PROJECT_DIR$/lib/fender/src/ncurses/CursesRender.hpp" />
-        <option value="$PROJECT_DIR$/Scenes/timeline.ini" />
         <option value="$PROJECT_DIR$/config/config.ini" />
         <option value="$PROJECT_DIR$/include/Fini.hpp" />
         <option value="$PROJECT_DIR$/lib/fender/include/Fini.hpp" />
@@ -252,11 +194,12 @@
         <option value="$PROJECT_DIR$/include/fender.hpp" />
         <option value="$PROJECT_DIR$/Scenes/Menu.cpp" />
         <option value="$PROJECT_DIR$/include/futils.hpp" />
-        <option value="$PROJECT_DIR$/Scenes/Menu.ini" />
         <option value="$PROJECT_DIR$/lib/fender/release/fender.hpp" />
+        <option value="$PROJECT_DIR$/lib/fender/src/Manager.cpp" />
+        <option value="$PROJECT_DIR$/Scenes/timeline.ini" />
+        <option value="$PROJECT_DIR$/Scenes/Menu.ini" />
         <option value="$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.hpp" />
         <option value="$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.cpp" />
-        <option value="$PROJECT_DIR$/lib/fender/src/Manager.cpp" />
       </list>
     </option>
   </component>
@@ -287,7 +230,7 @@
     </entry>
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -300,7 +243,116 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Scenes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fender" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fender" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fender" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sfml" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="demo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -646,11 +698,12 @@
       <workItem from="1504713652743" duration="4140000" />
       <workItem from="1504726068833" duration="536000" />
       <workItem from="1504732080895" duration="4582000" />
+      <workItem from="1504785726645" duration="10600000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="343492000" />
+    <option name="totallyTimeSpent" value="354092000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -669,14 +722,14 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5314835" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36499467" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36499467" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16979167" sideWeight="0.47408536" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16979167" sideWeight="0.47408536" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36072573" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5259146" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36072573" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -725,7 +778,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="114" />
+      <option name="time" value="115" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -896,13 +949,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scenes/Splashscreen.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/7.1.1/ext/new_allocator.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -921,13 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="18" column="21" lean-forward="false" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -994,61 +1033,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5489">
-          <caret line="366" column="3" lean-forward="false" selection-start-line="366" selection-start-column="3" selection-end-line="366" selection-end-column="3" />
-          <folding>
-            <element signature="e#257#417#1" expanded="false" />
-            <element signature="e#436#619#1" expanded="false" />
-            <element signature="e#638#726#1" expanded="false" />
-            <element signature="e#745#997#1" expanded="false" />
-            <element signature="e#1016#1130#1" expanded="false" />
-            <element signature="e#1149#1228#1" expanded="false" />
-            <element signature="e#1781#1929#0" expanded="false" />
-            <element signature="e#1942#2065#0" expanded="false" />
-            <element signature="e#2078#2196#0" expanded="false" />
-            <element signature="e#2579#2764#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="95" column="1" lean-forward="true" selection-start-line="95" selection-start-column="1" selection-end-line="95" selection-end-column="1" />
-          <folding>
-            <element signature="e#345#3008#0" expanded="false" />
-            <element signature="e#3010#3135#0" expanded="false" />
-            <element signature="e#3137#4403#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fender/src/Manager.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="72" column="48" lean-forward="false" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scenes/Menu.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fender/release/fender.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="32" column="15" lean-forward="true" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/futils.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -1061,10 +1045,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="22" column="16" lean-forward="true" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Scenes/Menu.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="25" column="12" lean-forward="true" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        <state relative-caret-position="440">
+          <caret line="25" column="12" lean-forward="false" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fender/release/fender.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="32" column="15" lean-forward="false" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/Manager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scenes/Splashscreen.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1072,16 +1088,62 @@
     <entry file="file://$PROJECT_DIR$/Scenes/timeline.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
-          <caret line="1" column="9" lean-forward="false" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
+          <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.ini">
+    <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="21" column="15" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
+        <state relative-caret-position="0">
+          <caret line="5" column="22" lean-forward="true" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scenes/Menu.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="352" column="73" lean-forward="false" selection-start-line="352" selection-start-column="73" selection-end-line="352" selection-end-column="73" />
+          <folding>
+            <element signature="e#637#724#1" expanded="false" />
+            <element signature="e#1133#1211#1" expanded="false" />
+            <element signature="e#1763#1911#0" expanded="false" />
+            <element signature="e#1924#2047#0" expanded="false" />
+            <element signature="e#2060#2178#0" expanded="false" />
+            <element signature="e#2561#2746#0" expanded="false" />
+            <element signature="e#2952#3074#0" expanded="false" />
+            <element signature="e#3263#3443#0" expanded="false" />
+            <element signature="e#3465#3661#0" expanded="false" />
+            <element signature="e#3776#3898#0" expanded="false" />
+            <element signature="e#4087#4386#0" expanded="false" />
+            <element signature="e#4408#4847#0" expanded="false" />
+            <element signature="e#4849#5078#0" expanded="false" />
+            <element signature="e#5100#5222#0" expanded="false" />
+            <element signature="e#5552#6072#0" expanded="false" />
+            <element signature="e#6094#7256#0" expanded="false" />
+            <element signature="e#7278#7581#0" expanded="false" />
+            <element signature="e#11392#11429#0" expanded="false" />
+            <element signature="e#14029#14231#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="223" column="36" lean-forward="true" selection-start-line="223" selection-start-column="36" selection-end-line="223" selection-end-column="36" />
+          <folding>
+            <element signature="e#351#3014#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
