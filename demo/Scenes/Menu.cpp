@@ -37,7 +37,6 @@ demo::scenes::Menu::Menu(demo::Demo &e,
 
 void    demo::scenes::Menu::init()
 {
-    this->renderer->resize(1600, 900);
     this->renderer->registerLayout(this->layout);
     this->renderer->useLayout("Menu");
     this->layout.setVisible(true);

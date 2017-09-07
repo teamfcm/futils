@@ -375,7 +375,16 @@ namespace fender
             this->_eventSystem.clear();
             this->indexMap.clear();
             if (config)
-                this->SmartModeInit(*config, scope);
+            {
+                if (this->win.isOpen())
+                {
+                    this->win.close();
+                    this->SmartModeInit(*config, scope);
+                    this->openWindow();
+                }
+                else
+                    this->SmartModeInit(*config, scope);
+            }
         };
     };
 }

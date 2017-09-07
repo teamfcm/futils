@@ -24,12 +24,12 @@ SmartMode detected. Running auto conf...
      [20]	Setting AssetsPath to assets/
      [21]	Setting EditorMode to false
      [22]	Setting SystemFont to game
-     [23]	Setting WindowHeight to 600
+     [23]	Setting WindowHeight to 400
      [24]	Setting WindowHorizontalAlign to Center
      [25]	Setting WindowName to Fengine Demo (alpha v.1)
      [26]	Setting WindowStyle to Borderless
      [27]	Setting WindowVerticalAlign to Center
-     [28]	Setting WindowWidth to 800
+     [28]	Setting WindowWidth to 640
      [29] In void fender::Manager::start()
 Starting scene splashscreen
      [30] In virtual void fender::SFMLRender::loadCurrentLayout()
@@ -46,12 +46,12 @@ SmartMode detected. Running auto conf...
      [38]	Setting AssetsPath to assets/
      [39]	Setting EditorMode to false
      [40]	Setting SystemFont to jedi
-     [41]	Setting WindowHeight to 600
+     [41]	Setting WindowHeight to 1080
      [42]	Setting WindowHorizontalAlign to Center
      [43]	Setting WindowName to Game
-     [44]	Setting WindowStyle to Borderless
+     [44]	Setting WindowStyle to Fullscreen
      [45]	Setting WindowVerticalAlign to Center
-     [46]	Setting WindowWidth to 800
+     [46]	Setting WindowWidth to 1920
      [47] In void fender::Manager::start()
 Starting scene menu
      [48] In virtual void fender::SFMLRender::loadCurrentLayout()
