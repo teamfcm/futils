@@ -66,6 +66,7 @@ void    fender::Manager::run()
         this->renderer->changeScene(this->timeline.proxy(), sceneName);
         auto scene = this->sceneFactory.build(sceneName);
         if (scene) {
+            scene->provideECS(this->renderer->getECS());
             scene->provideRenderer(*this->renderer);
             scene->init();
             clock.start();
@@ -75,12 +76,12 @@ void    fender::Manager::run()
                 clock.start();
                 this->renderer->pollEvents();
                 scene->update(elapsed);
-                this->renderer->update();
-                if (clock.bufferedElapsedTime() >= 0.016)
-                {
-                    this->renderer->refresh();
-                    clock.resetBuffer();
-                }
+                this->renderer->update(elapsed);
+//                if (clock.bufferedElapsedTime() >= 0.016)
+//                {
+//                    this->renderer->refresh();
+//                    clock.resetBuffer();
+//                }
                 clock.end();
             }
         }

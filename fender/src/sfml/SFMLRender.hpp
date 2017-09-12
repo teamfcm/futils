@@ -311,6 +311,8 @@ namespace fender
         ElementIndexMap         indexMap;
         sf::RenderWindow        win;
         InputMap                inputs;
+        bool                    _mouseIsGoingDown{false};
+        futils::Vec2d<int>      _mousePosition;
 
         void            initFactory();
         
@@ -357,18 +359,23 @@ namespace fender
         fender::Command makeCommand(sf::Event const &);
         void            updateChangingKeys();
         void            resetKeys();
-        
     public:
         SFMLRender();
         virtual void    openWindow() final;
         virtual void    closeWindow() final;
         virtual void    write(int x, int y, std::string const &msg) final;
         virtual void    refresh() final;
-        virtual void    update() final;
+        virtual void    update(float elapsed) final;
         virtual void    resize(int x, int y) final;
         virtual bool    isRunning() final;
         virtual void    loadCurrentLayout() final;
         virtual void    pollEvents() final;
+        virtual bool    mouseIsGoingDown() final {
+            return this->_mouseIsGoingDown;
+        }
+        virtual futils::Vec2d<int>  getMousePosition() final {
+            return this->_mousePosition;
+        }
         virtual void    changeScene(futils::INI::INIProxy *config = nullptr,
                                     std::string const &scope = "config") final
         {
@@ -388,7 +395,84 @@ namespace fender
                     this->SmartModeInit(*config, scope);
             }
         };
+        
+        sf::RenderWindow    &getWindow() {
+            return this->win;
+        }
     };
+    
+    namespace systems
+    {
+        class   ClickDetection : public fender::ISystem
+        {
+            SFMLRender                                      &_renderer;
+            std::vector<fender::components::Clickable *>    components;
+        public:
+            ClickDetection(SFMLRender *renderer): _renderer(*renderer)
+            {
+                this->__requiredComponents.emplace_back("Clickable");
+            }
+            
+            virtual void        run(float) final {
+                if (!this->_renderer.mouseIsGoingDown())
+                    return ;
+                for (auto &compo: this->components)
+                {
+                    auto const &pos = this->_renderer.getMousePosition();
+                    if (compo->getRect().contains(pos))
+                    {
+                        auto &func = *compo;
+                        return func();
+                    }
+                }
+            }
+            
+            virtual void        addComponent(IComponent &compo) final {
+                auto asClickable = static_cast<fender::components::Clickable *>(&compo);
+                this->components.push_back(asClickable);
+            }
+        };
+        
+        class   Renderer: public fender::ISystem
+        {
+            SFMLRender                                          &_renderer;
+            std::vector<fender::components::Drawable *>         components;
+            float                                               _fluidStep{0.0};
+        public:
+            Renderer(SFMLRender *renderer): _renderer(*renderer)
+            {
+                this->__requiredComponents.emplace_back("Drawable");
+            }
+            
+            virtual void        run(float elapsed) final
+            {
+                this->_fluidStep += elapsed;
+                if (_fluidStep < 0.016)
+                    return ;
+                _fluidStep = 0.0;
+                auto &win = this->_renderer.getWindow();
+                win.clear(sf::Color::Black);
+                sf::RectangleShape  rect;
+                for (auto &compo: this->components)
+                {
+                    rect.setPosition(compo->getPosition().X, compo->getPosition().Y);
+                    rect.setFillColor(sf::Color::White);
+                    rect.setSize(sf::Vector2f(compo->getSize().X, compo->getSize().Y));
+                    win.draw(rect);
+                }
+                win.display();
+            }
+            
+            virtual void        addComponent(IComponent &compo) final {
+                auto asDrawable = static_cast<fender::components::Drawable *>(&compo);
+                this->components.push_back(asDrawable);
+//                auto &rect = this->shapes[&compo];
+//                rect.setSize(sf::Vector2f(asDrawable->getSize().X, asDrawable->getSize().Y));
+//                rect.setPosition(sf::Vector2f(asDrawable->getPosition().X, asDrawable->getPosition().Y));
+//                rect.setFillColor(sf::Color::White);
+            }
+        };
+    }
 }
 
 #endif //FENDER_SFMLRENDER_HPP

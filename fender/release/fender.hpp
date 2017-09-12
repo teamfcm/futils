@@ -22,6 +22,191 @@ this->v = static_cast<type>(this->fileObject[EXPAND_AND_QUOTE(v)]); \
 
 namespace fender
 {
+    class   EntityManager;
+    
+    class   IComponent
+    {
+    protected:
+        std::string __name;
+    public:
+        virtual ~IComponent() {}
+        
+        std::string const &getName() const {return this->__name;}
+    };
+    
+    class   ISystem
+    {
+    protected:
+        using StrVec = std::vector<std::string>;
+        StrVec          __requiredComponents;
+    public:
+        virtual ~ISystem() {}
+        virtual void          addComponent(IComponent &compo)   = 0;
+        virtual void          run(float elapsed)                = 0;
+        StrVec const &getRequiredComponents() const
+        {
+            return this->__requiredComponents;
+        }
+    };
+    
+    class   IEntity
+    {
+        std::vector<IComponent *>           components;
+        std::function<void(IComponent &)>   registerComponentFunction{[](IComponent &){}};
+        int                                 _id;
+    public:
+        IEntity()
+        {
+            this->_id = futils::UID::get();
+        }
+        virtual ~IEntity() {}
+        
+        template    <typename Compo, typename ...Args>
+        Compo       &attachComponent(Args ...args)
+        {
+            if (!std::is_base_of<IComponent, Compo>::value)
+                throw std::logic_error(std::string(typeid(Compo).name()) + " is not a Component");
+            auto compo = new Compo(args...);
+            this->components.push_back(compo);
+            this->registerComponentFunction(*compo);
+            return *compo;
+        };
+        
+        void        setRegisterComponentFunction(std::function<void(IComponent &)> func)
+        {
+            this->registerComponentFunction = func;
+        }
+        
+        int         getId() const
+        {
+            return this->_id;
+        }
+    };
+    
+    class   GuiObject : public IEntity
+    {
+    public:
+        GuiObject()
+        {
+        
+        }
+    };
+    
+    class   EntityManager
+    {
+        int                                     status{0};
+        std::multimap<std::string, ISystem *>   systemsMap;
+        
+        int         notifySystems(IComponent &compo)
+        {
+            int     count{0};
+            for (auto it = systemsMap.find(compo.getName()); it != systemsMap.end(); it++)
+            {
+                auto system = it->second;
+                if (system)
+                {
+                    system->addComponent(compo);
+                    count++;
+                }
+            }
+            return count;
+        }
+    public:
+        EntityManager() = default;
+        
+        template    <typename T, typename ...Args>
+        T           *createEntity(Args ...args)
+        {
+            if (!std::is_base_of<IEntity, T>::value)
+                throw std::logic_error(std::string(typeid(T).name()) + " is not an Entity");
+            auto ent = new T(args...);
+            ent->setRegisterComponentFunction([this](IComponent &compo){
+                if (this->notifySystems(compo) == 0)
+                    throw std::runtime_error("Idle Component attached to an entity : " + compo.getName());
+            });
+            return ent;
+        }
+        
+        template    <typename System, typename ...Args>
+        void        registerSystem(Args ...args)
+        {
+            if (!std::is_base_of<ISystem, System>::value)
+                throw std::logic_error(std::string(typeid(System).name()) + " is not a System");
+            auto system = new System(args...);
+            for (auto &handledComponent: system->getRequiredComponents())
+            {
+                this->systemsMap.insert(std::pair<std::string, ISystem *>(handledComponent, system));
+            }
+        }
+        
+        bool        isFine()
+        {
+            return this->status == 0;
+        }
+        
+        void        run(float elapsed)
+        {
+            for (auto &pair: systemsMap)
+            {
+                pair.second->run(elapsed);
+            }
+        }
+    };
+    
+    namespace components
+    {
+        class   Drawable : public IComponent
+        {
+        protected:
+            futils::Vec2d<int>      position;
+            futils::Vec2d<int>      size;
+        public:
+            Drawable()
+            {
+                this->__name = "Drawable";
+            }
+            
+            futils::Rect<int>   getRect()
+            {
+                return futils::Rect<int>(this->position, this->size);
+            }
+            
+            void        setPosition(int x, int y)
+            {
+                this->position.X = x;
+                this->position.Y = y;
+            }
+            void        setSize(int w, int h)
+            {
+                this->size.X = w;
+                this->size.Y = h;
+            }
+    
+            futils::Vec2d<int>  getPosition() const {return this->position;}
+            futils::Vec2d<int>  getSize() const {return this->size;}
+        };
+        
+        class   Clickable : public Drawable
+        {
+            std::function<void(void)>   function;
+        public:
+            Clickable()
+            {
+                this->__name = "Clickable";
+            }
+
+            void        setAction(std::function<void(void)> func)
+            {
+                this->function = func;
+            }
+            
+            void        operator () ()
+            {
+                return this->function();
+            }
+        };
+    }
+    
     enum class  Color
     {
         WHITE,
@@ -291,6 +476,7 @@ namespace fender
         bool                paused{false};
         IRender             *renderer{nullptr};
         fender::EventSystem eventSystem;
+        EntityManager       *ecs{nullptr};
     public:
         virtual ~IScene() {};
         virtual bool    isDone() = 0;
@@ -298,6 +484,8 @@ namespace fender
         virtual void    init() = 0;
     
         void            provideRenderer(IRender &renderer);
+        void            provideECS(EntityManager &ecs){this->ecs = &ecs;}
+        
         void            pause()
         {
             this->paused = true;
@@ -646,137 +834,6 @@ namespace fender
         bool                isVisible() const { return this->visible; }
     };
     
-    class   EntityManager;
-    
-    class   IComponent
-    {
-    protected:
-        std::string __name;
-    public:
-        virtual ~IComponent() {}
-        
-        std::string const &getName() const {return this->__name;}
-    };
-    
-    class   ISystem
-    {
-    protected:
-        using StrVec = std::vector<std::string>;
-        StrVec          __requiredComponents;
-    public:
-        virtual ~ISystem() {}
-        virtual void          addComponent(IComponent &compo)   = 0;
-        virtual void          run()                             = 0;
-        StrVec const &getRequiredComponents() const
-        {
-            return this->__requiredComponents;
-        }
-    };
-    
-    class   IEntity
-    {
-        std::vector<IComponent *>           components;
-        std::function<void(IComponent &)>   registerComponentFunction{[](IComponent &){}};
-        int                                 _id;
-    public:
-        IEntity()
-        {
-            this->_id = futils::UID::get();
-        }
-        virtual ~IEntity() {}
-        
-        template    <typename Compo, typename ...Args>
-        Compo       &attachComponent(Args ...args)
-        {
-            if (!std::is_base_of<IComponent, Compo>::value)
-                throw std::logic_error(std::string(typeid(Compo).name()) + " is not a Component");
-            auto compo = new Compo(args...);
-            this->components.push_back(compo);
-            this->registerComponentFunction(*compo);
-            return *compo;
-        };
-        
-        void        setRegisterComponentFunction(std::function<void(IComponent &)> func)
-        {
-            this->registerComponentFunction = func;
-        }
-        
-        int         getId() const
-        {
-            return this->_id;
-        }
-    };
-    
-    class   GuiObject : public IEntity
-    {
-    public:
-        GuiObject()
-        {
-        
-        }
-    };
-    
-    class   EntityManager
-    {
-        int                                     status{0};
-        std::multimap<std::string, ISystem *>   systemsMap;
-        
-        int         notifySystems(IComponent &compo)
-        {
-            int     count{0};
-            for (auto it = systemsMap.find(compo.getName()); it != systemsMap.end(); it++)
-            {
-                auto system = it->second;
-                if (system)
-                {
-                    system->addComponent(compo);
-                    count++;
-                }
-            }
-            return count;
-        }
-    public:
-        EntityManager() = default;
-        
-        template    <typename T, typename ...Args>
-        T           *createEntity(Args ...args)
-        {
-            if (!std::is_base_of<IEntity, T>::value)
-                throw std::logic_error(std::string(typeid(T).name()) + " is not an Entity");
-            auto ent = new T(args...);
-            ent->setRegisterComponentFunction([this](IComponent &compo){
-                if (this->notifySystems(compo) == 0)
-                    throw std::runtime_error("Idle Component attached to an entity : " + compo.getName());
-            });
-            return ent;
-        }
-        
-        template    <typename System, typename ...Args>
-        void        registerSystem(Args ...args)
-        {
-            if (!std::is_base_of<ISystem, System>::value)
-                throw std::logic_error(std::string(typeid(System).name()) + " is not a System");
-            auto system = new System(args...);
-            for (auto &handledComponent: system->getRequiredComponents())
-            {
-                this->systemsMap.insert(std::pair<std::string, ISystem *>(handledComponent, system));
-            }
-        }
-        
-        bool        isFine()
-        {
-            return this->status == 0;
-        }
-        
-        void        run()
-        {
-            for (auto &pair: systemsMap)
-            {
-                pair.second->run();
-            }
-        }
-    };
-    
     class       IRender
     {
     protected:
@@ -808,17 +865,18 @@ namespace fender
         virtual void    loadCurrentLayout() = 0;
         virtual void    pollEvents() = 0;
 //        Used for updating the ECS systems and other logical updates each Frame
-        virtual void    update() = 0;
+        virtual void    update(float elapsed = 0.0) = 0;
         virtual void    changeScene(futils::INI::INIProxy *config = nullptr,
                                     std::string const &scope = "fender") = 0;
-        
+        virtual futils::Vec2d<int>  getMousePosition() = 0;
+        virtual bool                mouseIsGoingDown() = 0;
         void            SmartModeInit(futils::INI::INIProxy const &conf,
                                       std::string const &confScope = "fender");
         void            registerLayout(fender::Layout const &layout)
         {
             this->knownLayouts[layout.getName()] = &layout;
         }
-
+        
         void            useLayout(fender::Layout const &layout)
         {
             this->currentLayout = &layout;
@@ -830,8 +888,8 @@ namespace fender
             this->currentLayout = this->knownLayouts.at(name);
             this->loadCurrentLayout();
         }
-
-
+    
+        EntityManager   &getECS() {return this->_ecs;}
         const futils::Vec2d<int> get_windowSize() const {
             return _windowSize;
         }

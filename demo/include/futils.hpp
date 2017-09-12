@@ -20,7 +20,7 @@ namespace futils
     
     class   UID
     {
-        UID();
+        UID() = default;
     public:
         int _current{0};
         static int get()
@@ -89,7 +89,7 @@ namespace futils
         }
         ~ScopeLock() { owned.unlock(); }
     };
-
+    
     template    <typename T>
     struct      Vec2d
     {
@@ -103,6 +103,27 @@ namespace futils
         T       X;
         T       Y;
         T       Z;
+    };
+    
+    template    <typename T>
+    struct      Rect
+    {
+        T       X;
+        T       Y;
+        T       W;
+        T       H;
+    public:
+        Rect(futils::Vec2d<T> const &pos, futils::Vec2d<T> const &size):
+                X(pos.X), Y(pos.Y), W(X + size.X), H(Y + size.Y)
+        {
+        
+        }
+        
+        bool    contains(futils::Vec2d<T> const &pos)
+        {
+            return (pos.X >= X && pos.X <= W
+                    && pos.Y >= Y && pos.Y <= H);
+        }
     };
     
     template    <typename T>
@@ -182,6 +203,15 @@ namespace futils
                     result.push_back(elem);
             }
             return result;
+        }
+    }
+    
+    namespace collision
+    {
+        template    <typename T = int>
+        bool        rectContains(futils::Rect<T> &rect, futils::Vec2d<T> const &pos)
+        {
+            return rect.contains(pos);
         }
     }
 }

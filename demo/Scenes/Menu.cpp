@@ -49,6 +49,26 @@ void    demo::scenes::Menu::init()
     this->renderer->registerLayout(this->layout);
     this->renderer->useLayout("Menu");
     this->layout.setVisible(true);
+    auto buttonObject = this->ecs->createEntity<fender::GuiObject>();
+    if (buttonObject != nullptr)
+    {
+//        auto &drawable = buttonObject->attachComponent<fender::components::Drawable>();
+//        TODO: If no parent -> uses all drawing space;
+//        drawable.setParent(nullptr);
+//        drawable.setRSize(10, 10);
+//        drawable.setPosition(0, 0);
+//        drawable.setSize(100, 100);
+//          TODO: For getting info from file, maybe have GuiObject be default,
+//        and LayoutObject be sourced from INI File.
+//        And Game Object could have a component Stored where you'd fetch data using some kind of identifier
+//        for example Player or World could be sourced to a ini file given to the constructor ?
+        auto &button = buttonObject->attachComponent<fender::components::Clickable>();
+        button.setPosition(100, 100);
+        button.setSize(100, 100);
+        button.setAction([this](){
+            this->done = true;
+        });
+    }
 }
 
 void    demo::scenes::Menu::update(float)
