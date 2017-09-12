@@ -1,0 +1,1 @@
+/usr/bin/c++   -g   CMakeFiles/feuCS.dir/main.cpp.o  -o feuCS 

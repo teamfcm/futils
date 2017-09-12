@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/ganz/Work/teamfcm/futils/feuCS/feucs.hpp
+vector
+-
+list
+-
+map
+-
+typeinfo
+-
+functional
+-
+unordered_map
+-
+
+/home/ganz/Work/teamfcm/futils/feuCS/main.cpp
+iostream
+-
+feucs.hpp
+/home/ganz/Work/teamfcm/futils/feuCS/feucs.hpp
+

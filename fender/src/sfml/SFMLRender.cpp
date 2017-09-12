@@ -213,7 +213,8 @@ void    fender::SFMLRender::pollEvents()
                 || sfEvent.type == sf::Event::KeyReleased)
                 ev.matchInput(this->makeCommand(sfEvent));
         }
-//        TODO: Move pressed boolean to class member
+
+//        TODO: Move pressed boolean to class
         static bool pressed = true;
         if (sfEvent.type == sf::Event::MouseButtonPressed && pressed)
         {

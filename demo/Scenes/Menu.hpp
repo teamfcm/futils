@@ -21,9 +21,9 @@ namespace demo
             Menu(demo::Demo &,
                  std::string const &sceneFolder = "Scenes/");
             ~Menu(){this->layout.save();}
-            virtual bool    isDone() override { return this->done; }
-            virtual void    update() override;
-            virtual void    init() override;
+            virtual bool    isDone() final { return this->done; }
+            virtual void    update(float elapsed = 0.0) final;
+            virtual void    init() final;
         };
     }
 }

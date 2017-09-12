@@ -1,0 +1,8 @@
+/opt/clion/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/ganz/Work/teamfcm/futils/feuCS
+CMake Error at CMakeLists.txt:7 (target_compile_options):
+  Cannot specify compile options for target "feuCS" which is not built by
+  this project.
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/ganz/Work/teamfcm/futils/feuCS/cmake-build-debug/CMakeFiles/CMakeOutput.log".

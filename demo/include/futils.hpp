@@ -18,6 +18,45 @@ namespace futils
     template        <typename __Key, typename __ValueType>
     using umap = std::unordered_map<__Key, __ValueType>;
     
+    class   Clock
+    {
+        using clock = std::chrono::system_clock;
+        
+        clock::time_point startPoint{clock::now()};
+        clock::time_point endPoint{clock::now()};
+        float             buffer{0.0};
+        float             elapsed{0.0};
+    public:
+        Clock() = default;
+        
+        float       loop()
+        {
+            elapsed = std::chrono::duration<float>(this->endPoint - this->startPoint).count();
+            buffer += elapsed;
+            return this->elapsed;
+        }
+        
+        float       bufferedElapsedTime()
+        {
+            return this->buffer;
+        }
+        
+        void        resetBuffer()
+        {
+            this->buffer = 0.0;
+        }
+        
+        void        start()
+        {
+            this->startPoint = std::chrono::system_clock::now();
+        }
+        
+        void        end()
+        {
+            this->endPoint = std::chrono::system_clock::now();
+        }
+    };
+    
     class   Choice
     {
         std::string label{"Undefined"};

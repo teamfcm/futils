@@ -294,7 +294,7 @@ namespace fender
     public:
         virtual ~IScene() {};
         virtual bool    isDone() = 0;
-        virtual void    update() = 0;
+        virtual void    update(float elapsed = 0.0) = 0;
         virtual void    init() = 0;
     
         void            provideRenderer(IRender &renderer);
@@ -545,6 +545,7 @@ namespace fender
     public:
         std::function<void(void)>   onClick{[](){}};
         std::function<void(void)>   onHover{[](){}};
+        std::function<void(void)>   onLeave{[](){}};
 
         Button(futils::INI::Section &sec):
                 Element(sec)

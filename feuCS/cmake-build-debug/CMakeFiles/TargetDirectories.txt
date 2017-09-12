@@ -1,0 +1,3 @@
+/home/ganz/Work/teamfcm/futils/feuCS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/ganz/Work/teamfcm/futils/feuCS/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ganz/Work/teamfcm/futils/feuCS/cmake-build-debug/CMakeFiles/feuCS.dir

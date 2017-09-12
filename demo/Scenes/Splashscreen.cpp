@@ -57,12 +57,12 @@ void    demo::scenes::Splashscreen::init()
     this->layout.setVisible(true);
 }
 
-void    demo::scenes::Splashscreen::update()
+void    demo::scenes::Splashscreen::update(float elapsed)
 {
     auto &loadingBar = this->layout.get<fender::Bar>("loadingBar");
     auto &logo = this->layout.get<fender::AnimatedImage>("logo");
     
-    futils::FloatingRange<double>   incrementRange(0.1, 2);
+    futils::FloatingRange<double>   incrementRange(20, 40);
     loadingBar.showBar();
     if (loadingBar.done())
     {
@@ -75,7 +75,7 @@ void    demo::scenes::Splashscreen::update()
         loadingBar.setLabel(" Loading (" + std::to_string(currentFloor) + "."
                             + std::to_string(static_cast<int>((loadingBar.getCurrent() - currentFloor) * 100))
                             + " %)");
-        loadingBar.increment(incrementRange.getRandom());
+        loadingBar.increment(elapsed * incrementRange.getRandom());
         logo.setAlpha(currentFloor * 2.5);
     }
 }

@@ -33,32 +33,24 @@ demo::scenes::Menu::Menu(demo::Demo &e,
         auto &leaveScene = *this->eventSystem.createInputEvent("QuitMenu");
         leaveScene.start();
     };
+    quit.onHover = [this](){
+        auto &button = this->layout.get<fender::Button>("ZQuitButton");
+        button.setAlpha(150);
+    };
+    quit.onLeave = [this](){
+        auto &button = this->layout.get<fender::Button>("ZQuitButton");
+        button.setAlpha(255);
+    };
 }
 
 void    demo::scenes::Menu::init()
 {
+    this->renderer->openWindow();
     this->renderer->registerLayout(this->layout);
     this->renderer->useLayout("Menu");
     this->layout.setVisible(true);
 }
 
-void    demo::scenes::Menu::update()
+void    demo::scenes::Menu::update(float)
 {
-//    auto &loadingBar = this->layout.get<fender::Bar>("loadingBar");
-//
-//    futils::FloatingRange<double>   incrementRange(0.1, 0.2);
-//    loadingBar.showBar();
-//    if (loadingBar.done())
-//    {
-//        loadingBar.setLabel("Press the escape key");
-//        loadingBar.hideBar();
-//    }
-//    else
-//    {
-//        int currentFloor = static_cast<int>(loadingBar.getCurrent());
-//        loadingBar.setLabel(" Loading (" + std::to_string(currentFloor) + "."
-//                            + std::to_string(static_cast<int>((loadingBar.getCurrent() - currentFloor) * 100))
-//                            + " %)");
-//        loadingBar.increment(incrementRange.getRandom());
-//    }
 }

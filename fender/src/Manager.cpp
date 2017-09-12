@@ -51,26 +51,36 @@ void    fender::Manager::loadTimeline()
 
 void    fender::Manager::start()
 {
+    futils::Clock   clock;
+    float           elapsed;
+
+    if (this->sceneList.empty())
+        return ;
     for (auto &sceneName: this->sceneList)
     {
         this->renderer->changeScene(this->timeline.proxy(), sceneName);
-        LOUT("Starting scene " + sceneName);
         auto scene = this->sceneFactory.build(sceneName);
         if (scene) {
             scene->provideRenderer(*this->renderer);
             scene->init();
+            clock.start();
             while (scene->isDone() == false
                    && this->renderer->isRunning()) {
+                elapsed = clock.loop();
+                clock.start();
                 this->renderer->pollEvents();
-                scene->update();
-                this->renderer->refresh();
-                usleep(20000);
+                scene->update(elapsed);
+                if (clock.bufferedElapsedTime() >= 0.016)
+                {
+                    this->renderer->refresh();
+                    clock.resetBuffer();
+                }
+                clock.end();
             }
         }
     }
 }
 
-// TODO : Use this function at the end of start.
 void    fender::Manager::run()
 {
 
