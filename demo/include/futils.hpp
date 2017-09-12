@@ -110,19 +110,14 @@ namespace futils
     {
         T       X;
         T       Y;
-        T       W;
-        T       H;
+        T       EndX;
+        T       EndY;
     public:
         Rect(futils::Vec2d<T> const &pos, futils::Vec2d<T> const &size):
-                X(pos.X), Y(pos.Y), W(X + size.X), H(Y + size.Y)
-        {
-        
-        }
-        
-        bool    contains(futils::Vec2d<T> const &pos)
-        {
-            return (pos.X >= X && pos.X <= W
-                    && pos.Y >= Y && pos.Y <= H);
+                X(pos.X), Y(pos.Y), EndX(X + size.X), EndY(Y + size.Y) {}
+        bool    contains(futils::Vec2d<T> const &pos) {
+            return (pos.X >= X && pos.X <= EndX
+                    && pos.Y >= Y && pos.Y <= EndY);
         }
     };
     
