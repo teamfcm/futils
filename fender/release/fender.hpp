@@ -10,6 +10,7 @@
 # include "flog.hpp"
 # include "Fini.hpp"
 # include "futils.hpp"
+# include "feucs.hpp"
 
 # define QUOTE(str) #str
 # define EXPAND_AND_QUOTE(str) QUOTE(str)
