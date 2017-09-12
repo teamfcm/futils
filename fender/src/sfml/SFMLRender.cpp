@@ -141,6 +141,11 @@ bool    fender::SFMLRender::isRunning()
     return this->win.isOpen();
 }
 
+void    fender::SFMLRender::update()
+{
+    this->_ecs.run();
+}
+
 void    fender::SFMLRender::refresh()
 {
 //    TODO: Abstract colors and Background
@@ -247,7 +252,7 @@ void    fender::SFMLRender::resize(int x, int y)
     this->openWindow();
 }
 
-// TODO : Use this function, maybe ?
+// TODO : Use this function, maybe ? OR remove but do something
 void    fender::SFMLRender::write(int x, int y, std::string const &msg)
 {
 

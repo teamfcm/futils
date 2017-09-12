@@ -28,20 +28,6 @@ map
 flog.hpp
 ../lib/fender/include/flog.hpp
 
-../lib/fender/include/feucs.hpp
-vector
--
-list
--
-map
--
-typeinfo
--
-functional
--
-unordered_map
--
-
 ../lib/fender/include/flog.hpp
 iostream
 -
@@ -85,8 +71,6 @@ Fini.hpp
 ../lib/fender/release/Fini.hpp
 futils.hpp
 ../lib/fender/release/futils.hpp
-feucs.hpp
-../lib/fender/release/feucs.hpp
 
 /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/IRender.cpp
 fender.hpp

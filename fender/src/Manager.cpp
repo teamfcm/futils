@@ -51,11 +51,16 @@ void    fender::Manager::loadTimeline()
 
 void    fender::Manager::start()
 {
-    futils::Clock   clock;
-    float           elapsed;
-
     if (this->sceneList.empty())
         return ;
+    this->run();
+}
+
+void    fender::Manager::run()
+{
+    futils::Clock   clock;
+    float           elapsed;
+    
     for (auto &sceneName: this->sceneList)
     {
         this->renderer->changeScene(this->timeline.proxy(), sceneName);
@@ -70,6 +75,7 @@ void    fender::Manager::start()
                 clock.start();
                 this->renderer->pollEvents();
                 scene->update(elapsed);
+                this->renderer->update();
                 if (clock.bufferedElapsedTime() >= 0.016)
                 {
                     this->renderer->refresh();
@@ -79,9 +85,4 @@ void    fender::Manager::start()
             }
         }
     }
-}
-
-void    fender::Manager::run()
-{
-
 }

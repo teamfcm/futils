@@ -313,6 +313,7 @@ namespace fender
         InputMap                inputs;
 
         void            initFactory();
+        
         template        <typename ElemType, typename SrcType>
         void            create(SrcType &src)
         {
@@ -363,6 +364,7 @@ namespace fender
         virtual void    closeWindow() final;
         virtual void    write(int x, int y, std::string const &msg) final;
         virtual void    refresh() final;
+        virtual void    update() final;
         virtual void    resize(int x, int y) final;
         virtual bool    isRunning() final;
         virtual void    loadCurrentLayout() final;

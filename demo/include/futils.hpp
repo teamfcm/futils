@@ -18,6 +18,18 @@ namespace futils
     template        <typename __Key, typename __ValueType>
     using umap = std::unordered_map<__Key, __ValueType>;
     
+    class   UID
+    {
+        UID();
+    public:
+        int _current{0};
+        static int get()
+        {
+            static UID *singleton = new UID();
+            return singleton->_current++;
+        }
+    };
+    
     class   Clock
     {
         using clock = std::chrono::system_clock;

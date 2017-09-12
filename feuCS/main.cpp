@@ -27,7 +27,10 @@ public:
     
     virtual void    run() final
     {
-    
+        for (auto &compo: this->components)
+        {
+
+        }
     }
 };
 

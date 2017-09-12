@@ -64,7 +64,7 @@ namespace futils
             this->registerComponentFunction = func;
         }
     };
-
+    
     class   GuiObject : public IEntity
     {
     public:
@@ -108,7 +108,7 @@ namespace futils
             });
             return ent;
         }
-
+        
         template    <typename System, typename ...Args>
         void        registerSystem(Args ...args)
         {
@@ -125,7 +125,7 @@ namespace futils
         {
             return this->status == 0;
         }
-    
+        
         void        run()
         {
             for (auto &pair: systemsMap)
@@ -133,7 +133,7 @@ namespace futils
                 pair.second->run();
             }
         }
-    
+        
     };
 }
 
