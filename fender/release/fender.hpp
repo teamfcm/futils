@@ -23,7 +23,6 @@ this->v = static_cast<type>(this->fileObject[EXPAND_AND_QUOTE(v)]); \
 namespace fender
 {
     class   EntityManager;
-    
     class   IComponent
     {
     protected:
@@ -33,7 +32,6 @@ namespace fender
         
         std::string const &getName() const {return this->__name;}
     };
-    
     class   ISystem
     {
     protected:
@@ -48,7 +46,6 @@ namespace fender
             return this->__requiredComponents;
         }
     };
-    
     class   IEntity
     {
         std::vector<IComponent *>           components;
@@ -83,13 +80,20 @@ namespace fender
         }
     };
     
+    class   GameObject : public IEntity
+    {
+    public:
+        GameObject() = default;
+    };
     class   GuiObject : public IEntity
     {
     public:
-        GuiObject()
-        {
-        
-        }
+        GuiObject() = default;
+    };
+    class   LayoutObject : public IEntity
+    {
+    public:
+        LayoutObject() = default;
     };
     
     class   EntityManager
@@ -100,7 +104,8 @@ namespace fender
         int         notifySystems(IComponent &compo)
         {
             int     count{0};
-            for (auto it = systemsMap.find(compo.getName()); it != systemsMap.end(); it++)
+            auto range = systemsMap.equal_range(compo.getName());
+            for (auto it = range.first; it != range.second; it++)
             {
                 auto system = it->second;
                 if (system)
@@ -134,9 +139,7 @@ namespace fender
                 throw std::logic_error(std::string(typeid(System).name()) + " is not a System");
             auto system = new System(args...);
             for (auto &handledComponent: system->getRequiredComponents())
-            {
                 this->systemsMap.insert(std::pair<std::string, ISystem *>(handledComponent, system));
-            }
         }
         
         bool        isFine()
@@ -155,6 +158,16 @@ namespace fender
     
     namespace components
     {
+        class   Static2dObject : public IComponent
+        {
+        protected:
+            futils::Vec2d<int>      position;
+            futils::Vec2d<int>      size;
+            Static2dObject          *parent{nullptr};
+        public:
+            Static2dObject(){this->__name = "Static2dObject";}
+        };
+        
         class   Drawable : public IComponent
         {
         protected:
@@ -185,9 +198,9 @@ namespace fender
             futils::Vec2d<int>  getPosition() const {return this->position;}
             futils::Vec2d<int>  getSize() const {return this->size;}
         };
-        
-        class   Clickable : public Drawable
+        class   Clickable : public IComponent
         {
+            futils::Rect<int>           area;
             std::function<void(void)>   function;
         public:
             Clickable()
@@ -195,11 +208,24 @@ namespace fender
                 this->__name = "Clickable";
             }
 
+            void        setArea(int x, int y, int w, int h)
+            {
+                this->area.X = x;
+                this->area.Y = y;
+                this->area.EndX = x + w;
+                this->area.EndY = y + h;
+            }
+            void        setArea(futils::Vec2d<int>  const &pos,
+                                futils::Vec2d<int> const &size)
+            {
+                this->area = futils::Rect<int>(pos, size);
+            }
+            void        setArea(futils::Rect<int> const &ref){this->area = ref;}
             void        setAction(std::function<void(void)> func)
             {
                 this->function = func;
             }
-            
+            futils::Rect<int> const &getRect() const {return this->area;}
             void        operator () ()
             {
                 return this->function();

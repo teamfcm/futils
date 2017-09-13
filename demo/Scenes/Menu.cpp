@@ -49,6 +49,7 @@ void    demo::scenes::Menu::init()
     this->renderer->registerLayout(this->layout);
     this->renderer->useLayout("Menu");
     this->layout.setVisible(true);
+//    Object assembled from scratch. Later on the engine will offer readyToUse objets like this->layout.get<Button>(); or this->ecs->get()...
     auto buttonObject = this->ecs->createEntity<fender::GuiObject>();
     if (buttonObject != nullptr)
     {
@@ -62,10 +63,13 @@ void    demo::scenes::Menu::init()
 //        and LayoutObject be sourced from INI File.
 //        And Game Object could have a component Stored where you'd fetch data using some kind of identifier
 //        for example Player or World could be sourced to a ini file given to the constructor ?
-        auto &button = buttonObject->attachComponent<fender::components::Clickable>();
-        button.setPosition(100, 100);
-        button.setSize(100, 100);
-        button.setAction([this](){
+        auto &image = buttonObject->attachComponent<fender::components::Drawable>();
+        image.setPosition(0, 0);
+        image.setSize(88, 1000);
+    
+        auto &onClick = buttonObject->attachComponent<fender::components::Clickable>();
+        onClick.setArea(image.getPosition(), image.getSize());
+        onClick.setAction([this](){
             this->done = true;
         });
     }
@@ -73,4 +77,5 @@ void    demo::scenes::Menu::init()
 
 void    demo::scenes::Menu::update(float)
 {
+
 }

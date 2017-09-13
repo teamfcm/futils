@@ -66,6 +66,8 @@ fender::SFMLRender::SFMLRender()
 {
     this->initFactory();
     this->_eventSystem.setRole(fender::MediatorRole::Provider);
+    
+//    Registering systems to the ECS
     this->_ecs.registerSystem<fender::systems::ClickDetection>(this);
     this->_ecs.registerSystem<fender::systems::Renderer>(this);
 }
@@ -148,6 +150,7 @@ void    fender::SFMLRender::update(float elapsed)
     this->_ecs.run(elapsed);
 }
 
+// TODO: This function is useless now with the ECS. Should be removed
 void    fender::SFMLRender::refresh()
 {
 //    TODO: Abstract colors and Background
@@ -212,6 +215,7 @@ void    fender::SFMLRender::pollEvents()
     this->resetKeys();
     this->updateChangingKeys();
     this->_mouseIsGoingDown = false;
+    
     while (this->win.pollEvent(sfEvent))
     {
         for (auto &pair: this->_eventSystem.getInputEvents())
@@ -227,18 +231,6 @@ void    fender::SFMLRender::pollEvents()
             this->_mouseIsGoingDown = true;
             this->_mousePosition.X = sfEvent.mouseButton.x;
             this->_mousePosition.Y = sfEvent.mouseButton.y;
-//            auto position = sf::Vector2f(sfEvent.mouseButton.x, sfEvent.mouseButton.y);
-//            for (auto it = this->indexMap.rbegin(); it != this->indexMap.rend(); it++)
-//            {
-//                auto elem = dynamic_cast<layoutObjects::Button *>(it->second);
-//                if (elem == nullptr)
-//                    continue ;
-//                if (elem->getRectangle().getGlobalBounds().contains(sf::Vector2f(position)))
-//                {
-//                    elem->src.onClick();
-//                    break ;
-//                }
-//            }
         }
         if (sfEvent.type == sf::Event::MouseButtonReleased)
             this->_mouseIsGoingDown = false;

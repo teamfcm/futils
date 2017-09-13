@@ -432,7 +432,6 @@ namespace fender
                 this->components.push_back(asClickable);
             }
         };
-        
         class   Renderer: public fender::ISystem
         {
             SFMLRender                                          &_renderer;

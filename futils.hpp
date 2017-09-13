@@ -108,14 +108,17 @@ namespace futils
     template    <typename T>
     struct      Rect
     {
-        T       X;
-        T       Y;
-        T       EndX;
-        T       EndY;
+        T       X{0};
+        T       Y{0};
+        T       EndX{0};
+        T       EndY{0};
     public:
+        Rect() = default;
         Rect(futils::Vec2d<T> const &pos, futils::Vec2d<T> const &size):
                 X(pos.X), Y(pos.Y), EndX(X + size.X), EndY(Y + size.Y) {}
-        bool    contains(futils::Vec2d<T> const &pos) {
+        Rect(Rect<T> const &ref):
+                X(ref.X), Y(ref.Y), EndX(ref.EndX), EndY(ref.EndY) {}
+        bool    contains(futils::Vec2d<T> const &pos) const {
             return (pos.X >= X && pos.X <= EndX
                     && pos.Y >= Y && pos.Y <= EndY);
         }
