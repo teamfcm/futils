@@ -3,6 +3,7 @@
 //
 
 # include "Menu.hpp"
+#include "../lib/fender/release/fender.hpp"
 
 demo::scenes::Menu::Menu(demo::Demo &e,
                                          std::string const &sceneFolder):
@@ -49,13 +50,20 @@ void    demo::scenes::Menu::init()
     this->renderer->registerLayout(this->layout);
     this->renderer->useLayout("Menu");
     this->layout.setVisible(true);
+    
+//    Start by making big ass systems and splitting them afterwards.
+
+//    A layout is a set of objects that the fender knows, it will build each as
+//    one entity composed with several components.
+//    Should not change much about the user.
+    
 //    Object assembled from scratch. Later on the engine will offer readyToUse objets like this->layout.get<Button>(); or this->ecs->get()...
-    auto buttonObject = this->ecs->createEntity<fender::GuiObject>();
+    auto buttonObject = this->ecs->createEntity<fender::BaseObject>();
     if (buttonObject != nullptr)
     {
 //        auto &drawable = buttonObject->attachComponent<fender::components::Drawable>();
 //        TODO: If no parent -> uses all drawing space;
-//        drawable.setParent(nullptr);
+//        drawable.setParent(blablou);
 //        drawable.setRSize(10, 10);
 //        drawable.setPosition(0, 0);
 //        drawable.setSize(100, 100);
@@ -63,12 +71,12 @@ void    demo::scenes::Menu::init()
 //        and LayoutObject be sourced from INI File.
 //        And Game Object could have a component Stored where you'd fetch data using some kind of identifier
 //        for example Player or World could be sourced to a ini file given to the constructor ?
-        auto &image = buttonObject->attachComponent<fender::components::Drawable>();
-        image.setPosition(0, 0);
-        image.setSize(88, 1000);
-    
+        buttonObject->attachComponent<fender::components::Drawable>();
+        auto &position = buttonObject->attachComponent<fender::components::Object2d>();
+        position.setPosition({0, 0});
+        position.setSize({100, 1000});
         auto &onClick = buttonObject->attachComponent<fender::components::Clickable>();
-        onClick.setArea(image.getPosition(), image.getSize());
+        onClick.setArea(position.getPosition(), position.getSize());
         onClick.setAction([this](){
             this->done = true;
         });

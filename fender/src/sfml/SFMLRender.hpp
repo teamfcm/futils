@@ -441,6 +441,7 @@ namespace fender
             Renderer(SFMLRender *renderer): _renderer(*renderer)
             {
                 this->__requiredComponents.emplace_back("Drawable");
+                this->__requiredComponents.emplace_back("Object2d");
             }
             
             virtual void        run(float elapsed) final
@@ -454,9 +455,10 @@ namespace fender
                 sf::RectangleShape  rect;
                 for (auto &compo: this->components)
                 {
-                    rect.setPosition(compo->getPosition().X, compo->getPosition().Y);
-                    rect.setFillColor(sf::Color::White);
-                    rect.setSize(sf::Vector2f(compo->getSize().X, compo->getSize().Y));
+//                    auto &object = compo.getAssociatedComponent("Object2d");
+//                    rect.setPosition(object->getPosition().X, object->getPosition().Y);
+//                    rect.setFillColor(sf::Color::White);
+//                    rect.setSize(sf::Vector2f(object->getSize().X, object->getSize().Y));
                     win.draw(rect);
                 }
                 win.display();

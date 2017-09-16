@@ -96,7 +96,7 @@ namespace futils
         T       X;
         T       Y;
     };
-
+    
     template    <typename T>
     struct      Vec3d
     {
@@ -118,7 +118,11 @@ namespace futils
                 X(pos.X), Y(pos.Y), EndX(X + size.X), EndY(Y + size.Y) {}
         Rect(Rect<T> const &ref):
                 X(ref.X), Y(ref.Y), EndX(ref.EndX), EndY(ref.EndY) {}
-        bool    contains(futils::Vec2d<T> const &pos) const {
+        
+        template    <typename OtherType>
+        bool        contains(futils::Vec2d<OtherType> const &pos) const {
+            static_assert(std::is_arithmetic<OtherType>::value,
+                          "Rect.contains failed because OtherType is not arithmetic.");
             return (pos.X >= X && pos.X <= EndX
                     && pos.Y >= Y && pos.Y <= EndY);
         }

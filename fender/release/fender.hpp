@@ -23,20 +23,26 @@ this->v = static_cast<type>(this->fileObject[EXPAND_AND_QUOTE(v)]); \
 namespace fender
 {
     class   EntityManager;
+    class   IEntity;
+    
     class   IComponent
     {
     protected:
-        std::string __name;
+        IEntity     *__entity{nullptr};
+        std::string __name{"[DEFAULT_COMPONENT]"};
     public:
         virtual ~IComponent() {}
         
         std::string const &getName() const {return this->__name;}
     };
+    
     class   ISystem
     {
     protected:
         using StrVec = std::vector<std::string>;
-        StrVec          __requiredComponents;
+        
+        StrVec              __requiredComponents;
+        fender::EventSystem __eventSystem;
     public:
         virtual ~ISystem() {}
         virtual void          addComponent(IComponent &compo)   = 0;
@@ -46,11 +52,19 @@ namespace fender
             return this->__requiredComponents;
         }
     };
+    
     class   IEntity
     {
-        std::vector<IComponent *>           components;
+        std::multimap<std::string, IComponent *>    components;
         std::function<void(IComponent &)>   registerComponentFunction{[](IComponent &){}};
         int                                 _id;
+        
+        template                            <typename Compo>
+        void                                verifIsComponent()
+        {
+            if (!std::is_base_of<IComponent, Compo>::value)
+                throw std::logic_error(std::string(typeid(Compo).name()) + " is not a Component");
+        }
     public:
         IEntity()
         {
@@ -61,12 +75,23 @@ namespace fender
         template    <typename Compo, typename ...Args>
         Compo       &attachComponent(Args ...args)
         {
-            if (!std::is_base_of<IComponent, Compo>::value)
-                throw std::logic_error(std::string(typeid(Compo).name()) + " is not a Component");
+            verifIsComponent<Compo>();
             auto compo = new Compo(args...);
-            this->components.push_back(compo);
+            this->components.insert(std::make_pair(compo->getName(), compo));
             this->registerComponentFunction(*compo);
             return *compo;
+        };
+    
+        template    <typename Compo>
+        Compo       &getComponent()
+        {
+            Compo   compo;
+            for (auto &it: this->components)
+            {
+                if (it.first == compo.getName())
+                    return it.second;
+            }
+            throw std::runtime_error("Entity does not have component " + compo.getName());
         };
         
         void        setRegisterComponentFunction(std::function<void(IComponent &)> func)
@@ -78,22 +103,6 @@ namespace fender
         {
             return this->_id;
         }
-    };
-    
-    class   GameObject : public IEntity
-    {
-    public:
-        GameObject() = default;
-    };
-    class   GuiObject : public IEntity
-    {
-    public:
-        GuiObject() = default;
-    };
-    class   LayoutObject : public IEntity
-    {
-    public:
-        LayoutObject() = default;
     };
     
     class   EntityManager
@@ -118,7 +127,6 @@ namespace fender
         }
     public:
         EntityManager() = default;
-        
         template    <typename T, typename ...Args>
         T           *createEntity(Args ...args)
         {
@@ -156,51 +164,66 @@ namespace fender
         }
     };
     
+    class   BaseObject : public IEntity
+    {
+    public:
+        BaseObject() = default;
+    };
+    
     namespace components
     {
-        class   Static2dObject : public IComponent
+        class       Object2d  : public IComponent
         {
         protected:
-            futils::Vec2d<int>      position;
-            futils::Vec2d<int>      size;
-            Static2dObject          *parent{nullptr};
+            futils::Vec2d<float>      position;
+            futils::Vec2d<float>      size;
+            Object2d                  *parent{nullptr};
         public:
-            Static2dObject(){this->__name = "Static2dObject";}
+            Object2d(futils::Vec2d<float> const &position = {},
+                     futils::Vec2d<float> const &size = {}):
+                    position(position), size(size)
+            {
+                this->__name = "Object2d";
+            }
+    
+            void    setPosition(futils::Vec2d<float> const &pos)
+            {this->position=pos;}
+            void    setSize(futils::Vec2d<float> const &size)
+            {this->size = size;}
+            futils::Vec2d<float>    getPosition() const {return position;}
+            futils::Vec2d<float>    getSize() const {return size;}
         };
-        
-        class   Drawable : public IComponent
+        class       Object3d  : public IComponent
         {
         protected:
-            futils::Vec2d<int>      position;
-            futils::Vec2d<int>      size;
+            futils::Vec3d<float>      position;
+            futils::Vec3d<float>      size;
+            Object3d                  *parent{nullptr};
+        public:
+            Object3d(futils::Vec3d<float> const &position = {},
+                     futils::Vec3d<float> const &size = {}):
+                    position(position), size(size)
+            {
+                this->__name = "Object3d";
+            }
+            void    setPosition(futils::Vec3d<float> const &pos)
+            {this->position=pos;}
+            void    setSize(futils::Vec3d<float> const &size)
+            {this->size = size;}
+            futils::Vec3d<float>    getPosition() const {return position;}
+            futils::Vec3d<float>    getSize() const {return size;}
+        };
+        class       Drawable    : public IComponent
+        {
         public:
             Drawable()
             {
                 this->__name = "Drawable";
             }
-            
-            futils::Rect<int>   getRect()
-            {
-                return futils::Rect<int>(this->position, this->size);
-            }
-            
-            void        setPosition(int x, int y)
-            {
-                this->position.X = x;
-                this->position.Y = y;
-            }
-            void        setSize(int w, int h)
-            {
-                this->size.X = w;
-                this->size.Y = h;
-            }
-    
-            futils::Vec2d<int>  getPosition() const {return this->position;}
-            futils::Vec2d<int>  getSize() const {return this->size;}
         };
-        class   Clickable : public IComponent
+        class       Clickable   : public IComponent
         {
-            futils::Rect<int>           area;
+            futils::Rect<float>           area;
             std::function<void(void)>   function;
         public:
             Clickable()
@@ -208,24 +231,24 @@ namespace fender
                 this->__name = "Clickable";
             }
 
-            void        setArea(int x, int y, int w, int h)
+            void        setArea(float x, float y, float w, float h)
             {
                 this->area.X = x;
                 this->area.Y = y;
                 this->area.EndX = x + w;
                 this->area.EndY = y + h;
             }
-            void        setArea(futils::Vec2d<int>  const &pos,
-                                futils::Vec2d<int> const &size)
+            void        setArea(futils::Vec2d<float>  const &pos,
+                                futils::Vec2d<float> const &size)
             {
-                this->area = futils::Rect<int>(pos, size);
+                this->area = futils::Rect<float>(pos, size);
             }
-            void        setArea(futils::Rect<int> const &ref){this->area = ref;}
+            void        setArea(futils::Rect<float> const &ref){this->area = ref;}
             void        setAction(std::function<void(void)> func)
             {
                 this->function = func;
             }
-            futils::Rect<int> const &getRect() const {return this->area;}
+            futils::Rect<float> const &getRect() const {return this->area;}
             void        operator () ()
             {
                 return this->function();

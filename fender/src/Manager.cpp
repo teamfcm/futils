@@ -60,7 +60,6 @@ void    fender::Manager::run()
 {
     futils::Clock   clock;
     float           elapsed;
-    
     for (auto &sceneName: this->sceneList)
     {
         this->renderer->changeScene(this->timeline.proxy(), sceneName);
@@ -70,18 +69,13 @@ void    fender::Manager::run()
             scene->provideRenderer(*this->renderer);
             scene->init();
             clock.start();
-            while (scene->isDone() == false
-                   && this->renderer->isRunning()) {
+            while (scene->isDone() == false && this->renderer->isRunning())
+            {
                 elapsed = clock.loop();
                 clock.start();
                 this->renderer->pollEvents();
                 scene->update(elapsed);
                 this->renderer->update(elapsed);
-//                if (clock.bufferedElapsedTime() >= 0.016)
-//                {
-//                    this->renderer->refresh();
-//                    clock.resetBuffer();
-//                }
                 clock.end();
             }
         }

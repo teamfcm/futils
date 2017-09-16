@@ -8,6 +8,7 @@ CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../include/flog.hpp
 CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../include/futils.hpp
 CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../Scenes/Menu.cpp
 CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../Scenes/Menu.hpp
+CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../lib/fender/release/fender.hpp
 
 CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: ../include/Demo.hpp
 CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: ../include/Fini.hpp
