@@ -22,6 +22,274 @@ this->v = static_cast<type>(this->fileObject[EXPAND_AND_QUOTE(v)]); \
 
 namespace fender
 {
+    enum class  State : int
+    {
+        Undefined,
+        Up,
+        Down,
+        GoingUp,
+        GoingDown,
+    };
+    
+    enum class  Input : int
+    {
+        Undefined = 0,
+        A = 1, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
+        F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,
+        ArrowUp, ArrowDown, ArrowLeft, ArrowRight,
+        Return, Backspace, Space, Escape, Delete, Tab,
+        LCtrl, RCtrl, LShift, RShift, Alt,
+        Num1, Num2, Num3, Num4, Num5, Num6, Num7, Num8, Num9, Num0,
+        Capslock, PageUp, PageDown,
+        Ampersand, Hashtag, Quote, DoubleQuote, Dash, Underscore,
+        LParenthesis, RParenthesis, LBracket, RBracket, LSquareBracket, RSquareBracket,
+        Colon, SemiColon, QuestionMark, ExclamationMark, Comma, Dot, Percent, Asterisk,
+        Slash, BackSlash,
+        LButton, RButton, MouseWheelUp, MouseWheelDown, MouseWheelButton,
+        NBR_SUPPORTED_KEYS
+    };
+    
+    struct      Command
+    {
+        Input   key{Input::Undefined};
+        State   state{State::GoingDown};
+        bool    operator == (Command const &other)
+        {
+            return other.key == this->key && other.state == this->state;
+        }
+    };
+    
+    class       Event
+    {
+    protected:
+        std::string                 _label{""};
+        int                         _lifespan{1};
+    public:
+        virtual ~Event() {}
+        
+        std::string getLabel() const {return this->_label;}
+        void        setLabel(std::string const &label) {this->_label = label;}
+        void        setLifespan(int lifespan) { this->_lifespan = lifespan; }
+        int         getLifespan() const { return this->_lifespan; }
+
+//        Can the event start ?
+        std::function<bool(void)>   isReady{[](){return true;}};
+//        Trigger the event
+        std::function<void(void)>   start{[](){}};
+//        If isReady() failse, onFailure is called
+        std::function<void(void)>   onFailure{[](){}};
+//        If the event dies without ever being started, call onDeath()
+        std::function<void(void)>   onDeath{[](){}};
+    };
+    
+    enum class  InputEventMode : int
+    {
+//        As long as the input inputs are in the correct state at the same time in memory
+                Simple,
+//        If the input inputs are all in the correct state at the same frame
+                Simultaneous,
+//        If the input are set to true sequentially, any error restarts the sequence
+                Sequential
+    };
+    
+    class       InputEvent : public Event
+    {
+        int                         _identifier{0};
+        std::vector<Command>        _inputKeys;
+        unsigned int                _matchedKeys{0};
+        InputEventMode              _mode{InputEventMode::Simple};
+        void                        updateIdentifier()
+        {
+            std::function<int(int, int)> pairing = [this](int a, int b){
+                return (int)((0.5)*(a + b)*(a + b + 1) + b);
+            };
+            this->_identifier = pairing(static_cast<int>(this->_inputKeys.front().key),
+                                        static_cast<int>(this->_inputKeys.front().state));
+            if (_inputKeys.size() > 1)
+                for (auto mIter = std::next(_inputKeys.begin());
+                     mIter != _inputKeys.end(); ++mIter)
+                    this->_identifier = pairing(this->_identifier,
+                                                pairing(static_cast<int>(mIter->key),
+                                                        static_cast<int>(mIter->state)));
+            
+        };
+    public:
+//        Hollow ctor for later usage
+        InputEvent(std::string const &label)
+        {
+            this->_label = label;
+        }
+//        Simple Constructor for single key DOWN InputEvent
+        InputEvent(Input key)
+        {
+            this->_inputKeys.emplace_back(Command{.key = key});
+            this->updateIdentifier();
+        }
+//        Forward of inputs to vector using Initializer List
+        InputEvent(std::initializer_list<Command> list): _inputKeys(list)
+        {
+            this->updateIdentifier();
+        }
+        
+        void        setMode(fender::InputEventMode mode) { this->_mode = mode; }
+        int         getIdentifier() const {return this->_identifier;}
+        void        setKeyState(Input key, State state) {
+            for (auto &command: _inputKeys)
+                if (command.key == key)
+                {
+                    command.state = state;
+                    return this->updateIdentifier();
+                }
+            throw std::runtime_error("In " + std::string(__PRETTY_FUNCTION__) + ":\tInvalid input key");
+        }
+        
+        void        addKey(fender::Input key, fender::State state = fender::State::Down)
+        {
+            this->_inputKeys.emplace_back(Command{.key = key, .state = state});
+        }
+        
+        void        trigger()
+        {
+            if (this->isReady())
+                this->start();
+            else
+                this->onFailure();
+        }
+        
+        void                reset()
+        {
+            this->_matchedKeys = 0;
+        }
+        
+        void                matchInput(Command command)
+        {
+            for (auto &com: this->_inputKeys)
+            {
+                if (com == command)
+                    this->_matchedKeys++;
+            }
+            if (this->_matchedKeys == this->_inputKeys.size())
+                this->trigger();
+        }
+    };
+
+//    Event that doesn't bind to user input but rather logical data change
+    class       LogicalEvent : public Event
+    {
+    public:
+        LogicalEvent(std::string const &label)
+        {
+            this->_label = label;
+        }
+    };
+    
+    enum class  MediatorRole
+    {
+        Client,
+        Provider
+    };
+    
+    template    <typename T>
+    class       Mediator
+    {
+        std::list<T *>      clients;
+
+//        Private constructor for Singleton pattern
+        Mediator() {}
+    public:
+        static Mediator    &get() {
+            static auto *inst = new Mediator<T>();
+            return *inst;
+        };
+        
+        void        registerClient(T &client)
+        {
+            this->clients.push_front(&client);
+        }
+        
+        void        unregisterClient(T &client)
+        {
+            this->clients.remove(&client);
+        }
+        
+        template    <typename MsgType>
+        void        send(T &sender, MsgType &msg)
+        {
+            for (auto &client: this->clients)
+            {
+                if (client != &sender)
+                    client->receive(sender, msg);
+            }
+        }
+    };
+    
+    class       EventSystem
+    {
+        using spInputEvent = std::shared_ptr<InputEvent>;
+        using spLogicalEvent = std::shared_ptr<LogicalEvent>;
+        
+        bool                                            paused{false};
+        Mediator<EventSystem>                           &_mediator;
+        std::unordered_map<std::string, spInputEvent>   _inputEvents;
+        std::unordered_map<std::string, spLogicalEvent> _logicalEvents;
+        MediatorRole                                    _role;
+    public:
+        EventSystem():
+                _mediator(Mediator<EventSystem>::get())
+        {
+            _mediator.registerClient(*this);
+        }
+        ~EventSystem()
+        {
+            _mediator.unregisterClient(*this);
+        }
+        
+        void            clear() {this->_inputEvents.clear();}
+        void            pause(){this->paused = true;}
+        void            unpause(){this->paused = false;}
+        void            setRole(MediatorRole role) { this->_role = role;}
+        MediatorRole    getRole() const {return this->_role;}
+        
+        void            receive(EventSystem &, spInputEvent event)
+        {
+            this->_inputEvents[event->getLabel()] = event;
+        }
+        
+        void            receive(EventSystem &, spLogicalEvent event)
+        {
+            this->_logicalEvents[event->getLabel()] = event;
+        }
+        
+        spInputEvent    createInputEvent(std::string const &name)
+        {
+            if (this->_role == MediatorRole::Provider)
+                return nullptr;
+            if (this->_inputEvents.find(name) != this->_inputEvents.end())
+                return this->_inputEvents.at(name);
+            this->_inputEvents[name] = std::make_shared<InputEvent>(name);
+            this->_mediator.send<spInputEvent>(*this, this->_inputEvents.at(name));
+            return this->_inputEvents.at(name);
+        }
+        spLogicalEvent  createLogicalEvent(std::string const &name)
+        {
+            if (this->_role == MediatorRole::Provider)
+                return nullptr;
+            if (this->_logicalEvents.find(name) != this->_logicalEvents.end())
+                return this->_logicalEvents.at(name);
+            this->_logicalEvents[name] = std::make_shared<LogicalEvent>(name);
+            this->_mediator.send<spLogicalEvent>(*this, this->_logicalEvents.at(name));
+            return this->_logicalEvents.at(name);
+        }
+        std::unordered_map<std::string, spInputEvent>   &getInputEvents()
+        {
+            return this->_inputEvents;
+        };
+        std::unordered_map<std::string, spLogicalEvent> &getLogicalEvents()
+        {
+            return this->_logicalEvents;
+        };
+    };
+    
     class   EntityManager;
     class   IEntity;
     
@@ -269,254 +537,6 @@ namespace fender
     };
 
     class       IRender;
-    
-    enum class  State : int
-    {
-        Undefined,
-        Up,
-        Down,
-        GoingUp,
-        GoingDown,
-    };
-    
-    enum class  Input : int
-    {
-        Undefined = 0,
-        A = 1, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
-        F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,
-        ArrowUp, ArrowDown, ArrowLeft, ArrowRight,
-        Return, Backspace, Space, Escape, Delete, Tab,
-        LCtrl, RCtrl, LShift, RShift, Alt,
-        Num1, Num2, Num3, Num4, Num5, Num6, Num7, Num8, Num9, Num0,
-        Capslock, PageUp, PageDown,
-        Ampersand, Hashtag, Quote, DoubleQuote, Dash, Underscore,
-        LParenthesis, RParenthesis, LBracket, RBracket, LSquareBracket, RSquareBracket,
-        Colon, SemiColon, QuestionMark, ExclamationMark, Comma, Dot, Percent, Asterisk,
-        Slash, BackSlash,
-        LButton, RButton, MouseWheelUp, MouseWheelDown, MouseWheelButton,
-        NBR_SUPPORTED_KEYS
-    };
-    
-    struct      Command
-    {
-        Input   key{Input::Undefined};
-        State   state{State::GoingDown};
-        bool    operator == (Command const &other)
-        {
-            return other.key == this->key && other.state == this->state;
-        }
-    };
-
-    class       Event
-    {
-    protected:
-        std::string                 _label{""};
-        int                         _lifespan{1};
-    public:
-        virtual ~Event() {}
-        
-        std::string getLabel() const {return this->_label;}
-        void        setLabel(std::string const &label) {this->_label = label;}
-        void        setLifespan(int lifespan) { this->_lifespan = lifespan; }
-        int         getLifespan() const { return this->_lifespan; }
-        
-//        Can the event start ?
-        std::function<bool(void)>   isReady{[](){return true;}};
-//        Trigger the event
-        std::function<void(void)>   start{[](){}};
-//        If isReady() failse, onFailure is called
-        std::function<void(void)>   onFailure{[](){}};
-//        If the event dies without ever being started, call onDeath()
-        std::function<void(void)>   onDeath{[](){}};
-    };
-    
-    enum class  InputEventMode : int
-    {
-//        As long as the input inputs are in the correct state at the same time in memory
-        Simple,
-//        If the input inputs are all in the correct state at the same frame
-        Simultaneous,
-//        If the input are set to true sequentially, any error restarts the sequence
-        Sequential
-    };
-    
-    class       InputEvent : public Event
-    {
-        int                         _identifier{0};
-        std::vector<Command>        _inputKeys;
-        unsigned int                _matchedKeys{0};
-        InputEventMode              _mode{InputEventMode::Simple};
-        void                        updateIdentifier()
-        {
-            std::function<int(int, int)> pairing = [this](int a, int b){
-                return (int)((0.5)*(a + b)*(a + b + 1) + b);
-            };
-            this->_identifier = pairing(static_cast<int>(this->_inputKeys.front().key),
-                                        static_cast<int>(this->_inputKeys.front().state));
-            if (_inputKeys.size() > 1)
-                for (auto mIter = std::next(_inputKeys.begin());
-                     mIter != _inputKeys.end(); ++mIter)
-                    this->_identifier = pairing(this->_identifier,
-                                                pairing(static_cast<int>(mIter->key),
-                                                        static_cast<int>(mIter->state)));
-            
-        };
-    public:
-//        Hollow ctor for later usage
-        InputEvent(std::string const &label)
-        {
-            this->_label = label;
-        }
-//        Simple Constructor for single key DOWN InputEvent
-        InputEvent(Input key)
-        {
-            this->_inputKeys.emplace_back(Command{.key = key});
-            this->updateIdentifier();
-        }
-//        Forward of inputs to vector using Initializer List
-        InputEvent(std::initializer_list<Command> list): _inputKeys(list)
-        {
-            this->updateIdentifier();
-        }
-        
-        void        setMode(fender::InputEventMode mode) { this->_mode = mode; }
-        int         getIdentifier() const {return this->_identifier;}
-        void        setKeyState(Input key, State state) {
-            for (auto &command: _inputKeys)
-                if (command.key == key)
-                {
-                    command.state = state;
-                    return this->updateIdentifier();
-                }
-            throw std::runtime_error("In " + std::string(__PRETTY_FUNCTION__) + ":\tInvalid input key");
-        }
-        
-        void        addKey(fender::Input key, fender::State state = fender::State::Down)
-        {
-            this->_inputKeys.emplace_back(Command{.key = key, .state = state});
-        }
-
-        void        trigger()
-        {
-            if (this->isReady())
-                this->start();
-            else
-                this->onFailure();
-        }
-        
-        void                reset()
-        {
-            this->_matchedKeys = 0;
-        }
-        
-        void                matchInput(Command command)
-        {
-            for (auto &com: this->_inputKeys)
-            {
-                if (com == command)
-                    this->_matchedKeys++;
-            }
-            if (this->_matchedKeys == this->_inputKeys.size())
-                this->trigger();
-        }
-    };
-    
-//    Event that doesn't bind to user input but rather logical data change
-    class       ConditionalEvent : public Event
-    {
-        std::function<bool(void)>       _func;
-    public:
-        ConditionalEvent(std::function<bool(void)> &func): _func(func)
-        {
-        
-        }
-    };
-    
-    enum class  MediatorRole
-    {
-        Client,
-        Provider
-    };
-    
-    template    <typename T>
-    class       Mediator
-    {
-        std::list<T *>      clients;
-
-//        Private constructor for Singleton pattern
-        Mediator() {}
-    public:
-        static Mediator    &get() {
-            static auto *inst = new Mediator<T>();
-            return *inst;
-        };
-        
-        void        registerClient(T &client)
-        {
-            this->clients.push_front(&client);
-        }
-        
-        void        unregisterClient(T &client)
-        {
-            this->clients.remove(&client);
-        }
-        
-        template    <typename MsgType>
-        void        send(T &sender, MsgType &msg)
-        {
-            for (auto &client: this->clients)
-            {
-                if (client != &sender)
-                    client->receive(sender, msg);
-            }
-        }
-    };
-    
-    class       EventSystem
-    {
-        using spInputEvent = std::shared_ptr<InputEvent>;
-        bool                                            paused{false};
-        Mediator<EventSystem>                           &_mediator;
-        std::unordered_map<std::string, spInputEvent>   _events;
-        MediatorRole                                    _role;
-    public:
-        EventSystem():
-                _mediator(Mediator<EventSystem>::get())
-        {
-            _mediator.registerClient(*this);
-        }
-        ~EventSystem()
-        {
-            _mediator.unregisterClient(*this);
-        }
-        
-        void            clear() {this->_events.clear();}
-        void            pause(){this->paused = true;}
-        void            unpause(){this->paused = false;}
-        void            setRole(MediatorRole role) { this->_role = role;}
-        MediatorRole    getRole() const {return this->_role;}
-        
-        void            receive(EventSystem &, spInputEvent event)
-        {
-            this->_events[event->getLabel()] = event;
-        }
-        
-        spInputEvent    createInputEvent(std::string const &name)
-        {
-            if (this->_role == MediatorRole::Provider)
-                return nullptr;
-            if (this->_events.find(name) != this->_events.end())
-                return this->_events.at(name);
-            this->_events[name] = std::make_shared<InputEvent>(name);
-            this->_mediator.send<spInputEvent>(*this, this->_events.at(name));
-            return this->_events.at(name);
-        }
-    
-        std::unordered_map<std::string, spInputEvent>   &getInputEvents()
-        {
-            return this->_events;
-        };
-    };
     
     class       IScene
     {
