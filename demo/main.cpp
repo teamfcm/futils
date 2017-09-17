@@ -8,7 +8,7 @@
 int main()
 {
 //    TODO: Remember to add goToBinDir();
-    futils::INI config("config/config.ini");
+    futils::Ini config("config/config.ini");
     auto global{config["global"]};
 
     START_LOG(global["logfile"]);

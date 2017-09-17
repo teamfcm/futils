@@ -33,18 +33,40 @@ namespace futils
         };
         struct Token
         {
+//            Token modification is thread-safe.
+            std::mutex              mutex;
+            std::string name{""};
+            std::string value{""};
+            int         lineNbr{-1};
+            std::string content{""};
+            std::vector<std::string>    list{};
+            
             Token() = default;
+            Token(Token const &tok) {
+                this->name = tok.name;
+                this->content = tok.content;
+                this->value = tok.value;
+                this->lineNbr = tok.lineNbr;
+                this->list = tok.list;
+            }
+            Token &operator = (Token const &tok) {
+                this->name = tok.name;
+                this->content = tok.content;
+                this->value = tok.value;
+                this->lineNbr = tok.lineNbr;
+                this->list = tok.list;
+                return *this;
+            }
             Token(std::string const &name, std::string const &value): name(name), value(value)
             {
                 if (this->value.find(","))
                     this->list = futils::string::split(value, ',');
             }
-            std::string name{""};
-            std::string value{""};
-            std::string content{""};
-            std::vector<std::string>    list{};
             int         size() {return this->list.size();}
-            int         lineNbr{-1};
+            void    operator = (const char *str)
+            {
+                *this = std::string(str);
+            }
             void    operator = (std::string const &val)
             {
                 if (val == "")
@@ -61,32 +83,43 @@ namespace futils
                 else
                     value = val;
             }
-            
             void    operator = (int nbr)
             {
                 value = std::to_string(nbr);
             }
-
             void    operator = (bool b) {
                 value = b == true ? "true" : "false";
             }
-            void    operator = (long int i) {this->value = std::to_string(i);}
-            void    operator = (float f) {this->value = std::to_string(f);}
-            void    operator = (double d) {this->value = std::to_string(d);}
+            void    operator = (long int i) {
+                this->value = std::to_string(i);
+            }
+            void    operator = (float f) {
+                this->value = std::to_string(f);
+            }
+            void    operator = (double d) {
+                this->value = std::to_string(d);
+            }
             
             std::string const &get(int idx)
             {
                 return this->list[idx];
             }
     
-            operator std::string() const {return this->value;}
+            operator std::string() const {
+                return this->value;
+            }
             explicit operator bool() const {
-                return this->value == "true"; }
+                return this->value == "true";
+            }
             explicit operator int() const {
                 return std::stoi(this->value);
             }
-            explicit operator long int() const {return std::stoll(this->value);}
-            explicit operator float() const {return std::stof(this->value);}
+            explicit operator long int() const {
+                return std::stoll(this->value);
+            }
+            explicit operator float() const {
+                return std::stof(this->value);
+            }
         };
         friend std::ostream &operator << (std::ostream &os, Token const &tok)
         {
@@ -96,12 +129,37 @@ namespace futils
     public:
         struct  Section
         {
-            std::string         name{""};
-            int                 lineNbr{-1};
-            std::string         content{""};
+            //            Section modification is Thread Safe as well.
+            std::mutex              mutex;
+            std::string                             name{""};
+            int                                     lineNbr{-1};
+            std::string                             content{""};
             std::unordered_map<std::string, Token>  tokens{};
-            std::map<int, std::string>                  tokenLineIndex{};
-
+            std::map<int, std::string>              tokenLineIndex{};
+    
+    
+            Section() = default;
+            Section &operator = (Section const &sec)
+            {
+                this->lineNbr = sec.lineNbr;
+                this->name = sec.name;
+                this->content = sec.content;
+                this->tokenLineIndex = sec.tokenLineIndex;
+                this->tokens = sec.tokens;
+                return *this;
+            }
+            Section(Section const &sec)
+            {
+                this->lineNbr = sec.lineNbr;
+                this->name = sec.name;
+                this->content = sec.content;
+                this->tokenLineIndex = sec.tokenLineIndex;
+                this->tokens = sec.tokens;
+            }
+            Section(std::string const &name, int lineNbr): name(name), lineNbr(lineNbr)
+            {
+            }
+            
             void                set(Token *ptr)
             {
                 this->tokens[ptr->name] = *ptr;
@@ -110,7 +168,9 @@ namespace futils
 
             void                set(Token const &ref, int linenbr)
             {
+                std::cout << "ok : " << ref.value;
                 this->tokens[ref.name] = ref;
+                std::cout << " vs " << this->tokens[ref.name].value << std::endl;
                 this->tokenLineIndex[linenbr] = ref.name;
             }
 
@@ -136,6 +196,7 @@ namespace futils
 
             void                writeContentTo(std::ofstream &file) const
             {
+                
                 for (auto const &tok: this->tokenLineIndex)
                 {
                     auto actualToken = this->tokens.at(tok.second);
@@ -158,6 +219,7 @@ namespace futils
         std::unordered_map<std::string, Section>        sections;
         std::unordered_map<std::string, std::string>    globalTokens;
         std::map<int, Section *>                        sectionIndexTable;
+        std::mutex                                      mutex;
 
         bool            isSectionString(std::string const &ref) const
         {
@@ -200,7 +262,7 @@ namespace futils
                 {
                     auto name = this->extractSectionName(line);
                     mostRecentSection = name;
-                    this->sections[name] = Section{.name = name, .lineNbr = nbr};
+                    this->sections[name] = Section(name, nbr);
                     this->sectionIndexTable[nbr] = &this->sections[name];
                 }
                 else if (isToken(line))
@@ -356,7 +418,7 @@ namespace futils
         std::vector<std::string>    getScopeList() const
         {
             std::vector<std::string>    result;
-
+        
             for (auto const &name: this->sectionIndexTable)
             {
                 result.push_back(name.second->name);
@@ -387,8 +449,6 @@ namespace futils
     public:
         Ini(std::string const &name)
         {
-//            Thread Safe
-            futils::ScopeLock   sl(this->mutex);
             auto &files = IniList::get();
             if (files.find(name) == files.end())
                 files[name] = new INI(name);
@@ -402,6 +462,15 @@ namespace futils
         void    save(std::string const &file = "")
         {
             this->actualFile->save(file);
+        }
+        INI::INIProxy   *proxy()
+        {
+            return (*this->actualFile).proxy();
+        }
+        std::string const &getFilePath() const {return (*this->actualFile).getFilePath();}
+        std::vector<std::string>    getScopeList() const
+        {
+            return this->actualFile->getScopeList();
         }
         INI &get() { return *this->actualFile; }
     };

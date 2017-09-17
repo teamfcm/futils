@@ -533,7 +533,7 @@ namespace fender
             std::string     identifier{"id:_" + file + "-" + scope};
             bool            isNew{true};
             bool            hasChanged{false};
-            futils::INI     source{file};
+            futils::Ini     source{file};
         public:
             Ini(std::string const &file, std::string const &scope): file(file), scope(scope)
             {
@@ -902,7 +902,7 @@ namespace fender
     class       Layout
     {
         std::unordered_map<std::string, std::unique_ptr<Element>>    elements;
-        futils::INI                                 ini;
+        futils::Ini                                 ini;
         std::string                                 name{ini.getFilePath()};
         bool                                        visible{true};
 
@@ -1088,7 +1088,7 @@ namespace fender
         ISceneFactory                   &sceneFactory;
         upRenderer                      renderer;
         upINIProxy                      config;
-        futils::INI                     timeline;
+        futils::Ini                     timeline;
         std::unordered_map<std::string, renderBuilder>  renderingBuilders;
         std::unordered_map<std::string, configFunc>     configFunctions;
 

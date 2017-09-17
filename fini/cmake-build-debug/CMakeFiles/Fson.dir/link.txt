@@ -1,1 +1,1 @@
-/usr/bin/c++   -g   CMakeFiles/Fson.dir/main.cpp.o  -o Fson 
+/usr/bin/c++    -pthread -g   CMakeFiles/Fson.dir/main.cpp.o  -o Fson 
