@@ -2,7 +2,7 @@
 Start log in logfile.txt
      [1] In fender::Manager::Manager(fender::ISceneFactory&, futils::INI::INIProxy*)
 Selected RenderLibrary : SFML
-     [2]	Renderer Built Successfully.
+     [2]	Rendering Built Successfully.
      [3] In void fender::IRender::SmartModeInit(const futils::INI::INIProxy&, const string&)
 SmartMode detected. Running auto conf...
      [4]	Checking if scope fender exists...

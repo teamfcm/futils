@@ -69,7 +69,7 @@ fender::SFMLRender::SFMLRender()
     
 //    Registering systems to the ECS
     this->_ecs.registerSystem<fender::systems::ClickDetection>(this);
-    this->_ecs.registerSystem<fender::systems::Renderer>(this);
+    this->_ecs.registerSystem<fender::systems::Rendering>(this);
 }
 
 // TODO: Should have a class Window for simpler opening and provide functions for creation, placement etc...

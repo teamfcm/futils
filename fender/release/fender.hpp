@@ -173,7 +173,6 @@ namespace fender
         }
     };
 
-//    Event that doesn't bind to user input but rather logical data change
     class       LogicalEvent : public Event
     {
     public:
@@ -244,6 +243,8 @@ namespace fender
             _mediator.unregisterClient(*this);
         }
         
+//  Should not be systematically cleared by the manager.
+//  Scenes should have the responsibility of clearing events.
         void            clear() {this->_inputEvents.clear();}
         void            pause(){this->paused = true;}
         void            unpause(){this->paused = false;}
@@ -302,6 +303,9 @@ namespace fender
         virtual ~IComponent() {}
         
         std::string const &getName() const {return this->__name;}
+        void                setEntity(IEntity &ent);
+//        TODO: Templates could be used, maybe ?
+        IComponent  &getAssociatedComponent(std::string const &type);
     };
     
     class   ISystem
@@ -311,6 +315,7 @@ namespace fender
         
         StrVec              __requiredComponents;
         fender::EventSystem __eventSystem;
+        
     public:
         virtual ~ISystem() {}
         virtual void          addComponent(IComponent &compo)   = 0;
@@ -323,7 +328,7 @@ namespace fender
     
     class   IEntity
     {
-        std::multimap<std::string, IComponent *>    components;
+        std::unordered_multimap<std::string, IComponent *>    components;
         std::function<void(IComponent &)>   registerComponentFunction{[](IComponent &){}};
         int                                 _id;
         
@@ -345,21 +350,20 @@ namespace fender
         {
             verifIsComponent<Compo>();
             auto compo = new Compo(args...);
+            compo->setEntity(*this);
             this->components.insert(std::make_pair(compo->getName(), compo));
             this->registerComponentFunction(*compo);
             return *compo;
         };
-    
-        template    <typename Compo>
-        Compo       &getComponent()
+        
+        IComponent  &getComponent(std::string const &type)
         {
-            Compo   compo;
-            for (auto &it: this->components)
+                 for (auto &it: this->components)
             {
-                if (it.first == compo.getName())
-                    return it.second;
+                if (it.first == type)
+                    return *it.second;
             }
-            throw std::runtime_error("Entity does not have component " + compo.getName());
+            throw std::runtime_error("Entity does not have component " + type);
         };
         
         void        setRegisterComponentFunction(std::function<void(IComponent &)> func)

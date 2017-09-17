@@ -173,6 +173,15 @@
 		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/release/fender.hpp">
 			<Option target="fender"/>
 		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Component.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Entity.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/System.cpp">
+			<Option target="fender"/>
+		</Unit>
 		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/IRender.cpp">
 			<Option target="fender"/>
 		</Unit>

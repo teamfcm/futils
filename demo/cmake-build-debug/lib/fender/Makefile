@@ -125,6 +125,87 @@ fender/fast:
 	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/build
 .PHONY : fender/fast
 
+src/ECS/Component.o: src/ECS/Component.cpp.o
+
+.PHONY : src/ECS/Component.o
+
+# target to build an object file
+src/ECS/Component.cpp.o:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o
+.PHONY : src/ECS/Component.cpp.o
+
+src/ECS/Component.i: src/ECS/Component.cpp.i
+
+.PHONY : src/ECS/Component.i
+
+# target to preprocess a source file
+src/ECS/Component.cpp.i:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.i
+.PHONY : src/ECS/Component.cpp.i
+
+src/ECS/Component.s: src/ECS/Component.cpp.s
+
+.PHONY : src/ECS/Component.s
+
+# target to generate assembly for a file
+src/ECS/Component.cpp.s:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.s
+.PHONY : src/ECS/Component.cpp.s
+
+src/ECS/Entity.o: src/ECS/Entity.cpp.o
+
+.PHONY : src/ECS/Entity.o
+
+# target to build an object file
+src/ECS/Entity.cpp.o:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o
+.PHONY : src/ECS/Entity.cpp.o
+
+src/ECS/Entity.i: src/ECS/Entity.cpp.i
+
+.PHONY : src/ECS/Entity.i
+
+# target to preprocess a source file
+src/ECS/Entity.cpp.i:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.i
+.PHONY : src/ECS/Entity.cpp.i
+
+src/ECS/Entity.s: src/ECS/Entity.cpp.s
+
+.PHONY : src/ECS/Entity.s
+
+# target to generate assembly for a file
+src/ECS/Entity.cpp.s:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.s
+.PHONY : src/ECS/Entity.cpp.s
+
+src/ECS/System.o: src/ECS/System.cpp.o
+
+.PHONY : src/ECS/System.o
+
+# target to build an object file
+src/ECS/System.cpp.o:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.o
+.PHONY : src/ECS/System.cpp.o
+
+src/ECS/System.i: src/ECS/System.cpp.i
+
+.PHONY : src/ECS/System.i
+
+# target to preprocess a source file
+src/ECS/System.cpp.i:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.i
+.PHONY : src/ECS/System.cpp.i
+
+src/ECS/System.s: src/ECS/System.cpp.s
+
+.PHONY : src/ECS/System.s
+
+# target to generate assembly for a file
+src/ECS/System.cpp.s:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.s
+.PHONY : src/ECS/System.cpp.s
+
 src/IRender.o: src/IRender.cpp.o
 
 .PHONY : src/IRender.o
@@ -269,6 +350,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... fender"
+	@echo "... src/ECS/Component.o"
+	@echo "... src/ECS/Component.i"
+	@echo "... src/ECS/Component.s"
+	@echo "... src/ECS/Entity.o"
+	@echo "... src/ECS/Entity.i"
+	@echo "... src/ECS/Entity.s"
+	@echo "... src/ECS/System.o"
+	@echo "... src/ECS/System.i"
+	@echo "... src/ECS/System.s"
 	@echo "... src/IRender.o"
 	@echo "... src/IRender.i"
 	@echo "... src/IRender.s"

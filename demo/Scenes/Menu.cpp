@@ -73,8 +73,8 @@ void    demo::scenes::Menu::init()
 //        for example Player or World could be sourced to a ini file given to the constructor ?
         buttonObject->attachComponent<fender::components::Drawable>();
         auto &position = buttonObject->attachComponent<fender::components::Object2d>();
-        position.setPosition({0, 0});
-        position.setSize({100, 1000});
+        position.setPosition({700, 300});
+        position.setSize({200, 150});
         auto &onClick = buttonObject->attachComponent<fender::components::Clickable>();
         onClick.setArea(position.getPosition(), position.getSize());
         onClick.setAction([this](){

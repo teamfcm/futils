@@ -177,13 +177,88 @@ lib/fender/CMakeFiles/fender.dir/src/IRender.cpp.o.provides: lib/fender/CMakeFil
 lib/fender/CMakeFiles/fender.dir/src/IRender.cpp.o.provides.build: lib/fender/CMakeFiles/fender.dir/src/IRender.cpp.o
 
 
+lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o: lib/fender/CMakeFiles/fender.dir/flags.make
+lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o: ../lib/fender/src/ECS/Entity.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o"
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fender.dir/src/ECS/Entity.cpp.o -c /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Entity.cpp
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fender.dir/src/ECS/Entity.cpp.i"
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Entity.cpp > CMakeFiles/fender.dir/src/ECS/Entity.cpp.i
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fender.dir/src/ECS/Entity.cpp.s"
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Entity.cpp -o CMakeFiles/fender.dir/src/ECS/Entity.cpp.s
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o.requires:
+
+.PHONY : lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o.requires
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o.provides: lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o.requires
+	$(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o.provides.build
+.PHONY : lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o.provides
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o.provides.build: lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o
+
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o: lib/fender/CMakeFiles/fender.dir/flags.make
+lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o: ../lib/fender/src/ECS/Component.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o"
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fender.dir/src/ECS/Component.cpp.o -c /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Component.cpp
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fender.dir/src/ECS/Component.cpp.i"
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Component.cpp > CMakeFiles/fender.dir/src/ECS/Component.cpp.i
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fender.dir/src/ECS/Component.cpp.s"
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Component.cpp -o CMakeFiles/fender.dir/src/ECS/Component.cpp.s
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o.requires:
+
+.PHONY : lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o.requires
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o.provides: lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o.requires
+	$(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o.provides.build
+.PHONY : lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o.provides
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o.provides.build: lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o
+
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.o: lib/fender/CMakeFiles/fender.dir/flags.make
+lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.o: ../lib/fender/src/ECS/System.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.o"
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fender.dir/src/ECS/System.cpp.o -c /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/System.cpp
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fender.dir/src/ECS/System.cpp.i"
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/System.cpp > CMakeFiles/fender.dir/src/ECS/System.cpp.i
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fender.dir/src/ECS/System.cpp.s"
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/System.cpp -o CMakeFiles/fender.dir/src/ECS/System.cpp.s
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.o.requires:
+
+.PHONY : lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.o.requires
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.o.provides: lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.o.requires
+	$(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.o.provides.build
+.PHONY : lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.o.provides
+
+lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.o.provides.build: lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.o
+
+
 # Object files for target fender
 fender_OBJECTS = \
 "CMakeFiles/fender.dir/src/ncurses/CursesRender.cpp.o" \
 "CMakeFiles/fender.dir/src/sfml/SFMLRender.cpp.o" \
 "CMakeFiles/fender.dir/src/Manager.cpp.o" \
 "CMakeFiles/fender.dir/src/IScene.cpp.o" \
-"CMakeFiles/fender.dir/src/IRender.cpp.o"
+"CMakeFiles/fender.dir/src/IRender.cpp.o" \
+"CMakeFiles/fender.dir/src/ECS/Entity.cpp.o" \
+"CMakeFiles/fender.dir/src/ECS/Component.cpp.o" \
+"CMakeFiles/fender.dir/src/ECS/System.cpp.o"
 
 # External object files for target fender
 fender_EXTERNAL_OBJECTS =
@@ -193,9 +268,12 @@ lib/release/libfender.so: lib/fender/CMakeFiles/fender.dir/src/sfml/SFMLRender.c
 lib/release/libfender.so: lib/fender/CMakeFiles/fender.dir/src/Manager.cpp.o
 lib/release/libfender.so: lib/fender/CMakeFiles/fender.dir/src/IScene.cpp.o
 lib/release/libfender.so: lib/fender/CMakeFiles/fender.dir/src/IRender.cpp.o
+lib/release/libfender.so: lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o
+lib/release/libfender.so: lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o
+lib/release/libfender.so: lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.o
 lib/release/libfender.so: lib/fender/CMakeFiles/fender.dir/build.make
 lib/release/libfender.so: lib/fender/CMakeFiles/fender.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX shared library ../release/libfender.so"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library ../release/libfender.so"
 	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fender.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -208,6 +286,9 @@ lib/fender/CMakeFiles/fender.dir/requires: lib/fender/CMakeFiles/fender.dir/src/
 lib/fender/CMakeFiles/fender.dir/requires: lib/fender/CMakeFiles/fender.dir/src/Manager.cpp.o.requires
 lib/fender/CMakeFiles/fender.dir/requires: lib/fender/CMakeFiles/fender.dir/src/IScene.cpp.o.requires
 lib/fender/CMakeFiles/fender.dir/requires: lib/fender/CMakeFiles/fender.dir/src/IRender.cpp.o.requires
+lib/fender/CMakeFiles/fender.dir/requires: lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o.requires
+lib/fender/CMakeFiles/fender.dir/requires: lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o.requires
+lib/fender/CMakeFiles/fender.dir/requires: lib/fender/CMakeFiles/fender.dir/src/ECS/System.cpp.o.requires
 
 .PHONY : lib/fender/CMakeFiles/fender.dir/requires
 

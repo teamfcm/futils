@@ -432,13 +432,13 @@ namespace fender
                 this->components.push_back(asClickable);
             }
         };
-        class   Renderer: public fender::ISystem
+        class   Rendering: public fender::ISystem
         {
             SFMLRender                                          &_renderer;
             std::vector<fender::components::Drawable *>         components;
             float                                               _fluidStep{0.0};
         public:
-            Renderer(SFMLRender *renderer): _renderer(*renderer)
+            Rendering(SFMLRender *renderer): _renderer(*renderer)
             {
                 this->__requiredComponents.emplace_back("Drawable");
                 this->__requiredComponents.emplace_back("Object2d");
@@ -447,18 +447,19 @@ namespace fender
             virtual void        run(float elapsed) final
             {
                 this->_fluidStep += elapsed;
-                if (_fluidStep < 0.016)
+                if (_fluidStep < 0.016)  // TODO: 60FPS, a class would be good but meh.
                     return ;
                 _fluidStep = 0.0;
                 auto &win = this->_renderer.getWindow();
-                win.clear(sf::Color::Black);
+                win.clear(sf::Color::Black); // TODO: Dynamic colors !
+//                TODO: Needs a way better encapsulation, i should have my own rect here..
                 sf::RectangleShape  rect;
                 for (auto &compo: this->components)
                 {
-//                    auto &object = compo.getAssociatedComponent("Object2d");
-//                    rect.setPosition(object->getPosition().X, object->getPosition().Y);
-//                    rect.setFillColor(sf::Color::White);
-//                    rect.setSize(sf::Vector2f(object->getSize().X, object->getSize().Y));
+                    auto &object = static_cast<fender::components::Object2d &>(compo->getAssociatedComponent("Object2d"));
+                    rect.setPosition(object.getPosition().X, object.getPosition().Y);
+                    rect.setFillColor(sf::Color::White);
+                    rect.setSize(sf::Vector2f(object.getSize().X, object.getSize().Y));
                     win.draw(rect);
                 }
                 win.display();
