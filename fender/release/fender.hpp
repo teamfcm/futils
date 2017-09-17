@@ -533,6 +533,7 @@ namespace fender
             std::string     identifier{"id:_" + file + "-" + scope};
             bool            isNew{true};
             bool            hasChanged{false};
+            futils::INI     source{file};
         public:
             Ini(std::string const &file, std::string const &scope): file(file), scope(scope)
             {

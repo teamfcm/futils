@@ -3,29 +3,13 @@
 #include <unistd.h>
 
 int main() {
-    futils::INI     alt("alt.ini");
-
-    std::cout << "You can easily get values from file :" << std::endl;
-    usleep(1000000);
-    std::cout << alt["windowConfig"]["width"] << std::endl;
-    usleep(1000000);
-    std::cout << "And modify them either temporarily" << std::endl;
-    usleep(1000000);
-    std::cout << "alt[\"windowConfig\"][\"width\"] = 50000;" << std::endl;
-    usleep(1000000);
-    alt["windowConfig"]["width"] = 5000;
-    usleep(1000000);
-    std::cout << alt["windowConfig"]["width"] << std::endl;
-    usleep(1000000);
-    std::cout << "And when you're done : save to the file" << std::endl;
-    usleep(1000000);
-    std::cout << "alt.save()" << std::endl;
-    usleep(1000000);
+    futils::Ini     alt("alt.ini");
+    futils::Ini     file("alt.ini");
+    
+    alt["global"]["alt"] = false;
     alt.save();
-    std::cout << "You can also save to another file easily :" << std::endl;
-    usleep(1000000);
-    alt.save("other.ini");
-    std::cout << "alt.save(\"other.ini\");" << std::endl;
-    usleep(1000000);
+    std::cout << file["global"]["haha"] << std::endl;
+    file["global"]["haha"] = 12.4398;
+    file.save();
     return 0;
 }

@@ -18,6 +18,7 @@
 
 namespace futils
 {
+//    Raw Class
     class   INI
     {
         struct Line
@@ -30,7 +31,6 @@ namespace futils
                 return os;
             }
         };
-
         struct Token
         {
             Token() = default;
@@ -70,7 +70,10 @@ namespace futils
             void    operator = (bool b) {
                 value = b == true ? "true" : "false";
             }
-    
+            void    operator = (long int i) {this->value = std::to_string(i);}
+            void    operator = (float f) {this->value = std::to_string(f);}
+            void    operator = (double d) {this->value = std::to_string(d);}
+            
             std::string const &get(int idx)
             {
                 return this->list[idx];
@@ -82,14 +85,14 @@ namespace futils
             explicit operator int() const {
                 return std::stoi(this->value);
             }
+            explicit operator long int() const {return std::stoll(this->value);}
+            explicit operator float() const {return std::stof(this->value);}
         };
-
         friend std::ostream &operator << (std::ostream &os, Token const &tok)
         {
             os << tok.name << "=" << tok.value << std::endl;
             return os;
         }
-
     public:
         struct  Section
         {
@@ -145,7 +148,7 @@ namespace futils
                     file << content << std::endl;
             }
         };
-
+        
     private:
         std::vector<char>   forbiddenCharacters{' ', '\n'};
         std::list<Line>     content{};
@@ -161,31 +164,26 @@ namespace futils
             std::string cpy{this->epur(ref)};
             return (cpy[0] == '[' && cpy[cpy.size() - 1] == ']');
         }
-
         std::string     extractSectionName(std::string const &ref) const
         {
             std::string cpy{this->epur(ref)};
             return cpy.substr(1, cpy.size() - 2);
         }
-
         std::string     extractTokenName(std::string const &ref) const
         {
             auto    delimPos = ref.find("=");
             return ref.substr(0, delimPos);
         }
-
         std::string     extractTokenValue(std::string const &ref) const
         {
             auto    delimPos = ref.find("=");
             return ref.substr(delimPos + 1, ref.size());
         }
-
         bool            isToken(std::string const &ref) const
         {
             auto index = ref.find("=");
             return (index != std::string::npos);
         }
-
         void            loadINI()
         {
             if (!this->iniFile.is_open())
@@ -238,7 +236,6 @@ namespace futils
                 nbr++;
             }
         }
-
         std::string     epur(std::string const &str) const
         {
             std::string cleanStr;
@@ -254,7 +251,6 @@ namespace futils
             }
             return cleanStr;
         }
-
         void    writeContentTo(std::string const &file) const
         {
             std::ofstream    outputFile;
@@ -271,7 +267,6 @@ namespace futils
                 }
             }
         }
-
         void        preLoad()
         {
             iniFile.open(this->filepath);
@@ -283,7 +278,6 @@ namespace futils
                 this->loadINI();
             }
         }
-
     public:
         class   INIProxy
         {
@@ -303,19 +297,15 @@ namespace futils
                 return this->_sections.at(name);
             }
         };
-
-
         INI(std::string const &file): filepath(file)
         {
             if (file != "")
                 this->preLoad();
         }
-
         ~INI()
         {
             this->iniFile.close();
         }
-
         void    save(std::string const &file = "")
         {
             if (file == "")
@@ -323,13 +313,11 @@ namespace futils
             else
                 this->writeContentTo(file);
         }
-
         void    print() const
         {
             for (auto const &line: this->content)
                 line.print();
         }
-
         Section   &operator [] (std::string const &name)
         {
             if (this->sections.find(name) == this->sections.end())
@@ -342,7 +330,6 @@ namespace futils
             }
             return this->sections[name];
         }
-
         void    reset(std::string const &file)
         {
             this->sections.clear();
@@ -356,19 +343,15 @@ namespace futils
             if (file != "")
                 this->preLoad();
         }
-
         void    closeFile()
         {
             if (this->iniFile.is_open())
                 this->iniFile.close();
         }
-
         INIProxy    *proxy()
         {
             return new INIProxy(this->sections, this->content);
         }
-
-
         std::string const &getFilePath() const { return this->filepath; }
         std::vector<std::string>    getScopeList() const
         {
@@ -380,6 +363,47 @@ namespace futils
             }
             return result;
         }
+    };
+    
+//    Thread Safe Proxy Class
+    class   Ini
+    {
+        std::mutex              mutex;
+        
+        class   IniList
+        {
+            std::unordered_map<std::string, INI *>  files;
+            std::unordered_map<std::string, INI *>  &list() {return files;};
+            IniList() = default;
+        public:
+            static std::unordered_map<std::string, INI *>  &get()
+            {
+                static IniList instance;
+                return instance.list();
+            };
+        };
+    
+        INI *actualFile{nullptr};
+    public:
+        Ini(std::string const &name)
+        {
+//            Thread Safe
+            futils::ScopeLock   sl(this->mutex);
+            auto &files = IniList::get();
+            if (files.find(name) == files.end())
+                files[name] = new INI(name);
+            actualFile = files[name];
+        }
+        
+        INI::Section    &operator [] (std::string const &name)
+        {
+            return (*this->actualFile)[name];
+        }
+        void    save(std::string const &file = "")
+        {
+            this->actualFile->save(file);
+        }
+        INI &get() { return *this->actualFile; }
     };
 }
 
