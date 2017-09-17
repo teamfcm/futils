@@ -82,7 +82,7 @@ void    fender::IRender::SmartModeInit(futils::INI::INIProxy const &proxyConf,
     LOUT("Found ! Starting configuration...");
     for (auto func: this->configFunctions)
     {
-        LOUT("Setting " + func.first + " to " + conf[func.first].value);
+        LOUT("Setting " + func.first + " to " + std::string(conf[func.first]));
         func.second(conf[func.first]);
     }
 }

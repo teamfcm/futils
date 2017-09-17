@@ -31,18 +31,79 @@ namespace futils
                 return os;
             }
         };
+        
+        struct          Value
+        {
+            Value(std::string const &str): str(str) {}
+            std::string         str{""};
+            void    operator = (int nbr)                {
+                str = std::to_string(nbr);
+            }
+            void    operator = (bool b)                 {
+                str = b == true ? "true" : "false";
+            }
+            void    operator = (long int i)             {
+                this->str = std::to_string(i);
+            }
+            void    operator = (float f)                {
+                this->str = std::to_string(f);
+            }
+            void    operator = (double d)               {
+                this->str = std::to_string(d);
+            }
+            void    operator = (const char *str)        {
+                *this = std::string(str);
+            }
+            void    operator = (std::string const &val) {
+                if (val == "")
+                    throw std::runtime_error("Missing argument for Value");
+                if (val[0] == '\"' && val[val.size() - 1] == '\"')
+                {
+                    str = val;
+                    str.erase(0, 1);
+                    str = str.substr(0, str.size() - 1);
+                }
+                else
+                    str = val;
+            }
+    
+            operator            std::string() const     {
+                return this->str;
+            }
+            operator   bool() const                     {
+                return this->str == "true";
+            }
+            operator   int() const                      {
+                return std::stoi(this->str);
+            }
+            operator   long int() const                 {
+                return std::stoll(this->str);
+            }
+            operator   float() const                    {
+                return std::stof(this->str);
+            }
+            char    first() {
+                return this->str[0];
+            }
+            char    last()  {
+                return this->str[str.size() - 1];
+            }
+        };
     public:
+        friend std::ostream    &operator << (std::ostream &os, Value const &val)
+        {
+            os << val.str;
+            return os;
+        }
         struct Token
         {
-            std::function<void(void)>       onModification{[](){}};
-            std::function<void(void)>       onSave{[](){}};
 //            Token modification is thread-safe.
             std::mutex              mutex;
             std::string name{""};
-            std::string value{""};
+            Value       value{""};
             int         lineNbr{-1};
             std::string content{""};
-            std::vector<std::string>    list{};
+            std::vector<Value>    list{};
             bool                        updated{false};
         
             Token() = default;
@@ -63,77 +124,34 @@ namespace futils
             }
             Token(std::string const &name, std::string const &value): name(name), value(value)
             {
-                if (this->value.find(","))
-                    this->list = futils::string::split(value, ',');
+                if (this->value.str.find(",")
+                    && this->value.first() == '['
+                    && this->value.last() == ']')
+                {
+                    for (auto &elem: futils::string::split(this->value.str, ','))
+                    {
+                        auto str = elem;
+                        if (elem[0] == '[')
+                            str = elem.substr(1, elem.size());
+                        if (elem[elem.size() - 1] == ']')
+                            str = elem.substr(0, elem.size() - 1);
+                        this->list.emplace_back(Value{.str = str});
+                    }
+                }
             }
             int         size() {return this->list.size();}
-            void    operator = (const char *str)
-            {
-                this->onModification();
-                *this = std::string(str);
-            }
-            void    operator = (std::string const &val)
-            {
-                this->onModification();
-                if (val == "")
-                    throw std::runtime_error("Missing argument for "
-                                             + this->name
-                                             + " line "
-                                             + std::to_string(this->lineNbr));
-                if (val[0] == '\"' && val[val.size() - 1] == '\"')
-                {
-                    value = val;
-                    value.erase(0, 1);
-                    value = value.substr(0, value.size() - 1);
-                }
-                else
-                    value = val;
-            }
-            void    operator = (int nbr)
-            {
-                this->onModification();
-                value = std::to_string(nbr);
-            }
-            void    operator = (bool b) {
-                this->onModification();
-                value = b == true ? "true" : "false";
-            }
-            void    operator = (long int i) {
-                this->onModification();
-                this->value = std::to_string(i);
-            }
-            void    operator = (float f) {
-                this->onModification();
-                this->value = std::to_string(f);
-            }
-            void    operator = (double d) {
-                this->onModification();
-                this->value = std::to_string(d);
-            }
-        
-            std::string const &get(int idx)
-            {
-                return this->list[idx];
-            }
-        
-            operator std::string() const {
-                return this->value;
-            }
-            explicit operator bool() const {
-                return this->value == "true";
-            }
-            explicit operator int() const {
-                return std::stoi(this->value);
-            }
-            explicit operator long int() const {
-                return std::stoll(this->value);
-            }
-            explicit operator float() const {
-                return std::stof(this->value);
-            }
             
-            void        saved() {
-                this->onSave();
+            template    <typename T>
+            void    operator = (T val) {this->value = val;}
+    
+            operator std::string()  const           {return this->value;}
+            explicit operator bool()         const  {return this->value;}
+            explicit operator const char *() const  {return this->value.str.c_str();}
+            explicit operator float() const         {return this->value;}
+            
+            Value   &operator [] (unsigned int index)
+            {
+                return this->list[index];
             }
         };
         friend std::ostream &operator << (std::ostream &os, Token const &tok)
@@ -150,9 +168,6 @@ namespace futils
             std::string                             content{""};
             std::unordered_map<std::string, Token>  tokens{};
             std::map<int, std::string>              tokenLineIndex{};
-            std::function<void(void)>               onModification{[](){}};
-            std::function<void(void)>               onSave{[](){}};
-    
     
             Section() = default;
             Section &operator = (Section const &sec)
@@ -180,16 +195,12 @@ namespace futils
             {
                 this->tokens[ptr->name] = *ptr;
                 this->tokenLineIndex[ptr->lineNbr] = ptr->name;
-                ptr->onModification = this->onModification;
-                ptr->onSave = this->onSave;
             }
 
             void                set(Token const &ref, int linenbr)
             {
                 this->tokens[ref.name] = ref;
                 this->tokenLineIndex[linenbr] = ref.name;
-                this->tokens[ref.name].onModification = this->onModification;
-                this->tokens[ref.name].onSave = this->onSave;
             }
 
             Token   &operator [] (std::string const &name)
@@ -203,9 +214,6 @@ namespace futils
                     this->tokens[name].name = name;
                     this->tokens[name].lineNbr = line;
                     this->tokenLineIndex[line] = name;
-                    this->tokens[name].onModification = this->onModification;
-                    this->tokens[name].onSave = this->onSave;
-                    this->onModification();
                 }
                 return this->tokens[name];
             }
@@ -224,7 +232,6 @@ namespace futils
                         file << actualToken.name << "=" << actualToken.value << std::endl;
                     else
                         file << actualToken.content << std::endl;
-                    actualToken.saved();
                 }
                 if (content != "")
                     file << content << std::endl;
@@ -284,8 +291,6 @@ namespace futils
                     auto name = this->extractSectionName(line);
                     mostRecentSection = name;
                     this->sections[name] = Section(name, nbr);
-                    this->sections[name].onModification = this->onModification;
-                    this->sections[name].onSave = this->onSave;
                     this->sectionIndexTable[nbr] = &this->sections[name];
                 }
                 else if (isToken(line))
@@ -306,8 +311,6 @@ namespace futils
                         sec->name = "#" + std::to_string(nbr);
                         sec->content = line;
                         sec->lineNbr = nbr;
-                        sec->onModification = this->onModification;
-                        sec->onSave = this->onSave;
                         this->sectionIndexTable[nbr] = sec;
                     }
                     else
@@ -366,9 +369,6 @@ namespace futils
             }
         }
     public:
-        std::function<void(void)>                           onModification{[](){}};
-        std::function<void(void)>                           onSave{[](){}};
-        
         class   INIProxy
         {
             std::unordered_map<std::string, Section> const &_sections;
@@ -417,8 +417,6 @@ namespace futils
                 this->sections[name].name = name;
                 this->sections[name].content = "";
                 this->sectionIndexTable[line] = &this->sections[name];
-                this->sections[name].onModification = this->onModification;
-                this->sections[name].onSave = this->onSave;
             }
             return this->sections[name];
         }
@@ -455,18 +453,6 @@ namespace futils
             }
             return result;
         }
-        void        setModificationCallback(std::function<void(void)> func)
-        {
-            this->onModification = func;
-            for (auto &section: this->sections)
-                section.second.onModification = func;
-        }
-        void        setSaveCallback(std::function<void(void)> func)
-        {
-            this->onSave = func;
-            for (auto &section: this->sections)
-                section.second.onSave = func;
-        }
     };
     
 //    Thread Safe Proxy Class
@@ -494,18 +480,7 @@ namespace futils
         {
             auto &files = IniList::get();
             if (files.find(name) == files.end())
-            {
                 files[name] = new INI(name);
-                actualFile = files[name];
-                actualFile->setModificationCallback([this](){
-                    this->updated = true;
-                    std::cout << "Change occurred;" << std::endl;
-                });
-                actualFile->setSaveCallback([this](){
-                    this->updated = false;
-                    std::cout << "Saved." << std::endl;
-                });
-            }
             actualFile = files[name];
         }
         

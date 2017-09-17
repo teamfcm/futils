@@ -16,9 +16,6 @@
 # define SetAndSave(v, vv)  this->v = vv; this->fileObject[EXPAND_AND_QUOTE(v)] = vv;
 # define INIT(v)            SetAndSave(v, this->v)
 # define SAVE(v, vv)            this->fileObject[EXPAND_AND_QUOTE(v)] = vv;
-# define LOAD(v, type) if (this->fileObject[EXPAND_AND_QUOTE(v)].value == "") \
-throw std::runtime_error("Missing argument"); \
-this->v = static_cast<type>(this->fileObject[EXPAND_AND_QUOTE(v)]); \
 
 namespace fender
 {
@@ -698,12 +695,12 @@ namespace fender
         {
             try
             {
-                LOAD(position.X, int)
-                LOAD(position.Y, int)
-                LOAD(size.X, int)
-                LOAD(size.Y, int)
-                LOAD(visible, bool)
-                LOAD(zIndex, int)
+                // LOAD(position.X, int)
+                // LOAD(position.Y, int)
+                // LOAD(size.X, int)
+                // LOAD(size.Y, int)
+                // LOAD(visible, bool)
+                // LOAD(zIndex, int)
             }
             catch (std::exception const &error)
             {
@@ -752,7 +749,7 @@ namespace fender
         {
             try
             {
-                LOAD(font, std::string)
+                // LOAD(font, std::string)
             }
             catch (std::exception const &error)
             {
@@ -783,7 +780,7 @@ namespace fender
         {
             try
             {
-                LOAD(filepath, std::string)
+                // LOAD(filepath, std::string)
             }
             catch (std::exception const &error)
             {
@@ -812,9 +809,9 @@ namespace fender
         {
             try
             {
-                LOAD(label, std::string)
-                LOAD(displayLabel, bool)
-                LOAD(displayStatus, bool)
+                // LOAD(label, std::string)
+                // LOAD(displayLabel, bool)
+                // LOAD(displayStatus, bool)
             }
             catch (std::exception const &error)
             {
@@ -856,16 +853,16 @@ namespace fender
         {
             try
             {
-                LOAD(message, std::string)
-                LOAD(title, std::string)
-                LOAD(background, std::string)
-                for (int i = 0; i < sec["choices"].size(); i++)
-                    this->choices.emplace_back(sec["choices"].get(i));
+                // LOAD(message, std::string)
+                // LOAD(title, std::string)
+                // LOAD(background, std::string)
+//                for (int i = 0; i < sec["choices"].size(); i++)
+//                    this->choices.emplace_back(sec["choices"].get(i));
             }
             catch (std::exception const &error)
             {
-                SAVE(message, message)
-                SAVE(title, title)
+//                SAVE(message, message)
+//                SAVE(title, title)
                 LERR("An error occured while loading Popup " + sec.name + ":\t" + error.what());
             }
         }
@@ -899,7 +896,7 @@ namespace fender
         {
             try
             {
-                LOAD(label, std::string)
+                // LOAD(label, std::string)
             }
             catch (std::exception const &error)
             {
@@ -955,7 +952,7 @@ namespace fender
             this->initFactory();
             for (auto const &name: this->ini.getScopeList())
             {
-                auto type = ini[name]["type"].value;
+                auto type = ini[name]["type"].value.str;
                 if (elementFactory.find(type) == elementFactory.end())
                     LERR("You forgot to add a function for creating " + type);
                 this->elementFactory[type](name);
