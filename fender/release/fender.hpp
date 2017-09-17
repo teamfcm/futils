@@ -407,7 +407,7 @@ namespace fender
             auto ent = new T(args...);
             ent->setRegisterComponentFunction([this](IComponent &compo){
                 if (this->notifySystems(compo) == 0)
-                    throw std::runtime_error("Idle Component attached to an entity : " + compo.getName());
+                    throw std::logic_error("No system registered for component : " + compo.getName());
             });
             return ent;
         }
@@ -502,7 +502,7 @@ namespace fender
             {
                 this->__name = "Clickable";
             }
-
+        
             void        setArea(float x, float y, float w, float h)
             {
                 this->area.X = x;
@@ -524,6 +524,79 @@ namespace fender
             void        operator () ()
             {
                 return this->function();
+            }
+        };
+        class       Ini   : public IComponent
+        {
+            std::string     file{""};
+            std::string     scope{""};
+            std::string     identifier{"id:_" + file + "-" + scope};
+            bool            isNew{true};
+            bool            hasChanged{false};
+        public:
+            Ini(std::string const &file, std::string const &scope): file(file), scope(scope)
+            {
+                this->__name = "Ini";
+            }
+    
+            std::string const &getIdentifier() const
+            {
+                return this->identifier;
+            }
+            
+            bool        shouldSave()
+            {
+                return this->hasChanged;
+            }
+    
+            bool        isLoaded()
+            {
+                return !this->isNew;
+            }
+        };
+    }
+    
+    namespace systems
+    {
+        class   Ini : public ISystem
+        {
+            std::unordered_map<std::string, components::Ini *>    sources;
+        public:
+            Ini()
+            {
+                this->__requiredComponents.emplace_back("Ini");
+            }
+            
+            virtual void    addComponent(IComponent &compo)
+            {
+                auto source = static_cast<components::Ini *>(&compo);
+                this->sources[source->getIdentifier()] = source;
+            }
+            
+            virtual void    run(float)
+            {
+                for (auto &pair: this->sources)
+                {
+                    auto &source = *pair.second;
+                    if (!source.isLoaded())
+                        this->loadSource(source);
+//                    TODO: Source.shouldSave() will be set to true by another system
+//                    for example Editor System, when the user clicks on the SAVE button
+//                    All sources will be saved once. This INI system could keep track of changes
+//                    for easy CTRL+Z implementation.
+                    if (source.shouldSave())
+                        this->saveSource(source);
+                }
+            }
+            
+            void            loadSource(components::Ini &source)
+            {
+                (void)source;
+            }
+            
+            void            saveSource(components::Ini &source)
+            {
+                (void)source;
             }
         };
     }

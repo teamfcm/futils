@@ -68,8 +68,8 @@ fender::SFMLRender::SFMLRender()
     this->_eventSystem.setRole(fender::MediatorRole::Provider);
     
 //    Registering systems to the ECS
-    this->_ecs.registerSystem<fender::systems::ClickDetection>(this);
-    this->_ecs.registerSystem<fender::systems::Rendering>(this);
+    this->_ecs.registerSystem<fender::SFMLsystems::ClickDetection>(this);
+    this->_ecs.registerSystem<fender::SFMLsystems::Rendering>(this);
 }
 
 // TODO: Should have a class Window for simpler opening and provide functions for creation, placement etc...

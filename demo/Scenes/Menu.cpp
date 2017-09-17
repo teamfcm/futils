@@ -50,6 +50,7 @@ void    demo::scenes::Menu::init()
     this->renderer->registerLayout(this->layout);
     this->renderer->useLayout("Menu");
     this->layout.setVisible(true);
+    this->ecs->registerSystem<fender::systems::Ini>();
     
 //    Start by making big ass systems and splitting them afterwards.
 
@@ -71,10 +72,15 @@ void    demo::scenes::Menu::init()
 //        and LayoutObject be sourced from INI File.
 //        And Game Object could have a component Stored where you'd fetch data using some kind of identifier
 //        for example Player or World could be sourced to a ini file given to the constructor ?
+        auto &source = buttonObject->attachComponent<fender::components::Ini>("Menu.ini", "Button_0");
+        (void)source;
         buttonObject->attachComponent<fender::components::Drawable>();
+//        TODO: Why is it that i dont do anything on the drawable ? :O
+        
         auto &position = buttonObject->attachComponent<fender::components::Object2d>();
         position.setPosition({700, 300});
         position.setSize({200, 150});
+        
         auto &onClick = buttonObject->attachComponent<fender::components::Clickable>();
         onClick.setArea(position.getPosition(), position.getSize());
         onClick.setAction([this](){

@@ -401,7 +401,7 @@ namespace fender
         }
     };
     
-    namespace systems
+    namespace SFMLsystems
     {
         class   ClickDetection : public fender::ISystem
         {
