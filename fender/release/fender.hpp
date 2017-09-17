@@ -547,12 +547,24 @@ namespace fender
             
             bool        shouldSave()
             {
-                return this->hasChanged;
+                return this->source.hasChanged();
             }
     
             bool        isLoaded()
             {
                 return !this->isNew;
+            }
+            
+            futils::INI::Token  &operator [] (std::string const &name)
+            {
+                this->hasChanged = true;
+                return source[this->scope][name];
+            }
+            
+            void                save()
+            {
+                source.save();
+                this->hasChanged = false;
             }
         };
     }
@@ -597,7 +609,7 @@ namespace fender
             
             void            saveSource(components::Ini &source)
             {
-                (void)source;
+                source.save();
             }
         };
     }

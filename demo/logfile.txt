@@ -34,4 +34,5 @@ SmartMode detected. Running auto conf...
 SFMLRender:	Loading Button ZQuitButton
      [30]	SFMLRender:	Loading Popup QuitPopup
      [31] In void futils::INI::writeContentTo(const string&) const
-Saved INI Scenes/Menu.ini to Scenes/Menu.ini
+Saved INI Menu.ini to Menu.ini
+     [32]	Saved INI Scenes/Menu.ini to Scenes/Menu.ini
