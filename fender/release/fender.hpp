@@ -46,9 +46,9 @@ namespace fender
         NBR_SUPPORTED_KEYS
     };
     
-    enum class  Color
+    enum Color : int
     {
-        WHITE,
+        WHITE = 0,
         BLACK,
         RED,
         BLUE,
@@ -67,6 +67,12 @@ namespace fender
         {
             return other.key == this->key && other.state == this->state;
         }
+    };
+
+    struct      Border
+    {
+        int             width{0};
+        fender::Color   color{fender::Color::WHITE};
     };
     
     class       Event
@@ -392,20 +398,15 @@ namespace fender
         int                                     status{0};
         std::multimap<std::string, ISystem *>   systemsMap;
         
-        int         notifySystems(IComponent &compo)
+        void    notifySystems(IComponent &compo)
         {
-            int     count{0};
             auto range = systemsMap.equal_range(compo.getName());
             for (auto it = range.first; it != range.second; it++)
             {
-                auto system = it->second;
+                ISystem *system = it->second;
                 if (system)
-                {
                     system->addComponent(compo);
-                    count++;
-                }
             }
-            return count;
         }
     public:
         EntityManager() = default;
@@ -416,8 +417,7 @@ namespace fender
                 throw std::logic_error(std::string(typeid(T).name()) + " is not an Entity");
             auto ent = new T(args...);
             ent->setRegisterComponentFunction([this](IComponent &compo){
-                if (this->notifySystems(compo) == 0)
-                    throw std::logic_error("No system registered for component : " + compo.getName());
+                this->notifySystems(compo);
             });
             return ent;
         }
@@ -498,6 +498,7 @@ namespace fender
         class       Drawable    : public IComponent
         {
             fender::Color       color{fender::Color::WHITE};
+            fender::Border      border;
         public:
             Drawable()
             {
@@ -505,6 +506,12 @@ namespace fender
             }
             void                setColor(fender::Color c){this->color = c;}
             fender::Color       getColor() const {return this->color;}
+            void                setBorder(fender::Color c, int width)
+            {
+                this->border.color = c;
+                this->border.width = width;
+            }
+            Border              getBorder() const {return this->border;}
         };
         class       Clickable   : public IComponent
         {

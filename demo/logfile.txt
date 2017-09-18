@@ -24,7 +24,7 @@ SmartMode detected. Running auto conf...
      [20]	Setting AllowWindowResize to false
      [21]	Setting AssetsPath to assets/
      [22]	Setting EditorMode to false
-     [23]	Setting ScreenColor to Blue
+     [23]	Setting ScreenColor to Black
      [24]	Setting SystemFont to jedi
      [25]	Setting WindowHeight to 720
      [26]	Setting WindowHorizontalAlign to Center

@@ -76,6 +76,7 @@ void    demo::scenes::Menu::init()
         
         auto &drawable = buttonObject->attachComponent<fender::components::Drawable>();
         drawable.setColor(fender::Color::WHITE);
+        drawable.setBorder(fender::Color::RED, 3);
         
         auto &position = buttonObject->attachComponent<fender::components::Object2d>();
         position.setRPosition({(float)source["pos"][0], (float)source["pos"][1]});

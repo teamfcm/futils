@@ -434,15 +434,14 @@ namespace fender
         };
         class   Rendering: public fender::ISystem
         {
-            std::unordered_map<fender::Color, sf::Color>        fenderColors;
             SFMLRender                                          &_renderer;
-            std::vector<fender::components::Drawable *>         components;
+            std::unordered_map<fender::components::Drawable *, fender::components::Drawable *>         components;
             float                                               _fluidStep{0.0};
+            std::unordered_map<int, sf::Color>                              fenderColors;
         public:
             Rendering(SFMLRender *renderer): _renderer(*renderer)
             {
                 this->__requiredComponents.emplace_back("Drawable");
-                this->__requiredComponents.emplace_back("Object2d");
     
                 fenderColors[fender::Color::BLACK] = sf::Color::Black;
                 fenderColors[fender::Color::WHITE] = sf::Color::White;
@@ -462,25 +461,29 @@ namespace fender
                 auto &win = this->_renderer.getWindow();
                 win.clear(this->fenderColors[this->_renderer.getScreenColor()]);
 //                TODO: Needs a way better encapsulation, i should have my own rect here..
-                sf::RectangleShape  rect;
-                for (auto &compo: this->components)
+                for (auto &pair: this->components)
                 {
-                    auto &object = static_cast<fender::components::Object2d &>(compo->getAssociatedComponent("Object2d"));
+                    sf::RectangleShape  rect;
+                    auto &compo = *pair.second;
+                    auto &object = static_cast<fender::components::Object2d &>(compo.getAssociatedComponent("Object2d"));
                     rect.setPosition(object.getPosition().X, object.getPosition().Y);
-                    rect.setFillColor(this->fenderColors[fender::Color::WHITE]);
+                    rect.setFillColor(sf::Color(this->fenderColors[compo.getColor()]));
                     rect.setSize(sf::Vector2f(object.getSize().X, object.getSize().Y));
+                    auto color = this->fenderColors[compo.getBorder().color];
+                    rect.setOutlineThickness(compo.getBorder().width);
+                    rect.setOutlineColor(color);
+                    
                     win.draw(rect);
                 }
                 win.display();
             }
             
             virtual void        addComponent(IComponent &compo) final {
-                auto asDrawable = static_cast<fender::components::Drawable *>(&compo);
-                this->components.push_back(asDrawable);
-//                auto &rect = this->shapes[&compo];
-//                rect.setSize(sf::Vector2f(asDrawable->getSize().X, asDrawable->getSize().Y));
-//                rect.setPosition(sf::Vector2f(asDrawable->getPosition().X, asDrawable->getPosition().Y));
-//                rect.setFillColor(sf::Color::White);
+                static int i = 0;
+                std::cerr << i << std::endl;
+                i++;
+                auto &asDrawable = static_cast<fender::components::Drawable &>(compo);
+                this->components[&asDrawable] = &asDrawable;
             }
         };
     }
