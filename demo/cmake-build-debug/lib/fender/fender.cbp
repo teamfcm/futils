@@ -72,6 +72,9 @@
 		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Component.cpp">
 			<Option target="fender"/>
 		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Components/Object2d.cpp">
+			<Option target="fender"/>
+		</Unit>
 		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Entity.cpp">
 			<Option target="fender"/>
 		</Unit>

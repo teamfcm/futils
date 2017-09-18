@@ -6,9 +6,18 @@
 # include "futils.hpp"
 # include "flog.hpp"
 
+futils::Vec2d<int>  fender::IRender::_windowSize{0, 0};
+
 void    fender::IRender::SmartModeInit(futils::INI::INIProxy const &proxyConf,
                                        std::string const &confScope)
 {
+    this->_fenderColors["White"] = fender::Color::WHITE;
+    this->_fenderColors["Red"] = fender::Color::RED;
+    this->_fenderColors["Black"] = fender::Color::BLACK;
+    this->_fenderColors["Cyan"] = fender::Color::CYAN;
+    this->_fenderColors["Yellow"] = fender::Color::YELLOW;
+    this->_fenderColors["Blue"] = fender::Color::BLUE;
+    
     this->configFunctions["WindowName"] = [this](std::string const &value)
     {
         this->_windowName = value;
@@ -74,6 +83,10 @@ void    fender::IRender::SmartModeInit(futils::INI::INIProxy const &proxyConf,
     this->configFunctions["SystemFont"] = [this](std::string const &value)
     {
         this->_systemFont = value;
+    };
+    this->configFunctions["ScreenColor"] = [this](std::string const &value)
+    {
+        this->_screenColor = this->_fenderColors[value];
     };
 
     LOUT("SmartMode detected. Running auto conf...");

@@ -7,6 +7,12 @@ lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o: ../lib/fender/include/
 lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o: ../lib/fender/release/fender.hpp
 lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.o: ../lib/fender/src/ECS/Component.cpp
 
+lib/fender/CMakeFiles/fender.dir/src/ECS/Components/Object2d.cpp.o: ../lib/fender/include/Fini.hpp
+lib/fender/CMakeFiles/fender.dir/src/ECS/Components/Object2d.cpp.o: ../lib/fender/include/flog.hpp
+lib/fender/CMakeFiles/fender.dir/src/ECS/Components/Object2d.cpp.o: ../lib/fender/include/futils.hpp
+lib/fender/CMakeFiles/fender.dir/src/ECS/Components/Object2d.cpp.o: ../lib/fender/release/fender.hpp
+lib/fender/CMakeFiles/fender.dir/src/ECS/Components/Object2d.cpp.o: ../lib/fender/src/ECS/Components/Object2d.cpp
+
 lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o: ../lib/fender/include/Fini.hpp
 lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o: ../lib/fender/include/flog.hpp
 lib/fender/CMakeFiles/fender.dir/src/ECS/Entity.cpp.o: ../lib/fender/include/futils.hpp

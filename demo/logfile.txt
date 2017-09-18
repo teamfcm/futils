@@ -10,28 +10,30 @@ SmartMode detected. Running auto conf...
      [6]	Setting AllowWindowResize to false
      [7]	Setting AssetsPath to assets/
      [8]	Setting EditorMode to false
-     [9]	Setting SystemFont to game
-     [10]	Setting WindowHeight to 600
-     [11]	Setting WindowHorizontalAlign to Center
-     [12]	Setting WindowName to Fengine Demo (alpha v.1)
-     [13]	Setting WindowStyle to Borderless
-     [14]	Setting WindowVerticalAlign to Center
-     [15]	Setting WindowWidth to 800
-     [16]	SmartMode detected. Running auto conf...
-     [17]	Checking if scope menu exists...
-     [18]	Found ! Starting configuration...
-     [19]	Setting AllowWindowResize to false
-     [20]	Setting AssetsPath to assets/
-     [21]	Setting EditorMode to false
-     [22]	Setting SystemFont to jedi
-     [23]	Setting WindowHeight to 900
-     [24]	Setting WindowHorizontalAlign to Center
-     [25]	Setting WindowName to Game
-     [26]	Setting WindowStyle to Borderless
-     [27]	Setting WindowVerticalAlign to Center
-     [28]	Setting WindowWidth to 1600
-     [29] In virtual void fender::SFMLRender::loadCurrentLayout()
+     [9]	Setting ScreenColor to 
+     [10]	Setting SystemFont to game
+     [11]	Setting WindowHeight to 600
+     [12]	Setting WindowHorizontalAlign to Center
+     [13]	Setting WindowName to FengineDemo(alphav.1)
+     [14]	Setting WindowStyle to Borderless
+     [15]	Setting WindowVerticalAlign to Center
+     [16]	Setting WindowWidth to 800
+     [17]	SmartMode detected. Running auto conf...
+     [18]	Checking if scope menu exists...
+     [19]	Found ! Starting configuration...
+     [20]	Setting AllowWindowResize to false
+     [21]	Setting AssetsPath to assets/
+     [22]	Setting EditorMode to false
+     [23]	Setting ScreenColor to Blue
+     [24]	Setting SystemFont to jedi
+     [25]	Setting WindowHeight to 720
+     [26]	Setting WindowHorizontalAlign to Center
+     [27]	Setting WindowName to Game
+     [28]	Setting WindowStyle to Borderless
+     [29]	Setting WindowVerticalAlign to Center
+     [30]	Setting WindowWidth to 1280
+     [31] In virtual void fender::SFMLRender::loadCurrentLayout()
 SFMLRender:	Loading Button ZQuitButton
-     [30]	SFMLRender:	Loading Popup QuitPopup
-     [31] In void futils::INI::writeContentTo(const string&) const
+     [32]	SFMLRender:	Loading Popup QuitPopup
+     [33] In void futils::INI::writeContentTo(const string&) const
 Saved INI Scenes/Menu.ini to Scenes/Menu.ini

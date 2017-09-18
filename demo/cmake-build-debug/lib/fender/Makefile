@@ -152,6 +152,33 @@ src/ECS/Component.cpp.s:
 	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/Component.cpp.s
 .PHONY : src/ECS/Component.cpp.s
 
+src/ECS/Components/Object2d.o: src/ECS/Components/Object2d.cpp.o
+
+.PHONY : src/ECS/Components/Object2d.o
+
+# target to build an object file
+src/ECS/Components/Object2d.cpp.o:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/Components/Object2d.cpp.o
+.PHONY : src/ECS/Components/Object2d.cpp.o
+
+src/ECS/Components/Object2d.i: src/ECS/Components/Object2d.cpp.i
+
+.PHONY : src/ECS/Components/Object2d.i
+
+# target to preprocess a source file
+src/ECS/Components/Object2d.cpp.i:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/Components/Object2d.cpp.i
+.PHONY : src/ECS/Components/Object2d.cpp.i
+
+src/ECS/Components/Object2d.s: src/ECS/Components/Object2d.cpp.s
+
+.PHONY : src/ECS/Components/Object2d.s
+
+# target to generate assembly for a file
+src/ECS/Components/Object2d.cpp.s:
+	cd /home/ganz/Work/teamfcm/futils/demo/cmake-build-debug && $(MAKE) -f lib/fender/CMakeFiles/fender.dir/build.make lib/fender/CMakeFiles/fender.dir/src/ECS/Components/Object2d.cpp.s
+.PHONY : src/ECS/Components/Object2d.cpp.s
+
 src/ECS/Entity.o: src/ECS/Entity.cpp.o
 
 .PHONY : src/ECS/Entity.o
@@ -353,6 +380,9 @@ help:
 	@echo "... src/ECS/Component.o"
 	@echo "... src/ECS/Component.i"
 	@echo "... src/ECS/Component.s"
+	@echo "... src/ECS/Components/Object2d.o"
+	@echo "... src/ECS/Components/Object2d.i"
+	@echo "... src/ECS/Components/Object2d.s"
 	@echo "... src/ECS/Entity.o"
 	@echo "... src/ECS/Entity.i"
 	@echo "... src/ECS/Entity.s"

@@ -46,6 +46,19 @@ namespace fender
         NBR_SUPPORTED_KEYS
     };
     
+    enum class  Color
+    {
+        WHITE,
+        BLACK,
+        RED,
+        BLUE,
+        CYAN,
+        MAGENTA,
+        YELLOW,
+        TRANSPARENT
+    };
+    
+    
     struct      Command
     {
         Input   key{Input::Undefined};
@@ -455,10 +468,10 @@ namespace fender
                 this->__name = "Object2d";
             }
     
-            void    setPosition(futils::Vec2d<float> const &pos)
-            {this->position=pos;}
-            void    setSize(futils::Vec2d<float> const &size)
-            {this->size = size;}
+            void    setPosition(futils::Vec2d<float> const &pos);
+            void    setSize(futils::Vec2d<float> const &size);
+            void    setRPosition(futils::Vec2d<float> const &pos);
+            void    setRSize(futils::Vec2d<float> const &size);
             futils::Vec2d<float>    getPosition() const {return position;}
             futils::Vec2d<float>    getSize() const {return size;}
         };
@@ -484,11 +497,14 @@ namespace fender
         };
         class       Drawable    : public IComponent
         {
+            fender::Color       color{fender::Color::WHITE};
         public:
             Drawable()
             {
                 this->__name = "Drawable";
             }
+            void                setColor(fender::Color c){this->color = c;}
+            fender::Color       getColor() const {return this->color;}
         };
         class       Clickable   : public IComponent
         {
@@ -611,18 +627,6 @@ namespace fender
         };
     }
     
-    enum class  Color
-    {
-        WHITE,
-        BLACK,
-        RED,
-        BLUE,
-        CYAN,
-        MAGENTA,
-        YELLOW,
-        TRANSPARENT
-    };
-
     class       IRender;
     
     class       IScene
@@ -994,10 +998,10 @@ namespace fender
     {
     protected:
         using funcMap = std::map<std::string, futils::voidStringFunc>;
-
+    
+        std::unordered_map<std::string, fender::Color>  _fenderColors;
         EntityManager           _ecs;
         std::string             _assetsPath;
-        futils::Vec2d<int>      _windowSize;
         std::string             _windowName;
         WindowStyle             _windowStyle;
         bool                    _resizable;
@@ -1008,8 +1012,10 @@ namespace fender
         bool                    _editorMode{false};
         fender::EventSystem     _eventSystem;
         std::string             _systemFont{"default"};
-        
+        fender::Color           _screenColor;
     public:
+        static futils::Vec2d<int>      _windowSize;
+        
         virtual ~IRender() {};
         virtual bool    isRunning() = 0;
         virtual void    openWindow() = 0;
@@ -1026,6 +1032,7 @@ namespace fender
                                     std::string const &scope = "fender") = 0;
         virtual futils::Vec2d<int>  getMousePosition() = 0;
         virtual bool                mouseIsGoingDown() = 0;
+        fender::Color       getScreenColor() const {return this->_screenColor;}
         void            SmartModeInit(futils::INI::INIProxy const &conf,
                                       std::string const &confScope = "fender");
         void            registerLayout(fender::Layout const &layout)

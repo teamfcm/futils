@@ -434,6 +434,7 @@ namespace fender
         };
         class   Rendering: public fender::ISystem
         {
+            std::unordered_map<fender::Color, sf::Color>        fenderColors;
             SFMLRender                                          &_renderer;
             std::vector<fender::components::Drawable *>         components;
             float                                               _fluidStep{0.0};
@@ -442,6 +443,14 @@ namespace fender
             {
                 this->__requiredComponents.emplace_back("Drawable");
                 this->__requiredComponents.emplace_back("Object2d");
+    
+                fenderColors[fender::Color::BLACK] = sf::Color::Black;
+                fenderColors[fender::Color::WHITE] = sf::Color::White;
+                fenderColors[fender::Color::BLUE] = sf::Color::Blue;
+                fenderColors[fender::Color::CYAN] = sf::Color::Cyan;
+                fenderColors[fender::Color::MAGENTA] = sf::Color::Magenta;
+                fenderColors[fender::Color::RED] = sf::Color::Red;
+                fenderColors[fender::Color::YELLOW] = sf::Color::Yellow;
             }
             
             virtual void        run(float elapsed) final
@@ -451,14 +460,14 @@ namespace fender
                     return ;
                 _fluidStep = 0.0;
                 auto &win = this->_renderer.getWindow();
-                win.clear(sf::Color::Black); // TODO: Dynamic colors !
+                win.clear(this->fenderColors[this->_renderer.getScreenColor()]);
 //                TODO: Needs a way better encapsulation, i should have my own rect here..
                 sf::RectangleShape  rect;
                 for (auto &compo: this->components)
                 {
                     auto &object = static_cast<fender::components::Object2d &>(compo->getAssociatedComponent("Object2d"));
                     rect.setPosition(object.getPosition().X, object.getPosition().Y);
-                    rect.setFillColor(sf::Color::White);
+                    rect.setFillColor(this->fenderColors[fender::Color::WHITE]);
                     rect.setSize(sf::Vector2f(object.getSize().X, object.getSize().Y));
                     win.draw(rect);
                 }

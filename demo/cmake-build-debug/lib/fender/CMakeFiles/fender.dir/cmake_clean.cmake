@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fender.dir/src/ECS/Entity.cpp.o"
   "CMakeFiles/fender.dir/src/ECS/Component.cpp.o"
   "CMakeFiles/fender.dir/src/ECS/System.cpp.o"
+  "CMakeFiles/fender.dir/src/ECS/Components/Object2d.cpp.o"
   "../release/libfender.pdb"
   "../release/libfender.so"
 )

@@ -73,12 +73,13 @@ void    demo::scenes::Menu::init()
 //        And Game Object could have a component Stored where you'd fetch data using some kind of identifier
 //        for example Player or World could be sourced to a ini file given to the constructor ?
         auto &source = buttonObject->attachComponent<fender::components::Ini>("Menu.ini", "Button_0");
-        buttonObject->attachComponent<fender::components::Drawable>();
-//        TODO: Why is it that i dont do anything on the drawable ? :O
+        
+        auto &drawable = buttonObject->attachComponent<fender::components::Drawable>();
+        drawable.setColor(fender::Color::WHITE);
         
         auto &position = buttonObject->attachComponent<fender::components::Object2d>();
-        position.setPosition({(float)source["pos"][0], (float)source["pos"][1]});
-        position.setSize({(float)source["size"][0], (float)source["size"][1]});
+        position.setRPosition({(float)source["pos"][0], (float)source["pos"][1]});
+        position.setRSize({(float)source["size"][0], (float)source["size"][1]});
         
         auto &onClick = buttonObject->attachComponent<fender::components::Clickable>();
         onClick.setArea(position.getPosition(), position.getSize());

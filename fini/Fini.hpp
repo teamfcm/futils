@@ -295,8 +295,8 @@ namespace futils
                 }
                 else if (isToken(line))
                 {
-                    auto name = this->extractTokenName(line);
-                    auto value = this->extractTokenValue(line);
+                    auto name = this->epur(this->extractTokenName(line));
+                    auto value = this->epur(this->extractTokenValue(line));
                     if (mostRecentSection != "")
                         this->sections[mostRecentSection]
                                 .set(Token{.name = name, .value = value}, nbr);
