@@ -17,6 +17,7 @@ namespace demo
             demo::Demo          &env;
             bool                done{false};
             fender::Layout      layout;
+            std::unordered_map<std::string, demo::Button *>   buttons;
         public:
             Menu(demo::Demo &,
                  std::string const &sceneFolder = "Scenes/");

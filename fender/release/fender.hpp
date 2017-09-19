@@ -360,6 +360,12 @@ namespace fender
             this->_id = futils::UID::get();
         }
         virtual ~IEntity() {}
+        virtual void    init() = 0;
+        
+        void            setComponentRegistrationFunction(std::function<void(IComponent &)> func)
+        {
+            this->registerComponentFunction = func;
+        }
         
         template    <typename Compo, typename ...Args>
         Compo       &attachComponent(Args ...args)
@@ -374,18 +380,13 @@ namespace fender
         
         IComponent  &getComponent(std::string const &type)
         {
-                 for (auto &it: this->components)
+            for (auto &it: this->components)
             {
                 if (it.first == type)
                     return *it.second;
             }
             throw std::runtime_error("Entity does not have component " + type);
         };
-        
-        void        setRegisterComponentFunction(std::function<void(IComponent &)> func)
-        {
-            this->registerComponentFunction = func;
-        }
         
         int         getId() const
         {
@@ -405,7 +406,9 @@ namespace fender
             {
                 ISystem *system = it->second;
                 if (system)
+                {
                     system->addComponent(compo);
+                }
             }
         }
     public:
@@ -415,11 +418,12 @@ namespace fender
         {
             if (!std::is_base_of<IEntity, T>::value)
                 throw std::logic_error(std::string(typeid(T).name()) + " is not an Entity");
-            auto ent = new T(args...);
-            ent->setRegisterComponentFunction([this](IComponent &compo){
+            auto entity = new T(args...);
+            entity->setComponentRegistrationFunction([this](IComponent &compo){
                 this->notifySystems(compo);
             });
-            return ent;
+            entity->init();
+            return entity;
         }
         
         template    <typename System, typename ...Args>
@@ -450,6 +454,7 @@ namespace fender
     {
     public:
         BaseObject() = default;
+        virtual void    init() override {};
     };
     
     namespace components

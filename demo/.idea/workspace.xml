@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/include/fender.hpp" line="470" mnemonic="0" />
+    <bookmark url="file://$PROJECT_DIR$/include/fender.hpp" line="475" mnemonic="0" />
   </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
@@ -33,8 +33,8 @@
       <file leaf-file-name="fender.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/fender.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="554" column="23" lean-forward="true" selection-start-line="554" selection-start-column="23" selection-end-line="554" selection-end-column="23" />
+            <state relative-caret-position="364">
+              <caret line="453" column="4" lean-forward="false" selection-start-line="453" selection-start-column="4" selection-end-line="453" selection-end-column="4" />
               <folding>
                 <element signature="e#542#658#1" expanded="false" />
                 <element signature="e#669#1498#1" expanded="false" />
@@ -69,108 +69,97 @@
                 <element signature="e#11164#11274#0" expanded="false" />
                 <element signature="e#11580#11596#0" expanded="false" />
                 <element signature="e#11544#11838#0" expanded="false" />
-                <element signature="e#11859#11932#0" expanded="false" />
-                <element signature="e#11992#12026#0" expanded="false" />
-                <element signature="e#12395#12700#0" expanded="false" />
-                <element signature="e#12719#12871#0" expanded="false" />
-                <element signature="e#12889#12964#0" expanded="false" />
-                <element signature="e#13556#13586#0" expanded="false" />
-                <element signature="e#14026#14061#0" expanded="false" />
-                <element signature="e#14014#14508#0" expanded="false" />
-                <element signature="e#14526#14604#0" expanded="false" />
-                <element signature="e#14622#14784#0" expanded="false" />
-                <element signature="e#14801#14892#1" expanded="false" />
-                <element signature="e#14938#15836#1" expanded="false" />
-                <element signature="e#15846#16673#1" expanded="false" />
-                <element signature="e#16683#17359#1" expanded="false" />
-                <element signature="e#17369#18518#1" expanded="false" />
-                <element signature="e#17549#17632#0" expanded="false" />
-                <element signature="e#17654#17887#0" expanded="false" />
-                <element signature="e#17900#18108#0" expanded="false" />
-                <element signature="e#18204#18324#0" expanded="false" />
-                <element signature="e#18413#18508#0" expanded="false" />
-                <element signature="e#18887#19120#0" expanded="false" />
-                <element signature="e#19133#19341#0" expanded="false" />
-                <marker date="1505780060451" expanded="false" signature="19965:20018" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="20089:20145" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="20208:20273" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="20326:20378" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="20475:20581" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="20646:20734" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="20953:21032" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="21118:21268" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="21333:21997" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="22087:22132" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="22222:22268" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="22954:23037" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="23080:23166" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="23254:23375" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="23410:23472" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="23501:23581" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="23616:25886" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="24081:24779" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="25015:25060" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="25432:25529" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="25653:25742" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="25938:26776" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="26130:26407" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="26478:26520" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="26588:26636" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="26834:27550" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="27030:27327" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="27594:29407" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="27982:28476" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="28519:28752" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="29453:30993" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="29803:30387" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="30669:30725" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="30789:30987" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="31040:31737" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="31348:31656" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="31767:35006" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="32058:32089" ph="&lt;ElemType&gt;" />
-                <marker date="1505780060451" expanded="false" signature="32150:32638" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="32777:33406" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="33496:33886" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="33991:34037" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="34103:34337" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="34347:34371" ph="&lt;T&gt;" />
-                <marker date="1505780060451" expanded="false" signature="34426:34606" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="34667:34712" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="37152:37223" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="37305:37398" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="37467:37580" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="37697:37740" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="37809:37868" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="37920:37963" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="38025:38081" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="38135:38179" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="38247:38299" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="38335:38377" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="38423:38471" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="38541:38585" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="38666:38724" ph="{...}" />
-                <marker date="1505780060451" expanded="false" signature="38765:39768" ph="{...}" />
+                <element signature="e#12206#12240#0" expanded="false" />
+                <element signature="e#12928#13003#0" expanded="false" />
+                <element signature="e#13631#13661#0" expanded="false" />
+                <element signature="e#14142#14177#0" expanded="false" />
+                <element signature="e#14130#14624#0" expanded="false" />
+                <element signature="e#14642#14720#0" expanded="false" />
+                <element signature="e#14738#14900#0" expanded="false" />
+                <element signature="e#14917#15052#1" expanded="false" />
+                <element signature="e#15063#20911#0" expanded="false" />
+                <element signature="e#15098#15996#1" expanded="false" />
+                <element signature="e#16006#16833#1" expanded="false" />
+                <element signature="e#16843#17519#1" expanded="false" />
+                <element signature="e#17529#18678#1" expanded="false" />
+                <element signature="e#17709#17792#0" expanded="false" />
+                <element signature="e#17814#18047#0" expanded="false" />
+                <element signature="e#18060#18268#0" expanded="false" />
+                <element signature="e#18364#18484#0" expanded="false" />
+                <element signature="e#18573#18668#0" expanded="false" />
+                <element signature="e#18688#19670#1" expanded="false" />
+                <element signature="e#19047#19280#0" expanded="false" />
+                <element signature="e#19293#19501#0" expanded="false" />
+                <element signature="e#19680#20904#1" expanded="false" />
+                <element signature="e#20032#20178#0" expanded="false" />
+                <element signature="e#20196#20305#0" expanded="false" />
+                <element signature="e#20331#20433#0" expanded="false" />
+                <element signature="e#20451#20538#0" expanded="false" />
+                <element signature="e#20564#20741#0" expanded="false" />
+                <element signature="e#20767#20894#0" expanded="false" />
+                <element signature="e#21095#21192#0" expanded="false" />
+                <element signature="e#21218#21428#0" expanded="false" />
+                <element signature="e#22183#22292#0" expanded="false" />
+                <element signature="e#22318#22428#0" expanded="false" />
+                <element signature="e#23082#23197#0" expanded="false" />
+                <element signature="e#23206#23326#0" expanded="false" />
+                <element signature="e#23384#23535#1" expanded="false" />
+                <element signature="e#23542#23632#1" expanded="false" />
+                <element signature="e#23639#23741#1" expanded="false" />
+                <element signature="e#23752#26046#1" expanded="false" />
+                <element signature="e#24165#24939#0" expanded="false" />
+                <element signature="e#25146#25220#0" expanded="false" />
+                <element signature="e#25544#25689#0" expanded="false" />
+                <element signature="e#25769#25902#0" expanded="false" />
+                <element signature="e#26057#26936#1" expanded="false" />
+                <element signature="e#26217#26567#0" expanded="false" />
+                <element signature="e#26585#26680#0" expanded="false" />
+                <element signature="e#26689#26796#0" expanded="false" />
+                <element signature="e#26947#27710#1" expanded="false" />
+                <element signature="e#27111#27487#0" expanded="false" />
+                <element signature="e#27717#29567#1" expanded="false" />
+                <element signature="e#28073#28636#0" expanded="false" />
+                <element signature="e#28646#28912#0" expanded="false" />
+                <element signature="e#29574#31153#1" expanded="false" />
+                <element signature="e#29892#30547#0" expanded="false" />
+                <element signature="e#30768#30885#0" expanded="false" />
+                <element signature="e#30894#31147#0" expanded="false" />
+                <element signature="e#31160#31897#1" expanded="false" />
+                <element signature="e#31436#31816#0" expanded="false" />
+                <element signature="e#31904#35166#1" expanded="false" />
+                <element signature="e#32230#32249#0" expanded="false" />
+                <element signature="e#32218#32798#0" expanded="false" />
+                <element signature="e#32907#33566#0" expanded="false" />
+                <element signature="e#33589#34046#0" expanded="false" />
+                <element signature="e#34056#34197#0" expanded="false" />
+                <element signature="e#34208#34497#0" expanded="false" />
+                <element signature="e#34519#34531#0" expanded="false" />
+                <element signature="e#34507#34766#0" expanded="false" />
+                <element signature="e#34776#34872#0" expanded="false" />
+                <element signature="e#37243#37383#0" expanded="false" />
+                <element signature="e#37401#37558#0" expanded="false" />
+                <element signature="e#37568#37740#0" expanded="false" />
+                <element signature="e#37809#37900#0" expanded="false" />
+                <element signature="e#37910#38028#0" expanded="false" />
+                <element signature="e#38038#38123#0" expanded="false" />
+                <element signature="e#38133#38241#0" expanded="false" />
+                <element signature="e#38251#38339#0" expanded="false" />
+                <element signature="e#38349#38459#0" expanded="false" />
+                <element signature="e#38469#38537#0" expanded="false" />
+                <element signature="e#38547#38631#0" expanded="false" />
+                <element signature="e#38641#38745#0" expanded="false" />
+                <element signature="e#38755#38884#0" expanded="false" />
+                <element signature="e#38901#39928#1" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="timeline.ini" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scenes/timeline.ini">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SFMLRender.hpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SFMLRender.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="424">
-              <caret line="463" column="41" lean-forward="true" selection-start-line="463" selection-start-column="41" selection-end-line="463" selection-end-column="41" />
+            <state relative-caret-position="404">
+              <caret line="521" column="86" lean-forward="false" selection-start-line="521" selection-start-column="86" selection-end-line="521" selection-end-column="86" />
               <folding>
                 <element signature="e#257#417#1" expanded="false" />
                 <element signature="e#637#724#1" expanded="false" />
@@ -207,10 +196,9 @@
                 <element signature="e#9993#10540#0" expanded="false" />
                 <element signature="e#10567#15170#1" expanded="false" />
                 <element signature="e#11507#11544#0" expanded="false" />
-                <element signature="e#18011#20834#1" expanded="false" />
-                <element signature="e#18453#19103#0" expanded="false" />
-                <element signature="e#19129#20477#0" expanded="false" />
-                <element signature="e#20503#20824#0" expanded="false" />
+                <element signature="e#16362#18001#1" expanded="false" />
+                <element signature="e#18440#19090#0" expanded="false" />
+                <element signature="e#19116#20464#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -219,8 +207,8 @@
       <file leaf-file-name="SFMLRender.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="238" column="59" lean-forward="true" selection-start-line="238" selection-start-column="59" selection-end-line="238" selection-end-column="59" />
+            <state relative-caret-position="724">
+              <caret line="238" column="59" lean-forward="false" selection-start-line="238" selection-start-column="59" selection-end-line="238" selection-end-column="59" />
               <folding>
                 <element signature="e#39#58#0" expanded="true" />
                 <element signature="e#173#242#0" expanded="false" />
@@ -243,10 +231,44 @@
       <file leaf-file-name="Menu.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scenes/Menu.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="88" column="57" lean-forward="false" selection-start-line="88" selection-start-column="57" selection-end-line="88" selection-end-column="57" />
+            <state relative-caret-position="225">
+              <caret line="54" column="10" lean-forward="false" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
               <folding>
                 <element signature="e#31#51#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Menu.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Scenes/Menu.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="19" column="58" lean-forward="false" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Demo.hpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/include/Demo.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="50" column="10" lean-forward="false" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+              <folding>
+                <element signature="e#297#2085#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Manager.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/fender/src/Manager.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="185">
+              <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <folding>
+                <element signature="e#39#61#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -266,17 +288,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>window</find>
-      <find>resize</find>
-      <find>windowSize</find>
-      <find>Context</find>
-      <find>_window</find>
-      <find>position</find>
-      <find>pos</find>
-      <find>extract</find>
-      <find>ren</find>
-      <find>systems</find>
-      <find>Color</find>
       <find>enum</find>
       <find>Drawable</find>
       <find>IR</find>
@@ -288,18 +299,27 @@
       <find>\(\)</find>
       <find>\(int\)</find>
       <find>namespace com</find>
-      <find>attach</find>
       <find>logic</find>
-      <find>notify</find>
       <find>components</find>
       <find>Clickable</find>
       <find>click</find>
       <find>event</find>
       <find>compo</find>
+      <find>getCom</find>
+      <find>this-&gt;buttonObject</find>
+      <find>BaseObject</find>
+      <find>addComponent</find>
+      <find>getComponent</find>
+      <find>notify</find>
+      <find>onClick</find>
+      <find>attach</find>
+      <find>create</find>
+      <find>cout</find>
+      <find>result</find>
+      <find>entity</find>
+      <find>IEntity</find>
     </findStrings>
     <replaceStrings>
-      <replace>Menu</replace>
-      <replace>getPosition</replace>
       <replace>125</replace>
       <replace>this-&gt;indexMap</replace>
       <replace>Object</replace>
@@ -328,6 +348,8 @@
       <replace>size</replace>
       <replace>Hoverable</replace>
       <replace>hover</replace>
+      <replace>this</replace>
+      <replace>clickAction</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -339,7 +361,6 @@
         <option value="$PROJECT_DIR$/include/Factory.hpp" />
         <option value="$PROJECT_DIR$/Scenes/Intro.cpp" />
         <option value="$PROJECT_DIR$/Scenes/Intro.hpp" />
-        <option value="$PROJECT_DIR$/include/Demo.hpp" />
         <option value="$PROJECT_DIR$/Scenes/Intro.json" />
         <option value="$PROJECT_DIR$/Scenes/Intro/Intro.cpp" />
         <option value="$PROJECT_DIR$/Scenes/Headers/Intro.hpp" />
@@ -360,7 +381,6 @@
         <option value="$PROJECT_DIR$/Scenes/Menu.ini" />
         <option value="$PROJECT_DIR$/config/config.ini" />
         <option value="$PROJECT_DIR$/Scenes/Splashscreen.hpp" />
-        <option value="$PROJECT_DIR$/Scenes/Menu.hpp" />
         <option value="$PROJECT_DIR$/Scenes/Splashscreen.ini" />
         <option value="$PROJECT_DIR$/Scenes/Splashscreen.cpp" />
         <option value="$PROJECT_DIR$/include/feucs.hpp" />
@@ -380,10 +400,12 @@
         <option value="$PROJECT_DIR$/lib/fender/src/IRender.cpp" />
         <option value="$PROJECT_DIR$/Scenes/timeline.ini" />
         <option value="$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.cpp" />
-        <option value="$PROJECT_DIR$/include/fender.hpp" />
         <option value="$PROJECT_DIR$/lib/fender/release/fender.hpp" />
-        <option value="$PROJECT_DIR$/Scenes/Menu.cpp" />
+        <option value="$PROJECT_DIR$/Scenes/Menu.hpp" />
         <option value="$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.hpp" />
+        <option value="$PROJECT_DIR$/Scenes/Menu.cpp" />
+        <option value="$PROJECT_DIR$/include/fender.hpp" />
+        <option value="$PROJECT_DIR$/include/Demo.hpp" />
       </list>
     </option>
   </component>
@@ -464,59 +486,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fender" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="demo" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fender" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="demo" />
-              <option name="myItemType" value="com.jetbrains.cidr.projectView.CidrFilesViewHelper$MyProjectTreeStructure$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="demo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="fender" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sfml" />
+              <option name="myItemId" value="include" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -899,11 +869,12 @@
       <workItem from="1505720285377" duration="9236000" />
       <workItem from="1505731343222" duration="3280000" />
       <workItem from="1505776481764" duration="3771000" />
+      <workItem from="1505812721262" duration="15311000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="472473000" />
+    <option name="totallyTimeSpent" value="487784000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -925,7 +896,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37239867" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18429486" sideWeight="0.47408536" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18643162" sideWeight="0.47408536" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3592552" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -978,25 +949,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="146" />
+      <option name="time" value="153" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file:///usr/include/c++/7.1.1/bits/stl_vector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13400">
-          <caret line="670" column="0" lean-forward="false" selection-start-line="670" selection-start-column="0" selection-end-line="670" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/7.1.1/bits/unique_ptr.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="824" column="0" lean-forward="false" selection-start-line="824" selection-start-column="0" selection-end-line="824" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/include/c++/7.1.1/bits/std_function.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -1067,13 +1024,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file:///usr/include/c++/7.1.1/bits/hashtable.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="1549" column="0" lean-forward="false" selection-start-line="1549" selection-start-column="0" selection-end-line="1549" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/fender/src/IScene.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="20">
@@ -1134,20 +1084,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scenes/Menu.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="23" column="43" lean-forward="false" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-          <folding>
-            <marker date="1505248927211" expanded="true" signature="0:37" ph="//..." />
-            <marker date="1505248927211" expanded="false" signature="94:127" ph="..." />
-            <marker date="1505248927211" expanded="true" signature="144:691" ph="{...}" />
-            <marker date="1505248927211" expanded="true" signature="171:689" ph="{...}" />
-            <marker date="1505248927211" expanded="true" signature="226:682" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1212,16 +1148,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fender/src/Manager.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="69" column="0" lean-forward="false" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
-          <folding>
-            <element signature="e#39#61#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1299,18 +1225,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Menu.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scenes/timeline.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fender/release/fender.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="571" column="82" lean-forward="false" selection-start-line="571" selection-start-column="82" selection-end-line="571" selection-end-column="82" />
           <folding />
         </state>
       </provider>
@@ -1323,164 +1249,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.cpp">
+    <entry file="file:///usr/include/c++/7.1.1/bits/unordered_map.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="238" column="59" lean-forward="true" selection-start-line="238" selection-start-column="59" selection-end-line="238" selection-end-column="59" />
-          <folding>
-            <element signature="e#39#58#0" expanded="true" />
-            <element signature="e#173#242#0" expanded="false" />
-            <element signature="e#351#3014#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fender/release/fender.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="571" column="82" lean-forward="false" selection-start-line="571" selection-start-column="82" selection-end-line="571" selection-end-column="82" />
+        <state relative-caret-position="185">
+          <caret line="1368" column="0" lean-forward="false" selection-start-line="1368" selection-start-column="0" selection-end-line="1368" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/fender.hpp">
+    <entry file="file:///usr/include/c++/7.1.1/bits/hashtable.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="554" column="23" lean-forward="true" selection-start-line="554" selection-start-column="23" selection-end-line="554" selection-end-column="23" />
-          <folding>
-            <element signature="e#542#658#1" expanded="false" />
-            <element signature="e#669#1498#1" expanded="false" />
-            <element signature="e#1681#1936#1" expanded="false" />
-            <element signature="e#1795#1930#0" expanded="false" />
-            <element signature="e#2965#3342#1" expanded="false" />
-            <element signature="e#4450#4586#0" expanded="false" />
-            <element signature="e#4587#4798#0" expanded="false" />
-            <element signature="e#4799#4991#0" expanded="false" />
-            <element signature="e#5160#5540#0" expanded="false" />
-            <element signature="e#5558#5738#0" expanded="false" />
-            <element signature="e#5756#5913#0" expanded="false" />
-            <element signature="e#5931#6014#0" expanded="false" />
-            <element signature="e#6032#6347#0" expanded="false" />
-            <element signature="e#6360#6524#1" expanded="false" />
-            <element signature="e#6426#6518#0" expanded="false" />
-            <element signature="e#6535#6604#1" expanded="false" />
-            <element signature="e#6627#6639#0" expanded="false" />
-            <element signature="e#6803#6917#0" expanded="false" />
-            <element signature="e#6936#7040#0" expanded="false" />
-            <element signature="e#7058#7160#0" expanded="false" />
-            <element signature="e#7190#7208#0" expanded="false" />
-            <element signature="e#7178#7441#0" expanded="false" />
-            <element signature="e#7981#8116#0" expanded="false" />
-            <element signature="e#8125#8206#0" expanded="false" />
-            <element signature="e#8661#8798#0" expanded="false" />
-            <element signature="e#8816#8957#0" expanded="false" />
-            <element signature="e#8975#9473#0" expanded="false" />
-            <element signature="e#9482#9998#0" expanded="false" />
-            <element signature="e#10007#10131#0" expanded="false" />
-            <element signature="e#10141#10269#0" expanded="false" />
-            <element signature="e#11164#11274#0" expanded="false" />
-            <element signature="e#11580#11596#0" expanded="false" />
-            <element signature="e#11544#11838#0" expanded="false" />
-            <element signature="e#11859#11932#0" expanded="false" />
-            <element signature="e#11992#12026#0" expanded="false" />
-            <element signature="e#12395#12700#0" expanded="false" />
-            <element signature="e#12719#12871#0" expanded="false" />
-            <element signature="e#12889#12964#0" expanded="false" />
-            <element signature="e#13556#13586#0" expanded="false" />
-            <element signature="e#14026#14061#0" expanded="false" />
-            <element signature="e#14014#14508#0" expanded="false" />
-            <element signature="e#14526#14604#0" expanded="false" />
-            <element signature="e#14622#14784#0" expanded="false" />
-            <element signature="e#14801#14892#1" expanded="false" />
-            <element signature="e#14938#15836#1" expanded="false" />
-            <element signature="e#15846#16673#1" expanded="false" />
-            <element signature="e#16683#17359#1" expanded="false" />
-            <element signature="e#17369#18518#1" expanded="false" />
-            <element signature="e#17549#17632#0" expanded="false" />
-            <element signature="e#17654#17887#0" expanded="false" />
-            <element signature="e#17900#18108#0" expanded="false" />
-            <element signature="e#18204#18324#0" expanded="false" />
-            <element signature="e#18413#18508#0" expanded="false" />
-            <element signature="e#18887#19120#0" expanded="false" />
-            <element signature="e#19133#19341#0" expanded="false" />
-            <marker date="1505780060451" expanded="false" signature="19965:20018" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="20089:20145" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="20208:20273" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="20326:20378" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="20475:20581" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="20646:20734" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="20953:21032" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="21118:21268" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="21333:21997" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="22087:22132" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="22222:22268" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="22954:23037" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="23080:23166" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="23254:23375" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="23410:23472" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="23501:23581" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="23616:25886" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="24081:24779" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="25015:25060" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="25432:25529" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="25653:25742" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="25938:26776" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="26130:26407" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="26478:26520" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="26588:26636" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="26834:27550" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="27030:27327" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="27594:29407" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="27982:28476" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="28519:28752" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="29453:30993" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="29803:30387" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="30669:30725" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="30789:30987" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="31040:31737" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="31348:31656" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="31767:35006" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="32058:32089" ph="&lt;ElemType&gt;" />
-            <marker date="1505780060451" expanded="false" signature="32150:32638" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="32777:33406" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="33496:33886" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="33991:34037" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="34103:34337" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="34347:34371" ph="&lt;T&gt;" />
-            <marker date="1505780060451" expanded="false" signature="34426:34606" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="34667:34712" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="37152:37223" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="37305:37398" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="37467:37580" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="37697:37740" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="37809:37868" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="37920:37963" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="38025:38081" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="38135:38179" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="38247:38299" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="38335:38377" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="38423:38471" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="38541:38585" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="38666:38724" ph="{...}" />
-            <marker date="1505780060451" expanded="false" signature="38765:39768" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scenes/Menu.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="88" column="57" lean-forward="false" selection-start-line="88" selection-start-column="57" selection-end-line="88" selection-end-column="57" />
-          <folding>
-            <element signature="e#31#51#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="185">
+          <caret line="630" column="0" lean-forward="false" selection-start-line="630" selection-start-column="0" selection-end-line="630" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="463" column="41" lean-forward="true" selection-start-line="463" selection-start-column="41" selection-end-line="463" selection-end-column="41" />
+        <state relative-caret-position="404">
+          <caret line="521" column="86" lean-forward="false" selection-start-line="521" selection-start-column="86" selection-end-line="521" selection-end-column="86" />
           <folding>
             <element signature="e#257#417#1" expanded="false" />
             <element signature="e#637#724#1" expanded="false" />
@@ -1517,10 +1305,190 @@
             <element signature="e#9993#10540#0" expanded="false" />
             <element signature="e#10567#15170#1" expanded="false" />
             <element signature="e#11507#11544#0" expanded="false" />
-            <element signature="e#18011#20834#1" expanded="false" />
-            <element signature="e#18453#19103#0" expanded="false" />
-            <element signature="e#19129#20477#0" expanded="false" />
-            <element signature="e#20503#20824#0" expanded="false" />
+            <element signature="e#16362#18001#1" expanded="false" />
+            <element signature="e#18440#19090#0" expanded="false" />
+            <element signature="e#19116#20464#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scenes/Menu.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="19" column="58" lean-forward="false" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Menu.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="724">
+          <caret line="238" column="59" lean-forward="false" selection-start-line="238" selection-start-column="59" selection-end-line="238" selection-end-column="59" />
+          <folding>
+            <element signature="e#39#58#0" expanded="true" />
+            <element signature="e#173#242#0" expanded="false" />
+            <element signature="e#351#3014#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/Manager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding>
+            <element signature="e#39#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scenes/Menu.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="54" column="10" lean-forward="false" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+          <folding>
+            <element signature="e#31#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/fender.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="453" column="4" lean-forward="false" selection-start-line="453" selection-start-column="4" selection-end-line="453" selection-end-column="4" />
+          <folding>
+            <element signature="e#542#658#1" expanded="false" />
+            <element signature="e#669#1498#1" expanded="false" />
+            <element signature="e#1681#1936#1" expanded="false" />
+            <element signature="e#1795#1930#0" expanded="false" />
+            <element signature="e#2965#3342#1" expanded="false" />
+            <element signature="e#4450#4586#0" expanded="false" />
+            <element signature="e#4587#4798#0" expanded="false" />
+            <element signature="e#4799#4991#0" expanded="false" />
+            <element signature="e#5160#5540#0" expanded="false" />
+            <element signature="e#5558#5738#0" expanded="false" />
+            <element signature="e#5756#5913#0" expanded="false" />
+            <element signature="e#5931#6014#0" expanded="false" />
+            <element signature="e#6032#6347#0" expanded="false" />
+            <element signature="e#6360#6524#1" expanded="false" />
+            <element signature="e#6426#6518#0" expanded="false" />
+            <element signature="e#6535#6604#1" expanded="false" />
+            <element signature="e#6627#6639#0" expanded="false" />
+            <element signature="e#6803#6917#0" expanded="false" />
+            <element signature="e#6936#7040#0" expanded="false" />
+            <element signature="e#7058#7160#0" expanded="false" />
+            <element signature="e#7190#7208#0" expanded="false" />
+            <element signature="e#7178#7441#0" expanded="false" />
+            <element signature="e#7981#8116#0" expanded="false" />
+            <element signature="e#8125#8206#0" expanded="false" />
+            <element signature="e#8661#8798#0" expanded="false" />
+            <element signature="e#8816#8957#0" expanded="false" />
+            <element signature="e#8975#9473#0" expanded="false" />
+            <element signature="e#9482#9998#0" expanded="false" />
+            <element signature="e#10007#10131#0" expanded="false" />
+            <element signature="e#10141#10269#0" expanded="false" />
+            <element signature="e#11164#11274#0" expanded="false" />
+            <element signature="e#11580#11596#0" expanded="false" />
+            <element signature="e#11544#11838#0" expanded="false" />
+            <element signature="e#12206#12240#0" expanded="false" />
+            <element signature="e#12928#13003#0" expanded="false" />
+            <element signature="e#13631#13661#0" expanded="false" />
+            <element signature="e#14142#14177#0" expanded="false" />
+            <element signature="e#14130#14624#0" expanded="false" />
+            <element signature="e#14642#14720#0" expanded="false" />
+            <element signature="e#14738#14900#0" expanded="false" />
+            <element signature="e#14917#15052#1" expanded="false" />
+            <element signature="e#15063#20911#0" expanded="false" />
+            <element signature="e#15098#15996#1" expanded="false" />
+            <element signature="e#16006#16833#1" expanded="false" />
+            <element signature="e#16843#17519#1" expanded="false" />
+            <element signature="e#17529#18678#1" expanded="false" />
+            <element signature="e#17709#17792#0" expanded="false" />
+            <element signature="e#17814#18047#0" expanded="false" />
+            <element signature="e#18060#18268#0" expanded="false" />
+            <element signature="e#18364#18484#0" expanded="false" />
+            <element signature="e#18573#18668#0" expanded="false" />
+            <element signature="e#18688#19670#1" expanded="false" />
+            <element signature="e#19047#19280#0" expanded="false" />
+            <element signature="e#19293#19501#0" expanded="false" />
+            <element signature="e#19680#20904#1" expanded="false" />
+            <element signature="e#20032#20178#0" expanded="false" />
+            <element signature="e#20196#20305#0" expanded="false" />
+            <element signature="e#20331#20433#0" expanded="false" />
+            <element signature="e#20451#20538#0" expanded="false" />
+            <element signature="e#20564#20741#0" expanded="false" />
+            <element signature="e#20767#20894#0" expanded="false" />
+            <element signature="e#21095#21192#0" expanded="false" />
+            <element signature="e#21218#21428#0" expanded="false" />
+            <element signature="e#22183#22292#0" expanded="false" />
+            <element signature="e#22318#22428#0" expanded="false" />
+            <element signature="e#23082#23197#0" expanded="false" />
+            <element signature="e#23206#23326#0" expanded="false" />
+            <element signature="e#23384#23535#1" expanded="false" />
+            <element signature="e#23542#23632#1" expanded="false" />
+            <element signature="e#23639#23741#1" expanded="false" />
+            <element signature="e#23752#26046#1" expanded="false" />
+            <element signature="e#24165#24939#0" expanded="false" />
+            <element signature="e#25146#25220#0" expanded="false" />
+            <element signature="e#25544#25689#0" expanded="false" />
+            <element signature="e#25769#25902#0" expanded="false" />
+            <element signature="e#26057#26936#1" expanded="false" />
+            <element signature="e#26217#26567#0" expanded="false" />
+            <element signature="e#26585#26680#0" expanded="false" />
+            <element signature="e#26689#26796#0" expanded="false" />
+            <element signature="e#26947#27710#1" expanded="false" />
+            <element signature="e#27111#27487#0" expanded="false" />
+            <element signature="e#27717#29567#1" expanded="false" />
+            <element signature="e#28073#28636#0" expanded="false" />
+            <element signature="e#28646#28912#0" expanded="false" />
+            <element signature="e#29574#31153#1" expanded="false" />
+            <element signature="e#29892#30547#0" expanded="false" />
+            <element signature="e#30768#30885#0" expanded="false" />
+            <element signature="e#30894#31147#0" expanded="false" />
+            <element signature="e#31160#31897#1" expanded="false" />
+            <element signature="e#31436#31816#0" expanded="false" />
+            <element signature="e#31904#35166#1" expanded="false" />
+            <element signature="e#32230#32249#0" expanded="false" />
+            <element signature="e#32218#32798#0" expanded="false" />
+            <element signature="e#32907#33566#0" expanded="false" />
+            <element signature="e#33589#34046#0" expanded="false" />
+            <element signature="e#34056#34197#0" expanded="false" />
+            <element signature="e#34208#34497#0" expanded="false" />
+            <element signature="e#34519#34531#0" expanded="false" />
+            <element signature="e#34507#34766#0" expanded="false" />
+            <element signature="e#34776#34872#0" expanded="false" />
+            <element signature="e#37243#37383#0" expanded="false" />
+            <element signature="e#37401#37558#0" expanded="false" />
+            <element signature="e#37568#37740#0" expanded="false" />
+            <element signature="e#37809#37900#0" expanded="false" />
+            <element signature="e#37910#38028#0" expanded="false" />
+            <element signature="e#38038#38123#0" expanded="false" />
+            <element signature="e#38133#38241#0" expanded="false" />
+            <element signature="e#38251#38339#0" expanded="false" />
+            <element signature="e#38349#38459#0" expanded="false" />
+            <element signature="e#38469#38537#0" expanded="false" />
+            <element signature="e#38547#38631#0" expanded="false" />
+            <element signature="e#38641#38745#0" expanded="false" />
+            <element signature="e#38755#38884#0" expanded="false" />
+            <element signature="e#38901#39928#1" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Demo.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="50" column="10" lean-forward="false" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
+          <folding>
+            <element signature="e#297#2085#0" expanded="false" />
           </folding>
         </state>
       </provider>

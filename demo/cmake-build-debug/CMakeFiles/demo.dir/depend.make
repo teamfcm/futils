@@ -20,6 +20,10 @@ CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: ../Scenes/Splashscreen.hpp
 
 CMakeFiles/demo.dir/include/Demo.cpp.o: ../include/Demo.cpp
 CMakeFiles/demo.dir/include/Demo.cpp.o: ../include/Demo.hpp
+CMakeFiles/demo.dir/include/Demo.cpp.o: ../include/Fini.hpp
+CMakeFiles/demo.dir/include/Demo.cpp.o: ../include/fender.hpp
+CMakeFiles/demo.dir/include/Demo.cpp.o: ../include/flog.hpp
+CMakeFiles/demo.dir/include/Demo.cpp.o: ../include/futils.hpp
 
 CMakeFiles/demo.dir/include/Factory.cpp.o: ../Scenes/Menu.hpp
 CMakeFiles/demo.dir/include/Factory.cpp.o: ../Scenes/Splashscreen.hpp

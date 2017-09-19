@@ -7,6 +7,8 @@
 #IncludeRegexTransform: 
 
 ../include/Demo.hpp
+fender.hpp
+../include/fender.hpp
 
 ../include/DynamicLibrary.hpp
 string
@@ -133,6 +135,8 @@ Demo.hpp
 /home/ganz/Work/teamfcm/futils/demo/include/Demo.hpp
 
 /home/ganz/Work/teamfcm/futils/demo/include/Demo.hpp
+fender.hpp
+/home/ganz/Work/teamfcm/futils/demo/include/fender.hpp
 
 /home/ganz/Work/teamfcm/futils/demo/include/Factory.cpp
 Factory.hpp

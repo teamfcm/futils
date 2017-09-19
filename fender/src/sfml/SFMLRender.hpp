@@ -477,7 +477,7 @@ namespace fender
             SFMLRender                                          &_renderer;
             std::unordered_map<fender::components::Drawable *, fender::components::Drawable *>         components;
             float                                               _fluidStep{0.0};
-            std::unordered_map<int, sf::Color>                              fenderColors;
+            std::unordered_map<int, sf::Color>                 fenderColors;
         public:
             Rendering(SFMLRender *renderer): _renderer(*renderer)
             {
@@ -519,9 +519,6 @@ namespace fender
             }
             
             virtual void        addComponent(IComponent &compo) final {
-                static int i = 0;
-                std::cerr << i << std::endl;
-                i++;
                 auto &asDrawable = static_cast<fender::components::Drawable &>(compo);
                 this->components[&asDrawable] = &asDrawable;
             }
