@@ -412,7 +412,7 @@ namespace fender
             {
                 this->__requiredComponents.emplace_back("Clickable");
             }
-            
+    
             virtual void        run(float) final {
                 if (!this->_renderer.mouseIsGoingDown())
                     return ;
@@ -426,10 +426,50 @@ namespace fender
                     }
                 }
             }
-            
+    
             virtual void        addComponent(IComponent &compo) final {
                 auto asClickable = static_cast<fender::components::Clickable *>(&compo);
                 this->components.push_back(asClickable);
+            }
+        };
+        class   HoverDetection : public fender::ISystem
+        {
+            SFMLRender                                      &_renderer;
+            std::vector<fender::components::Hoverable *>    components;
+            std::unordered_map<fender::components::Hoverable *, bool>   hovered;
+        public:
+            HoverDetection(SFMLRender *renderer): _renderer(*renderer)
+                    {
+                            this->__requiredComponents.emplace_back("Hoverable");
+                    }
+    
+            virtual void        run(float) final {
+                for (auto &compo: this->components)
+                {
+                    auto const &pos = this->_renderer.getMousePosition();
+                    if (compo->getRect().contains(pos))
+                    {
+                        hovered[compo] = true;
+                        compo->onHover();
+                    }
+                }
+                for (auto &pair: this->hovered)
+                {
+                    if (pair.second == false)
+                        continue ;
+                    auto &hover = pair.first;
+                    auto const &pos = this->_renderer.getMousePosition();
+                    if (!hover->getRect().contains(pos))
+                    {
+                        hover->onLeave();
+                        hovered[hover] = false;
+                    }
+                }
+            }
+    
+            virtual void        addComponent(IComponent &compo) final {
+                auto asHoverable = static_cast<fender::components::Hoverable *>(&compo);
+                this->components.push_back(asHoverable);
             }
         };
         class   Rendering: public fender::ISystem

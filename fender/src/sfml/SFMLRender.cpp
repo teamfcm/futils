@@ -69,6 +69,7 @@ fender::SFMLRender::SFMLRender()
     
 //    Registering systems to the ECS
     this->_ecs.registerSystem<fender::SFMLsystems::ClickDetection>(this);
+    this->_ecs.registerSystem<fender::SFMLsystems::HoverDetection>(this);
     this->_ecs.registerSystem<fender::SFMLsystems::Rendering>(this);
 }
 
@@ -226,6 +227,11 @@ void    fender::SFMLRender::pollEvents()
                 ev.matchInput(this->makeCommand(sfEvent));
         }
         
+        if (sfEvent.type == sf::Event::MouseMoved)
+        {
+            this->_mousePosition.X = sfEvent.mouseMove.x;
+            this->_mousePosition.Y = sfEvent.mouseMove.y;
+        }
         if (sfEvent.type == sf::Event::MouseButtonPressed && !_mouseIsGoingDown)
         {
             this->_mouseIsGoingDown = true;

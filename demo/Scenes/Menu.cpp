@@ -76,11 +76,22 @@ void    demo::scenes::Menu::init()
         
         auto &drawable = buttonObject->attachComponent<fender::components::Drawable>();
         drawable.setColor(fender::Color::WHITE);
-        drawable.setBorder(fender::Color::RED, 3);
+        drawable.setBorder(fender::Color::RED, 5);
         
         auto &position = buttonObject->attachComponent<fender::components::Object2d>();
         position.setRPosition({(float)source["pos"][0], (float)source["pos"][1]});
         position.setRSize({(float)source["size"][0], (float)source["size"][1]});
+        
+        auto &onHover = buttonObject->attachComponent<fender::components::Hoverable>();
+        onHover.setArea(position.getPosition(), position.getSize());
+        onHover.onHover = [buttonObject](){
+            auto &drawable = static_cast<fender::components::Drawable &>(buttonObject->getComponent("Drawable"));
+            drawable.setBorder(fender::Color::MAGENTA, 10);
+        };
+        onHover.onLeave = [buttonObject](){
+            auto &drawable = static_cast<fender::components::Drawable &>(buttonObject->getComponent("Drawable"));
+            drawable.setBorder(fender::Color::RED, 5);
+        };
         
         auto &onClick = buttonObject->attachComponent<fender::components::Clickable>();
         onClick.setArea(position.getPosition(), position.getSize());

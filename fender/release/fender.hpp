@@ -546,6 +546,32 @@ namespace fender
                 return this->function();
             }
         };
+        class       Hoverable   : public IComponent
+        {
+            futils::Rect<float>             area;
+        public:
+            std::function<void(void)>       onHover{[](){}};
+            std::function<void(void)>       onLeave{[](){}};
+            Hoverable()
+            {
+                this->__name = "Hoverable";
+            }
+        
+            void        setArea(float x, float y, float w, float h)
+            {
+                this->area.X = x;
+                this->area.Y = y;
+                this->area.EndX = x + w;
+                this->area.EndY = y + h;
+            }
+            void        setArea(futils::Vec2d<float>  const &pos,
+                                futils::Vec2d<float> const &size)
+            {
+                this->area = futils::Rect<float>(pos, size);
+            }
+            void        setArea(futils::Rect<float> const &ref){this->area = ref;}
+            futils::Rect<float> const &getRect() const {return this->area;}
+        };
         class       Ini   : public IComponent
         {
             std::string     file{""};
