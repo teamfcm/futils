@@ -479,6 +479,11 @@ namespace fender
             void    setRSize(futils::Vec2d<float> const &size);
             futils::Vec2d<float>    getPosition() const {return position;}
             futils::Vec2d<float>    getSize() const {return size;}
+            void    move(float x, float y)
+            {
+                this->position.X += x;
+                this->position.Y += y;
+            }
         };
         class       Object3d  : public IComponent
         {
@@ -618,6 +623,20 @@ namespace fender
                 this->hasChanged = false;
             }
         };
+        class       Draggable : public IComponent
+        {
+            bool    followingMouse{false};
+        public:
+            Draggable() {this->__name = "Draggable";}
+            bool         isDragged() const {return this->followingMouse;}
+        };
+        class       Animated : public IComponent
+        {
+        public:
+            Animated() {this->__name = "Animated";}
+            std::function<void(float)>   callback{[](float){}};
+            std::function<bool(void)>   isDone{[](){return true;}};
+        };
     }
     
     namespace systems
@@ -661,6 +680,52 @@ namespace fender
             void            saveSource(components::Ini &source)
             {
                 source.save();
+            }
+        };
+        class   DragAndDrop : public ISystem
+        {
+            std::unordered_map<components::Draggable *, components::Draggable *> targets;
+        public:
+            DragAndDrop()
+            {
+                this->__requiredComponents.emplace_back("Draggable");
+            }
+            
+            virtual void    addComponent(IComponent &compo)
+            {
+                auto &asDraggable = static_cast<components::Draggable &>(compo);
+                this->targets[&asDraggable] = &asDraggable;
+            }
+            
+            virtual void    run(float)
+            {
+                for (auto &pair: this->targets)
+                {
+                    auto &compo = *pair.second;
+                    (void)compo;
+                }
+            }
+        };
+        class   Animation : public ISystem
+        {
+            std::unordered_map<fender::components::Animated *,
+                    fender::components::Animated *> components;
+        public:
+            Animation(){this->__requiredComponents.emplace_back("Animated");}
+            virtual void    run(float elapsed)
+            {
+                for (auto &pair: this->components)
+                {
+                    auto &compo = *pair.second;
+                    if (!compo.isDone())
+                        compo.callback(elapsed);
+                }
+            }
+            
+            virtual void    addComponent(IComponent &compo)
+            {
+                auto &asAnimated = static_cast<fender::components::Animated &>(compo);
+                this->components[&asAnimated] = &asAnimated;
             }
         };
     }

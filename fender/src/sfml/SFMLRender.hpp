@@ -476,6 +476,7 @@ namespace fender
         {
             SFMLRender                                          &_renderer;
             std::unordered_map<fender::components::Drawable *, fender::components::Drawable *>         components;
+            std::multimap<int, fender::components::Drawable *>  sortedElements;
             float                                               _fluidStep{0.0};
             std::unordered_map<int, sf::Color>                 fenderColors;
         public:

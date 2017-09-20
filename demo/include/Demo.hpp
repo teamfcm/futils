@@ -48,7 +48,7 @@ namespace demo
             clickAction.setAction([this](){
                 std::cout << "No action for button " + this->name << std::endl;
             });
-        }c
+        }
     
         void    onClick(std::function<void(void)> func)
         {

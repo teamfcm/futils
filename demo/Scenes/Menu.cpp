@@ -51,11 +51,45 @@ void    demo::scenes::Menu::init()
     this->renderer->useLayout("Menu");
     this->layout.setVisible(true);
     this->ecs->registerSystem<fender::systems::Ini>();
+    this->ecs->registerSystem<fender::systems::Animation>();
     this->buttons["Button_0"] = this->ecs->createEntity<demo::Button>("Button_0");
     auto &test = this->buttons["Button_0"];
     test->onClick([this](){
         this->done = true;
     });
+    this->buttons["Button_1"] = this->ecs->createEntity<demo::Button>("Button_1");
+    auto &test2 = this->buttons["Button_1"];
+    test2->onClick([this](){
+        this->done = true;
+    });
+    this->buttons["Button_2"] = this->ecs->createEntity<demo::Button>("Button_2");
+    auto &test3 = this->buttons["Button_2"];
+    test3->onClick([this](){
+        this->done = true;
+    });
+    this->buttons["Button_3"] = this->ecs->createEntity<demo::Button>("Button_3");
+    auto &test4 = this->buttons["Button_3"];
+    test4->onClick([this](){
+        this->done = true;
+    });
+    auto &animation = test4->attachComponent<fender::components::Animated>();
+    animation.callback = [test4](float elapsed){
+        auto &position = static_cast<fender::components::Object2d &>(test4->getComponent("Object2d"));
+        if (position.getPosition().Y < 40)
+            position.move(0, 100 * elapsed);
+        else
+        {
+            auto &animation = static_cast<fender::components::Animated &>(test4->getComponent("Animated"));
+            animation.callback = [test4](float elapsed){
+                auto &pos = static_cast<fender::components::Object2d &>(test4->getComponent("Object2d"));
+                pos.move(0, -100 * elapsed);
+            };
+        }
+    };
+    animation.isDone = [test4](){
+        auto &position = static_cast<fender::components::Object2d &>(test4->getComponent("Object2d"));
+        return position.getPosition().Y < -250;
+    };
 ////    Object assembled from scratch. Later on the engine will offer readyToUse objets like this->layout.get<Button>(); or this->ecs->get()...
 //    auto buttonObject = this->ecs->createEntity<fender::BaseObject>();
 //    if (buttonObject != nullptr)

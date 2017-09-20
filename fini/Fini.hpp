@@ -151,6 +151,8 @@ namespace futils
             
             Value   &operator [] (unsigned int index)
             {
+                if (this->value.str == "")
+                    throw std::runtime_error(this->name + " is missing in config file.");
                 return this->list[index];
             }
         };
