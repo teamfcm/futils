@@ -10,15 +10,10 @@
 # include <functional>
 # include <random>
 # include <unordered_map>
-#include <sstream>
+# include <sstream>
 
 namespace futils
 {
-    using voidFunc = std::function<void(void)>;
-    using voidStringFunc = std::function<void(std::string const &)>;
-    template        <typename __Key, typename __ValueType>
-    using umap = std::unordered_map<__Key, __ValueType>;
-    
     class   UID
     {
         UID() = default;
