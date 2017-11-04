@@ -10,6 +10,7 @@
 # include <functional>
 # include <random>
 # include <unordered_map>
+#include <sstream>
 
 namespace futils
 {
@@ -29,6 +30,8 @@ namespace futils
             return singleton->_current++;
         }
     };
+    // Simpler syntax for getting a unique identifier
+    inline int uid() {return UID::get();}
     
     class   Clock
     {
@@ -48,7 +51,7 @@ namespace futils
             return this->elapsed;
         }
         
-        float       bufferedElapsedTime()
+        float       bufferedElapsedTime() const
         {
             return this->buffer;
         }
