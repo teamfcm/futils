@@ -5,7 +5,7 @@
       <config projectName="fender" targetName="fender" />
     </generated>
   </component>
-  <component name="CMakeSettings">
+  <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
       <configuration CONFIG_NAME="Debug" />
     </configurations>
@@ -20,67 +20,22 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="fender" />
   </component>
+  <component name="FileColors">
+    <fileColor scope="Non-Project Files (Material Default)" color="2E3C43" />
+    <fileColor scope="Non-Project Files (Material Darker)" color="323232" />
+    <fileColor scope="Non-Project Files (Material Lighter)" color="eae8e8" />
+    <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="flog.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/flog.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="fender.hpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/release/fender.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="372" column="10" lean-forward="false" selection-start-line="372" selection-start-column="10" selection-end-line="372" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Entity.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ECS/Entity.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Component.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ECS/Component.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="46" lean-forward="false" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="System.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ECS/System.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="10" column="36" lean-forward="false" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+            <state relative-caret-position="156">
+              <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -93,9 +48,13 @@
       <find>curses</find>
       <find>fender</find>
       <find>Section</find>
+      <find />
+      <find>src</find>
     </findStrings>
     <replaceStrings>
       <replace>SFML</replace>
+      <replace>\n</replace>
+      <replace>\t\tsrc</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -111,7 +70,6 @@
         <option value="$PROJECT_DIR$/src/sfml/SFMLRender.cpp" />
         <option value="$PROJECT_DIR$/src/IRender.cpp" />
         <option value="$PROJECT_DIR$/release/fender.h" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/Manager.cpp" />
         <option value="$PROJECT_DIR$/include/Fini.hpp" />
         <option value="$PROJECT_DIR$/include/flog.hpp" />
@@ -119,6 +77,7 @@
         <option value="$PROJECT_DIR$/src/ECS/System.cpp" />
         <option value="$PROJECT_DIR$/src/ECS/Component.cpp" />
         <option value="$PROJECT_DIR$/release/fender.hpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
   </component>
@@ -128,13 +87,13 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="29" />
-    <option name="width" value="1920" />
-    <option name="height" value="1051" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="116" />
+    <option name="width" value="1900" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -147,11 +106,24 @@
       <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="fender" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="fender" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="SearchEverywhereHistoryKey" value="tdfm&#9;ACTION&#9;ToggleDistractionFreeMode" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -176,17 +148,20 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.fender">
-    <configuration default="true" type="#com.sylvanaar.idea.Lua.run.LuaConfigurationType" factoryName="Lua Script">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="ALTERNATE_INTERPRETER" value="false" />
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
       <envs />
-      <module name="" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
     </configuration>
     <configuration default="true" type="CLion_Remote" factoryName="GDB Remote Debug" remoteCommand="" symbolFile="" sysroot="">
       <method />
@@ -283,18 +258,16 @@
       <JdkChoice value="FROM_MODULE" />
       <method />
     </configuration>
-    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
-      <node-interpreter value="project" />
+    <configuration default="true" type="#com.sylvanaar.idea.Lua.run.LuaConfigurationType" factoryName="Lua Script">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="ALTERNATE_INTERPRETER" value="false" />
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <gulpfile />
-      <tasks />
-      <arguments />
-      <envs />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -370,13 +343,8 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method />
     </configuration>
-    <configuration default="false" name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+    <configuration name="fender" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="fender" TARGET_NAME="fender" CONFIG_NAME="Debug">
       <envs />
-      <method />
-    </configuration>
-    <configuration default="false" name="fender" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="fender" TARGET_NAME="fender" CONFIG_NAME="Debug">
-      <envs />
-      <method />
     </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
@@ -443,11 +411,12 @@
       <workItem from="1505249349886" duration="33000" />
       <workItem from="1505637507917" duration="421000" />
       <workItem from="1505731318812" duration="23000" />
+      <workItem from="1511218424693" duration="416000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9795000" />
+    <option name="totallyTimeSpent" value="10211000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -462,20 +431,21 @@
     <frame x="0" y="29" width="1920" height="1051" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3274918" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295688" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.253125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.253125" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3274918" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -485,7 +455,7 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="processedProjectFiles" value="true" />
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -508,13 +478,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/Fini.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1100">
-          <caret line="55" column="48" lean-forward="false" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Fini.hpp" />
     <entry file="file://$PROJECT_DIR$/src/Manager.cpp" />
     <entry file="file://$PROJECT_DIR$/src/sfml/SFMLRender.cpp" />
     <entry file="file://$PROJECT_DIR$/release/fender.hpp" />
@@ -529,13 +493,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/Fini.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1100">
-          <caret line="55" column="48" lean-forward="true" selection-start-line="55" selection-start-column="48" selection-end-line="55" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Fini.hpp" />
     <entry file="file://$PROJECT_DIR$/src/sfml/SFMLRender.cpp" />
     <entry file="file://$PROJECT_DIR$/src/Manager.cpp" />
     <entry file="file://$PROJECT_DIR$/release/fender.hpp" />
@@ -555,31 +513,36 @@
     <entry file="file://$PROJECT_DIR$/src/sfml/SFMLRender.cpp" />
     <entry file="file://$PROJECT_DIR$/src/sfml/SFMLRender.cpp" />
     <entry file="file://$PROJECT_DIR$/fender.cpp" />
-    <entry file="file:///usr/include/c++/7.1.1/string">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-400">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file:///usr/include/c++/7.1.1/string" />
     <entry file="file://$PROJECT_DIR$/src/sfml/SFMLRender.hpp" />
     <entry file="file://$PROJECT_DIR$/src/ncurses/CursesRender.hpp" />
     <entry file="file://$PROJECT_DIR$/src/IScene.cpp" />
     <entry file="file://$PROJECT_DIR$/src/sfml/SFMLRender.cpp" />
     <entry file="file://$PROJECT_DIR$/src/ncurses/CursesRender.cpp" />
     <entry file="file://$PROJECT_DIR$/src/Manager.cpp" />
-    <entry file="file://$PROJECT_DIR$/include/Fini.hpp">
+    <entry file="file://$PROJECT_DIR$/include/Fini.hpp" />
+    <entry file="file://$PROJECT_DIR$/src/IRender.cpp" />
+    <entry file="file://$PROJECT_DIR$/include/flog.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="71" column="13" lean-forward="false" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+        <state relative-caret-position="346">
+          <caret line="17" column="45" lean-forward="false" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/IRender.cpp" />
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+    <entry file="file://$PROJECT_DIR$/release/fender.hpp" />
+    <entry file="file://$PROJECT_DIR$/src/ECS/Entity.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="36" lean-forward="false" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        <state relative-caret-position="104">
+          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ECS/Component.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="46" lean-forward="false" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -592,34 +555,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/flog.hpp">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ECS/Component.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="10" column="46" lean-forward="false" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ECS/Entity.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/release/fender.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="372" column="10" lean-forward="false" selection-start-line="372" selection-start-column="10" selection-end-line="372" selection-end-column="10" />
+        <state relative-caret-position="156">
+          <caret line="6" column="26" lean-forward="true" selection-start-line="6" selection-start-column="26" selection-end-line="6" selection-end-column="26" />
           <folding />
         </state>
       </provider>
