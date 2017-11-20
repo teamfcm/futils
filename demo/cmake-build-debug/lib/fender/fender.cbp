@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="fender"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\lib\;CMake Files\lib\fender\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fender">
+				<Option output="/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/release/libfender.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ganz/Work/teamfcm/futils/demo/lib/fender/release"/>
+					<Add directory="/home/ganz/Work/teamfcm/futils/demo/lib/fender/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 fender"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fender/fast">
+				<Option output="/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/release/libfender.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender"/>
+				<Option object_output="./"/>
+				<Option type="3"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/ganz/Work/teamfcm/futils/demo/lib/fender/release"/>
+					<Add directory="/home/ganz/Work/teamfcm/futils/demo/lib/fender/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include-fixed"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 fender/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/release/fender.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Component.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Components/Object2d.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Entity.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/System.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/IRender.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/IScene.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/Manager.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ncurses/CursesRender.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ncurses/CursesRender.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/sfml/SFMLRender.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/sfml/SFMLRender.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\fender\"/>
+		</Unit>
+		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\lib\fender\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
