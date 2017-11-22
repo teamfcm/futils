@@ -15,7 +15,6 @@ set(SOURCE_FILES
 		src/ECS/System.cpp
 		src/ECS/Components/Object2d.cpp)
 
-## TODO: ADD SOME MOTHERFUCKING COMPILE FLAGS MAYBE ?
 ## TODO: CrossPlatform may be important...
 add_compile_options(-Wall -Wextra -Werror)
 add_library(fender SHARED ${SOURCE_FILES})

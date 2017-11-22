@@ -26,16 +26,6 @@ ForwardScenes.hpp
 
 ../include/ForwardScenes.hpp
 
-../include/dynamicLibrary.hpp
-string
--
-typeinfo
--
-dlfcn.h
--
-exception
--
-
 ../include/fender.hpp
 iostream
 -
@@ -58,7 +48,17 @@ ini.hpp
 futils.hpp
 ../include/futils.hpp
 
-../include/futils.hpp
+../utils/dloader.hpp
+string
+-
+typeinfo
+-
+dlfcn.h
+-
+exception
+-
+
+../utils/futils.hpp
 mutex
 -
 chrono
@@ -70,7 +70,7 @@ random
 unordered_map
 -
 
-../include/ini.hpp
+../utils/ini.hpp
 iostream
 -
 fstream
@@ -90,9 +90,9 @@ iomanip
 map
 -
 log.hpp
-../include/log.hpp
+../utils/log.hpp
 
-../include/log.hpp
+../utils/log.hpp
 iostream
 -
 fstream
@@ -102,51 +102,51 @@ chrono
 iomanip
 -
 futils.hpp
-../include/futils.hpp
+../utils/futils.hpp
 
-/home/arroganz/cpp/futils/binaries/fender/demo/Scenes/Menu.cpp
+/home/arroganz/cpp/futils/projects/fender/demo/Scenes/Menu.cpp
 Menu.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/Scenes/Menu.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/Scenes/Menu.hpp
 fender.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/Scenes/fender.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/Scenes/fender.hpp
 
-/home/arroganz/cpp/futils/binaries/fender/demo/Scenes/Menu.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/Scenes/Menu.hpp
 fender.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/Scenes/fender.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/Scenes/fender.hpp
 Demo.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/Scenes/Demo.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/Scenes/Demo.hpp
 
-/home/arroganz/cpp/futils/binaries/fender/demo/Scenes/Splashscreen.cpp
+/home/arroganz/cpp/futils/projects/fender/demo/Scenes/Splashscreen.cpp
 Splashscreen.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/Scenes/Splashscreen.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/Scenes/Splashscreen.hpp
 
-/home/arroganz/cpp/futils/binaries/fender/demo/Scenes/Splashscreen.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/Scenes/Splashscreen.hpp
 fender.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/Scenes/fender.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/Scenes/fender.hpp
 Demo.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/Scenes/Demo.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/Scenes/Demo.hpp
 
-/home/arroganz/cpp/futils/binaries/fender/demo/include/AllScenes.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/AllScenes.hpp
 ../Scenes/Splashscreen.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/Scenes/Splashscreen.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/Scenes/Splashscreen.hpp
 ../Scenes/Menu.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/Scenes/Menu.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/Scenes/Menu.hpp
 
-/home/arroganz/cpp/futils/binaries/fender/demo/include/Demo.cpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/Demo.cpp
 Demo.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/include/Demo.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/Demo.hpp
 
-/home/arroganz/cpp/futils/binaries/fender/demo/include/Demo.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/Demo.hpp
 fender.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/include/fender.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/fender.hpp
 
-/home/arroganz/cpp/futils/binaries/fender/demo/include/Factory.cpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/Factory.cpp
 Factory.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/include/Factory.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/Factory.hpp
 AllScenes.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/include/AllScenes.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/AllScenes.hpp
 
-/home/arroganz/cpp/futils/binaries/fender/demo/include/Factory.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/Factory.hpp
 functional
 -
 unordered_map
@@ -154,15 +154,15 @@ unordered_map
 iostream
 -
 fender.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/include/fender.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/fender.hpp
 Demo.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/include/Demo.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/Demo.hpp
 ForwardScenes.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/include/ForwardScenes.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/ForwardScenes.hpp
 
-/home/arroganz/cpp/futils/binaries/fender/demo/include/ForwardScenes.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/ForwardScenes.hpp
 
-/home/arroganz/cpp/futils/binaries/fender/demo/include/fender.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/fender.hpp
 iostream
 -
 string
@@ -178,65 +178,19 @@ stack
 map
 -
 log.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/include/log.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/log.hpp
 ini.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/include/ini.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/ini.hpp
 futils.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/include/futils.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/futils.hpp
 
-/home/arroganz/cpp/futils/binaries/fender/demo/include/futils.hpp
-mutex
--
-chrono
--
-functional
--
-random
--
-unordered_map
--
-
-/home/arroganz/cpp/futils/binaries/fender/demo/include/ini.hpp
-iostream
--
-fstream
--
-algorithm
--
-string
--
-unordered_map
--
-list
--
-vector
--
-iomanip
--
-map
--
-log.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/include/log.hpp
-
-/home/arroganz/cpp/futils/binaries/fender/demo/include/log.hpp
-iostream
--
-fstream
--
-chrono
--
-iomanip
--
-futils.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/include/futils.hpp
-
-/home/arroganz/cpp/futils/binaries/fender/demo/main.cpp
+/home/arroganz/cpp/futils/projects/fender/demo/main.cpp
 iostream
 -
 fender.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/fender.hpp
-dynamicLibrary.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/dynamicLibrary.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/fender.hpp
+dloader.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/dloader.hpp
 Factory.hpp
-/home/arroganz/cpp/futils/binaries/fender/demo/Factory.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/Factory.hpp
 

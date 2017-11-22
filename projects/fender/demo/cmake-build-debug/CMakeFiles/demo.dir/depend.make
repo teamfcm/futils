@@ -3,27 +3,30 @@
 
 CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../include/Demo.hpp
 CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../include/fender.hpp
-CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../include/futils.hpp
-CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../include/ini.hpp
-CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../include/log.hpp
+CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../utils/futils.hpp
+CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../utils/ini.hpp
+CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../utils/log.hpp
 CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../Scenes/Menu.cpp
 CMakeFiles/demo.dir/Scenes/Menu.cpp.o: ../Scenes/Menu.hpp
 
 CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: ../include/Demo.hpp
 CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: ../include/fender.hpp
-CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: ../include/futils.hpp
-CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: ../include/ini.hpp
-CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: ../include/log.hpp
+CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: ../utils/futils.hpp
+CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: ../utils/ini.hpp
+CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: ../utils/log.hpp
 CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: ../Scenes/Splashscreen.cpp
 CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o: ../Scenes/Splashscreen.hpp
 
+CMakeFiles/demo.dir/include/Demo.cpp.o: ../utils/futils.hpp
+CMakeFiles/demo.dir/include/Demo.cpp.o: ../utils/ini.hpp
+CMakeFiles/demo.dir/include/Demo.cpp.o: ../utils/log.hpp
 CMakeFiles/demo.dir/include/Demo.cpp.o: ../include/Demo.cpp
 CMakeFiles/demo.dir/include/Demo.cpp.o: ../include/Demo.hpp
 CMakeFiles/demo.dir/include/Demo.cpp.o: ../include/fender.hpp
-CMakeFiles/demo.dir/include/Demo.cpp.o: ../include/futils.hpp
-CMakeFiles/demo.dir/include/Demo.cpp.o: ../include/ini.hpp
-CMakeFiles/demo.dir/include/Demo.cpp.o: ../include/log.hpp
 
+CMakeFiles/demo.dir/include/Factory.cpp.o: ../utils/futils.hpp
+CMakeFiles/demo.dir/include/Factory.cpp.o: ../utils/ini.hpp
+CMakeFiles/demo.dir/include/Factory.cpp.o: ../utils/log.hpp
 CMakeFiles/demo.dir/include/Factory.cpp.o: ../Scenes/Menu.hpp
 CMakeFiles/demo.dir/include/Factory.cpp.o: ../Scenes/Splashscreen.hpp
 CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/AllScenes.hpp
@@ -32,17 +35,14 @@ CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/Factory.cpp
 CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/Factory.hpp
 CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/ForwardScenes.hpp
 CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/fender.hpp
-CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/futils.hpp
-CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/ini.hpp
-CMakeFiles/demo.dir/include/Factory.cpp.o: ../include/log.hpp
 
 CMakeFiles/demo.dir/main.cpp.o: ../include/Demo.hpp
 CMakeFiles/demo.dir/main.cpp.o: ../include/Factory.hpp
 CMakeFiles/demo.dir/main.cpp.o: ../include/ForwardScenes.hpp
-CMakeFiles/demo.dir/main.cpp.o: ../include/dynamicLibrary.hpp
 CMakeFiles/demo.dir/main.cpp.o: ../include/fender.hpp
-CMakeFiles/demo.dir/main.cpp.o: ../include/futils.hpp
-CMakeFiles/demo.dir/main.cpp.o: ../include/ini.hpp
-CMakeFiles/demo.dir/main.cpp.o: ../include/log.hpp
+CMakeFiles/demo.dir/main.cpp.o: ../utils/dloader.hpp
+CMakeFiles/demo.dir/main.cpp.o: ../utils/futils.hpp
+CMakeFiles/demo.dir/main.cpp.o: ../utils/ini.hpp
+CMakeFiles/demo.dir/main.cpp.o: ../utils/log.hpp
 CMakeFiles/demo.dir/main.cpp.o: ../main.cpp
 
