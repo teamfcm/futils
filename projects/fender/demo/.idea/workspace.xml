@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+    <generated>
+      <config projectName="demo" targetName="demo" />
+    </generated>
+  </component>
+  <component name="CMakeSettings" AUTO_RELOAD="true">
+    <configurations>
+      <configuration CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="76601a27-7f85-49ef-817a-6db1af7c6a51" name="Default" comment="" />
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="demo" />
+  </component>
+  <component name="FileColors">
+    <fileColor scope="Non-Project Files (Material Default)" color="2E3C43" />
+    <fileColor scope="Non-Project Files (Material Darker)" color="323232" />
+    <fileColor scope="Non-Project Files (Material Lighter)" color="eae8e8" />
+    <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>compo</find>
+      <find>getCom</find>
+      <find>this-&gt;buttonObject</find>
+      <find>BaseObject</find>
+      <find>addComponent</find>
+      <find>getComponent</find>
+      <find>notify</find>
+      <find>onClick</find>
+      <find>attach</find>
+      <find>create</find>
+      <find>cout</find>
+      <find>result</find>
+      <find>entity</find>
+      <find>IEntity</find>
+      <find>ini</find>
+      <find>components</find>
+      <find>operator</find>
+      <find>Token &amp;operator</find>
+      <find>\[\]</find>
+      <find>section</find>
+      <find>Value</find>
+      <find>index</find>
+      <find>Rendering</find>
+      <find>Drawable</find>
+      <find>1</find>
+      <find>Dragga</find>
+      <find>Animation</find>
+      <find>Clock</find>
+      <find>missing</find>
+      <find>throw</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>this-&gt;indexMap</replace>
+      <replace>Object</replace>
+      <replace>fender::Element</replace>
+      <replace>struct</replace>
+      <replace>layoutObjects</replace>
+      <replace>Clock</replace>
+      <replace>Stopwatch</replace>
+      <replace>final</replace>
+      <replace>this-&gt;_mouseIsGoingDown =</replace>
+      <replace>Clickable</replace>
+      <replace>button</replace>
+      <replace>EndY</replace>
+      <replace>onClick</replace>
+      <replace>Position2d</replace>
+      <replace>3</replace>
+      <replace>T</replace>
+      <replace>&lt;float&gt;</replace>
+      <replace>3d</replace>
+      <replace>float</replace>
+      <replace>Ini</replace>
+      <replace>ref.</replace>
+      <replace>Save</replace>
+      <replace>str</replace>
+      <replace>// LOAD</replace>
+      <replace>size</replace>
+      <replace>Hoverable</replace>
+      <replace>hover</replace>
+      <replace>this</replace>
+      <replace>clickAction</replace>
+      <replace>2</replace>
+    </replaceStrings>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/include/factory.cpp" />
+        <option value="$PROJECT_DIR$/include/factory.hpp" />
+        <option value="$PROJECT_DIR$/include/Factory.hpp" />
+        <option value="$PROJECT_DIR$/Scenes/Intro.cpp" />
+        <option value="$PROJECT_DIR$/Scenes/Intro.hpp" />
+        <option value="$PROJECT_DIR$/Scenes/Intro.json" />
+        <option value="$PROJECT_DIR$/Scenes/Intro/Intro.cpp" />
+        <option value="$PROJECT_DIR$/Scenes/Headers/Intro.hpp" />
+        <option value="$PROJECT_DIR$/lib/fender/src/qt/QtRender.hpp" />
+        <option value="$PROJECT_DIR$/include/DynamicLibrary.hpp" />
+        <option value="$PROJECT_DIR$/config/fender.ini" />
+        <option value="$PROJECT_DIR$/include/flog.hpp" />
+        <option value="$PROJECT_DIR$/tmp.ini" />
+        <option value="$PROJECT_DIR$/Scenes/Intro/Splashscreen.ini" />
+        <option value="$PROJECT_DIR$/Scenes/Intro/Splashscreen.cpp" />
+        <option value="$PROJECT_DIR$/Scenes/Headers/Splashscreen.hpp" />
+        <option value="$PROJECT_DIR$/lib/fender/src/ncurses/CursesRender.cpp" />
+        <option value="$PROJECT_DIR$/lib/fender/release/fender.h" />
+        <option value="$PROJECT_DIR$/include/fender.h" />
+        <option value="$PROJECT_DIR$/include/Factory.cpp" />
+        <option value="$PROJECT_DIR$/include/ForwardScenes.hpp" />
+        <option value="$PROJECT_DIR$/include/AllScenes.hpp" />
+        <option value="$PROJECT_DIR$/Scenes/Menu.ini" />
+        <option value="$PROJECT_DIR$/Scenes/Splashscreen.hpp" />
+        <option value="$PROJECT_DIR$/Scenes/Splashscreen.ini" />
+        <option value="$PROJECT_DIR$/Scenes/Splashscreen.cpp" />
+        <option value="$PROJECT_DIR$/include/feucs.hpp" />
+        <option value="$PROJECT_DIR$/lib/fender/include/futils.hpp" />
+        <option value="$PROJECT_DIR$/lib/fender/src/ncurses/CursesRender.hpp" />
+        <option value="$PROJECT_DIR$/lib/fender/src/Manager.cpp" />
+        <option value="$PROJECT_DIR$/lib/fender/src/ECS/Component.cpp" />
+        <option value="$PROJECT_DIR$/lib/fender/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/lib/fender/include/Fini.hpp" />
+        <option value="$PROJECT_DIR$/include/futils.hpp" />
+        <option value="$PROJECT_DIR$/lib/fender/src/ECS/Components/Object2d.cpp.cpp" />
+        <option value="$PROJECT_DIR$/lib/fender/src/ECS/Components/Object2d.cpp" />
+        <option value="$PROJECT_DIR$/lib/fender/src/IRender.cpp" />
+        <option value="$PROJECT_DIR$/Scenes/timeline.ini" />
+        <option value="$PROJECT_DIR$/Scenes/Menu.hpp" />
+        <option value="$PROJECT_DIR$/include/Fini.hpp" />
+        <option value="$PROJECT_DIR$/include/Demo.hpp" />
+        <option value="$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.hpp" />
+        <option value="$PROJECT_DIR$/Menu.ini" />
+        <option value="$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.cpp" />
+        <option value="$PROJECT_DIR$/lib/fender/release/fender.hpp" />
+        <option value="$PROJECT_DIR$/include/fender.hpp" />
+        <option value="$PROJECT_DIR$/Scenes/Menu.cpp" />
+        <option value="$PROJECT_DIR$/config/config.ini" />
+        <option value="$PROJECT_DIR$/../ini.hpp" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-186" />
+    <option name="width" value="1900" />
+    <option name="height" value="796" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>General</id>
+          </State>
+        </expanded-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="demo" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Ini" />
+    <property name="SearchEverywhereHistoryKey" value="tdfm&#9;ACTION&#9;ToggleDistractionFreeMode&#10;toggle distraction&#9;ACTION&#9;ToggleDistractionFreeMode&#10;collapseAll&#9;ACTION&#9;CollapseAllRegions" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Scenes" />
+      <recent name="$PROJECT_DIR$/lib/fender/src" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Scenes/Intro/Headers" />
+      <recent name="$PROJECT_DIR$/Scenes/Intro" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/fender/include" />
+      <recent name="$PROJECT_DIR$/Scenes" />
+      <recent name="$PROJECT_DIR$/include" />
+      <recent name="$PROJECT_DIR$/lib/fender/src" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.demo">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" EXPLICIT_BUILD_TARGET_NAME="all">
+      <envs />
+    </configuration>
+    <configuration default="true" type="js.build_tools.grunt" factoryName="Grunt.js">
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+    </configuration>
+    <configuration default="true" type="CLion_Remote" factoryName="GDB Remote Debug" remoteCommand="" symbolFile="" sysroot="">
+      <method />
+    </configuration>
+    <configuration default="true" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true">
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="ChromiumRemoteDebugType" factoryName="Chromium Remote">
+      <method />
+    </configuration>
+    <configuration default="true" type="CompoundRunConfigurationType" factoryName="Compound Run Configuration">
+      <method />
+    </configuration>
+    <configuration default="true" type="FirefoxRemoteDebugType" factoryName="Firefox Remote">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeWebKit" factoryName="NW.js">
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="demo" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="ReactNative" factoryName="React Native">
+      <node-interpreter value="project" />
+      <platform value="ANDROID" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="Tox" factoryName="Tox">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="demo" />
+      <method />
+    </configuration>
+    <configuration default="true" type="XSLT" factoryName="XSLT">
+      <option name="myOutputFile" />
+      <option name="myOpenOutputFile" value="false" />
+      <option name="myOpenInBrowser" value="false" />
+      <option name="mySmartErrorHandling" value="true" />
+      <option name="myRunnerPort" value="34873" />
+      <option name="myVmArguments" />
+      <option name="myWorkingDirectory" />
+      <option name="myModule" />
+      <option name="myJdk" />
+      <parameters />
+      <OutputType value="CONSOLE" save-to-file="false" />
+      <FileType name="XML" />
+      <JdkChoice value="FROM_MODULE" />
+      <method />
+    </configuration>
+    <configuration default="true" type="#com.sylvanaar.idea.Lua.run.LuaConfigurationType" factoryName="Lua Script">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="ALTERNATE_INTERPRETER" value="false" />
+      <envs />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="demo" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="demo" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="demo" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="demo" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;.&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
+    </configuration>
+    <configuration name="demo" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="demo" TARGET_NAME="demo" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="demo" RUN_TARGET_NAME="demo">
+      <envs />
+    </configuration>
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Application.Build All" />
+      <item index="1" class="java.lang.String" itemvalue="Application.demo" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="76601a27-7f85-49ef-817a-6db1af7c6a51" name="Default" comment="" />
+      <created>1501245642318</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1501245642318</updated>
+      <workItem from="1501245643531" duration="3106000" />
+      <workItem from="1501248788508" duration="5066000" />
+      <workItem from="1502917552455" duration="1070000" />
+      <workItem from="1502918641354" duration="159000" />
+      <workItem from="1502920922345" duration="124000" />
+      <workItem from="1502956598523" duration="1713000" />
+      <workItem from="1502981121881" duration="169000" />
+      <workItem from="1502992008795" duration="6287000" />
+      <workItem from="1503000037482" duration="2183000" />
+      <workItem from="1503002323172" duration="2216000" />
+      <workItem from="1503004674428" duration="659000" />
+      <workItem from="1503005566242" duration="3277000" />
+      <workItem from="1503008854735" duration="1663000" />
+      <workItem from="1503055220149" duration="1327000" />
+      <workItem from="1503059495125" duration="63000" />
+      <workItem from="1503059804539" duration="476000" />
+      <workItem from="1503068538787" duration="828000" />
+      <workItem from="1503069391933" duration="334000" />
+      <workItem from="1503077903124" duration="2057000" />
+      <workItem from="1503090801338" duration="669000" />
+      <workItem from="1503092054481" duration="1727000" />
+      <workItem from="1503095303006" duration="9922000" />
+      <workItem from="1503167018312" duration="2765000" />
+      <workItem from="1503261721679" duration="763000" />
+      <workItem from="1503262517221" duration="4964000" />
+      <workItem from="1503303843273" duration="1829000" />
+      <workItem from="1503351342132" duration="1890000" />
+      <workItem from="1503389059013" duration="6170000" />
+      <workItem from="1503415947224" duration="8209000" />
+      <workItem from="1503431065720" duration="189000" />
+      <workItem from="1503431266066" duration="5595000" />
+      <workItem from="1503440606165" duration="173000" />
+      <workItem from="1503441517956" duration="236000" />
+      <workItem from="1503443022001" duration="116000" />
+      <workItem from="1503473279560" duration="3833000" />
+      <workItem from="1503479890079" duration="25009000" />
+      <workItem from="1503569472685" duration="79000" />
+      <workItem from="1503569574316" duration="5109000" />
+      <workItem from="1503605181809" duration="2000000" />
+      <workItem from="1503609330159" duration="4073000" />
+      <workItem from="1503613438166" duration="1745000" />
+      <workItem from="1503652329343" duration="6811000" />
+      <workItem from="1503688449718" duration="7188000" />
+      <workItem from="1503698361168" duration="1594000" />
+      <workItem from="1503752279767" duration="612000" />
+      <workItem from="1503753777601" duration="110000" />
+      <workItem from="1503753895533" duration="15130000" />
+      <workItem from="1503778707950" duration="1045000" />
+      <workItem from="1503779763940" duration="1802000" />
+      <workItem from="1503781577873" duration="116000" />
+      <workItem from="1503781737669" duration="1226000" />
+      <workItem from="1503782976067" duration="1180000" />
+      <workItem from="1503784173542" duration="11079000" />
+      <workItem from="1503822521083" duration="16723000" />
+      <workItem from="1503871185664" duration="989000" />
+      <workItem from="1503915432418" duration="2998000" />
+      <workItem from="1503955124873" duration="1139000" />
+      <workItem from="1504007484390" duration="2261000" />
+      <workItem from="1504010375963" duration="850000" />
+      <workItem from="1504035600993" duration="3281000" />
+      <workItem from="1504081846917" duration="4776000" />
+      <workItem from="1504095809917" duration="2289000" />
+      <workItem from="1504100495540" duration="667000" />
+      <workItem from="1504102288825" duration="95000" />
+      <workItem from="1504102406124" duration="682000" />
+      <workItem from="1504106297740" duration="8532000" />
+      <workItem from="1504158508362" duration="9605000" />
+      <workItem from="1504251027084" duration="22614000" />
+      <workItem from="1504369794205" duration="7673000" />
+      <workItem from="1504389202440" duration="2315000" />
+      <workItem from="1504441426008" duration="29252000" />
+      <workItem from="1504520201248" duration="31000" />
+      <workItem from="1504520265378" duration="14000" />
+      <workItem from="1504520320639" duration="15212000" />
+      <workItem from="1504557240050" duration="12160000" />
+      <workItem from="1504614724668" duration="850000" />
+      <workItem from="1504616290576" duration="1000" />
+      <workItem from="1504618193714" duration="274000" />
+      <workItem from="1504618804475" duration="3419000" />
+      <workItem from="1504622548745" duration="2047000" />
+      <workItem from="1504626170076" duration="254000" />
+      <workItem from="1504630478044" duration="14176000" />
+      <workItem from="1504713652743" duration="4140000" />
+      <workItem from="1504726068833" duration="536000" />
+      <workItem from="1504732080895" duration="4582000" />
+      <workItem from="1504785726645" duration="18017000" />
+      <workItem from="1504879868613" duration="3370000" />
+      <workItem from="1504905934391" duration="6976000" />
+      <workItem from="1505121136136" duration="5000" />
+      <workItem from="1505123766152" duration="1871000" />
+      <workItem from="1505135679871" duration="623000" />
+      <workItem from="1505191594908" duration="119000" />
+      <workItem from="1505198411548" duration="11000" />
+      <workItem from="1505199733415" duration="369000" />
+      <workItem from="1505201746200" duration="101000" />
+      <workItem from="1505201911363" duration="66000" />
+      <workItem from="1505201996161" duration="368000" />
+      <workItem from="1505202534781" duration="12308000" />
+      <workItem from="1505230677452" duration="11387000" />
+      <workItem from="1505248934416" duration="414000" />
+      <workItem from="1505249399959" duration="1848000" />
+      <workItem from="1505280742245" duration="198000" />
+      <workItem from="1505281022718" duration="8696000" />
+      <workItem from="1505317840973" duration="1931000" />
+      <workItem from="1505324642479" duration="147000" />
+      <workItem from="1505395232404" duration="5768000" />
+      <workItem from="1505453122393" duration="165000" />
+      <workItem from="1505453809105" duration="20302000" />
+      <workItem from="1505637929379" duration="2236000" />
+      <workItem from="1505655964938" duration="610000" />
+      <workItem from="1505665822468" duration="1568000" />
+      <workItem from="1505668903658" duration="6538000" />
+      <workItem from="1505678388506" duration="6682000" />
+      <workItem from="1505720285377" duration="9236000" />
+      <workItem from="1505731343222" duration="3280000" />
+      <workItem from="1505776481764" duration="3771000" />
+      <workItem from="1505812721262" duration="15311000" />
+      <workItem from="1505844960943" duration="5295000" />
+      <workItem from="1505910427011" duration="4866000" />
+      <workItem from="1505918751556" duration="1000" />
+      <workItem from="1505920959193" duration="2563000" />
+      <workItem from="1511253107842" duration="3897000" />
+      <workItem from="1511386801326" duration="155000" />
+      <workItem from="1511386973295" duration="942000" />
+      <workItem from="1511388634107" duration="1121000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="506624000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-186" y="0" width="1920" height="1051" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3242358" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2816594" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38318777" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19270833" sideWeight="0.47408536" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5259146" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35881105" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3280255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3269639" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32908705" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37261146" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1736111" sideWeight="0.47408536" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="LuaJ" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3280255" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3598726" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5259146" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="153" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file:///usr/include/c++/7.1.1/bits/stl_pair.h" />
+    <entry file="file://$PROJECT_DIR$/SplashscreenTmp.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="6" lean-forward="false" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/flog.hpp" />
+    <entry file="file:///usr/include/SFML/Window/Event.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-352">
+          <caret line="94" column="20" lean-forward="false" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Factory.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="11" column="20" lean-forward="false" selection-start-line="11" selection-start-column="20" selection-end-line="11" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/ForwardScenes.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/7.1.1/ext/new_allocator.h" />
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/ncurses/CursesRender.cpp" />
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/IScene.cpp" />
+    <entry file="file://$PROJECT_DIR$/include/AllScenes.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scenes/Splashscreen.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="20" column="8" lean-forward="false" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scenes/Splashscreen.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="2" lean-forward="true" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scenes/Splashscreen.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="45" column="33" lean-forward="false" selection-start-line="45" selection-start-column="33" selection-end-line="45" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/feucs.hpp" />
+    <entry file="file://$PROJECT_DIR$/include/Factory.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fender/include/futils.hpp" />
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/ncurses/CursesRender.hpp" />
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/ECS/Entity.cpp" />
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/ECS/Component.cpp" />
+    <entry file="file://$PROJECT_DIR$/include/futils.hpp" />
+    <entry file="file:///usr/include/c++/7.1.1/bits/stl_tree.h" />
+    <entry file="file://$PROJECT_DIR$/Scenes/Menu.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="8" lean-forward="false" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/include/c++/7.1.1/ext/string_conversions.h" />
+    <entry file="file://$PROJECT_DIR$/lib/fender/include/Fini.hpp" />
+    <entry file="file://$PROJECT_DIR$/include/futils.hpp" />
+    <entry file="file://$PROJECT_DIR$/include/futils.hpp" />
+    <entry file="file://$PROJECT_DIR$/include/futils.hpp" />
+    <entry file="file://$PROJECT_DIR$/include/futils.hpp" />
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/ECS/Components/Object2d.cpp" />
+    <entry file="file://$PROJECT_DIR$/Scenes/timeline.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/IRender.cpp" />
+    <entry file="file:///usr/include/c++/7.1.1/bits/unordered_map.h" />
+    <entry file="file:///usr/include/c++/7.1.1/bits/hashtable.h" />
+    <entry file="file://$PROJECT_DIR$/Scenes/Menu.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="19" column="58" lean-forward="false" selection-start-line="19" selection-start-column="58" selection-end-line="19" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/Manager.cpp" />
+    <entry file="file:///usr/include/c++/7.1.1/bits/basic_string.h" />
+    <entry file="file://$PROJECT_DIR$/include/Demo.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="806">
+          <caret line="31" column="87" lean-forward="false" selection-start-line="31" selection-start-column="87" selection-end-line="31" selection-end-column="87" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.hpp" />
+    <entry file="file://$PROJECT_DIR$/include/Fini.hpp" />
+    <entry file="file://$PROJECT_DIR$/lib/fender/src/sfml/SFMLRender.cpp" />
+    <entry file="file://$PROJECT_DIR$/Menu.ini" />
+    <entry file="file://$PROJECT_DIR$/lib/fender/release/fender.hpp" />
+    <entry file="file://$PROJECT_DIR$/include/fender.hpp" />
+    <entry file="file://$PROJECT_DIR$/lib/fender/CMakeLists.txt" />
+    <entry file="file://$PROJECT_DIR$/Scenes/Menu.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="11" column="1" lean-forward="false" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/fender.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ini.hpp" />
+    <entry file="file://$PROJECT_DIR$/todo">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="15" column="29" lean-forward="false" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
