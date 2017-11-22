@@ -1,4 +1,4 @@
-# Install script for directory: /home/arroganz/cpp/futils/fender
+# Install script for directory: /home/arroganz/cpp/futils/projects/fender
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/arroganz/cpp/futils/fender/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

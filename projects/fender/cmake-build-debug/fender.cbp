@@ -8,35 +8,34 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/arroganz/cpp/futils/fender/cmake-build-debug"/>
+				<Option working_dir="/home/arroganz/cpp/futils/projects/fender/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/arroganz/cpp/futils/fender/cmake-build-debug"/>
+				<Option working_dir="/home/arroganz/cpp/futils/projects/fender/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="fender">
-				<Option output="/home/arroganz/cpp/futils/fender/release/libfender.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/arroganz/cpp/futils/fender/cmake-build-debug"/>
+				<Option output="/home/arroganz/cpp/futils/projects/fender/release/libfender.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arroganz/cpp/futils/projects/fender/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="3"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/arroganz/cpp/futils"/>
-					<Add directory="/home/arroganz/cpp/futils/fender/release"/>
-					<Add directory="/home/arroganz/cpp/futils/fender/include"/>
+					<Add directory="/home/arroganz/cpp/futils/projects/fender/release"/>
+					<Add directory="/home/arroganz/cpp/futils/projects/fender/utils"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward"/>
@@ -46,22 +45,21 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 fender"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 fender"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="fender/fast">
-				<Option output="/home/arroganz/cpp/futils/fender/release/libfender.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/arroganz/cpp/futils/fender/cmake-build-debug"/>
+				<Option output="/home/arroganz/cpp/futils/projects/fender/release/libfender.so" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arroganz/cpp/futils/projects/fender/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="3"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/arroganz/cpp/futils"/>
-					<Add directory="/home/arroganz/cpp/futils/fender/release"/>
-					<Add directory="/home/arroganz/cpp/futils/fender/include"/>
+					<Add directory="/home/arroganz/cpp/futils/projects/fender/release"/>
+					<Add directory="/home/arroganz/cpp/futils/projects/fender/utils"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward"/>
@@ -71,66 +69,60 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 fender/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 fender/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/arroganz/cpp/futils/fender/cmake-build-debug"/>
+				<Option working_dir="/home/arroganz/cpp/futils/projects/fender/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/arroganz/cpp/futils/fender/release/fender.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/release/fender.hpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/fender/src/ECS/Component.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ECS/Component.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/fender/src/ECS/Components/Object2d.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ECS/Components/Object2d.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/fender/src/ECS/Entity.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ECS/Entity.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/fender/src/ECS/System.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ECS/System.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/fender/src/IRender.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/IRender.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/fender/src/IScene.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/IScene.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/fender/src/Manager.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Manager.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/fender/src/ncurses/CursesRender.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ncurses/CursesRender.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/fender/src/ncurses/CursesRender.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ncurses/CursesRender.hpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/fender/src/sfml/SFMLRender.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/sfml/SFMLRender.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/fender/src/sfml/SFMLRender.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/sfml/SFMLRender.hpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/ini.hpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/log.hpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/fender/CMakeLists.txt">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

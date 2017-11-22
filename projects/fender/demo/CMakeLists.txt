@@ -17,6 +17,6 @@ add_executable(demo ${SOURCE_FILES})
 
 set_target_properties(demo PROPERTIES RUNTIME_OUTPUT_DIRECTORY ../)
 target_compile_options(demo PUBLIC -W -Wall -Werror -Wextra)
-include_directories(include Scenes/Headers)
+include_directories(include utils Scenes/Headers)
 find_library(FENDER fender HINTS ./lib)
 target_link_libraries(demo ${FENDER} dl)
