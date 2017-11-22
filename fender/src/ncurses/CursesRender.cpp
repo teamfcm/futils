@@ -5,7 +5,7 @@
 #include <iostream>
 #include <ncurses.h>
 #include "CursesRender.hpp"
-#include "flog.hpp"
+#include "log.hpp"
 
 extern "C" fender::CursesRender* createCursesRenderer()
 {

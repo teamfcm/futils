@@ -1,0 +1,5 @@
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/arroganz/cpp/futils/tests
+Changing common dir to /home/arroganz/cpp/futils
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/arroganz/cpp/futils/tests/cmake-build-debug

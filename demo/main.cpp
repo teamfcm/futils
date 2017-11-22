@@ -1,8 +1,7 @@
 #include <iostream>
-#include <fstream>
 #include "fender.hpp"
 #include "DynamicLibrary.hpp"
-#include "flog.hpp"
+#include "log.hpp"
 #include "Factory.hpp"
 
 int main()

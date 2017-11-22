@@ -4,7 +4,7 @@
 
 # include "fender.hpp"
 # include "futils.hpp"
-# include "flog.hpp"
+# include "log.hpp"
 
 futils::Vec2d<int>  fender::IRender::_windowSize{0, 0};
 

@@ -3,10 +3,11 @@
 //
 
 # include "fender.hpp"
-# include "flog.hpp"
+# include "log.hpp"
 # include "sfml/SFMLRender.hpp"
 # include "ncurses/CursesRender.hpp"
-# include "Fini.hpp"
+# include "ini.hpp"
+# include "clock.hpp"
 # include <unistd.h>
 
 extern "C"

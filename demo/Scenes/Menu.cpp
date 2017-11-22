@@ -3,10 +3,10 @@
 //
 
 # include "Menu.hpp"
-#include "../lib/fender/release/fender.hpp"
+# include "fender.hpp"
 
 demo::scenes::Menu::Menu(demo::Demo &e,
-                                         std::string const &sceneFolder):
+                         std::string const &sceneFolder):
         env(e),
         layout(sceneFolder + "Menu.ini")
 {

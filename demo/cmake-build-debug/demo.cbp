@@ -5,218 +5,127 @@
 		<Option title="demo"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\lib\;CMake Files\lib\fender\;"/>
+		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug"/>
+				<Option working_dir="/home/arroganz/cpp/futils/demo/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug"/>
+				<Option working_dir="/home/arroganz/cpp/futils/demo/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="demo">
-				<Option output="/home/ganz/Work/teamfcm/futils/demo/demo" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug"/>
+				<Option output="/home/arroganz/cpp/futils/demo/demo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arroganz/cpp/futils/demo/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ganz/Work/teamfcm/futils/demo/include"/>
-					<Add directory="/home/ganz/Work/teamfcm/futils/demo/Scenes/Headers"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include"/>
+					<Add directory="/home/arroganz/cpp/futils"/>
+					<Add directory="/home/arroganz/cpp/futils/demo/include"/>
+					<Add directory="/home/arroganz/cpp/futils/demo/Scenes/Headers"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 demo"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 demo"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="demo/fast">
-				<Option output="/home/ganz/Work/teamfcm/futils/demo/demo" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug"/>
+				<Option output="/home/arroganz/cpp/futils/demo/demo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/arroganz/cpp/futils/demo/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/ganz/Work/teamfcm/futils/demo/include"/>
-					<Add directory="/home/ganz/Work/teamfcm/futils/demo/Scenes/Headers"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include"/>
+					<Add directory="/home/arroganz/cpp/futils"/>
+					<Add directory="/home/arroganz/cpp/futils/demo/include"/>
+					<Add directory="/home/arroganz/cpp/futils/demo/Scenes/Headers"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include-fixed"/>
+					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/include-fixed"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 demo/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 demo/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="fender">
-				<Option output="/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/release/libfender.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/ganz/Work/teamfcm/futils/demo/lib/fender/release"/>
-					<Add directory="/home/ganz/Work/teamfcm/futils/demo/lib/fender/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include-fixed"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
+			<Target title="edit_cache">
+				<Option working_dir="/home/arroganz/cpp/futils/demo/cmake-build-debug"/>
+				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 fender"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="fender/fast">
-				<Option output="/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/release/libfender.so" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender"/>
-				<Option object_output="./"/>
-				<Option type="3"/>
-				<Option compiler="gcc"/>
-				<Compiler>
-					<Add directory="/home/ganz/Work/teamfcm/futils/demo/lib/fender/release"/>
-					<Add directory="/home/ganz/Work/teamfcm/futils/demo/lib/fender/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/x86_64-pc-linux-gnu"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/../../../../include/c++/7.1.1/backward"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include-fixed"/>
-					<Add directory="/usr/include"/>
-				</Compiler>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 fender/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/ganz/Work/teamfcm/futils/demo/cmake-build-debug/lib/fender/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/demo/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/Scenes/Menu.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/demo/Scenes/Menu.cpp">
 			<Option target="demo"/>
 		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/Scenes/Menu.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/demo/Scenes/Menu.hpp">
 			<Option target="demo"/>
 		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/Scenes/Splashscreen.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/demo/Scenes/Splashscreen.cpp">
 			<Option target="demo"/>
 		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/Scenes/Splashscreen.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/demo/Scenes/Splashscreen.hpp">
 			<Option target="demo"/>
 		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/include/AllScenes.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/demo/include/AllScenes.hpp">
 			<Option target="demo"/>
 		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/include/Demo.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/demo/include/Demo.cpp">
 			<Option target="demo"/>
 		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/include/Demo.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/demo/include/Demo.hpp">
 			<Option target="demo"/>
 		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/include/DynamicLibrary.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/demo/include/Factory.cpp">
 			<Option target="demo"/>
 		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/include/Factory.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/demo/include/Factory.hpp">
 			<Option target="demo"/>
 		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/include/Factory.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/demo/include/ForwardScenes.hpp">
 			<Option target="demo"/>
 		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/include/ForwardScenes.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/demo/main.cpp">
 			<Option target="demo"/>
 		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/include/futils.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/futils.hpp">
 			<Option target="demo"/>
 		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/release/fender.hpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Component.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Components/Object2d.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/Entity.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ECS/System.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/IRender.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/IScene.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/Manager.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ncurses/CursesRender.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/ncurses/CursesRender.hpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/sfml/SFMLRender.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/src/sfml/SFMLRender.hpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/main.cpp">
-			<Option target="demo"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/CMakeLists.txt">
+		<Unit filename="/home/arroganz/cpp/futils/demo/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\lib\fender\"/>
-		</Unit>
-		<Unit filename="/home/ganz/Work/teamfcm/futils/demo/lib/fender/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\lib\fender\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

@@ -7,10 +7,14 @@
 # include <functional>
 # include <cxxabi.h>
 # include <stack>
-# include "flog.hpp"
-# include "Fini.hpp"
+# include <map>
+# include "log.hpp"
+# include "ini.hpp"
 # include "futils.hpp"
 
+// TODO: Don't use preprocessing if its not necessary.
+// TODO: REMOVE SetAndSave, INIT, SAVE macros.
+// TODO: Also change the fini interface so that you can save tokens or sections specifically.
 # define QUOTE(str) #str
 # define EXPAND_AND_QUOTE(str) QUOTE(str)
 # define SetAndSave(v, vv)  this->v = vv; this->fileObject[EXPAND_AND_QUOTE(v)] = vv;
@@ -27,7 +31,7 @@ namespace fender
         GoingUp,
         GoingDown,
     };
-    
+
     enum class  Input : int
     {
         Undefined = 0,
@@ -57,7 +61,6 @@ namespace fender
         YELLOW,
         TRANSPARENT
     };
-    
     
     struct      Command
     {
@@ -102,7 +105,7 @@ namespace fender
     {
 //        As long as the input inputs are in the correct state at the same time in memory
                 Simple,
-//        If the input inputs are all in the correct state at the same frame
+//        If the input inputs are all in the correct state at the same frame - should be rarely used because frame perfection is rare.
                 Simultaneous,
 //        If the input are set to true sequentially, any error restarts the sequence
                 Sequential
@@ -203,7 +206,16 @@ namespace fender
         Client,
         Provider
     };
-    
+
+    // TODO: Move Mediator into another hpp
+    // TODO: Create IMediatorPacket interface
+    class IMediatorPacket
+    {
+    public:
+        virtual ~IMediatorPacket() = default;
+    };
+
+    // TODO: Review mediator to take not a template but a IMediatorPacket
     template    <typename T>
     class       Mediator
     {
@@ -237,7 +249,8 @@ namespace fender
             }
         }
     };
-    
+
+    // TODO: Simplify this class, its a bit too complicated.
     class       EventSystem
     {
         using spInputEvent = std::shared_ptr<InputEvent>;
@@ -306,7 +319,8 @@ namespace fender
             return this->_logicalEvents;
         };
     };
-    
+
+    // Forward declarations
     class   EntityManager;
     class   IEntity;
     
@@ -320,7 +334,7 @@ namespace fender
         
         std::string const &getName() const {return this->__name;}
         void                setEntity(IEntity &ent);
-//        TODO: Templates could be used, maybe ?
+//        TODO: Templates could be used, maybe ? Kengine..
         IComponent  &getAssociatedComponent(std::string const &type);
     };
     
@@ -347,7 +361,8 @@ namespace fender
         std::unordered_multimap<std::string, IComponent *>    components;
         std::function<void(IComponent &)>   registerComponentFunction{[](IComponent &){}};
         int                                 _id;
-        
+
+        // Replace with SFINAE or static assertion. SFINAE is probably better.
         template                            <typename Compo>
         void                                verifIsComponent()
         {
@@ -357,11 +372,13 @@ namespace fender
     public:
         IEntity()
         {
+            // TODO: Change for the inline function. Its easier to read.
             this->_id = futils::UID::get();
         }
         virtual ~IEntity() {}
         virtual void    init() = 0;
-        
+
+        // Make the function name a bit shorter ? onExtension for example. Its only for the engine devs anyway.
         void            setComponentRegistrationFunction(std::function<void(IComponent &)> func)
         {
             this->registerComponentFunction = func;
@@ -371,6 +388,7 @@ namespace fender
         Compo       &attachComponent(Args ...args)
         {
             verifIsComponent<Compo>();
+            // TODO: Make a smart pointer.
             auto compo = new Compo(args...);
             compo->setEntity(*this);
             this->components.insert(std::make_pair(compo->getName(), compo));
@@ -388,10 +406,7 @@ namespace fender
             throw std::runtime_error("Entity does not have component " + type);
         };
         
-        int         getId() const
-        {
-            return this->_id;
-        }
+        int         getId() const { return this->_id; }
     };
     
     class   EntityManager
@@ -440,7 +455,8 @@ namespace fender
         {
             return this->status == 0;
         }
-        
+
+        // Where is the elapsed float coming from ? Probably the scene manager..
         void        run(float elapsed)
         {
             for (auto &pair: systemsMap)
@@ -456,7 +472,8 @@ namespace fender
         BaseObject() = default;
         virtual void    init() override {};
     };
-    
+
+    // TODO: Move to another set of files... for clarity.
     namespace components
     {
         class       Object2d  : public IComponent
@@ -729,7 +746,9 @@ namespace fender
             }
         };
     }
-    
+
+    // TODO: This should be kept inside this file. All of the above should be split.
+
     class       IRender;
     
     class       IScene
@@ -1148,55 +1167,46 @@ namespace fender
             this->currentLayout = &layout;
             this->loadCurrentLayout();
         }
-
         void            useLayout(std::string const &name)
         {
             this->currentLayout = this->knownLayouts.at(name);
             this->loadCurrentLayout();
         }
-    
+
         EntityManager   &getECS() {return this->_ecs;}
         const futils::Vec2d<int> get_windowSize() const {
             return _windowSize;
         }
-
         void set_windowSize(const futils::Vec2d<int> &_windowSize) {
             IRender::_windowSize = _windowSize;
         }
-
         const std::string &get_windowName() const {
             return _windowName;
         }
-
         void set_windowName(const std::string &_windowName) {
             this->_windowName = _windowName;
         }
-
         fender::WindowStyle get_windowStyle() const {
             return _windowStyle;
         }
-
         void    set_windowStyle(fender::WindowStyle _windowStyle) {
             _windowStyle = _windowStyle;
         }
-
         bool is_resizable() const {
             return _resizable;
         }
-
         void set_resizable(bool _resizable) {
             _resizable = _resizable;
         }
-
         const futils::Vec2d<fender::Align> &get_windowAlign() const {
             return _windowAlign;
         }
-
         void set_windowAlign(const futils::Vec2d<fender::Align> &_windowAlign) {
             this->_windowAlign = _windowAlign;
         }
     };
-    
+
+    // Considering everything starts with a manager, i'd even keep this file only about the Manager. Maybe.
     class       Manager
     {
         using upRenderer = std::unique_ptr<IRender>;

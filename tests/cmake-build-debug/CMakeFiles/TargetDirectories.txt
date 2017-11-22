@@ -1,0 +1,3 @@
+/home/arroganz/cpp/futils/tests/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/arroganz/cpp/futils/tests/cmake-build-debug/CMakeFiles/unit_tests.dir
+/home/arroganz/cpp/futils/tests/cmake-build-debug/CMakeFiles/edit_cache.dir

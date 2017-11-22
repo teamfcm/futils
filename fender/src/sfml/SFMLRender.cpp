@@ -6,7 +6,7 @@
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
 #include "SFMLRender.hpp"
-#include "flog.hpp"
+#include "log.hpp"
 
 extern "C" fender::SFMLRender* create()
 {
@@ -199,6 +199,7 @@ inline fender::Command fender::SFMLRender::makeCommand(sf::Event const &event)
     {
         LERR("SFML Library does not yet support the required key.");
     }
+    throw std::runtime_error("Make command invalid event.");
 }
 
 void    fender::SFMLRender::resetKeys()
@@ -254,7 +255,7 @@ void    fender::SFMLRender::resize(int x, int y)
 }
 
 // TODO : Use this function, maybe ? OR remove but do something
-void    fender::SFMLRender::write(int x, int y, std::string const &msg)
+void    fender::SFMLRender::write(int, int, std::string const &)
 {
 
 }

@@ -1,4 +1,4 @@
-# Install script for directory: /home/ganz/Work/teamfcm/futils/demo/lib/fender
+# Install script for directory: /home/arroganz/cpp/futils/demo/lib/fender
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

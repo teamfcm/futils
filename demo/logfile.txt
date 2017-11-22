@@ -35,5 +35,3 @@ SmartMode detected. Running auto conf...
      [31] In virtual void fender::SFMLRender::loadCurrentLayout()
 SFMLRender:	Loading Button ZQuitButton
      [32]	SFMLRender:	Loading Popup QuitPopup
-     [33] In void futils::INI::writeContentTo(const string&) const
-Saved INI Scenes/Menu.ini to Scenes/Menu.ini
