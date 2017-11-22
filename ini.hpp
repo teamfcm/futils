@@ -56,7 +56,7 @@ namespace futils
             }
             void    operator = (std::string const &val) {
                 if (val == "")
-                    throw std::runtime_error("Missing argument for Value");
+                    throw std::runtime_error("Missing argument for Value : " + str);
                 if (val[0] == '\"' && val[val.size() - 1] == '\"')
                 {
                     str = val;
@@ -152,7 +152,7 @@ namespace futils
             Value   &operator [] (unsigned int index)
             {
                 if (this->value.str == "")
-                    throw std::runtime_error(this->name + " is missing in config file.");
+                    throw std::runtime_error(this->name + " is missing in config file ");
                 return this->list[index];
             }
         };

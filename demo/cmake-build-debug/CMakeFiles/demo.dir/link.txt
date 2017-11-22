@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/demo.dir/main.cpp.o CMakeFiles/demo.dir/include/Factory.cpp.o CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o CMakeFiles/demo.dir/include/Demo.cpp.o CMakeFiles/demo.dir/Scenes/Menu.cpp.o  -o ../demo -Wl,-rpath,/home/arroganz/cpp/futils/demo/lib ../lib/libfender.so -ldl 
