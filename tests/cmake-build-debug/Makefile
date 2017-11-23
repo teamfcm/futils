@@ -111,17 +111,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named unit_tests
+# Target rules for targets named tests
 
 # Build rule for target.
-unit_tests: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 unit_tests
-.PHONY : unit_tests
+tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tests
+.PHONY : tests
 
 # fast build rule for target.
-unit_tests/fast:
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/build
-.PHONY : unit_tests/fast
+tests/fast:
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/build
+.PHONY : tests/fast
 
 Callback.o: Callback.cpp.o
 
@@ -129,7 +129,7 @@ Callback.o: Callback.cpp.o
 
 # target to build an object file
 Callback.cpp.o:
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/Callback.cpp.o
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Callback.cpp.o
 .PHONY : Callback.cpp.o
 
 Callback.i: Callback.cpp.i
@@ -138,7 +138,7 @@ Callback.i: Callback.cpp.i
 
 # target to preprocess a source file
 Callback.cpp.i:
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/Callback.cpp.i
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Callback.cpp.i
 .PHONY : Callback.cpp.i
 
 Callback.s: Callback.cpp.s
@@ -147,7 +147,7 @@ Callback.s: Callback.cpp.s
 
 # target to generate assembly for a file
 Callback.cpp.s:
-	$(MAKE) -f CMakeFiles/unit_tests.dir/build.make CMakeFiles/unit_tests.dir/Callback.cpp.s
+	$(MAKE) -f CMakeFiles/tests.dir/build.make CMakeFiles/tests.dir/Callback.cpp.s
 .PHONY : Callback.cpp.s
 
 # Help Target
@@ -157,7 +157,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... unit_tests"
+	@echo "... tests"
 	@echo "... edit_cache"
 	@echo "... Callback.o"
 	@echo "... Callback.i"

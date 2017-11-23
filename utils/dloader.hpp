@@ -12,12 +12,12 @@
 
 namespace futils
 {
-    class       DynamicLibrary
+    class       Dloader
     {
         void            *_handle;
         std::string     _path;
     public:
-        DynamicLibrary(std::string const &path, int mode = RTLD_LAZY):
+        Dloader(std::string const &path, int mode = RTLD_LAZY):
                 _path(path)
         {
             _handle = dlopen(path.c_str(), mode);

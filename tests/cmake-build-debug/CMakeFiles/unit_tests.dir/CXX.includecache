@@ -6,32 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/arroganz/cpp/futils/callback.hpp
-thread
--
-memory
--
-functional
--
-atomic
--
-clock.hpp
-/home/arroganz/cpp/futils/clock.hpp
-
-/home/arroganz/cpp/futils/clock.hpp
-chrono
--
-thread
--
-mutex
--
-
-/home/arroganz/cpp/futils/sigCatch.hpp
-signal.h
--
-functional
--
-
 /home/arroganz/cpp/futils/tests/Callback.cpp
 iostream
 -

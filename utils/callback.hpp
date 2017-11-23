@@ -10,66 +10,78 @@
 # include <functional>
 # include <atomic>
 # include "clock.hpp"
+# include "types.hpp"
 
 namespace futils
 {
-    template <typename Step = float, typename ...Args>
+    template <typename ...Args>
     class Callback
     {
-        using function = std::function<void(Args...)>;
-
+        Task<Args...> _task;
+        Task<Args...> _timedTask;
         std::thread _thread;
-        std::function<void(void)> _delay{[](){}};
-        std::function<void(void)> _timer{[](){}};
-        function _callback;
-        function _result;
-        Step _delayTime;
-        Step _intervalTime;
+        float _delayTime;
+        float _intervalTime;
         int _repetitions;
         std::atomic<bool> shouldStop{false};
 
-        void setResult()
+        void setTimedTask()
         {
-            _delay = [this](){
-                futils::Clock<Step>::sleep(this->_delayTime);
+            Action _delay = [this](){
+                futils::Clock<float>::sleep(this->_delayTime);
             };
-
-            _timer = [this]() {
-                futils::Clock<Step>::sleep(static_cast<float>(this->_intervalTime));
+            Action _timer = [this]() {
+                futils::Clock<float>::sleep(static_cast<float>(this->_intervalTime));
             };
-
-            _result = [this](Args ...args){
+            _timedTask = [this, _delay, _timer](Args ...args){
                 int localRepetition = _repetitions;
                 _delay();
                 while (!shouldStop && (localRepetition > 0 || _repetitions == -1)) {
-                    _callback(args...);
+                    _task(args...);
                     _timer();
                     localRepetition--;
                 }
             };
+        }
 
-            _thread = std::thread(_result);
+        void startTask(Args ...args)
+        {
+            stop();
+            shouldStop = false;
+            _thread = std::thread(_timedTask);
         }
     public:
-        Callback(function func,
-                 Step interval = 1000,
-                 int repetions = -1,
-                 Step delay = 0):
-                _callback(func),
-                _delayTime(delay),
-                _intervalTime(interval),
-                _repetitions(repetions)
+        Callback(Task<Args...> task, float interval = 1, int repetions = -1, float delay = -1):
+                _task(task), _delayTime(delay), _intervalTime(interval), _repetitions(repetions)
         {
-            static_assert(std::is_arithmetic<Step>::value, "You cannot step with non arithmetic type.");
-            setResult();
+            setTimedTask();
+        }
+        ~Callback() { stop(); }
+        Callback &operator = (Task<Args...> task)
+        {
+            stop();
+            _task = task;
+            setTimedTask();
         }
 
-        ~Callback() { stop(); }
-
-        Callback &operator = (function &func)
+        void call(Args ...args)
         {
-            _callback = func;
-            setResult();
+            startTask(args...);
+        }
+
+        void operator () (Args... args)
+        {
+            call(args...);
+        }
+
+        void resume()
+        {
+
+        }
+
+        void pause()
+        {
+
         }
 
         void stop()

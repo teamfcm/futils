@@ -27,14 +27,14 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/tests/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="unit_tests">
-				<Option output="/home/arroganz/cpp/futils/tests/cmake-build-debug/unit_tests" prefix_auto="0" extension_auto="0"/>
+			<Target title="tests">
+				<Option output="/home/arroganz/cpp/futils/tests/cmake-build-debug/tests" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/arroganz/cpp/futils/tests/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/arroganz/cpp/futils"/>
+					<Add directory="/home/arroganz/cpp/futils/tests/utils"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward"/>
@@ -44,20 +44,20 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/tests/cmake-build-debug/Makefile&quot;  VERBOSE=1 unit_tests"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/tests/cmake-build-debug/Makefile&quot;  VERBOSE=1 tests"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/tests/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/tests/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/tests/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="unit_tests/fast">
-				<Option output="/home/arroganz/cpp/futils/tests/cmake-build-debug/unit_tests" prefix_auto="0" extension_auto="0"/>
+			<Target title="tests/fast">
+				<Option output="/home/arroganz/cpp/futils/tests/cmake-build-debug/tests" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/arroganz/cpp/futils/tests/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/home/arroganz/cpp/futils"/>
+					<Add directory="/home/arroganz/cpp/futils/tests/utils"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward"/>
@@ -67,7 +67,7 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/tests/cmake-build-debug/Makefile&quot;  VERBOSE=1 unit_tests/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/tests/cmake-build-debug/Makefile&quot;  VERBOSE=1 tests/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/tests/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/tests/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/home/arroganz/cpp/futils/tests/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -84,11 +84,11 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/arroganz/cpp/futils/callback.hpp">
-			<Option target="unit_tests"/>
-		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/tests/Callback.cpp">
-			<Option target="unit_tests"/>
+			<Option target="tests"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/tests/utils/callback.hpp">
+			<Option target="tests"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/tests/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
