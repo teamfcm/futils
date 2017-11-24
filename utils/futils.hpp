@@ -41,6 +41,11 @@ namespace futils
         voidFunc    action{[](){}};
     };
 
+    inline void NotImplemented(std::string const &name)
+    {
+        throw std::logic_error(name + " is not implemented yet");
+    }
+
     template    <typename T>
     struct      Vec2d
     {

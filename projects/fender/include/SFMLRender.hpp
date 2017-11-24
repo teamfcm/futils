@@ -403,87 +403,78 @@ namespace fender
     
     namespace SFMLsystems
     {
-        class   ClickDetection : public fender::ISystem
+        class BaseSystem : public futils::ISystem
         {
-            SFMLRender                                      &_renderer;
-            std::vector<fender::components::Clickable *>    components;
+        protected:
+            SFMLRender &__renderer;
         public:
-            ClickDetection(SFMLRender *renderer): _renderer(*renderer)
+            BaseSystem(SFMLRender &renderer): __renderer(renderer) {}
+            virtual void run(float) = 0;
+
+        };
+
+
+        class   ClickDetection : public BaseSystem
+        {
+        public:
+            ClickDetection(SFMLRender *renderer): BaseSystem(*renderer)
             {
-                this->__requiredComponents.emplace_back("Clickable");
             }
     
             virtual void        run(float) final {
-                if (!this->_renderer.mouseIsGoingDown())
+                if (!this->__renderer.mouseIsGoingDown())
                     return ;
-                for (auto &compo: this->components)
-                {
-                    auto const &pos = this->_renderer.getMousePosition();
-                    if (compo->getRect().contains(pos))
-                    {
-                        auto &func = *compo;
-                        return func();
-                    }
-                }
-            }
-    
-            virtual void        addComponent(IComponent &compo) final {
-                auto asClickable = static_cast<fender::components::Clickable *>(&compo);
-                this->components.push_back(asClickable);
+//                for (auto &compo: this->components)
+//                {
+//                    auto const &pos = this->_renderer.getMousePosition();
+//                    if (compo->getRect().contains(pos))
+//                    {
+//                        auto &func = *compo;
+//                        return func();
+//                    }
+//                }
             }
         };
-        class   HoverDetection : public fender::ISystem
+        class   HoverDetection : public BaseSystem
         {
-            SFMLRender                                      &_renderer;
             std::vector<fender::components::Hoverable *>    components;
             std::unordered_map<fender::components::Hoverable *, bool>   hovered;
         public:
-            HoverDetection(SFMLRender *renderer): _renderer(*renderer)
-                    {
-                            this->__requiredComponents.emplace_back("Hoverable");
-                    }
-    
-            virtual void        run(float) final {
-                for (auto &compo: this->components)
-                {
-                    auto const &pos = this->_renderer.getMousePosition();
-                    if (compo->getRect().contains(pos))
-                    {
-                        hovered[compo] = true;
-                        compo->onHover();
-                    }
-                }
-                for (auto &pair: this->hovered)
-                {
-                    if (pair.second == false)
-                        continue ;
-                    auto &hover = pair.first;
-                    auto const &pos = this->_renderer.getMousePosition();
-                    if (!hover->getRect().contains(pos))
-                    {
-                        hover->onLeave();
-                        hovered[hover] = false;
-                    }
-                }
+            HoverDetection(SFMLRender *renderer): BaseSystem(*renderer)
+            {
             }
-    
-            virtual void        addComponent(IComponent &compo) final {
-                auto asHoverable = static_cast<fender::components::Hoverable *>(&compo);
-                this->components.push_back(asHoverable);
+
+            virtual void        run(float) final {
+//                for (auto &compo: this->components)
+//                {
+//                    auto const &pos = this->_renderer.getMousePosition();
+//                    if (compo->getRect().contains(pos))
+//                    {
+//                        hovered[compo] = true;
+//                        compo->onHover();
+//                    }
+//                }
+//                for (auto &pair: this->hovered)
+//                {
+//                    if (pair.second == false)
+//                        continue ;
+//                    auto &hover = pair.first;
+//                    auto const &pos = this->_renderer.getMousePosition();
+//                    if (!hover->getRect().contains(pos))
+//                    {
+//                        hover->onLeave();
+//                        hovered[hover] = false;
+//                    }
+//                }
             }
         };
-        class   Rendering: public fender::ISystem
+        class   Rendering: public BaseSystem
         {
-            SFMLRender                                          &_renderer;
-            std::unordered_map<fender::components::Drawable *, fender::components::Drawable *>         components;
-            std::multimap<int, fender::components::Drawable *>  sortedElements;
             float                                               _fluidStep{0.0};
             std::unordered_map<int, sf::Color>                 fenderColors;
         public:
-            Rendering(SFMLRender *renderer): _renderer(*renderer)
+            Rendering(SFMLRender *renderer): BaseSystem(*renderer)
             {
-                this->__requiredComponents.emplace_back("Drawable");
-    
                 fenderColors[fender::Color::BLACK] = sf::Color::Black;
                 fenderColors[fender::Color::WHITE] = sf::Color::White;
                 fenderColors[fender::Color::BLUE] = sf::Color::Blue;
@@ -493,35 +484,29 @@ namespace fender
                 fenderColors[fender::Color::YELLOW] = sf::Color::Yellow;
             }
             
-            virtual void        run(float elapsed) final
+            virtual void        run(float) final
             {
-                this->_fluidStep += elapsed;
-                if (_fluidStep < 0.016)  // TODO: 60FPS, a class would be good but meh.
-                    return ;
-                _fluidStep = 0.0;
-                auto &win = this->_renderer.getWindow();
-                win.clear(this->fenderColors[this->_renderer.getScreenColor()]);
-//                TODO: Needs a way better encapsulation, i should have my own rect here..
-                for (auto &pair: this->components)
-                {
-                    sf::RectangleShape  rect;
-                    auto &compo = *pair.second;
-                    auto &object = static_cast<fender::components::Object2d &>(compo.getAssociatedComponent("Object2d"));
-                    rect.setPosition(object.getPosition().X, object.getPosition().Y);
-                    rect.setFillColor(sf::Color(this->fenderColors[compo.getColor()]));
-                    rect.setSize(sf::Vector2f(object.getSize().X, object.getSize().Y));
-                    auto color = this->fenderColors[compo.getBorder().color];
-                    rect.setOutlineThickness(compo.getBorder().width);
-                    rect.setOutlineColor(color);
-                    
-                    win.draw(rect);
-                }
-                win.display();
-            }
-            
-            virtual void        addComponent(IComponent &compo) final {
-                auto &asDrawable = static_cast<fender::components::Drawable &>(compo);
-                this->components[&asDrawable] = &asDrawable;
+//                this->_fluidStep += elapsed;
+//                if (_fluidStep < 0.016)  // TODO: 60FPS, a class would be good but meh.
+//                    return ;
+//                _fluidStep = 0.0;
+//                auto &win = this->_renderer.getWindow();
+//                win.clear(this->fenderColors[this->_renderer.getScreenColor()]);
+////                TODO: Needs a way better encapsulation, i should have my own rect here..
+//                for (auto &pair: this->components)
+//                {
+//                    sf::RectangleShape  rect;
+//                    auto &compo = *pair.second;
+//                    auto &object = static_cast<fender::components::Object2d &>(compo.getAssociatedComponent("Object2d"));
+//                    rect.setPosition(object.getPosition().X, object.getPosition().Y);
+//                    rect.setFillColor(sf::Color(this->fenderColors[compo.getColor()]));
+//                    rect.setSize(sf::Vector2f(object.getSize().X, object.getSize().Y));
+//                    auto color = this->fenderColors[compo.getBorder().color];
+//                    rect.setOutlineThickness(compo.getBorder().width);
+//                    rect.setOutlineColor(color);
+//                    win.draw(rect);
+//                }
+//                win.display();
             }
         };
     }

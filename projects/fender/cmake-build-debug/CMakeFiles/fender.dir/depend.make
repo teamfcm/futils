@@ -11,14 +11,6 @@ CMakeFiles/fender.dir/src/IRender.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/IRender.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/IRender.cpp.o: ../src/IRender.cpp
 
-CMakeFiles/fender.dir/src/IScene.cpp.o: ../include/fender.hpp
-CMakeFiles/fender.dir/src/IScene.cpp.o: ../utils/dloader.hpp
-CMakeFiles/fender.dir/src/IScene.cpp.o: ../utils/ecs.hpp
-CMakeFiles/fender.dir/src/IScene.cpp.o: ../utils/futils.hpp
-CMakeFiles/fender.dir/src/IScene.cpp.o: ../utils/goToBinDir.hpp
-CMakeFiles/fender.dir/src/IScene.cpp.o: ../utils/ini.hpp
-CMakeFiles/fender.dir/src/IScene.cpp.o: ../utils/log.hpp
-CMakeFiles/fender.dir/src/IScene.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/IScene.cpp.o: ../src/IScene.cpp
 
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../include/CursesRender.hpp

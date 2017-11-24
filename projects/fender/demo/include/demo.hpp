@@ -9,7 +9,7 @@
 
 namespace demo
 {
-    class   Button : public fender::IEntity
+    class   Button : public futils::IEntity
     {
         std::string             name;
     public:

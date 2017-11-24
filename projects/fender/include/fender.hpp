@@ -520,31 +520,10 @@ namespace fender
         {
             std::unordered_map<std::string, components::Ini *>    sources;
         public:
-            Ini()
-            {
-                this->__requiredComponents.emplace_back("Ini");
-            }
-            
-            virtual void    addComponent(IComponent &compo)
-            {
-                auto source = static_cast<components::Ini *>(&compo);
-                this->sources[source->getIdentifier()] = source;
-            }
-            
+            Ini() = default;
             virtual void    run(float)
             {
-                for (auto &pair: this->sources)
-                {
-                    auto &source = *pair.second;
-                    if (!source.isLoaded())
-                        this->loadSource(source);
-//                    TODO: Source.shouldSave() will be set to true by another system
-//                    for example Editor System, when the user clicks on the SAVE button
-//                    All sources will be saved once. This INI system could keep track of changes
-//                    for easy CTRL+Z implementation.
-                    if (source.shouldSave())
-                        this->saveSource(source);
-                }
+
             }
             
             void            loadSource(components::Ini &source)
@@ -559,92 +538,26 @@ namespace fender
         };
         class   DragAndDrop : public futils::ISystem
         {
-            std::unordered_map<components::Draggable *, components::Draggable *> targets;
         public:
-            DragAndDrop()
-            {
-                this->__requiredComponents.emplace_back("Draggable");
-            }
+            DragAndDrop() = default;
             
-            virtual void    addComponent(IComponent &compo)
+            void    run(float) override
             {
-                auto &asDraggable = static_cast<components::Draggable &>(compo);
-                this->targets[&asDraggable] = &asDraggable;
-            }
-            
-            virtual void    run(float)
-            {
-                for (auto &pair: this->targets)
-                {
-                    auto &compo = *pair.second;
-                    (void)compo;
-                }
+
             }
         };
         class   Animation : public futils::ISystem
         {
-            std::unordered_map<fender::components::Animated *,
-                    fender::components::Animated *> components;
         public:
-            Animation(){this->__requiredComponents.emplace_back("Animated");}
-            virtual void    run(float elapsed)
+            Animation() = default;
+            virtual void    run(float)
             {
-                for (auto &pair: this->components)
-                {
-                    auto &compo = *pair.second;
-                    if (!compo.isDone())
-                        compo.callback(elapsed);
-                }
-            }
-            
-            virtual void    addComponent(IComponent &compo)
-            {
-                auto &asAnimated = static_cast<fender::components::Animated &>(compo);
-                this->components[&asAnimated] = &asAnimated;
+
             }
         };
     }
 
-    // TODO: This should be kept inside this file. All of the above should be split.
-
     class       IRender;
-    
-    class       IScene
-    {
-    protected:
-        std::string         name{"Undefined Scene"};
-        bool                paused{false};
-        IRender             *renderer{nullptr};
-        fender::EventSystem eventSystem;
-        EntityManager       *ecs{nullptr};
-    public:
-        virtual ~IScene() {};
-        virtual bool    isDone() = 0;
-        virtual void    update(float elapsed = 0.0) = 0;
-        virtual void    init() = 0;
-    
-        void            provideRenderer(IRender &renderer);
-        void            provideECS(EntityManager &ecs){this->ecs = &ecs;}
-        
-        void            pause()
-        {
-            this->paused = true;
-            this->eventSystem.pause();
-        }
-        void            unpause()
-        {
-            this->paused = false;
-            this->eventSystem.unpause();
-        }
-    };
-
-    using upScene = std::unique_ptr<IScene>;
-    class       ISceneFactory
-    {
-    public:
-        virtual ~ISceneFactory() {};
-        virtual upScene build(std::string const &sceneName) = 0;
-    };
 
     enum class  WindowStyle
     {
@@ -1030,8 +943,7 @@ namespace fender
             this->currentLayout = this->knownLayouts.at(name);
             this->loadCurrentLayout();
         }
-
-        EntityManager   &getECS() {return this->_ecs;}
+        
         const futils::Vec2d<int> get_windowSize() const {
             return _windowSize;
         }

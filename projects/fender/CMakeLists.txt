@@ -2,7 +2,12 @@ cmake_minimum_required(VERSION 3.7)
 project(fender)
 set(CMAKE_CXX_STANDARD 17)
 
+file(GLOB UTILS
+		"include/*.hpp"
+		)
+
 set(SOURCE_FILES
+		${UTILS}
         src/renderers/ncurses/CursesRender.cpp
 		src/renderers/sfml/SFMLRender.cpp
 		src/Manager.cpp

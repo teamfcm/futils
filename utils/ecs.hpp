@@ -36,8 +36,7 @@ namespace futils
         EntityManager       *entityManager{nullptr};
     public:
         virtual ~ISystem() {}
-        virtual void          addComponent(IComponent &compo)   = 0;
-        virtual void          run(float elapsed)                = 0;
+        virtual void run(float elapsed) = 0;
     };
 
     class   IEntity
@@ -97,19 +96,6 @@ namespace futils
     {
         int                                     status{0};
         std::multimap<std::string, ISystem *>   systemsMap;
-
-        void    notifySystems(IComponent &compo)
-        {
-            auto range = systemsMap.equal_range(compo.getName());
-            for (auto it = range.first; it != range.second; it++)
-            {
-                ISystem *system = it->second;
-                if (system)
-                {
-                    system->addComponent(compo);
-                }
-            }
-        }
     public:
         EntityManager() = default;
         template    <typename T, typename ...Args>
@@ -118,9 +104,6 @@ namespace futils
             if (!std::is_base_of<IEntity, T>::value)
                 throw std::logic_error(std::string(typeid(T).name()) + " is not an Entity");
             auto entity = new T(args...);
-            entity->setComponentRegistrationFunction([this](IComponent &compo){
-                this->notifySystems(compo);
-            });
             entity->init();
             return entity;
         }
@@ -131,8 +114,10 @@ namespace futils
             if (!std::is_base_of<ISystem, System>::value)
                 throw std::logic_error(std::string(typeid(System).name()) + " is not a System");
             auto system = new System(args...);
-            for (auto &handledComponent: system->getRequiredComponents())
-                this->systemsMap.insert(std::pair<std::string, ISystem *>(handledComponent, system));
+            (void)system;
+            futils::NotImplemented(__PRETTY_FUNCTION__);
+//            for (auto &handledComponent: system->getRequiredComponents())
+//                this->systemsMap.insert(std::pair<std::string, ISystem *>(handledComponent, system));
         }
 
         bool        isFine()

@@ -88,6 +88,15 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/CursesRender.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/SFMLRender.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/fender.hpp">
+			<Option target="fender"/>
+		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/IRender.cpp">
 			<Option target="fender"/>
 		</Unit>

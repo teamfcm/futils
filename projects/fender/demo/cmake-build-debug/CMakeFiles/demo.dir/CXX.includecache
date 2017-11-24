@@ -41,6 +41,8 @@ log.hpp
 ../include/log.hpp
 ini.hpp
 ../include/ini.hpp
+ecs.hpp
+../include/ecs.hpp
 futils.hpp
 ../include/futils.hpp
 
@@ -55,6 +57,20 @@ exception
 -
 futils.hpp
 ../utils/futils.hpp
+
+../utils/ecs.hpp
+vector
+-
+list
+-
+map
+-
+typeinfo
+-
+functional
+-
+unordered_map
+-
 
 ../utils/futils.hpp
 sstream

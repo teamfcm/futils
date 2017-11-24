@@ -151,8 +151,6 @@ log.hpp
 /home/arroganz/cpp/futils/projects/fender/src/log.hpp
 
 /home/arroganz/cpp/futils/projects/fender/src/IScene.cpp
-fender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/fender.hpp
 
 /home/arroganz/cpp/futils/projects/fender/src/Manager.cpp
 unistd.h
