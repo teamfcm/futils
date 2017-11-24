@@ -376,7 +376,7 @@ namespace fender
         virtual futils::Vec2d<int>  getMousePosition() final {
             return this->_mousePosition;
         }
-        virtual void    changeScene(futils::INI::INIProxy *config = nullptr,
+        virtual void    changeScene(futils::Ini *config = nullptr,
                                     std::string const &scope = "config") final
         {
             this->currentLayout = nullptr;

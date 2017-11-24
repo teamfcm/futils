@@ -1154,12 +1154,12 @@ namespace fender
         virtual void    pollEvents() = 0;
 //        Used for updating the ECS systems and other logical updates each Frame
         virtual void    update(float elapsed = 0.0) = 0;
-        virtual void    changeScene(futils::INI::INIProxy *config = nullptr,
+        virtual void    changeScene(futils::Ini *config = nullptr,
                                     std::string const &scope = "fender") = 0;
         virtual futils::Vec2d<int>  getMousePosition() = 0;
         virtual bool                mouseIsGoingDown() = 0;
         fender::Color       getScreenColor() const {return this->_screenColor;}
-        void            SmartModeInit(futils::INI::INIProxy const &conf,
+        void            SmartModeInit(futils::Ini &conf,
                                       std::string const &confScope = "fender");
         void            registerLayout(fender::Layout const &layout)
         {
@@ -1218,22 +1218,19 @@ namespace fender
         using renderBuilder = std::function<upRenderer(void)>;
         using configFunc = std::function<void(void)>;
 
-        ISceneFactory                   &sceneFactory;
-        upRenderer                      renderer;
-        upINIProxy                      config;
-        futils::Ini                     timeline;
+        upRenderer  renderer;
+        futils::Ini &config;
         std::unordered_map<std::string, renderBuilder>  renderingBuilders;
         std::unordered_map<std::string, configFunc>     configFunctions;
 
         std::string                     _windowName{"Undefined"};
-        std::vector<std::string>         sceneList;
         int                             status{0};
 
         void    runConfigBuild();
         int     run();
         void    loadTimeline();
     public:
-        Manager(futils::Ini const &config);
+        Manager(futils::Ini &config);
         int start();
 
         void    setWindowName(std::string const &name)

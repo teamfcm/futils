@@ -15,7 +15,7 @@
 # define DEFAULT_FUNC_NAME   "(undefined)"
 # define START_MSG           "Start log in "
 # define GET                 flog::Log::get
-# define START_LOG(v)        GET(v).logAndOut(START_MSG + std::string{v}, FUNC)
+# define START_LOG(v)        GET(v).logAndOut(START_MSG + std::string(v), FUNC)
 # define FOUT(v)              GET().out(v, FUNC)
 # define FERR(v)              GET().err(v, FUNC)
 # define LOG(v)              GET().logToFile(v, FUNC)

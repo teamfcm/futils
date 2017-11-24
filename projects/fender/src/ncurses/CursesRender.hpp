@@ -25,7 +25,7 @@ namespace fender
         virtual void    pollEvents() final {}
         virtual futils::Vec2d<int>  getMousePosition() final {return futils::Vec2d<int>{};}
         virtual bool                mouseIsGoingDown() final {return false;}
-        virtual void    changeScene(futils::INI::INIProxy *config = nullptr, std::string const &scope = "config") final {
+        virtual void    changeScene(futils::Ini *config = nullptr, std::string const &scope = "config") final {
             (void)config;
             (void)scope;
         }

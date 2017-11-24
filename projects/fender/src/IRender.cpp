@@ -8,7 +8,7 @@
 
 futils::Vec2d<int>  fender::IRender::_windowSize{0, 0};
 
-void    fender::IRender::SmartModeInit(futils::INI::INIProxy const &proxyConf,
+void    fender::IRender::SmartModeInit(futils::Ini &proxyConf,
                                        std::string const &confScope)
 {
     this->_fenderColors["White"] = fender::Color::WHITE;

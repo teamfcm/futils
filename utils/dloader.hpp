@@ -9,6 +9,7 @@
 #include <typeinfo>
 #include <dlfcn.h>
 #include <exception>
+#include "futils.hpp"
 
 namespace futils
 {
@@ -29,6 +30,8 @@ namespace futils
         T           *build(Args ...args)
         {
             std::string symbol{typeid(T).name()};
+            symbol = abi::__cxa_demangle(symbol.c_str(), 0, 0, nullptr);
+            symbol = futils::string::split(symbol, ':').back();
             auto func = (T *(*)(Args ...))(dlsym(_handle, symbol.c_str()));
             if (func == nullptr)
             {

@@ -41,6 +41,12 @@ stack
 -
 map
 -
+types.hpp
+-
+goToBinDir.h
+../include/goToBinDir.h
+dloader.hpp
+../include/dloader.hpp
 log.hpp
 ../include/log.hpp
 ini.hpp
@@ -57,8 +63,12 @@ dlfcn.h
 -
 exception
 -
+futils.hpp
+../utils/futils.hpp
 
 ../utils/futils.hpp
+sstream
+-
 mutex
 -
 chrono
@@ -68,6 +78,10 @@ functional
 random
 -
 unordered_map
+-
+
+../utils/goToBinDir.h
+iostream
 -
 
 ../utils/ini.hpp
@@ -103,6 +117,8 @@ iomanip
 -
 futils.hpp
 ../utils/futils.hpp
+
+../utils/types.hpp
 
 /home/arroganz/cpp/futils/projects/fender/demo/Scenes/Menu.cpp
 Menu.hpp
@@ -177,6 +193,12 @@ stack
 -
 map
 -
+types.hpp
+-
+goToBinDir.h
+/home/arroganz/cpp/futils/projects/fender/demo/include/goToBinDir.h
+dloader.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/include/dloader.hpp
 log.hpp
 /home/arroganz/cpp/futils/projects/fender/demo/include/log.hpp
 ini.hpp

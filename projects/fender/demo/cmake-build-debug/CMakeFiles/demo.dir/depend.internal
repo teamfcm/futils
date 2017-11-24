@@ -4,30 +4,42 @@
 CMakeFiles/demo.dir/Scenes/Menu.cpp.o
  ../include/Demo.hpp
  ../include/fender.hpp
+ ../utils/dloader.hpp
  ../utils/futils.hpp
+ ../utils/goToBinDir.h
  ../utils/ini.hpp
  ../utils/log.hpp
+ ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/demo/Scenes/Menu.cpp
  /home/arroganz/cpp/futils/projects/fender/demo/Scenes/Menu.hpp
 CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o
  ../include/Demo.hpp
  ../include/fender.hpp
+ ../utils/dloader.hpp
  ../utils/futils.hpp
+ ../utils/goToBinDir.h
  ../utils/ini.hpp
  ../utils/log.hpp
+ ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/demo/Scenes/Splashscreen.cpp
  /home/arroganz/cpp/futils/projects/fender/demo/Scenes/Splashscreen.hpp
 CMakeFiles/demo.dir/include/Demo.cpp.o
+ ../utils/dloader.hpp
  ../utils/futils.hpp
+ ../utils/goToBinDir.h
  ../utils/ini.hpp
  ../utils/log.hpp
+ ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/demo/include/Demo.cpp
  /home/arroganz/cpp/futils/projects/fender/demo/include/Demo.hpp
  /home/arroganz/cpp/futils/projects/fender/demo/include/fender.hpp
 CMakeFiles/demo.dir/include/Factory.cpp.o
+ ../utils/dloader.hpp
  ../utils/futils.hpp
+ ../utils/goToBinDir.h
  ../utils/ini.hpp
  ../utils/log.hpp
+ ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/demo/Scenes/Menu.hpp
  /home/arroganz/cpp/futils/projects/fender/demo/Scenes/Splashscreen.hpp
  /home/arroganz/cpp/futils/projects/fender/demo/include/AllScenes.hpp
@@ -43,6 +55,8 @@ CMakeFiles/demo.dir/main.cpp.o
  ../include/fender.hpp
  ../utils/dloader.hpp
  ../utils/futils.hpp
+ ../utils/goToBinDir.h
  ../utils/ini.hpp
  ../utils/log.hpp
+ ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/demo/main.cpp

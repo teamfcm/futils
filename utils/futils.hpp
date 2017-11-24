@@ -5,6 +5,7 @@
 #ifndef DEMO_FUTILS_HPP
 #define DEMO_FUTILS_HPP
 
+# include <sstream>
 # include <mutex>
 # include <chrono>
 # include <functional>

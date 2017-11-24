@@ -145,9 +145,13 @@ namespace futils
             void    operator = (T val) {this->value = val;}
     
             operator std::string()  const           {return this->value;}
-            explicit operator bool()         const  {return this->value;}
-            explicit operator const char *() const  {return this->value.str.c_str();}
-            explicit operator float() const         {return this->value;}
+            operator bool()         const  {return this->value;}
+            operator const char *() const  {return this->value.str.c_str();}
+            operator char *() {return const_cast<char *>(value.str.c_str());}
+            operator float() const         {return this->value;}
+            bool operator == (bool other) {
+                return (bool)this->value == other;
+            }
             
             Value   &operator [] (unsigned int index)
             {

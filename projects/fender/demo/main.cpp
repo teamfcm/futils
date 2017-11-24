@@ -3,8 +3,10 @@
 #include "dloader.hpp"
 #include "Factory.hpp"
 
-int main()
+int main(int argc, char *argv[])
 {
-    futils::Fengine engine;
+    (void)argc;
+
+    fender::Fender engine;
     return engine.start(argv[0]);
 }

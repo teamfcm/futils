@@ -51,8 +51,12 @@ dlfcn.h
 -
 exception
 -
+futils.hpp
+../utils/futils.hpp
 
 ../utils/futils.hpp
+sstream
+-
 mutex
 -
 chrono
