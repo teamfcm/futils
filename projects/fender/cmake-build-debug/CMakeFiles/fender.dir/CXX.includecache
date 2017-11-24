@@ -21,6 +21,8 @@ stack
 -
 map
 -
+types.hpp
+-
 goToBinDir.h
 ../release/goToBinDir.h
 dloader.hpp
@@ -99,6 +101,8 @@ iomanip
 -
 futils.hpp
 ../utils/futils.hpp
+
+../utils/types.hpp
 
 /home/arroganz/cpp/futils/projects/fender/src/ECS/Component.cpp
 fender.hpp

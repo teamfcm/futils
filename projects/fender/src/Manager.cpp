@@ -11,24 +11,18 @@
 # include <unistd.h>
 
 extern "C"
-fender::Manager *manager(fender::ISceneFactory &fact,
-                         futils::INI::INIProxy *configProxy)
+fender::Manager *manager(futils::Ini const &config)
 {
-    return new fender::Manager(fact, configProxy);
+    return new fender::Manager(config);
 }
 
-fender::Manager::Manager(ISceneFactory &fact,
-                         futils::INI::INIProxy *configProxy):
-        sceneFactory(fact),
-        config(configProxy),
-        timeline("Scenes/timeline.ini")
+fender::Manager::Manager(futils::Ini const &config):
+        config(configProxy)
 {
-    this->renderingBuilders["SFML"] = []()
-    {
+    this->renderingBuilders["SFML"] = []() {
         return std::make_unique<fender::SFMLRender>();
     };
-    this->renderingBuilders["NCURSES"] = []()
-    {
+    this->renderingBuilders["NCURSES"] = []() {
         return std::make_unique<fender::CursesRender>();
     };
 
@@ -52,12 +46,13 @@ void    fender::Manager::loadTimeline()
 
 void    fender::Manager::start()
 {
+    // TODO: Remove sceneList etc...
     if (this->sceneList.empty())
-        return ;
-    this->run();
+        return 1;
+    return this->run();
 }
 
-void    fender::Manager::run()
+int fender::Manager::run()
 {
     futils::Clock   clock;
     float           elapsed;
@@ -81,4 +76,5 @@ void    fender::Manager::run()
             }
         }
     }
+    return status;
 }

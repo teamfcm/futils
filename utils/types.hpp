@@ -21,6 +21,9 @@ namespace futils
     template <typename ...Args>
     using Task = std::function<void(Args...)>;
     using Action = std::function<void(void)>;
+
+    template <typename T>
+    using UP = std::unique_ptr<T>;
 }
 
 #endif //FUTILS_TYPES_H

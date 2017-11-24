@@ -26,16 +26,30 @@ namespace futils
         }
 
         template    <typename T, typename ...Args>
-        T   *execute(std::string const &symbol, Args ...args)
+        T           *build(Args ...args)
         {
+            std::string symbol{typeid(T).name()};
             auto func = (T *(*)(Args ...))(dlsym(_handle, symbol.c_str()));
             if (func == nullptr)
             {
-                std::cerr << __FUNCTION__ << ": failed. Cannot find symbol "
+                std::cerr << __FUNCTION__ << ": failed. Cannot find builder symbol "
                                              + symbol + " in " + _path << std::endl;
                 return nullptr;
             }
             return func(args...);
+        };
+
+        template    <typename Ret, typename ...Args>
+        Ret           execute(std::string const &symbol, Args ...args)
+        {
+            auto func = (Ret (*)(Args ...))(dlsym(_handle, symbol.c_str()));
+            if (func == nullptr) {
+                std::cerr << __FUNCTION__ << ": failed. Cannot find symbol "
+                                             + symbol + " in " + _path << std::endl;
+                throw std::runtime_error("Dynamic execution of " + symbol + " failed.");
+            } else {
+                return func(args...);
+            }
         };
     };
 }

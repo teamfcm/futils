@@ -6,6 +6,5 @@
 int main()
 {
     futils::Fengine engine;
-    engine.start(argv[0]);
-    return 0;
+    return engine.start(argv[0]);
 }

@@ -8,6 +8,7 @@
 # include <cxxabi.h>
 # include <stack>
 # include <map>
+#include <types.hpp>
 # include "goToBinDir.h"
 # include "dloader.hpp"
 # include "log.hpp"
@@ -1226,13 +1227,14 @@ namespace fender
 
         std::string                     _windowName{"Undefined"};
         std::vector<std::string>         sceneList;
+        int                             status{0};
 
         void    runConfigBuild();
-        void    run();
+        int     run();
         void    loadTimeline();
     public:
-        Manager(ISceneFactory &fact, futils::INI::INIProxy *config);
-        void    start();
+        Manager(futils::Ini const &config);
+        int start();
 
         void    setWindowName(std::string const &name)
         {this->_windowName = name;}
@@ -1240,23 +1242,19 @@ namespace fender
 
     class Fender
     {
-        Manager manager;
+        futils::UP<futils::Dloader> lib;
+        futils::UP<Manager> manager;
     public:
         Fender() = default;
 
         int start(std::string const &arg0) {
             futils::goToBinDir(arg0);
-            futils::Ini     config("./config/fender.ini");
+            futils::Ini config("./config/fender.ini");
             START_LOG(config["global"]["logfile"]);
 
-            manager = futils::Dloader(config["global"]["fenderPath"])
-                    .execute<fender::Manager,
-                            fender::ISceneFactory &,
-                            futils::INI::INIProxy *>
-                            ("manager", *(new demo::Factory),
-                             config.proxy());
-            if (manager)
-                manager->start();
+            lib = std::make_unique<futils::Dloader>(config["global"]["fenderPath"]);
+            manager.reset(lib->build<Manager, futils::Ini const &>(config));
+            return manager->start();
         };
     };
 }
