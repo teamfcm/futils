@@ -8,9 +8,12 @@
 # include <cxxabi.h>
 # include <stack>
 # include <map>
+# include "goToBinDir.h"
+# include "dloader.hpp"
 # include "log.hpp"
 # include "ini.hpp"
 # include "futils.hpp"
+
 
 // TODO: Don't use preprocessing if its not necessary.
 // TODO: REMOVE SetAndSave, INIT, SAVE macros.
@@ -1233,6 +1236,28 @@ namespace fender
 
         void    setWindowName(std::string const &name)
         {this->_windowName = name;}
+    };
+
+    class Fender
+    {
+        Manager manager;
+    public:
+        Fender() = default;
+
+        int start(std::string const &arg0) {
+            futils::goToBinDir(arg0);
+            futils::Ini     config("./config/fender.ini");
+            START_LOG(config["global"]["logfile"]);
+
+            manager = futils::Dloader(config["global"]["fenderPath"])
+                    .execute<fender::Manager,
+                            fender::ISceneFactory &,
+                            futils::INI::INIProxy *>
+                            ("manager", *(new demo::Factory),
+                             config.proxy());
+            if (manager)
+                manager->start();
+        };
     };
 }
 

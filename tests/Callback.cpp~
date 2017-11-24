@@ -1,4 +1,0 @@
-// Test of futils::Callback
-
-# include <criterion/criterion.h>
-

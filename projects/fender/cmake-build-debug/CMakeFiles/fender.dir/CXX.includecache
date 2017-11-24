@@ -21,6 +21,10 @@ stack
 -
 map
 -
+goToBinDir.h
+../release/goToBinDir.h
+dloader.hpp
+../release/dloader.hpp
 log.hpp
 ../release/log.hpp
 ini.hpp
@@ -36,6 +40,16 @@ thread
 mutex
 -
 
+../utils/dloader.hpp
+string
+-
+typeinfo
+-
+dlfcn.h
+-
+exception
+-
+
 ../utils/futils.hpp
 mutex
 -
@@ -46,6 +60,10 @@ functional
 random
 -
 unordered_map
+-
+
+../utils/goToBinDir.h
+iostream
 -
 
 ../utils/ini.hpp
