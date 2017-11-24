@@ -123,140 +123,59 @@ demo/fast:
 	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/build
 .PHONY : demo/fast
 
-Scenes/Menu.o: Scenes/Menu.cpp.o
+src/App/App.o: src/App/App.cpp.o
 
-.PHONY : Scenes/Menu.o
-
-# target to build an object file
-Scenes/Menu.cpp.o:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Menu.cpp.o
-.PHONY : Scenes/Menu.cpp.o
-
-Scenes/Menu.i: Scenes/Menu.cpp.i
-
-.PHONY : Scenes/Menu.i
-
-# target to preprocess a source file
-Scenes/Menu.cpp.i:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Menu.cpp.i
-.PHONY : Scenes/Menu.cpp.i
-
-Scenes/Menu.s: Scenes/Menu.cpp.s
-
-.PHONY : Scenes/Menu.s
-
-# target to generate assembly for a file
-Scenes/Menu.cpp.s:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Menu.cpp.s
-.PHONY : Scenes/Menu.cpp.s
-
-Scenes/Splashscreen.o: Scenes/Splashscreen.cpp.o
-
-.PHONY : Scenes/Splashscreen.o
+.PHONY : src/App/App.o
 
 # target to build an object file
-Scenes/Splashscreen.cpp.o:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o
-.PHONY : Scenes/Splashscreen.cpp.o
+src/App/App.cpp.o:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/App/App.cpp.o
+.PHONY : src/App/App.cpp.o
 
-Scenes/Splashscreen.i: Scenes/Splashscreen.cpp.i
+src/App/App.i: src/App/App.cpp.i
 
-.PHONY : Scenes/Splashscreen.i
+.PHONY : src/App/App.i
 
 # target to preprocess a source file
-Scenes/Splashscreen.cpp.i:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.i
-.PHONY : Scenes/Splashscreen.cpp.i
+src/App/App.cpp.i:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/App/App.cpp.i
+.PHONY : src/App/App.cpp.i
 
-Scenes/Splashscreen.s: Scenes/Splashscreen.cpp.s
+src/App/App.s: src/App/App.cpp.s
 
-.PHONY : Scenes/Splashscreen.s
+.PHONY : src/App/App.s
 
 # target to generate assembly for a file
-Scenes/Splashscreen.cpp.s:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.s
-.PHONY : Scenes/Splashscreen.cpp.s
+src/App/App.cpp.s:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/App/App.cpp.s
+.PHONY : src/App/App.cpp.s
 
-include/Demo.o: include/Demo.cpp.o
+src/main.o: src/main.cpp.o
 
-.PHONY : include/Demo.o
+.PHONY : src/main.o
 
 # target to build an object file
-include/Demo.cpp.o:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/include/Demo.cpp.o
-.PHONY : include/Demo.cpp.o
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
 
-include/Demo.i: include/Demo.cpp.i
+src/main.i: src/main.cpp.i
 
-.PHONY : include/Demo.i
-
-# target to preprocess a source file
-include/Demo.cpp.i:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/include/Demo.cpp.i
-.PHONY : include/Demo.cpp.i
-
-include/Demo.s: include/Demo.cpp.s
-
-.PHONY : include/Demo.s
-
-# target to generate assembly for a file
-include/Demo.cpp.s:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/include/Demo.cpp.s
-.PHONY : include/Demo.cpp.s
-
-include/Factory.o: include/Factory.cpp.o
-
-.PHONY : include/Factory.o
-
-# target to build an object file
-include/Factory.cpp.o:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/include/Factory.cpp.o
-.PHONY : include/Factory.cpp.o
-
-include/Factory.i: include/Factory.cpp.i
-
-.PHONY : include/Factory.i
+.PHONY : src/main.i
 
 # target to preprocess a source file
-include/Factory.cpp.i:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/include/Factory.cpp.i
-.PHONY : include/Factory.cpp.i
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
 
-include/Factory.s: include/Factory.cpp.s
+src/main.s: src/main.cpp.s
 
-.PHONY : include/Factory.s
-
-# target to generate assembly for a file
-include/Factory.cpp.s:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/include/Factory.cpp.s
-.PHONY : include/Factory.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
+.PHONY : src/main.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -267,21 +186,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... demo"
 	@echo "... edit_cache"
-	@echo "... Scenes/Menu.o"
-	@echo "... Scenes/Menu.i"
-	@echo "... Scenes/Menu.s"
-	@echo "... Scenes/Splashscreen.o"
-	@echo "... Scenes/Splashscreen.i"
-	@echo "... Scenes/Splashscreen.s"
-	@echo "... include/Demo.o"
-	@echo "... include/Demo.i"
-	@echo "... include/Demo.s"
-	@echo "... include/Factory.o"
-	@echo "... include/Factory.i"
-	@echo "... include/Factory.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... src/App/App.o"
+	@echo "... src/App/App.i"
+	@echo "... src/App/App.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 .PHONY : help
 
 

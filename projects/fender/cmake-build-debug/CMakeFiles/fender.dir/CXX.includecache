@@ -6,7 +6,23 @@
 
 #IncludeRegexTransform: 
 
-../release/fender.hpp
+../include/CursesRender.hpp
+string
+-
+fender.hpp
+../include/fender.hpp
+
+../include/SFMLRender.hpp
+SFML/Window.hpp
+-
+SFML/Graphics.hpp
+-
+string
+-
+fender.hpp
+../include/fender.hpp
+
+../include/fender.hpp
 iostream
 -
 string
@@ -23,16 +39,18 @@ map
 -
 types.hpp
 -
-goToBinDir.h
-../release/goToBinDir.h
+goToBinDir.hpp
+../include/goToBinDir.hpp
 dloader.hpp
-../release/dloader.hpp
+../include/dloader.hpp
 log.hpp
-../release/log.hpp
+../include/log.hpp
 ini.hpp
-../release/ini.hpp
+../include/ini.hpp
+ecs.hpp
+../include/ecs.hpp
 futils.hpp
-../release/futils.hpp
+../include/futils.hpp
 
 ../utils/clock.hpp
 chrono
@@ -54,6 +72,20 @@ exception
 futils.hpp
 ../utils/futils.hpp
 
+../utils/ecs.hpp
+vector
+-
+list
+-
+map
+-
+typeinfo
+-
+functional
+-
+unordered_map
+-
+
 ../utils/futils.hpp
 sstream
 -
@@ -68,7 +100,9 @@ random
 unordered_map
 -
 
-../utils/goToBinDir.h
+../utils/goToBinDir.hpp
+unistd.h
+-
 iostream
 -
 
@@ -108,22 +142,6 @@ futils.hpp
 
 ../utils/types.hpp
 
-/home/arroganz/cpp/futils/projects/fender/src/ECS/Component.cpp
-fender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/ECS/fender.hpp
-
-/home/arroganz/cpp/futils/projects/fender/src/ECS/Components/Object2d.cpp
-fender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/ECS/Components/fender.hpp
-
-/home/arroganz/cpp/futils/projects/fender/src/ECS/Entity.cpp
-fender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/ECS/fender.hpp
-
-/home/arroganz/cpp/futils/projects/fender/src/ECS/System.cpp
-fender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/ECS/fender.hpp
-
 /home/arroganz/cpp/futils/projects/fender/src/IRender.cpp
 fender.hpp
 /home/arroganz/cpp/futils/projects/fender/src/fender.hpp
@@ -137,38 +155,48 @@ fender.hpp
 /home/arroganz/cpp/futils/projects/fender/src/fender.hpp
 
 /home/arroganz/cpp/futils/projects/fender/src/Manager.cpp
+unistd.h
+-
 fender.hpp
 /home/arroganz/cpp/futils/projects/fender/src/fender.hpp
 log.hpp
 /home/arroganz/cpp/futils/projects/fender/src/log.hpp
-sfml/SFMLRender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/sfml/SFMLRender.hpp
-ncurses/CursesRender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/ncurses/CursesRender.hpp
+SFMLRender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/SFMLRender.hpp
+CursesRender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/CursesRender.hpp
 ini.hpp
 /home/arroganz/cpp/futils/projects/fender/src/ini.hpp
 clock.hpp
 /home/arroganz/cpp/futils/projects/fender/src/clock.hpp
-unistd.h
--
 
-/home/arroganz/cpp/futils/projects/fender/src/ncurses/CursesRender.cpp
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Component.cpp
+fender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/ecs/fender.hpp
+
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Components/Object2d.cpp
+fender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Components/fender.hpp
+
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Entity.cpp
+fender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/ecs/fender.hpp
+
+/home/arroganz/cpp/futils/projects/fender/src/ecs/System.cpp
+fender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/ecs/fender.hpp
+
+/home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.cpp
 iostream
 -
 ncurses.h
 -
 CursesRender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/ncurses/CursesRender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.hpp
 log.hpp
-/home/arroganz/cpp/futils/projects/fender/src/ncurses/log.hpp
+/home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/log.hpp
 
-/home/arroganz/cpp/futils/projects/fender/src/ncurses/CursesRender.hpp
-string
--
-fender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/ncurses/fender.hpp
-
-/home/arroganz/cpp/futils/projects/fender/src/sfml/SFMLRender.cpp
+/home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/SFMLRender.cpp
 iostream
 -
 SFML/Window.hpp
@@ -176,17 +204,7 @@ SFML/Window.hpp
 SFML/Graphics.hpp
 -
 SFMLRender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/sfml/SFMLRender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/SFMLRender.hpp
 log.hpp
-/home/arroganz/cpp/futils/projects/fender/src/sfml/log.hpp
-
-/home/arroganz/cpp/futils/projects/fender/src/sfml/SFMLRender.hpp
-SFML/Window.hpp
--
-SFML/Graphics.hpp
--
-string
--
-fender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/sfml/fender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/log.hpp
 

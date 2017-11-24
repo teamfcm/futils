@@ -123,114 +123,6 @@ fender/fast:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/build
 .PHONY : fender/fast
 
-src/ECS/Component.o: src/ECS/Component.cpp.o
-
-.PHONY : src/ECS/Component.o
-
-# target to build an object file
-src/ECS/Component.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ECS/Component.cpp.o
-.PHONY : src/ECS/Component.cpp.o
-
-src/ECS/Component.i: src/ECS/Component.cpp.i
-
-.PHONY : src/ECS/Component.i
-
-# target to preprocess a source file
-src/ECS/Component.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ECS/Component.cpp.i
-.PHONY : src/ECS/Component.cpp.i
-
-src/ECS/Component.s: src/ECS/Component.cpp.s
-
-.PHONY : src/ECS/Component.s
-
-# target to generate assembly for a file
-src/ECS/Component.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ECS/Component.cpp.s
-.PHONY : src/ECS/Component.cpp.s
-
-src/ECS/Components/Object2d.o: src/ECS/Components/Object2d.cpp.o
-
-.PHONY : src/ECS/Components/Object2d.o
-
-# target to build an object file
-src/ECS/Components/Object2d.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ECS/Components/Object2d.cpp.o
-.PHONY : src/ECS/Components/Object2d.cpp.o
-
-src/ECS/Components/Object2d.i: src/ECS/Components/Object2d.cpp.i
-
-.PHONY : src/ECS/Components/Object2d.i
-
-# target to preprocess a source file
-src/ECS/Components/Object2d.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ECS/Components/Object2d.cpp.i
-.PHONY : src/ECS/Components/Object2d.cpp.i
-
-src/ECS/Components/Object2d.s: src/ECS/Components/Object2d.cpp.s
-
-.PHONY : src/ECS/Components/Object2d.s
-
-# target to generate assembly for a file
-src/ECS/Components/Object2d.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ECS/Components/Object2d.cpp.s
-.PHONY : src/ECS/Components/Object2d.cpp.s
-
-src/ECS/Entity.o: src/ECS/Entity.cpp.o
-
-.PHONY : src/ECS/Entity.o
-
-# target to build an object file
-src/ECS/Entity.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ECS/Entity.cpp.o
-.PHONY : src/ECS/Entity.cpp.o
-
-src/ECS/Entity.i: src/ECS/Entity.cpp.i
-
-.PHONY : src/ECS/Entity.i
-
-# target to preprocess a source file
-src/ECS/Entity.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ECS/Entity.cpp.i
-.PHONY : src/ECS/Entity.cpp.i
-
-src/ECS/Entity.s: src/ECS/Entity.cpp.s
-
-.PHONY : src/ECS/Entity.s
-
-# target to generate assembly for a file
-src/ECS/Entity.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ECS/Entity.cpp.s
-.PHONY : src/ECS/Entity.cpp.s
-
-src/ECS/System.o: src/ECS/System.cpp.o
-
-.PHONY : src/ECS/System.o
-
-# target to build an object file
-src/ECS/System.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ECS/System.cpp.o
-.PHONY : src/ECS/System.cpp.o
-
-src/ECS/System.i: src/ECS/System.cpp.i
-
-.PHONY : src/ECS/System.i
-
-# target to preprocess a source file
-src/ECS/System.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ECS/System.cpp.i
-.PHONY : src/ECS/System.cpp.i
-
-src/ECS/System.s: src/ECS/System.cpp.s
-
-.PHONY : src/ECS/System.s
-
-# target to generate assembly for a file
-src/ECS/System.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ECS/System.cpp.s
-.PHONY : src/ECS/System.cpp.s
-
 src/IRender.o: src/IRender.cpp.o
 
 .PHONY : src/IRender.o
@@ -312,59 +204,167 @@ src/Manager.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Manager.cpp.s
 .PHONY : src/Manager.cpp.s
 
-src/ncurses/CursesRender.o: src/ncurses/CursesRender.cpp.o
+src/ecs/Component.o: src/ecs/Component.cpp.o
 
-.PHONY : src/ncurses/CursesRender.o
-
-# target to build an object file
-src/ncurses/CursesRender.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ncurses/CursesRender.cpp.o
-.PHONY : src/ncurses/CursesRender.cpp.o
-
-src/ncurses/CursesRender.i: src/ncurses/CursesRender.cpp.i
-
-.PHONY : src/ncurses/CursesRender.i
-
-# target to preprocess a source file
-src/ncurses/CursesRender.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ncurses/CursesRender.cpp.i
-.PHONY : src/ncurses/CursesRender.cpp.i
-
-src/ncurses/CursesRender.s: src/ncurses/CursesRender.cpp.s
-
-.PHONY : src/ncurses/CursesRender.s
-
-# target to generate assembly for a file
-src/ncurses/CursesRender.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ncurses/CursesRender.cpp.s
-.PHONY : src/ncurses/CursesRender.cpp.s
-
-src/sfml/SFMLRender.o: src/sfml/SFMLRender.cpp.o
-
-.PHONY : src/sfml/SFMLRender.o
+.PHONY : src/ecs/Component.o
 
 # target to build an object file
-src/sfml/SFMLRender.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/sfml/SFMLRender.cpp.o
-.PHONY : src/sfml/SFMLRender.cpp.o
+src/ecs/Component.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Component.cpp.o
+.PHONY : src/ecs/Component.cpp.o
 
-src/sfml/SFMLRender.i: src/sfml/SFMLRender.cpp.i
+src/ecs/Component.i: src/ecs/Component.cpp.i
 
-.PHONY : src/sfml/SFMLRender.i
+.PHONY : src/ecs/Component.i
 
 # target to preprocess a source file
-src/sfml/SFMLRender.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/sfml/SFMLRender.cpp.i
-.PHONY : src/sfml/SFMLRender.cpp.i
+src/ecs/Component.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Component.cpp.i
+.PHONY : src/ecs/Component.cpp.i
 
-src/sfml/SFMLRender.s: src/sfml/SFMLRender.cpp.s
+src/ecs/Component.s: src/ecs/Component.cpp.s
 
-.PHONY : src/sfml/SFMLRender.s
+.PHONY : src/ecs/Component.s
 
 # target to generate assembly for a file
-src/sfml/SFMLRender.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/sfml/SFMLRender.cpp.s
-.PHONY : src/sfml/SFMLRender.cpp.s
+src/ecs/Component.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Component.cpp.s
+.PHONY : src/ecs/Component.cpp.s
+
+src/ecs/Components/Object2d.o: src/ecs/Components/Object2d.cpp.o
+
+.PHONY : src/ecs/Components/Object2d.o
+
+# target to build an object file
+src/ecs/Components/Object2d.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Components/Object2d.cpp.o
+.PHONY : src/ecs/Components/Object2d.cpp.o
+
+src/ecs/Components/Object2d.i: src/ecs/Components/Object2d.cpp.i
+
+.PHONY : src/ecs/Components/Object2d.i
+
+# target to preprocess a source file
+src/ecs/Components/Object2d.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Components/Object2d.cpp.i
+.PHONY : src/ecs/Components/Object2d.cpp.i
+
+src/ecs/Components/Object2d.s: src/ecs/Components/Object2d.cpp.s
+
+.PHONY : src/ecs/Components/Object2d.s
+
+# target to generate assembly for a file
+src/ecs/Components/Object2d.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Components/Object2d.cpp.s
+.PHONY : src/ecs/Components/Object2d.cpp.s
+
+src/ecs/Entity.o: src/ecs/Entity.cpp.o
+
+.PHONY : src/ecs/Entity.o
+
+# target to build an object file
+src/ecs/Entity.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Entity.cpp.o
+.PHONY : src/ecs/Entity.cpp.o
+
+src/ecs/Entity.i: src/ecs/Entity.cpp.i
+
+.PHONY : src/ecs/Entity.i
+
+# target to preprocess a source file
+src/ecs/Entity.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Entity.cpp.i
+.PHONY : src/ecs/Entity.cpp.i
+
+src/ecs/Entity.s: src/ecs/Entity.cpp.s
+
+.PHONY : src/ecs/Entity.s
+
+# target to generate assembly for a file
+src/ecs/Entity.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Entity.cpp.s
+.PHONY : src/ecs/Entity.cpp.s
+
+src/ecs/System.o: src/ecs/System.cpp.o
+
+.PHONY : src/ecs/System.o
+
+# target to build an object file
+src/ecs/System.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/System.cpp.o
+.PHONY : src/ecs/System.cpp.o
+
+src/ecs/System.i: src/ecs/System.cpp.i
+
+.PHONY : src/ecs/System.i
+
+# target to preprocess a source file
+src/ecs/System.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/System.cpp.i
+.PHONY : src/ecs/System.cpp.i
+
+src/ecs/System.s: src/ecs/System.cpp.s
+
+.PHONY : src/ecs/System.s
+
+# target to generate assembly for a file
+src/ecs/System.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/System.cpp.s
+.PHONY : src/ecs/System.cpp.s
+
+src/renderers/ncurses/CursesRender.o: src/renderers/ncurses/CursesRender.cpp.o
+
+.PHONY : src/renderers/ncurses/CursesRender.o
+
+# target to build an object file
+src/renderers/ncurses/CursesRender.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o
+.PHONY : src/renderers/ncurses/CursesRender.cpp.o
+
+src/renderers/ncurses/CursesRender.i: src/renderers/ncurses/CursesRender.cpp.i
+
+.PHONY : src/renderers/ncurses/CursesRender.i
+
+# target to preprocess a source file
+src/renderers/ncurses/CursesRender.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.i
+.PHONY : src/renderers/ncurses/CursesRender.cpp.i
+
+src/renderers/ncurses/CursesRender.s: src/renderers/ncurses/CursesRender.cpp.s
+
+.PHONY : src/renderers/ncurses/CursesRender.s
+
+# target to generate assembly for a file
+src/renderers/ncurses/CursesRender.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.s
+.PHONY : src/renderers/ncurses/CursesRender.cpp.s
+
+src/renderers/sfml/SFMLRender.o: src/renderers/sfml/SFMLRender.cpp.o
+
+.PHONY : src/renderers/sfml/SFMLRender.o
+
+# target to build an object file
+src/renderers/sfml/SFMLRender.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o
+.PHONY : src/renderers/sfml/SFMLRender.cpp.o
+
+src/renderers/sfml/SFMLRender.i: src/renderers/sfml/SFMLRender.cpp.i
+
+.PHONY : src/renderers/sfml/SFMLRender.i
+
+# target to preprocess a source file
+src/renderers/sfml/SFMLRender.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.i
+.PHONY : src/renderers/sfml/SFMLRender.cpp.i
+
+src/renderers/sfml/SFMLRender.s: src/renderers/sfml/SFMLRender.cpp.s
+
+.PHONY : src/renderers/sfml/SFMLRender.s
+
+# target to generate assembly for a file
+src/renderers/sfml/SFMLRender.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.s
+.PHONY : src/renderers/sfml/SFMLRender.cpp.s
 
 # Help Target
 help:
@@ -375,18 +375,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... fender"
 	@echo "... edit_cache"
-	@echo "... src/ECS/Component.o"
-	@echo "... src/ECS/Component.i"
-	@echo "... src/ECS/Component.s"
-	@echo "... src/ECS/Components/Object2d.o"
-	@echo "... src/ECS/Components/Object2d.i"
-	@echo "... src/ECS/Components/Object2d.s"
-	@echo "... src/ECS/Entity.o"
-	@echo "... src/ECS/Entity.i"
-	@echo "... src/ECS/Entity.s"
-	@echo "... src/ECS/System.o"
-	@echo "... src/ECS/System.i"
-	@echo "... src/ECS/System.s"
 	@echo "... src/IRender.o"
 	@echo "... src/IRender.i"
 	@echo "... src/IRender.s"
@@ -396,12 +384,24 @@ help:
 	@echo "... src/Manager.o"
 	@echo "... src/Manager.i"
 	@echo "... src/Manager.s"
-	@echo "... src/ncurses/CursesRender.o"
-	@echo "... src/ncurses/CursesRender.i"
-	@echo "... src/ncurses/CursesRender.s"
-	@echo "... src/sfml/SFMLRender.o"
-	@echo "... src/sfml/SFMLRender.i"
-	@echo "... src/sfml/SFMLRender.s"
+	@echo "... src/ecs/Component.o"
+	@echo "... src/ecs/Component.i"
+	@echo "... src/ecs/Component.s"
+	@echo "... src/ecs/Components/Object2d.o"
+	@echo "... src/ecs/Components/Object2d.i"
+	@echo "... src/ecs/Components/Object2d.s"
+	@echo "... src/ecs/Entity.o"
+	@echo "... src/ecs/Entity.i"
+	@echo "... src/ecs/Entity.s"
+	@echo "... src/ecs/System.o"
+	@echo "... src/ecs/System.i"
+	@echo "... src/ecs/System.s"
+	@echo "... src/renderers/ncurses/CursesRender.o"
+	@echo "... src/renderers/ncurses/CursesRender.i"
+	@echo "... src/renderers/ncurses/CursesRender.s"
+	@echo "... src/renderers/sfml/SFMLRender.o"
+	@echo "... src/renderers/sfml/SFMLRender.i"
+	@echo "... src/renderers/sfml/SFMLRender.s"
 .PHONY : help
 
 

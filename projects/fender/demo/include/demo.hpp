@@ -5,7 +5,7 @@
 #ifndef DEMO_DEMO_HPP
 #define DEMO_DEMO_HPP
 
-# include "fender.hpp"
+# include "App.hpp"
 
 namespace demo
 {
@@ -55,11 +55,6 @@ namespace demo
             auto &clickAction = static_cast<fender::components::Clickable &>(this->getComponent("Clickable"));
             clickAction.setAction(func);
         }
-    };
-    
-class Demo
-    {
-
     };
 }
 

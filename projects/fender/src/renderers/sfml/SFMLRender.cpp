@@ -67,7 +67,7 @@ fender::SFMLRender::SFMLRender()
     this->initFactory();
     this->_eventSystem.setRole(fender::MediatorRole::Provider);
     
-//    Registering systems to the ECS
+//    Registering systems to the ecs
     this->_ecs.registerSystem<fender::SFMLsystems::ClickDetection>(this);
     this->_ecs.registerSystem<fender::SFMLsystems::HoverDetection>(this);
     this->_ecs.registerSystem<fender::SFMLsystems::Rendering>(this);
@@ -151,7 +151,7 @@ void    fender::SFMLRender::update(float elapsed)
     this->_ecs.run(elapsed);
 }
 
-// TODO: This function is useless now with the ECS. Should be removed
+// TODO: This function is useless now with the ecs. Should be removed
 void    fender::SFMLRender::refresh()
 {
 //    TODO: Abstract colors and Background

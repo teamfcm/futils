@@ -14,123 +14,140 @@
 
 namespace futils
 {
+// Forward declarations
     class   EntityManager;
+    class   IEntity;
+
     class   IComponent
     {
     protected:
-        std::string __name;
+        IEntity     *__entity{nullptr};
+        std::string __name{"[DEFAULT_COMPONENT]"};
     public:
         virtual ~IComponent() {}
-        
+
         std::string const &getName() const {return this->__name;}
+        void                setEntity(IEntity &ent);
+        IComponent  &getAssociatedComponent(std::string const &type);
     };
+
     class   ISystem
     {
-    protected:
-        using StrVec = std::vector<std::string>;
-        StrVec          __requiredComponents;
+        EntityManager       *entityManager{nullptr};
     public:
         virtual ~ISystem() {}
         virtual void          addComponent(IComponent &compo)   = 0;
-        virtual void          run()                             = 0;
-        StrVec const &getRequiredComponents() const
-        {
-            return this->__requiredComponents;
-        }
+        virtual void          run(float elapsed)                = 0;
     };
+
     class   IEntity
     {
-        // TODO: Change for a map.
-        // TODO: using for both variables
-        std::vector<IComponent *>           components;
+        std::unordered_multimap<std::string, IComponent *>    components;
         std::function<void(IComponent &)>   registerComponentFunction{[](IComponent &){}};
-    public:
-        virtual ~IEntity() {}
-        
-        template    <typename Compo, typename ...Args>
-        Compo       &attachComponent(Args ...args)
+        int                                 _id;
+
+        // Replace with SFINAE or static assertion. SFINAE is probably better.
+        template                            <typename Compo>
+        void                                verifIsComponent()
         {
-            // TODO: Change for static assert. What about SFINAE as well ?
             if (!std::is_base_of<IComponent, Compo>::value)
                 throw std::logic_error(std::string(typeid(Compo).name()) + " is not a Component");
-            // TODO: Change for smart pointers
-            auto compo = new Compo(args...);
-            this->components.push_back(compo);
-            this->registerComponentFunction(*compo);
-            return *compo;
-        };
-        
-        void        setRegisterComponentFunction(std::function<void(IComponent &)> func)
+        }
+    public:
+        IEntity()
+        {
+            // TODO: Change for the inline function. Its easier to read.
+            this->_id = futils::UID::get();
+        }
+        virtual ~IEntity() {}
+        virtual void    init() = 0;
+
+        // Make the function name a bit shorter ? onExtension for example. Its only for the engine devs anyway.
+        void            setComponentRegistrationFunction(std::function<void(IComponent &)> func)
         {
             this->registerComponentFunction = func;
         }
-    };
-    class   GuiObject : public IEntity
-    {
-    public:
-        GuiObject()
+
+        template    <typename Compo, typename ...Args>
+        Compo       &attachComponent(Args ...args)
         {
-        
-        }
+            verifIsComponent<Compo>();
+            // TODO: Make a smart pointer.
+            auto compo = new Compo(args...);
+            compo->setEntity(*this);
+            this->components.insert(std::make_pair(compo->getName(), compo));
+            this->registerComponentFunction(*compo);
+            return *compo;
+        };
+
+        IComponent  &getComponent(std::string const &type)
+        {
+            for (auto &it: this->components)
+            {
+                if (it.first == type)
+                    return *it.second;
+            }
+            throw std::runtime_error("Entity does not have component " + type);
+        };
+
+        int         getId() const { return this->_id; }
     };
+
     class   EntityManager
     {
         int                                     status{0};
         std::multimap<std::string, ISystem *>   systemsMap;
-        
-        int         notifySystems(IComponent &compo)
+
+        void    notifySystems(IComponent &compo)
         {
-            int     count{0};
-            for (auto it = systemsMap.find(compo.getName()); it != systemsMap.end(); it++)
+            auto range = systemsMap.equal_range(compo.getName());
+            for (auto it = range.first; it != range.second; it++)
             {
-                auto system = it->second;
+                ISystem *system = it->second;
                 if (system)
                 {
                     system->addComponent(compo);
-                    count++;
                 }
             }
-            return count;
         }
     public:
         EntityManager() = default;
-        
         template    <typename T, typename ...Args>
-        T           *createEntity(Args ...args) const
+        T           *createEntity(Args ...args)
         {
-            static_assert(std::is_base_of<IEntity, T>::value, typeid(T).name() + " is not an IEntity.");
-            auto ent = new T(args...);
-            ent->setRegisterComponentFunction([this](IComponent &compo){
-                if (this->notifySystems(compo) == 0)
-                    throw std::runtime_error("Idle Component attached to an entity : " + compo.getName());
+            if (!std::is_base_of<IEntity, T>::value)
+                throw std::logic_error(std::string(typeid(T).name()) + " is not an Entity");
+            auto entity = new T(args...);
+            entity->setComponentRegistrationFunction([this](IComponent &compo){
+                this->notifySystems(compo);
             });
-            return ent;
+            entity->init();
+            return entity;
         }
-        
+
         template    <typename System, typename ...Args>
         void        registerSystem(Args ...args)
         {
-            static_assert(std::is_base_of<ISystem, System>::value, typeid(System).name() + " is not an IEntity.");
             if (!std::is_base_of<ISystem, System>::value)
                 throw std::logic_error(std::string(typeid(System).name()) + " is not a System");
             auto system = new System(args...);
             for (auto &handledComponent: system->getRequiredComponents())
-            {
                 this->systemsMap.insert(std::pair<std::string, ISystem *>(handledComponent, system));
-            }
         }
+
         bool        isFine()
         {
             return this->status == 0;
         }
-        void        run()
+
+        // Where is the elapsed float coming from ? Probably the scene manager..
+        void        run(float elapsed)
         {
             for (auto &pair: systemsMap)
             {
-                pair.second->run();
+                pair.second->run(elapsed);
             }
         }
-        
     };
 }
 

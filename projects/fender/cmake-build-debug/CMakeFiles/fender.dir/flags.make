@@ -6,5 +6,5 @@ CXX_FLAGS = -g -fPIC   -Wall -Wextra -Werror -std=gnu++1z
 
 CXX_DEFINES = -Dfender_EXPORTS
 
-CXX_INCLUDES = -I/home/arroganz/cpp/futils/projects/fender/release -I/home/arroganz/cpp/futils/projects/fender/utils 
+CXX_INCLUDES = -I/home/arroganz/cpp/futils/projects/fender/release -I/home/arroganz/cpp/futils/projects/fender/include -I/home/arroganz/cpp/futils/projects/fender/utils 
 

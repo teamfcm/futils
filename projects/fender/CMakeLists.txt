@@ -3,22 +3,22 @@ project(fender)
 set(CMAKE_CXX_STANDARD 17)
 
 set(SOURCE_FILES
-        release/fender.hpp
-        src/ncurses/CursesRender.cpp
-		src/sfml/SFMLRender.cpp
-		src/sfml/SFMLRender.hpp
+        src/renderers/ncurses/CursesRender.cpp
+		src/renderers/sfml/SFMLRender.cpp
 		src/Manager.cpp
 		src/IScene.cpp
 		src/IRender.cpp
-		src/ECS/Entity.cpp
-		src/ECS/Component.cpp
-		src/ECS/System.cpp
-		src/ECS/Components/Object2d.cpp)
+        src/ecs/Entity.cpp
+        src/ecs/Component.cpp
+        src/ecs/System.cpp
+        src/ecs/Components/Object2d.cpp)
 
-## TODO: CrossPlatform may be important...
-add_compile_options(-Wall -Wextra -Werror)
+if (UNIX)
+	add_compile_options(-Wall -Wextra -Werror)
+endif(UNIX)
+
 add_library(fender SHARED ${SOURCE_FILES})
 set_target_properties(fender PROPERTIES LIBRARY_OUTPUT_DIRECTORY "../release")
 target_link_libraries(fender ncurses)
 target_link_libraries(fender sfml-window sfml-audio sfml-graphics)
-include_directories(release utils)
+include_directories(release include utils)

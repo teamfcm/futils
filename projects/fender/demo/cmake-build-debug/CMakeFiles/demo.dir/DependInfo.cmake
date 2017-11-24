@@ -4,11 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/arroganz/cpp/futils/projects/fender/demo/Scenes/Menu.cpp" "/home/arroganz/cpp/futils/projects/fender/demo/cmake-build-debug/CMakeFiles/demo.dir/Scenes/Menu.cpp.o"
-  "/home/arroganz/cpp/futils/projects/fender/demo/Scenes/Splashscreen.cpp" "/home/arroganz/cpp/futils/projects/fender/demo/cmake-build-debug/CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o"
-  "/home/arroganz/cpp/futils/projects/fender/demo/include/Demo.cpp" "/home/arroganz/cpp/futils/projects/fender/demo/cmake-build-debug/CMakeFiles/demo.dir/include/Demo.cpp.o"
-  "/home/arroganz/cpp/futils/projects/fender/demo/include/Factory.cpp" "/home/arroganz/cpp/futils/projects/fender/demo/cmake-build-debug/CMakeFiles/demo.dir/include/Factory.cpp.o"
-  "/home/arroganz/cpp/futils/projects/fender/demo/main.cpp" "/home/arroganz/cpp/futils/projects/fender/demo/cmake-build-debug/CMakeFiles/demo.dir/main.cpp.o"
+  "/home/arroganz/cpp/futils/projects/fender/demo/src/App/App.cpp" "/home/arroganz/cpp/futils/projects/fender/demo/cmake-build-debug/CMakeFiles/demo.dir/src/App/App.cpp.o"
+  "/home/arroganz/cpp/futils/projects/fender/demo/src/main.cpp" "/home/arroganz/cpp/futils/projects/fender/demo/cmake-build-debug/CMakeFiles/demo.dir/src/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -16,7 +13,6 @@ set(CMAKE_CXX_COMPILER_ID "GNU")
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
   "../utils"
-  "../Scenes/Headers"
   )
 
 # Targets to which this target links.

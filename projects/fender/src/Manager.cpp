@@ -2,13 +2,13 @@
 // Created by ganz on 16/08/17.
 //
 
+# include <unistd.h>
 # include "fender.hpp"
 # include "log.hpp"
-# include "sfml/SFMLRender.hpp"
-# include "ncurses/CursesRender.hpp"
+# include "SFMLRender.hpp"
+# include "CursesRender.hpp"
 # include "ini.hpp"
 # include "clock.hpp"
-# include <unistd.h>
 
 extern "C"
 fender::Manager *Manager(futils::Ini &config)
@@ -45,7 +45,8 @@ void    fender::Manager::loadTimeline()
 
 int fender::Manager::start()
 {
-    return this->run();
+    // Used for initialization from client ?
+    return 0;
 }
 
 int fender::Manager::run()

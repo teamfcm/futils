@@ -1,9 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/demo.dir/main.cpp.o"
-  "CMakeFiles/demo.dir/include/Factory.cpp.o"
-  "CMakeFiles/demo.dir/Scenes/Splashscreen.cpp.o"
-  "CMakeFiles/demo.dir/include/Demo.cpp.o"
-  "CMakeFiles/demo.dir/Scenes/Menu.cpp.o"
+  "CMakeFiles/demo.dir/src/main.cpp.o"
+  "CMakeFiles/demo.dir/src/App/App.cpp.o"
   "../demo.pdb"
   "../demo"
 )

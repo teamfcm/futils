@@ -35,6 +35,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/release"/>
+					<Add directory="/home/arroganz/cpp/futils/projects/fender/include"/>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/utils"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
@@ -59,6 +60,7 @@
 				<Option compiler="gcc"/>
 				<Compiler>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/release"/>
+					<Add directory="/home/arroganz/cpp/futils/projects/fender/include"/>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/utils"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
@@ -86,21 +88,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/release/fender.hpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ECS/Component.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ECS/Components/Object2d.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ECS/Entity.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ECS/System.cpp">
-			<Option target="fender"/>
-		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/IRender.cpp">
 			<Option target="fender"/>
 		</Unit>
@@ -110,16 +97,22 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Manager.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ncurses/CursesRender.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Component.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ncurses/CursesRender.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Components/Object2d.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/sfml/SFMLRender.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Entity.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/sfml/SFMLRender.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/System.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/SFMLRender.cpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/CMakeLists.txt">

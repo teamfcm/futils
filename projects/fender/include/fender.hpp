@@ -9,10 +9,11 @@
 # include <stack>
 # include <map>
 #include <types.hpp>
-# include "goToBinDir.h"
+# include "goToBinDir.hpp"
 # include "dloader.hpp"
 # include "log.hpp"
 # include "ini.hpp"
+# include "ecs.hpp"
 # include "futils.hpp"
 
 
@@ -23,7 +24,7 @@
 # define EXPAND_AND_QUOTE(str) QUOTE(str)
 # define SetAndSave(v, vv)  this->v = vv; this->fileObject[EXPAND_AND_QUOTE(v)] = vv;
 # define INIT(v)            SetAndSave(v, this->v)
-# define SAVE(v, vv)            this->fileObject[EXPAND_AND_QUOTE(v)] = vv;
+# define SAVE(v, vv)        this->fileObject[EXPAND_AND_QUOTE(v)] = vv;
 
 namespace fender
 {
@@ -212,7 +213,6 @@ namespace fender
     };
 
     // TODO: Move Mediator into another hpp
-    // TODO: Create IMediatorPacket interface
     class IMediatorPacket
     {
     public:
@@ -324,153 +324,7 @@ namespace fender
         };
     };
 
-    // Forward declarations
-    class   EntityManager;
-    class   IEntity;
-    
-    class   IComponent
-    {
-    protected:
-        IEntity     *__entity{nullptr};
-        std::string __name{"[DEFAULT_COMPONENT]"};
-    public:
-        virtual ~IComponent() {}
-        
-        std::string const &getName() const {return this->__name;}
-        void                setEntity(IEntity &ent);
-//        TODO: Templates could be used, maybe ? Kengine..
-        IComponent  &getAssociatedComponent(std::string const &type);
-    };
-    
-    class   ISystem
-    {
-    protected:
-        using StrVec = std::vector<std::string>;
-        
-        StrVec              __requiredComponents;
-        fender::EventSystem __eventSystem;
-        
-    public:
-        virtual ~ISystem() {}
-        virtual void          addComponent(IComponent &compo)   = 0;
-        virtual void          run(float elapsed)                = 0;
-        StrVec const &getRequiredComponents() const
-        {
-            return this->__requiredComponents;
-        }
-    };
-    
-    class   IEntity
-    {
-        std::unordered_multimap<std::string, IComponent *>    components;
-        std::function<void(IComponent &)>   registerComponentFunction{[](IComponent &){}};
-        int                                 _id;
-
-        // Replace with SFINAE or static assertion. SFINAE is probably better.
-        template                            <typename Compo>
-        void                                verifIsComponent()
-        {
-            if (!std::is_base_of<IComponent, Compo>::value)
-                throw std::logic_error(std::string(typeid(Compo).name()) + " is not a Component");
-        }
-    public:
-        IEntity()
-        {
-            // TODO: Change for the inline function. Its easier to read.
-            this->_id = futils::UID::get();
-        }
-        virtual ~IEntity() {}
-        virtual void    init() = 0;
-
-        // Make the function name a bit shorter ? onExtension for example. Its only for the engine devs anyway.
-        void            setComponentRegistrationFunction(std::function<void(IComponent &)> func)
-        {
-            this->registerComponentFunction = func;
-        }
-        
-        template    <typename Compo, typename ...Args>
-        Compo       &attachComponent(Args ...args)
-        {
-            verifIsComponent<Compo>();
-            // TODO: Make a smart pointer.
-            auto compo = new Compo(args...);
-            compo->setEntity(*this);
-            this->components.insert(std::make_pair(compo->getName(), compo));
-            this->registerComponentFunction(*compo);
-            return *compo;
-        };
-        
-        IComponent  &getComponent(std::string const &type)
-        {
-            for (auto &it: this->components)
-            {
-                if (it.first == type)
-                    return *it.second;
-            }
-            throw std::runtime_error("Entity does not have component " + type);
-        };
-        
-        int         getId() const { return this->_id; }
-    };
-    
-    class   EntityManager
-    {
-        int                                     status{0};
-        std::multimap<std::string, ISystem *>   systemsMap;
-        
-        void    notifySystems(IComponent &compo)
-        {
-            auto range = systemsMap.equal_range(compo.getName());
-            for (auto it = range.first; it != range.second; it++)
-            {
-                ISystem *system = it->second;
-                if (system)
-                {
-                    system->addComponent(compo);
-                }
-            }
-        }
-    public:
-        EntityManager() = default;
-        template    <typename T, typename ...Args>
-        T           *createEntity(Args ...args)
-        {
-            if (!std::is_base_of<IEntity, T>::value)
-                throw std::logic_error(std::string(typeid(T).name()) + " is not an Entity");
-            auto entity = new T(args...);
-            entity->setComponentRegistrationFunction([this](IComponent &compo){
-                this->notifySystems(compo);
-            });
-            entity->init();
-            return entity;
-        }
-        
-        template    <typename System, typename ...Args>
-        void        registerSystem(Args ...args)
-        {
-            if (!std::is_base_of<ISystem, System>::value)
-                throw std::logic_error(std::string(typeid(System).name()) + " is not a System");
-            auto system = new System(args...);
-            for (auto &handledComponent: system->getRequiredComponents())
-                this->systemsMap.insert(std::pair<std::string, ISystem *>(handledComponent, system));
-        }
-        
-        bool        isFine()
-        {
-            return this->status == 0;
-        }
-
-        // Where is the elapsed float coming from ? Probably the scene manager..
-        void        run(float elapsed)
-        {
-            for (auto &pair: systemsMap)
-            {
-                pair.second->run(elapsed);
-            }
-        }
-    };
-    
-    class   BaseObject : public IEntity
+    class   BaseObject : public futils::IEntity
     {
     public:
         BaseObject() = default;
@@ -480,7 +334,7 @@ namespace fender
     // TODO: Move to another set of files... for clarity.
     namespace components
     {
-        class       Object2d  : public IComponent
+        class       Object2d  : public futils::IComponent
         {
         protected:
             futils::Vec2d<float>      position;
@@ -506,7 +360,7 @@ namespace fender
                 this->position.Y += y;
             }
         };
-        class       Object3d  : public IComponent
+        class       Object3d  : public futils::IComponent
         {
         protected:
             futils::Vec3d<float>      position;
@@ -526,7 +380,7 @@ namespace fender
             futils::Vec3d<float>    getPosition() const {return position;}
             futils::Vec3d<float>    getSize() const {return size;}
         };
-        class       Drawable    : public IComponent
+        class       Drawable    : public futils::IComponent
         {
             fender::Color       color{fender::Color::WHITE};
             fender::Border      border;
@@ -544,7 +398,7 @@ namespace fender
             }
             Border              getBorder() const {return this->border;}
         };
-        class       Clickable   : public IComponent
+        class       Clickable   : public futils::IComponent
         {
             futils::Rect<float>           area;
             std::function<void(void)>   function;
@@ -577,7 +431,7 @@ namespace fender
                 return this->function();
             }
         };
-        class       Hoverable   : public IComponent
+        class       Hoverable   : public futils::IComponent
         {
             futils::Rect<float>             area;
         public:
@@ -603,7 +457,7 @@ namespace fender
             void        setArea(futils::Rect<float> const &ref){this->area = ref;}
             futils::Rect<float> const &getRect() const {return this->area;}
         };
-        class       Ini   : public IComponent
+        class       Ini   : public futils::IComponent
         {
             std::string     file{""};
             std::string     scope{""};
@@ -644,14 +498,14 @@ namespace fender
                 this->hasChanged = false;
             }
         };
-        class       Draggable : public IComponent
+        class       Draggable : public futils::IComponent
         {
             bool    followingMouse{false};
         public:
             Draggable() {this->__name = "Draggable";}
             bool         isDragged() const {return this->followingMouse;}
         };
-        class       Animated : public IComponent
+        class       Animated : public futils::IComponent
         {
         public:
             Animated() {this->__name = "Animated";}
@@ -662,7 +516,7 @@ namespace fender
     
     namespace systems
     {
-        class   Ini : public ISystem
+        class   Ini : public futils::ISystem
         {
             std::unordered_map<std::string, components::Ini *>    sources;
         public:
@@ -703,7 +557,7 @@ namespace fender
                 source.save();
             }
         };
-        class   DragAndDrop : public ISystem
+        class   DragAndDrop : public futils::ISystem
         {
             std::unordered_map<components::Draggable *, components::Draggable *> targets;
         public:
@@ -727,7 +581,7 @@ namespace fender
                 }
             }
         };
-        class   Animation : public ISystem
+        class   Animation : public futils::ISystem
         {
             std::unordered_map<fender::components::Animated *,
                     fender::components::Animated *> components;
@@ -1126,7 +980,7 @@ namespace fender
         using funcMap = std::map<std::string, futils::voidStringFunc>;
     
         std::unordered_map<std::string, fender::Color>  _fenderColors;
-        EntityManager           _ecs;
+        futils::EntityManager   _ecs;
         std::string             _assetsPath;
         std::string             _windowName;
         WindowStyle             _windowStyle;
@@ -1152,7 +1006,7 @@ namespace fender
         virtual void    resize(int x, int y) = 0;
         virtual void    loadCurrentLayout() = 0;
         virtual void    pollEvents() = 0;
-//        Used for updating the ECS systems and other logical updates each Frame
+//        Used for updating the ecs systems and other logical updates each Frame
         virtual void    update(float elapsed = 0.0) = 0;
         virtual void    changeScene(futils::Ini *config = nullptr,
                                     std::string const &scope = "fender") = 0;
@@ -1210,11 +1064,9 @@ namespace fender
         }
     };
 
-    // Considering everything starts with a manager, i'd even keep this file only about the Manager. Maybe.
     class       Manager
     {
         using upRenderer = std::unique_ptr<IRender>;
-        using upINIProxy = std::unique_ptr<futils::INI::INIProxy>;
         using renderBuilder = std::function<upRenderer(void)>;
         using configFunc = std::function<void(void)>;
 
@@ -1227,11 +1079,11 @@ namespace fender
         int                             status{0};
 
         void    runConfigBuild();
-        int     run();
         void    loadTimeline();
     public:
         Manager(futils::Ini &config);
         int start();
+        int run();
 
         void    setWindowName(std::string const &name)
         {this->_windowName = name;}
@@ -1241,6 +1093,8 @@ namespace fender
     {
         futils::UP<futils::Dloader> lib;
         futils::UP<Manager> manager;
+        futils::EntityManager entityManager;
+
     public:
         Fender() = default;
 
@@ -1250,9 +1104,15 @@ namespace fender
             START_LOG(config["global"]["logfile"]);
 
             lib = std::make_unique<futils::Dloader>(config["global"]["fenderPath"]);
-            manager.reset(lib->build<Manager, futils::Ini const &>(config));
+            auto build = lib->build<Manager, futils::Ini const &>(config);
+            if (build == nullptr)
+                return -1;
+            manager.reset(build);
             return manager->start();
         };
+        int run() {
+            return manager->run();
+        }
     };
 }
 
