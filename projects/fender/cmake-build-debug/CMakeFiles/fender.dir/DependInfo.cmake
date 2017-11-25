@@ -5,7 +5,6 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/arroganz/cpp/futils/projects/fender/src/IRender.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/IRender.cpp.o"
-  "/home/arroganz/cpp/futils/projects/fender/src/IScene.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/IScene.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/Manager.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/Manager.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/ecs/Component.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/ecs/Component.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/ecs/Components/Object2d.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/ecs/Components/Object2d.cpp.o"

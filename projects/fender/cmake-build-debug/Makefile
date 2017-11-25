@@ -150,33 +150,6 @@ src/IRender.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/IRender.cpp.s
 .PHONY : src/IRender.cpp.s
 
-src/IScene.o: src/IScene.cpp.o
-
-.PHONY : src/IScene.o
-
-# target to build an object file
-src/IScene.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/IScene.cpp.o
-.PHONY : src/IScene.cpp.o
-
-src/IScene.i: src/IScene.cpp.i
-
-.PHONY : src/IScene.i
-
-# target to preprocess a source file
-src/IScene.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/IScene.cpp.i
-.PHONY : src/IScene.cpp.i
-
-src/IScene.s: src/IScene.cpp.s
-
-.PHONY : src/IScene.s
-
-# target to generate assembly for a file
-src/IScene.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/IScene.cpp.s
-.PHONY : src/IScene.cpp.s
-
 src/Manager.o: src/Manager.cpp.o
 
 .PHONY : src/Manager.o
@@ -378,9 +351,6 @@ help:
 	@echo "... src/IRender.o"
 	@echo "... src/IRender.i"
 	@echo "... src/IRender.s"
-	@echo "... src/IScene.o"
-	@echo "... src/IScene.i"
-	@echo "... src/IScene.s"
 	@echo "... src/Manager.o"
 	@echo "... src/Manager.i"
 	@echo "... src/Manager.s"

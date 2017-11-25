@@ -11,8 +11,7 @@ set(SOURCE_FILES
         src/renderers/ncurses/CursesRender.cpp
 		src/renderers/sfml/SFMLRender.cpp
 		src/Manager.cpp
-		src/IScene.cpp
-		src/IRender.cpp
+        src/IRender.cpp
         src/ecs/Entity.cpp
         src/ecs/Component.cpp
         src/ecs/System.cpp

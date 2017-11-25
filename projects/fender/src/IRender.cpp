@@ -8,6 +8,7 @@
 
 futils::Vec2d<int>  fender::IRender::_windowSize{0, 0};
 
+// TODO: Rename from IRender to ARender because its not an interface
 void    fender::IRender::SmartModeInit(futils::Ini &proxyConf,
                                        std::string const &confScope)
 {

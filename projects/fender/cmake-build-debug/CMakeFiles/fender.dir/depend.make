@@ -11,8 +11,6 @@ CMakeFiles/fender.dir/src/IRender.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/IRender.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/IRender.cpp.o: ../src/IRender.cpp
 
-CMakeFiles/fender.dir/src/IScene.cpp.o: ../src/IScene.cpp
-
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../include/CursesRender.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../include/SFMLRender.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../include/fender.hpp

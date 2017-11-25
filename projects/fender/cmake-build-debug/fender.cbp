@@ -100,9 +100,6 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/IRender.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/IScene.cpp">
-			<Option target="fender"/>
-		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Manager.cpp">
 			<Option target="fender"/>
 		</Unit>

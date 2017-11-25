@@ -11,8 +11,6 @@ CMakeFiles/fender.dir/src/IRender.cpp.o
  ../utils/log.hpp
  ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/src/IRender.cpp
-CMakeFiles/fender.dir/src/IScene.cpp.o
- /home/arroganz/cpp/futils/projects/fender/src/IScene.cpp
 CMakeFiles/fender.dir/src/Manager.cpp.o
  ../include/CursesRender.hpp
  ../include/SFMLRender.hpp
