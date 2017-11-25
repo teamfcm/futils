@@ -2,3 +2,24 @@
 Start log in logfile.txt
      [1] In fender::Manager::Manager(futils::Ini&)
 Selected RenderLibrary : SFML
+     [2]	Rendering Built Successfully.
+     [3] In void fender::IRender::SmartModeInit(futils::Ini&, const string&)
+SmartMode detected. Running auto conf...
+     [4]	Checking if scope fender exists...
+     [5]	Found ! Starting configuration...
+     [6]	Setting AllowWindowResize to false
+     [7]	Setting AssetsPath to assets/
+     [8]	Setting EditorMode to false
+     [9]	Setting ScreenColor to 
+     [10]	Setting SystemFont to game
+     [11]	Setting WindowHeight to 600
+     [12]	Setting WindowHorizontalAlign to Center
+     [13]	Setting WindowName to FengineDemo(alphav.1)
+     [14]	Setting WindowStyle to Borderless
+     [15]	Setting WindowVerticalAlign to Center
+     [16]	Setting WindowWidth to 800
+     [17] In int fender::Manager::start()
+0 systems loaded.
+     [18]	Manager started : OK
+     [19] In int fender::Manager::run()
+Manager done running. Ran 0 times.

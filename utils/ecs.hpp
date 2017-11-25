@@ -8,6 +8,7 @@
 # include <vector>
 # include <list>
 # include <map>
+# include <queue>
 # include <typeinfo>
 # include <functional>
 # include <unordered_map>
@@ -33,10 +34,13 @@ namespace futils
 
     class   ISystem
     {
-        EntityManager       *entityManager{nullptr};
+        std::string name{"Undefined"};
+        EntityManager *entityManager{nullptr};
     public:
         virtual ~ISystem() {}
-        virtual void run(float elapsed) = 0;
+        virtual void run(float elapsed = 0) = 0;
+        void provideManager(EntityManager &manager) { entityManager = &manager; }
+        std::string const &getName() const { return name; }
     };
 
     class   IEntity
@@ -96,6 +100,7 @@ namespace futils
     {
         int                                     status{0};
         std::multimap<std::string, ISystem *>   systemsMap;
+        std::queue<std::string> systemsMarkedForErase;
     public:
         EntityManager() = default;
         template    <typename T, typename ...Args>
@@ -109,15 +114,18 @@ namespace futils
         }
 
         template    <typename System, typename ...Args>
-        void        registerSystem(Args ...args)
+        void        addSystem(Args ...args)
         {
             if (!std::is_base_of<ISystem, System>::value)
                 throw std::logic_error(std::string(typeid(System).name()) + " is not a System");
             auto system = new System(args...);
-            (void)system;
-            futils::NotImplemented(__PRETTY_FUNCTION__);
-//            for (auto &handledComponent: system->getRequiredComponents())
-//                this->systemsMap.insert(std::pair<std::string, ISystem *>(handledComponent, system));
+            system->provideManager(*this);
+            this->systemsMap.insert(std::pair(system->getName(), system));
+        }
+
+        void removeSystem(std::string const &systemName)
+        {
+            systemsMarkedForErase.push(systemName);
         }
 
         bool        isFine()
@@ -125,12 +133,22 @@ namespace futils
             return this->status == 0;
         }
 
-        // Where is the elapsed float coming from ? Probably the scene manager..
-        void        run(float elapsed)
+        int getNumberOfSystems() const
+        {
+            return systemsMap.size();
+        }
+
+        void        run(float)
         {
             for (auto &pair: systemsMap)
             {
-                pair.second->run(elapsed);
+                auto &system = pair.second;
+                system->run();
+            }
+            while (!systemsMarkedForErase.empty()) {
+                auto &name = systemsMarkedForErase.front();
+                systemsMap.erase(name);
+                systemsMarkedForErase.pop();
             }
         }
     };

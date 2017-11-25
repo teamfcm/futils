@@ -15,6 +15,7 @@ CMakeFiles/fender.dir/src/Manager.cpp.o
  ../include/CursesRender.hpp
  ../include/SFMLRender.hpp
  ../include/fender.hpp
+ ../utils/callback.hpp
  ../utils/clock.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp

@@ -24,6 +24,8 @@ namespace futils
 
     template <typename T>
     using UP = std::unique_ptr<T>;
+    template <typename T>
+    using SP = std::shared_ptr<T>;
 }
 
 #endif //FUTILS_TYPES_H

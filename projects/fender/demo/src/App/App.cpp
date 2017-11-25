@@ -11,6 +11,7 @@ demo::App::App(int, char *argv[]):
 }
 
 int demo::App::start() {
+    // engine.addSystem(fender::systems::SplashScreen);
     return engine.start(execPath);
 }
 

@@ -14,6 +14,7 @@ CMakeFiles/fender.dir/src/IRender.cpp.o: ../src/IRender.cpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../include/CursesRender.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../include/SFMLRender.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../include/fender.hpp
+CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/callback.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/clock.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/dloader.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/ecs.hpp

@@ -3,6 +3,7 @@
 //
 
 # include <unistd.h>
+#include <callback.hpp>
 # include "fender.hpp"
 # include "log.hpp"
 # include "SFMLRender.hpp"
@@ -35,45 +36,21 @@ fender::Manager::Manager(futils::Ini &config):
     LOUT("Rendering Built Successfully.");
     if (static_cast<bool>(conf["SmartMode"]) == true)
         this->renderer->SmartModeInit(config);
-    this->loadTimeline();
-}
-
-void    fender::Manager::loadTimeline()
-{
-
 }
 
 int fender::Manager::start()
 {
-    // Used for initialization from client ?
+    LOUT(std::to_string(entityManager->getNumberOfSystems()) + " systems loaded.");
+    LOUT("Manager started : OK");
     return 0;
 }
 
 int fender::Manager::run()
 {
-    futils::Clock   clock;
-    float           elapsed;
-    (void)elapsed;
-    (void)clock;
-//    for (auto &sceneName: this->sceneList)
-//    {
-//        this->renderer->changeScene(this->timeline.proxy(), sceneName);
-//        auto scene = this->sceneFactory.build(sceneName);
-//        if (scene) {
-//            scene->provideECS(this->renderer->getECS());
-//            scene->provideRenderer(*this->renderer);
-//            scene->init();
-//            clock.start();
-//            while (scene->isDone() == false && this->renderer->isRunning())
-//            {
-//                elapsed = clock.loop();
-//                clock.start();
-//                this->renderer->pollEvents();
-//                scene->update(elapsed);
-//                this->renderer->update(elapsed);
-//                clock.end();
-//            }
-//        }
-//    }
+    int runs = 0;
+    while (entityManager->getNumberOfSystems() > 0) {
+        runs++;
+    }
+    LOUT("Manager done running. Ran " + std::to_string(runs) + " times.");
     return status;
 }

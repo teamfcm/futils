@@ -67,10 +67,10 @@ fender::SFMLRender::SFMLRender()
     this->initFactory();
     this->_eventSystem.setRole(fender::MediatorRole::Provider);
     
-//    Registering systems to the ecs
-    this->_ecs.registerSystem<fender::SFMLsystems::ClickDetection>(this);
-    this->_ecs.registerSystem<fender::SFMLsystems::HoverDetection>(this);
-    this->_ecs.registerSystem<fender::SFMLsystems::Rendering>(this);
+//    Adding systems to the ecs
+    _ecs.addSystem<fender::SFMLsystems::ClickDetection>(this);
+    _ecs.addSystem<fender::SFMLsystems::HoverDetection>(this);
+    _ecs.addSystem<fender::SFMLsystems::Rendering>(this);
 }
 
 // TODO: Should have a class Window for simpler opening and provide functions for creation, placement etc...

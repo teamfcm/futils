@@ -980,18 +980,14 @@ namespace fender
     {
         using upRenderer = std::unique_ptr<IRender>;
         using renderBuilder = std::function<upRenderer(void)>;
-        using configFunc = std::function<void(void)>;
 
         upRenderer  renderer;
         futils::Ini &config;
-        std::unordered_map<std::string, renderBuilder>  renderingBuilders;
-        std::unordered_map<std::string, configFunc>     configFunctions;
-
-        std::string                     _windowName{"Undefined"};
-        int                             status{0};
-
-        void    runConfigBuild();
-        void    loadTimeline();
+        std::unordered_map<std::string, renderBuilder> renderingBuilders;
+        std::unordered_map<std::string, futils::Action> configFunctions;
+        int status{0};
+        std::string _windowName{"Undefined"};
+        futils::EntityManager *entityManager{nullptr};
     public:
         Manager(futils::Ini &config);
         int start();
@@ -999,14 +995,17 @@ namespace fender
 
         void    setWindowName(std::string const &name)
         {this->_windowName = name;}
+        void provideEntityManager(futils::EntityManager &manager)
+        {
+            entityManager = &manager;
+        }
     };
 
     class Fender
     {
         futils::UP<futils::Dloader> lib;
         futils::UP<Manager> manager;
-        futils::EntityManager entityManager;
-
+        futils::UP<futils::EntityManager> entityManager;
     public:
         Fender() = default;
 
@@ -1020,8 +1019,11 @@ namespace fender
             if (build == nullptr)
                 return -1;
             manager.reset(build);
+            entityManager = std::make_unique<futils::EntityManager>();
+            manager->provideEntityManager(*entityManager);
             return manager->start();
         };
+
         int run() {
             return manager->run();
         }

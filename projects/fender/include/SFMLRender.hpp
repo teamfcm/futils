@@ -424,15 +424,6 @@ namespace fender
             virtual void        run(float) final {
                 if (!this->__renderer.mouseIsGoingDown())
                     return ;
-//                for (auto &compo: this->components)
-//                {
-//                    auto const &pos = this->_renderer.getMousePosition();
-//                    if (compo->getRect().contains(pos))
-//                    {
-//                        auto &func = *compo;
-//                        return func();
-//                    }
-//                }
             }
         };
         class   HoverDetection : public BaseSystem
@@ -445,27 +436,6 @@ namespace fender
             }
 
             virtual void        run(float) final {
-//                for (auto &compo: this->components)
-//                {
-//                    auto const &pos = this->_renderer.getMousePosition();
-//                    if (compo->getRect().contains(pos))
-//                    {
-//                        hovered[compo] = true;
-//                        compo->onHover();
-//                    }
-//                }
-//                for (auto &pair: this->hovered)
-//                {
-//                    if (pair.second == false)
-//                        continue ;
-//                    auto &hover = pair.first;
-//                    auto const &pos = this->_renderer.getMousePosition();
-//                    if (!hover->getRect().contains(pos))
-//                    {
-//                        hover->onLeave();
-//                        hovered[hover] = false;
-//                    }
-//                }
             }
         };
         class   Rendering: public BaseSystem
@@ -486,27 +456,6 @@ namespace fender
             
             virtual void        run(float) final
             {
-//                this->_fluidStep += elapsed;
-//                if (_fluidStep < 0.016)  // TODO: 60FPS, a class would be good but meh.
-//                    return ;
-//                _fluidStep = 0.0;
-//                auto &win = this->_renderer.getWindow();
-//                win.clear(this->fenderColors[this->_renderer.getScreenColor()]);
-////                TODO: Needs a way better encapsulation, i should have my own rect here..
-//                for (auto &pair: this->components)
-//                {
-//                    sf::RectangleShape  rect;
-//                    auto &compo = *pair.second;
-//                    auto &object = static_cast<fender::components::Object2d &>(compo.getAssociatedComponent("Object2d"));
-//                    rect.setPosition(object.getPosition().X, object.getPosition().Y);
-//                    rect.setFillColor(sf::Color(this->fenderColors[compo.getColor()]));
-//                    rect.setSize(sf::Vector2f(object.getSize().X, object.getSize().Y));
-//                    auto color = this->fenderColors[compo.getBorder().color];
-//                    rect.setOutlineThickness(compo.getBorder().width);
-//                    rect.setOutlineColor(color);
-//                    win.draw(rect);
-//                }
-//                win.display();
             }
         };
     }
