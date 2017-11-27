@@ -7,14 +7,16 @@
 demo::App::App(int, char *argv[]):
         execPath(argv[0])
 {
-
+    engine = std::make_unique<Engine>(execPath);
 }
 
 int demo::App::start() {
-    // engine.addSystem(fender::systems::SplashScreen);
-    return engine.start(execPath);
+    if (engine->start() != 0)
+        return -1;
+    return 0;
 }
 
 int demo::App::run() {
-    return engine.run();
+    engine->addSystem<fender::systems::SplashScreen>();
+    return engine->run();
 };

@@ -6,14 +6,17 @@
 #define DEMO_APP_HPP
 
 # include "fender.hpp"
+# include "extras.hpp"
 # include "goToBinDir.hpp"
 
 namespace demo
 {
     class App
     {
+        using Engine = fender::Fender;
+
         std::string execPath;
-        fender::Fender engine;
+        futils::UP<Engine> engine;
     public:
         App(int, char *argv[]);
         int start();

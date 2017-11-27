@@ -8,14 +8,10 @@
 # include <cxxabi.h>
 # include <stack>
 # include <map>
-#include <types.hpp>
-# include "goToBinDir.hpp"
+# include "types.hpp"
 # include "dloader.hpp"
-# include "log.hpp"
-# include "ini.hpp"
 # include "ecs.hpp"
 # include "futils.hpp"
-
 
 // TODO: Don't use preprocessing if its not necessary.
 // TODO: REMOVE SetAndSave, INIT, SAVE macros.
@@ -25,6 +21,13 @@
 # define SetAndSave(v, vv)  this->v = vv; this->fileObject[EXPAND_AND_QUOTE(v)] = vv;
 # define INIT(v)            SetAndSave(v, this->v)
 # define SAVE(v, vv)        this->fileObject[EXPAND_AND_QUOTE(v)] = vv;
+
+// Utils forward declarations
+namespace futils
+{
+    class Dloader;
+    class Ini;
+}
 
 namespace fender
 {
@@ -36,7 +39,6 @@ namespace fender
         GoingUp,
         GoingDown,
     };
-
     enum class  Input : int
     {
         Undefined = 0,
@@ -54,7 +56,6 @@ namespace fender
         LButton, RButton, MouseWheelUp, MouseWheelDown, MouseWheelButton,
         NBR_SUPPORTED_KEYS
     };
-    
     enum Color : int
     {
         WHITE = 0,
@@ -66,7 +67,7 @@ namespace fender
         YELLOW,
         TRANSPARENT
     };
-    
+
     struct      Command
     {
         Input   key{Input::Undefined};
@@ -76,13 +77,11 @@ namespace fender
             return other.key == this->key && other.state == this->state;
         }
     };
-
     struct      Border
     {
         int             width{0};
         fender::Color   color{fender::Color::WHITE};
     };
-    
     class       Event
     {
     protected:
@@ -105,7 +104,6 @@ namespace fender
 //        If the event dies without ever being started, call onDeath()
         std::function<void(void)>   onDeath{[](){}};
     };
-    
     enum class  InputEventMode : int
     {
 //        As long as the input inputs are in the correct state at the same time in memory
@@ -115,7 +113,6 @@ namespace fender
 //        If the input are set to true sequentially, any error restarts the sequence
                 Sequential
     };
-    
     class       InputEvent : public Event
     {
         int                         _identifier{0};
@@ -196,7 +193,6 @@ namespace fender
                 this->trigger();
         }
     };
-
     class       LogicalEvent : public Event
     {
     public:
@@ -205,20 +201,17 @@ namespace fender
             this->_label = label;
         }
     };
-    
     enum class  MediatorRole
     {
         Client,
         Provider
     };
-
     // TODO: Move Mediator into another hpp
     class IMediatorPacket
     {
     public:
         virtual ~IMediatorPacket() = default;
     };
-
     // TODO: Review mediator to take not a template but a IMediatorPacket
     template    <typename T>
     class       Mediator
@@ -253,7 +246,6 @@ namespace fender
             }
         }
     };
-
     // TODO: Simplify this class, its a bit too complicated.
     class       EventSystem
     {
@@ -334,6 +326,40 @@ namespace fender
     // TODO: Move to another set of files... for clarity.
     namespace components
     {
+        class Runnable : public futils::IComponent
+        {
+            futils::Action _action;
+        public:
+            Runnable(futils::Action action): _action(action)
+            {
+
+            }
+
+            void run() {
+                _action();
+            }
+        };
+        class Sequenced : public futils::IComponent
+        {
+        public:
+            Sequenced() = default;
+        };
+        class Named : public futils::IComponent
+        {
+            std::string _name{"UndefinedName"};
+        public:
+            Named(std::string const &name): _name(name) {
+
+            }
+
+            std::string const &get() const {
+                return _name;
+            }
+
+            void rename(std::string const &name) {
+                _name = name;
+            }
+        };
         class       Object2d  : public futils::IComponent
         {
         protected:
@@ -516,6 +542,13 @@ namespace fender
     
     namespace systems
     {
+        class SplashScreen : public futils::ISystem
+        {
+        public:
+            SplashScreen();
+            void run(float) final;
+        };
+
         class   Ini : public futils::ISystem
         {
             std::unordered_map<std::string, components::Ini *>    sources;
@@ -1007,26 +1040,24 @@ namespace fender
         futils::UP<Manager> manager;
         futils::UP<futils::EntityManager> entityManager;
     public:
-        Fender() = default;
+        Fender(std::string const &);
+        int start();
+        int run();
 
-        int start(std::string const &arg0) {
-            futils::goToBinDir(arg0);
-            futils::Ini config("./config/fender.ini");
-            START_LOG(config["global"]["logfile"]);
-
-            lib = std::make_unique<futils::Dloader>(config["global"]["fenderPath"]);
-            auto build = lib->build<Manager, futils::Ini const &>(config);
-            if (build == nullptr)
-                return -1;
-            manager.reset(build);
-            entityManager = std::make_unique<futils::EntityManager>();
-            manager->provideEntityManager(*entityManager);
-            return manager->start();
+        template <typename System, typename ...Args>
+        void addSystem(Args ...args) {
+            entityManager->addSystem<System>(args...);
         };
 
-        int run() {
-            return manager->run();
+        template <typename System>
+        void removeSystem() {
+            entityManager->removeSystem(futils::demangle<System>());
         }
+
+        template <typename T, typename ...Args>
+        T *createEntity(Args ...args) {
+            return entityManager->createEntity<T>(args...);
+        };
     };
 }
 

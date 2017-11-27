@@ -146,9 +146,9 @@ bool    fender::SFMLRender::isRunning()
     return this->win.isOpen();
 }
 
-void    fender::SFMLRender::update(float elapsed)
+void    fender::SFMLRender::update(float)
 {
-    this->_ecs.run(elapsed);
+    this->_ecs.run();
 }
 
 // TODO: This function is useless now with the ecs. Should be removed

@@ -38,15 +38,9 @@ stack
 map
 -
 types.hpp
--
-goToBinDir.hpp
-../include/goToBinDir.hpp
+../include/types.hpp
 dloader.hpp
 ../include/dloader.hpp
-log.hpp
-../include/log.hpp
-ini.hpp
-../include/ini.hpp
 ecs.hpp
 ../include/ecs.hpp
 futils.hpp
@@ -100,6 +94,14 @@ typeinfo
 functional
 -
 unordered_map
+-
+clock.hpp
+../utils/clock.hpp
+ini.hpp
+../utils/ini.hpp
+
+../utils/fstring.hpp
+sstream
 -
 
 ../utils/futils.hpp
@@ -157,6 +159,18 @@ futils.hpp
 ../utils/futils.hpp
 
 ../utils/types.hpp
+cxxabi.h
+-
+fstring.hpp
+../utils/fstring.hpp
+
+/home/arroganz/cpp/futils/projects/fender/src/Fender.cpp
+fender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/fender.hpp
+goToBinDir.hpp
+/home/arroganz/cpp/futils/projects/fender/src/goToBinDir.hpp
+dloader.hpp
+/home/arroganz/cpp/futils/projects/fender/src/dloader.hpp
 
 /home/arroganz/cpp/futils/projects/fender/src/IRender.cpp
 fender.hpp
@@ -199,6 +213,10 @@ fender.hpp
 /home/arroganz/cpp/futils/projects/fender/src/ecs/System.cpp
 fender.hpp
 /home/arroganz/cpp/futils/projects/fender/src/ecs/fender.hpp
+
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/SplashScreen.cpp
+fender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/fender.hpp
 
 /home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.cpp
 iostream

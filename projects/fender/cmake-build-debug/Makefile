@@ -123,6 +123,33 @@ fender/fast:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/build
 .PHONY : fender/fast
 
+src/Fender.o: src/Fender.cpp.o
+
+.PHONY : src/Fender.o
+
+# target to build an object file
+src/Fender.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Fender.cpp.o
+.PHONY : src/Fender.cpp.o
+
+src/Fender.i: src/Fender.cpp.i
+
+.PHONY : src/Fender.i
+
+# target to preprocess a source file
+src/Fender.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Fender.cpp.i
+.PHONY : src/Fender.cpp.i
+
+src/Fender.s: src/Fender.cpp.s
+
+.PHONY : src/Fender.s
+
+# target to generate assembly for a file
+src/Fender.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Fender.cpp.s
+.PHONY : src/Fender.cpp.s
+
 src/IRender.o: src/IRender.cpp.o
 
 .PHONY : src/IRender.o
@@ -285,6 +312,33 @@ src/ecs/System.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/System.cpp.s
 .PHONY : src/ecs/System.cpp.s
 
+src/ecs/Systems/SplashScreen.o: src/ecs/Systems/SplashScreen.cpp.o
+
+.PHONY : src/ecs/Systems/SplashScreen.o
+
+# target to build an object file
+src/ecs/Systems/SplashScreen.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o
+.PHONY : src/ecs/Systems/SplashScreen.cpp.o
+
+src/ecs/Systems/SplashScreen.i: src/ecs/Systems/SplashScreen.cpp.i
+
+.PHONY : src/ecs/Systems/SplashScreen.i
+
+# target to preprocess a source file
+src/ecs/Systems/SplashScreen.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.i
+.PHONY : src/ecs/Systems/SplashScreen.cpp.i
+
+src/ecs/Systems/SplashScreen.s: src/ecs/Systems/SplashScreen.cpp.s
+
+.PHONY : src/ecs/Systems/SplashScreen.s
+
+# target to generate assembly for a file
+src/ecs/Systems/SplashScreen.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.s
+.PHONY : src/ecs/Systems/SplashScreen.cpp.s
+
 src/renderers/ncurses/CursesRender.o: src/renderers/ncurses/CursesRender.cpp.o
 
 .PHONY : src/renderers/ncurses/CursesRender.o
@@ -348,6 +402,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... fender"
 	@echo "... edit_cache"
+	@echo "... src/Fender.o"
+	@echo "... src/Fender.i"
+	@echo "... src/Fender.s"
 	@echo "... src/IRender.o"
 	@echo "... src/IRender.i"
 	@echo "... src/IRender.s"
@@ -366,6 +423,9 @@ help:
 	@echo "... src/ecs/System.o"
 	@echo "... src/ecs/System.i"
 	@echo "... src/ecs/System.s"
+	@echo "... src/ecs/Systems/SplashScreen.o"
+	@echo "... src/ecs/Systems/SplashScreen.i"
+	@echo "... src/ecs/Systems/SplashScreen.s"
 	@echo "... src/renderers/ncurses/CursesRender.o"
 	@echo "... src/renderers/ncurses/CursesRender.i"
 	@echo "... src/renderers/ncurses/CursesRender.s"

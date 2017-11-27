@@ -1,4 +1,4 @@
-     [0] In int fender::Fender::start(const string&)
+     [0] In fender::Fender::Fender(const string&)
 Start log in logfile.txt
      [1] In fender::Manager::Manager(futils::Ini&)
 Selected RenderLibrary : SFML
@@ -21,5 +21,7 @@ SmartMode detected. Running auto conf...
      [17] In int fender::Manager::start()
 0 systems loaded.
      [18]	Manager started : OK
-     [19] In int fender::Manager::run()
-Manager done running. Ran 0 times.
+     [19] In virtual void fender::systems::SplashScreen::run(float)
+Coucou
+     [20] In int fender::Manager::run()
+Manager done running. Ran 1 times.

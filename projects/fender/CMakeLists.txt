@@ -12,10 +12,13 @@ set(SOURCE_FILES
 		src/renderers/sfml/SFMLRender.cpp
 		src/Manager.cpp
         src/IRender.cpp
+		src/Fender.cpp
         src/ecs/Entity.cpp
         src/ecs/Component.cpp
         src/ecs/System.cpp
-        src/ecs/Components/Object2d.cpp)
+        src/ecs/Components/Object2d.cpp
+		src/ecs/Systems/SplashScreen.cpp
+		)
 
 if (UNIX)
 	add_compile_options(-Wall -Wextra -Werror)

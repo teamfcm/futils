@@ -48,8 +48,8 @@ int fender::Manager::start()
 int fender::Manager::run()
 {
     int runs = 0;
-    while (entityManager->getNumberOfSystems() > 0) {
-        runs++;
+    for (;entityManager->getNumberOfSystems() > 0; runs++) {
+        entityManager->run();
     }
     LOUT("Manager done running. Ran " + std::to_string(runs) + " times.");
     return status;

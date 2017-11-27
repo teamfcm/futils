@@ -12,6 +12,8 @@
 # include <typeinfo>
 # include <functional>
 # include <unordered_map>
+# include "clock.hpp"
+# include "ini.hpp"
 
 namespace futils
 {
@@ -34,6 +36,7 @@ namespace futils
 
     class   ISystem
     {
+    protected:
         std::string name{"Undefined"};
         EntityManager *entityManager{nullptr};
     public:
@@ -78,9 +81,20 @@ namespace futils
             // TODO: Make a smart pointer.
             auto compo = new Compo(args...);
             compo->setEntity(*this);
-            this->components.insert(std::make_pair(compo->getName(), compo));
+            this->components.insert(std::make_pair(futils::demangle<Compo>(), compo));
             this->registerComponentFunction(*compo);
             return *compo;
+        };
+
+        template <typename T>
+        T &get()
+        {
+            for (auto &it: components)
+            {
+                if (it.first == futils::demangle<T>())
+                    return static_cast<T &>(*it.second);
+            }
+            throw std::runtime_error("Entity does not have component " + futils::demangle<T>());
         };
 
         IComponent  &getComponent(std::string const &type)
@@ -101,8 +115,12 @@ namespace futils
         int                                     status{0};
         std::multimap<std::string, ISystem *>   systemsMap;
         std::queue<std::string> systemsMarkedForErase;
+        futils::Clock<float> timeKeeper;
     public:
-        EntityManager() = default;
+        EntityManager() {
+            timeKeeper.start();
+        }
+
         template    <typename T, typename ...Args>
         T           *createEntity(Args ...args)
         {
@@ -138,12 +156,13 @@ namespace futils
             return systemsMap.size();
         }
 
-        void        run(float)
+        void        run()
         {
+            auto elapsed = timeKeeper.loop();
             for (auto &pair: systemsMap)
             {
                 auto &system = pair.second;
-                system->run();
+                system->run(elapsed);
             }
             while (!systemsMarkedForErase.empty()) {
                 auto &name = systemsMarkedForErase.front();

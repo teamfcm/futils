@@ -3,9 +3,12 @@
 
 CMakeFiles/demo.dir/src/App/App.cpp.o
  ../include/App.hpp
+ ../include/extras.hpp
  ../include/fender.hpp
+ ../utils/clock.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp
+ ../utils/fstring.hpp
  ../utils/futils.hpp
  ../utils/goToBinDir.hpp
  ../utils/ini.hpp
@@ -15,9 +18,12 @@ CMakeFiles/demo.dir/src/App/App.cpp.o
 CMakeFiles/demo.dir/src/main.cpp.o
  ../include/App.hpp
  ../include/demo.hpp
+ ../include/extras.hpp
  ../include/fender.hpp
+ ../utils/clock.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp
+ ../utils/fstring.hpp
  ../utils/futils.hpp
  ../utils/goToBinDir.hpp
  ../utils/ini.hpp
