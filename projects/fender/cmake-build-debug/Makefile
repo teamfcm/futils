@@ -339,6 +339,33 @@ src/ecs/Systems/SplashScreen.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.s
 .PHONY : src/ecs/Systems/SplashScreen.cpp.s
 
+src/ecs/Systems/WindowManager.o: src/ecs/Systems/WindowManager.cpp.o
+
+.PHONY : src/ecs/Systems/WindowManager.o
+
+# target to build an object file
+src/ecs/Systems/WindowManager.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o
+.PHONY : src/ecs/Systems/WindowManager.cpp.o
+
+src/ecs/Systems/WindowManager.i: src/ecs/Systems/WindowManager.cpp.i
+
+.PHONY : src/ecs/Systems/WindowManager.i
+
+# target to preprocess a source file
+src/ecs/Systems/WindowManager.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.i
+.PHONY : src/ecs/Systems/WindowManager.cpp.i
+
+src/ecs/Systems/WindowManager.s: src/ecs/Systems/WindowManager.cpp.s
+
+.PHONY : src/ecs/Systems/WindowManager.s
+
+# target to generate assembly for a file
+src/ecs/Systems/WindowManager.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.s
+.PHONY : src/ecs/Systems/WindowManager.cpp.s
+
 src/renderers/ncurses/CursesRender.o: src/renderers/ncurses/CursesRender.cpp.o
 
 .PHONY : src/renderers/ncurses/CursesRender.o
@@ -426,6 +453,9 @@ help:
 	@echo "... src/ecs/Systems/SplashScreen.o"
 	@echo "... src/ecs/Systems/SplashScreen.i"
 	@echo "... src/ecs/Systems/SplashScreen.s"
+	@echo "... src/ecs/Systems/WindowManager.o"
+	@echo "... src/ecs/Systems/WindowManager.i"
+	@echo "... src/ecs/Systems/WindowManager.s"
 	@echo "... src/renderers/ncurses/CursesRender.o"
 	@echo "... src/renderers/ncurses/CursesRender.i"
 	@echo "... src/renderers/ncurses/CursesRender.s"

@@ -66,8 +66,6 @@ namespace futils
             this->_id = futils::UID::get();
         }
         virtual ~IEntity() {}
-        virtual void    init() = 0;
-
         // Make the function name a bit shorter ? onExtension for example. Its only for the engine devs anyway.
         void            setComponentRegistrationFunction(std::function<void(IComponent &)> func)
         {
@@ -115,6 +113,8 @@ namespace futils
         int                                     status{0};
         std::multimap<std::string, ISystem *>   systemsMap;
         std::queue<std::string> systemsMarkedForErase;
+        // Entities sorted by component
+        std::unordered_map<std::string, std::unordered_map<int, IEntity *>> entities;
         futils::Clock<float> timeKeeper;
     public:
         EntityManager() {
@@ -126,8 +126,11 @@ namespace futils
         {
             if (!std::is_base_of<IEntity, T>::value)
                 throw std::logic_error(std::string(typeid(T).name()) + " is not an Entity");
+            auto name = futils::demangle<T>();
             auto entity = new T(args...);
-            entity->init();
+            if (entities.find(name) == entities.end())
+                entities[name] = std::unordered_map<int, IEntity *>();
+            entities[name][entity->getId()] = entity;
             return entity;
         }
 
@@ -145,6 +148,14 @@ namespace futils
         {
             systemsMarkedForErase.push(systemName);
         }
+
+        template <typename T>
+        std::unordered_map<int, IEntity *> get()
+        {
+            if (entities.find(futils::demangle<T>()) == entities.end())
+                throw std::runtime_error("No entities found with name " + futils::demangle<T>());
+            return entities[futils::demangle<T>()];
+        };
 
         bool        isFine()
         {

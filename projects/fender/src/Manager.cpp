@@ -40,6 +40,7 @@ fender::Manager::Manager(futils::Ini &config):
 
 int fender::Manager::start()
 {
+    entityManager->addSystem<fender::systems::WindowManager>();
     LOUT(std::to_string(entityManager->getNumberOfSystems()) + " systems loaded.");
     LOUT("Manager started : OK");
     return 0;

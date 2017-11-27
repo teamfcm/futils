@@ -18,6 +18,7 @@ set(SOURCE_FILES
         src/ecs/System.cpp
         src/ecs/Components/Object2d.cpp
 		src/ecs/Systems/SplashScreen.cpp
+		src/ecs/Systems/WindowManager.cpp
 		)
 
 if (UNIX)

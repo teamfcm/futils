@@ -124,6 +124,9 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/SplashScreen.cpp">
 			<Option target="fender"/>
 		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/WindowManager.cpp">
+			<Option target="fender"/>
+		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.cpp">
 			<Option target="fender"/>
 		</Unit>

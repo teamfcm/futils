@@ -46,6 +46,12 @@ ecs.hpp
 futils.hpp
 ../include/futils.hpp
 
+../include/systems.hpp
+fender.hpp
+../include/fender.hpp
+extras.hpp
+../include/extras.hpp
+
 ../utils/clock.hpp
 chrono
 -
@@ -153,6 +159,8 @@ fstring.hpp
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/App.cpp
 App.hpp
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/App.hpp
+systems.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/src/App/systems.hpp
 
 /home/arroganz/cpp/futils/projects/fender/demo/src/main.cpp
 demo.hpp

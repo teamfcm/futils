@@ -22,6 +22,10 @@ string
 fender.hpp
 ../include/fender.hpp
 
+../include/extras.hpp
+fender.hpp
+../include/fender.hpp
+
 ../include/fender.hpp
 iostream
 -
@@ -45,6 +49,12 @@ ecs.hpp
 ../include/ecs.hpp
 futils.hpp
 ../include/futils.hpp
+
+../include/systems.hpp
+fender.hpp
+../include/fender.hpp
+extras.hpp
+../include/extras.hpp
 
 ../utils/callback.hpp
 thread
@@ -215,8 +225,16 @@ fender.hpp
 /home/arroganz/cpp/futils/projects/fender/src/ecs/fender.hpp
 
 /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/SplashScreen.cpp
+systems.hpp
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/systems.hpp
+
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/WindowManager.cpp
 fender.hpp
 /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/fender.hpp
+CursesRender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/CursesRender.hpp
+SFMLRender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/SFMLRender.hpp
 
 /home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.cpp
 iostream

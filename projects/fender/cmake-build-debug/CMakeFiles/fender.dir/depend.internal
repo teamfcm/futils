@@ -83,7 +83,9 @@ CMakeFiles/fender.dir/src/ecs/System.cpp.o
  ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/src/ecs/System.cpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o
+ ../include/extras.hpp
  ../include/fender.hpp
+ ../include/systems.hpp
  ../utils/clock.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp
@@ -93,6 +95,19 @@ CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o
  ../utils/log.hpp
  ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/SplashScreen.cpp
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o
+ ../include/CursesRender.hpp
+ ../include/SFMLRender.hpp
+ ../include/fender.hpp
+ ../utils/clock.hpp
+ ../utils/dloader.hpp
+ ../utils/ecs.hpp
+ ../utils/fstring.hpp
+ ../utils/futils.hpp
+ ../utils/ini.hpp
+ ../utils/log.hpp
+ ../utils/types.hpp
+ /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/WindowManager.cpp
 CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o
  ../include/CursesRender.hpp
  ../include/fender.hpp

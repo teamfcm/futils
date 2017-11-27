@@ -31,6 +31,8 @@ namespace futils
 
 namespace fender
 {
+    class       IRender;
+
     enum class  State : int
     {
         Undefined,
@@ -316,16 +318,21 @@ namespace fender
         };
     };
 
-    class   BaseObject : public futils::IEntity
-    {
-    public:
-        BaseObject() = default;
-        virtual void    init() override {};
-    };
-
-    // TODO: Move to another set of files... for clarity.
     namespace components
     {
+        class Windowed : public futils::IComponent
+        {
+            std::string _name;
+            int _width;
+            int _height;
+        public:
+            Windowed(std::string const &name,
+                     int width, int height):
+                    _name(name),
+                    _width(width), _height(height) {}
+            bool isOpen{false};
+        };
+
         class Runnable : public futils::IComponent
         {
             futils::Action _action;
@@ -542,13 +549,17 @@ namespace fender
     
     namespace systems
     {
-        class SplashScreen : public futils::ISystem
+        class WindowManager : public futils::ISystem
         {
+            using Renderer = std::unique_ptr<fender::IRender>;
+            using builder = std::function<Renderer(void)>;
+            std::unordered_map<std::string, builder> renderingBuilders;
+            Renderer renderer;
         public:
-            SplashScreen();
+            WindowManager();
             void run(float) final;
+            void openWindow(components::Windowed &);
         };
-
         class   Ini : public futils::ISystem
         {
             std::unordered_map<std::string, components::Ini *>    sources;
@@ -589,8 +600,6 @@ namespace fender
             }
         };
     }
-
-    class       IRender;
 
     enum class  WindowStyle
     {

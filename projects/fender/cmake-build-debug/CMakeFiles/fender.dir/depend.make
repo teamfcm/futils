@@ -82,7 +82,9 @@ CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../src/ecs/System.cpp
 
+CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../include/extras.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../include/fender.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../include/systems.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../utils/clock.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../utils/dloader.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../utils/ecs.hpp
@@ -92,6 +94,19 @@ CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../utils/ini.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../src/ecs/Systems/SplashScreen.cpp
+
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../include/CursesRender.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../include/SFMLRender.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../include/fender.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/dloader.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/ecs.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/fstring.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/futils.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/ini.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/log.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/types.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../src/ecs/Systems/WindowManager.cpp
 
 CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../include/CursesRender.hpp
 CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../include/fender.hpp

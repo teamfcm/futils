@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fender.dir/src/ecs/System.cpp.o"
   "CMakeFiles/fender.dir/src/ecs/Components/Object2d.cpp.o"
   "CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o"
+  "CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o"
   "../release/libfender.pdb"
   "../release/libfender.so"
 )
