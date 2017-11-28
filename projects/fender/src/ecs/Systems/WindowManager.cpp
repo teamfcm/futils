@@ -28,9 +28,9 @@ fender::systems::WindowManager::WindowManager()
         this->renderer->SmartModeInit(config);
 }
 
+// TODO: Add reaction to packet and add type struct with type_index as typeid(T)
 void fender::systems::WindowManager::openWindow(components::Windowed &win)
 {
-
     win.isOpen = true;
     renderer->openWindow();
 }

@@ -23,14 +23,24 @@ namespace futils
     class   IComponent
     {
     protected:
+        futils::type_index _typeindex;
         IEntity     *__entity{nullptr};
         std::string __name{"[DEFAULT_COMPONENT]"};
     public:
         virtual ~IComponent() {}
 
+        // Friend of EntityManager
+        void setTypeindex(futils::type_index index) {
+            _typeindex = index;
+        }
+        // END
+
         std::string const &getName() const {return this->__name;}
         void                setEntity(IEntity &ent);
         IComponent  &getAssociatedComponent(std::string const &type);
+        futils::type_index getTypeindex() const {
+            return _typeindex;
+        }
     };
 
     class   ISystem
@@ -47,7 +57,7 @@ namespace futils
 
     class   IEntity
     {
-        std::unordered_multimap<std::string, IComponent *>    components;
+        std::unordered_multimap<futils::type_index, IComponent *>    components;
         int                                 _id;
 
         // Replace with SFINAE or static assertion. SFINAE is probably better.
@@ -59,12 +69,13 @@ namespace futils
         }
 
     public:
-        std::function<void(IComponent &)> onExtension{[](IComponent &){}};
-
+        // TODO: SHOULD BE PRIVATE AND FRIEND WITH ENTITY MANAGER
+        std::function<bool(IComponent &)> onExtension{[](IComponent &){return false;}};
+        std::queue<IComponent *> lateinitComponents;
+        // END.
         IEntity() {
             this->_id = futils::UID::get();
         }
-        virtual void init() = 0;
         virtual ~IEntity() {}
 
         template    <typename Compo, typename ...Args>
@@ -72,9 +83,12 @@ namespace futils
         {
             verifIsComponent<Compo>();
             auto compo = new Compo(args...);
+            compo->setTypeindex(futils::type<Compo>::index);
             compo->setEntity(*this);
-            this->components.insert(std::make_pair(futils::demangle<Compo>(), compo));
-            onExtension(*compo);
+            this->components.insert(std::pair(compo->getTypeindex(), compo));
+            if (onExtension(*compo) == false) {
+                lateinitComponents.push(compo);
+            }
             return *compo;
         };
 
@@ -83,20 +97,10 @@ namespace futils
         {
             for (auto &it: components)
             {
-                if (it.first == futils::demangle<T>())
+                if (it.first == futils::type<T>::index)
                     return static_cast<T &>(*it.second);
             }
-            throw std::runtime_error("Entity does not have component " + futils::demangle<T>());
-        };
-
-        IComponent  &getComponent(std::string const &type)
-        {
-            for (auto &it: this->components)
-            {
-                if (it.first == type)
-                    return *it.second;
-            }
-            throw std::runtime_error("Entity does not have component " + type);
+            throw std::runtime_error("Entity does not have requested component");
         };
 
         int         getId() const { return this->_id; }
@@ -108,7 +112,7 @@ namespace futils
         std::multimap<std::string, ISystem *>   systemsMap;
         std::queue<std::string> systemsMarkedForErase;
         //      Container        CompoName    Entity
-        std::unordered_multimap<std::string, IComponent *> components;
+        std::unordered_multimap<futils::type_index, IComponent *> components;
         std::list<std::unique_ptr<IEntity>> entities;
         futils::Clock<float> timeKeeper;
     public:
@@ -124,9 +128,13 @@ namespace futils
             auto entity = new T(args...);
             entities.push_front(std::unique_ptr<IEntity>(entity));
             entity->onExtension = [this](IComponent &compo) {
-                components.insert(std::pair(compo.getName(), &compo));
+                components.insert(std::pair(compo.getTypeindex(), &compo));
+                return true;
             };
-            entity->init();
+            while (!entity->lateinitComponents.empty()) {
+                entity->onExtension(*entity->lateinitComponents.front());
+                entity->lateinitComponents.pop();
+            }
             return *entity;
         }
 
@@ -152,7 +160,7 @@ namespace futils
             static_assert(std::is_base_of<IComponent, T>::value, "Error : T is not a Component");
             std::vector<T *> res;
             try {
-                auto range = components.equal_range(futils::demangle<T>());
+                auto range = components.equal_range(futils::type<T>::index);
                 for (auto it = range.first;
                      it != range.second;
                      it++) {

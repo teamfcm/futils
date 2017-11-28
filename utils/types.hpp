@@ -5,6 +5,7 @@
 #ifndef FUTILS_TYPES_H
 #define FUTILS_TYPES_H
 
+# include <typeindex>
 # include <cxxabi.h>
 # include "fstring.hpp"
 
@@ -29,6 +30,18 @@ namespace futils
     using UP = std::unique_ptr<T>;
     template <typename T>
     using SP = std::shared_ptr<T>;
+
+    // Similar to putils::pmeta::type_index ;)
+    using type_index = size_t;
+    template<typename T>
+    struct type
+    {
+        using wrapped = T;
+        static const type_index index;
+    };
+
+    template<typename T>
+    const futils::type_index futils::type<T>::index = std::hash<std::type_index>()(std::type_index(typeid(T)));
 
     template <typename T>
     std::string demangle()

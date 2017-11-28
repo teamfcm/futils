@@ -12,9 +12,8 @@ namespace fender
     class Window : public futils::IEntity
     {
     public:
-        Window() = default;
-        void init() override {
-            attachComponent<components::Windowed>("WindowName", 200, 200);
+        Window(std::string const &name, int width, int height) {
+            attachComponent<components::Windowed>(name, width, height);
         }
     };
 }

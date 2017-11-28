@@ -35,11 +35,11 @@ namespace demo
 //        SetAction onHover and Leave
             onHover.setArea(position.getPosition(), position.getSize());
             onHover.onHover = [this]() {
-                auto &dr = static_cast<fender::components::Drawable &>(this->getComponent("Drawable"));
+                auto &dr = this->get<fender::components::Drawable>();
                 dr.setBorder(fender::Color::RED, 3);
             };
             onHover.onLeave = [this]() {
-                auto &dr = static_cast<fender::components::Drawable &>(this->getComponent("Drawable"));
+                auto &dr = this->get<fender::components::Drawable>();
                 dr.setBorder(fender::Color::WHITE, 1);
             };
 
@@ -52,7 +52,7 @@ namespace demo
     
         void    onClick(std::function<void(void)> func)
         {
-            auto &clickAction = static_cast<fender::components::Clickable &>(this->getComponent("Clickable"));
+            auto &clickAction = get<fender::components::Clickable>();
             clickAction.setAction(func);
         }
     };

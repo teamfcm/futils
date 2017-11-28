@@ -151,6 +151,8 @@ futils.hpp
 ../utils/futils.hpp
 
 ../utils/types.hpp
+typeindex
+-
 cxxabi.h
 -
 fstring.hpp
