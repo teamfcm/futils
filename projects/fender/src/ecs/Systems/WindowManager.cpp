@@ -30,19 +30,18 @@ fender::systems::WindowManager::WindowManager()
 
 void fender::systems::WindowManager::openWindow(components::Windowed &win)
 {
+
     win.isOpen = true;
     renderer->openWindow();
 }
 
 void fender::systems::WindowManager::run(float)
 {
-    for (auto &pair: entityManager->get<components::Windowed>()) {
-        auto &entity = *pair.second;
-        auto &window = entity.get<components::Windowed>();
-        if (window.isOpen) {
+    for (auto &window: entityManager->get<components::Windowed>()) {
+        if (window->isOpen) {
 
         } else {
-            openWindow(window);
+            openWindow(*window);
         }
     }
 }

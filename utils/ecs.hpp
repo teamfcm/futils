@@ -17,7 +17,6 @@
 
 namespace futils
 {
-// Forward declarations
     class   EntityManager;
     class   IEntity;
 
@@ -49,7 +48,6 @@ namespace futils
     class   IEntity
     {
         std::unordered_multimap<std::string, IComponent *>    components;
-        std::function<void(IComponent &)>   registerComponentFunction{[](IComponent &){}};
         int                                 _id;
 
         // Replace with SFINAE or static assertion. SFINAE is probably better.
@@ -59,28 +57,24 @@ namespace futils
             if (!std::is_base_of<IComponent, Compo>::value)
                 throw std::logic_error(std::string(typeid(Compo).name()) + " is not a Component");
         }
+
     public:
-        IEntity()
-        {
-            // TODO: Change for the inline function. Its easier to read.
+        std::function<void(IComponent &)> onExtension{[](IComponent &){}};
+
+        IEntity() {
             this->_id = futils::UID::get();
         }
+        virtual void init() = 0;
         virtual ~IEntity() {}
-        // Make the function name a bit shorter ? onExtension for example. Its only for the engine devs anyway.
-        void            setComponentRegistrationFunction(std::function<void(IComponent &)> func)
-        {
-            this->registerComponentFunction = func;
-        }
 
         template    <typename Compo, typename ...Args>
         Compo       &attachComponent(Args ...args)
         {
             verifIsComponent<Compo>();
-            // TODO: Make a smart pointer.
             auto compo = new Compo(args...);
             compo->setEntity(*this);
             this->components.insert(std::make_pair(futils::demangle<Compo>(), compo));
-            this->registerComponentFunction(*compo);
+            onExtension(*compo);
             return *compo;
         };
 
@@ -113,8 +107,9 @@ namespace futils
         int                                     status{0};
         std::multimap<std::string, ISystem *>   systemsMap;
         std::queue<std::string> systemsMarkedForErase;
-        // Entities sorted by component
-        std::unordered_map<std::string, std::unordered_map<int, IEntity *>> entities;
+        //      Container        CompoName    Entity
+        std::unordered_multimap<std::string, IComponent *> components;
+        std::list<std::unique_ptr<IEntity>> entities;
         futils::Clock<float> timeKeeper;
     public:
         EntityManager() {
@@ -122,16 +117,17 @@ namespace futils
         }
 
         template    <typename T, typename ...Args>
-        T           *createEntity(Args ...args)
+        T           &createEntity(Args ...args)
         {
             if (!std::is_base_of<IEntity, T>::value)
                 throw std::logic_error(std::string(typeid(T).name()) + " is not an Entity");
-            auto name = futils::demangle<T>();
             auto entity = new T(args...);
-            if (entities.find(name) == entities.end())
-                entities[name] = std::unordered_map<int, IEntity *>();
-            entities[name][entity->getId()] = entity;
-            return entity;
+            entities.push_front(std::unique_ptr<IEntity>(entity));
+            entity->onExtension = [this](IComponent &compo) {
+                components.insert(std::pair(compo.getName(), &compo));
+            };
+            entity->init();
+            return *entity;
         }
 
         template    <typename System, typename ...Args>
@@ -139,6 +135,7 @@ namespace futils
         {
             if (!std::is_base_of<ISystem, System>::value)
                 throw std::logic_error(std::string(typeid(System).name()) + " is not a System");
+            // Smart Pointer
             auto system = new System(args...);
             system->provideManager(*this);
             this->systemsMap.insert(std::pair(system->getName(), system));
@@ -150,11 +147,21 @@ namespace futils
         }
 
         template <typename T>
-        std::unordered_map<int, IEntity *> get()
+        std::vector<T *> get()
         {
-            if (entities.find(futils::demangle<T>()) == entities.end())
-                throw std::runtime_error("No entities found with name " + futils::demangle<T>());
-            return entities[futils::demangle<T>()];
+            static_assert(std::is_base_of<IComponent, T>::value, "Error : T is not a Component");
+            std::vector<T *> res;
+            try {
+                auto range = components.equal_range(futils::demangle<T>());
+                for (auto it = range.first;
+                     it != range.second;
+                     it++) {
+                    res.push_back(static_cast<T *>(it->second));
+                }
+            } catch (std::exception const &e) {
+                LERR(e.what());
+            }
+            return res;
         };
 
         bool        isFine()

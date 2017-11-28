@@ -6,10 +6,17 @@
 
 fender::systems::SplashScreen::SplashScreen()
 {
-    _win.reset(entityManager->createEntity<Window>("Name", 200, 200));
+
 };
 
 void fender::systems::SplashScreen::run(float)
 {
-    LOUT("Coucou");
+    static int i = 0;
+    if (i == 0) {
+        auto &window = entityManager->createEntity<Window>();
+        auto &win = window.get<components::Windowed>();
+        win.rename("Window");
+        win.setSize(200, 200);
+        i++;
+    }
 }

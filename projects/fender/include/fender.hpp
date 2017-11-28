@@ -329,8 +329,17 @@ namespace fender
             Windowed(std::string const &name,
                      int width, int height):
                     _name(name),
-                    _width(width), _height(height) {}
+                    _width(width), _height(height) {
+                __name = "Windowed";
+            }
             bool isOpen{false};
+            void rename(std::string const &name) {
+                _name = name;
+            }
+            void setSize(int x, int y) {
+                _width = x;
+                _height = y;
+            }
         };
 
         class Runnable : public futils::IComponent
