@@ -34,6 +34,7 @@ CMakeFiles/fender.dir/src/IRender.cpp.o: ../src/IRender.cpp
 
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../include/CursesRender.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../include/SFMLRender.hpp
+CMakeFiles/fender.dir/src/Manager.cpp.o: ../include/components.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../include/events.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../include/extras.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../include/fender.hpp
@@ -49,24 +50,11 @@ CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/futils.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/ini.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/modules.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../src/Manager.cpp
 
-CMakeFiles/fender.dir/src/ecs/Component.cpp.o: ../include/events.hpp
-CMakeFiles/fender.dir/src/ecs/Component.cpp.o: ../include/fender.hpp
-CMakeFiles/fender.dir/src/ecs/Component.cpp.o: ../include/requests.hpp
-CMakeFiles/fender.dir/src/ecs/Component.cpp.o: ../utils/clock.hpp
-CMakeFiles/fender.dir/src/ecs/Component.cpp.o: ../utils/datapacket.hpp
-CMakeFiles/fender.dir/src/ecs/Component.cpp.o: ../utils/dloader.hpp
-CMakeFiles/fender.dir/src/ecs/Component.cpp.o: ../utils/ecs.hpp
-CMakeFiles/fender.dir/src/ecs/Component.cpp.o: ../utils/fstring.hpp
-CMakeFiles/fender.dir/src/ecs/Component.cpp.o: ../utils/futils.hpp
-CMakeFiles/fender.dir/src/ecs/Component.cpp.o: ../utils/ini.hpp
-CMakeFiles/fender.dir/src/ecs/Component.cpp.o: ../utils/log.hpp
-CMakeFiles/fender.dir/src/ecs/Component.cpp.o: ../utils/mediator.hpp
-CMakeFiles/fender.dir/src/ecs/Component.cpp.o: ../utils/types.hpp
-CMakeFiles/fender.dir/src/ecs/Component.cpp.o: ../src/ecs/Component.cpp
-
+CMakeFiles/fender.dir/src/ecs/Components/Object2d.cpp.o: ../include/components.hpp
 CMakeFiles/fender.dir/src/ecs/Components/Object2d.cpp.o: ../include/events.hpp
 CMakeFiles/fender.dir/src/ecs/Components/Object2d.cpp.o: ../include/fender.hpp
 CMakeFiles/fender.dir/src/ecs/Components/Object2d.cpp.o: ../include/requests.hpp
@@ -82,38 +70,45 @@ CMakeFiles/fender.dir/src/ecs/Components/Object2d.cpp.o: ../utils/mediator.hpp
 CMakeFiles/fender.dir/src/ecs/Components/Object2d.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/ecs/Components/Object2d.cpp.o: ../src/ecs/Components/Object2d.cpp
 
-CMakeFiles/fender.dir/src/ecs/Entity.cpp.o: ../include/events.hpp
-CMakeFiles/fender.dir/src/ecs/Entity.cpp.o: ../include/fender.hpp
-CMakeFiles/fender.dir/src/ecs/Entity.cpp.o: ../include/requests.hpp
-CMakeFiles/fender.dir/src/ecs/Entity.cpp.o: ../utils/clock.hpp
-CMakeFiles/fender.dir/src/ecs/Entity.cpp.o: ../utils/datapacket.hpp
-CMakeFiles/fender.dir/src/ecs/Entity.cpp.o: ../utils/dloader.hpp
-CMakeFiles/fender.dir/src/ecs/Entity.cpp.o: ../utils/ecs.hpp
-CMakeFiles/fender.dir/src/ecs/Entity.cpp.o: ../utils/fstring.hpp
-CMakeFiles/fender.dir/src/ecs/Entity.cpp.o: ../utils/futils.hpp
-CMakeFiles/fender.dir/src/ecs/Entity.cpp.o: ../utils/ini.hpp
-CMakeFiles/fender.dir/src/ecs/Entity.cpp.o: ../utils/log.hpp
-CMakeFiles/fender.dir/src/ecs/Entity.cpp.o: ../utils/mediator.hpp
-CMakeFiles/fender.dir/src/ecs/Entity.cpp.o: ../utils/types.hpp
-CMakeFiles/fender.dir/src/ecs/Entity.cpp.o: ../src/ecs/Entity.cpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../include/components.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../include/events.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../include/extras.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../include/fender.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../include/requests.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../utils/datapacket.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../utils/dloader.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../utils/ecs.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../utils/fstring.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../utils/futils.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../utils/ini.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../utils/log.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../utils/types.hpp
+CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o: ../src/ecs/Entities/Background.cpp
 
-CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../include/events.hpp
-CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../include/fender.hpp
-CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../include/requests.hpp
-CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../utils/clock.hpp
-CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../utils/datapacket.hpp
-CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../utils/dloader.hpp
-CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../utils/ecs.hpp
-CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../utils/fstring.hpp
-CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../utils/futils.hpp
-CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../utils/ini.hpp
-CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../utils/log.hpp
-CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../utils/mediator.hpp
-CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../utils/types.hpp
-CMakeFiles/fender.dir/src/ecs/System.cpp.o: ../src/ecs/System.cpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../include/components.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../include/events.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../include/extras.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../include/fender.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../include/requests.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../include/systems.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../utils/datapacket.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../utils/dloader.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../utils/ecs.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../utils/fstring.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../utils/futils.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../utils/ini.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../utils/log.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../utils/modules.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../utils/types.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../src/ecs/Systems/Image.cpp
 
 CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../include/CursesRender.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../include/SFMLRender.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../include/components.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../include/events.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../include/extras.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../include/fender.hpp
@@ -128,9 +123,30 @@ CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../utils/futils.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../utils/ini.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../utils/modules.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../src/ecs/Systems/Renderer.cpp
 
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../include/components.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../include/events.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../include/extras.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../include/fender.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../include/requests.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../include/systems.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../utils/datapacket.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../utils/dloader.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../utils/ecs.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../utils/fstring.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../utils/futils.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../utils/ini.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../utils/log.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../utils/modules.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../utils/types.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o: ../src/ecs/Systems/RendererSubSystem.cpp
+
+CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../include/components.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../include/events.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../include/extras.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../include/fender.hpp
@@ -145,9 +161,30 @@ CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../utils/futils.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../utils/ini.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../utils/modules.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.o: ../src/ecs/Systems/SplashScreen.cpp
 
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../include/components.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../include/events.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../include/extras.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../include/fender.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../include/requests.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../include/systems.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../utils/datapacket.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../utils/dloader.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../utils/ecs.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../utils/fstring.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../utils/futils.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../utils/ini.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../utils/log.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../utils/modules.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../utils/types.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o: ../src/ecs/Systems/Transform.cpp
+
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../include/components.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../include/events.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../include/extras.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../include/fender.hpp
@@ -162,6 +199,7 @@ CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/futils.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/ini.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/modules.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../src/ecs/Systems/WindowManager.cpp
 
@@ -182,6 +220,7 @@ CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../utils/types.h
 CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../src/renderers/ncurses/CursesRender.cpp
 
 CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../include/SFMLRender.hpp
+CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../include/components.hpp
 CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../include/events.hpp
 CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../include/fender.hpp
 CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../include/requests.hpp

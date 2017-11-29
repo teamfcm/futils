@@ -9,6 +9,7 @@
 # include <SFML/Graphics.hpp>
 # include <string>
 # include "fender.hpp"
+# include "components.hpp"
 
 namespace fender
 {
@@ -445,13 +446,7 @@ namespace fender
         public:
             Rendering(SFMLRender *renderer): BaseSystem(*renderer)
             {
-                fenderColors[fender::Color::BLACK] = sf::Color::Black;
-                fenderColors[fender::Color::WHITE] = sf::Color::White;
-                fenderColors[fender::Color::BLUE] = sf::Color::Blue;
-                fenderColors[fender::Color::CYAN] = sf::Color::Cyan;
-                fenderColors[fender::Color::MAGENTA] = sf::Color::Magenta;
-                fenderColors[fender::Color::RED] = sf::Color::Red;
-                fenderColors[fender::Color::YELLOW] = sf::Color::Yellow;
+
             }
             
             virtual void        run(float) final

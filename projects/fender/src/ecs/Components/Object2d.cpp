@@ -3,6 +3,7 @@
 //
 
 # include "fender.hpp"
+# include "components.hpp"
 
 void    fender::components::Object2d::setPosition(futils::Vec2d<float> const &pos)
 {

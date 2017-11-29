@@ -13,8 +13,8 @@ namespace fender::requests
     struct OpenWindow : futils::AMediatorPacket<OpenWindow>
     {
         std::string name;
-        int width;
-        int height;
+        float width;
+        float height;
     };
 }
 

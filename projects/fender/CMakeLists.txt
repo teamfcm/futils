@@ -6,20 +6,23 @@ file(GLOB UTILS
 		"include/*.hpp"
 		)
 
+file(GLOB SYSTEMS
+		"src/ecs/Systems/*.cpp")
+file(GLOB ENTITIES
+		"src/ecs/Entities/*.cpp")
+file(GLOB COMPONENTS
+		"src/ecs/Components/*.cpp")
+
 set(SOURCE_FILES
 		${UTILS}
-        src/renderers/ncurses/CursesRender.cpp
-		src/renderers/sfml/SFMLRender.cpp
+		${ENTITIES}
+		${COMPONENTS}
+		${SYSTEMS}
 		src/Manager.cpp
         src/IRender.cpp
 		src/Fender.cpp
-        src/ecs/Entity.cpp
-        src/ecs/Component.cpp
-        src/ecs/System.cpp
-        src/ecs/Components/Object2d.cpp
-		src/ecs/Systems/SplashScreen.cpp
-		src/ecs/Systems/WindowManager.cpp
-		src/ecs/Systems/Renderer.cpp
+		src/renderers/sfml/SFMLRender.cpp
+		src/renderers/ncurses/CursesRender.cpp
 		)
 
 if (UNIX)

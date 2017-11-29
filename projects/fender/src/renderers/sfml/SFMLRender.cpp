@@ -8,12 +8,9 @@
 #include "SFMLRender.hpp"
 #include "log.hpp"
 
-extern "C" fender::SFMLRender* create()
-{
+extern "C" fender::SFMLRender* create() {
     return new fender::SFMLRender();
 }
-
-// Input Anonymous namespace => Only access from this file. Also you can collapse the scope which is nice.
 namespace {
 static std::unordered_map<sf::Keyboard::Key, fender::Input> fenderCodes =
         {
@@ -66,8 +63,6 @@ fender::SFMLRender::SFMLRender()
 {
     this->initFactory();
     this->_eventSystem.setRole(fender::MediatorRole::Provider);
-    
-//    Adding systems to the ecs
     _ecs.addSystem<fender::SFMLsystems::ClickDetection>(this);
     _ecs.addSystem<fender::SFMLsystems::HoverDetection>(this);
     _ecs.addSystem<fender::SFMLsystems::Rendering>(this);
@@ -102,8 +97,6 @@ void    fender::SFMLRender::openWindow()
 
 void    fender::SFMLRender::initFactory()
 {
-
-//    There is unfortunately no obvious way to write this function as a loop
     this->elementFactory["AnimatedImage"] = [this](fender::Element &src)
     {
         auto *obj = dynamic_cast<fender::AnimatedImage *>(&src);

@@ -28,6 +28,8 @@ int fender::Manager::start()
 {
     entityManager->addSystem<fender::systems::WindowManager>();
     entityManager->addSystem<fender::systems::Renderer>();
+    entityManager->addSystem<fender::systems::Image>();
+    entityManager->addSystem<fender::systems::Transform>();
     LOUT(std::to_string(entityManager->getNumberOfSystems()) + " systems loaded.");
     LOUT("Manager started : OK");
     return 0;

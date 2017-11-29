@@ -37,7 +37,9 @@ namespace futils
         // END
 
         std::string const &getName() const {return this->__name;}
-        void                setEntity(IEntity &ent);
+        void                setEntity(IEntity &ent) {
+            __entity = &ent;
+        }
         IComponent  &getAssociatedComponent(std::string const &type);
         futils::type_index getTypeindex() const {
             return _typeindex;
@@ -82,7 +84,7 @@ namespace futils
         virtual ~IEntity() {}
 
         template    <typename Compo, typename ...Args>
-        Compo       &attachComponent(Args ...args)
+        Compo       &attach(Args ...args)
         {
             verifIsComponent<Compo>();
             auto compo = new Compo(args...);
@@ -125,7 +127,7 @@ namespace futils
         }
 
         template    <typename T, typename ...Args>
-        T           &createEntity(Args ...args)
+        T           &create(Args ...args)
         {
             if (!std::is_base_of<IEntity, T>::value)
                 throw std::logic_error(std::string(typeid(T).name()) + " is not an Entity");

@@ -7,6 +7,7 @@
 
 # include "fender.hpp"
 # include "extras.hpp"
+# include "modules.hpp"
 
 namespace fender::systems
 {
@@ -21,62 +22,44 @@ namespace fender::systems
     class SplashScreen : public futils::ISystem
     {
         int phase{0};
+        void init();
+        void openWindow();
+        void changeBackground();
+        futils::Ini config;
     public:
         SplashScreen();
         void run(float) final;
     };
-    class WindowManager : public futils::ISystem
+
+    // Renderer SubSystems
+    class RendererSubSystem : public futils::ISystem
     {
-        IRender *renderer{nullptr};
+    protected:
+        int phase{0};
+        futils::Modules modules;
+        IRender *renderer;
+    public:
+        RendererSubSystem();
+        virtual void run(float) = 0;
+    };
+    class WindowManager : public RendererSubSystem
+    {
     public:
         WindowManager();
         void run(float) final;
         void openWindow(std::string const &, int, int);
     };
-    class   Ini : public futils::ISystem
+    class Image : public RendererSubSystem
     {
-        std::unordered_map<std::string, components::Ini *>    sources;
     public:
-        Ini() {
-            name = "Ini";
-        };
-        virtual void    run(float)
-        {
-
-        }
-
-        void            loadSource(components::Ini &source)
-        {
-            (void)source;
-        }
-
-        void            saveSource(components::Ini &source)
-        {
-            source.save();
-        }
+        Image() = default;
+        void run(float) final;
     };
-    class   DragAndDrop : public futils::ISystem
+    class Transform : public RendererSubSystem
     {
     public:
-        DragAndDrop() {
-            name = "DragAndDrop";
-        }
-
-        void    run(float) override
-        {
-
-        }
-    };
-    class   Animation : public futils::ISystem
-    {
-    public:
-        Animation() {
-            name = "Animation";
-        }
-        virtual void    run(float)
-        {
-
-        }
+        Transform() = default;
+        void run(float) final;
     };
 }
 

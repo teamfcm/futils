@@ -14,13 +14,23 @@ extras.hpp
 goToBinDir.hpp
 ../include/goToBinDir.hpp
 
+../include/components.hpp
+fender.hpp
+../include/fender.hpp
+
 ../include/demo.hpp
 App.hpp
 ../include/App.hpp
 
+../include/events.hpp
+mediator.hpp
+../include/mediator.hpp
+
 ../include/extras.hpp
 fender.hpp
 ../include/fender.hpp
+components.hpp
+../include/components.hpp
 
 ../include/fender.hpp
 iostream
@@ -37,6 +47,8 @@ stack
 -
 map
 -
+futils.hpp
+../include/futils.hpp
 types.hpp
 ../include/types.hpp
 dloader.hpp
@@ -45,14 +57,22 @@ ecs.hpp
 ../include/ecs.hpp
 mediator.hpp
 ../include/mediator.hpp
-futils.hpp
-../include/futils.hpp
+requests.hpp
+../include/requests.hpp
+events.hpp
+../include/events.hpp
+
+../include/requests.hpp
+mediator.hpp
+../include/mediator.hpp
 
 ../include/systems.hpp
 fender.hpp
 ../include/fender.hpp
 extras.hpp
 ../include/extras.hpp
+modules.hpp
+../include/modules.hpp
 
 ../utils/clock.hpp
 chrono
@@ -165,6 +185,10 @@ utility
 -
 datapacket.hpp
 ../utils/datapacket.hpp
+
+../utils/modules.hpp
+types.hpp
+../utils/types.hpp
 
 ../utils/types.hpp
 typeindex

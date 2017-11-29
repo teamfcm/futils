@@ -6,10 +6,14 @@
 #define FENDER_EXTRAS_HPP
 
 # include "fender.hpp"
+# include "components.hpp"
 
 namespace fender
 {
-
+    struct Background : futils::IEntity
+    {
+        Background(std::string const &image = "");
+    };
 }
 
 #endif //FENDER_EXTRAS_HPP

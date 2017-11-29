@@ -12,13 +12,6 @@ futils::Vec2d<int>  fender::IRender::_windowSize{0, 0};
 void    fender::IRender::SmartModeInit(futils::Ini &proxyConf,
                                        std::string const &confScope)
 {
-    this->_fenderColors["White"] = fender::Color::WHITE;
-    this->_fenderColors["Red"] = fender::Color::RED;
-    this->_fenderColors["Black"] = fender::Color::BLACK;
-    this->_fenderColors["Cyan"] = fender::Color::CYAN;
-    this->_fenderColors["Yellow"] = fender::Color::YELLOW;
-    this->_fenderColors["Blue"] = fender::Color::BLUE;
-    
     this->configFunctions["WindowName"] = [this](std::string const &value)
     {
         this->_windowName = value;

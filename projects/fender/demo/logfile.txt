@@ -19,11 +19,20 @@ SmartMode detected. Running auto conf...
      [15]	Setting WindowVerticalAlign to Center
      [16]	Setting WindowWidth to 800
      [17] In int fender::Manager::start()
-2 systems loaded.
+4 systems loaded.
      [18]	Manager started : OK
-     [19] In fender::systems::WindowManager::run(float)::<lambda(futils::IMediatorPacket&)>
-Received renderer
-     [20] In fender::systems::SplashScreen::run(float)::<lambda(futils::IMediatorPacket&)>
+     [19] In fender::systems::RendererSubSystem::RendererSubSystem()::<lambda()>::<lambda(futils::IMediatorPacket&)>
+Got Renderer
+     [20]	Got Renderer
+     [21]	Got Renderer
+     [22]	Got Renderer
+     [23]	Got Renderer
+     [24]	Got Renderer
+     [25] In fender::systems::RendererSubSystem::RendererSubSystem()::<lambda()>
+Removing GetRenderer
+     [26]	Removing GetRenderer
+     [27]	Removing GetRenderer
+     [28] In fender::systems::SplashScreen::init()::<lambda(futils::IMediatorPacket&)>
 Window opened with name WindowName
-     [21] In fender::systems::WindowManager::run(float)::<lambda(futils::IMediatorPacket&)>
-Opening a window...
+     [29] In fender::systems::WindowManager::WindowManager()::<lambda()>::<lambda(futils::IMediatorPacket&)>
+Opening Window

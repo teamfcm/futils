@@ -204,33 +204,6 @@ src/Manager.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Manager.cpp.s
 .PHONY : src/Manager.cpp.s
 
-src/ecs/Component.o: src/ecs/Component.cpp.o
-
-.PHONY : src/ecs/Component.o
-
-# target to build an object file
-src/ecs/Component.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Component.cpp.o
-.PHONY : src/ecs/Component.cpp.o
-
-src/ecs/Component.i: src/ecs/Component.cpp.i
-
-.PHONY : src/ecs/Component.i
-
-# target to preprocess a source file
-src/ecs/Component.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Component.cpp.i
-.PHONY : src/ecs/Component.cpp.i
-
-src/ecs/Component.s: src/ecs/Component.cpp.s
-
-.PHONY : src/ecs/Component.s
-
-# target to generate assembly for a file
-src/ecs/Component.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Component.cpp.s
-.PHONY : src/ecs/Component.cpp.s
-
 src/ecs/Components/Object2d.o: src/ecs/Components/Object2d.cpp.o
 
 .PHONY : src/ecs/Components/Object2d.o
@@ -258,59 +231,59 @@ src/ecs/Components/Object2d.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Components/Object2d.cpp.s
 .PHONY : src/ecs/Components/Object2d.cpp.s
 
-src/ecs/Entity.o: src/ecs/Entity.cpp.o
+src/ecs/Entities/Background.o: src/ecs/Entities/Background.cpp.o
 
-.PHONY : src/ecs/Entity.o
-
-# target to build an object file
-src/ecs/Entity.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Entity.cpp.o
-.PHONY : src/ecs/Entity.cpp.o
-
-src/ecs/Entity.i: src/ecs/Entity.cpp.i
-
-.PHONY : src/ecs/Entity.i
-
-# target to preprocess a source file
-src/ecs/Entity.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Entity.cpp.i
-.PHONY : src/ecs/Entity.cpp.i
-
-src/ecs/Entity.s: src/ecs/Entity.cpp.s
-
-.PHONY : src/ecs/Entity.s
-
-# target to generate assembly for a file
-src/ecs/Entity.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Entity.cpp.s
-.PHONY : src/ecs/Entity.cpp.s
-
-src/ecs/System.o: src/ecs/System.cpp.o
-
-.PHONY : src/ecs/System.o
+.PHONY : src/ecs/Entities/Background.o
 
 # target to build an object file
-src/ecs/System.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/System.cpp.o
-.PHONY : src/ecs/System.cpp.o
+src/ecs/Entities/Background.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.o
+.PHONY : src/ecs/Entities/Background.cpp.o
 
-src/ecs/System.i: src/ecs/System.cpp.i
+src/ecs/Entities/Background.i: src/ecs/Entities/Background.cpp.i
 
-.PHONY : src/ecs/System.i
+.PHONY : src/ecs/Entities/Background.i
 
 # target to preprocess a source file
-src/ecs/System.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/System.cpp.i
-.PHONY : src/ecs/System.cpp.i
+src/ecs/Entities/Background.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.i
+.PHONY : src/ecs/Entities/Background.cpp.i
 
-src/ecs/System.s: src/ecs/System.cpp.s
+src/ecs/Entities/Background.s: src/ecs/Entities/Background.cpp.s
 
-.PHONY : src/ecs/System.s
+.PHONY : src/ecs/Entities/Background.s
 
 # target to generate assembly for a file
-src/ecs/System.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/System.cpp.s
-.PHONY : src/ecs/System.cpp.s
+src/ecs/Entities/Background.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Entities/Background.cpp.s
+.PHONY : src/ecs/Entities/Background.cpp.s
+
+src/ecs/Systems/Image.o: src/ecs/Systems/Image.cpp.o
+
+.PHONY : src/ecs/Systems/Image.o
+
+# target to build an object file
+src/ecs/Systems/Image.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o
+.PHONY : src/ecs/Systems/Image.cpp.o
+
+src/ecs/Systems/Image.i: src/ecs/Systems/Image.cpp.i
+
+.PHONY : src/ecs/Systems/Image.i
+
+# target to preprocess a source file
+src/ecs/Systems/Image.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.i
+.PHONY : src/ecs/Systems/Image.cpp.i
+
+src/ecs/Systems/Image.s: src/ecs/Systems/Image.cpp.s
+
+.PHONY : src/ecs/Systems/Image.s
+
+# target to generate assembly for a file
+src/ecs/Systems/Image.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.s
+.PHONY : src/ecs/Systems/Image.cpp.s
 
 src/ecs/Systems/Renderer.o: src/ecs/Systems/Renderer.cpp.o
 
@@ -339,6 +312,33 @@ src/ecs/Systems/Renderer.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.s
 .PHONY : src/ecs/Systems/Renderer.cpp.s
 
+src/ecs/Systems/RendererSubSystem.o: src/ecs/Systems/RendererSubSystem.cpp.o
+
+.PHONY : src/ecs/Systems/RendererSubSystem.o
+
+# target to build an object file
+src/ecs/Systems/RendererSubSystem.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.o
+.PHONY : src/ecs/Systems/RendererSubSystem.cpp.o
+
+src/ecs/Systems/RendererSubSystem.i: src/ecs/Systems/RendererSubSystem.cpp.i
+
+.PHONY : src/ecs/Systems/RendererSubSystem.i
+
+# target to preprocess a source file
+src/ecs/Systems/RendererSubSystem.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.i
+.PHONY : src/ecs/Systems/RendererSubSystem.cpp.i
+
+src/ecs/Systems/RendererSubSystem.s: src/ecs/Systems/RendererSubSystem.cpp.s
+
+.PHONY : src/ecs/Systems/RendererSubSystem.s
+
+# target to generate assembly for a file
+src/ecs/Systems/RendererSubSystem.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/RendererSubSystem.cpp.s
+.PHONY : src/ecs/Systems/RendererSubSystem.cpp.s
+
 src/ecs/Systems/SplashScreen.o: src/ecs/Systems/SplashScreen.cpp.o
 
 .PHONY : src/ecs/Systems/SplashScreen.o
@@ -365,6 +365,33 @@ src/ecs/Systems/SplashScreen.s: src/ecs/Systems/SplashScreen.cpp.s
 src/ecs/Systems/SplashScreen.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/SplashScreen.cpp.s
 .PHONY : src/ecs/Systems/SplashScreen.cpp.s
+
+src/ecs/Systems/Transform.o: src/ecs/Systems/Transform.cpp.o
+
+.PHONY : src/ecs/Systems/Transform.o
+
+# target to build an object file
+src/ecs/Systems/Transform.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.o
+.PHONY : src/ecs/Systems/Transform.cpp.o
+
+src/ecs/Systems/Transform.i: src/ecs/Systems/Transform.cpp.i
+
+.PHONY : src/ecs/Systems/Transform.i
+
+# target to preprocess a source file
+src/ecs/Systems/Transform.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.i
+.PHONY : src/ecs/Systems/Transform.cpp.i
+
+src/ecs/Systems/Transform.s: src/ecs/Systems/Transform.cpp.s
+
+.PHONY : src/ecs/Systems/Transform.s
+
+# target to generate assembly for a file
+src/ecs/Systems/Transform.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/Transform.cpp.s
+.PHONY : src/ecs/Systems/Transform.cpp.s
 
 src/ecs/Systems/WindowManager.o: src/ecs/Systems/WindowManager.cpp.o
 
@@ -465,24 +492,27 @@ help:
 	@echo "... src/Manager.o"
 	@echo "... src/Manager.i"
 	@echo "... src/Manager.s"
-	@echo "... src/ecs/Component.o"
-	@echo "... src/ecs/Component.i"
-	@echo "... src/ecs/Component.s"
 	@echo "... src/ecs/Components/Object2d.o"
 	@echo "... src/ecs/Components/Object2d.i"
 	@echo "... src/ecs/Components/Object2d.s"
-	@echo "... src/ecs/Entity.o"
-	@echo "... src/ecs/Entity.i"
-	@echo "... src/ecs/Entity.s"
-	@echo "... src/ecs/System.o"
-	@echo "... src/ecs/System.i"
-	@echo "... src/ecs/System.s"
+	@echo "... src/ecs/Entities/Background.o"
+	@echo "... src/ecs/Entities/Background.i"
+	@echo "... src/ecs/Entities/Background.s"
+	@echo "... src/ecs/Systems/Image.o"
+	@echo "... src/ecs/Systems/Image.i"
+	@echo "... src/ecs/Systems/Image.s"
 	@echo "... src/ecs/Systems/Renderer.o"
 	@echo "... src/ecs/Systems/Renderer.i"
 	@echo "... src/ecs/Systems/Renderer.s"
+	@echo "... src/ecs/Systems/RendererSubSystem.o"
+	@echo "... src/ecs/Systems/RendererSubSystem.i"
+	@echo "... src/ecs/Systems/RendererSubSystem.s"
 	@echo "... src/ecs/Systems/SplashScreen.o"
 	@echo "... src/ecs/Systems/SplashScreen.i"
 	@echo "... src/ecs/Systems/SplashScreen.s"
+	@echo "... src/ecs/Systems/Transform.o"
+	@echo "... src/ecs/Systems/Transform.i"
+	@echo "... src/ecs/Systems/Transform.s"
 	@echo "... src/ecs/Systems/WindowManager.o"
 	@echo "... src/ecs/Systems/WindowManager.i"
 	@echo "... src/ecs/Systems/WindowManager.s"
