@@ -5,13 +5,17 @@
 #ifndef FENDER_IRENDER_HPP
 #define FENDER_IRENDER_HPP
 
+# include "ecs.hpp"
+
 namespace fender
 {
     // Interface
     class IRender
     {
     public:
-
+        virtual ~IRender() {}
+// TODO: Simply use the renderer this way !! All you need to do is allow it to add its own systems.
+        virtual void loadSystems(EntityManager &engine);
     };
 }
 

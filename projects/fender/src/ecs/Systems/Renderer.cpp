@@ -23,6 +23,7 @@ fender::systems::Renderer::Renderer() {
     LOUT("Rendering Built Successfully.");
     if (static_cast<bool>(conf["SmartMode"]) == true)
         this->renderer->SmartModeInit(config);
+    renderer->loadSystems(entityManager);
 }
 
 void fender::systems::Renderer::run(float) {
