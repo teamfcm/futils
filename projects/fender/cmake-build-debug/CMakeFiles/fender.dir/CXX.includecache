@@ -22,6 +22,10 @@ string
 fender.hpp
 ../include/fender.hpp
 
+../include/events.hpp
+mediator.hpp
+../include/mediator.hpp
+
 ../include/extras.hpp
 fender.hpp
 ../include/fender.hpp
@@ -41,14 +45,24 @@ stack
 -
 map
 -
+futils.hpp
+../include/futils.hpp
 types.hpp
 ../include/types.hpp
 dloader.hpp
 ../include/dloader.hpp
 ecs.hpp
 ../include/ecs.hpp
-futils.hpp
-../include/futils.hpp
+mediator.hpp
+../include/mediator.hpp
+requests.hpp
+../include/requests.hpp
+events.hpp
+../include/events.hpp
+
+../include/requests.hpp
+mediator.hpp
+../include/mediator.hpp
 
 ../include/systems.hpp
 fender.hpp
@@ -77,6 +91,10 @@ thread
 -
 mutex
 -
+
+../utils/datapacket.hpp
+types.hpp
+../utils/types.hpp
 
 ../utils/dloader.hpp
 string
@@ -107,6 +125,8 @@ unordered_map
 -
 clock.hpp
 ../utils/clock.hpp
+mediator.hpp
+../utils/mediator.hpp
 ini.hpp
 ../utils/ini.hpp
 
@@ -168,6 +188,14 @@ iomanip
 futils.hpp
 ../utils/futils.hpp
 
+../utils/mediator.hpp
+functional
+-
+utility
+-
+datapacket.hpp
+../utils/datapacket.hpp
+
 ../utils/types.hpp
 typeindex
 -
@@ -199,6 +227,8 @@ callback.hpp
 -
 fender.hpp
 /home/arroganz/cpp/futils/projects/fender/src/fender.hpp
+systems.hpp
+/home/arroganz/cpp/futils/projects/fender/src/systems.hpp
 log.hpp
 /home/arroganz/cpp/futils/projects/fender/src/log.hpp
 SFMLRender.hpp
@@ -226,6 +256,14 @@ fender.hpp
 fender.hpp
 /home/arroganz/cpp/futils/projects/fender/src/ecs/fender.hpp
 
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/Renderer.cpp
+systems.hpp
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/systems.hpp
+SFMLRender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/SFMLRender.hpp
+CursesRender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/CursesRender.hpp
+
 /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/SplashScreen.cpp
 systems.hpp
 /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/systems.hpp
@@ -233,10 +271,8 @@ systems.hpp
 /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/WindowManager.cpp
 fender.hpp
 /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/fender.hpp
-CursesRender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/CursesRender.hpp
-SFMLRender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/SFMLRender.hpp
+systems.hpp
+/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/systems.hpp
 
 /home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.cpp
 iostream

@@ -100,6 +100,9 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/fender.hpp">
 			<Option target="fender"/>
 		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/systems.hpp">
+			<Option target="fender"/>
+		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Fender.cpp">
 			<Option target="fender"/>
 		</Unit>
@@ -119,6 +122,9 @@
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/System.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/Renderer.cpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/SplashScreen.cpp">

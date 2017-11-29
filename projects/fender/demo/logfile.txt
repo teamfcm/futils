@@ -1,6 +1,6 @@
      [0] In fender::Fender::Fender(const string&)
 Start log in logfile.txt
-     [1] In fender::Manager::Manager(futils::Ini&)
+     [1] In fender::systems::Renderer::Renderer()
 Selected RenderLibrary : SFML
      [2]	Rendering Built Successfully.
      [3] In void fender::IRender::SmartModeInit(futils::Ini&, const string&)
@@ -18,24 +18,12 @@ SmartMode detected. Running auto conf...
      [14]	Setting WindowStyle to Borderless
      [15]	Setting WindowVerticalAlign to Center
      [16]	Setting WindowWidth to 800
-     [17] In fender::systems::WindowManager::WindowManager()
-Selected RenderLibrary : SFML
-     [18]	Rendering Built Successfully.
-     [19] In void fender::IRender::SmartModeInit(futils::Ini&, const string&)
-SmartMode detected. Running auto conf...
-     [20]	Checking if scope fender exists...
-     [21]	Found ! Starting configuration...
-     [22]	Setting AllowWindowResize to false
-     [23]	Setting AssetsPath to assets/
-     [24]	Setting EditorMode to false
-     [25]	Setting ScreenColor to 
-     [26]	Setting SystemFont to game
-     [27]	Setting WindowHeight to 600
-     [28]	Setting WindowHorizontalAlign to Center
-     [29]	Setting WindowName to FengineDemo(alphav.1)
-     [30]	Setting WindowStyle to Borderless
-     [31]	Setting WindowVerticalAlign to Center
-     [32]	Setting WindowWidth to 800
-     [33] In int fender::Manager::start()
-1 systems loaded.
-     [34]	Manager started : OK
+     [17] In int fender::Manager::start()
+2 systems loaded.
+     [18]	Manager started : OK
+     [19] In fender::systems::WindowManager::run(float)::<lambda(futils::IMediatorPacket&)>
+Received renderer
+     [20] In fender::systems::SplashScreen::run(float)::<lambda(futils::IMediatorPacket&)>
+Window opened with name WindowName
+     [21] In fender::systems::WindowManager::run(float)::<lambda(futils::IMediatorPacket&)>
+Opening a window...

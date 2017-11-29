@@ -6,14 +6,23 @@
 
 fender::systems::SplashScreen::SplashScreen()
 {
-
+    name = "SplashScreen";
 };
 
 void fender::systems::SplashScreen::run(float)
 {
-    static int i = 0;
-    if (i == 0) {
-        entityManager->createEntity<Window>("Window", 200, 200);
-        i++;
+    if (phase == 0) {
+        events->require<events::WindowOpened>((void *)this, [this](futils::IMediatorPacket &pkg) {
+            auto &wo = static_cast<events::WindowOpened &>(pkg);
+            LOUT("Window opened with name " + wo.name);
+            this->phase = 2;
+        });
+        phase = 1;
+    } else if (phase == 1) {
+        fender::requests::OpenWindow ow;
+        ow.name = "WindowName";
+        ow.height = 200;
+        ow.width = 200;
+        events->send(ow);
     }
 }

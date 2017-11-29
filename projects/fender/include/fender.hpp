@@ -8,10 +8,13 @@
 # include <cxxabi.h>
 # include <stack>
 # include <map>
+# include "futils.hpp"
 # include "types.hpp"
 # include "dloader.hpp"
 # include "ecs.hpp"
-# include "futils.hpp"
+# include "mediator.hpp"
+# include "requests.hpp"
+# include "events.hpp"
 
 // TODO: Don't use preprocessing if its not necessary.
 // TODO: REMOVE SetAndSave, INIT, SAVE macros.
@@ -31,7 +34,7 @@ namespace futils
 
 namespace fender
 {
-    class       IRender;
+    class IRender;
 
     enum class  State : int
     {
@@ -69,7 +72,6 @@ namespace fender
         YELLOW,
         TRANSPARENT
     };
-
     struct      Command
     {
         Input   key{Input::Undefined};
@@ -84,6 +86,9 @@ namespace fender
         int             width{0};
         fender::Color   color{fender::Color::WHITE};
     };
+
+    // TODO: REVIEW NEEDED
+
     class       Event
     {
     protected:
@@ -318,23 +323,11 @@ namespace fender
         };
     };
 
+    // END OF REVIEW.
+
+    // TODO: Not needed
     namespace components
     {
-        class Windowed : public futils::IComponent
-        {
-            std::string _name;
-            int _width;
-            int _height;
-        public:
-            Windowed(std::string const &name,
-                     int width, int height):
-                    _name(name),
-                    _width(width), _height(height) {
-
-            }
-            bool isOpen{false};
-        };
-
         class Runnable : public futils::IComponent
         {
             futils::Action _action;
@@ -547,61 +540,7 @@ namespace fender
             std::function<void(float)>   callback{[](float){}};
             std::function<bool(void)>   isDone{[](){return true;}};
         };
-    }
-    
-    namespace systems
-    {
-        class WindowManager : public futils::ISystem
-        {
-            using Renderer = std::unique_ptr<fender::IRender>;
-            using builder = std::function<Renderer(void)>;
-            std::unordered_map<std::string, builder> renderingBuilders;
-            Renderer renderer;
-        public:
-            WindowManager();
-            void run(float) final;
-            void openWindow(components::Windowed &);
-        };
-        class   Ini : public futils::ISystem
-        {
-            std::unordered_map<std::string, components::Ini *>    sources;
-        public:
-            Ini() = default;
-            virtual void    run(float)
-            {
-
-            }
-            
-            void            loadSource(components::Ini &source)
-            {
-                (void)source;
-            }
-            
-            void            saveSource(components::Ini &source)
-            {
-                source.save();
-            }
-        };
-        class   DragAndDrop : public futils::ISystem
-        {
-        public:
-            DragAndDrop() = default;
-            
-            void    run(float) override
-            {
-
-            }
-        };
-        class   Animation : public futils::ISystem
-        {
-        public:
-            Animation() = default;
-            virtual void    run(float)
-            {
-
-            }
-        };
-    }
+    };
 
     enum class  WindowStyle
     {
@@ -1032,6 +971,7 @@ namespace fender
         int status{0};
         std::string _windowName{"Undefined"};
         futils::EntityManager *entityManager{nullptr};
+        futils::Mediator *events{nullptr};
     public:
         Manager(futils::Ini &config);
         int start();
@@ -1043,6 +983,10 @@ namespace fender
         {
             entityManager = &manager;
         }
+        void provideMediator(futils::Mediator &mediator)
+        {
+            events = &mediator;
+        }
     };
 
     class Fender
@@ -1050,6 +994,7 @@ namespace fender
         futils::UP<futils::Dloader> lib;
         futils::UP<Manager> manager;
         futils::UP<futils::EntityManager> entityManager;
+        futils::UP<futils::Mediator> events;
     public:
         Fender(std::string const &);
         int start();
@@ -1069,6 +1014,8 @@ namespace fender
         T *createEntity(Args ...args) {
             return entityManager->createEntity<T>(args...);
         };
+
+
     };
 }
 

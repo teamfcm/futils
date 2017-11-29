@@ -312,6 +312,33 @@ src/ecs/System.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/System.cpp.s
 .PHONY : src/ecs/System.cpp.s
 
+src/ecs/Systems/Renderer.o: src/ecs/Systems/Renderer.cpp.o
+
+.PHONY : src/ecs/Systems/Renderer.o
+
+# target to build an object file
+src/ecs/Systems/Renderer.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o
+.PHONY : src/ecs/Systems/Renderer.cpp.o
+
+src/ecs/Systems/Renderer.i: src/ecs/Systems/Renderer.cpp.i
+
+.PHONY : src/ecs/Systems/Renderer.i
+
+# target to preprocess a source file
+src/ecs/Systems/Renderer.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.i
+.PHONY : src/ecs/Systems/Renderer.cpp.i
+
+src/ecs/Systems/Renderer.s: src/ecs/Systems/Renderer.cpp.s
+
+.PHONY : src/ecs/Systems/Renderer.s
+
+# target to generate assembly for a file
+src/ecs/Systems/Renderer.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.s
+.PHONY : src/ecs/Systems/Renderer.cpp.s
+
 src/ecs/Systems/SplashScreen.o: src/ecs/Systems/SplashScreen.cpp.o
 
 .PHONY : src/ecs/Systems/SplashScreen.o
@@ -450,6 +477,9 @@ help:
 	@echo "... src/ecs/System.o"
 	@echo "... src/ecs/System.i"
 	@echo "... src/ecs/System.s"
+	@echo "... src/ecs/Systems/Renderer.o"
+	@echo "... src/ecs/Systems/Renderer.i"
+	@echo "... src/ecs/Systems/Renderer.s"
 	@echo "... src/ecs/Systems/SplashScreen.o"
 	@echo "... src/ecs/Systems/SplashScreen.i"
 	@echo "... src/ecs/Systems/SplashScreen.s"

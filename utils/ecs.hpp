@@ -13,6 +13,7 @@
 # include <functional>
 # include <unordered_map>
 # include "clock.hpp"
+# include "mediator.hpp"
 # include "ini.hpp"
 
 namespace futils
@@ -48,10 +49,12 @@ namespace futils
     protected:
         std::string name{"Undefined"};
         EntityManager *entityManager{nullptr};
+        Mediator *events{nullptr};
     public:
         virtual ~ISystem() {}
         virtual void run(float elapsed = 0) = 0;
         void provideManager(EntityManager &manager) { entityManager = &manager; }
+        void provideMediator(Mediator &mediator) { events = &mediator; }
         std::string const &getName() const { return name; }
     };
 
@@ -115,6 +118,7 @@ namespace futils
         std::unordered_multimap<futils::type_index, IComponent *> components;
         std::list<std::unique_ptr<IEntity>> entities;
         futils::Clock<float> timeKeeper;
+        futils::Mediator *events{nullptr};
     public:
         EntityManager() {
             timeKeeper.start();
@@ -146,6 +150,7 @@ namespace futils
             // Smart Pointer
             auto system = new System(args...);
             system->provideManager(*this);
+            system->provideMediator(*events);
             this->systemsMap.insert(std::pair(system->getName(), system));
         }
 
@@ -171,6 +176,10 @@ namespace futils
             }
             return res;
         };
+
+        void provideMediator(Mediator &mediator) {
+            events = &mediator;
+        }
 
         bool        isFine()
         {

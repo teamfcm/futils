@@ -3,45 +3,44 @@
 //
 
 # include "fender.hpp"
-# include "CursesRender.hpp"
-# include "SFMLRender.hpp"
+# include "systems.hpp"
 
 fender::systems::WindowManager::WindowManager()
 {
-    futils::Ini config("./config/fender.ini");
-
-    renderingBuilders["SFML"] = []() {
-        return std::make_unique<fender::SFMLRender>();
-    };
-    renderingBuilders["NCURSES"] = []() {
-        return std::make_unique<fender::CursesRender>();
-    };
-
-    auto global = config["global"];
-    auto conf = config["fender"];
-    std::string renderLibrary = global["RenderLibrary"];
-    LOUT("Selected RenderLibrary : " + renderLibrary);
-    if (!(renderer = this->renderingBuilders[renderLibrary]()))
-        throw std::runtime_error("Failed To Build " + std::string(global["RenderLibrary"]));
-    LOUT("Rendering Built Successfully.");
-    if (static_cast<bool>(conf["SmartMode"]) == true)
-        this->renderer->SmartModeInit(config);
+    name = "WindowManager";
 }
 
-// TODO: Add reaction to packet and add type struct with type_index as typeid(T)
-void fender::systems::WindowManager::openWindow(components::Windowed &win)
+void fender::systems::WindowManager::openWindow(std::string const &name, int width, int height)
 {
-    win.isOpen = true;
+    if (!renderer)
+        return ;
     renderer->openWindow();
+    events::WindowOpened wo;
+    wo.name = name;
+    wo.width = width;
+    wo.height = height;
+    events->send(wo);
 }
 
 void fender::systems::WindowManager::run(float)
 {
-    for (auto &window: entityManager->get<components::Windowed>()) {
-        if (window->isOpen) {
+    static int i = 0;
+    if (i == 0) {
+        events->require<events::RendererAccess>(this, [this](futils::IMediatorPacket &pkg){
+            auto &rc = static_cast<events::RendererAccess &>(pkg);
+            this->renderer = rc.renderer;
+            LOUT("Received renderer");
+        });
+        i++;
+    }
 
-        } else {
-            openWindow(*window);
-        }
+    if (renderer == nullptr) {
+        requests::GetRenderer gr;
+        events->send(gr);
+    } else {
+        events->require<requests::OpenWindow>(this, [this](futils::IMediatorPacket &pkg) {
+            auto &win = static_cast<requests::OpenWindow &>(pkg);
+            openWindow(win.name, win.width, win.height);
+        });
     }
 }

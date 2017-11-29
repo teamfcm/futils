@@ -18,7 +18,10 @@ fender::Fender::Fender(std::string const &arg0) {
     }
     manager.reset(build);
     entityManager = std::make_unique<futils::EntityManager>();
+    events = std::make_unique<futils::Mediator>();
+    entityManager->provideMediator(*events);
     manager->provideEntityManager(*entityManager);
+    manager->provideMediator(*events);
 }
 
 int fender::Fender::start() {
