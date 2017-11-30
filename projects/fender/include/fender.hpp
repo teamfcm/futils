@@ -657,93 +657,103 @@ namespace fender
         bool                isVisible() const { return this->visible; }
     };
     
-    class       IRender
+//    class       IRender
+//    {
+//    protected:
+//        using funcMap = std::map<std::string, futils::voidStringFunc>;
+//
+//        std::unordered_map<std::string, fender::Color>  _fenderColors;
+//        futils::EntityManager   _ecs;
+//        std::string             _assetsPath;
+//        std::string             _windowName;
+//        WindowStyle             _windowStyle;
+//        bool                    _resizable;
+//        futils::Vec2d<Align>    _windowAlign;
+//        funcMap                 configFunctions;
+//        std::unordered_map<std::string, const fender::Layout *>   knownLayouts;
+//        const fender::Layout          *currentLayout{nullptr};
+//        bool                    _editorMode{false};
+//        fender::EventSystem     _eventSystem;
+//        std::string             _systemFont{"default"};
+//        fender::Color           _screenColor;
+//    public:
+//        static futils::Vec2d<int>      _windowSize;
+//
+//        virtual ~IRender() {};
+//        virtual bool    isRunning() = 0;
+//        virtual void    openWindow() = 0;
+//        virtual void    closeWindow() = 0;
+//        virtual void    write(int x, int y, std::string const &) = 0;
+////        Used for rendering to the screen if necessary (Not necessary for QT a priori)
+//        virtual void    refresh() = 0;
+//        virtual void    resize(int x, int y) = 0;
+//        virtual void    loadCurrentLayout() = 0;
+//        virtual void    pollEvents() = 0;
+////        Used for updating the ecs systems and other logical updates each Frame
+//        virtual void    update(float elapsed = 0.0) = 0;
+//        virtual void    changeScene(futils::Ini *config = nullptr,
+//                                    std::string const &scope = "fender") = 0;
+//        virtual futils::Vec2d<int>  getMousePosition() = 0;
+//        virtual bool                mouseIsGoingDown() = 0;
+//        fender::Color       getScreenColor() const {return this->_screenColor;}
+//        void            SmartModeInit(futils::Ini &conf,
+//                                      std::string const &confScope = "fender");
+//        void            registerLayout(fender::Layout const &layout)
+//        {
+//            this->knownLayouts[layout.getName()] = &layout;
+//        }
+//
+//        void            useLayout(fender::Layout const &layout)
+//        {
+//            this->currentLayout = &layout;
+//            this->loadCurrentLayout();
+//        }
+//        void            useLayout(std::string const &name)
+//        {
+//            this->currentLayout = this->knownLayouts.at(name);
+//            this->loadCurrentLayout();
+//        }
+//
+//        const futils::Vec2d<int> get_windowSize() const {
+//            return _windowSize;
+//        }
+//        void set_windowSize(const futils::Vec2d<int> &_windowSize) {
+//            IRender::_windowSize = _windowSize;
+//        }
+//        const std::string &get_windowName() const {
+//            return _windowName;
+//        }
+//        void set_windowName(const std::string &_windowName) {
+//            this->_windowName = _windowName;
+//        }
+//        fender::WindowStyle get_windowStyle() const {
+//            return _windowStyle;
+//        }
+//        void    set_windowStyle(fender::WindowStyle _windowStyle) {
+//            _windowStyle = _windowStyle;
+//        }
+//        bool is_resizable() const {
+//            return _resizable;
+//        }
+//        void set_resizable(bool _resizable) {
+//            _resizable = _resizable;
+//        }
+//        const futils::Vec2d<fender::Align> &get_windowAlign() const {
+//            return _windowAlign;
+//        }
+//        void set_windowAlign(const futils::Vec2d<fender::Align> &_windowAlign) {
+//            this->_windowAlign = _windowAlign;
+//        }
+//    };
+
+    // Interface
+    class IRender
     {
-    protected:
-        using funcMap = std::map<std::string, futils::voidStringFunc>;
-    
-        std::unordered_map<std::string, fender::Color>  _fenderColors;
-        futils::EntityManager   _ecs;
-        std::string             _assetsPath;
-        std::string             _windowName;
-        WindowStyle             _windowStyle;
-        bool                    _resizable;
-        futils::Vec2d<Align>    _windowAlign;
-        funcMap                 configFunctions;
-        std::unordered_map<std::string, const fender::Layout *>   knownLayouts;
-        const fender::Layout          *currentLayout{nullptr};
-        bool                    _editorMode{false};
-        fender::EventSystem     _eventSystem;
-        std::string             _systemFont{"default"};
-        fender::Color           _screenColor;
     public:
-        static futils::Vec2d<int>      _windowSize;
-        
-        virtual ~IRender() {};
-        virtual bool    isRunning() = 0;
-        virtual void    openWindow() = 0;
-        virtual void    closeWindow() = 0;
-        virtual void    write(int x, int y, std::string const &) = 0;
-//        Used for rendering to the screen if necessary (Not necessary for QT a priori)
-        virtual void    refresh() = 0;
-        virtual void    resize(int x, int y) = 0;
-        virtual void    loadCurrentLayout() = 0;
-        virtual void    pollEvents() = 0;
-//        Used for updating the ecs systems and other logical updates each Frame
-        virtual void    update(float elapsed = 0.0) = 0;
-        virtual void    changeScene(futils::Ini *config = nullptr,
-                                    std::string const &scope = "fender") = 0;
-        virtual futils::Vec2d<int>  getMousePosition() = 0;
-        virtual bool                mouseIsGoingDown() = 0;
-        fender::Color       getScreenColor() const {return this->_screenColor;}
-        void            SmartModeInit(futils::Ini &conf,
-                                      std::string const &confScope = "fender");
-        void            registerLayout(fender::Layout const &layout)
-        {
-            this->knownLayouts[layout.getName()] = &layout;
-        }
-        
-        void            useLayout(fender::Layout const &layout)
-        {
-            this->currentLayout = &layout;
-            this->loadCurrentLayout();
-        }
-        void            useLayout(std::string const &name)
-        {
-            this->currentLayout = this->knownLayouts.at(name);
-            this->loadCurrentLayout();
-        }
-        
-        const futils::Vec2d<int> get_windowSize() const {
-            return _windowSize;
-        }
-        void set_windowSize(const futils::Vec2d<int> &_windowSize) {
-            IRender::_windowSize = _windowSize;
-        }
-        const std::string &get_windowName() const {
-            return _windowName;
-        }
-        void set_windowName(const std::string &_windowName) {
-            this->_windowName = _windowName;
-        }
-        fender::WindowStyle get_windowStyle() const {
-            return _windowStyle;
-        }
-        void    set_windowStyle(fender::WindowStyle _windowStyle) {
-            _windowStyle = _windowStyle;
-        }
-        bool is_resizable() const {
-            return _resizable;
-        }
-        void set_resizable(bool _resizable) {
-            _resizable = _resizable;
-        }
-        const futils::Vec2d<fender::Align> &get_windowAlign() const {
-            return _windowAlign;
-        }
-        void set_windowAlign(const futils::Vec2d<fender::Align> &_windowAlign) {
-            this->_windowAlign = _windowAlign;
-        }
+        virtual ~IRender() {}
+// TODO: Simply use the renderer this way !! All you need to do is allow it to add its own systems.
+        // This way it will have access to components (abstract) and events.
+        virtual void loadSystems(futils::EntityManager &engine);
     };
 
     class       Manager

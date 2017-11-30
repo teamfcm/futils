@@ -107,8 +107,6 @@ CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o
  ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/Image.cpp
 CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o
- ../include/CursesRender.hpp
- ../include/SFMLRender.hpp
  ../include/components.hpp
  ../include/events.hpp
  ../include/extras.hpp
@@ -203,36 +201,3 @@ CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o
  ../utils/modules.hpp
  ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/WindowManager.cpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o
- ../include/CursesRender.hpp
- ../include/events.hpp
- ../include/fender.hpp
- ../include/requests.hpp
- ../utils/clock.hpp
- ../utils/datapacket.hpp
- ../utils/dloader.hpp
- ../utils/ecs.hpp
- ../utils/fstring.hpp
- ../utils/futils.hpp
- ../utils/ini.hpp
- ../utils/log.hpp
- ../utils/mediator.hpp
- ../utils/types.hpp
- /home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.cpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o
- ../include/SFMLRender.hpp
- ../include/components.hpp
- ../include/events.hpp
- ../include/fender.hpp
- ../include/requests.hpp
- ../utils/clock.hpp
- ../utils/datapacket.hpp
- ../utils/dloader.hpp
- ../utils/ecs.hpp
- ../utils/fstring.hpp
- ../utils/futils.hpp
- ../utils/ini.hpp
- ../utils/log.hpp
- ../utils/mediator.hpp
- ../utils/types.hpp
- /home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/SFMLRender.cpp

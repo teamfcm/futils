@@ -15,6 +15,7 @@ namespace fender
     public:
         virtual ~IRender() {}
 // TODO: Simply use the renderer this way !! All you need to do is allow it to add its own systems.
+        // This way it will have access to components (abstract) and events.
         virtual void loadSystems(EntityManager &engine);
     };
 }

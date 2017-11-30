@@ -148,12 +148,6 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/WindowManager.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/SFMLRender.cpp">
-			<Option target="fender"/>
-		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

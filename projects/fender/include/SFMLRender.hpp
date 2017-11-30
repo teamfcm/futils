@@ -325,16 +325,16 @@ namespace fender
             auto &elem = *(new ElemType(src));
             auto &rectangle = elem.getRectangle();
             auto &text = elem.getText();
-            rectangle.setSize(sf::Vector2f{(float)(src.getSize().X * this->_windowSize.X / 100.0),
-                                           (float)(src.getSize().Y * this->_windowSize.Y / 100.0)});
-            rectangle.setPosition(src.getPosition().X * this->_windowSize.X / 100.0,
-                                  src.getPosition().Y * this->_windowSize.Y / 100.0);
+//            rectangle.setSize(sf::Vector2f{(float)(src.getSize().X * this->_windowSize.X / 100.0),
+            // (float)(src.getSize().Y * this->_windowSize.Y / 100.0)});
+            // rectangle.setPosition(src.getPosition().X * this->_windowSize.X / 100.0,
+//                                  src.getPosition().Y * this->_windowSize.Y / 100.0);
             rectangle.setOutlineColor(sf::Color::White);
-            if (this->_editorMode)
-                rectangle.setOutlineThickness(4);
+//            if (this->_editorMode)
+  //              rectangle.setOutlineThickness(4);
             rectangle.setFillColor(sf::Color::Transparent);
 
-            text.setFont(this->fonts[this->_systemFont]);
+//            text.setFont(this->fonts[this->_systemFont]);
             text.setCharacterSize(18);
             text.setFillColor(sf::Color::Red);
             text.setPosition(rectangle.getPosition().x +
@@ -345,12 +345,12 @@ namespace fender
                              rectangle.getSize().y / 2.0 -
                              text.getCharacterSize() / 2.0);
             elem.init();
-            if (this->_editorMode) {
-                text.setString(
-                        text.getString()
-                        + " [" + src.getName() + " (" + src.getType() +
-                        ")]");
-            }
+//             if (this->_editorMode) {
+   //             text.setString(
+      //                   text.getString()
+         //                + " [" + src.getName() + " (" + src.getType() +
+            //             ")]");
+         //   }
             this->elements
                     .insert(std::pair<std::string, std::unique_ptr<ElemType>>
                                     (src.getName(), &elem));
@@ -377,29 +377,29 @@ namespace fender
         virtual futils::Vec2d<int>  getMousePosition() final {
             return this->_mousePosition;
         }
-        virtual void    changeScene(futils::Ini *config = nullptr,
-                                    std::string const &scope = "config") final
-        {
-            this->currentLayout = nullptr;
-            this->elements.clear();
-            this->_eventSystem.clear();
-            this->indexMap.clear();
-            if (config)
-            {
-                if (this->win.isOpen())
-                {
-                    this->win.close();
-                    this->SmartModeInit(*config, scope);
-                    this->openWindow();
-                }
-                else
-                    this->SmartModeInit(*config, scope);
-            }
-        };
+//        virtual void    changeScene(futils::Ini *config = nullptr,
+  //                                  std::string const &scope = "config") final
+    //    {
+//            this->currentLayout = nullptr;
+//            this->elements.clear();
+//            this->_eventSystem.clear();
+//            this->indexMap.clear();
+//            if (config)
+//            {
+//                if (this->win.isOpen())
+//                {
+//                    this->win.close();
+//                    this->SmartModeInit(*config, scope);
+//                    this->openWindow();
+//                }
+//                else
+//                    this->SmartModeInit(*config, scope);
+//            }
+  //      };
         
-        sf::RenderWindow    &getWindow() {
-            return this->win;
-        }
+      //  sf::RenderWindow    &getWindow() {
+//            return this->win;
+        //}
     };
     
     namespace SFMLsystems

@@ -271,10 +271,6 @@ systems.hpp
 /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/Renderer.cpp
 systems.hpp
 /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/systems.hpp
-SFMLRender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/SFMLRender.hpp
-CursesRender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/CursesRender.hpp
 
 /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/RendererSubSystem.cpp
 systems.hpp
@@ -293,26 +289,4 @@ fender.hpp
 /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/fender.hpp
 systems.hpp
 /home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/systems.hpp
-
-/home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.cpp
-iostream
--
-ncurses.h
--
-CursesRender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.hpp
-log.hpp
-/home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/log.hpp
-
-/home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/SFMLRender.cpp
-iostream
--
-SFML/Window.hpp
--
-SFML/Graphics.hpp
--
-SFMLRender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/SFMLRender.hpp
-log.hpp
-/home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/log.hpp
 

@@ -10,8 +10,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/fender.dir/src/Manager.cpp.o"
   "CMakeFiles/fender.dir/src/IRender.cpp.o"
   "CMakeFiles/fender.dir/src/Fender.cpp.o"
-  "CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o"
-  "CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o"
   "../release/libfender.pdb"
   "../release/libfender.so"
 )

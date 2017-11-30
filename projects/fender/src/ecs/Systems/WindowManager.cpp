@@ -24,7 +24,7 @@ fender::systems::WindowManager::WindowManager()
 
 void fender::systems::WindowManager::openWindow(std::string const &name, int width, int height)
 {
-    renderer->openWindow();
+    // renderer->openWindow();
     events::WindowOpened wo;
     wo.name = name;
     wo.width = width;

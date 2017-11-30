@@ -21,8 +21,6 @@ set(SOURCE_FILES
 		src/Manager.cpp
         src/IRender.cpp
 		src/Fender.cpp
-		src/renderers/sfml/SFMLRender.cpp
-		src/renderers/ncurses/CursesRender.cpp
 		)
 
 if (UNIX)

@@ -106,8 +106,6 @@ CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../utils/modules.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/Image.cpp.o: ../src/ecs/Systems/Image.cpp
 
-CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../include/CursesRender.hpp
-CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../include/SFMLRender.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../include/components.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../include/events.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/Renderer.cpp.o: ../include/extras.hpp
@@ -202,37 +200,4 @@ CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/mediator.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/modules.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/ecs/Systems/WindowManager.cpp.o: ../src/ecs/Systems/WindowManager.cpp
-
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../include/CursesRender.hpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../include/events.hpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../include/fender.hpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../include/requests.hpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../utils/clock.hpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../utils/datapacket.hpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../utils/dloader.hpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../utils/ecs.hpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../utils/fstring.hpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../utils/futils.hpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../utils/ini.hpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../utils/log.hpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../utils/mediator.hpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../utils/types.hpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o: ../src/renderers/ncurses/CursesRender.cpp
-
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../include/SFMLRender.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../include/components.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../include/events.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../include/fender.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../include/requests.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../utils/clock.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../utils/datapacket.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../utils/dloader.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../utils/ecs.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../utils/fstring.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../utils/futils.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../utils/ini.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../utils/log.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../utils/mediator.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../utils/types.hpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o: ../src/renderers/sfml/SFMLRender.cpp
 
