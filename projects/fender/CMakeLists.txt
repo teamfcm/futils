@@ -7,20 +7,26 @@ file(GLOB UTILS
 		)
 
 file(GLOB SYSTEMS
-		"src/ecs/Systems/*.cpp")
+		"src/engine/Systems/*.cpp")
 file(GLOB ENTITIES
-		"src/ecs/Entities/*.cpp")
+		"src/engine/Entities/*.cpp")
 file(GLOB COMPONENTS
-		"src/ecs/Components/*.cpp")
+		"src/engine/Components/*.cpp")
+file(GLOB SFML
+		"src/renderers/sfml/*.*pp")
+file(GLOB CURSES
+		"src/renderers/ncurses/*.*pp")
+file(GLOB SRC
+		"src/*.cpp")
 
 set(SOURCE_FILES
 		${UTILS}
 		${ENTITIES}
 		${COMPONENTS}
 		${SYSTEMS}
-		src/Manager.cpp
-        src/IRender.cpp
-		src/Fender.cpp
+		${SFML}
+		${CURSES}
+		${SRC}
 		)
 
 if (UNIX)

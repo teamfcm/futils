@@ -124,28 +124,34 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Manager.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Components/Object2d.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Components/Object2d.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Entities/Background.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Entities/Background.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/Image.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Image.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/Renderer.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Renderer.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/RendererSubSystem.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/RendererSubSystem.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/SplashScreen.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/SplashScreen.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/Transform.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Transform.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/ecs/Systems/WindowManager.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/WindowManager.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/SFMLRender.cpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/CMakeLists.txt">

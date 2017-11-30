@@ -9,6 +9,8 @@
 #include <typeinfo>
 #include <dlfcn.h>
 #include <exception>
+#include <iostream>
+#include "types.hpp"
 #include "futils.hpp"
 
 namespace futils

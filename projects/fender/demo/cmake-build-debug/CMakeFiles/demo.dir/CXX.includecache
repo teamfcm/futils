@@ -95,6 +95,10 @@ dlfcn.h
 -
 exception
 -
+iostream
+-
+types.hpp
+../utils/types.hpp
 futils.hpp
 ../utils/futils.hpp
 
@@ -122,6 +126,8 @@ ini.hpp
 
 ../utils/fstring.hpp
 sstream
+-
+vector
 -
 
 ../utils/futils.hpp
@@ -193,12 +199,18 @@ types.hpp
 ../utils/types.hpp
 typeindex
 -
+functional
+-
 cxxabi.h
+-
+memory
 -
 fstring.hpp
 ../utils/fstring.hpp
 
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/App.cpp
+dloader.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/src/App/dloader.hpp
 App.hpp
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/App.hpp
 systems.hpp

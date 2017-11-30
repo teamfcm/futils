@@ -2,13 +2,16 @@
 // Created by arroganz on 11/24/17.
 //
 
+# include "dloader.hpp"
 # include "App.hpp"
 # include "systems.hpp"
 
 demo::App::App(int, char *argv[]):
         execPath(argv[0])
 {
-    engine = std::make_unique<Engine>(execPath);
+    auto lib = futils::Dloader("../release/libfender.so");
+    auto enginePtr = lib.build<fender::Fender>(execPath);
+    engine.reset(enginePtr);
 }
 
 int demo::App::start() {

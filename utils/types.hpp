@@ -6,7 +6,9 @@
 #define FUTILS_TYPES_H
 
 # include <typeindex>
+# include <functional>
 # include <cxxabi.h>
+# include <memory>
 # include "fstring.hpp"
 
 namespace futils

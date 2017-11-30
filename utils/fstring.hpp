@@ -6,6 +6,7 @@
 #define FENDER_FSTRING_HPP
 
 # include <sstream>
+# include <vector>
 
 namespace futils::string {
     inline bool     isNumber(std::string const &str)
