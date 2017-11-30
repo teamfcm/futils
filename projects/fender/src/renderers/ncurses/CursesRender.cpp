@@ -3,7 +3,6 @@
 //
 
 #include <iostream>
-#include <ncurses.h>
 #include "CursesRender.hpp"
 #include "log.hpp"
 //

@@ -15,7 +15,7 @@
 # include <iomanip>
 # include <map>
 # include "log.hpp"
-
+/*
 namespace futils
 {
 //    Raw Class
@@ -303,9 +303,10 @@ namespace futils
                 {
                     auto name = this->epur(this->extractTokenName(line));
                     auto value = this->epur(this->extractTokenValue(line));
-                    if (mostRecentSection != "")
-                        this->sections[mostRecentSection]
-                                .set(Token{.name = name, .value = value}, nbr);
+					if (mostRecentSection != "") {
+						this->sections[mostRecentSection]
+							.set(Token{ .name = name,.value = value }, nbr);
+					}
                     else
                         this->globalTokens[name] = value;
                 }
@@ -512,5 +513,5 @@ namespace futils
         bool        hasChanged() const {return this->updated;}
     };
 }
-
+*/
 #endif //FSON_FSON_HPP

@@ -11,7 +11,11 @@
 # include <iomanip>
 # include "futils.hpp"
 
-# define FUNC                __PRETTY_FUNCTION__
+#ifdef linux
+# define FUNC __PRETTY_FUNCTION__
+#elif _WIN32
+# define FUNC __func__
+#endif linux
 # define DEFAULT_FUNC_NAME   "(undefined)"
 # define START_MSG           "Start log in "
 # define GET                 flog::Log::get
@@ -49,7 +53,7 @@ namespace flog
         template    <typename T>
         void        logToFile(T const &obj, std::string const &func = DEFAULT_FUNC_NAME)
         {
-            std::scoped_lock    lock(this->mutex);
+            std::scoped_lock<std::mutex>    lock(this->mutex);
 
             if (this->previousFunc != func)
             {
@@ -67,7 +71,7 @@ namespace flog
         template    <typename T>
         void        out(T const &obj, std::string const &func = DEFAULT_FUNC_NAME)
         {
-            std::scoped_lock    lock(this->mutex);
+            std::scoped_lock<std::mutex>    lock(this->mutex);
             if (this->previousFunc != func)
             {
                 this->previousFunc = func;

@@ -169,6 +169,7 @@ namespace fender::components {
 
         futils::Rect<float> const &getRect() const { return this->area; }
     };
+	/*
     class Ini : public futils::IComponent {
         std::string file{""};
         std::string scope{""};
@@ -203,20 +204,21 @@ namespace fender::components {
             this->hasChanged = false;
         }
     };
-    class Draggable : public futils::IComponent {
-        bool followingMouse{false};
-    public:
-        Draggable() { this->__name = "Draggable"; }
+	*/
+    //class draggable : public futils::icomponent {
+    //    bool followingmouse{false};
+    //public:
+    //    draggable() { this->__name = "draggable"; }
 
-        bool isDragged() const { return this->followingMouse; }
-    };
-    class Animated : public futils::IComponent {
-    public:
-        Animated() { this->__name = "Animated"; }
+    //    bool isdragged() const { return this->followingmouse; }
+    //};
+    //class animated : public futils::icomponent {
+    //public:
+    //    animated() { this->__name = "animated"; }
 
-        std::function<void(float)> callback{[](float) {}};
-        std::function<bool(void)> isDone{[]() { return true; }};
-    };
+    //    std::function<void(float)> callback{[](float) {}};
+    //    std::function<bool(void)> isdone{[]() { return true; }};
+    //};
 }
 
 #endif //FENDER_COMPONENTS_HPP

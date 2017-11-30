@@ -5,7 +5,11 @@
 #ifndef FUTILS_GOTOBINDIR_H
 #define FUTILS_GOTOBINDIR_H
 
+#ifdef linux
 # include <unistd.h>
+#elif _WIN32
+# include <direct.h>
+#endif linux
 # include <iostream>
 
 namespace futils

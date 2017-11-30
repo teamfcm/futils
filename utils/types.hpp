@@ -7,7 +7,11 @@
 
 # include <typeindex>
 # include <functional>
+#if linux
 # include <cxxabi.h>
+#elif __WIN32
+
+#endif
 # include <memory>
 # include "fstring.hpp"
 

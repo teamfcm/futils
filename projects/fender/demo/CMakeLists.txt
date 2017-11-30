@@ -7,8 +7,13 @@ set(SOURCE_FILES
 		src/App/App.cpp)
 
 add_executable(demo ${SOURCE_FILES})
-target_compile_options(demo PUBLIC -W -Wall -Werror -Wextra)
 include_directories(include utils)
 set_target_properties(demo PROPERTIES RUNTIME_OUTPUT_DIRECTORY ../)
+if (UNIX)
+target_compile_options(demo PUBLIC -W -Wall -Werror -Wextra)
 find_library(FENDER fender HINTS ../release)
 target_link_libraries(demo ${FENDER} dl)
+endif (UNIX)
+if (WIN32)
+
+endif (WIN32)

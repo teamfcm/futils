@@ -5,11 +5,11 @@
 #ifndef FENDER_SFMLRENDER_HPP
 #define FENDER_SFMLRENDER_HPP
 
-# include <SFML/Window.hpp>
-# include <SFML/Graphics.hpp>
-# include <string>
-# include "fender.hpp"
-# include "components.hpp"
+//# include <SFML/Window.hpp>
+//# include <SFML/Graphics.hpp>
+//# include <string>
+//# include "fender.hpp"
+//# include "components.hpp"
 
 namespace fender
 {
@@ -455,12 +455,12 @@ namespace fender
 //        };
 //    }
 
-    class SFMLRender : public IRender
-    {
-    public:
-        virtual ~SFMLRender() = default;
-        void loadSystems(futils::EntityManager &) override {};
-    };
+    //class SFMLRender : public IRender
+    //{
+    //public:
+    //    virtual ~SFMLRender() = default;
+    //    void loadSystems(futils::EntityManager &) override {};
+    //};
 }
 
 #endif //FENDER_SFMLRENDER_HPP

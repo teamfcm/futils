@@ -6,9 +6,15 @@
 # include "goToBinDir.hpp"
 # include "systems.hpp"
 
-extern "C" fender::Fender *Fender(std::string const &execPath) {
-    return new fender::Fender(execPath);
-}
+//#ifdef linux
+	extern "C" fender::Fender *Fender(std::string const &execPath) {
+		return new fender::Fender(execPath);
+	}
+//#elif _WIN32
+//	fender::Fender *__declspec(dllexport) __stdcall Fender(std::string const &execPath) {
+//		return new fender::Fender(execPath);
+//	}
+//#endif linux
 
 fender::Fender::Fender(std::string const &arg0) {
     futils::goToBinDir(arg0);

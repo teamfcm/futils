@@ -44,7 +44,8 @@ namespace futils
 
         template <typename T>
         void require(void *callee, std::function<void(futils::IMediatorPacket &)> onReceive) {
-            _requests.insert(std::pair(futils::type<T>::index, IdentifiedAction(callee, onReceive)));
+            _requests.insert(std::pair<futils::type_index, IdentifiedAction>
+				(futils::type<T>::index, IdentifiedAction(callee, onReceive)));
         }
 
         template <typename T>

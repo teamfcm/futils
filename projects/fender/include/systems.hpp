@@ -8,6 +8,7 @@
 # include "fender.hpp"
 # include "extras.hpp"
 # include "modules.hpp"
+# include "IniManager.hpp"
 
 namespace fender::systems
 {
@@ -25,7 +26,7 @@ namespace fender::systems
         void init();
         void openWindow();
         void changeBackground();
-        futils::Ini config;
+        rutils::IniFile config;
     public:
         SplashScreen();
         void run(float) final;

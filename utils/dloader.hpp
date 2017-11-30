@@ -7,7 +7,11 @@
 
 #include <string>
 #include <typeinfo>
-#include <dlfcn.h>
+#if linux
+# include <dlfcn.h>
+#elif _WIN32
+# include <Windows.h>
+#endif
 #include <exception>
 #include <iostream>
 #include "types.hpp"
@@ -15,6 +19,7 @@
 
 namespace futils
 {
+#ifdef linux
     class       Dloader
     {
         void            *_handle;
@@ -57,6 +62,30 @@ namespace futils
             }
         };
     };
+#elif _WIN32
+	class Dloader
+	{
+		HINSTANCE inst;
+	public:
+		Dloader(std::string const &, int mode = 0) {
+			inst = LoadLibrary("./fender.dll");
+			if (!inst)
+				throw std::runtime_error("Could not load fender.dll");
+		}
+
+		template <typename T, typename ...Args>
+		T *build(Args...args)
+		{
+			return nullptr;
+		}
+
+		template <typename Ret, typename ...Args>
+		Ret execute(std::string const &, Args ...args)
+		{
+			return Ret();
+		}
+	};
+#endif linux
 }
 
 #endif //DEMO_DLLOADER_HPP

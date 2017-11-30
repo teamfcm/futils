@@ -27,7 +27,7 @@ namespace futils
     public:
         Modules() = default;
         void add(key k, value val) {
-            _modules.insert(std::pair(k, val));
+			_modules.insert(std::pair <key, value> (k, val));
         }
 
         void execute() {

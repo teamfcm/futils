@@ -2,8 +2,10 @@
 // Created by ganz on 16/08/17.
 //
 
+#ifdef linux
 # include <unistd.h>
-#include <callback.hpp>
+#endif linux
+# include <callback.hpp>
 # include "fender.hpp"
 # include "systems.hpp"
 # include "log.hpp"

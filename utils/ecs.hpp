@@ -90,7 +90,7 @@ namespace futils
             auto compo = new Compo(args...);
             compo->setTypeindex(futils::type<Compo>::index);
             compo->setEntity(*this);
-            this->components.insert(std::pair(compo->getTypeindex(), compo));
+            this->components.insert(std::pair<futils::type_index, IComponent *>(compo->getTypeindex(), compo));
             if (onExtension(*compo) == false) {
                 lateinitComponents.push(compo);
             }
@@ -134,7 +134,8 @@ namespace futils
             auto entity = new T(args...);
             entities.push_front(std::unique_ptr<IEntity>(entity));
             entity->onExtension = [this](IComponent &compo) {
-                components.insert(std::pair(compo.getTypeindex(), &compo));
+                components.insert(std::pair<futils::type_index, IComponent *>
+					(compo.getTypeindex(), &compo));
                 return true;
             };
             while (!entity->lateinitComponents.empty()) {
@@ -153,7 +154,7 @@ namespace futils
             auto system = new System(args...);
             system->provideManager(*this);
             system->provideMediator(*events);
-            this->systemsMap.insert(std::pair(system->getName(), system));
+            this->systemsMap.insert(std::pair<std::string, ISystem *>(system->getName(), system));
         }
 
         void removeSystem(std::string const &systemName)

@@ -5,7 +5,6 @@
 # include <string>
 # include <memory>
 # include <functional>
-# include <cxxabi.h>
 # include <stack>
 # include <map>
 # include "futils.hpp"
@@ -66,10 +65,10 @@ namespace fender
         NBR_SUPPORTED_KEYS
     };
     union color {
-        int color;
+        int full;
         unsigned char rgba[4];
     };
-    enum class Color : long
+    enum class Color : unsigned long
     {
         WHITE = 0xffffffff,
         RED = 0xff000000,
