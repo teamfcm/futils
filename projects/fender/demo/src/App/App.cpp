@@ -9,9 +9,7 @@
 demo::App::App(int, char *argv[]):
         execPath(argv[0])
 {
-    auto lib = futils::Dloader("../release/libfender.so");
-    auto enginePtr = lib.build<fender::Fender>(execPath);
-    engine.reset(enginePtr);
+	engine = std::make_unique<fender::Fender>(execPath);
 }
 
 int demo::App::start() {

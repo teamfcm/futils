@@ -15,5 +15,6 @@ find_library(FENDER fender HINTS ../release)
 target_link_libraries(demo ${FENDER} dl)
 endif (UNIX)
 if (WIN32)
-
+find_library(FENDER fender HINTS ./lib)
+target_link_libraries(demo ${FENDER})
 endif (WIN32)
