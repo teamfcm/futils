@@ -420,60 +420,6 @@ src/engine/Systems/WindowManager.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.s
 .PHONY : src/engine/Systems/WindowManager.cpp.s
 
-src/renderers/ncurses/CursesRender.o: src/renderers/ncurses/CursesRender.cpp.o
-
-.PHONY : src/renderers/ncurses/CursesRender.o
-
-# target to build an object file
-src/renderers/ncurses/CursesRender.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o
-.PHONY : src/renderers/ncurses/CursesRender.cpp.o
-
-src/renderers/ncurses/CursesRender.i: src/renderers/ncurses/CursesRender.cpp.i
-
-.PHONY : src/renderers/ncurses/CursesRender.i
-
-# target to preprocess a source file
-src/renderers/ncurses/CursesRender.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.i
-.PHONY : src/renderers/ncurses/CursesRender.cpp.i
-
-src/renderers/ncurses/CursesRender.s: src/renderers/ncurses/CursesRender.cpp.s
-
-.PHONY : src/renderers/ncurses/CursesRender.s
-
-# target to generate assembly for a file
-src/renderers/ncurses/CursesRender.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.s
-.PHONY : src/renderers/ncurses/CursesRender.cpp.s
-
-src/renderers/sfml/SFMLRender.o: src/renderers/sfml/SFMLRender.cpp.o
-
-.PHONY : src/renderers/sfml/SFMLRender.o
-
-# target to build an object file
-src/renderers/sfml/SFMLRender.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o
-.PHONY : src/renderers/sfml/SFMLRender.cpp.o
-
-src/renderers/sfml/SFMLRender.i: src/renderers/sfml/SFMLRender.cpp.i
-
-.PHONY : src/renderers/sfml/SFMLRender.i
-
-# target to preprocess a source file
-src/renderers/sfml/SFMLRender.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.i
-.PHONY : src/renderers/sfml/SFMLRender.cpp.i
-
-src/renderers/sfml/SFMLRender.s: src/renderers/sfml/SFMLRender.cpp.s
-
-.PHONY : src/renderers/sfml/SFMLRender.s
-
-# target to generate assembly for a file
-src/renderers/sfml/SFMLRender.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.s
-.PHONY : src/renderers/sfml/SFMLRender.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -516,12 +462,6 @@ help:
 	@echo "... src/engine/Systems/WindowManager.o"
 	@echo "... src/engine/Systems/WindowManager.i"
 	@echo "... src/engine/Systems/WindowManager.s"
-	@echo "... src/renderers/ncurses/CursesRender.o"
-	@echo "... src/renderers/ncurses/CursesRender.i"
-	@echo "... src/renderers/ncurses/CursesRender.s"
-	@echo "... src/renderers/sfml/SFMLRender.o"
-	@echo "... src/renderers/sfml/SFMLRender.i"
-	@echo "... src/renderers/sfml/SFMLRender.s"
 .PHONY : help
 
 

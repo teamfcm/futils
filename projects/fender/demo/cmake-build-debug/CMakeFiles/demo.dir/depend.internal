@@ -9,6 +9,9 @@ CMakeFiles/demo.dir/src/App/App.cpp.o
  ../include/fender.hpp
  ../include/requests.hpp
  ../include/systems.hpp
+ ../utils/IniManager.hpp
+ ../utils/RutilsException.hpp
+ ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp

@@ -10,7 +10,7 @@
 #include <experimental/filesystem>
 #ifdef _WIN32
 # include <filesystem>
-#endif _WIN32
+#endif
 #include <fstream>
 #include <iostream>
 

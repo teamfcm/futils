@@ -7,13 +7,11 @@ file(REMOVE_RECURSE
   "CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o"
   "CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.o"
   "CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.o"
-  "CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o"
-  "CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o"
   "CMakeFiles/fender.dir/src/Fender.cpp.o"
   "CMakeFiles/fender.dir/src/IRender.cpp.o"
   "CMakeFiles/fender.dir/src/Manager.cpp.o"
-  "../release/libfender.pdb"
-  "../release/libfender.so"
+  "libfender.pdb"
+  "libfender.a"
 )
 
 # Per-language clean rules from dependency scanning.

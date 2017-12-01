@@ -116,7 +116,7 @@ demo_EXTERNAL_OBJECTS =
 ../demo: CMakeFiles/demo.dir/src/main.cpp.o
 ../demo: CMakeFiles/demo.dir/src/App/App.cpp.o
 ../demo: CMakeFiles/demo.dir/build.make
-../demo: /home/arroganz/cpp/futils/projects/fender/release/libfender.so
+../demo: ../libfender.a
 ../demo: CMakeFiles/demo.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arroganz/cpp/futils/projects/fender/demo/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ../demo"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/demo.dir/link.txt --verbose=$(VERBOSE)

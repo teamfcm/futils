@@ -19,7 +19,7 @@
 
 namespace futils
 {
-#ifdef linux
+#ifdef unix
     class       Dloader
     {
         void            *_handle;
@@ -85,7 +85,7 @@ namespace futils
 			return Ret();
 		}
 	};
-#endif linux
+#endif
 }
 
 #endif //DEMO_DLLOADER_HPP

@@ -13,16 +13,6 @@ fender.hpp
 ../include/fender.hpp
 
 ../include/SFMLRender.hpp
-SFML/Window.hpp
--
-SFML/Graphics.hpp
--
-string
--
-fender.hpp
-../include/fender.hpp
-components.hpp
-../include/components.hpp
 
 ../include/components.hpp
 fender.hpp
@@ -46,8 +36,6 @@ string
 memory
 -
 functional
--
-cxxabi.h
 -
 stack
 -
@@ -79,6 +67,40 @@ extras.hpp
 ../include/extras.hpp
 modules.hpp
 ../include/modules.hpp
+IniManager.hpp
+../include/IniManager.hpp
+
+../utils/IniManager.hpp
+unordered_map
+-
+memory
+-
+experimental/filesystem
+-
+filesystem
+-
+fstream
+-
+iostream
+-
+RutilsException.hpp
+../utils/RutilsException.hpp
+RutilsParsingTools.hpp
+../utils/RutilsParsingTools.hpp
+
+../utils/RutilsException.hpp
+string
+-
+utility
+-
+stdexcept
+-
+
+../utils/RutilsParsingTools.hpp
+string
+-
+RutilsException.hpp
+../utils/RutilsException.hpp
 
 ../utils/callback.hpp
 thread
@@ -112,6 +134,8 @@ string
 typeinfo
 -
 dlfcn.h
+-
+Windows.h
 -
 exception
 -
@@ -166,6 +190,8 @@ unordered_map
 
 ../utils/goToBinDir.hpp
 unistd.h
+-
+direct.h
 -
 iostream
 -
@@ -285,6 +311,8 @@ SFMLRender.hpp
 /home/arroganz/cpp/futils/projects/fender/src/engine/Systems/SFMLRender.hpp
 CursesRender.hpp
 /home/arroganz/cpp/futils/projects/fender/src/engine/Systems/CursesRender.hpp
+IniManager.hpp
+/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/IniManager.hpp
 
 /home/arroganz/cpp/futils/projects/fender/src/engine/Systems/RendererSubSystem.cpp
 systems.hpp
@@ -303,26 +331,4 @@ fender.hpp
 /home/arroganz/cpp/futils/projects/fender/src/engine/Systems/fender.hpp
 systems.hpp
 /home/arroganz/cpp/futils/projects/fender/src/engine/Systems/systems.hpp
-
-/home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.cpp
-iostream
--
-ncurses.h
--
-CursesRender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.hpp
-log.hpp
-/home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/log.hpp
-
-/home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/SFMLRender.cpp
-iostream
--
-SFML/Window.hpp
--
-SFML/Graphics.hpp
--
-SFMLRender.hpp
-/home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/SFMLRender.hpp
-log.hpp
-/home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/log.hpp
 

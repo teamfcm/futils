@@ -41,8 +41,6 @@ memory
 -
 functional
 -
-cxxabi.h
--
 stack
 -
 map
@@ -73,6 +71,40 @@ extras.hpp
 ../include/extras.hpp
 modules.hpp
 ../include/modules.hpp
+IniManager.hpp
+../include/IniManager.hpp
+
+../utils/IniManager.hpp
+unordered_map
+-
+memory
+-
+experimental/filesystem
+-
+filesystem
+-
+fstream
+-
+iostream
+-
+RutilsException.hpp
+../utils/RutilsException.hpp
+RutilsParsingTools.hpp
+../utils/RutilsParsingTools.hpp
+
+../utils/RutilsException.hpp
+string
+-
+utility
+-
+stdexcept
+-
+
+../utils/RutilsParsingTools.hpp
+string
+-
+RutilsException.hpp
+../utils/RutilsException.hpp
 
 ../utils/clock.hpp
 chrono
@@ -92,6 +124,8 @@ string
 typeinfo
 -
 dlfcn.h
+-
+Windows.h
 -
 exception
 -
@@ -146,6 +180,8 @@ unordered_map
 
 ../utils/goToBinDir.hpp
 unistd.h
+-
+direct.h
 -
 iostream
 -

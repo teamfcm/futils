@@ -16,7 +16,6 @@ file(GLOB COMPONENTS
 file(GLOB SRC
 		"src/*.cpp")
 
-
 set(SOURCE_FILES
 		${INCLUDE}
 		${UTILS}
@@ -31,10 +30,9 @@ if (UNIX)
 endif(UNIX)
 
 add_library(fender STATIC ${SOURCE_FILES})
-set_target_properties(fender PROPERTIES BINARY_OUTPUT_DIRECTORY "../release")
 #if (UNIX)
 #	target_link_libraries(fender ncurses)
 #endif (UNIX)
 #target_link_libraries(fender sfml-window sfml-audio sfml-graphics)
-#target_link_libraries(fender -lstdc++fs)
+target_link_libraries(fender -lstdc++fs)
 include_directories(release include utils)

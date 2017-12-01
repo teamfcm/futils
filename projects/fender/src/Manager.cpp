@@ -2,9 +2,9 @@
 // Created by ganz on 16/08/17.
 //
 
-#ifdef linux
+#ifdef unix
 # include <unistd.h>
-#endif linux
+#endif
 # include <callback.hpp>
 # include "fender.hpp"
 # include "systems.hpp"

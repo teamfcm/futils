@@ -10,7 +10,8 @@
 
 namespace rutils
 {
-    static std::string getStringBetweenDelimiter(const std::string &line,
+    /*
+     static std::string getStringBetweenDelimiter(const std::string &line,
                                                  const std::string &delimiter,
                                                  const std::string &oppositeDelimiter = "")
     {
@@ -25,6 +26,7 @@ namespace rutils
             throw rutils::SyntaxError("The open delimiter is behind the close delimiter in the line : " + line);
         return line.substr(openDelimiter + 1, endDelimiter - openDelimiter - 1);
     }
+    */
 
     static std::string getStringBetweenDelimiter(const std::string &line,
                                                  char delimiter,
@@ -42,6 +44,7 @@ namespace rutils
         return line.substr(openDelimiter + 1, endDelimiter - openDelimiter - 1);
     }
 
+    /*
     static std::string removeAfterDelimiter(const std::string &line,
                                             const std::string &delimiter)
     {
@@ -51,6 +54,7 @@ namespace rutils
             return line;
         return line.substr(0, delimiterPosition);
     }
+    */
 
     static std::string removeAfterDelimiter(const std::string &line,
                                             char delimiter)

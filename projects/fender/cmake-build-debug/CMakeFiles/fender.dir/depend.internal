@@ -8,6 +8,9 @@ CMakeFiles/fender.dir/src/Fender.cpp.o
  ../include/fender.hpp
  ../include/requests.hpp
  ../include/systems.hpp
+ ../utils/IniManager.hpp
+ ../utils/RutilsException.hpp
+ ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
@@ -45,6 +48,9 @@ CMakeFiles/fender.dir/src/Manager.cpp.o
  ../include/fender.hpp
  ../include/requests.hpp
  ../include/systems.hpp
+ ../utils/IniManager.hpp
+ ../utils/RutilsException.hpp
+ ../utils/RutilsParsingTools.hpp
  ../utils/callback.hpp
  ../utils/clock.hpp
  ../utils/datapacket.hpp
@@ -98,6 +104,9 @@ CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o
  ../include/fender.hpp
  ../include/requests.hpp
  ../include/systems.hpp
+ ../utils/IniManager.hpp
+ ../utils/RutilsException.hpp
+ ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
@@ -119,6 +128,9 @@ CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o
  ../include/fender.hpp
  ../include/requests.hpp
  ../include/systems.hpp
+ ../utils/IniManager.hpp
+ ../utils/RutilsException.hpp
+ ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
@@ -138,6 +150,9 @@ CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.o
  ../include/fender.hpp
  ../include/requests.hpp
  ../include/systems.hpp
+ ../utils/IniManager.hpp
+ ../utils/RutilsException.hpp
+ ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
@@ -157,6 +172,9 @@ CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o
  ../include/fender.hpp
  ../include/requests.hpp
  ../include/systems.hpp
+ ../utils/IniManager.hpp
+ ../utils/RutilsException.hpp
+ ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
@@ -176,6 +194,9 @@ CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.o
  ../include/fender.hpp
  ../include/requests.hpp
  ../include/systems.hpp
+ ../utils/IniManager.hpp
+ ../utils/RutilsException.hpp
+ ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
@@ -195,6 +216,9 @@ CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.o
  ../include/fender.hpp
  ../include/requests.hpp
  ../include/systems.hpp
+ ../utils/IniManager.hpp
+ ../utils/RutilsException.hpp
+ ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
@@ -207,36 +231,3 @@ CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.o
  ../utils/modules.hpp
  ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/src/engine/Systems/WindowManager.cpp
-CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o
- ../include/CursesRender.hpp
- ../include/events.hpp
- ../include/fender.hpp
- ../include/requests.hpp
- ../utils/clock.hpp
- ../utils/datapacket.hpp
- ../utils/dloader.hpp
- ../utils/ecs.hpp
- ../utils/fstring.hpp
- ../utils/futils.hpp
- ../utils/ini.hpp
- ../utils/log.hpp
- ../utils/mediator.hpp
- ../utils/types.hpp
- /home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.cpp
-CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o
- ../include/SFMLRender.hpp
- ../include/components.hpp
- ../include/events.hpp
- ../include/fender.hpp
- ../include/requests.hpp
- ../utils/clock.hpp
- ../utils/datapacket.hpp
- ../utils/dloader.hpp
- ../utils/ecs.hpp
- ../utils/fstring.hpp
- ../utils/futils.hpp
- ../utils/ini.hpp
- ../utils/log.hpp
- ../utils/mediator.hpp
- ../utils/types.hpp
- /home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/SFMLRender.cpp

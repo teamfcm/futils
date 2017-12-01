@@ -15,8 +15,6 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/SplashScreen.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Transform.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/WindowManager.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.o"
-  "/home/arroganz/cpp/futils/projects/fender/src/renderers/ncurses/CursesRender.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/renderers/ncurses/CursesRender.cpp.o"
-  "/home/arroganz/cpp/futils/projects/fender/src/renderers/sfml/SFMLRender.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/renderers/sfml/SFMLRender.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

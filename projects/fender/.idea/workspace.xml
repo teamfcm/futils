@@ -31,36 +31,104 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="fender.hpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="fender.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/fender.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="8970">
+              <caret line="345" column="6" lean-forward="false" selection-start-line="345" selection-start-column="6" selection-end-line="345" selection-end-column="6" />
               <folding>
-                <element signature="e#351#405#0" expanded="false" />
-                <element signature="e#854#908#0" expanded="false" />
-                <element signature="e#953#999#1" expanded="false" />
-                <element signature="e#1006#1122#1" expanded="false" />
-                <element signature="e#1128#1957#1" expanded="false" />
-                <element signature="e#1963#2032#1" expanded="false" />
-                <element signature="e#2038#2182#1" expanded="false" />
-                <element signature="e#2188#2443#1" expanded="false" />
-                <element signature="e#2302#2437#0" expanded="false" />
-                <element signature="e#2449#2566#1" expanded="false" />
-                <element signature="e#2646#11551#0" expanded="false" />
-                <element signature="e#11557#11647#1" expanded="false" />
-                <element signature="e#11654#11756#1" expanded="false" />
-                <element signature="e#11836#27628#0" expanded="false" />
-                <element signature="e#27651#27795#1" expanded="false" />
-                <element signature="e#27875#28892#0" expanded="false" />
-                <element signature="e#28898#29571#1" expanded="false" />
-                <element signature="e#29117#29265#0" expanded="false" />
-                <element signature="e#29276#29411#0" expanded="false" />
-                <element signature="e#29421#29564#0" expanded="false" />
-                <marker date="1512039115316" expanded="false" signature="7662:7686" ph="&lt;T&gt;" />
-                <marker date="1512039115316" expanded="false" signature="8247:8277" ph="&lt;MsgType&gt;" />
-                <marker date="1512039115316" expanded="false" signature="20746:20777" ph="&lt;ElemType&gt;" />
-                <marker date="1512039115316" expanded="false" signature="23147:23171" ph="&lt;T&gt;" />
+                <element signature="e#2016#2169#1" expanded="false" />
+                <marker date="1512135422468" expanded="false" signature="7649:7673" ph="&lt;T&gt;" />
+                <marker date="1512135422468" expanded="false" signature="8234:8264" ph="&lt;MsgType&gt;" />
+                <marker date="1512135422468" expanded="false" signature="20733:20764" ph="&lt;ElemType&gt;" />
+                <marker date="1512135422468" expanded="false" signature="23134:23158" ph="&lt;T&gt;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dloader.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/dloader.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2262">
+              <caret line="87" column="6" lean-forward="false" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
+              <folding>
+                <element signature="e#1964#2387#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="log.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/log.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IniManager.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/IniManager.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+              <folding>
+                <element signature="e#105#129#0" expanded="true" />
+                <element signature="e#197#219#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RutilsParsingTools.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/RutilsParsingTools.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="754">
+              <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="goToBinDir.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/goToBinDir.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Manager.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Manager.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="691">
+              <caret line="36" column="40" lean-forward="false" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Object2d.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/engine/Components/Object2d.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding>
+                <element signature="e#39#61#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -71,18 +139,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="11960">
               <caret line="460" column="29" lean-forward="false" selection-start-line="460" selection-start-column="29" selection-end-line="460" selection-end-column="29" />
-              <folding>
-                <marker date="1512037723063" expanded="false" signature="11880:11933" ph="&lt;ElemType,SrcType&gt;" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CursesRender.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/CursesRender.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="416">
-              <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -136,15 +192,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/demo/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/demo/config/config.ini" />
-        <option value="$PROJECT_DIR$/demo/utils/types.hpp" />
-        <option value="$PROJECT_DIR$/demo/main.cpp" />
         <option value="$PROJECT_DIR$/demo/utils/dloader.hpp" />
         <option value="$PROJECT_DIR$/src/sfml/SFMLRender.hpp" />
         <option value="$PROJECT_DIR$/release/fender.hpp" />
         <option value="$PROJECT_DIR$/src/ncurses/CursesRender.hpp" />
-        <option value="$PROJECT_DIR$/utils/goToBinDir.hpp" />
         <option value="$PROJECT_DIR$/demo/include/App.hpp" />
         <option value="$PROJECT_DIR$/demo/src/main.cpp" />
         <option value="$PROJECT_DIR$/demo/src/App/App.cpp" />
@@ -178,15 +229,20 @@
         <option value="$PROJECT_DIR$/src/ecs/Systems/Renderer.cpp" />
         <option value="$PROJECT_DIR$/src/ecs/Systems/WindowManager.cpp" />
         <option value="$PROJECT_DIR$/src/IRender.cpp" />
-        <option value="$PROJECT_DIR$/src/Manager.cpp" />
         <option value="$PROJECT_DIR$/src/Fender.cpp" />
         <option value="$PROJECT_DIR$/src/engine/Systems/Renderer.cpp" />
         <option value="$PROJECT_DIR$/src/renderers/sfml/SFMLRender.cpp" />
         <option value="$PROJECT_DIR$/include/SFMLRender.hpp" />
         <option value="$PROJECT_DIR$/include/CursesRender.hpp" />
         <option value="$PROJECT_DIR$/src/renderers/ncurses/CursesRender.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/include/fender.hpp" />
+        <option value="$PROJECT_DIR$/utils/dloader.hpp" />
+        <option value="$PROJECT_DIR$/utils/log.hpp" />
+        <option value="$PROJECT_DIR$/utils/IniManager.hpp" />
+        <option value="$PROJECT_DIR$/utils/RutilsParsingTools.hpp" />
+        <option value="$PROJECT_DIR$/utils/goToBinDir.hpp" />
+        <option value="$PROJECT_DIR$/src/Manager.cpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
   </component>
@@ -223,35 +279,6 @@
             <path>
               <item name="fender" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="fender" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fender" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="fender" type="462c0819:PsiDirectoryNode" />
-              <item name="include" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fender" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="fender" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fender" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="fender" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="engine" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fender" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="fender" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="renderers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fender" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
-              <item name="fender" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="renderers" type="462c0819:PsiDirectoryNode" />
-              <item name="ncurses" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -704,11 +731,16 @@
       <workItem from="1512038221313" duration="674000" />
       <workItem from="1512038908566" duration="97000" />
       <workItem from="1512039016660" duration="110000" />
+      <workItem from="1512136046401" duration="123000" />
+      <workItem from="1512138385500" duration="1526000" />
+      <workItem from="1512144747299" duration="17000" />
+      <workItem from="1512144774910" duration="29000" />
+      <workItem from="1512144851431" duration="7000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106267000" />
+    <option name="totallyTimeSpent" value="108326000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -782,39 +814,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/demo/utils/ini.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="152" column="41" lean-forward="false" selection-start-line="152" selection-start-column="41" selection-end-line="152" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/demo/main.cpp" />
-    <entry file="file://$PROJECT_DIR$/demo/utils/dloader.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="30" column="49" lean-forward="true" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/demo/utils/types.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="25" column="34" lean-forward="false" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/log.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/goToBinDir.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -990,7 +993,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="6" lean-forward="false" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1001,30 +1003,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/engine/Components/Object2d.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="30" column="75" lean-forward="false" selection-start-line="30" selection-start-column="75" selection-end-line="30" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Fender.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="18" column="44" lean-forward="false" selection-start-line="18" selection-start-column="44" selection-end-line="18" selection-end-column="44" />
-          <folding>
-            <element signature="e#43#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Manager.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="10" lean-forward="false" selection-start-line="4" selection-start-column="10" selection-end-line="4" selection-end-column="10" />
-          <folding>
-            <element signature="e#39#59#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1032,11 +1014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="15" column="37" lean-forward="false" selection-start-line="15" selection-start-column="37" selection-end-line="15" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#2#0" expanded="false" />
-            <element signature="e#98#120#0" expanded="true" />
-            <element signature="e#460#713#1" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1045,7 +1022,7 @@
         <state relative-caret-position="494">
           <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
           <folding>
-            <element signature="e#43#66#0" expanded="true" />
+            <element signature="e#43#66#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1054,14 +1031,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="520">
           <caret line="20" column="3" lean-forward="false" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="909">
-          <caret line="39" column="42" lean-forward="true" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -1069,7 +1038,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
           <caret line="8" column="3" lean-forward="false" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1077,7 +1045,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="821">
           <caret line="269" column="3" lean-forward="false" selection-start-line="269" selection-start-column="3" selection-end-line="269" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1085,9 +1052,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="676">
           <caret line="26" column="7" lean-forward="false" selection-start-line="26" selection-start-column="7" selection-end-line="26" selection-end-column="7" />
-          <folding>
-            <element signature="e#43#65#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1095,7 +1059,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="416">
           <caret line="16" column="45" lean-forward="false" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1103,42 +1066,92 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11960">
           <caret line="460" column="29" lean-forward="false" selection-start-line="460" selection-start-column="29" selection-end-line="460" selection-end-column="29" />
-          <folding>
-            <marker date="1512037723063" expanded="false" signature="11880:11933" ph="&lt;ElemType,SrcType&gt;" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/fender.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="8970">
+          <caret line="345" column="6" lean-forward="false" selection-start-line="345" selection-start-column="6" selection-end-line="345" selection-end-column="6" />
           <folding>
-            <element signature="e#351#405#0" expanded="false" />
-            <element signature="e#854#908#0" expanded="false" />
-            <element signature="e#953#999#1" expanded="false" />
-            <element signature="e#1006#1122#1" expanded="false" />
-            <element signature="e#1128#1957#1" expanded="false" />
-            <element signature="e#1963#2032#1" expanded="false" />
-            <element signature="e#2038#2182#1" expanded="false" />
-            <element signature="e#2188#2443#1" expanded="false" />
-            <element signature="e#2302#2437#0" expanded="false" />
-            <element signature="e#2449#2566#1" expanded="false" />
-            <element signature="e#2646#11551#0" expanded="false" />
-            <element signature="e#11557#11647#1" expanded="false" />
-            <element signature="e#11654#11756#1" expanded="false" />
-            <element signature="e#11836#27628#0" expanded="false" />
-            <element signature="e#27651#27795#1" expanded="false" />
-            <element signature="e#27875#28892#0" expanded="false" />
-            <element signature="e#28898#29571#1" expanded="false" />
-            <element signature="e#29117#29265#0" expanded="false" />
-            <element signature="e#29276#29411#0" expanded="false" />
-            <element signature="e#29421#29564#0" expanded="false" />
-            <marker date="1512039115316" expanded="false" signature="7662:7686" ph="&lt;T&gt;" />
-            <marker date="1512039115316" expanded="false" signature="8247:8277" ph="&lt;MsgType&gt;" />
-            <marker date="1512039115316" expanded="false" signature="20746:20777" ph="&lt;ElemType&gt;" />
-            <marker date="1512039115316" expanded="false" signature="23147:23171" ph="&lt;T&gt;" />
+            <element signature="e#2016#2169#1" expanded="false" />
+            <marker date="1512135422468" expanded="false" signature="7649:7673" ph="&lt;T&gt;" />
+            <marker date="1512135422468" expanded="false" signature="8234:8264" ph="&lt;MsgType&gt;" />
+            <marker date="1512135422468" expanded="false" signature="20733:20764" ph="&lt;ElemType&gt;" />
+            <marker date="1512135422468" expanded="false" signature="23134:23158" ph="&lt;T&gt;" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/engine/Components/Object2d.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#39#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/dloader.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2262">
+          <caret line="87" column="6" lean-forward="false" selection-start-line="87" selection-start-column="6" selection-end-line="87" selection-end-column="6" />
+          <folding>
+            <element signature="e#1964#2387#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/log.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/IniManager.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="9" column="34" lean-forward="false" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding>
+            <element signature="e#105#129#0" expanded="true" />
+            <element signature="e#197#219#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/RutilsParsingTools.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="754">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/goToBinDir.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="11" lean-forward="false" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Manager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="13" column="19" lean-forward="false" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="691">
+          <caret line="36" column="40" lean-forward="false" selection-start-line="36" selection-start-column="40" selection-end-line="36" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>

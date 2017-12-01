@@ -11,11 +11,11 @@
 # include <iomanip>
 # include "futils.hpp"
 
-#ifdef linux
+#ifdef unix
 # define FUNC __PRETTY_FUNCTION__
 #elif _WIN32
 # define FUNC __func__
-#endif linux
+#endif
 # define DEFAULT_FUNC_NAME   "(undefined)"
 # define START_MSG           "Start log in "
 # define GET                 flog::Log::get
