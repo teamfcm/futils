@@ -19,6 +19,6 @@ int demo::App::start() {
 }
 
 int demo::App::run() {
-    engine->addSystem<fender::systems::SplashScreen>();
+    // engine->addSystem<fender::systems::SplashScreen>();
     return engine->run();
 };
