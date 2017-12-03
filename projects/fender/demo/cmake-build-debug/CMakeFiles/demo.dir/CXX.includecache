@@ -114,9 +114,13 @@ thread
 mutex
 -
 
+../utils/customTraits.hpp
+
 ../utils/datapacket.hpp
 types.hpp
 ../utils/types.hpp
+customTraits.hpp
+../utils/customTraits.hpp
 
 ../utils/dloader.hpp
 string

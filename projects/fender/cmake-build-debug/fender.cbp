@@ -163,6 +163,9 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/clock.hpp">
 			<Option target="fender"/>
 		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/customTraits.hpp">
+			<Option target="fender"/>
+		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/datapacket.hpp">
 			<Option target="fender"/>
 		</Unit>

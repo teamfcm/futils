@@ -15,12 +15,12 @@ namespace fender
 
 namespace fender::events {
 
-    struct RendererAccess : futils::AMediatorPacket<RendererAccess>
+    struct RendererAccess
     {
         IRender *renderer{nullptr};
     };
 
-    struct WindowOpened : futils::AMediatorPacket<WindowOpened>
+    struct WindowOpened
     {
         std::string name;
         int width;

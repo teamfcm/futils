@@ -12,7 +12,8 @@ fender::systems::SplashScreen::SplashScreen():
 
 void fender::systems::SplashScreen::init() {
     events->require<events::WindowOpened>((void *)this, [this](futils::IMediatorPacket &pkg) {
-        auto &wo = static_cast<events::WindowOpened &>(pkg);
+        auto &ap = static_cast<futils::AMediatorPacket<events::WindowOpened> &>(pkg);
+        auto &wo = ap.get();
         LOUT("Window opened with name " + wo.name);
         this->phase = 2;
     });

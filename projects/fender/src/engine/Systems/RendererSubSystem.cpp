@@ -7,8 +7,10 @@
 fender::systems::RendererSubSystem::RendererSubSystem() {
     modules.add("GetRenderer", [this](){
         if (this->phase == 0) {
-            events->require<events::RendererAccess>(this, [this](futils::IMediatorPacket &pkg){
-                auto &rc = static_cast<events::RendererAccess &>(pkg);
+            events->require<events::RendererAccess>(this, [this](futils::IMediatorPacket &pkg) {
+//                auto &ap = static_cast<futils::AMediatorPacket<events::RendererAccess> &>(pkg);
+  //              auto &rc = ap.get();
+                auto &rc = futils::Mediator::rebuild<events::RendererAccess>(pkg);
                 this->renderer = rc.renderer;
                 LOUT("Got Renderer");
             });

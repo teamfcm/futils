@@ -6,6 +6,7 @@
 #define DEMO_DATAPACKET_HPP
 
 # include "types.hpp"
+# include "customTraits.hpp"
 
 namespace futils
 {
@@ -18,9 +19,30 @@ namespace futils
     };
 
     template <typename T>
-    struct AMediatorPacket : public IMediatorPacket
+    class AMediatorPacket : public IMediatorPacket
     {
-        AMediatorPacket() : IMediatorPacket(futils::type<T>::index) {}
+        T const *load{nullptr};
+    public:
+        AMediatorPacket(T const &data):
+                IMediatorPacket(futils::type<T>::index),
+                load(&data)
+        {
+
+        }
+
+        template <typename U = T,
+        typename std::enable_if<futils::_has_no_fields_<U>::value, AMediatorPacket>::type>
+        AMediatorPacket():
+                IMediatorPacket(futils::type<U>::index)
+        {
+
+        }
+
+        const T &get() const {
+            if (load == nullptr)
+                throw std::logic_error("Cannot get data in empty Mediator Packet.");
+            return *load;
+        }
     };
 }
 

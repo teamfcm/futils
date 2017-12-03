@@ -9,8 +9,8 @@
 
 namespace fender::requests
 {
-    struct GetRenderer : futils::AMediatorPacket<GetRenderer> {};
-    struct OpenWindow : futils::AMediatorPacket<OpenWindow>
+    struct GetRenderer {};
+    struct OpenWindow
     {
         std::string name;
         float width;

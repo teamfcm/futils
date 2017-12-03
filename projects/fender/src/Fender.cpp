@@ -6,15 +6,9 @@
 # include "goToBinDir.hpp"
 # include "systems.hpp"
 
-//#ifdef linux
-	extern "C" fender::Fender *Fender(std::string const &execPath) {
-		return new fender::Fender(execPath);
-	}
-//#elif _WIN32
-//	fender::Fender *__declspec(dllexport) __stdcall Fender(std::string const &execPath) {
-//		return new fender::Fender(execPath);
-//	}
-//#endif linux
+extern "C" fender::Fender *Fender(std::string const &execPath) {
+    return new fender::Fender(execPath);
+}
 
 fender::Fender::Fender(std::string const &arg0) {
     futils::goToBinDir(arg0);
@@ -25,11 +19,13 @@ fender::Fender::Fender(std::string const &arg0) {
     entityManager->provideMediator(*events);
 }
 
+void fender::Fender::loadSystemDir(std::string const &path)
+{
+    std::string message = "LoadingSystems in " + path;
+    events->send<std::string>(message);
+}
+
 int fender::Fender::start() {
-    entityManager->addSystem<fender::systems::WindowManager>();
-    entityManager->addSystem<fender::systems::Renderer>();
-    entityManager->addSystem<fender::systems::Image>();
-    entityManager->addSystem<fender::systems::Transform>();
     LOUT(std::to_string(entityManager->getNumberOfSystems()) + " systems loaded.");
     return 0;
 }

@@ -12,10 +12,13 @@ fender::systems::WindowManager::WindowManager()
         if (renderer) {
             events->require<requests::OpenWindow>(this, [this](futils::IMediatorPacket &pkg) {
                 if (renderer) {
-                    auto &win = static_cast<requests::OpenWindow &>(pkg);
-                    openWindow(win.name, win.width, win.height);
-                    modules.remove("OpenWindow");
-                    LOUT("Opening Window");
+                    auto ap = dynamic_cast<futils::AMediatorPacket<requests::OpenWindow> *>(&pkg);
+                    if (ap) {
+                        auto &win = ap->get(); 
+                        openWindow(win.name, win.width, win.height);
+                        modules.remove("OpenWindow");
+                        LOUT("Opening Window");
+                    }
                 }
             });
         }

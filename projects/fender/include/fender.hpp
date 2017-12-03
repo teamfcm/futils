@@ -799,6 +799,8 @@ namespace fender
         int start();
         int run();
 
+        void loadSystemDir(std::string const &path);
+
         template <typename System, typename ...Args>
         void addSystem(Args ...args) {
             entityManager->addSystem<System>(args...);

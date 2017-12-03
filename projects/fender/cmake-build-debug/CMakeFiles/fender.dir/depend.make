@@ -11,6 +11,7 @@ CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/IniManager.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/RutilsException.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/RutilsParsingTools.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/customTraits.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/datapacket.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/dloader.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/ecs.hpp
@@ -28,6 +29,7 @@ CMakeFiles/fender.dir/src/IRender.cpp.o: ../include/events.hpp
 CMakeFiles/fender.dir/src/IRender.cpp.o: ../include/fender.hpp
 CMakeFiles/fender.dir/src/IRender.cpp.o: ../include/requests.hpp
 CMakeFiles/fender.dir/src/IRender.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/IRender.cpp.o: ../utils/customTraits.hpp
 CMakeFiles/fender.dir/src/IRender.cpp.o: ../utils/datapacket.hpp
 CMakeFiles/fender.dir/src/IRender.cpp.o: ../utils/dloader.hpp
 CMakeFiles/fender.dir/src/IRender.cpp.o: ../utils/ecs.hpp
@@ -52,6 +54,7 @@ CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/RutilsException.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/RutilsParsingTools.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/callback.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/customTraits.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/datapacket.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/dloader.hpp
 CMakeFiles/fender.dir/src/Manager.cpp.o: ../utils/ecs.hpp
@@ -69,6 +72,7 @@ CMakeFiles/fender.dir/src/engine/Components/Object2d.cpp.o: ../include/events.hp
 CMakeFiles/fender.dir/src/engine/Components/Object2d.cpp.o: ../include/fender.hpp
 CMakeFiles/fender.dir/src/engine/Components/Object2d.cpp.o: ../include/requests.hpp
 CMakeFiles/fender.dir/src/engine/Components/Object2d.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/engine/Components/Object2d.cpp.o: ../utils/customTraits.hpp
 CMakeFiles/fender.dir/src/engine/Components/Object2d.cpp.o: ../utils/datapacket.hpp
 CMakeFiles/fender.dir/src/engine/Components/Object2d.cpp.o: ../utils/dloader.hpp
 CMakeFiles/fender.dir/src/engine/Components/Object2d.cpp.o: ../utils/ecs.hpp
@@ -86,6 +90,7 @@ CMakeFiles/fender.dir/src/engine/Entities/Background.cpp.o: ../include/extras.hp
 CMakeFiles/fender.dir/src/engine/Entities/Background.cpp.o: ../include/fender.hpp
 CMakeFiles/fender.dir/src/engine/Entities/Background.cpp.o: ../include/requests.hpp
 CMakeFiles/fender.dir/src/engine/Entities/Background.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/engine/Entities/Background.cpp.o: ../utils/customTraits.hpp
 CMakeFiles/fender.dir/src/engine/Entities/Background.cpp.o: ../utils/datapacket.hpp
 CMakeFiles/fender.dir/src/engine/Entities/Background.cpp.o: ../utils/dloader.hpp
 CMakeFiles/fender.dir/src/engine/Entities/Background.cpp.o: ../utils/ecs.hpp
@@ -107,6 +112,7 @@ CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o: ../utils/IniManager.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o: ../utils/RutilsException.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o: ../utils/RutilsParsingTools.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o: ../utils/customTraits.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o: ../utils/datapacket.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o: ../utils/dloader.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o: ../utils/ecs.hpp
@@ -131,6 +137,7 @@ CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o: ../utils/IniManager.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o: ../utils/RutilsException.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o: ../utils/RutilsParsingTools.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o: ../utils/customTraits.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o: ../utils/datapacket.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o: ../utils/dloader.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o: ../utils/ecs.hpp
@@ -153,6 +160,7 @@ CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.o: ../utils/IniMa
 CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.o: ../utils/RutilsException.hpp
 CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.o: ../utils/RutilsParsingTools.hpp
 CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.o: ../utils/customTraits.hpp
 CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.o: ../utils/datapacket.hpp
 CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.o: ../utils/dloader.hpp
 CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.o: ../utils/ecs.hpp
@@ -175,6 +183,7 @@ CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o: ../utils/IniManager
 CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o: ../utils/RutilsException.hpp
 CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o: ../utils/RutilsParsingTools.hpp
 CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o: ../utils/customTraits.hpp
 CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o: ../utils/datapacket.hpp
 CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o: ../utils/dloader.hpp
 CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o: ../utils/ecs.hpp
@@ -197,6 +206,7 @@ CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.o: ../utils/IniManager.hp
 CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.o: ../utils/RutilsException.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.o: ../utils/RutilsParsingTools.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.o: ../utils/customTraits.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.o: ../utils/datapacket.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.o: ../utils/dloader.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.o: ../utils/ecs.hpp
@@ -219,6 +229,7 @@ CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.o: ../utils/IniManage
 CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.o: ../utils/RutilsException.hpp
 CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.o: ../utils/RutilsParsingTools.hpp
 CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.o: ../utils/customTraits.hpp
 CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.o: ../utils/datapacket.hpp
 CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.o: ../utils/dloader.hpp
 CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.o: ../utils/ecs.hpp

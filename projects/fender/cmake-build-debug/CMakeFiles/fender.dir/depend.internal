@@ -12,6 +12,7 @@ CMakeFiles/fender.dir/src/Fender.cpp.o
  ../utils/RutilsException.hpp
  ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
+ ../utils/customTraits.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp
@@ -29,6 +30,7 @@ CMakeFiles/fender.dir/src/IRender.cpp.o
  ../include/fender.hpp
  ../include/requests.hpp
  ../utils/clock.hpp
+ ../utils/customTraits.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp
@@ -53,6 +55,7 @@ CMakeFiles/fender.dir/src/Manager.cpp.o
  ../utils/RutilsParsingTools.hpp
  ../utils/callback.hpp
  ../utils/clock.hpp
+ ../utils/customTraits.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp
@@ -70,6 +73,7 @@ CMakeFiles/fender.dir/src/engine/Components/Object2d.cpp.o
  ../include/fender.hpp
  ../include/requests.hpp
  ../utils/clock.hpp
+ ../utils/customTraits.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp
@@ -87,6 +91,7 @@ CMakeFiles/fender.dir/src/engine/Entities/Background.cpp.o
  ../include/fender.hpp
  ../include/requests.hpp
  ../utils/clock.hpp
+ ../utils/customTraits.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp
@@ -108,6 +113,7 @@ CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o
  ../utils/RutilsException.hpp
  ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
+ ../utils/customTraits.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp
@@ -132,6 +138,7 @@ CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o
  ../utils/RutilsException.hpp
  ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
+ ../utils/customTraits.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp
@@ -154,6 +161,7 @@ CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.o
  ../utils/RutilsException.hpp
  ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
+ ../utils/customTraits.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp
@@ -176,6 +184,7 @@ CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o
  ../utils/RutilsException.hpp
  ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
+ ../utils/customTraits.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp
@@ -198,6 +207,7 @@ CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.o
  ../utils/RutilsException.hpp
  ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
+ ../utils/customTraits.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp
@@ -220,6 +230,7 @@ CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.o
  ../utils/RutilsException.hpp
  ../utils/RutilsParsingTools.hpp
  ../utils/clock.hpp
+ ../utils/customTraits.hpp
  ../utils/datapacket.hpp
  ../utils/dloader.hpp
  ../utils/ecs.hpp

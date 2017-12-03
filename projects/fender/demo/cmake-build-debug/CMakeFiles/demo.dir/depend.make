@@ -12,6 +12,7 @@ CMakeFiles/demo.dir/src/App/App.cpp.o: ../utils/IniManager.hpp
 CMakeFiles/demo.dir/src/App/App.cpp.o: ../utils/RutilsException.hpp
 CMakeFiles/demo.dir/src/App/App.cpp.o: ../utils/RutilsParsingTools.hpp
 CMakeFiles/demo.dir/src/App/App.cpp.o: ../utils/clock.hpp
+CMakeFiles/demo.dir/src/App/App.cpp.o: ../utils/customTraits.hpp
 CMakeFiles/demo.dir/src/App/App.cpp.o: ../utils/datapacket.hpp
 CMakeFiles/demo.dir/src/App/App.cpp.o: ../utils/dloader.hpp
 CMakeFiles/demo.dir/src/App/App.cpp.o: ../utils/ecs.hpp
@@ -33,6 +34,7 @@ CMakeFiles/demo.dir/src/main.cpp.o: ../include/extras.hpp
 CMakeFiles/demo.dir/src/main.cpp.o: ../include/fender.hpp
 CMakeFiles/demo.dir/src/main.cpp.o: ../include/requests.hpp
 CMakeFiles/demo.dir/src/main.cpp.o: ../utils/clock.hpp
+CMakeFiles/demo.dir/src/main.cpp.o: ../utils/customTraits.hpp
 CMakeFiles/demo.dir/src/main.cpp.o: ../utils/datapacket.hpp
 CMakeFiles/demo.dir/src/main.cpp.o: ../utils/dloader.hpp
 CMakeFiles/demo.dir/src/main.cpp.o: ../utils/ecs.hpp
