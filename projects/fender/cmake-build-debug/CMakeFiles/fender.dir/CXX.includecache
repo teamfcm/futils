@@ -308,6 +308,12 @@ extras.hpp
 systems.hpp
 /home/arroganz/cpp/futils/projects/fender/src/engine/Systems/systems.hpp
 
+/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Log.cpp
+ini.hpp
+-
+systems.hpp
+-
+
 /home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Renderer.cpp
 systems.hpp
 /home/arroganz/cpp/futils/projects/fender/src/engine/Systems/systems.hpp

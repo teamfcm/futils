@@ -19,13 +19,19 @@ fender::Fender::Fender(std::string const &arg0) {
     entityManager->provideMediator(*events);
 }
 
+struct shutdown {
+    std::string const &msg;
+    shutdown(std::string const &msg): msg(msg) {}
+};
+
 void fender::Fender::loadSystemDir(std::string const &path)
 {
-    std::string message = "LoadingSystems in " + path;
-    events->send<std::string>(message);
+    events->send<std::string>("Loading systems in " + path);
+    events->send<shutdown>(std::string("Shutdown"));
 }
 
 int fender::Fender::start() {
+    this->addSystem<systems::Log>();
     LOUT(std::to_string(entityManager->getNumberOfSystems()) + " systems loaded.");
     return 0;
 }

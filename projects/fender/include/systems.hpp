@@ -31,7 +31,14 @@ namespace fender::systems
         SplashScreen();
         void run(float) final;
     };
-
+    class Log : public futils::ISystem
+    {
+        int phase{0};
+        void init();
+    public:
+        Log();
+        void run(float) final;
+    };
     // Renderer SubSystems
     class RendererSubSystem : public futils::ISystem
     {

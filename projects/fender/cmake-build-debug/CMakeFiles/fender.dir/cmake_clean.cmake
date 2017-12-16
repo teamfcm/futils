@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fender.dir/src/engine/Entities/Background.cpp.o"
   "CMakeFiles/fender.dir/src/engine/Components/Object2d.cpp.o"
   "CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o"
+  "CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o"
   "CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o"
   "CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.o"
   "CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o"

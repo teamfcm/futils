@@ -125,6 +125,29 @@ CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o
  ../utils/modules.hpp
  ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Image.cpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o
+ ../include/components.hpp
+ ../include/events.hpp
+ ../include/extras.hpp
+ ../include/fender.hpp
+ ../include/requests.hpp
+ ../include/systems.hpp
+ ../utils/IniManager.hpp
+ ../utils/RutilsException.hpp
+ ../utils/RutilsParsingTools.hpp
+ ../utils/clock.hpp
+ ../utils/customTraits.hpp
+ ../utils/datapacket.hpp
+ ../utils/dloader.hpp
+ ../utils/ecs.hpp
+ ../utils/fstring.hpp
+ ../utils/futils.hpp
+ ../utils/ini.hpp
+ ../utils/log.hpp
+ ../utils/mediator.hpp
+ ../utils/modules.hpp
+ ../utils/types.hpp
+ /home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Log.cpp
 CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o
  ../include/CursesRender.hpp
  ../include/SFMLRender.hpp

@@ -133,6 +133,9 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Image.cpp">
 			<Option target="fender"/>
 		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Log.cpp">
+			<Option target="fender"/>
+		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Renderer.cpp">
 			<Option target="fender"/>
 		</Unit>
@@ -167,6 +170,9 @@
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/datapacket.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/declaredType.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/dloader.hpp">

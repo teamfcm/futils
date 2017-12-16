@@ -39,9 +39,9 @@ namespace futils
         Mediator() = default;
 
         template <typename T>
-        void send(T &data) {
+        void send(T &&data) {
             auto range = _requests.equal_range(futils::type<T>::index);
-            auto packet = futils::AMediatorPacket<T>(data);
+            auto packet = futils::AMediatorPacket<T>(std::forward<T>(data));
             for (auto it = range.first;
                  it != range.second;
                  it++) {

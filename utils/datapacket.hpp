@@ -21,27 +21,25 @@ namespace futils
     template <typename T>
     class AMediatorPacket : public IMediatorPacket
     {
-        T const *load{nullptr};
+        T const &load;
     public:
         AMediatorPacket(T const &data):
                 IMediatorPacket(futils::type<T>::index),
-                load(&data)
+                load(data)
         {
 
         }
 
-        template <typename U = T,
-        typename std::enable_if<futils::_has_no_fields_<U>::value, AMediatorPacket>::type>
-        AMediatorPacket():
-                IMediatorPacket(futils::type<U>::index)
-        {
-
-        }
+//        template <typename U = T,
+//        typename std::enable_if<futils::_has_no_fields_<U>::value, AMediatorPacket>::type>
+//        AMediatorPacket():
+//                IMediatorPacket(futils::type<U>::index)
+//        {
+//
+//        }
 
         const T &get() const {
-            if (load == nullptr)
-                throw std::logic_error("Cannot get data in empty Mediator Packet.");
-            return *load;
+            return load;
         }
     };
 }

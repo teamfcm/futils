@@ -125,6 +125,29 @@ CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o: ../utils/modules.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o: ../src/engine/Systems/Image.cpp
 
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../include/components.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../include/events.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../include/extras.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../include/fender.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../include/requests.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../include/systems.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/IniManager.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/RutilsException.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/RutilsParsingTools.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/customTraits.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/datapacket.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/dloader.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/ecs.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/fstring.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/futils.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/ini.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/log.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/modules.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../utils/types.hpp
+CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o: ../src/engine/Systems/Log.cpp
+
 CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o: ../include/CursesRender.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o: ../include/SFMLRender.hpp
 CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o: ../include/components.hpp

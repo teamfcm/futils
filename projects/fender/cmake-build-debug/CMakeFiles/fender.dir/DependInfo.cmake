@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/arroganz/cpp/futils/projects/fender/src/engine/Components/Object2d.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/engine/Components/Object2d.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/engine/Entities/Background.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/engine/Entities/Background.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Image.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o"
+  "/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Log.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Renderer.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/RendererSubSystem.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/SplashScreen.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o"

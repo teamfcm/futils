@@ -285,6 +285,33 @@ src/engine/Systems/Image.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.s
 .PHONY : src/engine/Systems/Image.cpp.s
 
+src/engine/Systems/Log.o: src/engine/Systems/Log.cpp.o
+
+.PHONY : src/engine/Systems/Log.o
+
+# target to build an object file
+src/engine/Systems/Log.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o
+.PHONY : src/engine/Systems/Log.cpp.o
+
+src/engine/Systems/Log.i: src/engine/Systems/Log.cpp.i
+
+.PHONY : src/engine/Systems/Log.i
+
+# target to preprocess a source file
+src/engine/Systems/Log.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.i
+.PHONY : src/engine/Systems/Log.cpp.i
+
+src/engine/Systems/Log.s: src/engine/Systems/Log.cpp.s
+
+.PHONY : src/engine/Systems/Log.s
+
+# target to generate assembly for a file
+src/engine/Systems/Log.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.s
+.PHONY : src/engine/Systems/Log.cpp.s
+
 src/engine/Systems/Renderer.o: src/engine/Systems/Renderer.cpp.o
 
 .PHONY : src/engine/Systems/Renderer.o
@@ -447,6 +474,9 @@ help:
 	@echo "... src/engine/Systems/Image.o"
 	@echo "... src/engine/Systems/Image.i"
 	@echo "... src/engine/Systems/Image.s"
+	@echo "... src/engine/Systems/Log.o"
+	@echo "... src/engine/Systems/Log.i"
+	@echo "... src/engine/Systems/Log.s"
 	@echo "... src/engine/Systems/Renderer.o"
 	@echo "... src/engine/Systems/Renderer.i"
 	@echo "... src/engine/Systems/Renderer.s"
