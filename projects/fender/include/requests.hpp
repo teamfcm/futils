@@ -9,13 +9,7 @@
 
 namespace fender::requests
 {
-    struct GetRenderer {};
-    struct OpenWindow
-    {
-        std::string name;
-        float width;
-        float height;
-    };
+
 }
 
 #endif //FENDER_REQUESTS_HPP

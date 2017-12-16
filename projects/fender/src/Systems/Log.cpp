@@ -3,7 +3,7 @@
 //
 
 #include <ini.hpp>
-#include <systems.hpp>
+#include "Log.hpp"
 
 fender::systems::Log::Log()
 {
@@ -11,15 +11,16 @@ fender::systems::Log::Log()
 }
 
 void fender::systems::Log::init() {
-    phase = 1;
+    phase++;
     events->require<std::string>(this, [this](futils::IMediatorPacket &pkg) {
         auto &s = futils::Mediator::rebuild<std::string>(pkg);
-        LOUT("LOG : " + s);
+        LOUT("LOG => " + s);
     });
 }
 
 void fender::systems::Log::run(float)
 {
-    if (phase == 0)
-        init();
+    switch (phase) {
+        case 0: return init();
+    }
 }

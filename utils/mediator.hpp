@@ -8,6 +8,7 @@
 # include <functional>
 # include <utility>
 # include "datapacket.hpp"
+#include "ini.hpp"
 
 namespace futils
 {
@@ -29,11 +30,11 @@ namespace futils
         std::unordered_multimap<futils::type_index, IdentifiedAction> _requests;
     public:
         template <typename T>
-        static inline T &rebuild(IMediatorPacket &pkg) {
-            auto ptr = dynamic_cast<T *>(&pkg);
+        static inline const T &rebuild(IMediatorPacket &pkg) {
+            auto ptr = dynamic_cast<AMediatorPacket<T> *>(&pkg);
             if (!ptr)
                 throw std::logic_error("Failed to rebuild type from MediatorPacket");
-            return *ptr;
+            return ptr->get();
         }
 
         Mediator() = default;
@@ -42,12 +43,14 @@ namespace futils
         void send(T &&data) {
             auto range = _requests.equal_range(futils::type<T>::index);
             auto packet = futils::AMediatorPacket<T>(std::forward<T>(data));
-            for (auto it = range.first;
-                 it != range.second;
-                 it++) {
+            bool consumed{false};
+
+            for (auto it = range.first; it != range.second; it++) {
                 auto &identifiedAction = it->second;
-                if (identifiedAction.up)
+                if (identifiedAction.up) {
                     identifiedAction.action(packet);
+                    consumed = true;
+                }
             }
         }
 

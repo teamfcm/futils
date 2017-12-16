@@ -6,7 +6,6 @@
 #define DEMO_APP_HPP
 
 # include "fender.hpp"
-# include "extras.hpp"
 # include "goToBinDir.hpp"
 
 namespace demo

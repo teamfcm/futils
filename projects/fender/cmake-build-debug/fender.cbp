@@ -88,22 +88,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/CursesRender.hpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/IRender.hpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/SFMLRender.hpp">
-			<Option target="fender"/>
-		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/components.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/events.hpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/extras.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/fender.hpp">
@@ -118,37 +106,10 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Fender.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/IRender.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Log.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Manager.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Components/Object2d.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Entities/Background.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Image.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Log.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Renderer.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/RendererSubSystem.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/SplashScreen.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/Transform.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/engine/Systems/WindowManager.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Log.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/IniManager.hpp">

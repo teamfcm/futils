@@ -4,7 +4,7 @@
 
 # include "fender.hpp"
 # include "goToBinDir.hpp"
-# include "systems.hpp"
+# include "Systems/Log.hpp"
 
 extern "C" fender::Fender *Fender(std::string const &execPath) {
     return new fender::Fender(execPath);
@@ -12,7 +12,6 @@ extern "C" fender::Fender *Fender(std::string const &execPath) {
 
 fender::Fender::Fender(std::string const &arg0) {
     futils::goToBinDir(arg0);
-    // futils::Ini config("./config/fender.ini");
 
     entityManager = std::make_unique<futils::EntityManager>();
     events = std::make_unique<futils::Mediator>();
@@ -31,8 +30,9 @@ void fender::Fender::loadSystemDir(std::string const &path)
 }
 
 int fender::Fender::start() {
-    this->addSystem<systems::Log>();
+    addSystem<systems::Log>();
     LOUT(std::to_string(entityManager->getNumberOfSystems()) + " systems loaded.");
+    loadSystemDir("./systems");
     return 0;
 }
 

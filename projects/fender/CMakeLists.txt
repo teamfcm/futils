@@ -8,11 +8,14 @@ file(GLOB INCLUDE
 file(GLOB UTILS
 		"utils/*.hpp")
 file(GLOB SYSTEMS
-		"src/engine/Systems/*.cpp")
+		"src/Systems/*.cpp"
+		"src/Systems/*.hpp")
 file(GLOB ENTITIES
-		"src/engine/Entities/*.cpp")
+		"src/Entities/*.cpp"
+		"src/Entities/*.hpp")
 file(GLOB COMPONENTS
-		"src/engine/Components/*.cpp")
+		"src/Components/*.cpp"
+		"src/Components/*.hpp")
 file(GLOB SRC
 		"src/*.cpp")
 

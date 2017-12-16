@@ -7,25 +7,8 @@
 
 # include "mediator.hpp"
 
-// Forward Declarations
-namespace fender
-{
-    class IRender;
-}
-
 namespace fender::events {
 
-    struct RendererAccess
-    {
-        IRender *renderer{nullptr};
-    };
-
-    struct WindowOpened
-    {
-        std::string name;
-        int width;
-        int height;
-    };
 }
 
 #endif //FENDER_EVENTS_HPP

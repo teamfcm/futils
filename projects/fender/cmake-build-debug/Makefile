@@ -150,302 +150,32 @@ src/Fender.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Fender.cpp.s
 .PHONY : src/Fender.cpp.s
 
-src/IRender.o: src/IRender.cpp.o
+src/Systems/Log.o: src/Systems/Log.cpp.o
 
-.PHONY : src/IRender.o
-
-# target to build an object file
-src/IRender.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/IRender.cpp.o
-.PHONY : src/IRender.cpp.o
-
-src/IRender.i: src/IRender.cpp.i
-
-.PHONY : src/IRender.i
-
-# target to preprocess a source file
-src/IRender.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/IRender.cpp.i
-.PHONY : src/IRender.cpp.i
-
-src/IRender.s: src/IRender.cpp.s
-
-.PHONY : src/IRender.s
-
-# target to generate assembly for a file
-src/IRender.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/IRender.cpp.s
-.PHONY : src/IRender.cpp.s
-
-src/Manager.o: src/Manager.cpp.o
-
-.PHONY : src/Manager.o
+.PHONY : src/Systems/Log.o
 
 # target to build an object file
-src/Manager.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Manager.cpp.o
-.PHONY : src/Manager.cpp.o
+src/Systems/Log.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Log.cpp.o
+.PHONY : src/Systems/Log.cpp.o
 
-src/Manager.i: src/Manager.cpp.i
+src/Systems/Log.i: src/Systems/Log.cpp.i
 
-.PHONY : src/Manager.i
-
-# target to preprocess a source file
-src/Manager.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Manager.cpp.i
-.PHONY : src/Manager.cpp.i
-
-src/Manager.s: src/Manager.cpp.s
-
-.PHONY : src/Manager.s
-
-# target to generate assembly for a file
-src/Manager.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Manager.cpp.s
-.PHONY : src/Manager.cpp.s
-
-src/engine/Components/Object2d.o: src/engine/Components/Object2d.cpp.o
-
-.PHONY : src/engine/Components/Object2d.o
-
-# target to build an object file
-src/engine/Components/Object2d.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Components/Object2d.cpp.o
-.PHONY : src/engine/Components/Object2d.cpp.o
-
-src/engine/Components/Object2d.i: src/engine/Components/Object2d.cpp.i
-
-.PHONY : src/engine/Components/Object2d.i
+.PHONY : src/Systems/Log.i
 
 # target to preprocess a source file
-src/engine/Components/Object2d.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Components/Object2d.cpp.i
-.PHONY : src/engine/Components/Object2d.cpp.i
+src/Systems/Log.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Log.cpp.i
+.PHONY : src/Systems/Log.cpp.i
 
-src/engine/Components/Object2d.s: src/engine/Components/Object2d.cpp.s
+src/Systems/Log.s: src/Systems/Log.cpp.s
 
-.PHONY : src/engine/Components/Object2d.s
-
-# target to generate assembly for a file
-src/engine/Components/Object2d.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Components/Object2d.cpp.s
-.PHONY : src/engine/Components/Object2d.cpp.s
-
-src/engine/Entities/Background.o: src/engine/Entities/Background.cpp.o
-
-.PHONY : src/engine/Entities/Background.o
-
-# target to build an object file
-src/engine/Entities/Background.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Entities/Background.cpp.o
-.PHONY : src/engine/Entities/Background.cpp.o
-
-src/engine/Entities/Background.i: src/engine/Entities/Background.cpp.i
-
-.PHONY : src/engine/Entities/Background.i
-
-# target to preprocess a source file
-src/engine/Entities/Background.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Entities/Background.cpp.i
-.PHONY : src/engine/Entities/Background.cpp.i
-
-src/engine/Entities/Background.s: src/engine/Entities/Background.cpp.s
-
-.PHONY : src/engine/Entities/Background.s
+.PHONY : src/Systems/Log.s
 
 # target to generate assembly for a file
-src/engine/Entities/Background.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Entities/Background.cpp.s
-.PHONY : src/engine/Entities/Background.cpp.s
-
-src/engine/Systems/Image.o: src/engine/Systems/Image.cpp.o
-
-.PHONY : src/engine/Systems/Image.o
-
-# target to build an object file
-src/engine/Systems/Image.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.o
-.PHONY : src/engine/Systems/Image.cpp.o
-
-src/engine/Systems/Image.i: src/engine/Systems/Image.cpp.i
-
-.PHONY : src/engine/Systems/Image.i
-
-# target to preprocess a source file
-src/engine/Systems/Image.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.i
-.PHONY : src/engine/Systems/Image.cpp.i
-
-src/engine/Systems/Image.s: src/engine/Systems/Image.cpp.s
-
-.PHONY : src/engine/Systems/Image.s
-
-# target to generate assembly for a file
-src/engine/Systems/Image.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Image.cpp.s
-.PHONY : src/engine/Systems/Image.cpp.s
-
-src/engine/Systems/Log.o: src/engine/Systems/Log.cpp.o
-
-.PHONY : src/engine/Systems/Log.o
-
-# target to build an object file
-src/engine/Systems/Log.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.o
-.PHONY : src/engine/Systems/Log.cpp.o
-
-src/engine/Systems/Log.i: src/engine/Systems/Log.cpp.i
-
-.PHONY : src/engine/Systems/Log.i
-
-# target to preprocess a source file
-src/engine/Systems/Log.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.i
-.PHONY : src/engine/Systems/Log.cpp.i
-
-src/engine/Systems/Log.s: src/engine/Systems/Log.cpp.s
-
-.PHONY : src/engine/Systems/Log.s
-
-# target to generate assembly for a file
-src/engine/Systems/Log.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Log.cpp.s
-.PHONY : src/engine/Systems/Log.cpp.s
-
-src/engine/Systems/Renderer.o: src/engine/Systems/Renderer.cpp.o
-
-.PHONY : src/engine/Systems/Renderer.o
-
-# target to build an object file
-src/engine/Systems/Renderer.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.o
-.PHONY : src/engine/Systems/Renderer.cpp.o
-
-src/engine/Systems/Renderer.i: src/engine/Systems/Renderer.cpp.i
-
-.PHONY : src/engine/Systems/Renderer.i
-
-# target to preprocess a source file
-src/engine/Systems/Renderer.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.i
-.PHONY : src/engine/Systems/Renderer.cpp.i
-
-src/engine/Systems/Renderer.s: src/engine/Systems/Renderer.cpp.s
-
-.PHONY : src/engine/Systems/Renderer.s
-
-# target to generate assembly for a file
-src/engine/Systems/Renderer.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Renderer.cpp.s
-.PHONY : src/engine/Systems/Renderer.cpp.s
-
-src/engine/Systems/RendererSubSystem.o: src/engine/Systems/RendererSubSystem.cpp.o
-
-.PHONY : src/engine/Systems/RendererSubSystem.o
-
-# target to build an object file
-src/engine/Systems/RendererSubSystem.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.o
-.PHONY : src/engine/Systems/RendererSubSystem.cpp.o
-
-src/engine/Systems/RendererSubSystem.i: src/engine/Systems/RendererSubSystem.cpp.i
-
-.PHONY : src/engine/Systems/RendererSubSystem.i
-
-# target to preprocess a source file
-src/engine/Systems/RendererSubSystem.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.i
-.PHONY : src/engine/Systems/RendererSubSystem.cpp.i
-
-src/engine/Systems/RendererSubSystem.s: src/engine/Systems/RendererSubSystem.cpp.s
-
-.PHONY : src/engine/Systems/RendererSubSystem.s
-
-# target to generate assembly for a file
-src/engine/Systems/RendererSubSystem.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/RendererSubSystem.cpp.s
-.PHONY : src/engine/Systems/RendererSubSystem.cpp.s
-
-src/engine/Systems/SplashScreen.o: src/engine/Systems/SplashScreen.cpp.o
-
-.PHONY : src/engine/Systems/SplashScreen.o
-
-# target to build an object file
-src/engine/Systems/SplashScreen.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.o
-.PHONY : src/engine/Systems/SplashScreen.cpp.o
-
-src/engine/Systems/SplashScreen.i: src/engine/Systems/SplashScreen.cpp.i
-
-.PHONY : src/engine/Systems/SplashScreen.i
-
-# target to preprocess a source file
-src/engine/Systems/SplashScreen.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.i
-.PHONY : src/engine/Systems/SplashScreen.cpp.i
-
-src/engine/Systems/SplashScreen.s: src/engine/Systems/SplashScreen.cpp.s
-
-.PHONY : src/engine/Systems/SplashScreen.s
-
-# target to generate assembly for a file
-src/engine/Systems/SplashScreen.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/SplashScreen.cpp.s
-.PHONY : src/engine/Systems/SplashScreen.cpp.s
-
-src/engine/Systems/Transform.o: src/engine/Systems/Transform.cpp.o
-
-.PHONY : src/engine/Systems/Transform.o
-
-# target to build an object file
-src/engine/Systems/Transform.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.o
-.PHONY : src/engine/Systems/Transform.cpp.o
-
-src/engine/Systems/Transform.i: src/engine/Systems/Transform.cpp.i
-
-.PHONY : src/engine/Systems/Transform.i
-
-# target to preprocess a source file
-src/engine/Systems/Transform.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.i
-.PHONY : src/engine/Systems/Transform.cpp.i
-
-src/engine/Systems/Transform.s: src/engine/Systems/Transform.cpp.s
-
-.PHONY : src/engine/Systems/Transform.s
-
-# target to generate assembly for a file
-src/engine/Systems/Transform.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/Transform.cpp.s
-.PHONY : src/engine/Systems/Transform.cpp.s
-
-src/engine/Systems/WindowManager.o: src/engine/Systems/WindowManager.cpp.o
-
-.PHONY : src/engine/Systems/WindowManager.o
-
-# target to build an object file
-src/engine/Systems/WindowManager.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.o
-.PHONY : src/engine/Systems/WindowManager.cpp.o
-
-src/engine/Systems/WindowManager.i: src/engine/Systems/WindowManager.cpp.i
-
-.PHONY : src/engine/Systems/WindowManager.i
-
-# target to preprocess a source file
-src/engine/Systems/WindowManager.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.i
-.PHONY : src/engine/Systems/WindowManager.cpp.i
-
-src/engine/Systems/WindowManager.s: src/engine/Systems/WindowManager.cpp.s
-
-.PHONY : src/engine/Systems/WindowManager.s
-
-# target to generate assembly for a file
-src/engine/Systems/WindowManager.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/engine/Systems/WindowManager.cpp.s
-.PHONY : src/engine/Systems/WindowManager.cpp.s
+src/Systems/Log.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Log.cpp.s
+.PHONY : src/Systems/Log.cpp.s
 
 # Help Target
 help:
@@ -459,39 +189,9 @@ help:
 	@echo "... src/Fender.o"
 	@echo "... src/Fender.i"
 	@echo "... src/Fender.s"
-	@echo "... src/IRender.o"
-	@echo "... src/IRender.i"
-	@echo "... src/IRender.s"
-	@echo "... src/Manager.o"
-	@echo "... src/Manager.i"
-	@echo "... src/Manager.s"
-	@echo "... src/engine/Components/Object2d.o"
-	@echo "... src/engine/Components/Object2d.i"
-	@echo "... src/engine/Components/Object2d.s"
-	@echo "... src/engine/Entities/Background.o"
-	@echo "... src/engine/Entities/Background.i"
-	@echo "... src/engine/Entities/Background.s"
-	@echo "... src/engine/Systems/Image.o"
-	@echo "... src/engine/Systems/Image.i"
-	@echo "... src/engine/Systems/Image.s"
-	@echo "... src/engine/Systems/Log.o"
-	@echo "... src/engine/Systems/Log.i"
-	@echo "... src/engine/Systems/Log.s"
-	@echo "... src/engine/Systems/Renderer.o"
-	@echo "... src/engine/Systems/Renderer.i"
-	@echo "... src/engine/Systems/Renderer.s"
-	@echo "... src/engine/Systems/RendererSubSystem.o"
-	@echo "... src/engine/Systems/RendererSubSystem.i"
-	@echo "... src/engine/Systems/RendererSubSystem.s"
-	@echo "... src/engine/Systems/SplashScreen.o"
-	@echo "... src/engine/Systems/SplashScreen.i"
-	@echo "... src/engine/Systems/SplashScreen.s"
-	@echo "... src/engine/Systems/Transform.o"
-	@echo "... src/engine/Systems/Transform.i"
-	@echo "... src/engine/Systems/Transform.s"
-	@echo "... src/engine/Systems/WindowManager.o"
-	@echo "... src/engine/Systems/WindowManager.i"
-	@echo "... src/engine/Systems/WindowManager.s"
+	@echo "... src/Systems/Log.o"
+	@echo "... src/Systems/Log.i"
+	@echo "... src/Systems/Log.s"
 .PHONY : help
 
 
