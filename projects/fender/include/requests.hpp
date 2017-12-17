@@ -8,6 +8,7 @@
 # include "math.hpp"
 # include "mediator.hpp"
 # include "ecs.hpp"
+# include "rendering.hpp"
 
 namespace fender::requests
 {
@@ -16,12 +17,11 @@ namespace fender::requests
         using vec = futils::Vec2<float>;
         vec pos;
         vec size;
+        futils::WStyle style{futils::WStyle::Default};
         OpenWindow() = default;
         OpenWindow(vec const &pos, vec const &size):
-                pos(pos), size(size)
-        {
+                pos(pos), size(size) {}
 
-        }
     };
 }
 

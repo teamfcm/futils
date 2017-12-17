@@ -2,6 +2,7 @@
 // Created by arroganz on 12/17/17.
 //
 
+#include <fender.hpp>
 #include "SplashScreen.hpp"
 
 fender::systems::SplashScreen::SplashScreen()
@@ -20,10 +21,11 @@ void fender::systems::SplashScreen::init() {
 void fender::systems::SplashScreen::requestWindow()
 {
     requests::OpenWindow ow;
-    ow.pos.x = 100;
-    ow.pos.y = 200;
-    ow.size.w = 200;
-    ow.size.h = 200;
+    ow.size.w = 1.0/3.0;
+    ow.size.h = 1.0/3.0;
+    ow.pos.x = 1.0/2.0 - (ow.size.w / 2.0);
+    ow.pos.y = 1.0/2.0 - (ow.size.h / 2.0);
+    // ow.style = futils::WStyle::None;
     events->send<requests::OpenWindow>(ow);
 }
 

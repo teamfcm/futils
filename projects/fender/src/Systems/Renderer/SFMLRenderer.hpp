@@ -10,12 +10,22 @@
 # include "ecs.hpp"
 # include "events.hpp"
 # include "requests.hpp"
+# include "rendering.hpp"
 
 namespace fender::systems {
     class SFMLRenderer : public futils::ISystem {
+        // TODO: Some encapsulation might be nice!
+        enum State
+        {
+            NONE = -1,
+            INIT = 0,
+            RENDER
+        };
+        State state{INIT};
+
         sf::RenderWindow *window{nullptr};
-        int phase{0};
         void init();
+        void refreshWindow(float);
     public:
         SFMLRenderer();
         void run(float) final;
