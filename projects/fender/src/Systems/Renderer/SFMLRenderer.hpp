@@ -14,6 +14,9 @@
 
 namespace fender::systems {
     class SFMLRenderer : public futils::ISystem {
+        // TODO: Encapsulate Window abstraction
+        sf::Color clearColor;
+
         // TODO: Some encapsulation might be nice!
         enum State
         {

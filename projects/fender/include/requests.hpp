@@ -18,6 +18,7 @@ namespace fender::requests
         vec pos;
         vec size;
         futils::WStyle style{futils::WStyle::Default};
+        futils::Color color{futils::White};
         OpenWindow() = default;
         OpenWindow(vec const &pos, vec const &size):
                 pos(pos), size(size) {}

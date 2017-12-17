@@ -15,6 +15,16 @@ namespace {
     };
 }
 
+inline sf::Color &operator << (sf::Color &lhs, futils::Color const &rhs)
+{
+    //TODO: Big endian//litte endian ??
+    lhs.r = rhs.rgba[2];
+    lhs.g = rhs.rgba[1];
+    lhs.b = rhs.rgba[0];
+    lhs.a = rhs.rgba[3];
+    return lhs;
+}
+
 fender::systems::SFMLRenderer::SFMLRenderer()
 {
 
@@ -26,6 +36,7 @@ void fender::systems::SFMLRenderer::init() {
         auto &ow = futils::Mediator::rebuild<fender::requests::OpenWindow>(pkg);
         // TODO: Could handle several windows with no problem if i had a map !
         if (this->window == nullptr) {
+            this->clearColor << ow.color;
             auto desktop = sf::VideoMode::getDesktopMode();
             unsigned int w = (unsigned int)(ow.size.w > 1.0 ? ow.size.w : ow.size.w * desktop.width);
             unsigned int h = (unsigned int)(ow.size.h > 1.0 ? ow.size.h : ow.size.h * desktop.height);
@@ -48,7 +59,7 @@ void fender::systems::SFMLRenderer::refreshWindow(float elapsed)
         // TODO: Should emit an event
         return ;
     }
-    w.clear(sf::Color::Black);
+    w.clear(clearColor);
 
     // Event processing
     sf::Event event;
@@ -66,6 +77,7 @@ void fender::systems::SFMLRenderer::refreshWindow(float elapsed)
 
 void fender::systems::SFMLRenderer::run(float elapsed)
 {
+    // TODO : Encapsulation of finite state machine (no transitions ?)
     switch (state) {
         case NONE: return ;
         case INIT : return init();
