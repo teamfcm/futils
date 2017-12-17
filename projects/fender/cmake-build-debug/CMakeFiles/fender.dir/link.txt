@@ -1,2 +1,2 @@
-/usr/bin/ar qc libfender.a  CMakeFiles/fender.dir/src/Systems/Log.cpp.o CMakeFiles/fender.dir/src/Fender.cpp.o
+/usr/bin/ar qc libfender.a  CMakeFiles/fender.dir/src/Systems/Log.cpp.o CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.o CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.o CMakeFiles/fender.dir/src/Fender.cpp.o
 /usr/bin/ranlib libfender.a

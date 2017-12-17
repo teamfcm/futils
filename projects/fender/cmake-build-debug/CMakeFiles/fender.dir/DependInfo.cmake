@@ -6,6 +6,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/arroganz/cpp/futils/projects/fender/src/Fender.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/Fender.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/Systems/Log.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/Systems/Log.cpp.o"
+  "/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/SFMLRenderer.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o"
+  "/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/WindowManager.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.o"
+  "/home/arroganz/cpp/futils/projects/fender/src/Systems/SplashScreen.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

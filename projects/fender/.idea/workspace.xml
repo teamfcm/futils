@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/Systems/Renderer/SFMLRenderer.cpp" line="22" mnemonic="0" />
+  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
     <generated>
       <config projectName="fender" targetName="fender" />
@@ -31,13 +34,112 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Log.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Systems/Log.cpp">
+      <file leaf-file-name="SplashScreen.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Systems/SplashScreen.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="287">
+              <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CMakeLists.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1040">
+              <caret line="40" column="78" lean-forward="false" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="events.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/events.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="338">
+              <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="requests.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/requests.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WindowManager.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Systems/Renderer/WindowManager.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="520">
+              <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
               <folding>
-                <element signature="e#43#61#0" expanded="true" />
+                <element signature="e#43#64#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SFMLRenderer.cpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Systems/Renderer/SFMLRenderer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SFMLRenderer.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Systems/Renderer/SFMLRenderer.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="156">
+                <caret line="6" column="64" lean-forward="false" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SFMLRenderer.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Systems/Renderer/SFMLRenderer.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+              <folding>
+                <element signature="e#100#129#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ecs.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/ecs.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1534">
+              <caret line="59" column="42" lean-forward="false" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
+              <folding>
+                <element signature="e#1302#1314#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WindowManager.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Systems/Renderer/WindowManager.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="494">
+              <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+              <folding>
+                <element signature="e#110#128#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -47,10 +149,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>::value</find>
-      <find>attach</find>
-      <find>lateinit</find>
-      <find>entitymanager</find>
       <find>get</find>
       <find>stored</find>
       <find>Fender</find>
@@ -62,7 +160,6 @@
       <find>ISystem</find>
       <find>LOUT</find>
       <find>Windowe</find>
-      <find>WindowManager</find>
       <find>System</find>
       <find>futils::ISystem</find>
       <find>requests</find>
@@ -77,6 +174,11 @@
       <find>IRender</find>
       <find>fender</find>
       <find>render</find>
+      <find>Log</find>
+      <find>futils::Vec2&lt;int&gt;</find>
+      <find>WindowManager</find>
+      <find>SplashScreen</find>
+      <find>.x</find>
     </findStrings>
     <replaceStrings>
       <replace>SFML</replace>
@@ -86,26 +188,16 @@
       <replace>futils::ISystem</replace>
       <replace>add</replace>
       <replace>FSystem</replace>
+      <replace>WindowManager</replace>
+      <replace>vec</replace>
+      <replace>SplashScreen</replace>
+      <replace>Renderer</replace>
+      <replace>.y</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/utils/fstring.hpp" />
-        <option value="$PROJECT_DIR$/src/ecs/Systems/SceneSystem.cpp" />
-        <option value="$PROJECT_DIR$/src/ecs/Entities/Scene.cpp" />
-        <option value="$PROJECT_DIR$/src/ecs/System.cpp" />
-        <option value="$PROJECT_DIR$/utils/types.hpp" />
-        <option value="$PROJECT_DIR$/utils/agent.hpp" />
-        <option value="$PROJECT_DIR$/src/ecs/Component.cpp" />
-        <option value="$PROJECT_DIR$/src/ecs/Systems/SplashScreen.cpp" />
-        <option value="$PROJECT_DIR$/demo/config/fender.ini" />
-        <option value="$PROJECT_DIR$/include/extras.hpp" />
-        <option value="$PROJECT_DIR$/utils/ecs.hpp" />
-        <option value="$PROJECT_DIR$/src/ecs/Systems/Transform.cpp" />
-        <option value="$PROJECT_DIR$/src/ecs/Systems/RendererSubSystem.cpp" />
-        <option value="$PROJECT_DIR$/utils/modules.hpp" />
-        <option value="$PROJECT_DIR$/src/ecs/Entities/Background.cpp" />
         <option value="$PROJECT_DIR$/src/ecs/Systems/Image.cpp" />
         <option value="$PROJECT_DIR$/include/IRender.hpp" />
         <option value="$PROJECT_DIR$/src/ecs/Components/Object2d.cpp" />
@@ -130,18 +222,33 @@
         <option value="$PROJECT_DIR$/include/sfml/sfmlRenderer.hpp" />
         <option value="$PROJECT_DIR$/utils/datapacket.hpp" />
         <option value="$PROJECT_DIR$/src/engine/Systems/SplashScreen.cpp" />
-        <option value="$PROJECT_DIR$/include/events.hpp" />
         <option value="$PROJECT_DIR$/include/fender.hpp" />
         <option value="$PROJECT_DIR$/include/components.hpp" />
-        <option value="$PROJECT_DIR$/include/requests.hpp" />
         <option value="$PROJECT_DIR$/include/systems.hpp" />
         <option value="$PROJECT_DIR$/src/engine/Systems/Log.cpp" />
         <option value="$PROJECT_DIR$/src/engine/Systems/Log.hpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/Fender.cpp" />
-        <option value="$PROJECT_DIR$/utils/mediator.hpp" />
-        <option value="$PROJECT_DIR$/src/Systems/Log.cpp" />
         <option value="$PROJECT_DIR$/src/Systems/Log.md" />
+        <option value="$PROJECT_DIR$/src/Systems/SystemLoader.hpp" />
+        <option value="$PROJECT_DIR$/src/Systems/SystemLoader.cpp" />
+        <option value="$PROJECT_DIR$/src/Systems/Log.cpp" />
+        <option value="$PROJECT_DIR$/src/Systems/Log.hpp" />
+        <option value="$PROJECT_DIR$/utils/math.hpp" />
+        <option value="$PROJECT_DIR$/src/Systems/SplashScreen.hpp" />
+        <option value="$PROJECT_DIR$/utils/mediator.hpp" />
+        <option value="$PROJECT_DIR$/include/events.hpp" />
+        <option value="$PROJECT_DIR$/src/Systems/WindowManager.cpp" />
+        <option value="$PROJECT_DIR$/src/Systems/WindowManager.hpp" />
+        <option value="$PROJECT_DIR$/utils/ecs.hpp" />
+        <option value="$PROJECT_DIR$/src/Systems/Renderer.hpp" />
+        <option value="$PROJECT_DIR$/src/Systems/Renderer.cpp" />
+        <option value="$PROJECT_DIR$/src/Fender.cpp" />
+        <option value="$PROJECT_DIR$/src/Systems/Renderer/Renderer.hpp" />
+        <option value="$PROJECT_DIR$/src/Systems/Renderer/SFMLRenderer.md" />
+        <option value="$PROJECT_DIR$/src/Systems/Renderer/SFMLRenderer.hpp" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/include/requests.hpp" />
+        <option value="$PROJECT_DIR$/src/Systems/Renderer/SFMLRenderer.cpp" />
+        <option value="$PROJECT_DIR$/src/Systems/SplashScreen.cpp" />
       </list>
     </option>
   </component>
@@ -152,7 +259,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="29" />
     <option name="width" value="1920" />
     <option name="height" value="1051" />
@@ -182,7 +289,25 @@
             <path>
               <item name="fender" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
               <item name="fender" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fender" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="fender" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fender" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="fender" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Systems" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fender" type="dad4c3:CidrFilesViewHelper$MyProjectTreeStructure$1" />
+              <item name="fender" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Systems" type="462c0819:PsiDirectoryNode" />
+              <item name="Renderer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -196,15 +321,15 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/demo" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/" />
+      <recent name="$PROJECT_DIR$/src/sfml" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/Systems/Renderer" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/include" />
       <recent name="$PROJECT_DIR$/src/renderers" />
-      <recent name="$PROJECT_DIR$/src/sfml" />
-      <recent name="$PROJECT_DIR$/export" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/" />
       <recent name="$PROJECT_DIR$/src/sfml" />
     </key>
   </component>
@@ -654,12 +779,21 @@
       <workItem from="1513457912360" duration="509000" />
       <workItem from="1513458453467" duration="117000" />
       <workItem from="1513458623481" duration="1915000" />
-      <workItem from="1513460706487" duration="2252000" />
+      <workItem from="1513460706487" duration="2480000" />
+      <workItem from="1513463379266" duration="38000" />
+      <workItem from="1513463442989" duration="2017000" />
+      <workItem from="1513465529132" duration="3931000" />
+      <workItem from="1513506159083" duration="24000" />
+      <workItem from="1513506198827" duration="12000" />
+      <workItem from="1513506223537" duration="22000" />
+      <workItem from="1513506292973" duration="47000" />
+      <workItem from="1513507009675" duration="855000" />
+      <workItem from="1513536401506" duration="57000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127038000" />
+    <option name="totallyTimeSpent" value="134269000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -671,13 +805,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="29" width="1920" height="1051" extended-state="7" />
+    <frame x="0" y="29" width="1920" height="1051" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3242358" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32751092" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32751092" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -689,6 +822,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3242358" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -738,62 +872,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ecs/Systems/SceneSystem.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/ecs/Entities/Scene.cpp" />
-    <entry file="file://$PROJECT_DIR$/utils/fstring.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="83" lean-forward="false" selection-start-line="15" selection-start-column="83" selection-end-line="15" selection-end-column="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/7.2.0/x86_64-pc-linux-gnu/bits/c++config.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="228" column="0" lean-forward="false" selection-start-line="228" selection-start-column="0" selection-end-line="228" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/include/c++/7.2.0/functional">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1690">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/scopelock.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/agent.hpp" />
-    <entry file="file://$PROJECT_DIR$/src/ecs/Entity.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/ecs/System.cpp" />
-    <entry file="file://$PROJECT_DIR$/src/ecs/Component.cpp" />
-    <entry file="file://$PROJECT_DIR$/demo/config/fender.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/ecs.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="86" column="41" lean-forward="false" selection-start-line="86" selection-start-column="41" selection-end-line="86" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/modules.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="910">
-          <caret line="35" column="22" lean-forward="false" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/renderers/ncurses/CursesRender.cpp" />
     <entry file="file://$PROJECT_DIR$/utils/dloader.hpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2262">
@@ -856,7 +934,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="702">
           <caret line="27" column="25" lean-forward="false" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -879,23 +956,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="728">
           <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/events.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/requests.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -903,35 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#2#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Systems/Log.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="17" column="31" lean-forward="false" selection-start-line="17" selection-start-column="31" selection-end-line="17" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Fender.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
-          <folding>
-            <element signature="e#43#65#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -939,17 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="78">
           <caret line="10" column="49" lean-forward="false" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/mediator.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
-          <folding>
-            <element signature="e#96#118#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -958,19 +978,164 @@
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="260">
             <caret line="10" column="106" lean-forward="false" selection-start-line="10" selection-start-column="106" selection-end-line="10" selection-end-column="106" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Systems/SystemLoader.md" />
+    <entry file="file://$PROJECT_DIR$/src/Systems/SystemLoader.hpp" />
+    <entry file="file://$PROJECT_DIR$/src/Systems/SystemLoader.cpp" />
+    <entry file="file://$PROJECT_DIR$/src/Systems/Log.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Systems/Log.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="650">
+          <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Systems/Renderer/WindowManager.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Systems/SplashScreen.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Systems/SplashScreen.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/mediator.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="57" column="58" lean-forward="false" selection-start-line="57" selection-start-column="58" selection-end-line="57" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Fender.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="44" lean-forward="false" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/math.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="18" column="9" lean-forward="false" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Systems/Renderer/WindowManager.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#110#128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/ecs.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1534">
+          <caret line="59" column="42" lean-forward="false" selection-start-line="59" selection-start-column="42" selection-end-line="59" selection-end-column="42" />
+          <folding>
+            <element signature="e#1302#1314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Systems/Renderer/SFMLRenderer.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
+          <folding>
+            <element signature="e#100#129#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Systems/Renderer/SFMLRenderer.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="156">
+            <caret line="6" column="64" lean-forward="false" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Systems/Log.cpp">
+    <entry file="file://$PROJECT_DIR$/src/Systems/Renderer/SFMLRenderer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="390">
+          <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Systems/Renderer/WindowManager.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="20" column="32" lean-forward="false" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
-            <element signature="e#43#61#0" expanded="true" />
+            <element signature="e#43#64#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/requests.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/events.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="13" column="36" lean-forward="false" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1040">
+          <caret line="40" column="78" lean-forward="false" selection-start-line="40" selection-start-column="78" selection-end-line="40" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Systems/SplashScreen.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="31" column="20" lean-forward="true" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -19,4 +19,5 @@ namespace fender::systems {
         void run(float) final;
     };
 }
+
 #endif //FENDER_LOG_HPP

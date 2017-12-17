@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/demo.dir/src/main.cpp.o CMakeFiles/demo.dir/src/App/App.cpp.o  -o ../demo ../libfender.a -ldl -lstdc++fs 
+/usr/bin/c++  -g   CMakeFiles/demo.dir/src/main.cpp.o CMakeFiles/demo.dir/src/App/App.cpp.o  -o ../demo ../libfender.a -ldl -lsfml-system -lsfml-window -lsfml-audio -lsfml-graphics -lstdc++fs 

@@ -43,13 +43,24 @@ namespace futils
         void send(T &&data) {
             auto range = _requests.equal_range(futils::type<T>::index);
             auto packet = futils::AMediatorPacket<T>(std::forward<T>(data));
-            bool consumed{false};
 
             for (auto it = range.first; it != range.second; it++) {
                 auto &identifiedAction = it->second;
                 if (identifiedAction.up) {
                     identifiedAction.action(packet);
-                    consumed = true;
+                }
+            }
+        }
+
+        template <typename T>
+        void send (T const &data) {
+            auto range = _requests.equal_range(futils::type<T>::index);
+            auto packet = futils::AMediatorPacket<T>(data);
+
+            for (auto it = range.first; it != range.second; it++) {
+                auto &identifiedAction = it->second;
+                if (identifiedAction.up) {
+                    identifiedAction.action(packet);
                 }
             }
         }

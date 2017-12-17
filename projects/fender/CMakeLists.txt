@@ -9,7 +9,9 @@ file(GLOB UTILS
 		"utils/*.hpp")
 file(GLOB SYSTEMS
 		"src/Systems/*.cpp"
-		"src/Systems/*.hpp")
+		"src/Systems/*.hpp"
+		"src/Systems/Renderer/*.cpp"
+		"src/Systems/Renderer/*.hpp")
 file(GLOB ENTITIES
 		"src/Entities/*.cpp"
 		"src/Entities/*.hpp")
@@ -36,6 +38,6 @@ add_library(fender STATIC ${SOURCE_FILES})
 #if (UNIX)
 #	target_link_libraries(fender ncurses)
 #endif (UNIX)
-#target_link_libraries(fender sfml-window sfml-audio sfml-graphics)
+target_link_libraries(fender sfml-system sfml-window sfml-audio sfml-graphics)
 target_link_libraries(fender -lstdc++fs)
 include_directories(release include utils)

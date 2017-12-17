@@ -112,6 +112,24 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Log.hpp">
 			<Option target="fender"/>
 		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/SFMLRenderer.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/SFMLRenderer.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/WindowManager.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/WindowManager.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SplashScreen.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SplashScreen.hpp">
+			<Option target="fender"/>
+		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/IniManager.hpp">
 			<Option target="fender"/>
 		</Unit>
@@ -155,6 +173,9 @@
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/log.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/math.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/mediator.hpp">

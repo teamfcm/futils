@@ -52,6 +52,13 @@ namespace futils
         std::string name{"Undefined"};
         EntityManager *entityManager{nullptr};
         Mediator *events{nullptr};
+
+        // It will segfault if events is not set. Be careful !
+        template <typename T>
+        void addReaction(std::function<void(IMediatorPacket &pkg)> fun)
+        {
+            events->require<T>(this, fun);
+        }
     public:
         virtual ~ISystem() {}
         virtual void run(float elapsed = 0) = 0;

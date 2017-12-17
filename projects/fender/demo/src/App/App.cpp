@@ -2,9 +2,7 @@
 // Created by arroganz on 11/24/17.
 //
 
-# include "dloader.hpp"
 # include "App.hpp"
-# include "systems.hpp"
 
 demo::App::App(int, char *argv[]):
         execPath(argv[0])
@@ -19,6 +17,5 @@ int demo::App::start() {
 }
 
 int demo::App::run() {
-    // engine->addSystem<fender::systems::SplashScreen>();
     return engine->run();
 };
