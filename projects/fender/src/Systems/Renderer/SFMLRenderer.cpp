@@ -32,6 +32,8 @@ fender::systems::SFMLRenderer::SFMLRenderer()
 
 void fender::systems::SFMLRenderer::init() {
     state = NONE;
+    entityManager->addSystem<MetaSystem>();
+    entityManager->addSystem<Box>();
     addReaction<fender::requests::OpenWindow>([this](futils::IMediatorPacket &pkg) {
         auto &ow = futils::Mediator::rebuild<fender::requests::OpenWindow>(pkg);
         // TODO: Could handle several windows with no problem if i had a map !

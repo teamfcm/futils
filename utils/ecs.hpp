@@ -67,12 +67,24 @@ namespace futils
         std::string const &getName() const { return name; }
     };
 
+    template <typename T>
+    class ComponentAttached
+    {
+        void verifType() {
+            static_assert(std::is_base_of<T, IComponent>::value,
+                          "Cannot emit event ComponentAttached with non Component Type");
+        }
+    public:
+        T const &compo;
+        ComponentAttached(T &&compo): compo(std::forward<T>(compo)) { verifType(); }
+        ComponentAttached(T const &compo): compo(compo) { verifType(); }
+    };
+
     class   IEntity
     {
         std::unordered_multimap<futils::type_index, IComponent *>    components;
         int                                 _id;
 
-        // Replace with SFINAE or static assertion. SFINAE is probably better.
         template                            <typename Compo>
         void                                verifIsComponent()
         {
@@ -84,6 +96,7 @@ namespace futils
         // TODO: SHOULD BE PRIVATE AND FRIEND WITH ENTITY MANAGER
         std::function<bool(IComponent &)> onExtension{[](IComponent &){return false;}};
         std::queue<IComponent *> lateinitComponents;
+        futils::Mediator *events{nullptr};
         // END.
         IEntity() {
             this->_id = futils::UID::get();
@@ -101,6 +114,7 @@ namespace futils
             if (onExtension(*compo) == false) {
                 lateinitComponents.push(compo);
             }
+            events->send<ComponentAttached<Compo>>(*compo);
             return *compo;
         };
 
@@ -116,6 +130,19 @@ namespace futils
         };
 
         int         getId() const { return this->_id; }
+    };
+
+    template <typename T>
+    class EntityCreated
+    {
+        void verifType() {
+            static_assert(std::is_base_of<T, IEntity>::value,
+                          "Cannot emit event EntityCreated with non Entity Type");
+        }
+    public:
+        T const &entity;
+        EntityCreated(T &&entity): entity(std::forward<T>(entity)) { verifType(); }
+        EntityCreated(T const &entity): entity(entity) { verifType(); }
     };
 
     class   EntityManager
@@ -139,12 +166,14 @@ namespace futils
             if (!std::is_base_of<IEntity, T>::value)
                 throw std::logic_error(std::string(typeid(T).name()) + " is not an Entity");
             auto entity = new T(args...);
+            entity->events = events;
             entities.push_front(std::unique_ptr<IEntity>(entity));
             entity->onExtension = [this](IComponent &compo) {
                 components.insert(std::pair<futils::type_index, IComponent *>
 					(compo.getTypeindex(), &compo));
                 return true;
             };
+            events->send<EntityCreated<T>>(*entity);
             while (!entity->lateinitComponents.empty()) {
                 entity->onExtension(*entity->lateinitComponents.front());
                 entity->lateinitComponents.pop();

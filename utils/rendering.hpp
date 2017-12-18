@@ -9,6 +9,7 @@
 
 # include <stddef.h>
 # include <iostream>
+# include "math.hpp"
 
 namespace futils
 {
@@ -37,7 +38,7 @@ namespace futils
             rgba[3] = a;
         }
     };
-    enum {
+    enum { // See http://cloford.com/resources/colours/500col.htm for details
         Crimson = 0xffdc143c,
         Lightpink = 0xffffb6c1,
         Pink = 0xffffc0cb,
@@ -162,7 +163,6 @@ namespace futils
         Granite = 0xff1a1a1a,
         Black = 0xff000000
     };
-    // See http://cloford.com/resources/colours/500col.htm for details
 
     inline std::ostream &operator << (std::ostream &os, Color const &color)
     {
