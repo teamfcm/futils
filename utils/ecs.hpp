@@ -71,7 +71,7 @@ namespace futils
     class ComponentAttached
     {
         void verifType() {
-            static_assert(std::is_base_of<T, IComponent>::value,
+            static_assert(std::is_base_of<IComponent, T>::value,
                           "Cannot emit event ComponentAttached with non Component Type");
         }
     public:
@@ -114,6 +114,8 @@ namespace futils
             if (onExtension(*compo) == false) {
                 lateinitComponents.push(compo);
             }
+            // TODO: This cannot be. It WILL Segfault. You need to add a second onExtension lambda for event notification.
+            // This time provided here by the entities..
             events->send<ComponentAttached<Compo>>(*compo);
             return *compo;
         };
@@ -136,7 +138,7 @@ namespace futils
     class EntityCreated
     {
         void verifType() {
-            static_assert(std::is_base_of<T, IEntity>::value,
+            static_assert(std::is_base_of<IEntity, T>::value,
                           "Cannot emit event EntityCreated with non Entity Type");
         }
     public:

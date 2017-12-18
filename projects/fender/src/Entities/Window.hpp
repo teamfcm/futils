@@ -9,6 +9,9 @@
 # include "ecs.hpp"
 # include "math.hpp"
 
+# include "../Components/Meta.hpp"
+# include "../Components/Box.hpp"
+
 namespace fender::entities
 {
     class Window : public futils::IEntity {

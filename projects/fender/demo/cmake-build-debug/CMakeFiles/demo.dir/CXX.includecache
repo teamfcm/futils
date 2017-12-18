@@ -9,28 +9,14 @@
 ../include/App.hpp
 fender.hpp
 ../include/fender.hpp
-extras.hpp
-../include/extras.hpp
 goToBinDir.hpp
 ../include/goToBinDir.hpp
-
-../include/components.hpp
-fender.hpp
-../include/fender.hpp
-
-../include/demo.hpp
-App.hpp
-../include/App.hpp
 
 ../include/events.hpp
 mediator.hpp
 ../include/mediator.hpp
-
-../include/extras.hpp
-fender.hpp
-../include/fender.hpp
-components.hpp
-../include/components.hpp
+math.hpp
+../include/math.hpp
 
 ../include/fender.hpp
 iostream
@@ -61,50 +47,14 @@ events.hpp
 ../include/events.hpp
 
 ../include/requests.hpp
+math.hpp
+../include/math.hpp
 mediator.hpp
 ../include/mediator.hpp
-
-../include/systems.hpp
-fender.hpp
-../include/fender.hpp
-extras.hpp
-../include/extras.hpp
-modules.hpp
-../include/modules.hpp
-IniManager.hpp
-../include/IniManager.hpp
-
-../utils/IniManager.hpp
-unordered_map
--
-memory
--
-experimental/filesystem
--
-filesystem
--
-fstream
--
-iostream
--
-RutilsException.hpp
-../utils/RutilsException.hpp
-RutilsParsingTools.hpp
-../utils/RutilsParsingTools.hpp
-
-../utils/RutilsException.hpp
-string
--
-utility
--
-stdexcept
--
-
-../utils/RutilsParsingTools.hpp
-string
--
-RutilsException.hpp
-../utils/RutilsException.hpp
+ecs.hpp
+../include/ecs.hpp
+rendering.hpp
+../include/rendering.hpp
 
 ../utils/clock.hpp
 chrono
@@ -224,6 +174,10 @@ iomanip
 futils.hpp
 ../utils/futils.hpp
 
+../utils/math.hpp
+utility
+-
+
 ../utils/mediator.hpp
 functional
 -
@@ -231,10 +185,16 @@ utility
 -
 datapacket.hpp
 ../utils/datapacket.hpp
+ini.hpp
+../utils/ini.hpp
 
-../utils/modules.hpp
-types.hpp
-../utils/types.hpp
+../utils/rendering.hpp
+stddef.h
+-
+iostream
+-
+math.hpp
+../utils/math.hpp
 
 ../utils/types.hpp
 typeindex
@@ -249,14 +209,10 @@ fstring.hpp
 ../utils/fstring.hpp
 
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/App.cpp
-dloader.hpp
-/home/arroganz/cpp/futils/projects/fender/demo/src/App/dloader.hpp
 App.hpp
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/App.hpp
-systems.hpp
-/home/arroganz/cpp/futils/projects/fender/demo/src/App/systems.hpp
 
 /home/arroganz/cpp/futils/projects/fender/demo/src/main.cpp
-demo.hpp
-/home/arroganz/cpp/futils/projects/fender/demo/src/demo.hpp
+App.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/src/App.hpp
 

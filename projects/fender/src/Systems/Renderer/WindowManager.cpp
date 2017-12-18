@@ -4,6 +4,7 @@
 
 #include <events.hpp>
 #include "WindowManager.hpp"
+#include "../../Components/Meta.hpp"
 
 fender::systems::WindowManager::WindowManager()
 {
@@ -24,6 +25,9 @@ void fender::systems::WindowManager::init() {
         wo.pos.x = 0;
         wo.pos.y = 0;
         events->send<events::WindowOpened>(wo);
+    });
+    events->require<futils::ComponentAttached<fender::components::Meta>>(this, [this](futils::IMediatorPacket &) {
+        std::cout << "A Meta Component has come to life !" << std::endl;
     });
 }
 

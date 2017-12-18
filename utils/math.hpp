@@ -5,6 +5,8 @@
 #ifndef FENDER_MATH_HPP
 #define FENDER_MATH_HPP
 
+# include <utility>
+
 namespace futils
 {
     template <typename T>
@@ -20,6 +22,12 @@ namespace futils
             T y;
             T h;
         };
+        Vec2() = default;
+        Vec2(T &&a, T &&b):
+                x(std::forward<T>(a)), y(std::forward<T>(b))
+        {
+
+        }
     };
 
     class Relative

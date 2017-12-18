@@ -4,6 +4,7 @@
 
 #include <fender.hpp>
 #include "SplashScreen.hpp"
+#include "../Entities/Window.hpp"
 
 fender::systems::SplashScreen::SplashScreen()
 {
@@ -20,6 +21,10 @@ void fender::systems::SplashScreen::init() {
 
 void fender::systems::SplashScreen::requestWindow()
 {
+    entityManager->create<fender::entities::Window>("ECS IS FUN",
+                                                    futils::Vec2<int>(100, 100),
+                                                    futils::Vec2<int>(1, 1),
+                                                    futils::WStyle::None);
     requests::OpenWindow ow;
     ow.size.w = 1.0/3.0;
     ow.size.h = 1.0/3.0;
