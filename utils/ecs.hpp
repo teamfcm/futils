@@ -26,7 +26,6 @@ namespace futils
     protected:
         futils::type_index _typeindex;
         IEntity     *__entity{nullptr};
-        std::string __name{"[DEFAULT_COMPONENT]"};
     public:
         virtual ~IComponent() {}
 
@@ -36,11 +35,15 @@ namespace futils
         }
         // END
 
-        std::string const &getName() const {return this->__name;}
         void                setEntity(IEntity &ent) {
             __entity = &ent;
         }
-        IComponent  &getAssociatedComponent(std::string const &type);
+
+        IEntity &getEntity() const
+        {
+            return *__entity;
+        }
+
         futils::type_index getTypeindex() const {
             return _typeindex;
         }
@@ -122,7 +125,7 @@ namespace futils
         };
 
         template <typename T>
-        T &get()
+        T &get() const
         {
             for (auto &it: components)
             {

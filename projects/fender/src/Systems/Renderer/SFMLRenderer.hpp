@@ -14,12 +14,7 @@
 
 namespace fender::systems {
     class SFMLRenderer : public futils::ISystem {
-        // TODO: Encapsulate Window abstraction
-
-        sf::Color clearColor;
-
-        // TODO: Some encapsulation might be nice!
-        enum State
+         enum State
         {
             NONE = -1,
             INIT = 0,
@@ -27,14 +22,23 @@ namespace fender::systems {
         };
         State state{INIT};
 
-        sf::RenderWindow *window{nullptr};
         void init();
-        void refreshWindow(float);
     public:
         SFMLRenderer();
         void run(float) final;
     };
 }
+
+inline sf::Color &operator << (sf::Color &lhs, futils::Color const &rhs)
+{
+    //TODO: Big endian//litte endian ??
+    lhs.r = rhs.rgba[2];
+    lhs.g = rhs.rgba[1];
+    lhs.b = rhs.rgba[0];
+    lhs.a = rhs.rgba[3];
+    return lhs;
+}
+
 
 
 #endif //FENDER_RENDERER_HPP

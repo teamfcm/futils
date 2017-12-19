@@ -16,19 +16,19 @@ namespace futils
 {
     enum class WStyle : int
     {
-        None       = 0,
-        Titlebar   = 1 << 0,
-        Resize     = 1 << 1,
-        Close      = 1 << 2,
-        Fullscreen = 1 << 3,
+        None       = 1 << 0,
+        Titlebar   = 1 << 1,
+        Resize     = 1 << 2,
+        Close      = 1 << 3,
+        Fullscreen = 1 << 4,
         Default = Titlebar | Resize | Close
     };
 
-    bool operator & (WStyle const &lhs, WStyle const &rhs)
+    inline bool operator & (WStyle const &lhs, WStyle const &rhs)
     {
         int a = static_cast<int>(lhs);
         int b = static_cast<int>(rhs);
-        return a & b;
+        return (a & b) > 0;
     }
 
     struct Color
@@ -184,6 +184,7 @@ namespace futils
     inline std::ostream &operator << (std::ostream &os, WStyle s)
     {
         std::vector<std::string> v;
+
         if (s & WStyle::None)
             v.emplace_back("None");
         if (s & WStyle::Titlebar)
@@ -194,7 +195,12 @@ namespace futils
             v.emplace_back("Close");
         if (s & WStyle::Fullscreen)
             v.emplace_back("Fullscreen");
+        if (v.empty()) {
+            os << "[]";
+            return os;
+        }
         os << v.front();
+        v.erase(v.begin());
         for (auto const &str : v)
         {
             os << " | " << str;

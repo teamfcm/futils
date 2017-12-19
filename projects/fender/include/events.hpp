@@ -15,6 +15,12 @@ namespace fender::events {
         vec pos;
         vec size;
     };
+
+    struct MetaCreated
+    {
+        std::string const &name;
+        explicit MetaCreated(std::string const &metaName): name(metaName) {}
+    };
 }
 
 #endif //FENDER_EVENTS_HPP

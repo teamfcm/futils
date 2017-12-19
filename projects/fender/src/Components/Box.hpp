@@ -23,12 +23,20 @@ namespace fender::components {
         }
         Box(futils::Vec2<int> const &pos, futils::Vec2<int> const &size): pos(pos), size(size) {}
 
+        futils::Vec2<int> const &getPos() const {
+            return pos;
+        }
+
+        futils::Vec2<int> const &getSize() const {
+            return size;
+        }
+
         void print(std::ostream &os) const {
             os << "[x:" << pos.x << ",y:" << pos.y << "|w:" << size.w << ",h:" << size.h << "]" << std::endl;
         }
     };
 
-    std::ostream &operator << (std::ostream &os, Box const &b)
+    inline std::ostream &operator << (std::ostream &os, Box const &b)
     {
         b.print(os);
         return os;

@@ -258,6 +258,33 @@ src/Systems/Log.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Log.cpp.s
 .PHONY : src/Systems/Log.cpp.s
 
+src/Systems/Renderer/Meta.o: src/Systems/Renderer/Meta.cpp.o
+
+.PHONY : src/Systems/Renderer/Meta.o
+
+# target to build an object file
+src/Systems/Renderer/Meta.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o
+.PHONY : src/Systems/Renderer/Meta.cpp.o
+
+src/Systems/Renderer/Meta.i: src/Systems/Renderer/Meta.cpp.i
+
+.PHONY : src/Systems/Renderer/Meta.i
+
+# target to preprocess a source file
+src/Systems/Renderer/Meta.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.i
+.PHONY : src/Systems/Renderer/Meta.cpp.i
+
+src/Systems/Renderer/Meta.s: src/Systems/Renderer/Meta.cpp.s
+
+.PHONY : src/Systems/Renderer/Meta.s
+
+# target to generate assembly for a file
+src/Systems/Renderer/Meta.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.s
+.PHONY : src/Systems/Renderer/Meta.cpp.s
+
 src/Systems/Renderer/SFMLRenderer.o: src/Systems/Renderer/SFMLRenderer.cpp.o
 
 .PHONY : src/Systems/Renderer/SFMLRenderer.o
@@ -363,6 +390,9 @@ help:
 	@echo "... src/Systems/Log.o"
 	@echo "... src/Systems/Log.i"
 	@echo "... src/Systems/Log.s"
+	@echo "... src/Systems/Renderer/Meta.o"
+	@echo "... src/Systems/Renderer/Meta.i"
+	@echo "... src/Systems/Renderer/Meta.s"
 	@echo "... src/Systems/Renderer/SFMLRenderer.o"
 	@echo "... src/Systems/Renderer/SFMLRenderer.i"
 	@echo "... src/Systems/Renderer/SFMLRenderer.s"

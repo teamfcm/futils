@@ -130,6 +130,12 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Log.hpp">
 			<Option target="fender"/>
 		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/Meta.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/Meta.hpp">
+			<Option target="fender"/>
+		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/SFMLRenderer.cpp">
 			<Option target="fender"/>
 		</Unit>

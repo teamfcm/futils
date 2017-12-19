@@ -17,25 +17,17 @@ void fender::systems::SplashScreen::init() {
         events->send<std::string>("SplashScreen is happy :)");
         phase++;
     });
-    events->require<futils::ComponentAttached<fender::components::Meta>>(this, [this](futils::IMediatorPacket &) {
-        std::cout << "A Meta Component has come to life !" << std::endl;
-    });
 }
 
 void fender::systems::SplashScreen::requestWindow()
 {
-    entityManager->create<fender::entities::Window>("ECS IS FUN",
-                                                    futils::Vec2<int>(100, 100),
-                                                    futils::Vec2<int>(1, 1),
+    // garder win en membre de splashcreen evidemment !
+    auto &win = entityManager->create<fender::entities::Window>("Fender SplashScreen",
+                                                    futils::Vec2<int>(25, 25),
+                                                    futils::Vec2<int>(800, 600),
                                                     futils::WStyle::None);
-    requests::OpenWindow ow;
-    ow.size.w = 1.0/3.0;
-    ow.size.h = 1.0/3.0;
-    ow.pos.x = 1.0/2.0 - (ow.size.w / 2.0);
-    ow.pos.y = 1.0/2.0 - (ow.size.h / 2.0);
-    ow.style = futils::WStyle::None;
-    ow.color = futils::Granite;
-    events->send<requests::OpenWindow>(ow);
+    auto &bg = win.get<fender::components::Meta>();
+    bg.setColor(futils::Manganeseblue);
     phase++;
 }
 
