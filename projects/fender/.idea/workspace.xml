@@ -68,8 +68,8 @@
       <file leaf-file-name="ecs.hpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/utils/ecs.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="117" column="56" lean-forward="false" selection-start-line="117" selection-start-column="56" selection-end-line="117" selection-end-column="56" />
+            <state relative-caret-position="469">
+              <caret line="182" column="37" lean-forward="false" selection-start-line="182" selection-start-column="37" selection-end-line="182" selection-end-column="37" />
               <folding>
                 <element signature="e#0#2#0" expanded="false" />
                 <element signature="e#592#714#0" expanded="false" />
@@ -78,15 +78,15 @@
                 <element signature="e#1230#1449#0" expanded="false" />
                 <element signature="e#1777#1789#0" expanded="true" />
                 <element signature="e#2383#2677#0" expanded="false" />
-                <element signature="e#3860#4180#0" expanded="false" />
-                <element signature="e#4260#4272#0" expanded="true" />
-                <element signature="e#5181#5240#0" expanded="false" />
-                <element signature="e#6155#6685#0" expanded="false" />
-                <element signature="e#6695#6815#0" expanded="false" />
-                <element signature="e#6825#7439#0" expanded="false" />
-                <element signature="e#7544#7622#0" expanded="false" />
-                <element signature="e#7632#7720#0" expanded="false" />
-                <element signature="e#7730#8176#0" expanded="false" />
+                <element signature="e#3865#4185#0" expanded="false" />
+                <element signature="e#4265#4277#0" expanded="true" />
+                <element signature="e#5186#5245#0" expanded="false" />
+                <element signature="e#6250#6780#0" expanded="false" />
+                <element signature="e#6790#6910#0" expanded="false" />
+                <element signature="e#6920#7534#0" expanded="false" />
+                <element signature="e#7639#7717#0" expanded="false" />
+                <element signature="e#7727#7815#0" expanded="false" />
+                <element signature="e#7825#8271#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -164,7 +164,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>attachC</find>
       <find>IRender</find>
       <find>fender</find>
       <find>render</find>
@@ -194,6 +193,7 @@
       <find>pos</find>
       <find>is_base</find>
       <find>attach</find>
+      <find>lateInit</find>
     </findStrings>
     <replaceStrings>
       <replace>SFML</replace>
@@ -802,12 +802,12 @@
       <workItem from="1513507009675" duration="855000" />
       <workItem from="1513536401506" duration="57000" />
       <workItem from="1513586572513" duration="7584000" />
-      <workItem from="1513632853583" duration="386000" />
+      <workItem from="1513632853583" duration="3551000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="155814000" />
+    <option name="totallyTimeSpent" value="158979000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1196,8 +1196,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/utils/ecs.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="117" column="56" lean-forward="false" selection-start-line="117" selection-start-column="56" selection-end-line="117" selection-end-column="56" />
+        <state relative-caret-position="469">
+          <caret line="182" column="37" lean-forward="false" selection-start-line="182" selection-start-column="37" selection-end-line="182" selection-end-column="37" />
           <folding>
             <element signature="e#0#2#0" expanded="false" />
             <element signature="e#592#714#0" expanded="false" />
@@ -1206,15 +1206,15 @@
             <element signature="e#1230#1449#0" expanded="false" />
             <element signature="e#1777#1789#0" expanded="true" />
             <element signature="e#2383#2677#0" expanded="false" />
-            <element signature="e#3860#4180#0" expanded="false" />
-            <element signature="e#4260#4272#0" expanded="true" />
-            <element signature="e#5181#5240#0" expanded="false" />
-            <element signature="e#6155#6685#0" expanded="false" />
-            <element signature="e#6695#6815#0" expanded="false" />
-            <element signature="e#6825#7439#0" expanded="false" />
-            <element signature="e#7544#7622#0" expanded="false" />
-            <element signature="e#7632#7720#0" expanded="false" />
-            <element signature="e#7730#8176#0" expanded="false" />
+            <element signature="e#3865#4185#0" expanded="false" />
+            <element signature="e#4265#4277#0" expanded="true" />
+            <element signature="e#5186#5245#0" expanded="false" />
+            <element signature="e#6250#6780#0" expanded="false" />
+            <element signature="e#6790#6910#0" expanded="false" />
+            <element signature="e#6920#7534#0" expanded="false" />
+            <element signature="e#7639#7717#0" expanded="false" />
+            <element signature="e#7727#7815#0" expanded="false" />
+            <element signature="e#7825#8271#0" expanded="false" />
           </folding>
         </state>
       </provider>

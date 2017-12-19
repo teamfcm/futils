@@ -91,11 +91,10 @@ namespace futils
             if (!std::is_base_of<IComponent, Compo>::value)
                 throw std::logic_error(std::string(typeid(Compo).name()) + " is not a Component");
         }
-
     public:
         // TODO: SHOULD BE PRIVATE AND FRIEND WITH ENTITY MANAGER
         std::function<bool(IComponent &)> onExtension{[](IComponent &){return false;}};
-        std::queue<IComponent *> lateinitComponents;
+        std::queue<std::pair<IComponent *, std::function<void()>>> lateinitComponents;
         futils::Mediator *events{nullptr};
         // END.
         IEntity() {
@@ -112,11 +111,13 @@ namespace futils
             compo->setEntity(*this);
             this->components.insert(std::pair<futils::type_index, IComponent *>(compo->getTypeindex(), compo));
             if (onExtension(*compo) == false) {
-                lateinitComponents.push(compo);
+                lateinitComponents.push(std::pair(compo, [this, compo](){
+                    events->send<ComponentAttached<Compo>>(*compo);
+                }));
+            } else
+            {
+                events->send<ComponentAttached<Compo>>(*compo);
             }
-            // TODO: This cannot be. It WILL Segfault. You need to add a second onExtension lambda for event notification.
-            // This time provided here by the entities..
-            events->send<ComponentAttached<Compo>>(*compo);
             return *compo;
         };
 
@@ -177,7 +178,9 @@ namespace futils
             };
             events->send<EntityCreated<T>>(*entity);
             while (!entity->lateinitComponents.empty()) {
-                entity->onExtension(*entity->lateinitComponents.front());
+                auto front = entity->lateinitComponents.front();
+                entity->onExtension(*front.first);
+                front.second(); // Notification
                 entity->lateinitComponents.pop();
             }
             return *entity;
