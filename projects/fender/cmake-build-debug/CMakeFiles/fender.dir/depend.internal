@@ -12,6 +12,7 @@ CMakeFiles/fender.dir/src/Components/Box.cpp.o
  ../utils/log.hpp
  ../utils/math.hpp
  ../utils/mediator.hpp
+ ../utils/range.hpp
  ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/src/Components/Box.cpp
  /home/arroganz/cpp/futils/projects/fender/src/Components/Box.hpp
@@ -26,6 +27,7 @@ CMakeFiles/fender.dir/src/Components/Meta.cpp.o
  ../utils/log.hpp
  ../utils/math.hpp
  ../utils/mediator.hpp
+ ../utils/range.hpp
  ../utils/rendering.hpp
  ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/src/Components/Meta.cpp
@@ -41,6 +43,7 @@ CMakeFiles/fender.dir/src/Entities/Window.cpp.o
  ../utils/log.hpp
  ../utils/math.hpp
  ../utils/mediator.hpp
+ ../utils/range.hpp
  ../utils/rendering.hpp
  ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/src/Components/Box.hpp
@@ -63,6 +66,7 @@ CMakeFiles/fender.dir/src/Fender.cpp.o
  ../utils/log.hpp
  ../utils/math.hpp
  ../utils/mediator.hpp
+ ../utils/range.hpp
  ../utils/rendering.hpp
  ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/src/Fender.cpp
@@ -82,6 +86,29 @@ CMakeFiles/fender.dir/src/Systems/Log.cpp.o
  ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/src/Systems/Log.cpp
  /home/arroganz/cpp/futils/projects/fender/src/Systems/Log.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o
+ ../include/events.hpp
+ ../include/fender.hpp
+ ../include/requests.hpp
+ ../utils/clock.hpp
+ ../utils/customTraits.hpp
+ ../utils/datapacket.hpp
+ ../utils/dloader.hpp
+ ../utils/ecs.hpp
+ ../utils/fstring.hpp
+ ../utils/futils.hpp
+ ../utils/ini.hpp
+ ../utils/log.hpp
+ ../utils/math.hpp
+ ../utils/mediator.hpp
+ ../utils/range.hpp
+ ../utils/rendering.hpp
+ ../utils/types.hpp
+ /home/arroganz/cpp/futils/projects/fender/src/Components/Box.hpp
+ /home/arroganz/cpp/futils/projects/fender/src/Components/Meta.hpp
+ /home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/Meta.cpp
+ /home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/Meta.hpp
+ /home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/SFMLRenderer.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o
  ../include/events.hpp
  ../include/requests.hpp
@@ -95,8 +122,11 @@ CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o
  ../utils/log.hpp
  ../utils/math.hpp
  ../utils/mediator.hpp
+ ../utils/range.hpp
  ../utils/rendering.hpp
  ../utils/types.hpp
+ /home/arroganz/cpp/futils/projects/fender/src/Components/Meta.hpp
+ /home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/Meta.hpp
  /home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/SFMLRenderer.cpp
  /home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/SFMLRenderer.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.o
@@ -112,6 +142,7 @@ CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.o
  ../utils/log.hpp
  ../utils/math.hpp
  ../utils/mediator.hpp
+ ../utils/range.hpp
  ../utils/rendering.hpp
  ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/src/Components/Meta.hpp
@@ -132,6 +163,7 @@ CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.o
  ../utils/log.hpp
  ../utils/math.hpp
  ../utils/mediator.hpp
+ ../utils/range.hpp
  ../utils/rendering.hpp
  ../utils/types.hpp
  /home/arroganz/cpp/futils/projects/fender/src/Components/Box.hpp

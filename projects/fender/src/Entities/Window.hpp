@@ -20,7 +20,7 @@ namespace fender::entities
                futils::Vec2<int> pos, futils::Vec2<int> size,
                futils::WStyle = futils::WStyle::Default);
         Window(std::string const &name,
-               futils::Relative pos, futils::Relative size,
+               futils::Vec2<futils::Pct> pos, futils::Vec2<futils::Pct> size,
                futils::WStyle = futils::WStyle::Default);
     };
 }

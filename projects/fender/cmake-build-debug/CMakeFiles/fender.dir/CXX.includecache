@@ -171,6 +171,8 @@ futils.hpp
 ../utils/math.hpp
 utility
 -
+range.hpp
+../utils/range.hpp
 
 ../utils/mediator.hpp
 functional
@@ -181,6 +183,10 @@ datapacket.hpp
 ../utils/datapacket.hpp
 ini.hpp
 ../utils/ini.hpp
+
+../utils/range.hpp
+random
+-
 
 ../utils/rendering.hpp
 vector
@@ -262,9 +268,33 @@ Log.hpp
 ecs.hpp
 -
 
+/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/Meta.cpp
+Meta.hpp
+/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/Meta.hpp
+../../Components/Meta.hpp
+/home/arroganz/cpp/futils/projects/fender/src/Components/Meta.hpp
+fender.hpp
+/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/fender.hpp
+events.hpp
+/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/events.hpp
+../../Components/Box.hpp
+/home/arroganz/cpp/futils/projects/fender/src/Components/Box.hpp
+SFMLRenderer.hpp
+/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/SFMLRenderer.hpp
+
+/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/Meta.hpp
+SFML/Graphics.hpp
+-
+ecs.hpp
+/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/ecs.hpp
+../../Components/Meta.hpp
+/home/arroganz/cpp/futils/projects/fender/src/Components/Meta.hpp
+
 /home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/SFMLRenderer.cpp
 SFMLRenderer.hpp
 /home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/SFMLRenderer.hpp
+Meta.hpp
+/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/Meta.hpp
 
 /home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/SFMLRenderer.hpp
 SFML/Graphics.hpp

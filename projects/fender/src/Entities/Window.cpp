@@ -5,7 +5,7 @@
 #include "Window.hpp"
 
 fender::entities::Window::Window(std::string const &name,
-                                 futils::Relative pos, futils::Relative size,
+                                 futils::Vec2<futils::Pct> pos, futils::Vec2<futils::Pct> size,
                                  futils::WStyle style)
 {
     attach<fender::components::Meta>(name, style);

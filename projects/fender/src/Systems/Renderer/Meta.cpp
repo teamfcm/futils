@@ -29,21 +29,32 @@ namespace fender::systems
             try {
                 auto &ent = meta.getEntity();
                 auto &box = ent.get<fender::components::Box>();
-                auto &size = box.getSize();
-                auto &pos = box.getPos();
+                unsigned int x,y,w,h = 0;
                 auto style = meta.getStyle();
 
-                auto desktop = sf::VideoMode::getDesktopMode();
-                auto w = (unsigned int)(size.w > 1.0 ? size.w : size.w * desktop.width);
-                auto h = (unsigned int)(size.h > 1.0 ? size.h : size.h * desktop.height);
-                auto x = (unsigned int)(pos.x > 1.0 || pos.x == 0 ? pos.x : pos.x * desktop.width);
-                auto y = (unsigned int)(pos.y > 1.0 || pos.y == 0 ? pos.y : pos.y * desktop.height);
+                if (box.isRelative()) {
+                    auto &size = box.getRSize();
+                    auto &pos = box.getRPos();
+                    auto desktop = sf::VideoMode::getDesktopMode();
 
-                auto rwin = new sf::RenderWindow(sf::VideoMode(w, h),
+                    w = (!box.isRelative() ? (unsigned int)size.w : size.w * desktop.width);
+                    h = (!box.isRelative() ? (unsigned int)size.h : size.h * desktop.height);
+                    x = (!box.isRelative() ? (unsigned int)pos.x : pos.x * desktop.width);
+                    y = (!box.isRelative() ? (unsigned int)pos.y : pos.y * desktop.height);
+                } else {
+                    auto &size = box.getSize();
+                    auto &pos = box.getPos();
+
+                    w = (unsigned int)size.w;
+                    h = (unsigned int)size.h;
+                    x = (unsigned int)pos.x;
+                    y = (unsigned int)pos.y;
+                }
+                auto win = new sf::RenderWindow(sf::VideoMode(w, h),
                                                  meta.getName(), sfStyles[style]);
-                rwin->setPosition(sf::Vector2i(x, y));
+                win->setPosition(sf::Vector2i(x, y));
                 Meta::window windowInfo;
-                windowInfo._win = rwin;
+                windowInfo._win = win;
                 windowInfo._meta = &meta;
                 windows[meta.getName()] = windowInfo;
                 std::cout << "Meta created " << meta << std::endl;

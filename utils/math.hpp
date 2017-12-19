@@ -6,6 +6,7 @@
 #define FENDER_MATH_HPP
 
 # include <utility>
+# include "range.hpp"
 
 namespace futils
 {
@@ -22,7 +23,15 @@ namespace futils
             T y;
             T h;
         };
-        Vec2() = default;
+        Vec2()
+        {
+
+        }
+        Vec2(Vec2 const &other):
+                x(other.x), y(other.y)
+        {
+
+        }
         Vec2(T &&a, T &&b):
                 x(std::forward<T>(a)), y(std::forward<T>(b))
         {
@@ -30,49 +39,66 @@ namespace futils
         }
     };
 
-    class Relative
+    class Pct
     {
-        Vec2<float> data;
-        Vec2<float> actual;
-        Vec2<float> parent;
+        float value;
 
-        void checkRange(float x, float y) {
-            if (x < 0 || y < 0 || x > 1 || y > 1)
-                throw std::logic_error("Relative type requires value in [0..1] range.");
+        void checkRange(float &val) {
+            static futils::FloatingRange<float> frac(0, 100);
+            if (!frac.contains(val))
+                throw std::logic_error("Pct type requires relative values (0..100)");
         }
     public:
-        Relative(float x, float y)
+        Pct(Pct const &other)
         {
-            checkRange(x, y);
-            data.x = x;
-            data.y = y;
-            parent.x = 0;
-            parent.y = 0;
+            value = other.get();
+        }
+        Pct(float x):
+                value(0)
+        {
+            set(x);
         }
 
-        Relative(float x, float y, float px, float py)
+        void set(float val)
         {
-            checkRange(x, y);
-            data.x = x;
-            data.y = y;
-            if (px <= 1 && px >= 0)
-                throw std::logic_error("Parent size should not be relative in Relative constructor.");
-            parent.x = px;
-            parent.y = py;
-            actual.x = data.x * parent.x;
-            actual.y = data.y * parent.y;
+            checkRange(val);
+            value = val;
         }
 
-        futils::Vec2<float> const &getData() const
+        float get() const
         {
-            return data;
+            return value;
         }
 
-        futils::Vec2<float> const &getActual() const
+        float operator * (float const &other) const
         {
-            if (parent.x == 0 && parent.y == 0)
-                throw std::logic_error("Cannot get actual relative size because no parent has been provided.");
-            return actual;
+            return value / 100 * other;
+        }
+
+        unsigned int operator * (unsigned int &other) const
+        {
+            return (unsigned int)((value / 100) * other);
+        }
+
+        Pct operator + (Pct const &other)
+        {
+            return Pct(value + other.get());
+        }
+
+        Pct &operator += (Pct const &other)
+        {
+            value += other.get();
+            return *this;
+        }
+
+        operator unsigned int () const
+        {
+            return (unsigned int)value;
+        }
+
+        operator float () const
+        {
+            return value;
         }
     };
 }

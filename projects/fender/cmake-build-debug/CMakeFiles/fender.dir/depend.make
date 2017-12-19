@@ -11,6 +11,7 @@ CMakeFiles/fender.dir/src/Components/Box.cpp.o: ../utils/ini.hpp
 CMakeFiles/fender.dir/src/Components/Box.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/Components/Box.cpp.o: ../utils/math.hpp
 CMakeFiles/fender.dir/src/Components/Box.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/Components/Box.cpp.o: ../utils/range.hpp
 CMakeFiles/fender.dir/src/Components/Box.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/Components/Box.cpp.o: ../src/Components/Box.cpp
 CMakeFiles/fender.dir/src/Components/Box.cpp.o: ../src/Components/Box.hpp
@@ -25,6 +26,7 @@ CMakeFiles/fender.dir/src/Components/Meta.cpp.o: ../utils/ini.hpp
 CMakeFiles/fender.dir/src/Components/Meta.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/Components/Meta.cpp.o: ../utils/math.hpp
 CMakeFiles/fender.dir/src/Components/Meta.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/Components/Meta.cpp.o: ../utils/range.hpp
 CMakeFiles/fender.dir/src/Components/Meta.cpp.o: ../utils/rendering.hpp
 CMakeFiles/fender.dir/src/Components/Meta.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/Components/Meta.cpp.o: ../src/Components/Meta.cpp
@@ -40,6 +42,7 @@ CMakeFiles/fender.dir/src/Entities/Window.cpp.o: ../utils/ini.hpp
 CMakeFiles/fender.dir/src/Entities/Window.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/Entities/Window.cpp.o: ../utils/math.hpp
 CMakeFiles/fender.dir/src/Entities/Window.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/Entities/Window.cpp.o: ../utils/range.hpp
 CMakeFiles/fender.dir/src/Entities/Window.cpp.o: ../utils/rendering.hpp
 CMakeFiles/fender.dir/src/Entities/Window.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/Entities/Window.cpp.o: ../src/Components/Box.hpp
@@ -62,6 +65,7 @@ CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/ini.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/math.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/range.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/rendering.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../src/Fender.cpp
@@ -82,6 +86,29 @@ CMakeFiles/fender.dir/src/Systems/Log.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/Systems/Log.cpp.o: ../src/Systems/Log.cpp
 CMakeFiles/fender.dir/src/Systems/Log.cpp.o: ../src/Systems/Log.hpp
 
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../include/events.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../include/fender.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../include/requests.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../utils/clock.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../utils/customTraits.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../utils/datapacket.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../utils/dloader.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../utils/ecs.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../utils/fstring.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../utils/futils.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../utils/ini.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../utils/log.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../utils/math.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../utils/range.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../utils/rendering.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../utils/types.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../src/Components/Box.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../src/Components/Meta.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../src/Systems/Renderer/Meta.cpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../src/Systems/Renderer/Meta.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o: ../src/Systems/Renderer/SFMLRenderer.hpp
+
 CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o: ../include/events.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o: ../include/requests.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o: ../utils/clock.hpp
@@ -94,8 +121,11 @@ CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o: ../utils/ini.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o: ../utils/math.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o: ../utils/range.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o: ../utils/rendering.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o: ../utils/types.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o: ../src/Components/Meta.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o: ../src/Systems/Renderer/Meta.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o: ../src/Systems/Renderer/SFMLRenderer.cpp
 CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o: ../src/Systems/Renderer/SFMLRenderer.hpp
 
@@ -111,6 +141,7 @@ CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.o: ../utils/ini.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.o: ../utils/math.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.o: ../utils/range.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.o: ../utils/rendering.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.o: ../src/Components/Meta.hpp
@@ -131,6 +162,7 @@ CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.o: ../utils/ini.hpp
 CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.o: ../utils/log.hpp
 CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.o: ../utils/math.hpp
 CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.o: ../utils/mediator.hpp
+CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.o: ../utils/range.hpp
 CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.o: ../utils/rendering.hpp
 CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.o: ../utils/types.hpp
 CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.o: ../src/Components/Box.hpp
