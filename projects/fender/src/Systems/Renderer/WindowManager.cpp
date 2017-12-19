@@ -26,9 +26,6 @@ void fender::systems::WindowManager::init() {
         wo.pos.y = 0;
         events->send<events::WindowOpened>(wo);
     });
-    events->require<futils::ComponentAttached<fender::components::Meta>>(this, [this](futils::IMediatorPacket &) {
-        std::cout << "A Meta Component has come to life !" << std::endl;
-    });
 }
 
 void fender::systems::WindowManager::run(float)

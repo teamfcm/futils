@@ -103,6 +103,24 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/systems.hpp">
 			<Option target="fender"/>
 		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Box.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Box.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Meta.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Meta.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Entities/Window.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Entities/Window.hpp">
+			<Option target="fender"/>
+		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Fender.cpp">
 			<Option target="fender"/>
 		</Unit>
@@ -182,6 +200,9 @@
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/modules.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/rendering.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/scopelock.hpp">

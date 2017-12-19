@@ -7,13 +7,14 @@
 
 // This header file is a list of abstract types representing various rendering elements
 
+# include <vector>
 # include <stddef.h>
 # include <iostream>
 # include "math.hpp"
 
 namespace futils
 {
-    enum class WStyle
+    enum class WStyle : int
     {
         None       = 0,
         Titlebar   = 1 << 0,
@@ -22,6 +23,13 @@ namespace futils
         Fullscreen = 1 << 3,
         Default = Titlebar | Resize | Close
     };
+
+    bool operator & (WStyle const &lhs, WStyle const &rhs)
+    {
+        int a = static_cast<int>(lhs);
+        int b = static_cast<int>(rhs);
+        return a & b;
+    }
 
     struct Color
     {
@@ -170,6 +178,27 @@ namespace futils
            << "[g:" << +color.rgba[1] << "]"
            << "[b:" << +color.rgba[0] << "]"
            << "[a:" << +color.rgba[3] << "]" << std::endl;
+        return os;
+    }
+
+    inline std::ostream &operator << (std::ostream &os, WStyle s)
+    {
+        std::vector<std::string> v;
+        if (s & WStyle::None)
+            v.emplace_back("None");
+        if (s & WStyle::Titlebar)
+            v.emplace_back("Titlebar");
+        if (s & WStyle::Resize)
+            v.emplace_back("Resize");
+        if (s & WStyle::Close)
+            v.emplace_back("Close");
+        if (s & WStyle::Fullscreen)
+            v.emplace_back("Fullscreen");
+        os << v.front();
+        for (auto const &str : v)
+        {
+            os << " | " << str;
+        }
         return os;
     }
 }

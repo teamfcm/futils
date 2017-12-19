@@ -17,6 +17,9 @@ void fender::systems::SplashScreen::init() {
         events->send<std::string>("SplashScreen is happy :)");
         phase++;
     });
+    events->require<futils::ComponentAttached<fender::components::Meta>>(this, [this](futils::IMediatorPacket &) {
+        std::cout << "A Meta Component has come to life !" << std::endl;
+    });
 }
 
 void fender::systems::SplashScreen::requestWindow()

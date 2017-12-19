@@ -1,4 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/fender.dir/src/Entities/Window.cpp.o"
+  "CMakeFiles/fender.dir/src/Components/Box.cpp.o"
+  "CMakeFiles/fender.dir/src/Components/Meta.cpp.o"
   "CMakeFiles/fender.dir/src/Systems/Log.cpp.o"
   "CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.o"
   "CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o"

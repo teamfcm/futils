@@ -59,19 +59,19 @@ namespace futils
                 throw std::logic_error("Parent size should not be relative in Relative constructor.");
             parent.x = px;
             parent.y = py;
+            actual.x = data.x * parent.x;
+            actual.y = data.y * parent.y;
         }
 
-        futils::Vec2<float> const &getData()
+        futils::Vec2<float> const &getData() const
         {
             return data;
         }
 
-        futils::Vec2<float> const &getActual()
+        futils::Vec2<float> const &getActual() const
         {
             if (parent.x == 0 && parent.y == 0)
                 throw std::logic_error("Cannot get actual relative size because no parent has been provided.");
-            actual.x = data.x * parent.x;
-            actual.y = data.y * parent.y;
             return actual;
         }
     };

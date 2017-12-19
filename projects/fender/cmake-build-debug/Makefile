@@ -123,6 +123,87 @@ fender/fast:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/build
 .PHONY : fender/fast
 
+src/Components/Box.o: src/Components/Box.cpp.o
+
+.PHONY : src/Components/Box.o
+
+# target to build an object file
+src/Components/Box.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Box.cpp.o
+.PHONY : src/Components/Box.cpp.o
+
+src/Components/Box.i: src/Components/Box.cpp.i
+
+.PHONY : src/Components/Box.i
+
+# target to preprocess a source file
+src/Components/Box.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Box.cpp.i
+.PHONY : src/Components/Box.cpp.i
+
+src/Components/Box.s: src/Components/Box.cpp.s
+
+.PHONY : src/Components/Box.s
+
+# target to generate assembly for a file
+src/Components/Box.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Box.cpp.s
+.PHONY : src/Components/Box.cpp.s
+
+src/Components/Meta.o: src/Components/Meta.cpp.o
+
+.PHONY : src/Components/Meta.o
+
+# target to build an object file
+src/Components/Meta.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Meta.cpp.o
+.PHONY : src/Components/Meta.cpp.o
+
+src/Components/Meta.i: src/Components/Meta.cpp.i
+
+.PHONY : src/Components/Meta.i
+
+# target to preprocess a source file
+src/Components/Meta.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Meta.cpp.i
+.PHONY : src/Components/Meta.cpp.i
+
+src/Components/Meta.s: src/Components/Meta.cpp.s
+
+.PHONY : src/Components/Meta.s
+
+# target to generate assembly for a file
+src/Components/Meta.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Meta.cpp.s
+.PHONY : src/Components/Meta.cpp.s
+
+src/Entities/Window.o: src/Entities/Window.cpp.o
+
+.PHONY : src/Entities/Window.o
+
+# target to build an object file
+src/Entities/Window.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Entities/Window.cpp.o
+.PHONY : src/Entities/Window.cpp.o
+
+src/Entities/Window.i: src/Entities/Window.cpp.i
+
+.PHONY : src/Entities/Window.i
+
+# target to preprocess a source file
+src/Entities/Window.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Entities/Window.cpp.i
+.PHONY : src/Entities/Window.cpp.i
+
+src/Entities/Window.s: src/Entities/Window.cpp.s
+
+.PHONY : src/Entities/Window.s
+
+# target to generate assembly for a file
+src/Entities/Window.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Entities/Window.cpp.s
+.PHONY : src/Entities/Window.cpp.s
+
 src/Fender.o: src/Fender.cpp.o
 
 .PHONY : src/Fender.o
@@ -267,6 +348,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... fender"
 	@echo "... edit_cache"
+	@echo "... src/Components/Box.o"
+	@echo "... src/Components/Box.i"
+	@echo "... src/Components/Box.s"
+	@echo "... src/Components/Meta.o"
+	@echo "... src/Components/Meta.i"
+	@echo "... src/Components/Meta.s"
+	@echo "... src/Entities/Window.o"
+	@echo "... src/Entities/Window.i"
+	@echo "... src/Entities/Window.s"
 	@echo "... src/Fender.o"
 	@echo "... src/Fender.i"
 	@echo "... src/Fender.s"
