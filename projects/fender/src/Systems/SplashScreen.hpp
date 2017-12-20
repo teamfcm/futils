@@ -8,12 +8,14 @@
 #include "ecs.hpp"
 #include "requests.hpp"
 #include "events.hpp"
+#include "../Entities/Window.hpp"
 
 namespace fender::systems {
     class SplashScreen : public futils::ISystem {
         int phase{0};
         void init();
         void requestWindow();
+        fender::entities::Window *win;
     public:
         SplashScreen();
         void run(float) final;

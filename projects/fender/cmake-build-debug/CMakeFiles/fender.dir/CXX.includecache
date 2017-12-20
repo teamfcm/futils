@@ -337,4 +337,6 @@ requests.hpp
 /home/arroganz/cpp/futils/projects/fender/src/Systems/requests.hpp
 events.hpp
 /home/arroganz/cpp/futils/projects/fender/src/Systems/events.hpp
+../Entities/Window.hpp
+/home/arroganz/cpp/futils/projects/fender/src/Entities/Window.hpp
 

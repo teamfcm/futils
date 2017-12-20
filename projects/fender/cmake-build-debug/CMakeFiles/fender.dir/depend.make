@@ -68,6 +68,9 @@ CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/mediator.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/range.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/rendering.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../utils/types.hpp
+CMakeFiles/fender.dir/src/Fender.cpp.o: ../src/Components/Box.hpp
+CMakeFiles/fender.dir/src/Fender.cpp.o: ../src/Components/Meta.hpp
+CMakeFiles/fender.dir/src/Fender.cpp.o: ../src/Entities/Window.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../src/Fender.cpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../src/Systems/Log.hpp
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../src/Systems/Renderer/SFMLRenderer.hpp

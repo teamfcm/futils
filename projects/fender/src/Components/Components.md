@@ -14,6 +14,7 @@ Here you will find the list of built-in components with a short description and 
 ```c++
 std::string name;
 futils::WStyle style;
+futils::Color bgColor;
 ```
 ### Methods
 **Entities** : Window, ...

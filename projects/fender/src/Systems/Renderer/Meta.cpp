@@ -59,6 +59,7 @@ namespace fender::systems
                 windows[meta.getName()] = windowInfo;
                 std::cout << "Meta created " << meta << std::endl;
                 events->send(fender::events::MetaCreated(meta.getName()));
+                win->setFramerateLimit(60);
             } catch (std::runtime_error const &)
             {
                 // events->send<futils::MetaError>(error.what());

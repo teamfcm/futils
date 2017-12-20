@@ -12,7 +12,9 @@ fender::systems::Log::Log()
 
 void fender::systems::Log::init() {
     phase++;
-    events->require<std::string>(this, [this](futils::IMediatorPacket &pkg) {
+    events->require<std::string>
+            (this,
+             [this](futils::IMediatorPacket &pkg) {
         auto &s = futils::Mediator::rebuild<std::string>(pkg);
         LOUT("LOG => " + s);
     });
