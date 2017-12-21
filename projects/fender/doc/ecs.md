@@ -79,21 +79,120 @@ If you want to know more about systems, [follow this link](systems.md)
 ## [Entities](./entities.md)
 
 + Window
+  + Meta
+  + Transform
+  + Color
++ Camera
+  + Transform
+  + Camera
 + Text
+  + Text
+  + Transform
+  + Color
 + Sprite
+  + Transform
+  + Image
+  + Color
+  + Texture
 + Bar
+  + Transform
+  + Color
+  + Text
+  + Progressive
+  + Texture
 + Button
-+ Stream
-+ Sound
-+ Music
-+ Cursor
-+ Popup (and its derived classes)
+  + Transform
+  + Color
+  + Image
+  + Text
+  + Clickable
+  + Hoverable
 + TextBox
+  + Transform
+  + Text
+  + Color
+  + Scrollable
++ Sound
+  + Audio
++ Music
+  + Audio
++ Cursor
+  + Transform
+  + Color
+  + Image
+  + Effect
++ Popup (with multiple choices)
+  + Transform
+  + Color
+  + Text
 + Container
+  + Transform
+  + Image
+  + Color
+  + Content
++ InputField
+  + Transform
+  + Image
+  + Color
+  + Text
++ Slider
+  + Transform
+  + Image
+  + Color
+  + Clickable
 
 ## [Components](./components.md)
 
-### 
++ Meta
+  + name
+  + style
++ Transform
+  + position
+  + scale
+  + rotation
++ Color
+  + color
+
+
++ Text
+  + content (string)
+  + font
+  + font-size
+  + modifiers (bold, underlined, italic...)
++ Image
+  + filepath (string)
+  + layer, z-index
++ Progressive
+  + min
+  + max
+  + current
+  + callback ?
++ Texture
+  + filepath (string)
++ Clickable
+  + function
++ Hoverable
+  + function
++ Scrollable
+  + min
+  + max
+  + currentScroll
+  + autoScroll (bool)
++ Effect
+  + ​
++ Audio
+  + filepath (string)
+  + loop (bool)
+  + volume 
++ Content
+  + text (string)
+  + max
+  + possible values (only numbers ? )
+  + masked (for passwords)
++ Camera
+  + Background (color)
+  + Field of view (float)
+  + PostProcessing effects (antialiasing, etc...)
 
 ## [Systems](./systems.md)
 
