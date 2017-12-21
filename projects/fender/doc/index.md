@@ -9,4 +9,4 @@ It might seem a bit complicated getting started with Fender. It's actually quite
 ## ECS
 > [Learn more !](./ecs.md)
 
-Fender is based on an ECS, not the best performance choice but the most modular. Its fun to use, and fairly easy.
+Fender is based on an ECS, not the best performance choice but the most modular. Its fun to use, and fairly easy. 
