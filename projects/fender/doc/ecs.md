@@ -54,7 +54,15 @@ or
 auto &bg = win.attach<Color>(Granite);
 ```
 
-Now the ```Meta System``` will know the window has a ```Color Component``` and will update the window with a Granite li
+Now the ```Meta System``` will know the window has a ```Color Component``` and will update the window with a Granite like background.
+
+You want to remove the background ?
+
+```
+win.detach<Color>();
+```
+
+And we're back to a normal window with a black background color;
 
 
 
