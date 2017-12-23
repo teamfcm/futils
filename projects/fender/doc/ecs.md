@@ -78,30 +78,33 @@ If you want to know more about systems, [follow this link](systems.md)
 
 ## [Entities](./entities.md)
 
-+ Window
++ [GameObject](./entities/GameObject.md)
+  + Transform
+  + Outline
+
+
++ [Window](./entities/Window.md)
   + Meta
   + Transform
   + Color
 + Camera
   + Transform
   + Camera
-+ Text
++ Grid : GameObject
+  + Grid
++ Text : GameObject
   + Text
-  + Transform
   + Color
-+ Sprite
-  + Transform
++ Sprite : GameObject
   + Image
   + Color
   + Texture
-+ Bar
-  + Transform
++ Bar : GameObject
   + Color
   + Text
   + Progressive
   + Texture
-+ Button
-  + Transform
++ Button : GameObject
   + Color
   + Image
   + Text
@@ -143,13 +146,14 @@ If you want to know more about systems, [follow this link](systems.md)
 
 ## [Components](./components.md)
 
-+ Meta
++ [Meta](./components/Meta.md)
   + name
   + style
 + Transform
   + position
   + scale
   + rotation
+  + isRelative
 + Color
   + color
 
