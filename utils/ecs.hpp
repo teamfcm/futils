@@ -109,6 +109,8 @@ namespace futils
         Compo       &attach(Args ...args)
         {
             verifIsComponent<Compo>();
+            if (components.find(futils::type<Compo>::index) != components.end())
+                throw std::runtime_error(std::string("Cannot have same component twice (") + typeid(Compo).name() + ")!");
             auto compo = new Compo(args...);
             compo->setTypeindex(futils::type<Compo>::index);
             compo->setEntity(*this);
@@ -134,6 +136,15 @@ namespace futils
             }
             throw std::runtime_error("Entity does not have requested component");
         };
+
+        template <typename Compo>
+        bool detach()
+        {
+            if (components.find(futils::type<Compo>::index) == components.end())
+                return false;
+            components.erase(futils::type<Compo>::index);
+            return true;
+        }
 
         int         getId() const { return this->_id; }
     };
