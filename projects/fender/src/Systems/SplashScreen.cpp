@@ -32,20 +32,10 @@ void fender::systems::SplashScreen::requestWindow()
 
 void fender::systems::SplashScreen::run(float)
 {
-    static futils::IntegralRange<int> range(0, futils::allColors.size());
-    static int counter{0};
-
+    // TODO: stateMachine.run();
     switch (phase) {
         case 0: return init();
         case 1: return requestWindow();
-        case 2:
-            counter++;
-            if (counter == 6)
-            {
-                auto &bg = win->get<fender::components::Meta>();
-                bg.setColor(futils::allColors[range.getRandom()]);
-                counter = 0;
-            }
-            break ;
+        case 2: return ;
     }
 }

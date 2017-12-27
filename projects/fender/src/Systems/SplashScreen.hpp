@@ -12,6 +12,15 @@
 
 namespace fender::systems {
     class SplashScreen : public futils::ISystem {
+        // TODO: futils::StateMachine<float> member of fender::systems::AStateMachine
+        enum Phase
+        {
+            Init = 0,
+            CreateWindow,
+            CreateLayout,
+            Loader
+        };
+
         int phase{0};
         void init();
         void requestWindow();
