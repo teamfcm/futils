@@ -8,14 +8,14 @@ Because fender is a game engine, its going to render to the screen. It matters l
 
 So the first system we'll implement is [Window]. What components does it handle ? 
 
-Yes. Unsurprisingly it handles (Window).
+(Meta) ! Yeah...
 
 > Insert screenshot of simple window (800x600)
 
-A (Window) is the data describing a basic Window. 
+A (Meta) is the data describing a basic Window. 
 
 ```c++
-class fender::Window : futils::IComponent
+class fender::Meta : futils::IComponent
 {
   std::string title;
   futils::Asset icon;
@@ -34,6 +34,12 @@ You could potentially have several cameras, switch between them whenever you wan
 The [Camera] handles, yet again unsurprisingly (Camera) components. 
 
 ```c++
+class fender::Camera : futils::IEntity
+{
+	(Camera)
+	(Children)
+};
+
 class fender::Camera : futils::IComponent
 {
 	// A Camera can target either an Object, or a point in space.
@@ -43,8 +49,15 @@ class fender::Camera : futils::IComponent
 		futils::Point
 	};
 	
-  std::string name;
-  Camera::Target target;
+	enum FollowMode
+    {
+    	Slow,
+    	Instant,
+    	DistanceFirst
+    };
+ 
+ 	std::string name;
+	Camera::Target target;
 };
 ```
 
@@ -58,6 +71,7 @@ So now we have a camera but nothing to film. Let's create a GameObject ! Its an 
 class GameObject : futils::IEntity
 {
 	(Transform) // Any object in the game needs to have a Position, rotation and scale.
+	(Children) // Any GameObject can have children.
 };
 
 class Sprite : GameObject
@@ -71,5 +85,9 @@ class WhiteSquare : Sprite
 };
 ```
 
+(Transform) indicates where the object is in the world. If you want to fix the object in the view (to make a gui object for example) you can use the (Children) of Camera. Therefore, whenever the Camera moves, all its Children move with it and stay in view. 
 
+(Transform) contains a position that will be used to know where to display content. Here's a simple image explaining how this works.
+
+> Insert screenshot of grid with basic sprite 
 
