@@ -60,11 +60,14 @@ class GameObject : futils::IEntity
 	(Transform) // Any object in the game needs to have a Position, rotation and scale.
 };
 
-class Square : GameObject
+class Sprite : GameObject
 {
 	(Image) // The Image component will contain image-size and image-path
+};
+
+class WhiteSquare : Sprite
+{
 	(Color) // We'll just add a filter to modify the pixels
-	(RigibBody) // Well, maybe it will be influenced by gravity ?
 };
 ```
 
