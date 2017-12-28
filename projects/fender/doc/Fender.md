@@ -39,8 +39,8 @@ class fender::Camera : futils::IComponent
 	// A Camera can target either an Object, or a point in space.
 	union Target
 	{
-      GameObject *,
-      futils::Point
+		GameObject *,
+		futils::Point
 	};
 	
   std::string name;

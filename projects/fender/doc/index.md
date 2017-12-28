@@ -2,6 +2,10 @@
 
 > Fender is a general purpose game engine in C++
 
+## Fender
+
+Fender is a huge project. If you want to know how it works, i'd recommend [starting here](./Fender).
+
 ## Where to start ? (WIP)
 
 It might seem a bit complicated getting started with Fender. It's actually quite simple.
