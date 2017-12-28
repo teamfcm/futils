@@ -70,7 +70,7 @@ For now, there is no error checking. By error, I mean what if you attached a com
 win.attach<onFire>();
 ```
 
-Well, it will work. But it won't have any impact. If you want to know more about how components affect your program, you can read either the documentation or the source code of the systems.
+Well, it will work. But it won't have any impact. If you want to know more about how components affect your program, you can read either the documentation or the source code of the systems. Beware what components you put together though, some combinations might not work as you'd expect, or work at all.
 
 If you want to know more about systems, [follow this link](systems.md)
 
