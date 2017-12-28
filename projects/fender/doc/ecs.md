@@ -74,6 +74,8 @@ Well, it will work. But it won't have any impact. If you want to know more about
 
 If you want to know more about systems, [follow this link](systems.md)
 
+**Also its recommended you [read this](./fender.md) before going further into details**
+
 
 
 ## [Entities](./entities.md)
