@@ -5,6 +5,7 @@
 #ifndef FENDER_RENDERER_HPP
 #define FENDER_RENDERER_HPP
 
+// TODO: Change CMAKELISTS.TXT to make this compile :)
 # include <SFML/Graphics.hpp>
 
 # include "ecs.hpp"

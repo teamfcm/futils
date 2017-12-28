@@ -116,7 +116,7 @@ namespace futils
             compo->setEntity(*this);
             this->components.insert(std::pair<futils::type_index, IComponent *>(compo->getTypeindex(), compo));
             if (onExtension(*compo) == false) {
-                lateinitComponents.push(std::pair(compo, [this, compo](){
+                lateinitComponents.push(std::pair<Compo *, std::function<void()>>(compo, [this, compo](){
                     events->send<ComponentAttached<Compo>>(*compo);
                 }));
             } else
