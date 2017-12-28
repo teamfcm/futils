@@ -5,9 +5,9 @@
 ```c++
 class Transform : public futils::IComponent
 {
-  	futils::Vec3f position;
-  	futils::Vec3f rotation;
-  	futils::Vec3f scale;
+	float rotation;
+	futils::Size size;
+	futils::Position position;
 };
 ```
 

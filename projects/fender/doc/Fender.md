@@ -91,3 +91,14 @@ class WhiteSquare : Sprite
 
 > Insert screenshot of grid with basic sprite 
 
+Notes :
+
+​	{Trinité}
+
+​	{Children} -> GameObject, 
+
+​	{ListView} -> GameObject, 
+
+​	(Transform), 
+
+​	(RelPos)
