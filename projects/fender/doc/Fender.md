@@ -14,12 +14,82 @@ So the first system we'll implement is [Window]. What components does it handle 
 
 A (Meta) is the data describing a basic Window. 
 
+### Component
+
 ```c++
 class fender::Meta : futils::IComponent
 {
-  std::string title;
-  futils::Asset icon;
-  futils::WStyle style;
+	std::string title; // Displayed title
+	futils::Asset icon; // Displayed Icon
+	futils::WStyle style; // Nobar, titlebar, etc...
+	vec2f position; // Where should the window open ?
+	vec2f size; // How big should the window be ?
+	bool visible{false}; // Should the system display this window ?
+    
+    // Updated by [Window] :
+	vec2f actualPosition;
+	vec2f actualSize;
+	vec2f screenSize;
+	bool isOpen{false};
+	bool isClosed{false};
+};
+```
+
+### Entity
+
+```c++
+class fender::Window : futils::IEntity
+{
+	(Window)
+	// Different constructors, does not really matter.
+	void open(); // Emits OpenWindow request unless already open
+	void close(); // Emits CloseWindow request unless already closed
+	void resize(vec2f updatedSize); // close() and open() window with updated size
+	void move(vec2f updatedPos); // close() and open() window with updated pos
+	void rename(std::string title); // Really ? You don't know ?
+};
+```
+
+### System
+
+#### Required Events
+
+```c++
+struct ComponentAttached<Window>
+{
+	Window &window;
+};
+
+struct ComponentDeleted<Window>
+{
+	Window &window;
+};
+```
+
+#### Events Emitted
+
+```c++
+struct WindowOpened
+{
+	Window &window;
+};
+
+struct WindowClosed
+{
+	Window &window;
+};
+```
+
+#### Run Pseudocode
+
+```c++
+void Window::run(float)
+{
+	// Events make it easy to track new and deprecated windows.
+  	if (window) was visible and is now hidden
+      	closeWindow and send WindowClosed
+    if (window) was hidden and is now visible
+      	openWindow and send WindowOpened
 };
 ```
 

@@ -1,4 +1,2 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/arroganz/cpp/futils/projects/fender
--- Configuring done
--- Generating done
--- Build files have been written to: /home/arroganz/cpp/futils/projects/fender/cmake-build-debug
+Visual Studio not found at: C:\Program Files (x86)\Microsoft Visual Studio\2017\Community
+CMake executable is incorrect
