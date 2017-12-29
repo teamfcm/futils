@@ -86,10 +86,10 @@ struct WindowClosed
 void Window::run(float)
 {
 	// Events make it easy to track new and deprecated windows.
-  	if (window) was visible and is now hidden
-      	closeWindow and send WindowClosed
-    if (window) was hidden and is now visible
-      	openWindow and send WindowOpened
+	if (window) was visible and is now hidden
+		closeWindow and send WindowClosed
+	if (window) was hidden and is now visible
+		openWindow and send WindowOpened
 };
 ```
 
@@ -97,27 +97,104 @@ void Window::run(float)
 
 Cool, we have Window, now let's build a {World} inside that Window !
 
+### Component
+
+```c++
+class World : futils::IComponent
+{
+	using GridUnit = float;
+	
+	std::string name; // ProximaCentauri B
+	GridUnit unit; // How many pixels does a square represent ?
+	Vec2<GridUnit> size; // So how big is it ? Where does the cam stop ?
+};
+```
+
+### Entity
+
 ```c++
 class World : futils::IEntity
 {
 	(World)
 };
+```
 
-class World : futils::IComponent
+### System
+
+#### Required Events
+
+```c++
+struct ComponentAttached<World>
 {
-	using GridUnit = float;
-	
-	std::string name;
-	float unit; // Describes grid unit (one square for unit pixels)
-	Vec2<GridUnit> size;
-	GameTime time; // InGame time
-	... // Basically, env variables.
+	World &world;
+};
+```
+
+```c++
+struct ComponentDeleted<World>
+{
+	World &world;
+};
+```
+
+#### Events Emitted
+
+```c++
+struct WorldResized
+{
+  	World &world;
+  	vec2<GridUnit> oldSize;
+};
+```
+
+```c++
+struct WorldRenamed
+{
+  	World &world;
+  	std::string oldName;
+};
+```
+
+```c++
+struct GridUnitUpdated
+{
+  	World &world;
+  	GridUnit old;
+}
+```
+
+#### Run pseudocode
+
+```c++
+void World::run(float)
+{
+	// Events make it easy to track new and deprecated worlds.
+	if (world).size has changed // Resize the world when loading another chunk or level ?
+		resizeWorld and send WorldResized
+	if (world).name has changed // Rename the world... yeah... ?
+		send WorldRenamed
+	if (world).unit has changed // TimeSpace continuum breach ?
+      	send GridUnitUpdated
+}
+```
+
+## GameObject
+
+Yay, we have given birth to a World. Let's create a GameObject ! Its an entity, but what is it made of ?
+
+### Entity
+
+```c++
+class GameObject : futils::IEntity
+{
+	(Transform)
+	(Border) // This component is useful for debugging (so its.. optional)
 };
 ```
 
 ## Camera
 
-Having a window is good. But what is it going to display ? In order to display anything, a camera is required.
+Having a window is good. Setting the basic world variables is better. Having GameObjects is GREAT. Actually **SEING ANYTHING WOULD BE NICE**. Enter : the Camera.
 
 You could potentially have several cameras, switch between them whenever you want or need to. You cannot however have several cameras rendering at the same time (for now ?).
 
@@ -125,13 +202,9 @@ You could potentially have several cameras, switch between them whenever you wan
 
 The [Camera] handles, unsurprisingly (Camera) components. 
 
-```c++
-class fender::Camera : GameObject
-{
-	(Camera)
-	(Children)
-};
+### Component
 
+```c++
 class fender::Camera : futils::IComponent
 {
 	// A Camera can target either an Object, or a point in space.
@@ -153,39 +226,29 @@ class fender::Camera : futils::IComponent
 };
 ```
 
+### Entity
+
+```c++
+class Camera : GameObject
+{
+	(Camera)
+	(Children)
+};
+```
+
+### System
+
+#### Required Events
+
+#### Events emitted
+
+#### Run pseudocode
+
 As you can see, a camera is a simple thing. You give it a name and you specify what you want to follow.
 
 Its main purpose is to determine which entities are visible (and should therefore be rendered) and which are not. Then, dedicated systems will simply access "visible" entities through the (Visible) and render them as they like.
 
 > Insert screenshot of grid
-
-## GameObject
-
-So now we have a camera but nothing to film. Let's create a GameObject ! Its an entity, but what is it made of ?
-
-```c++
-class GameObject : futils::IEntity
-{
-	(Transform) // Any object in the game needs to have a Position, rotation and scale.
-	(Children) // Any GameObject can have children.
-};
-
-class Sprite : GameObject
-{
-	(Image) // The Image component will contain image-size and image-path
-};
-
-class WhiteSquare : Sprite
-{
-	(Color) // We'll just add a filter to modify the pixels
-};
-```
-
-(Transform) indicates where the object is in the world. If you want to fix the object in the view (to make a gui object for example) you can use the (Children) of Camera. Therefore, whenever the Camera moves, all its Children move with it and stay in view. 
-
-(Transform) contains a position that will be used to know where to display content. Here's a simple image explaining how this works.
-
-> Insert screenshot of grid with basic sprite 
 
 ## GUI
 
