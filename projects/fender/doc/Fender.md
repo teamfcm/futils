@@ -23,6 +23,28 @@ class fender::Meta : futils::IComponent
 };
 ```
 
+## World
+
+Cool, we have Window, now let's build a {World} inside that Window !
+
+```c++
+class World : futils::IEntity
+{
+	(World)
+};
+
+class World : futils::IComponent
+{
+	using GridUnit = float;
+	
+	std::string name;
+	float unit; // Describes grid unit (one square for unit pixels)
+	Vec2<GridUnit> size;
+	GameTime time; // InGame time
+	... // Basically, env variables.
+};
+```
+
 ## Camera
 
 Having a window is good. But what is it going to display ? In order to display anything, a camera is required.
@@ -31,10 +53,10 @@ You could potentially have several cameras, switch between them whenever you wan
 
 > Insert screenshot of camera focus point (crosshair)
 
-The [Camera] handles, yet again unsurprisingly (Camera) components. 
+The [Camera] handles, unsurprisingly (Camera) components. 
 
 ```c++
-class fender::Camera : futils::IEntity
+class fender::Camera : GameObject
 {
 	(Camera)
 	(Children)
@@ -62,6 +84,10 @@ class fender::Camera : futils::IComponent
 ```
 
 As you can see, a camera is a simple thing. You give it a name and you specify what you want to follow.
+
+Its main purpose is to determine which entities are visible (and should therefore be rendered) and which are not. Then, dedicated systems will simply access "visible" entities through the (Visible) and render them as they like.
+
+> Insert screenshot of grid
 
 ## GameObject
 
@@ -91,14 +117,175 @@ class WhiteSquare : Sprite
 
 > Insert screenshot of grid with basic sprite 
 
-Notes :
+## GUI
 
-​	{Trinité}
+But before you can have a game, it would be nice to have a Menu ! But a Menu is an object that is glued to the camera view, not "in" the world. So how are going to place that object, since **everything** is in GridUnit position ?
 
-​	{Children} -> GameObject, 
+Well, here comes the Children mechanic.
 
-​	{ListView} -> GameObject, 
+### Children
 
-​	(Transform), 
+```c++
+class Children : futils::IComponent
+{
+	using Container = std::vector<GameObject>;
+	
+	Container children;
+};
+```
 
-​	(RelPos)
+This component indicates that the entity transfers its transformations (movement, rotation, scale) to all its children. This can be used to create a **logic** bound between entities. 
+
+> Insert screenshot of ship and drone rotation around it.
+
+You need to indicate where the child is relatively to its parent.
+
+```c++
+class ChildInfo : futils::IComponent
+{
+	bool gridUnit{false}; // By default, position is in pourcentage
+	Vec2<float> relPos;
+};
+```
+
+For example, you could say an object is 10% (relative to the parent height) above another one, or that it's one GridUnit above. 
+
+**Why are we talking about children ? I thought we were talking about GUI ?**
+
+Well exactly, GUI are GameObjects, they exist in the world, but they follow the Camera to be "always" visible.
+
+So we simply make our GUI objects children of the Camera.
+
+```c++
+class SomeSystem : futils::ISystem
+{
+  	World world;
+	Camera cam;
+	Button exit;
+}
+
+void SomeSystem::init() {
+  	auto &gui = cam.get<Children>();
+	gui.add(exit);
+	auto &exitPos = exit.get<ChildInfo>();
+	exitPos.relPos.x = 10;
+	exitPos.relPos.y = 10;
+	exit.onClick = [this](){
+		this->shouldStop = true;
+	};
+}
+
+void SomeSystem::run() {
+	if (shouldStop)
+    	this->stop();
+}
+
+```
+
+When you make ```exit``` a child of ```cam```, a new component is added ```ChildInfo```, which describes how the child is positioned relativ to its parent. But it can be a bit tiresome to write positions all the time relative to the camera. What if you had 2, 3 or more buttons ? So here comes... **ListView** !
+
+### ListView
+
+```c++
+class SomeSystem : futils::ISystem
+{
+  	World world;
+	Camera cam;
+	ListView mainMenu;
+};
+
+void SomeSystem::init() {
+	mainMenu.direction = Directions::TopDown;
+  	auto &gui = cam.get<Children>();
+	gui.add(mainMenu);
+	
+	auto &menuPos = mainMenu.get<ChildInfo>();
+	menuPos.relPos.x = 10;
+	menuPos.relPos.y = 10;
+	
+	auto &size = mainMenu.get<Transform>();
+	size.x = 50;
+	size.y = 80;
+	
+    auto exit = Button("Quit", [this](){
+    	this->shouldStop = true;
+    });
+    
+    mainMenu.push_back(exit);
+    mainMenu.emplace_front<Button>("Play", [this](){
+    	this->entityManager->addSystem<MyGame>();
+    	this->shouldStop = true;
+    });
+}
+
+void SomeSystem::run() {
+	if (shouldStop)
+    	this->stop();
+}
+```
+
+Pretty neat right ? As you can see you can push already existing elements, or build them in place.
+
+```c++
+class ListView : GameObject
+{
+	(ListView)
+	void push_back(GameObject &);
+	void push_front(GameObject &);
+	void insert(GameObject &, int index);
+	template <typename T, typename ...Args>
+	T &emplace_back(Args ...args);
+	template <typename T, typename ...Args>
+	T &emplace_front(Args ...args);
+};
+
+class ListView : futils::IComponent
+{
+	using Container = std::vector<GameObject>;
+	
+	Container elements;
+};
+```
+
+Quite like the Children mechanics, elements added to a ListView are attached (ViewInfo).
+
+```c++
+class ViewInfo : futils::IComponent
+{
+  	futils::Pct margin;
+};
+```
+
+## Text
+
+// Ok c'est cool mais comment j'affiche un texte pour l'utilisateur ? 
+
+// Exemples : label de barre de chargement, version du moteur, titre du jeu...
+
+{Text}
+
+```c++
+class Text : futils::IEntity
+{
+	(Text)
+	(Color)
+	(Progressiv)?
+	(Center)?
+	...
+};
+
+class Text : futils::IComponent
+{
+	using Lang = int;
+	
+	std::unordered_map<Lang, std::string> content;
+	futils::FontInfo font;
+};
+```
+
+## InputEvents
+
+
+
+## Config
+
