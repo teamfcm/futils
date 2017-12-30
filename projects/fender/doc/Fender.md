@@ -128,9 +128,7 @@ struct ComponentAttached<World>
 {
 	World &world;
 };
-```
 
-```c++
 struct ComponentDeleted<World>
 {
 	World &world;
@@ -145,17 +143,13 @@ struct WorldResized
   	World &world;
   	vec2<GridUnit> oldSize;
 };
-```
 
-```c++
 struct WorldRenamed
 {
   	World &world;
   	std::string oldName;
 };
-```
 
-```c++
 struct GridUnitUpdated
 {
   	World &world;
@@ -182,11 +176,21 @@ void World::run(float)
 
 Yay, we have given birth to a World. Let's create a GameObject ! Its an entity, but what is it made of ?
 
+### Component 
+
+```c++
+class GameObject : futils::IComponent
+{
+	bool visible;
+};
+```
+
 ### Entity
 
 ```c++
 class GameObject : futils::IEntity
 {
+	(GameObject)
 	(Transform)
 	(Border) // This component is useful for debugging (so its.. optional)
 };
@@ -194,26 +198,21 @@ class GameObject : futils::IEntity
 
 ## Camera
 
+> Used to know what to display, and some world related information. Does not display GameObjects.
+
 Having a window is good. Setting the basic world variables is better. Having GameObjects is GREAT. Actually **SEING ANYTHING WOULD BE NICE**. Enter : the Camera.
 
-You could potentially have several cameras, switch between them whenever you want or need to. You cannot however have several cameras rendering at the same time (for now ?).
+The goal of the Camera is to determine which entities are in view. This is a crucial system in the engine. Note that you could potentially have several cameras, switch between them whenever you want or need to. 
 
-> Insert screenshot of camera focus point (crosshair)
+It displays a crosshair at the center of the screen and another crosshair on the target if it has one. And maybe there'll be a vector displayed when the camera moves towards its target. And it may display some following-mode related information. And of course, it'll display the grid.
 
-The [Camera] handles, unsurprisingly (Camera) components. 
+> Insert screenshot of camera with grid and focus point.
 
 ### Component
 
 ```c++
 class fender::Camera : futils::IComponent
 {
-	// A Camera can target either an Object, or a point in space.
-	union Target
-	{
-		GameObject *,
-		futils::Point
-	};
-	
 	enum FollowMode
     {
     	Slow,
@@ -222,7 +221,7 @@ class fender::Camera : futils::IComponent
     };
  
  	std::string name;
-	Camera::Target target;
+	GameObject *target{nullptr};
 };
 ```
 
@@ -231,22 +230,69 @@ class fender::Camera : futils::IComponent
 ```c++
 class Camera : GameObject
 {
-	(Camera)
-	(Children)
+	(Camera) // Obviously.
+	(Children) // Used for the GUI, you'll soon understand why.
 };
 ```
 
 ### System
 
+```c++
+class Camera : futils::ISystem
+{
+	std::vector<entities::GameObjects> gameObjects; 
+public:
+	void run(float) override;
+};
+```
+
 #### Required Events
+
+```c++
+struct ComponentAttached<GameObject>
+{
+	GameObject &go;
+};
+
+struct ComponentDeleted<GameObject>
+{
+	GameObject &go;
+};
+```
 
 #### Events emitted
 
+```c++
+struct GameObjectEnteredView
+{
+	GameObject &go;
+	Camera &cam;
+};
+
+struct GameObjectLeftView
+{
+	GameObject &go;
+  	Camera &cam;
+};
+```
+
 #### Run pseudocode
 
-As you can see, a camera is a simple thing. You give it a name and you specify what you want to follow.
-
-Its main purpose is to determine which entities are visible (and should therefore be rendered) and which are not. Then, dedicated systems will simply access "visible" entities through the (Visible) and render them as they like.
+```c++
+void Camera::run(float f)
+{
+	auto &activeCam = getActiveCam();
+	for (auto &go: gameObjects)
+    {
+      	bool visible = go.visible;
+      	updateView(go);
+		if (go) was visible but is not anymore
+          markOutOfView(go) and send GameObjectLeftView
+		if (go) enters view
+          markInView(go) and send GameObjectEnteredView
+    }
+};
+```
 
 > Insert screenshot of grid
 
