@@ -106,7 +106,7 @@ class World : futils::IComponent
 	
 	std::string name; // ProximaCentauri B
 	GridUnit unit; // How many pixels does a square represent ?
-	Vec2<GridUnit> size; // So how big is it ? Where does the cam stop ?
+	Vec3<GridUnit> size; // So how big is it ? Where does the cam stop ? (x, y, z)
 };
 ```
 
@@ -204,9 +204,9 @@ Having a window is good. Setting the basic world variables is better. Having Gam
 
 The goal of the Camera is to determine which entities are in view. This is a crucial system in the engine. Note that you could potentially have several cameras, switch between them whenever you want or need to. 
 
-It displays a crosshair at the center of the screen and another crosshair on the target if it has one. And maybe there'll be a vector displayed when the camera moves towards its target. And it may display some following-mode related information. And of course, it'll display the grid.
+**So, even [Camera] doesn't display anything ? wtf ?**
 
-> Insert screenshot of camera with grid and focus point.
+Yeah.. but soon you'll understand why !
 
 ### Component
 
@@ -274,6 +274,17 @@ struct GameObjectLeftView
 	GameObject &go;
   	Camera &cam;
 };
+
+struct RenderingLayer // This event is crucial ! All rendering systems should care.
+{
+  	int z-index; // Which layer is to be rendered
+	const Container &objects; // And which objects are on that layer
+};
+
+struct RenderingDone // When all visible layers are rendered.
+{
+	
+};
 ```
 
 #### Run pseudocode
@@ -282,7 +293,8 @@ struct GameObjectLeftView
 void Camera::run(float f)
 {
 	auto &activeCam = getActiveCam();
-	for (auto &go: gameObjects)
+	Sort gameObjects by z-index (anything "behind" is not visible and anything "too far")
+    Foreach gameObject (go) :
     {
       	bool visible = go.visible;
       	updateView(go);
@@ -294,7 +306,25 @@ void Camera::run(float f)
 };
 ```
 
-> Insert screenshot of grid
+## GridRenderer
+
+> This system displays the grid over everything else.
+
+### System
+
+#### Required events
+
+```c++
+struct RenderingDone
+{
+  
+};
+// -> Reaction is to display the grid over everything else
+```
+
+#### Events emitted
+
+#### Run pseudocode
 
 ## GUI
 
