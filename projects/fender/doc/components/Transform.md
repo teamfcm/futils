@@ -6,7 +6,7 @@
 class Transform : public futils::IComponent
 {
 	float rotation;
-	Vec2<GridUnit> size;
+	Vec3<GridUnit> size;
 	futils::Position position;
 };
 ```

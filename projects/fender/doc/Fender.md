@@ -8,11 +8,11 @@ Because fender is a game engine, its going to render to the screen. It matters l
 
 So the first system we'll implement is [Window]. What components does it handle ? 
 
-(Meta) ! Yeah...
+(Window) ! Yeah...
 
 > Insert screenshot of simple window (800x600)
 
-A (Meta) is the data describing a basic Window. 
+A (Window) is the data describing a basic Window. 
 
 ### Component
 
@@ -41,12 +41,6 @@ class fender::Meta : futils::IComponent
 class fender::Window : futils::IEntity
 {
 	(Window)
-	// Different constructors, does not really matter.
-	void open(); // Emits OpenWindow request unless already open
-	void close(); // Emits CloseWindow request unless already closed
-	void resize(vec2f updatedSize); // close() and open() window with updated size
-	void move(vec2f updatedPos); // close() and open() window with updated pos
-	void rename(std::string title); // Really ? You don't know ?
 };
 ```
 
@@ -219,9 +213,10 @@ class fender::Camera : futils::IComponent
     	Instant,
     	DistanceFirst
     };
- 
+    
  	std::string name;
 	GameObject *target{nullptr};
+	FollowMode followMode;
 };
 ```
 
@@ -235,12 +230,20 @@ class Camera : GameObject
 };
 ```
 
+**Note: The size of the camera will be updated by [Camera], you should not touch it.**
+
 ### System
 
 ```c++
 class Camera : futils::ISystem
 {
-	std::vector<entities::GameObjects> gameObjects; 
+	struct Layer
+    {
+    	int index;
+    	std::vector<entities::GameObjects *> objects;
+    }
+	std::vector<entities::GameObjects *> gameObjects;
+	std::unordered_map<int, Layer> layers;
 public:
 	void run(float) override;
 };
@@ -292,17 +295,22 @@ struct RenderingDone // When all visible layers are rendered.
 ```c++
 void Camera::run(float f)
 {
+  if its time to refresh the screen (60 fps cap) run
+    otherwise return
+    
 	auto &activeCam = getActiveCam();
 	Sort gameObjects by z-index (anything "behind" is not visible and anything "too far")
     Foreach gameObject (go) :
     {
       	bool visible = go.visible;
-      	updateView(go);
+      	updateView(go); // Checks z-index first, then distance to cam.
 		if (go) was visible but is not anymore
           markOutOfView(go) and send GameObjectLeftView
 		if (go) enters view
           markInView(go) and send GameObjectEnteredView
     }
+  For each valid z-index (from further to closer)
+    send RenderingLayer event with index and map
 };
 ```
 
@@ -324,21 +332,34 @@ struct RenderingDone
 
 #### Events emitted
 
+```c++
+struct GridRendered
+{
+	
+};
+```
+
 #### Run pseudocode
 
-## GUI
+> Insert screenshot of grid
+
+## ImageRenderer
+
+// Now that we have a framework for modular rendering, we can code an independant system that displays images. It will wait for the RenderingLayer event, and for each entity, take (Image) and render it to the screen.
+
+It does not need to check the position, the camera has done that for him before.
+
+________
 
 But before you can have a game, it would be nice to have a Menu ! But a Menu is an object that is glued to the camera view, not "in" the world. So how are going to place that object, since **everything** is in GridUnit position ?
 
-Well, here comes the Children mechanic.
+Well, here comes the Children feature.
 
-### Children
+## Children
 
 ```c++
 class Children : futils::IComponent
 {
-	using Container = std::vector<GameObject>;
-	
 	Container children;
 };
 ```
@@ -352,8 +373,8 @@ You need to indicate where the child is relatively to its parent.
 ```c++
 class ChildInfo : futils::IComponent
 {
-	bool gridUnit{false}; // By default, position is in pourcentage
-	Vec2<float> relPos;
+	bool gridUnit{false}; // By default, position is in percentage of parent size
+	Vec3<float> relPos; // 3d position, because why not? fender is 2.5d!
 };
 ```
 
@@ -361,7 +382,7 @@ For example, you could say an object is 10% (relative to the parent height) abov
 
 **Why are we talking about children ? I thought we were talking about GUI ?**
 
-Well exactly, GUI are GameObjects, they exist in the world, but they follow the Camera to be "always" visible.
+Well exactly, GUI are GameObjects, they exist in the world, but they follow the Camera, therefore they are "always" visible.
 
 So we simply make our GUI objects children of the Camera.
 
@@ -391,79 +412,83 @@ void SomeSystem::run() {
 
 ```
 
-When you make ```exit``` a child of ```cam```, a new component is added ```ChildInfo```, which describes how the child is positioned relativ to its parent. But it can be a bit tiresome to write positions all the time relative to the camera. What if you had 2, 3 or more buttons ? So here comes... **ListView** !
+When you make ```exit``` a child of ```cam```, a new component is added ```ChildInfo```, which describes how the child is positioned relativ to its parent. But it can be a bit tiresome to write positions all the time relative to the camera. What if you had 2, 3 or more buttons ? So here comes... **View** !
 
-### ListView
+## View
+
+### Component
 
 ```c++
-class SomeSystem : futils::ISystem
+class View : futils::IComponent
 {
-  	World world;
-	Camera cam;
-	ListView mainMenu;
-};
-
-void SomeSystem::init() {
-	mainMenu.direction = Directions::TopDown;
-  	auto &gui = cam.get<Children>();
-	gui.add(mainMenu);
-	
-	auto &menuPos = mainMenu.get<ChildInfo>();
-	menuPos.relPos.x = 10;
-	menuPos.relPos.y = 10;
-	
-	auto &size = mainMenu.get<Transform>();
-	size.x = 50;
-	size.y = 80;
-	
-    auto exit = Button("Quit", [this](){
-    	this->shouldStop = true;
-    });
+	enum Direction
+    {
+		Vertical,
+		Horizontal
+    };
     
-    mainMenu.push_back(exit);
-    mainMenu.emplace_front<Button>("Play", [this](){
-    	this->entityManager->addSystem<MyGame>();
-    	this->shouldStop = true;
-    });
-}
-
-void SomeSystem::run() {
-	if (shouldStop)
-    	this->stop();
+    enum HorizontalAlignment
+    {
+		Left = 0,
+		Center,
+		Right
+    };
+    
+    enum VerticalAlignment
+    {
+		Top,
+		Middle,
+		Bottom
+    };
+    
+	Container<GameObjects> content;
+	Direction direction;
+	HorizontalAlignment h-align;
+	VerticalAlignment v-align;
+	bool reverse{false};
 }
 ```
 
-Pretty neat right ? As you can see you can push already existing elements, or build them in place.
+### Entity
 
 ```c++
-class ListView : GameObject
+class View : GameObject
 {
-	(ListView)
-	void push_back(GameObject &);
-	void push_front(GameObject &);
-	void insert(GameObject &, int index);
-	template <typename T, typename ...Args>
-	T &emplace_back(Args ...args);
-	template <typename T, typename ...Args>
-	T &emplace_front(Args ...args);
-};
-
-class ListView : futils::IComponent
-{
-	using Container = std::vector<GameObject>;
-	
-	Container elements;
+	(View)
 };
 ```
 
-Quite like the Children mechanics, elements added to a ListView are attached (ViewInfo).
+### System
+
+Quite like the Children mechanics, elements added to a View are attached (ViewInfo) to specify how to be handled in the View.
 
 ```c++
 class ViewInfo : futils::IComponent
 {
-  	futils::Pct margin;
+	Vec4<futils::Pct> padding;
+  	Vec4<futils::Pct> margins;
+  	VerticalAlignment v-align;
+  	HorizontalAlignment h-align;
 };
 ```
+
+#### Required Events
+
+#### Events Emitted
+
+#### Run pseudocode
+
+```c++
+void systems::View::run(float)
+{
+	foreach view in views:
+		if view has no content continue
+		else foreach elem in view.content:
+			recursively update from parent to child base on elem.(ViewInfo)
+}
+```
+
+**Note: This is a good example of systems optimization. First, we'll iterate over every (View), sometimes updating the same (View) several times per run. Then, with a better implementation, we could keep a tree of view and update recursively from top to bottom with only one update per view per run.**
 
 ## Text
 
