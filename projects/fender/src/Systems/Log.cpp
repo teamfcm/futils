@@ -3,11 +3,12 @@
 //
 
 #include <ini.hpp>
+#include <events.hpp>
 #include "Log.hpp"
 
 fender::systems::Log::Log()
 {
-
+    name = "Log";
 }
 
 void fender::systems::Log::init() {
@@ -17,6 +18,9 @@ void fender::systems::Log::init() {
              [this](futils::IMediatorPacket &pkg) {
         auto &s = futils::Mediator::rebuild<std::string>(pkg);
         LOUT("LOG => " + s);
+    });
+    addReaction<events::Shutdown>([this](futils::IMediatorPacket &){
+       entityManager->removeSystem(name);
     });
 }
 

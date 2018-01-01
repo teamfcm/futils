@@ -31,26 +31,56 @@ namespace fender::systems::SFMLSystems
 
     void Window::onNewWindow(Component &win)
     {
-        _windows[win.title] = &win;
+        auto &real = _windows[win.title];
+        real.data = &win;
         auto mode = sf::VideoMode::getDesktopMode();
         win.screenSize.w = mode.width;
         win.screenSize.h = mode.height;
+        std::cout << "New Win : " << win.title << std::endl;
     }
 
     void Window::init()
     {
+        __init();
         phase = RUN;
         requireEvents();
     }
 
-    void Window::open(Component &)
+    void Window::open(RealWindow &real)
     {
-        
+        auto &data = *real.data;
+        if (real.win == nullptr)
+        {
+            real.win = new sf::RenderWindow(sf::VideoMode(data.size.w, data.size.h), data.title);
+            if (real.win->isOpen()) {
+                data.isOpen = true;
+                data.isClose = false;
+            }
+        }
     }
 
-    void Window::close(Component &)
+    void Window::close(RealWindow &real)
     {
+        auto &data = *real.data;
+        if (real.win != nullptr)
+        {
+            real.win->close();
+            data.isOpen = false;
+            data.isClose = true;
+        }
+    }
 
+    void Window::pollEvents(RealWindow &real)
+    {
+        sf::Event event;
+        int count{0};
+
+        while (real.win->pollEvent(event)) {
+            events->send<sf::Event>(event);
+            count++;
+        }
+        if (count > 0)
+            events->send<std::string>("Processed " + std::to_string(count) + " events for window " + real.data->title);
     }
 
     void Window::run(float)
@@ -61,11 +91,12 @@ namespace fender::systems::SFMLSystems
             case RUN:
                 for (auto &pair: _windows)
                 {
-                    auto win = pair.second;
-                    if (win->visible && !win->isOpen)
-                        open(*win);
-                    if (!win->visible && win->isOpen)
-                        close(*win);
+                    auto &real = pair.second;
+                    if (real.data->visible && !real.data->isOpen)
+                        open(real);
+                    else if (!real.data->visible && real.data->isOpen)
+                        close(real);
+                    pollEvents(real);
                 }
                 return ;
         }

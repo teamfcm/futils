@@ -36,6 +36,7 @@
 				<Compiler>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/demo/include"/>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/demo/utils"/>
+					<Add directory="/home/arroganz/cpp/futils/projects/fender/demo/../src"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward"/>
@@ -60,6 +61,7 @@
 				<Compiler>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/demo/include"/>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/demo/utils"/>
+					<Add directory="/home/arroganz/cpp/futils/projects/fender/demo/../src"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward"/>
@@ -87,6 +89,12 @@
 			</Target>
 		</Build>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/demo/src/App/App.cpp">
+			<Option target="demo"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/WindowTest.cpp">
+			<Option target="demo"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/WindowTest.hpp">
 			<Option target="demo"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/demo/src/main.cpp">

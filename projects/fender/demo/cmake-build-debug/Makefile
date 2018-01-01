@@ -150,6 +150,33 @@ src/App/App.cpp.s:
 	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/App/App.cpp.s
 .PHONY : src/App/App.cpp.s
 
+src/App/Modules/WindowTest.o: src/App/Modules/WindowTest.cpp.o
+
+.PHONY : src/App/Modules/WindowTest.o
+
+# target to build an object file
+src/App/Modules/WindowTest.cpp.o:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/App/Modules/WindowTest.cpp.o
+.PHONY : src/App/Modules/WindowTest.cpp.o
+
+src/App/Modules/WindowTest.i: src/App/Modules/WindowTest.cpp.i
+
+.PHONY : src/App/Modules/WindowTest.i
+
+# target to preprocess a source file
+src/App/Modules/WindowTest.cpp.i:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/App/Modules/WindowTest.cpp.i
+.PHONY : src/App/Modules/WindowTest.cpp.i
+
+src/App/Modules/WindowTest.s: src/App/Modules/WindowTest.cpp.s
+
+.PHONY : src/App/Modules/WindowTest.s
+
+# target to generate assembly for a file
+src/App/Modules/WindowTest.cpp.s:
+	$(MAKE) -f CMakeFiles/demo.dir/build.make CMakeFiles/demo.dir/src/App/Modules/WindowTest.cpp.s
+.PHONY : src/App/Modules/WindowTest.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... src/App/App.o"
 	@echo "... src/App/App.i"
 	@echo "... src/App/App.s"
+	@echo "... src/App/Modules/WindowTest.o"
+	@echo "... src/App/Modules/WindowTest.i"
+	@echo "... src/App/Modules/WindowTest.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
