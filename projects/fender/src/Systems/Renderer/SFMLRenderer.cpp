@@ -12,7 +12,7 @@ fender::systems::SFMLRenderer::SFMLRenderer()
 
 void fender::systems::SFMLRenderer::init() {
     state = NONE;
-    entityManager->addSystem<Meta>();
+    entityManager->addSystem<Window>();
 //    entityManager->addSystem<Box>();
 }
 
