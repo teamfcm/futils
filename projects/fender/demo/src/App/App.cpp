@@ -3,6 +3,7 @@
 //
 
 # include "App.hpp"
+#include "Modules/WindowTest.hpp"
 
 demo::App::App(int, char *argv[]):
         execPath(argv[0])
@@ -13,6 +14,7 @@ demo::App::App(int, char *argv[]):
 int demo::App::start() {
     if (engine->start() != 0)
         return -1;
+    engine->addSystem<WindowTest>();
     return 0;
 }
 

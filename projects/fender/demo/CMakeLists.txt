@@ -22,10 +22,11 @@ endfunction()
 
 set(SOURCE_FILES
 		src/main.cpp
-		src/App/App.cpp)
+		src/App/App.cpp
+		src/App/Modules/WindowTest.cpp)
 
 add_executable(demo ${SOURCE_FILES})
-include_directories(include utils)
+include_directories(include utils ../src)
 set_target_properties(demo PROPERTIES RUNTIME_OUTPUT_DIRECTORY ../)
 if (UNIX)
 target_compile_options(demo PUBLIC -W -Wall -Werror -Wextra)

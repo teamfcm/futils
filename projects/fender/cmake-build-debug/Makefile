@@ -258,6 +258,33 @@ src/Systems/Log.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Log.cpp.s
 .PHONY : src/Systems/Log.cpp.s
 
+src/Systems/SFML/Input.o: src/Systems/SFML/Input.cpp.o
+
+.PHONY : src/Systems/SFML/Input.o
+
+# target to build an object file
+src/Systems/SFML/Input.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o
+.PHONY : src/Systems/SFML/Input.cpp.o
+
+src/Systems/SFML/Input.i: src/Systems/SFML/Input.cpp.i
+
+.PHONY : src/Systems/SFML/Input.i
+
+# target to preprocess a source file
+src/Systems/SFML/Input.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.i
+.PHONY : src/Systems/SFML/Input.cpp.i
+
+src/Systems/SFML/Input.s: src/Systems/SFML/Input.cpp.s
+
+.PHONY : src/Systems/SFML/Input.s
+
+# target to generate assembly for a file
+src/Systems/SFML/Input.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.s
+.PHONY : src/Systems/SFML/Input.cpp.s
+
 src/Systems/SFML/SFMLRenderer.o: src/Systems/SFML/SFMLRenderer.cpp.o
 
 .PHONY : src/Systems/SFML/SFMLRenderer.o
@@ -336,6 +363,9 @@ help:
 	@echo "... src/Systems/Log.o"
 	@echo "... src/Systems/Log.i"
 	@echo "... src/Systems/Log.s"
+	@echo "... src/Systems/SFML/Input.o"
+	@echo "... src/Systems/SFML/Input.i"
+	@echo "... src/Systems/SFML/Input.s"
 	@echo "... src/Systems/SFML/SFMLRenderer.o"
 	@echo "... src/Systems/SFML/SFMLRenderer.i"
 	@echo "... src/Systems/SFML/SFMLRenderer.s"

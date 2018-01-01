@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+../../src/Components/Window.hpp
+fender.hpp
+../../src/Components/fender.hpp
+
+../../src/Entities/Window.hpp
+fender.hpp
+../../src/Entities/fender.hpp
+Components/Window.hpp
+../../src/Entities/Components/Window.hpp
+
 ../include/App.hpp
 fender.hpp
 ../include/fender.hpp
@@ -41,18 +51,8 @@ ecs.hpp
 ../include/ecs.hpp
 mediator.hpp
 ../include/mediator.hpp
-requests.hpp
-../include/requests.hpp
 events.hpp
 ../include/events.hpp
-
-../include/requests.hpp
-math.hpp
-../include/math.hpp
-mediator.hpp
-../include/mediator.hpp
-ecs.hpp
-../include/ecs.hpp
 rendering.hpp
 ../include/rendering.hpp
 
@@ -162,6 +162,8 @@ map
 log.hpp
 ../utils/log.hpp
 
+../utils/inputKeys.hpp
+
 ../utils/log.hpp
 iostream
 -
@@ -177,6 +179,8 @@ futils.hpp
 ../utils/math.hpp
 utility
 -
+range.hpp
+../utils/range.hpp
 
 ../utils/mediator.hpp
 functional
@@ -188,10 +192,18 @@ datapacket.hpp
 ini.hpp
 ../utils/ini.hpp
 
+../utils/range.hpp
+random
+-
+
 ../utils/rendering.hpp
+vector
+-
 stddef.h
 -
 iostream
+-
+string
 -
 math.hpp
 ../utils/math.hpp
@@ -211,6 +223,20 @@ fstring.hpp
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/App.cpp
 App.hpp
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/App.hpp
+Modules/WindowTest.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/WindowTest.hpp
+
+/home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/WindowTest.cpp
+WindowTest.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/WindowTest.hpp
+inputKeys.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/inputKeys.hpp
+
+/home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/WindowTest.hpp
+fender.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/fender.hpp
+Entities/Window.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/Entities/Window.hpp
 
 /home/arroganz/cpp/futils/projects/fender/demo/src/main.cpp
 App.hpp

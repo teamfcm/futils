@@ -28,14 +28,16 @@ int fender::Fender::start() {
     addSystem<systems::Log>();
     addSystem<systems::SFMLRenderer>();
     LOUT(std::to_string(entityManager->getNumberOfSystems()) + " systems loaded.");
-    return 0;
+    return entityManager->run(); // this will init all systems
 }
 
 int fender::Fender::run() {
-    int runs = 0;
+    int64_t runs = 0;
     for (;entityManager->getNumberOfSystems() > 0; runs++) {
-        entityManager->run();
+        if (entityManager->run() != 0)
+            break ;
     }
-    LOUT("Manager done running. Ran " + std::to_string(runs) + " times.");
+    events->send<events::Shutdown>();
+    events->send<std::string>("Fender shutting down. Ran " + std::to_string(runs) + " times.");
     return 0;
 }

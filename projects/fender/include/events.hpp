@@ -9,7 +9,10 @@
 # include "math.hpp"
 
 namespace fender::events {
+    struct Shutdown // A simple message to shutdown every system in the engine.
+    {
 
+    };
 }
 
 #endif //FENDER_EVENTS_HPP

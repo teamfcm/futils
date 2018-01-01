@@ -123,6 +123,12 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Log.hpp">
 			<Option target="fender"/>
 		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Input.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Input.hpp">
+			<Option target="fender"/>
+		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/SFMLRenderer.cpp">
 			<Option target="fender"/>
 		</Unit>
@@ -178,6 +184,9 @@
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/ini.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/inputKeys.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/log.hpp">

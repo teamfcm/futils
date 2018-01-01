@@ -153,9 +153,33 @@ CMakeFiles/fender.dir/src/Systems/Log.cpp.o.provides: CMakeFiles/fender.dir/src/
 CMakeFiles/fender.dir/src/Systems/Log.cpp.o.provides.build: CMakeFiles/fender.dir/src/Systems/Log.cpp.o
 
 
+CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o: CMakeFiles/fender.dir/flags.make
+CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o: ../src/Systems/SFML/Input.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o -c /home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Input.cpp
+
+CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Input.cpp > CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.i
+
+CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Input.cpp -o CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.s
+
+CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o.requires:
+
+.PHONY : CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o.requires
+
+CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o.provides: CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o.requires
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o.provides.build
+.PHONY : CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o.provides
+
+CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o.provides.build: CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o
+
+
 CMakeFiles/fender.dir/src/Systems/SFML/SFMLRenderer.cpp.o: CMakeFiles/fender.dir/flags.make
 CMakeFiles/fender.dir/src/Systems/SFML/SFMLRenderer.cpp.o: ../src/Systems/SFML/SFMLRenderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/fender.dir/src/Systems/SFML/SFMLRenderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/fender.dir/src/Systems/SFML/SFMLRenderer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fender.dir/src/Systems/SFML/SFMLRenderer.cpp.o -c /home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/SFMLRenderer.cpp
 
 CMakeFiles/fender.dir/src/Systems/SFML/SFMLRenderer.cpp.i: cmake_force
@@ -179,7 +203,7 @@ CMakeFiles/fender.dir/src/Systems/SFML/SFMLRenderer.cpp.o.provides.build: CMakeF
 
 CMakeFiles/fender.dir/src/Systems/SFML/Window.cpp.o: CMakeFiles/fender.dir/flags.make
 CMakeFiles/fender.dir/src/Systems/SFML/Window.cpp.o: ../src/Systems/SFML/Window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/fender.dir/src/Systems/SFML/Window.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/fender.dir/src/Systems/SFML/Window.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fender.dir/src/Systems/SFML/Window.cpp.o -c /home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Window.cpp
 
 CMakeFiles/fender.dir/src/Systems/SFML/Window.cpp.i: cmake_force
@@ -203,7 +227,7 @@ CMakeFiles/fender.dir/src/Systems/SFML/Window.cpp.o.provides.build: CMakeFiles/f
 
 CMakeFiles/fender.dir/src/Fender.cpp.o: CMakeFiles/fender.dir/flags.make
 CMakeFiles/fender.dir/src/Fender.cpp.o: ../src/Fender.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/fender.dir/src/Fender.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/fender.dir/src/Fender.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/fender.dir/src/Fender.cpp.o -c /home/arroganz/cpp/futils/projects/fender/src/Fender.cpp
 
 CMakeFiles/fender.dir/src/Fender.cpp.i: cmake_force
@@ -231,6 +255,7 @@ fender_OBJECTS = \
 "CMakeFiles/fender.dir/src/Components/Box.cpp.o" \
 "CMakeFiles/fender.dir/src/Components/Window.cpp.o" \
 "CMakeFiles/fender.dir/src/Systems/Log.cpp.o" \
+"CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o" \
 "CMakeFiles/fender.dir/src/Systems/SFML/SFMLRenderer.cpp.o" \
 "CMakeFiles/fender.dir/src/Systems/SFML/Window.cpp.o" \
 "CMakeFiles/fender.dir/src/Fender.cpp.o"
@@ -242,12 +267,13 @@ libfender.a: CMakeFiles/fender.dir/src/Entities/Window.cpp.o
 libfender.a: CMakeFiles/fender.dir/src/Components/Box.cpp.o
 libfender.a: CMakeFiles/fender.dir/src/Components/Window.cpp.o
 libfender.a: CMakeFiles/fender.dir/src/Systems/Log.cpp.o
+libfender.a: CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o
 libfender.a: CMakeFiles/fender.dir/src/Systems/SFML/SFMLRenderer.cpp.o
 libfender.a: CMakeFiles/fender.dir/src/Systems/SFML/Window.cpp.o
 libfender.a: CMakeFiles/fender.dir/src/Fender.cpp.o
 libfender.a: CMakeFiles/fender.dir/build.make
 libfender.a: CMakeFiles/fender.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX static library libfender.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX static library libfender.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/fender.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/fender.dir/link.txt --verbose=$(VERBOSE)
 
@@ -260,6 +286,7 @@ CMakeFiles/fender.dir/requires: CMakeFiles/fender.dir/src/Entities/Window.cpp.o.
 CMakeFiles/fender.dir/requires: CMakeFiles/fender.dir/src/Components/Box.cpp.o.requires
 CMakeFiles/fender.dir/requires: CMakeFiles/fender.dir/src/Components/Window.cpp.o.requires
 CMakeFiles/fender.dir/requires: CMakeFiles/fender.dir/src/Systems/Log.cpp.o.requires
+CMakeFiles/fender.dir/requires: CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o.requires
 CMakeFiles/fender.dir/requires: CMakeFiles/fender.dir/src/Systems/SFML/SFMLRenderer.cpp.o.requires
 CMakeFiles/fender.dir/requires: CMakeFiles/fender.dir/src/Systems/SFML/Window.cpp.o.requires
 CMakeFiles/fender.dir/requires: CMakeFiles/fender.dir/src/Fender.cpp.o.requires

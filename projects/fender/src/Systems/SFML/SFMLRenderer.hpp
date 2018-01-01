@@ -11,6 +11,7 @@
 # include "ecs.hpp"
 # include "events.hpp"
 # include "rendering.hpp"
+# include "System.hpp"
 
 namespace fender::systems {
     class SFMLRenderer : public futils::ISystem {

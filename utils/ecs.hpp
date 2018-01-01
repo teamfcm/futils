@@ -128,9 +128,7 @@ namespace futils
                     events->send<ComponentAttached<Compo>>(*compo);
                 }));
             } else
-            {
                 events->send<ComponentAttached<Compo>>(*compo);
-            }
             return *compo;
         };
 
@@ -173,7 +171,7 @@ namespace futils
     class   EntityManager
     {
         int                                     status{0};
-        std::multimap<std::string, ISystem *>   systemsMap;
+        std::unordered_map<std::string, ISystem *>   systemsMap;
         std::queue<std::string> systemsMarkedForErase;
         //      Container        CompoName    Entity
         std::unordered_multimap<futils::type_index, IComponent *> components;
@@ -213,11 +211,13 @@ namespace futils
         {
             if (!std::is_base_of<ISystem, System>::value)
                 throw std::logic_error(std::string(typeid(System).name()) + " is not a System");
-            // Smart Pointer
+            // TODO : Smart Pointer !!
             auto system = new System(args...);
             system->provideManager(*this);
             system->provideMediator(*events);
+            std::cout << "System " << system->getName() << " loaded." << std::endl;
             this->systemsMap.insert(std::pair<std::string, ISystem *>(system->getName(), system));
+            std::cout << "Systems loaded : " << systemsMap.size() << std::endl;
         }
 
         void removeSystem(std::string const &systemName)
@@ -257,19 +257,37 @@ namespace futils
             return systemsMap.size();
         }
 
-        void        run()
+        int run()
         {
-            auto elapsed = timeKeeper.loop();
-            for (auto &pair: systemsMap)
+            try {
+                auto elapsed = timeKeeper.loop();
+                for (auto &pair: systemsMap) {
+                    auto &system = pair.second;
+                    system->run(elapsed);
+                }
+                while (!systemsMarkedForErase.empty()) {
+                    std::cout << "Marked for erase : " << systemsMarkedForErase.size() << std::endl;
+                    auto &name = systemsMarkedForErase.front();
+                    std::cout << "Searching " << name << std::endl;
+                    auto system = systemsMap.at(name);
+                    systemsMap.erase(name);
+                    systemsMarkedForErase.pop();
+                    delete system;
+                    events->send<std::string>("[" + name + "] shutdown.");
+                    std::cout << "Systems loaded : " << systemsMap.size() << std::endl;
+                    if (systemsMarkedForErase.empty() == false)
+                        std::cout << "Next in queue : " << systemsMarkedForErase.front() << std::endl;
+                }
+            } catch (std::out_of_range const &)
             {
-                auto &system = pair.second;
-                system->run(elapsed);
-            }
-            while (!systemsMarkedForErase.empty()) {
-                auto &name = systemsMarkedForErase.front();
-                systemsMap.erase(name);
+                std::cout << "Failed to erase " << systemsMarkedForErase.front() << std::endl;
                 systemsMarkedForErase.pop();
+            } catch (std::exception const &error)
+            {
+                std::cerr << "Fender encountered a fatal error while running : " << error.what() << std::endl;
+                return 1;
             }
+            return 0;
         }
     };
 }
