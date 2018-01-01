@@ -3,7 +3,7 @@
 //
 
 #include "SFMLRenderer.hpp"
-#include "Meta.hpp"
+#include "Window.hpp"
 
 fender::systems::SFMLRenderer::SFMLRenderer()
 {
@@ -12,8 +12,7 @@ fender::systems::SFMLRenderer::SFMLRenderer()
 
 void fender::systems::SFMLRenderer::init() {
     state = NONE;
-    entityManager->addSystem<Window>();
-//    entityManager->addSystem<Box>();
+    entityManager->addSystem<SFMLSystems::Window>();
 }
 
 void fender::systems::SFMLRenderer::run(float)

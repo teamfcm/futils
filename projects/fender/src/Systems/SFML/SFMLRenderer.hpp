@@ -10,7 +10,6 @@
 
 # include "ecs.hpp"
 # include "events.hpp"
-# include "requests.hpp"
 # include "rendering.hpp"
 
 namespace fender::systems {
@@ -23,6 +22,7 @@ namespace fender::systems {
         };
         State state{INIT};
 
+        void requireEvents();
         void init();
     public:
         SFMLRenderer();
