@@ -150,32 +150,32 @@ src/Components/Box.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Box.cpp.s
 .PHONY : src/Components/Box.cpp.s
 
-src/Components/Meta.o: src/Components/Meta.cpp.o
+src/Components/Window.o: src/Components/Window.cpp.o
 
-.PHONY : src/Components/Meta.o
+.PHONY : src/Components/Window.o
 
 # target to build an object file
-src/Components/Meta.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Meta.cpp.o
-.PHONY : src/Components/Meta.cpp.o
+src/Components/Window.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Window.cpp.o
+.PHONY : src/Components/Window.cpp.o
 
-src/Components/Meta.i: src/Components/Meta.cpp.i
+src/Components/Window.i: src/Components/Window.cpp.i
 
-.PHONY : src/Components/Meta.i
+.PHONY : src/Components/Window.i
 
 # target to preprocess a source file
-src/Components/Meta.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Meta.cpp.i
-.PHONY : src/Components/Meta.cpp.i
+src/Components/Window.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Window.cpp.i
+.PHONY : src/Components/Window.cpp.i
 
-src/Components/Meta.s: src/Components/Meta.cpp.s
+src/Components/Window.s: src/Components/Window.cpp.s
 
-.PHONY : src/Components/Meta.s
+.PHONY : src/Components/Window.s
 
 # target to generate assembly for a file
-src/Components/Meta.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Meta.cpp.s
-.PHONY : src/Components/Meta.cpp.s
+src/Components/Window.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Window.cpp.s
+.PHONY : src/Components/Window.cpp.s
 
 src/Entities/Window.o: src/Entities/Window.cpp.o
 
@@ -258,113 +258,59 @@ src/Systems/Log.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Log.cpp.s
 .PHONY : src/Systems/Log.cpp.s
 
-src/Systems/Renderer/Meta.o: src/Systems/Renderer/Meta.cpp.o
+src/Systems/SFML/SFMLRenderer.o: src/Systems/SFML/SFMLRenderer.cpp.o
 
-.PHONY : src/Systems/Renderer/Meta.o
-
-# target to build an object file
-src/Systems/Renderer/Meta.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.o
-.PHONY : src/Systems/Renderer/Meta.cpp.o
-
-src/Systems/Renderer/Meta.i: src/Systems/Renderer/Meta.cpp.i
-
-.PHONY : src/Systems/Renderer/Meta.i
-
-# target to preprocess a source file
-src/Systems/Renderer/Meta.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.i
-.PHONY : src/Systems/Renderer/Meta.cpp.i
-
-src/Systems/Renderer/Meta.s: src/Systems/Renderer/Meta.cpp.s
-
-.PHONY : src/Systems/Renderer/Meta.s
-
-# target to generate assembly for a file
-src/Systems/Renderer/Meta.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Renderer/Meta.cpp.s
-.PHONY : src/Systems/Renderer/Meta.cpp.s
-
-src/Systems/Renderer/SFMLRenderer.o: src/Systems/Renderer/SFMLRenderer.cpp.o
-
-.PHONY : src/Systems/Renderer/SFMLRenderer.o
+.PHONY : src/Systems/SFML/SFMLRenderer.o
 
 # target to build an object file
-src/Systems/Renderer/SFMLRenderer.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.o
-.PHONY : src/Systems/Renderer/SFMLRenderer.cpp.o
+src/Systems/SFML/SFMLRenderer.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/SFMLRenderer.cpp.o
+.PHONY : src/Systems/SFML/SFMLRenderer.cpp.o
 
-src/Systems/Renderer/SFMLRenderer.i: src/Systems/Renderer/SFMLRenderer.cpp.i
+src/Systems/SFML/SFMLRenderer.i: src/Systems/SFML/SFMLRenderer.cpp.i
 
-.PHONY : src/Systems/Renderer/SFMLRenderer.i
+.PHONY : src/Systems/SFML/SFMLRenderer.i
 
 # target to preprocess a source file
-src/Systems/Renderer/SFMLRenderer.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.i
-.PHONY : src/Systems/Renderer/SFMLRenderer.cpp.i
+src/Systems/SFML/SFMLRenderer.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/SFMLRenderer.cpp.i
+.PHONY : src/Systems/SFML/SFMLRenderer.cpp.i
 
-src/Systems/Renderer/SFMLRenderer.s: src/Systems/Renderer/SFMLRenderer.cpp.s
+src/Systems/SFML/SFMLRenderer.s: src/Systems/SFML/SFMLRenderer.cpp.s
 
-.PHONY : src/Systems/Renderer/SFMLRenderer.s
+.PHONY : src/Systems/SFML/SFMLRenderer.s
 
 # target to generate assembly for a file
-src/Systems/Renderer/SFMLRenderer.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Renderer/SFMLRenderer.cpp.s
-.PHONY : src/Systems/Renderer/SFMLRenderer.cpp.s
+src/Systems/SFML/SFMLRenderer.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/SFMLRenderer.cpp.s
+.PHONY : src/Systems/SFML/SFMLRenderer.cpp.s
 
-src/Systems/Renderer/WindowManager.o: src/Systems/Renderer/WindowManager.cpp.o
+src/Systems/SFML/Window.o: src/Systems/SFML/Window.cpp.o
 
-.PHONY : src/Systems/Renderer/WindowManager.o
+.PHONY : src/Systems/SFML/Window.o
 
 # target to build an object file
-src/Systems/Renderer/WindowManager.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.o
-.PHONY : src/Systems/Renderer/WindowManager.cpp.o
+src/Systems/SFML/Window.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Window.cpp.o
+.PHONY : src/Systems/SFML/Window.cpp.o
 
-src/Systems/Renderer/WindowManager.i: src/Systems/Renderer/WindowManager.cpp.i
+src/Systems/SFML/Window.i: src/Systems/SFML/Window.cpp.i
 
-.PHONY : src/Systems/Renderer/WindowManager.i
-
-# target to preprocess a source file
-src/Systems/Renderer/WindowManager.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.i
-.PHONY : src/Systems/Renderer/WindowManager.cpp.i
-
-src/Systems/Renderer/WindowManager.s: src/Systems/Renderer/WindowManager.cpp.s
-
-.PHONY : src/Systems/Renderer/WindowManager.s
-
-# target to generate assembly for a file
-src/Systems/Renderer/WindowManager.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Renderer/WindowManager.cpp.s
-.PHONY : src/Systems/Renderer/WindowManager.cpp.s
-
-src/Systems/SplashScreen.o: src/Systems/SplashScreen.cpp.o
-
-.PHONY : src/Systems/SplashScreen.o
-
-# target to build an object file
-src/Systems/SplashScreen.cpp.o:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.o
-.PHONY : src/Systems/SplashScreen.cpp.o
-
-src/Systems/SplashScreen.i: src/Systems/SplashScreen.cpp.i
-
-.PHONY : src/Systems/SplashScreen.i
+.PHONY : src/Systems/SFML/Window.i
 
 # target to preprocess a source file
-src/Systems/SplashScreen.cpp.i:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.i
-.PHONY : src/Systems/SplashScreen.cpp.i
+src/Systems/SFML/Window.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Window.cpp.i
+.PHONY : src/Systems/SFML/Window.cpp.i
 
-src/Systems/SplashScreen.s: src/Systems/SplashScreen.cpp.s
+src/Systems/SFML/Window.s: src/Systems/SFML/Window.cpp.s
 
-.PHONY : src/Systems/SplashScreen.s
+.PHONY : src/Systems/SFML/Window.s
 
 # target to generate assembly for a file
-src/Systems/SplashScreen.cpp.s:
-	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SplashScreen.cpp.s
-.PHONY : src/Systems/SplashScreen.cpp.s
+src/Systems/SFML/Window.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Window.cpp.s
+.PHONY : src/Systems/SFML/Window.cpp.s
 
 # Help Target
 help:
@@ -378,9 +324,9 @@ help:
 	@echo "... src/Components/Box.o"
 	@echo "... src/Components/Box.i"
 	@echo "... src/Components/Box.s"
-	@echo "... src/Components/Meta.o"
-	@echo "... src/Components/Meta.i"
-	@echo "... src/Components/Meta.s"
+	@echo "... src/Components/Window.o"
+	@echo "... src/Components/Window.i"
+	@echo "... src/Components/Window.s"
 	@echo "... src/Entities/Window.o"
 	@echo "... src/Entities/Window.i"
 	@echo "... src/Entities/Window.s"
@@ -390,18 +336,12 @@ help:
 	@echo "... src/Systems/Log.o"
 	@echo "... src/Systems/Log.i"
 	@echo "... src/Systems/Log.s"
-	@echo "... src/Systems/Renderer/Meta.o"
-	@echo "... src/Systems/Renderer/Meta.i"
-	@echo "... src/Systems/Renderer/Meta.s"
-	@echo "... src/Systems/Renderer/SFMLRenderer.o"
-	@echo "... src/Systems/Renderer/SFMLRenderer.i"
-	@echo "... src/Systems/Renderer/SFMLRenderer.s"
-	@echo "... src/Systems/Renderer/WindowManager.o"
-	@echo "... src/Systems/Renderer/WindowManager.i"
-	@echo "... src/Systems/Renderer/WindowManager.s"
-	@echo "... src/Systems/SplashScreen.o"
-	@echo "... src/Systems/SplashScreen.i"
-	@echo "... src/Systems/SplashScreen.s"
+	@echo "... src/Systems/SFML/SFMLRenderer.o"
+	@echo "... src/Systems/SFML/SFMLRenderer.i"
+	@echo "... src/Systems/SFML/SFMLRenderer.s"
+	@echo "... src/Systems/SFML/Window.o"
+	@echo "... src/Systems/SFML/Window.i"
+	@echo "... src/Systems/SFML/Window.s"
 .PHONY : help
 
 

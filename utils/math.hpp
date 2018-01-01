@@ -39,6 +39,37 @@ namespace futils
         }
     };
 
+    template <typename T>
+    struct Vec3
+    {
+        union
+        {
+            T x;
+            T w;
+        };
+        union
+        {
+            T y;
+            T h;
+        };
+        T z;
+
+        Vec3()
+        {
+
+        }
+        Vec3(Vec3 const &other):
+                x(other.x), y(other.y), z(other.z)
+        {
+
+        }
+        Vec3(T &&a, T &&b, T &&c):
+                x(std::forward<T>(a)), y(std::forward<T>(b)), z(std::forward<T>(c))
+        {
+
+        }
+    };
+    
     class Pct
     {
         float value;

@@ -12,8 +12,9 @@
 # include "dloader.hpp"
 # include "ecs.hpp"
 # include "mediator.hpp"
-# include "requests.hpp"
 # include "events.hpp"
+# include "rendering.hpp"
+
 # define QUOTE(str) #str
 # define EXPAND_AND_QUOTE(str) QUOTE(str)
 
@@ -26,6 +27,11 @@ namespace futils
 
 namespace fender
 {
+    using vec2f = futils::Vec2<float>;
+    using vec3f = futils::Vec3<float>;
+    using vec2i = futils::Vec2<int>;
+    using vec3i = futils::Vec3<int>;
+
     class Fender
     {
         futils::UP<futils::EntityManager> entityManager;

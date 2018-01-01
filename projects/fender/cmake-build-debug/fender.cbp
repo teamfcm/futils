@@ -37,6 +37,7 @@
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/release"/>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/include"/>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/utils"/>
+					<Add directory="/home/arroganz/cpp/futils/projects/fender/src"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward"/>
@@ -62,6 +63,7 @@
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/release"/>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/include"/>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/utils"/>
+					<Add directory="/home/arroganz/cpp/futils/projects/fender/src"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward"/>
@@ -88,19 +90,10 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/components.hpp">
-			<Option target="fender"/>
-		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/events.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/fender.hpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/requests.hpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/systems.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Box.cpp">
@@ -109,10 +102,10 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Box.hpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Meta.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Window.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Meta.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Window.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Entities/Window.cpp">
@@ -130,28 +123,19 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Log.hpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/Meta.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/SFMLRenderer.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/Meta.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/SFMLRenderer.hpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/SFMLRenderer.cpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/System.hpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/SFMLRenderer.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Window.cpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/WindowManager.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Renderer/WindowManager.hpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SplashScreen.cpp">
-			<Option target="fender"/>
-		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SplashScreen.hpp">
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Window.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/IniManager.hpp">

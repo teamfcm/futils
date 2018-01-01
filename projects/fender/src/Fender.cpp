@@ -5,8 +5,7 @@
 # include "fender.hpp"
 # include "goToBinDir.hpp"
 # include "Systems/Log.hpp"
-# include "Systems/Renderer/SFMLRenderer.hpp"
-# include "Systems/SplashScreen.hpp"
+# include "Systems/SFML/SFMLRenderer.hpp"
 
 extern "C" fender::Fender *Fender(std::string const &execPath) {
     return new fender::Fender(execPath);
@@ -28,7 +27,6 @@ void fender::Fender::loadSystemDir(std::string const &path)
 int fender::Fender::start() {
     addSystem<systems::Log>();
     addSystem<systems::SFMLRenderer>();
-    addSystem<systems::SplashScreen>();
     LOUT(std::to_string(entityManager->getNumberOfSystems()) + " systems loaded.");
     return 0;
 }

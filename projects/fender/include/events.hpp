@@ -9,18 +9,7 @@
 # include "math.hpp"
 
 namespace fender::events {
-    struct WindowOpened
-    {
-        using vec = futils::Vec2<int>;
-        vec pos;
-        vec size;
-    };
 
-    struct MetaCreated
-    {
-        std::string const &name;
-        explicit MetaCreated(std::string const &metaName): name(metaName) {}
-    };
 }
 
 #endif //FENDER_EVENTS_HPP

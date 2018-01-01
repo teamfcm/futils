@@ -70,6 +70,14 @@ namespace futils
         std::string const &getName() const { return name; }
     };
 
+    class StateSystem : public ISystem
+    {
+    protected:
+        int phase{0};
+    public:
+        virtual void run(float elapsed = 0) = 0;
+    };
+
     template <typename T>
     class ComponentAttached
     {
