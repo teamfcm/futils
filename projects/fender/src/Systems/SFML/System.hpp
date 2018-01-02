@@ -2,8 +2,7 @@
 // Created by arroganz on 1/1/18.
 //
 
-#ifndef FENDER_SYSTEM_HPP
-#define FENDER_SYSTEM_HPP
+#pragma once
 
 # include "fender.hpp"
 
@@ -31,5 +30,3 @@ namespace fender::systems::SFMLSystems
         virtual ~System() {}
     };
 }
-
-#endif //FENDER_SYSTEM_HPP

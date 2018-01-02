@@ -7,10 +7,14 @@
 
 # include "fender.hpp"
 # include "Entities/Window.hpp"
+# include "Entities/Input.hpp"
 
 class WindowTest : public futils::ISystem {
     fender::entities::Window *window{nullptr};
-    std::function<void()> onEscape{[](){}};
+    fender::entities::Input *input{nullptr};
+
+    void initWindow();
+    void initInputs();
 public:
     WindowTest(){
         name = "WindowTest";

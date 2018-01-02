@@ -6,9 +6,21 @@
 
 #IncludeRegexTransform: 
 
+../../src/Components/Input.hpp
+fender.hpp
+../../src/Components/fender.hpp
+inputKeys.hpp
+../../src/Components/inputKeys.hpp
+
 ../../src/Components/Window.hpp
 fender.hpp
 ../../src/Components/fender.hpp
+
+../../src/Entities/Input.hpp
+fender.hpp
+../../src/Entities/fender.hpp
+Components/Input.hpp
+../../src/Entities/Components/Input.hpp
 
 ../../src/Entities/Window.hpp
 fender.hpp
@@ -243,6 +255,8 @@ fender.hpp
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/fender.hpp
 Entities/Window.hpp
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/Entities/Window.hpp
+Entities/Input.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/Entities/Input.hpp
 
 /home/arroganz/cpp/futils/projects/fender/demo/src/main.cpp
 App.hpp

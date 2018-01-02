@@ -2,8 +2,7 @@
 // Created by arroganz on 12/18/17.
 //
 
-#ifndef FENDER_META_HPP
-#define FENDER_META_HPP
+#pragma once
 
 # include "fender.hpp"
 
@@ -32,5 +31,3 @@ namespace fender::components {
         return os;
     }
 }
-
-#endif //FENDER_META_HPP

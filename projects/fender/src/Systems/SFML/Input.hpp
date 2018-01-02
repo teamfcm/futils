@@ -2,15 +2,17 @@
 // Created by arroganz on 1/1/18.
 //
 
-#ifndef FENDER_INPUT_HPP
-#define FENDER_INPUT_HPP
+#pragma once
 
 # include "System.hpp"
+# include "Components/Input.hpp"
 
 namespace fender::systems::SFMLSystems
 {
     class Input : public System
     {
+        using Component = components::Input;
+
         enum States
         {
             Init = 0,
@@ -25,5 +27,3 @@ namespace fender::systems::SFMLSystems
         void run(float) override;
     };
 }
-
-#endif //FENDER_INPUT_HPP

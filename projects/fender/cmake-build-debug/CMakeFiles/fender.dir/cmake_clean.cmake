@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/fender.dir/src/Entities/Input.cpp.o"
   "CMakeFiles/fender.dir/src/Entities/Window.cpp.o"
-  "CMakeFiles/fender.dir/src/Components/Box.cpp.o"
+  "CMakeFiles/fender.dir/src/Components/Input.cpp.o"
   "CMakeFiles/fender.dir/src/Components/Window.cpp.o"
   "CMakeFiles/fender.dir/src/Systems/Log.cpp.o"
   "CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o"
