@@ -10,12 +10,10 @@
 
 class WindowTest : public futils::ISystem {
     fender::entities::Window *window{nullptr};
+    std::function<void()> onEscape{[](){}};
 public:
     WindowTest(){
         name = "WindowTest";
-        afterDeath = [](futils::EntityManager *em){
-            em->addSystem<WindowTest>();
-        };
     }
     ~WindowTest() override
     {
