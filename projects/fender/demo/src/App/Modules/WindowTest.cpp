@@ -20,10 +20,24 @@ void WindowTest::run(float) {
             win.position.y = 200;
             win.visible = true;
 
+            onEscape = [this](){
+                events->send<fender::events::Shutdown>();
+                entityManager->removeSystem(name);
+            };
+
             addReaction<futils::Input>([this](futils::IMediatorPacket &pkg){
                 auto &input = futils::Mediator::rebuild<futils::Input>(pkg);
                 if (input == futils::Input::Escape) {
-                    entityManager->removeSystem(name);
+                    onEscape();
+                }
+                if (input == futils::Input::Return)
+                {
+                    onEscape = [this](){
+                        entityManager->removeSystem(name);
+                    };
+                    afterDeath = [](futils::EntityManager *em){
+                        em->addSystem<WindowTest>();
+                    };
                 }
             });
             addReaction<fender::events::Shutdown>([this](futils::IMediatorPacket &){

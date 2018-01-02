@@ -197,7 +197,7 @@ namespace futils
         std::unordered_map<std::string, ISystem *>   systemsMap;
         futils::Queue<std::string> systemsMarkedForErase;
         std::unordered_multimap<futils::type_index, IComponent *> components;
-        std::list<std::unique_ptr<IEntity>> entities;
+        std::list<IEntity *> entities;
         futils::Clock<float> timeKeeper;
         futils::Mediator *events{nullptr};
     public:
@@ -212,7 +212,7 @@ namespace futils
                 throw std::logic_error(std::string(typeid(T).name()) + " is not an Entity");
             auto entity = new T(args...);
             entity->events = events;
-            entities.push_front(std::unique_ptr<IEntity>(entity));
+            entities.push_front(entity);
             entity->onExtension = [this](IComponent &compo) {
                 components.insert(std::pair<futils::type_index, IComponent *>
 					(compo.getTypeindex(), &compo));
