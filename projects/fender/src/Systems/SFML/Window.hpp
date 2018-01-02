@@ -20,8 +20,9 @@ namespace fender::systems::SFMLSystems
         {
             sf::RenderWindow *win{nullptr};
             Component *data{nullptr};
+            Component copy;
         };
-        using WindowContainer = std::unordered_map<std::string, RealWindow>;
+        using WindowContainer = std::unordered_map<Component *, RealWindow>;
         enum States
         {
             INIT = 0,
@@ -30,6 +31,8 @@ namespace fender::systems::SFMLSystems
 
         WindowContainer _windows;
 
+
+        void updateTitle(RealWindow &real);
         void pollEvents(RealWindow &real);
         void open(RealWindow &);
         void close(RealWindow &);

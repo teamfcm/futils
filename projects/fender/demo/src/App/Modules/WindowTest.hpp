@@ -13,6 +13,13 @@ class WindowTest : public futils::ISystem {
 public:
     WindowTest(){
         name = "WindowTest";
+        afterDeath = [](futils::EntityManager *em){
+            em->addSystem<WindowTest>();
+        };
+    }
+    ~WindowTest() override
+    {
+        delete window;
     }
     void run(float) override;
 };

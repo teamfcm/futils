@@ -18,25 +18,34 @@ namespace fender::systems::SFMLSystems
                     onNewWindow(*win);
             }
         });
-        // TODO: ComponentDeleted event
-//        addReaction<futils::ComponentDeleted<Window_c>([this](futils::IMediatorPacket &pkg){
-//            onWindowDestroyed(pkg);
-//        });
+        addReaction<futils::ComponentDeleted<Component>>([this](futils::IMediatorPacket &pkg){
+            auto components = entityManager->get<Component>();
+            auto &packet = futils::Mediator::rebuild<futils::ComponentDeleted<Component>>(pkg);
+            for (auto &win: components)
+            {
+                if (win->title == packet.compo.title)
+                    onWindowDestroyed(*win);
+            }
+        });
     }
 
     void Window::onWindowDestroyed(Component &win)
     {
-        _windows.erase(win.title);
+        std::cout << "Trying to close : " << win.title << " at " << &win << std::endl;
+        if (_windows.find(&win) == _windows.end())
+            return ;
+        auto &real = _windows.at(&win);
+        close(real);
     }
 
     void Window::onNewWindow(Component &win)
     {
-        auto &real = _windows[win.title];
+        auto &real = _windows[&win];
+        std::cout << "Stored new window " << win.title << " at " << &win << std::endl;
         real.data = &win;
         auto mode = sf::VideoMode::getDesktopMode();
         win.screenSize.w = mode.width;
         win.screenSize.h = mode.height;
-        std::cout << "New Win : " << win.title << std::endl;
     }
 
     void Window::init()
@@ -48,6 +57,8 @@ namespace fender::systems::SFMLSystems
 
     void Window::open(RealWindow &real)
     {
+        if (real.win != nullptr)
+            return ;
         auto &data = *real.data;
         if (real.win == nullptr)
         {
@@ -56,11 +67,14 @@ namespace fender::systems::SFMLSystems
                 data.isOpen = true;
                 data.isClose = false;
             }
+            real.copy = *real.data;
         }
     }
 
     void Window::close(RealWindow &real)
     {
+        if (real.win == nullptr)
+            return ;
         auto &data = *real.data;
         if (real.win != nullptr)
         {
@@ -72,6 +86,9 @@ namespace fender::systems::SFMLSystems
 
     void Window::pollEvents(RealWindow &real)
     {
+        if (real.win == nullptr)
+            return ;
+
         sf::Event event;
         int count{0};
 
@@ -83,6 +100,18 @@ namespace fender::systems::SFMLSystems
             events->send<std::string>("Processed " + std::to_string(count) + " events for window " + real.data->title);
     }
 
+    void Window::updateTitle(RealWindow &real)
+    {
+        if (real.win == nullptr)
+            return ;
+
+        if (real.copy.title != real.data->title)
+        {
+            real.win->setTitle(real.data->title);
+            real.copy.title = real.data->title;
+        }
+    }
+
     void Window::run(float)
     {
         switch (phase)
@@ -92,10 +121,11 @@ namespace fender::systems::SFMLSystems
                 for (auto &pair: _windows)
                 {
                     auto &real = pair.second;
-                    if (real.data->visible && !real.data->isOpen)
+                    if (real.data->visible)
                         open(real);
-                    else if (!real.data->visible && real.data->isOpen)
+                    else
                         close(real);
+                    updateTitle(real);
                     pollEvents(real);
                 }
                 return ;

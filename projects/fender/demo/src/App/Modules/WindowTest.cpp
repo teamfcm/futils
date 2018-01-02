@@ -23,8 +23,11 @@ void WindowTest::run(float) {
             addReaction<futils::Input>([this](futils::IMediatorPacket &pkg){
                 auto &input = futils::Mediator::rebuild<futils::Input>(pkg);
                 if (input == futils::Input::Escape) {
-                    events->send<fender::events::Shutdown>();
+                    entityManager->removeSystem(name);
                 }
+            });
+            addReaction<fender::events::Shutdown>([this](futils::IMediatorPacket &){
+                entityManager->removeSystem(name);
             });
         }
     }

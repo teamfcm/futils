@@ -19,6 +19,7 @@ CMakeFiles/demo.dir/src/App/App.cpp.o
  ../utils/log.hpp
  ../utils/math.hpp
  ../utils/mediator.hpp
+ ../utils/queue.hpp
  ../utils/range.hpp
  ../utils/rendering.hpp
  ../utils/types.hpp
@@ -41,6 +42,7 @@ CMakeFiles/demo.dir/src/App/Modules/WindowTest.cpp.o
  ../utils/log.hpp
  ../utils/math.hpp
  ../utils/mediator.hpp
+ ../utils/queue.hpp
  ../utils/range.hpp
  ../utils/rendering.hpp
  ../utils/types.hpp
@@ -62,6 +64,7 @@ CMakeFiles/demo.dir/src/main.cpp.o
  ../utils/log.hpp
  ../utils/math.hpp
  ../utils/mediator.hpp
+ ../utils/queue.hpp
  ../utils/range.hpp
  ../utils/rendering.hpp
  ../utils/types.hpp
