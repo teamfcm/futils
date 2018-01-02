@@ -10,6 +10,11 @@
 
 namespace futils
 {
+    inline int pairingFunction(int a, int b)
+    {
+        return (1/2) * (a + b) * (a + b + 1) + b;
+    }
+
     template <typename T>
     struct Vec2
     {

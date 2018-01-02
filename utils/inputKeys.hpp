@@ -2,8 +2,7 @@
 // Created by arroganz on 1/1/18.
 //
 
-#ifndef FENDER_INPUTKEYS_HPP
-#define FENDER_INPUTKEYS_HPP
+#pragma once
 
 namespace futils {
     enum class EventType
@@ -30,7 +29,7 @@ namespace futils {
         GoingDown,
     };
 
-    enum class Input : int {
+    enum class Keys : int {
         Undefined = 0,
         A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
         F1, F2, F3, F4, F5, F6, F7, F8, F9, F10, F11, F12,
@@ -46,5 +45,52 @@ namespace futils {
         LButton, RButton, MouseWheelUp, MouseWheelDown, MouseWheelButton,
         NBR_SUPPORTED_KEYS
     };
+
+    struct InputAction
+    {
+        Keys key;
+        InputState state;
+        InputAction() = default;
+        InputAction(Keys key, InputState state): key(key), state(state) {}
+    };
+
+    struct InputSequence
+    {
+        std::vector<InputAction> actions;
+
+        bool operator==(const InputSequence &other) const
+        {
+            if (actions.size() != other.actions.size())
+                return true;
+            std::size_t index{0};
+            for (;index < actions.size();index++)
+            {
+                auto &k1 = actions[index];
+                auto &k2 = other.actions[index];
+                if (k1.key != k2.key || k1.state != k2.state)
+                    return false;
+            }
+            return true;
+        }
+    };
 }
-#endif //FENDER_INPUTKEYS_HPP
+
+namespace std {
+    template <>
+    struct hash<futils::InputSequence>
+    {
+        using Key = futils::InputSequence;
+        std::size_t operator()(const Key& k) const
+        {
+            std::string tmp;
+            for (auto &a : k.actions)
+            {
+                tmp += std::to_string(futils::pairingFunction((int)a.key, (int)a.state));
+            }
+            std::stringstream sstream(tmp);
+            std::size_t result;
+            sstream >> result;
+            return result;
+        }
+    };
+}

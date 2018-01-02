@@ -2,8 +2,7 @@
 // Created by arroganz on 1/1/18.
 //
 
-#ifndef FENDER_WINDOW_HPP
-#define FENDER_WINDOW_HPP
+#pragma once
 
 # include "fender.hpp"
 # include "Components/Window.hpp"
@@ -22,5 +21,3 @@ namespace fender::entities
         }
     };
 }
-
-#endif //FENDER_WINDOW_HPP

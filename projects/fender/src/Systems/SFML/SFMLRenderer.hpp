@@ -2,8 +2,7 @@
 // Created by arroganz on 12/17/17.
 //
 
-#ifndef FENDER_RENDERER_HPP
-#define FENDER_RENDERER_HPP
+#pragma once
 
 // TODO: Change CMAKELISTS.TXT to make this compile :)
 # include <SFML/Graphics.hpp>
@@ -40,7 +39,3 @@ inline sf::Color &operator << (sf::Color &lhs, futils::Color const &rhs)
     lhs.a = rhs.rgba[3];
     return lhs;
 }
-
-
-
-#endif //FENDER_RENDERER_HPP
