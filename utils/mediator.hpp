@@ -72,13 +72,26 @@ namespace futils
         }
 
         template <typename T>
-        void remove(void *callee) {
+        void forget(void *callee) {
             auto range = _requests.equal_range(futils::type<T>::index);
             for (auto it = range.first;
                  it != range.second;
                  it++) {
                 *it.up = false;
             }
+        }
+
+        void erase(void *callee)
+        {
+            std::vector<std::unordered_multimap<futils::type_index, IdentifiedAction>::iterator> toDelete;
+
+            for (auto it = _requests.begin(); it != _requests.end(); it++) {
+                auto &action = (it)->second;
+                if (action.owner == callee)
+                    toDelete.push_back(it);
+            }
+            for (auto &elem : toDelete)
+                _requests.erase(elem);
         }
     };
 }

@@ -23,6 +23,8 @@ namespace fender::systems::SFMLSystems
         {
             if (event.key.code == sf::Keyboard::Key::Escape)
                 events->send<futils::Input>(futils::Input::Escape);
+            else if (event.key.code == sf::Keyboard::Key::Return)
+                events->send<futils::Input>(futils::Input::Return);
         }
         state = Run;
     }

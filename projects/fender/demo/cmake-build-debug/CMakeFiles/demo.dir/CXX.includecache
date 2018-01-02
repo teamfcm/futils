@@ -111,6 +111,8 @@ mediator.hpp
 ../utils/mediator.hpp
 ini.hpp
 ../utils/ini.hpp
+queue.hpp
+../utils/queue.hpp
 
 ../utils/fstring.hpp
 sstream
@@ -191,6 +193,10 @@ datapacket.hpp
 ../utils/datapacket.hpp
 ini.hpp
 ../utils/ini.hpp
+
+../utils/queue.hpp
+vector
+-
 
 ../utils/range.hpp
 random

@@ -16,6 +16,10 @@ namespace fender::entities
         Window() {
             attach<components::Window>();
         }
+        ~Window()
+        {
+            detach<components::Window>();
+        }
     };
 }
 

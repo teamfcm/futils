@@ -201,6 +201,9 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/modules.hpp">
 			<Option target="fender"/>
 		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/queue.hpp">
+			<Option target="fender"/>
+		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/range.hpp">
 			<Option target="fender"/>
 		</Unit>

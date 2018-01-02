@@ -15,6 +15,7 @@
 # include "clock.hpp"
 # include "mediator.hpp"
 # include "ini.hpp"
+# include "queue.hpp"
 
 namespace futils
 {
@@ -55,6 +56,7 @@ namespace futils
         std::string name{"Undefined"};
         EntityManager *entityManager{nullptr};
         Mediator *events{nullptr};
+        std::function<void(EntityManager *)> afterDeath{[](EntityManager *){}};
 
         // It will segfault if events is not set. Be careful !
         template <typename T>
@@ -68,6 +70,10 @@ namespace futils
         void provideManager(EntityManager &manager) { entityManager = &manager; }
         void provideMediator(Mediator &mediator) { events = &mediator; }
         std::string const &getName() const { return name; }
+        std::function<void(EntityManager *)> getAfterDeath()
+        {
+            return afterDeath;
+        }
     };
 
     class StateSystem : public ISystem
@@ -91,9 +97,22 @@ namespace futils
         ComponentAttached(T const &compo): compo(compo) { verifType(); }
     };
 
+    template <typename T>
+    class ComponentDeleted
+    {
+        void verifType() {
+            static_assert(std::is_base_of<IComponent, T>::value,
+                          "Cannot emit event ComponentAttached with non Component Type");
+        }
+    public:
+        T const &compo;
+        ComponentDeleted(T &&compo): compo(std::forward<T>(compo)) { verifType(); }
+        ComponentDeleted(T const &compo): compo(compo) { verifType(); }
+    };
+
     class   IEntity
     {
-        std::unordered_multimap<futils::type_index, IComponent *>    components;
+        std::unordered_map<futils::type_index, IComponent *>    components;
         int                                 _id;
 
         template                            <typename Compo>
@@ -105,6 +124,7 @@ namespace futils
     public:
         // TODO: SHOULD BE PRIVATE AND FRIEND WITH ENTITY MANAGER
         std::function<bool(IComponent &)> onExtension{[](IComponent &){return false;}};
+        std::function<void(IComponent &)> onDetach{[](IComponent &){return false;}};
         std::queue<std::pair<IComponent *, std::function<void()>>> lateinitComponents;
         futils::Mediator *events{nullptr};
         // END.
@@ -148,7 +168,10 @@ namespace futils
         {
             if (components.find(futils::type<Compo>::index) == components.end())
                 return false;
+            auto &compo = components.at(futils::type<Compo>::index);
+            events->send<ComponentDeleted<Compo>>(static_cast<const Compo &>(*compo));
             components.erase(futils::type<Compo>::index);
+            onDetach(*compo);
             return true;
         }
 
@@ -172,8 +195,7 @@ namespace futils
     {
         int                                     status{0};
         std::unordered_map<std::string, ISystem *>   systemsMap;
-        std::queue<std::string> systemsMarkedForErase;
-        //      Container        CompoName    Entity
+        futils::Queue<std::string> systemsMarkedForErase;
         std::unordered_multimap<futils::type_index, IComponent *> components;
         std::list<std::unique_ptr<IEntity>> entities;
         futils::Clock<float> timeKeeper;
@@ -196,6 +218,18 @@ namespace futils
 					(compo.getTypeindex(), &compo));
                 return true;
             };
+            entity->onDetach = [this](IComponent &compo) {
+                // How to remove a specific component in the multimap ? :/
+                auto range = components.equal_range(futils::type<T>::index);
+                for (auto it = range.first;
+                     it != range.second;
+                     it++) {
+                    auto &pair = *it;
+                    auto tmp = pair.second;
+                    if (tmp == &compo)
+                        it = components.erase(it);
+                }
+            };
             events->send<EntityCreated<T>>(*entity);
             while (!entity->lateinitComponents.empty()) {
                 auto front = entity->lateinitComponents.front();
@@ -215,13 +249,14 @@ namespace futils
             auto system = new System(args...);
             system->provideManager(*this);
             system->provideMediator(*events);
-            std::cout << "System " << system->getName() << " loaded." << std::endl;
+            events->send<std::string>("[" + system->getName() + "] loaded.");
             this->systemsMap.insert(std::pair<std::string, ISystem *>(system->getName(), system));
-            std::cout << "Systems loaded : " << systemsMap.size() << std::endl;
         }
 
         void removeSystem(std::string const &systemName)
         {
+            if (systemsMarkedForErase.find(systemName))
+                return ;
             systemsMarkedForErase.push(systemName);
         }
 
@@ -266,26 +301,20 @@ namespace futils
                     system->run(elapsed);
                 }
                 while (!systemsMarkedForErase.empty()) {
-                    std::cout << "Marked for erase : " << systemsMarkedForErase.size() << std::endl;
-                    auto &name = systemsMarkedForErase.front();
-                    std::cout << "Searching " << name << std::endl;
+                    auto name = systemsMarkedForErase.front();
                     auto system = systemsMap.at(name);
+                    events->erase(system);
                     systemsMap.erase(name);
-                    systemsMarkedForErase.pop();
+                    auto afterDeath = system->getAfterDeath();
                     delete system;
                     events->send<std::string>("[" + name + "] shutdown.");
-                    std::cout << "Systems loaded : " << systemsMap.size() << std::endl;
-                    if (systemsMarkedForErase.empty() == false)
-                        std::cout << "Next in queue : " << systemsMarkedForErase.front() << std::endl;
+                    systemsMarkedForErase.pop();
+                    afterDeath(this);
                 }
             } catch (std::out_of_range const &)
             {
                 std::cout << "Failed to erase " << systemsMarkedForErase.front() << std::endl;
                 systemsMarkedForErase.pop();
-            } catch (std::exception const &error)
-            {
-                std::cerr << "Fender encountered a fatal error while running : " << error.what() << std::endl;
-                return 1;
             }
             return 0;
         }
