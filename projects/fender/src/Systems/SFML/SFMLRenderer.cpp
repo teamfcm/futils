@@ -5,6 +5,7 @@
 #include "SFMLRenderer.hpp"
 #include "Window.hpp"
 #include "Input.hpp"
+#include "Camera.hpp"
 
 fender::systems::SFMLRenderer::SFMLRenderer()
 {
@@ -15,6 +16,7 @@ void fender::systems::SFMLRenderer::init() {
     state = NONE;
     entityManager->addSystem<SFMLSystems::Window>();
     entityManager->addSystem<SFMLSystems::Input>();
+    entityManager->addSystem<SFMLSystems::Camera>();
     addReaction<events::Shutdown>([this](futils::IMediatorPacket &){
         entityManager->removeSystem(name);
     });
