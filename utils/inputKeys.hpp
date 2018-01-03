@@ -52,6 +52,10 @@ namespace futils {
         InputState state;
         InputAction() = default;
         InputAction(Keys key, InputState state): key(key), state(state) {}
+        bool operator==(const InputAction &other) const
+        {
+            return key == other.key && state == other.state;
+        }
     };
 
     struct InputSequence
@@ -91,6 +95,15 @@ namespace std {
             std::size_t result;
             sstream >> result;
             return result;
+        }
+    };
+
+    template <>
+    struct hash<futils::InputAction>
+    {
+        using Key = futils::InputAction;
+        std::size_t operator()(const Key& k) const {
+            return (size_t)futils::pairingFunction((int)k.key, (int)k.state);
         }
     };
 }

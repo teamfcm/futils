@@ -132,7 +132,7 @@ namespace fender::systems::SFMLSystems
 
         auto key = sfToFutilsKeys.at(event.key.code);
         auto state = sfToFutilsState.at(event.type);
-
+        // frameInputs[futils::InputAction(key, state)] = true;
         for (auto &input: entityManager->get<fender::components::Input>())
         {
             if (input->activated)
@@ -161,12 +161,20 @@ namespace fender::systems::SFMLSystems
         }
     }
 
+    void Input::checkInputs() {
+    }
+
+    void Input::reset()
+    {
+
+    }
+
     void Input::run(float) {
         switch (state)
         {
             case Init : return init();
             // Run could be something like update all inputs ?
-            case Run : return ;
+            case Run : return reset();
         }
     }
 }
