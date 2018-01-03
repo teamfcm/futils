@@ -123,6 +123,87 @@ fender/fast:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/build
 .PHONY : fender/fast
 
+src/Components/Camera.o: src/Components/Camera.cpp.o
+
+.PHONY : src/Components/Camera.o
+
+# target to build an object file
+src/Components/Camera.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Camera.cpp.o
+.PHONY : src/Components/Camera.cpp.o
+
+src/Components/Camera.i: src/Components/Camera.cpp.i
+
+.PHONY : src/Components/Camera.i
+
+# target to preprocess a source file
+src/Components/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Camera.cpp.i
+.PHONY : src/Components/Camera.cpp.i
+
+src/Components/Camera.s: src/Components/Camera.cpp.s
+
+.PHONY : src/Components/Camera.s
+
+# target to generate assembly for a file
+src/Components/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Camera.cpp.s
+.PHONY : src/Components/Camera.cpp.s
+
+src/Components/Children.o: src/Components/Children.cpp.o
+
+.PHONY : src/Components/Children.o
+
+# target to build an object file
+src/Components/Children.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Children.cpp.o
+.PHONY : src/Components/Children.cpp.o
+
+src/Components/Children.i: src/Components/Children.cpp.i
+
+.PHONY : src/Components/Children.i
+
+# target to preprocess a source file
+src/Components/Children.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Children.cpp.i
+.PHONY : src/Components/Children.cpp.i
+
+src/Components/Children.s: src/Components/Children.cpp.s
+
+.PHONY : src/Components/Children.s
+
+# target to generate assembly for a file
+src/Components/Children.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Children.cpp.s
+.PHONY : src/Components/Children.cpp.s
+
+src/Components/GameObject.o: src/Components/GameObject.cpp.o
+
+.PHONY : src/Components/GameObject.o
+
+# target to build an object file
+src/Components/GameObject.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/GameObject.cpp.o
+.PHONY : src/Components/GameObject.cpp.o
+
+src/Components/GameObject.i: src/Components/GameObject.cpp.i
+
+.PHONY : src/Components/GameObject.i
+
+# target to preprocess a source file
+src/Components/GameObject.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/GameObject.cpp.i
+.PHONY : src/Components/GameObject.cpp.i
+
+src/Components/GameObject.s: src/Components/GameObject.cpp.s
+
+.PHONY : src/Components/GameObject.s
+
+# target to generate assembly for a file
+src/Components/GameObject.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/GameObject.cpp.s
+.PHONY : src/Components/GameObject.cpp.s
+
 src/Components/Input.o: src/Components/Input.cpp.o
 
 .PHONY : src/Components/Input.o
@@ -150,6 +231,33 @@ src/Components/Input.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Input.cpp.s
 .PHONY : src/Components/Input.cpp.s
 
+src/Components/Transform.o: src/Components/Transform.cpp.o
+
+.PHONY : src/Components/Transform.o
+
+# target to build an object file
+src/Components/Transform.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Transform.cpp.o
+.PHONY : src/Components/Transform.cpp.o
+
+src/Components/Transform.i: src/Components/Transform.cpp.i
+
+.PHONY : src/Components/Transform.i
+
+# target to preprocess a source file
+src/Components/Transform.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Transform.cpp.i
+.PHONY : src/Components/Transform.cpp.i
+
+src/Components/Transform.s: src/Components/Transform.cpp.s
+
+.PHONY : src/Components/Transform.s
+
+# target to generate assembly for a file
+src/Components/Transform.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Transform.cpp.s
+.PHONY : src/Components/Transform.cpp.s
+
 src/Components/Window.o: src/Components/Window.cpp.o
 
 .PHONY : src/Components/Window.o
@@ -176,6 +284,87 @@ src/Components/Window.s: src/Components/Window.cpp.s
 src/Components/Window.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Window.cpp.s
 .PHONY : src/Components/Window.cpp.s
+
+src/Components/World.o: src/Components/World.cpp.o
+
+.PHONY : src/Components/World.o
+
+# target to build an object file
+src/Components/World.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/World.cpp.o
+.PHONY : src/Components/World.cpp.o
+
+src/Components/World.i: src/Components/World.cpp.i
+
+.PHONY : src/Components/World.i
+
+# target to preprocess a source file
+src/Components/World.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/World.cpp.i
+.PHONY : src/Components/World.cpp.i
+
+src/Components/World.s: src/Components/World.cpp.s
+
+.PHONY : src/Components/World.s
+
+# target to generate assembly for a file
+src/Components/World.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/World.cpp.s
+.PHONY : src/Components/World.cpp.s
+
+src/Entities/Camera.o: src/Entities/Camera.cpp.o
+
+.PHONY : src/Entities/Camera.o
+
+# target to build an object file
+src/Entities/Camera.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Entities/Camera.cpp.o
+.PHONY : src/Entities/Camera.cpp.o
+
+src/Entities/Camera.i: src/Entities/Camera.cpp.i
+
+.PHONY : src/Entities/Camera.i
+
+# target to preprocess a source file
+src/Entities/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Entities/Camera.cpp.i
+.PHONY : src/Entities/Camera.cpp.i
+
+src/Entities/Camera.s: src/Entities/Camera.cpp.s
+
+.PHONY : src/Entities/Camera.s
+
+# target to generate assembly for a file
+src/Entities/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Entities/Camera.cpp.s
+.PHONY : src/Entities/Camera.cpp.s
+
+src/Entities/GameObject.o: src/Entities/GameObject.cpp.o
+
+.PHONY : src/Entities/GameObject.o
+
+# target to build an object file
+src/Entities/GameObject.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Entities/GameObject.cpp.o
+.PHONY : src/Entities/GameObject.cpp.o
+
+src/Entities/GameObject.i: src/Entities/GameObject.cpp.i
+
+.PHONY : src/Entities/GameObject.i
+
+# target to preprocess a source file
+src/Entities/GameObject.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Entities/GameObject.cpp.i
+.PHONY : src/Entities/GameObject.cpp.i
+
+src/Entities/GameObject.s: src/Entities/GameObject.cpp.s
+
+.PHONY : src/Entities/GameObject.s
+
+# target to generate assembly for a file
+src/Entities/GameObject.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Entities/GameObject.cpp.s
+.PHONY : src/Entities/GameObject.cpp.s
 
 src/Entities/Input.o: src/Entities/Input.cpp.o
 
@@ -231,6 +420,33 @@ src/Entities/Window.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Entities/Window.cpp.s
 .PHONY : src/Entities/Window.cpp.s
 
+src/Entities/World.o: src/Entities/World.cpp.o
+
+.PHONY : src/Entities/World.o
+
+# target to build an object file
+src/Entities/World.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Entities/World.cpp.o
+.PHONY : src/Entities/World.cpp.o
+
+src/Entities/World.i: src/Entities/World.cpp.i
+
+.PHONY : src/Entities/World.i
+
+# target to preprocess a source file
+src/Entities/World.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Entities/World.cpp.i
+.PHONY : src/Entities/World.cpp.i
+
+src/Entities/World.s: src/Entities/World.cpp.s
+
+.PHONY : src/Entities/World.s
+
+# target to generate assembly for a file
+src/Entities/World.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Entities/World.cpp.s
+.PHONY : src/Entities/World.cpp.s
+
 src/Fender.o: src/Fender.cpp.o
 
 .PHONY : src/Fender.o
@@ -284,6 +500,60 @@ src/Systems/Log.s: src/Systems/Log.cpp.s
 src/Systems/Log.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Log.cpp.s
 .PHONY : src/Systems/Log.cpp.s
+
+src/Systems/SFML/Camera.o: src/Systems/SFML/Camera.cpp.o
+
+.PHONY : src/Systems/SFML/Camera.o
+
+# target to build an object file
+src/Systems/SFML/Camera.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Camera.cpp.o
+.PHONY : src/Systems/SFML/Camera.cpp.o
+
+src/Systems/SFML/Camera.i: src/Systems/SFML/Camera.cpp.i
+
+.PHONY : src/Systems/SFML/Camera.i
+
+# target to preprocess a source file
+src/Systems/SFML/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Camera.cpp.i
+.PHONY : src/Systems/SFML/Camera.cpp.i
+
+src/Systems/SFML/Camera.s: src/Systems/SFML/Camera.cpp.s
+
+.PHONY : src/Systems/SFML/Camera.s
+
+# target to generate assembly for a file
+src/Systems/SFML/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Camera.cpp.s
+.PHONY : src/Systems/SFML/Camera.cpp.s
+
+src/Systems/SFML/Children.o: src/Systems/SFML/Children.cpp.o
+
+.PHONY : src/Systems/SFML/Children.o
+
+# target to build an object file
+src/Systems/SFML/Children.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Children.cpp.o
+.PHONY : src/Systems/SFML/Children.cpp.o
+
+src/Systems/SFML/Children.i: src/Systems/SFML/Children.cpp.i
+
+.PHONY : src/Systems/SFML/Children.i
+
+# target to preprocess a source file
+src/Systems/SFML/Children.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Children.cpp.i
+.PHONY : src/Systems/SFML/Children.cpp.i
+
+src/Systems/SFML/Children.s: src/Systems/SFML/Children.cpp.s
+
+.PHONY : src/Systems/SFML/Children.s
+
+# target to generate assembly for a file
+src/Systems/SFML/Children.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Children.cpp.s
+.PHONY : src/Systems/SFML/Children.cpp.s
 
 src/Systems/SFML/Input.o: src/Systems/SFML/Input.cpp.o
 
@@ -375,24 +645,54 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... fender"
 	@echo "... edit_cache"
+	@echo "... src/Components/Camera.o"
+	@echo "... src/Components/Camera.i"
+	@echo "... src/Components/Camera.s"
+	@echo "... src/Components/Children.o"
+	@echo "... src/Components/Children.i"
+	@echo "... src/Components/Children.s"
+	@echo "... src/Components/GameObject.o"
+	@echo "... src/Components/GameObject.i"
+	@echo "... src/Components/GameObject.s"
 	@echo "... src/Components/Input.o"
 	@echo "... src/Components/Input.i"
 	@echo "... src/Components/Input.s"
+	@echo "... src/Components/Transform.o"
+	@echo "... src/Components/Transform.i"
+	@echo "... src/Components/Transform.s"
 	@echo "... src/Components/Window.o"
 	@echo "... src/Components/Window.i"
 	@echo "... src/Components/Window.s"
+	@echo "... src/Components/World.o"
+	@echo "... src/Components/World.i"
+	@echo "... src/Components/World.s"
+	@echo "... src/Entities/Camera.o"
+	@echo "... src/Entities/Camera.i"
+	@echo "... src/Entities/Camera.s"
+	@echo "... src/Entities/GameObject.o"
+	@echo "... src/Entities/GameObject.i"
+	@echo "... src/Entities/GameObject.s"
 	@echo "... src/Entities/Input.o"
 	@echo "... src/Entities/Input.i"
 	@echo "... src/Entities/Input.s"
 	@echo "... src/Entities/Window.o"
 	@echo "... src/Entities/Window.i"
 	@echo "... src/Entities/Window.s"
+	@echo "... src/Entities/World.o"
+	@echo "... src/Entities/World.i"
+	@echo "... src/Entities/World.s"
 	@echo "... src/Fender.o"
 	@echo "... src/Fender.i"
 	@echo "... src/Fender.s"
 	@echo "... src/Systems/Log.o"
 	@echo "... src/Systems/Log.i"
 	@echo "... src/Systems/Log.s"
+	@echo "... src/Systems/SFML/Camera.o"
+	@echo "... src/Systems/SFML/Camera.i"
+	@echo "... src/Systems/SFML/Camera.s"
+	@echo "... src/Systems/SFML/Children.o"
+	@echo "... src/Systems/SFML/Children.i"
+	@echo "... src/Systems/SFML/Children.s"
 	@echo "... src/Systems/SFML/Input.o"
 	@echo "... src/Systems/SFML/Input.i"
 	@echo "... src/Systems/SFML/Input.s"
