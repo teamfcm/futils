@@ -12,6 +12,7 @@ namespace fender::systems::SFMLSystems
     class Input : public System
     {
         using Component = components::Input;
+        using Sequence = futils::InputSequence;
 
         enum States
         {
@@ -20,6 +21,8 @@ namespace fender::systems::SFMLSystems
         };
         int state{Init};
 
+        void checkInputs();
+        void reset();
         void process(sf::Event const &event);
         void init();
     public:
