@@ -3,6 +3,7 @@
 //
 
 #include "WindowTest.hpp"
+#include "Components/Color.hpp"
 #include "inputKeys.hpp"
 
 void WindowTest::initWindow()
@@ -19,7 +20,9 @@ void WindowTest::initWindow()
         win.position.x = 200;
         win.position.y = 200;
         win.visible = true;
+        auto &color = window->attach<fender::components::Color>();
 
+        color.color = futils::Blueviolet;
 //        addReaction<futils::Keys>([this](futils::IMediatorPacket &pkg){
 //           auto &key =  futils::Mediator::rebuild<futils::Keys>(pkg);
 //            if (key == futils::Keys::Escape || key == futils::Keys::K)

@@ -32,22 +32,6 @@ namespace futils
         return (a & b) > 0;
     }
 
-    struct Color
-    {
-        union {
-            unsigned int full;
-            unsigned char rgba[4];
-        };
-        Color(uint32_t full): full(full) {}
-        Color(unsigned char r, unsigned char g, unsigned char b, unsigned char a = 0xff)
-        {
-            rgba[0] = r;
-            rgba[1] = g;
-            rgba[2] = b;
-            rgba[3] = a;
-        }
-    };
-
     enum { // See http://cloford.com/resources/colours/500col.htm for details
         Crimson = 0xffdc143c,
         Lightpink = 0xffffb6c1,
@@ -172,6 +156,23 @@ namespace futils
         Gray = 0xff808080,
         Granite = 0xff1a1a1a,
         Black = 0xff000000
+    };
+
+    struct Color
+    {
+        union {
+            unsigned int full;
+            unsigned char rgba[4];
+        };
+        Color() : full(Granite) {}
+        Color(uint32_t full): full(full) {}
+        Color(unsigned char r, unsigned char g, unsigned char b, unsigned char a = 0xff)
+        {
+            rgba[0] = r;
+            rgba[1] = g;
+            rgba[2] = b;
+            rgba[3] = a;
+        }
     };
 
     static const std::vector<Color> allColors =

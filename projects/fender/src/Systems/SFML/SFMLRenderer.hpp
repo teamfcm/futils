@@ -29,13 +29,3 @@ namespace fender::systems {
         void run(float) final;
     };
 }
-
-inline sf::Color &operator << (sf::Color &lhs, futils::Color const &rhs)
-{
-    //TODO: Big endian//litte endian ??
-    lhs.r = rhs.rgba[2];
-    lhs.g = rhs.rgba[1];
-    lhs.b = rhs.rgba[0];
-    lhs.a = rhs.rgba[3];
-    return lhs;
-}

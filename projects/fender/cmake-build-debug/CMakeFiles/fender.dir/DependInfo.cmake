@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/arroganz/cpp/futils/projects/fender/src/Components/Camera.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/Components/Camera.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/Components/Children.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/Components/Children.cpp.o"
+  "/home/arroganz/cpp/futils/projects/fender/src/Components/Color.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/Components/Color.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/Components/GameObject.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/Components/GameObject.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/Components/Input.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/Components/Input.cpp.o"
   "/home/arroganz/cpp/futils/projects/fender/src/Components/Transform.cpp" "/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir/src/Components/Transform.cpp.o"
