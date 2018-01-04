@@ -26,7 +26,7 @@ namespace fender::systems::SFMLSystems
         std::unordered_multimap<int, futils::IEntity *> layout;
         void renderWindow(futils::IEntity &cam);
 
-        void drawCamCrosshair(components::Camera &);
+        void drawCamCrosshair(components::Camera &, sf::RenderWindow *);
         void sortGameObjects();
         void renderEachCam();
         void init();

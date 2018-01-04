@@ -15,14 +15,15 @@ void WindowTest::initWindow()
 
     } else {
         win.title = "TestWindow";
-        win.size.w = 800;
-        win.size.h = 600;
-        win.position.x = 200;
-        win.position.y = 200;
+        win.size.w = 1024;
+        win.size.h = 780;
+        win.position.x = 0;
+        win.position.y = 0;
         win.visible = true;
+        win.style = futils::WStyle::None;
         auto &color = window->attach<fender::components::Color>();
 
-        color.color = futils::Blueviolet;
+        color.color = futils::Granite;
 //        addReaction<futils::Keys>([this](futils::IMediatorPacket &pkg){
 //           auto &key =  futils::Mediator::rebuild<futils::Keys>(pkg);
 //            if (key == futils::Keys::Escape || key == futils::Keys::K)
@@ -36,6 +37,7 @@ void WindowTest::initWindow()
         auto &cam = camera->get<fender::components::Camera>();
         cam.window = window;
         cam.activated = true;
+        cam.debugMode = true;
     }
 }
 
