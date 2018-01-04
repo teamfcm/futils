@@ -31,7 +31,7 @@ set(SOURCE_FILES
 		)
 
 if (UNIX)
-	add_compile_options(-Wall -Wextra -Werror)
+	add_compile_options(-Wall -Wextra -Werror -g3)
 endif(UNIX)
 
 add_library(fender STATIC ${SOURCE_FILES})

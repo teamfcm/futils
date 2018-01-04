@@ -195,6 +195,12 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Children.hpp">
 			<Option target="fender"/>
 		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Grid.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Grid.hpp">
+			<Option target="fender"/>
+		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Input.cpp">
 			<Option target="fender"/>
 		</Unit>

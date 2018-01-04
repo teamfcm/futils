@@ -15,6 +15,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fender.dir/src/Systems/Log.cpp.o"
   "CMakeFiles/fender.dir/src/Systems/SFML/Camera.cpp.o"
   "CMakeFiles/fender.dir/src/Systems/SFML/Children.cpp.o"
+  "CMakeFiles/fender.dir/src/Systems/SFML/Grid.cpp.o"
   "CMakeFiles/fender.dir/src/Systems/SFML/Input.cpp.o"
   "CMakeFiles/fender.dir/src/Systems/SFML/SFMLRenderer.cpp.o"
   "CMakeFiles/fender.dir/src/Systems/SFML/Window.cpp.o"
