@@ -27,7 +27,6 @@ void fender::Fender::loadSystemDir(std::string const &path)
 int fender::Fender::start() {
     addSystem<systems::Log>();
     addSystem<systems::SFMLRenderer>();
-    LOUT(std::to_string(entityManager->getNumberOfSystems()) + " systems loaded.");
     return entityManager->run(); // this will init all systems
 }
 
