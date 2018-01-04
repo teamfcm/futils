@@ -10,6 +10,17 @@ namespace fender::systems::SFMLSystems
 {
     void Window::requireEvents()
     {
+        addReaction<ClearWindow>([this](futils::IMediatorPacket &pkg) {
+            auto &packet = futils::Mediator::rebuild<ClearWindow>(pkg);
+            auto &entity = packet.camera;
+            auto &cam = entity->get<components::Camera>();
+            auto window = cam.window;
+            auto &winCompo = window->get<components::Window>();
+            auto realWindow = _windows.at(&winCompo).win;
+            sf::Color color;
+            color << winCompo.getEntity().get<components::Color>().color;
+            realWindow->clear(color);
+        });
         addReaction<RequestWindow>([this](futils::IMediatorPacket &pkg){
             auto &request = futils::Mediator::rebuild<RequestWindow>(pkg);
             auto &entity = request.camera;

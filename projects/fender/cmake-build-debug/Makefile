@@ -177,6 +177,33 @@ src/Components/Children.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Children.cpp.s
 .PHONY : src/Components/Children.cpp.s
 
+src/Components/Color.o: src/Components/Color.cpp.o
+
+.PHONY : src/Components/Color.o
+
+# target to build an object file
+src/Components/Color.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Color.cpp.o
+.PHONY : src/Components/Color.cpp.o
+
+src/Components/Color.i: src/Components/Color.cpp.i
+
+.PHONY : src/Components/Color.i
+
+# target to preprocess a source file
+src/Components/Color.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Color.cpp.i
+.PHONY : src/Components/Color.cpp.i
+
+src/Components/Color.s: src/Components/Color.cpp.s
+
+.PHONY : src/Components/Color.s
+
+# target to generate assembly for a file
+src/Components/Color.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Color.cpp.s
+.PHONY : src/Components/Color.cpp.s
+
 src/Components/GameObject.o: src/Components/GameObject.cpp.o
 
 .PHONY : src/Components/GameObject.o
@@ -651,6 +678,9 @@ help:
 	@echo "... src/Components/Children.o"
 	@echo "... src/Components/Children.i"
 	@echo "... src/Components/Children.s"
+	@echo "... src/Components/Color.o"
+	@echo "... src/Components/Color.i"
+	@echo "... src/Components/Color.s"
 	@echo "... src/Components/GameObject.o"
 	@echo "... src/Components/GameObject.i"
 	@echo "... src/Components/GameObject.s"

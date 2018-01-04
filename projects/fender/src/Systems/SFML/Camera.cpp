@@ -50,9 +50,15 @@ namespace fender::systems::SFMLSystems
                 RequestWindow request;
                 request.camera = &entity;
                 events->send<RequestWindow>(request);
-
+                auto realWindow = camToWindow[&entity];
+                if (realWindow) {
+                    ClearWindow cw;
+                    cw.camera = &entity;
+                    events->send<ClearWindow>(cw);
+                }
                 auto &camPos = entity.get<components::Transform>();
                 int currentLayer = camPos.position.z - cam->viewDistance;
+
                 while (currentLayer < camPos.position.z)
                 {
                     RenderLayer event;
@@ -63,13 +69,14 @@ namespace fender::systems::SFMLSystems
                     {
                         event.objects.push_back(it->second);
                     }
-                    event.window = camToWindow.at(&entity);
+                    event.window = realWindow;
                     drawCamCrosshair(*cam);
                     events->send<RenderLayer>();
                     currentLayer++;
                 }
                 AllLayersRendered allLayersRendered;
                 allLayersRendered.camData = cam;
+                allLayersRendered.window = realWindow;
                 events->send(allLayersRendered);
                 renderWindow(entity);
             }

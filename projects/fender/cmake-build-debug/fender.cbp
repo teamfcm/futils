@@ -96,9 +96,6 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/fender.hpp">
 			<Option target="fender"/>
 		</Unit>
-		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/position.hpp">
-			<Option target="fender"/>
-		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Camera.cpp">
 			<Option target="fender"/>
 		</Unit>
@@ -109,6 +106,12 @@
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Children.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Color.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Color.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/GameObject.cpp">
@@ -271,6 +274,9 @@
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/namedMaps.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/position.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/utils/queue.hpp">

@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fender.dir/src/Entities/World.cpp.o"
   "CMakeFiles/fender.dir/src/Components/Camera.cpp.o"
   "CMakeFiles/fender.dir/src/Components/Children.cpp.o"
+  "CMakeFiles/fender.dir/src/Components/Color.cpp.o"
   "CMakeFiles/fender.dir/src/Components/GameObject.cpp.o"
   "CMakeFiles/fender.dir/src/Components/Input.cpp.o"
   "CMakeFiles/fender.dir/src/Components/Transform.cpp.o"

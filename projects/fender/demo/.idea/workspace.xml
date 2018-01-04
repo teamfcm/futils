@@ -47,11 +47,21 @@
       <file leaf-file-name="WindowTest.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App/Modules/WindowTest.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="754">
-              <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+            <state relative-caret-position="234">
+              <caret line="24" column="40" lean-forward="false" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
               <folding>
                 <element signature="e#41#66#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rendering.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/utils/rendering.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="884">
+              <caret line="34" column="11" lean-forward="false" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -875,11 +885,13 @@
       <workItem from="1515065945867" duration="79000" />
       <workItem from="1515066109776" duration="52000" />
       <workItem from="1515067160321" duration="18000" />
+      <workItem from="1515073075868" duration="163000" />
+      <workItem from="1515073890404" duration="19000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="559805000" />
+    <option name="totallyTimeSpent" value="559987000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -960,13 +972,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/todo">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/config.ini" />
     <entry file="file://$PROJECT_DIR$/logfile.txt">
       <provider selected="true" editor-type-id="text-editor">
@@ -1255,10 +1260,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/utils/rendering.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="884">
+          <caret line="34" column="11" lean-forward="false" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/App/Modules/WindowTest.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="754">
-          <caret line="34" column="29" lean-forward="false" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+        <state relative-caret-position="234">
+          <caret line="24" column="40" lean-forward="false" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
           <folding>
             <element signature="e#41#66#0" expanded="true" />
           </folding>

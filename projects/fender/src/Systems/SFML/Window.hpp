@@ -9,6 +9,7 @@
 # include <SFML/Graphics.hpp>
 # include "System.hpp"
 # include "Entities/Window.hpp"
+# include "Components/Color.hpp"
 
 namespace fender::systems::SFMLSystems
 {
@@ -21,6 +22,11 @@ namespace fender::systems::SFMLSystems
     {
         futils::IEntity *camera;
         sf::RenderWindow *window;
+    };
+
+    struct ClearWindow
+    {
+        futils::IEntity *camera;
     };
 
     class Window : public System
@@ -42,7 +48,6 @@ namespace fender::systems::SFMLSystems
 
         WindowContainer _windows;
 
-
         void updateTitle(RealWindow &real);
         void pollEvents(RealWindow &real);
         void open(RealWindow &);
@@ -55,6 +60,16 @@ namespace fender::systems::SFMLSystems
         Window(): System("Window") {}
         void run(float) override;
     };
+}
+
+inline sf::Color &operator << (sf::Color &lhs, futils::Color const &rhs)
+{
+    //TODO: Big endian//litte endian ??
+    lhs.r = rhs.rgba[2];
+    lhs.g = rhs.rgba[1];
+    lhs.b = rhs.rgba[0];
+    lhs.a = rhs.rgba[3];
+    return lhs;
 }
 
 #endif //FENDER_WINDOW_HPP
