@@ -197,9 +197,12 @@ namespace futils
         std::unordered_map<std::string, ISystem *>   systemsMap;
         futils::Queue<std::string> systemsMarkedForErase;
         std::unordered_multimap<futils::type_index, IComponent *> components;
+        std::map<int, ISystem *> orderMap;
+        std::unordered_map<ISystem *, int> systemOrder;
         std::list<IEntity *> entities;
         futils::Clock<float> timeKeeper;
         futils::Mediator *events{nullptr};
+        int orderIndex{0};
     public:
         EntityManager() {
             timeKeeper.start();
@@ -250,8 +253,10 @@ namespace futils
             system->provideManager(*this);
             system->provideMediator(*events);
             events->send<std::string>("[" + system->getName() + "] loaded.");
-            std::cout << "System " << "[" + system->getName() + "] loaded." << std::endl;
             this->systemsMap.insert(std::pair<std::string, ISystem *>(system->getName(), system));
+            orderMap[orderIndex] = system;
+            systemOrder[system] = orderIndex;
+            orderIndex++;
         }
 
         void removeSystem(std::string const &systemName)
@@ -297,16 +302,19 @@ namespace futils
         {
             try {
                 auto elapsed = timeKeeper.loop();
-                for (auto &pair: systemsMap) {
+                for (auto &pair: orderMap)
+                {
                     auto &system = pair.second;
+                    std::cout << "Running " << system->getName() << std::endl;
                     system->run(elapsed);
-                    events->send<std::string>("running " + system->getName());
                 }
                 while (!systemsMarkedForErase.empty()) {
                     auto name = systemsMarkedForErase.front();
                     auto system = systemsMap.at(name);
                     events->erase(system);
                     systemsMap.erase(name);
+                    orderMap.erase(systemOrder[system]);
+                    systemOrder.erase(system);
                     auto afterDeath = system->getAfterDeath();
                     delete system;
                     events->send<std::string>("[" + name + "] shutdown.");
