@@ -8,10 +8,12 @@
 # include "fender.hpp"
 # include "Entities/Window.hpp"
 # include "Entities/Input.hpp"
+# include "Entities/Camera.hpp"
 
 class WindowTest : public futils::ISystem {
     fender::entities::Window *window{nullptr};
     fender::entities::Input *input{nullptr};
+    fender::entities::Camera *camera{nullptr};
 
     void initWindow();
     void initInputs();

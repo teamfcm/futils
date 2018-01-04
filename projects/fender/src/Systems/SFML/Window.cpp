@@ -4,11 +4,23 @@
 
 #include "Components/Window.hpp"
 #include "Window.hpp"
+#include "Entities/Camera.hpp"
 
 namespace fender::systems::SFMLSystems
 {
     void Window::requireEvents()
     {
+        addReaction<RequestWindow>([this](futils::IMediatorPacket &pkg){
+            auto &request = futils::Mediator::rebuild<RequestWindow>(pkg);
+            auto &entity = request.camera;
+            auto &cam = entity->get<components::Camera>();
+            auto window = cam.window;
+            auto &winCompo = window->get<components::Window>();
+            ResponseWindow response;
+            response.camera = entity;
+            response.window = _windows.at(&winCompo).win;
+            events->send<ResponseWindow>(response);
+        });
         addReaction<futils::ComponentAttached<Component>>([this](futils::IMediatorPacket &pkg){
             auto components = entityManager->get<Component>();
             auto &packet = futils::Mediator::rebuild<futils::ComponentAttached<Component>>(pkg);

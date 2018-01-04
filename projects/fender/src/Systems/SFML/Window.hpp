@@ -8,10 +8,21 @@
 # include <SFML/Window.hpp>
 # include <SFML/Graphics.hpp>
 # include "System.hpp"
-# include "Components/Window.hpp"
+# include "Entities/Window.hpp"
 
 namespace fender::systems::SFMLSystems
 {
+    struct RequestWindow
+    {
+        futils::IEntity *camera;
+    };
+
+    struct ResponseWindow
+    {
+        futils::IEntity *camera;
+        sf::RenderWindow *window;
+    };
+
     class Window : public System
     {
         using Component = components::Window;

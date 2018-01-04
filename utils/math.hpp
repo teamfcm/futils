@@ -42,6 +42,20 @@ namespace futils
         {
 
         }
+
+        float norm() const
+        {
+            return (float)sqrt((double)(x * x + y * y));
+        }
+
+        Vec2 vecTo(Vec2 const &other)
+        {
+            Vec2 result;
+
+            result.x = other.x - x;
+            result.y = other.y - y;
+            return result;
+        }
     };
 
     template <typename T>
@@ -72,6 +86,21 @@ namespace futils
                 x(std::forward<T>(a)), y(std::forward<T>(b)), z(std::forward<T>(c))
         {
 
+        }
+
+        float norm() const
+        {
+            return (float)sqrt((double)(x * x + y * y + z * z));
+        }
+
+        Vec3 vecTo(Vec3 const &other)
+        {
+            Vec3 result;
+
+            result.x = other.x - x;
+            result.y = other.y - y;
+            result.z = other.z - z;
+            return result;
         }
     };
     

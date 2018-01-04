@@ -13,6 +13,8 @@ namespace fender::entities {
     class Camera : public GameObject {
     public:
         Camera() {
+            auto &transform = get<components::Transform>();
+            transform.position.z = 10;
             attach<components::Camera>();
             attach<components::Children>();
         }

@@ -9,6 +9,7 @@
 namespace fender::entities
 {
     class GameObject;
+    class Window;
 }
 
 namespace fender::components {
@@ -20,9 +21,13 @@ namespace fender::components {
             DistanceFirst
         };
 
-        std::string name;
-        entities::GameObject *target;
+        int viewDistance{10};
+        bool debugMode{false};
+        bool activated;
         FollowMode mode;
+        std::string name;
+        entities::Window *window;
+        entities::GameObject *target;
     };
 }
 

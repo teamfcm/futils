@@ -14,7 +14,9 @@ namespace fender::entities {
     public:
         GameObject() {
             attach<components::GameObject>();
-            attach<components::Transform>();
+            auto &transform = attach<components::Transform>();
+            transform.position.z = 1;
+
         }
         ~GameObject() {
             detach<components::GameObject>();
