@@ -19,25 +19,33 @@ namespace fender::systems::SFMLSystems
         phase = Run;
     }
 
-    sf::Vertex line[] =
-            {
-                    sf::Vertex(sf::Vector2f(0, 0)),
-                    sf::Vertex(sf::Vector2f(100, 100))
-            };
-
-
     void Camera::renderWindow(futils::IEntity &cam)
     {
         auto win = camToWindow[&cam];
         if (win)
+        {
+            drawCamCrosshair(cam.get<components::Camera>(), win);
             win->display();
+        }
     }
 
-    void Camera::drawCamCrosshair(components::Camera &cam)
+    void Camera::drawCamCrosshair(components::Camera &cam, sf::RenderWindow *window)
     {
-        auto win = camToWindow[cam.window];
-        if (win != nullptr)
-            win->draw(line, 2, sf::Lines);
+        if (cam.debugMode == false)
+            return;
+        if (window != nullptr) {
+            sf::Vertex vertical[] = {
+                    sf::Vertex(sf::Vector2f(window->getSize().x / 2, window->getSize().y / 2 - 10)),
+                    sf::Vertex(sf::Vector2f(window->getSize().x / 2, window->getSize().y / 2 + 10))
+            };
+            sf::Vertex horizontal[] = {
+                    sf::Vertex(sf::Vector2f(window->getSize().x / 2 - 10, window->getSize().y / 2)),
+                    sf::Vertex(sf::Vector2f(window->getSize().x / 2 + 10, window->getSize().y / 2))
+            };
+            (void)horizontal;
+            window->draw(vertical, 2, sf::Lines);
+            window->draw(horizontal, 2, sf::Lines);
+        }
     }
 
     void Camera::renderEachCam() {
@@ -70,7 +78,6 @@ namespace fender::systems::SFMLSystems
                         event.objects.push_back(it->second);
                     }
                     event.window = realWindow;
-                    drawCamCrosshair(*cam);
                     events->send<RenderLayer>();
                     currentLayer++;
                 }
