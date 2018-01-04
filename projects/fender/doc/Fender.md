@@ -282,6 +282,7 @@ struct RenderingLayer // This event is crucial ! All rendering systems should ca
 {
   	int z-index; // Which layer is to be rendered
 	const Container &objects; // And which objects are on that layer
+ 	componentWindow win;
 };
 
 struct RenderingDone // When all visible layers are rendered.

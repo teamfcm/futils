@@ -28,6 +28,11 @@ void WindowTest::initWindow()
         addReaction<fender::events::Shutdown>([this](futils::IMediatorPacket &){
             entityManager->removeSystem(name);
         });
+
+        camera = &entityManager->create<fender::entities::Camera>();
+        auto &cam = camera->get<fender::components::Camera>();
+        cam.window = window;
+        cam.activated = true;
     }
 }
 
