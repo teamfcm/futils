@@ -6,15 +6,57 @@
 
 #IncludeRegexTransform: 
 
+../../src/Components/Camera.hpp
+fender.hpp
+../../src/Components/fender.hpp
+
+../../src/Components/Children.hpp
+fender.hpp
+../../src/Components/fender.hpp
+
+../../src/Components/Color.hpp
+fender.hpp
+../../src/Components/fender.hpp
+rendering.hpp
+../../src/Components/rendering.hpp
+
+../../src/Components/GameObject.hpp
+fender.hpp
+../../src/Components/fender.hpp
+
 ../../src/Components/Input.hpp
 fender.hpp
 ../../src/Components/fender.hpp
 inputKeys.hpp
 ../../src/Components/inputKeys.hpp
 
+../../src/Components/Transform.hpp
+fender.hpp
+../../src/Components/fender.hpp
+position.hpp
+../../src/Components/position.hpp
+
 ../../src/Components/Window.hpp
 fender.hpp
 ../../src/Components/fender.hpp
+
+../../src/Entities/Camera.hpp
+fender.hpp
+../../src/Entities/fender.hpp
+GameObject.hpp
+../../src/Entities/GameObject.hpp
+Components/Camera.hpp
+../../src/Entities/Components/Camera.hpp
+Components/Children.hpp
+../../src/Entities/Components/Children.hpp
+
+../../src/Entities/GameObject.hpp
+fender.hpp
+../../src/Entities/fender.hpp
+Components/GameObject.hpp
+../../src/Entities/Components/GameObject.hpp
+Components/Transform.hpp
+../../src/Entities/Components/Transform.hpp
 
 ../../src/Entities/Input.hpp
 fender.hpp
@@ -206,6 +248,8 @@ datapacket.hpp
 ini.hpp
 ../utils/ini.hpp
 
+../utils/position.hpp
+
 ../utils/queue.hpp
 vector
 -
@@ -247,6 +291,8 @@ Modules/WindowTest.hpp
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/WindowTest.cpp
 WindowTest.hpp
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/WindowTest.hpp
+Components/Color.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/Components/Color.hpp
 inputKeys.hpp
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/inputKeys.hpp
 
@@ -257,6 +303,8 @@ Entities/Window.hpp
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/Entities/Window.hpp
 Entities/Input.hpp
 /home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/Entities/Input.hpp
+Entities/Camera.hpp
+/home/arroganz/cpp/futils/projects/fender/demo/src/App/Modules/Entities/Camera.hpp
 
 /home/arroganz/cpp/futils/projects/fender/demo/src/main.cpp
 App.hpp

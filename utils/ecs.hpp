@@ -250,6 +250,7 @@ namespace futils
             system->provideManager(*this);
             system->provideMediator(*events);
             events->send<std::string>("[" + system->getName() + "] loaded.");
+            std::cout << "System " << "[" + system->getName() + "] loaded." << std::endl;
             this->systemsMap.insert(std::pair<std::string, ISystem *>(system->getName(), system));
         }
 
@@ -299,6 +300,7 @@ namespace futils
                 for (auto &pair: systemsMap) {
                     auto &system = pair.second;
                     system->run(elapsed);
+                    events->send<std::string>("running " + system->getName());
                 }
                 while (!systemsMarkedForErase.empty()) {
                     auto name = systemsMarkedForErase.front();
@@ -313,8 +315,11 @@ namespace futils
                 }
             } catch (std::out_of_range const &)
             {
-                std::cout << "Failed to erase " << systemsMarkedForErase.front() << std::endl;
-                systemsMarkedForErase.pop();
+                if (!systemsMarkedForErase.empty()) {
+                    std::cout << "Failed to erase " << systemsMarkedForErase.front() << std::endl;
+                    systemsMarkedForErase.pop();
+                }
+                throw ;
             }
             return 0;
         }

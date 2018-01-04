@@ -42,7 +42,6 @@ namespace fender::systems::SFMLSystems
                     sf::Vertex(sf::Vector2f(window->getSize().x / 2 - 10, window->getSize().y / 2)),
                     sf::Vertex(sf::Vector2f(window->getSize().x / 2 + 10, window->getSize().y / 2))
             };
-            (void)horizontal;
             window->draw(vertical, 2, sf::Lines);
             window->draw(horizontal, 2, sf::Lines);
         }
