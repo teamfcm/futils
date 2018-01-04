@@ -13,6 +13,7 @@ namespace fender::entities
     {
     public:
         Window() {
+            std::cout << futils::type<futils::ComponentAttached<components::Window>>::index << " is the type of window attach compo" << std::endl;
             attach<components::Window>();
         }
         ~Window()

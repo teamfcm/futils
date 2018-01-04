@@ -67,6 +67,7 @@ namespace futils
 
         template <typename T>
         void require(void *callee, std::function<void(futils::IMediatorPacket &)> onReceive) {
+            std::cout << "Someone at (" << callee << ") required type " << futils::type<T>::index << " : " << typeid(T).name() << std::endl;
             _requests.insert(std::pair<futils::type_index, IdentifiedAction>
 				(futils::type<T>::index, IdentifiedAction(callee, onReceive)));
         }

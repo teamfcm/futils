@@ -15,13 +15,13 @@ fender::systems::SFMLRenderer::SFMLRenderer()
 
 void fender::systems::SFMLRenderer::init() {
     state = NONE;
+    addReaction<events::Shutdown>([this](futils::IMediatorPacket &){
+        entityManager->removeSystem(name);
+    });
     entityManager->addSystem<SFMLSystems::Window>();
     entityManager->addSystem<SFMLSystems::Input>();
     entityManager->addSystem<SFMLSystems::Camera>();
     entityManager->addSystem<SFMLSystems::Grid>();
-    addReaction<events::Shutdown>([this](futils::IMediatorPacket &){
-        entityManager->removeSystem(name);
-    });
 }
 
 void fender::systems::SFMLRenderer::run(float)

@@ -146,9 +146,12 @@ namespace futils
             if (onExtension(*compo) == false) {
                 lateinitComponents.push(std::pair<Compo *, std::function<void()>>(compo, [this, compo](){
                     events->send<ComponentAttached<Compo>>(*compo);
+                    std::cout << "Sending component attached in lateinit ComponentAttached of " << typeid(Compo).name() << " : " << futils::type<ComponentAttached<Compo>>::index <<std::endl;
                 }));
-            } else
+            } else {
                 events->send<ComponentAttached<Compo>>(*compo);
+                std::cout << "Sending component attached CompoentAttached of " << typeid(Compo).name() << " : " << futils::type<ComponentAttached<Compo>>::index <<std::endl;
+            }
             return *compo;
         };
 
@@ -249,8 +252,8 @@ namespace futils
             auto system = new System(args...);
             system->provideManager(*this);
             system->provideMediator(*events);
-            events->send<std::string>("[" + system->getName() + "] loaded.");
-            std::cout << "System " << "[" + system->getName() + "] loaded." << std::endl;
+            events->send<std::string>("[" + system->getName() + "] loaded at " + std::to_string((intptr_t)system));
+            std::cout << "System " << "[" + system->getName() + "] loaded at " << system << std::endl;
             this->systemsMap.insert(std::pair<std::string, ISystem *>(system->getName(), system));
         }
 
@@ -299,6 +302,8 @@ namespace futils
                 auto elapsed = timeKeeper.loop();
                 for (auto &pair: systemsMap) {
                     auto &system = pair.second;
+                    if (system == nullptr)
+                        throw std::runtime_error("Corrupted ecs");
                     system->run(elapsed);
                     events->send<std::string>("running " + system->getName());
                 }

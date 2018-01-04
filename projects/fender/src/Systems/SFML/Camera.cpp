@@ -83,7 +83,7 @@ namespace fender::systems::SFMLSystems
                 AllLayersRendered allLayersRendered;
                 allLayersRendered.camData = cam;
                 allLayersRendered.window = realWindow;
-                events->send(allLayersRendered);
+                events->send<AllLayersRendered>(allLayersRendered);
                 renderWindow(entity);
             }
         }

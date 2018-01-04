@@ -29,6 +29,7 @@ namespace fender::systems::SFMLSystems
             auto &winCompo = window->get<components::Window>();
             ResponseWindow response;
             response.camera = entity;
+            std::cout << "Window is at " << &winCompo << std::endl;
             response.window = _windows.at(&winCompo).win;
             events->send<ResponseWindow>(response);
         });

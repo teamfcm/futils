@@ -25,15 +25,12 @@ namespace fender::systems::SFMLSystems {
     void Grid::init()
     {
         __init();
-        std::cout << "Grid init" << std::endl;
         addReaction<AllLayersRendered>([this](futils::IMediatorPacket &pkg){
-            std::cout << "LALAL" << std::endl;
             auto &packet = futils::Mediator::rebuild<AllLayersRendered>(pkg);
             if (!packet.window || !packet.camData)
                 return ;
             draw(*packet.window, *packet.camData);
         });
-        std::cout << "lala" << std::endl;
         phase = Run;
     }
 
