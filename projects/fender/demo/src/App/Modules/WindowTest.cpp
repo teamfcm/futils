@@ -40,7 +40,30 @@ void WindowTest::initInputs()
     futils::InputSequence escape;
     futils::InputAction action(futils::Keys::Escape, futils::InputState::Down);
     escape.actions.push_back(action);
-    component.map[escape] = [this](){
+
+    futils::InputSequence quit;
+    futils::InputAction action2(futils::Keys::LButton, futils::InputState::Down);
+    quit.actions.push_back(action2);
+
+    futils::InputSequence moveup;
+    futils::InputAction action3(futils::Keys::MouseWheelUp, futils::InputState::Wheel);
+    moveup.actions.push_back(action3);
+
+    futils::InputSequence moveup2;
+    futils::InputAction action4(futils::Keys::JoystickB, futils::InputState::Joystick);
+    moveup2.actions.push_back(action4);
+
+    component.map[escape] = [this]() {
+        events->send<fender::events::Shutdown>();
+    };
+    component.map[quit] = [this]() {
+        events->send<fender::events::Shutdown>();
+    };
+    component.map[moveup] = [this]() {
+        events->send<fender::events::Shutdown>();
+    };
+
+    component.map[moveup2] = [this]() {
         events->send<fender::events::Shutdown>();
     };
 }

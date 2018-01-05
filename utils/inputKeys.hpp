@@ -27,6 +27,8 @@ namespace futils {
         Down,
         GoingUp,
         GoingDown,
+        Wheel,
+        Joystick
     };
 
     enum class Keys : int {
@@ -43,6 +45,7 @@ namespace futils {
         Colon, SemiColon, QuestionMark, ExclamationMark, Comma, Dot, Percent, Asterisk,
         Slash, BackSlash,
         LButton, RButton, MouseWheelUp, MouseWheelDown, MouseWheelButton,
+        JoystickA, JoystickB, JoystickX, JoystickY,
         NBR_SUPPORTED_KEYS
     };
 

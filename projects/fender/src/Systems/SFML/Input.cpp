@@ -8,6 +8,12 @@
 
 namespace
 {
+    std::unordered_map<sf::Mouse::Button, futils::Keys> sfMouseToFutilsKeys = {
+            {sf::Mouse::Button::Left, futils::Keys::LButton},
+            {sf::Mouse::Button::Right, futils::Keys::RButton},
+            {sf::Mouse::Button::Middle, futils::Keys::MouseWheelButton},
+    };
+
     std::unordered_map<sf::Keyboard::Key, futils::Keys> sfToFutilsKeys = {
             {sf::Keyboard::Key::A, futils::Keys::A},
             {sf::Keyboard::Key::B, futils::Keys::B},
@@ -99,6 +105,15 @@ namespace
             {sf::Keyboard::Key::BackSlash, futils::Keys::BackSlash},
     };
 
+    std::vector<futils::Keys> sfJoystickToFutilsKeys =
+            {
+                    futils::Keys::JoystickA,
+                    futils::Keys::JoystickB,
+                    futils::Keys::JoystickX,
+                    futils::Keys::JoystickY,
+
+            };
+
     std::unordered_map<sf::Event::EventType, futils::InputState> sfToFutilsState =
             {
                     {sf::Event::EventType::KeyPressed, futils::InputState::Down},
@@ -126,12 +141,33 @@ namespace fender::systems::SFMLSystems
     {
         if (event.type == sf::Event::KeyPressed)
             events->send<futils::Keys>(sfToFutilsKeys[event.key.code]);
-        if (event.type != sf::Event::KeyPressed && event.type != sf::Event::KeyReleased)
-            return ;
-        // First let's check simple keys, with different states
 
-        auto key = sfToFutilsKeys.at(event.key.code);
-        auto state = sfToFutilsState.at(event.type);
+        // First let's check simple keys, with different states
+        if (event.type != sf::Event::KeyPressed && event.type != sf::Event::KeyReleased
+                && event.type != sf::Event::MouseButtonPressed && event.type != sf::Event::MouseWheelMoved
+                && event.type != sf::Event::JoystickButtonPressed)
+            return ;
+
+        futils::Keys key;
+        futils::InputState state;
+
+        if (event.type == sf::Event::MouseWheelMoved) {
+            if (event.mouseWheel.delta > 0)
+                key = futils::Keys::MouseWheelUp;
+            else
+                key = futils::Keys::MouseWheelDown;
+            state = futils::InputState::Wheel;
+        }
+        else if (event.type == sf::Event::JoystickButtonPressed) {
+            key = sfJoystickToFutilsKeys[event.joystickButton.button];
+            state = futils::InputState::Joystick;
+        }
+        else {
+            state = sfToFutilsState.at(event.type);
+            if (event.type == sf::Event::MouseButtonPressed)
+                key = sfMouseToFutilsKeys.at(event.mouseButton.button);
+            key = sfToFutilsKeys.at(event.key.code);
+        }
         // frameInputs[futils::InputAction(key, state)] = true;
         for (auto &input: entityManager->get<fender::components::Input>())
         {
