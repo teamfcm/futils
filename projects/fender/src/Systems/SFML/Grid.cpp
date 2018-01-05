@@ -2,38 +2,54 @@
 // Created by arroganz on 1/4/18.
 //
 
+#include <Components/World.hpp>
 #include "Camera.hpp"
 #include "Grid.hpp"
 
 namespace fender::systems::SFMLSystems {
     void Grid::draw(sf::RenderWindow &window, components::Camera &cam)
     {
+        auto worlds = entityManager->get<components::World>();
+        if (worlds.empty())
+            return ;
+        auto world = worlds.front();
         if (cam.debugMode == false)
             return;
         sf::Vertex vertical[] = {
-                sf::Vertex(sf::Vector2f(window.getSize().x / 3, window.getSize().y / 3 - 10)),
-                sf::Vertex(sf::Vector2f(window.getSize().x / 3, window.getSize().y / 3 + 10))
+                sf::Vertex(sf::Vector2f(0, 0)),
+                sf::Vertex(sf::Vector2f(0, window.getSize().y))
         };
         sf::Vertex horizontal[] = {
-                sf::Vertex(sf::Vector2f(window.getSize().x / 3 - 10, window.getSize().y / 3)),
-                sf::Vertex(sf::Vector2f(window.getSize().x / 3 + 10, window.getSize().y / 3))
+                sf::Vertex(sf::Vector2f(0, 0)),
+                sf::Vertex(sf::Vector2f(window.getSize().x, 0))
         };
-        window.draw(vertical, 2, sf::Lines);
-        window.draw(horizontal, 2, sf::Lines);
+        auto &camPos = cam.getEntity().get<components::Transform>();
+        ssize_t x{(int)camPos.position.x % world->unit};
+        ssize_t y{(int)camPos.position.y % world->unit};
+        while (x < window.getSize().x) {
+            vertical[0].position.x = x;
+            vertical[1].position.x = x;
+            window.draw(vertical, 2, sf::Lines);
+            x += world->unit;
+        }
+        while (y < window.getSize().y)
+        {
+            horizontal[0].position.y  = y;
+            horizontal[1].position.y = y;
+            window.draw(horizontal, 2, sf::Lines);
+            y += world->unit;
+        }
     }
 
     void Grid::init()
     {
         __init();
-        std::cout << "Grid init" << std::endl;
         addReaction<AllLayersRendered>([this](futils::IMediatorPacket &pkg){
-            std::cout << "LALAL" << std::endl;
             auto &packet = futils::Mediator::rebuild<AllLayersRendered>(pkg);
             if (!packet.window || !packet.camData)
                 return ;
             draw(*packet.window, *packet.camData);
         });
-        std::cout << "lala" << std::endl;
         phase = Run;
     }
 

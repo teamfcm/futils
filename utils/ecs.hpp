@@ -305,7 +305,6 @@ namespace futils
                 for (auto &pair: orderMap)
                 {
                     auto &system = pair.second;
-                    std::cout << "Running " << system->getName() << std::endl;
                     system->run(elapsed);
                 }
                 while (!systemsMarkedForErase.empty()) {
