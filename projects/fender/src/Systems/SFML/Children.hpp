@@ -16,7 +16,6 @@ namespace fender::systems::SFMLSystems
             Init = 0,
             Run
         };
-        int state{Init};
 
         void init();
     public:

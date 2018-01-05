@@ -3,6 +3,7 @@
 //
 
 #include <SFML/Graphics.hpp>
+#include <Components/World.hpp>
 
 #include "Camera.hpp"
 #include "Window.hpp"
@@ -19,6 +20,10 @@ namespace fender::systems::SFMLSystems
         });
         addReaction<futils::Keys>([this](futils::IMediatorPacket &pkg){
             auto &key = futils::Mediator::rebuild<futils::Keys>(pkg);
+            auto worlds = entityManager->get<components::World>();
+            int step = 1;
+            if (!worlds.empty())
+                step = worlds.front()->unit / 3;
             if (key == futils::Keys::ArrowRight)
             {
                 auto cams = entityManager->get<components::Camera>();
@@ -27,7 +32,7 @@ namespace fender::systems::SFMLSystems
                     if (cam->activated)
                     {
                         auto &pos = cam->getEntity().get<components::Transform>();
-                        pos.position.x += 10;
+                        pos.position.x += step;
                     }
                 }
             }
@@ -39,7 +44,7 @@ namespace fender::systems::SFMLSystems
                     if (cam->activated)
                     {
                         auto &pos = cam->getEntity().get<components::Transform>();
-                        pos.position.x -= 10;
+                        pos.position.x -= step;
                     }
                 }
             }
@@ -51,7 +56,7 @@ namespace fender::systems::SFMLSystems
                     if (cam->activated)
                     {
                         auto &pos = cam->getEntity().get<components::Transform>();
-                        pos.position.y -= 10;
+                        pos.position.y -= step;
                     }
                 }
             }
@@ -63,7 +68,7 @@ namespace fender::systems::SFMLSystems
                     if (cam->activated)
                     {
                         auto &pos = cam->getEntity().get<components::Transform>();
-                        pos.position.y += 10;
+                        pos.position.y += step;
                     }
                 }
             }
@@ -85,14 +90,20 @@ namespace fender::systems::SFMLSystems
     {
         if (cam.debugMode == false)
             return;
+        auto worlds = entityManager->get<components::World>();
+        int crossHairSize = 10;
+        if (!worlds.empty()) {
+            auto &world = worlds.front();
+            crossHairSize = world->unit / 2;
+        }
         if (window != nullptr) {
             sf::Vertex vertical[] = {
-                    sf::Vertex(sf::Vector2f(window->getSize().x / 2, window->getSize().y / 2 - 10)),
-                    sf::Vertex(sf::Vector2f(window->getSize().x / 2, window->getSize().y / 2 + 10))
+                    sf::Vertex(sf::Vector2f(window->getSize().x / 2, window->getSize().y / 2 - crossHairSize)),
+                    sf::Vertex(sf::Vector2f(window->getSize().x / 2, window->getSize().y / 2 + crossHairSize))
             };
             sf::Vertex horizontal[] = {
-                    sf::Vertex(sf::Vector2f(window->getSize().x / 2 - 10, window->getSize().y / 2)),
-                    sf::Vertex(sf::Vector2f(window->getSize().x / 2 + 10, window->getSize().y / 2))
+                    sf::Vertex(sf::Vector2f(window->getSize().x / 2 - crossHairSize, window->getSize().y / 2)),
+                    sf::Vertex(sf::Vector2f(window->getSize().x / 2 + crossHairSize, window->getSize().y / 2))
             };
             window->draw(vertical, 2, sf::Lines);
             window->draw(horizontal, 2, sf::Lines);

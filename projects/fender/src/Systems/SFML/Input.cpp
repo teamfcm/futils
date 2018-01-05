@@ -119,7 +119,7 @@ namespace fender::systems::SFMLSystems
             auto &event = futils::Mediator::rebuild<sf::Event>(pkg);
             process(event);
         });
-        state = Run;
+        phase = Run;
     }
 
     void Input::process(sf::Event const &event)
@@ -170,7 +170,7 @@ namespace fender::systems::SFMLSystems
     }
 
     void Input::run(float) {
-        switch (state)
+        switch (phase)
         {
             case Init : return init();
             // Run could be something like update all inputs ?
