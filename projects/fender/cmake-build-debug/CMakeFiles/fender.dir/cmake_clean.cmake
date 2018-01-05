@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/fender.dir/src/Entities/Input.cpp.o"
   "CMakeFiles/fender.dir/src/Entities/Window.cpp.o"
   "CMakeFiles/fender.dir/src/Entities/World.cpp.o"
+  "CMakeFiles/fender.dir/src/Components/AbsoluteTransform.cpp.o"
   "CMakeFiles/fender.dir/src/Components/Camera.cpp.o"
   "CMakeFiles/fender.dir/src/Components/Children.cpp.o"
   "CMakeFiles/fender.dir/src/Components/Color.cpp.o"
