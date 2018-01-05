@@ -96,6 +96,12 @@
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/include/fender.hpp">
 			<Option target="fender"/>
 		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/AbsoluteTransform.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/AbsoluteTransform.hpp">
+			<Option target="fender"/>
+		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Camera.cpp">
 			<Option target="fender"/>
 		</Unit>

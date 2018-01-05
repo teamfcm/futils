@@ -123,6 +123,33 @@ fender/fast:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/build
 .PHONY : fender/fast
 
+src/Components/AbsoluteTransform.o: src/Components/AbsoluteTransform.cpp.o
+
+.PHONY : src/Components/AbsoluteTransform.o
+
+# target to build an object file
+src/Components/AbsoluteTransform.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/AbsoluteTransform.cpp.o
+.PHONY : src/Components/AbsoluteTransform.cpp.o
+
+src/Components/AbsoluteTransform.i: src/Components/AbsoluteTransform.cpp.i
+
+.PHONY : src/Components/AbsoluteTransform.i
+
+# target to preprocess a source file
+src/Components/AbsoluteTransform.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/AbsoluteTransform.cpp.i
+.PHONY : src/Components/AbsoluteTransform.cpp.i
+
+src/Components/AbsoluteTransform.s: src/Components/AbsoluteTransform.cpp.s
+
+.PHONY : src/Components/AbsoluteTransform.s
+
+# target to generate assembly for a file
+src/Components/AbsoluteTransform.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/AbsoluteTransform.cpp.s
+.PHONY : src/Components/AbsoluteTransform.cpp.s
+
 src/Components/Camera.o: src/Components/Camera.cpp.o
 
 .PHONY : src/Components/Camera.o
@@ -699,6 +726,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... fender"
 	@echo "... edit_cache"
+	@echo "... src/Components/AbsoluteTransform.o"
+	@echo "... src/Components/AbsoluteTransform.i"
+	@echo "... src/Components/AbsoluteTransform.s"
 	@echo "... src/Components/Camera.o"
 	@echo "... src/Components/Camera.i"
 	@echo "... src/Components/Camera.s"

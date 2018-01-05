@@ -9,7 +9,7 @@
 
 namespace fender::components {
     struct Transform : futils::IComponent {
-        vec3f size;
+        vec2f size;
         Position position;
         float rotation;
     };
