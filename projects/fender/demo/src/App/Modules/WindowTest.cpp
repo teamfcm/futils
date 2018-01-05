@@ -9,6 +9,33 @@
 
 void WindowTest::initWindow()
 {
+    addReaction<futils::Keys>([this](futils::IMediatorPacket &pkg){
+        auto &key = futils::Mediator::rebuild<futils::Keys>(pkg);
+        if (key == futils::Keys::F)
+        {
+            auto worlds = entityManager->get<fender::components::World>();
+            if (worlds.empty())
+                return ;
+            auto &world = worlds.front();
+            world->unit *= 2;
+        }
+        else if (key == futils::Keys::G)
+        {
+            auto worlds = entityManager->get<fender::components::World>();
+            if (worlds.empty())
+                return ;
+            auto &world = worlds.front();
+            world->unit /= 2;
+        }
+        else if (key == futils::Keys::D)
+        {
+            auto cameras = entityManager->get<fender::components::Camera>();
+            for (auto &cam: cameras)
+            {
+                cam->debugMode = !cam->debugMode;
+            }
+        }
+    });
     window = &entityManager->create<fender::entities::Window>();
     auto &win = window->get<fender::components::Window>();
     if (win.isOpen)

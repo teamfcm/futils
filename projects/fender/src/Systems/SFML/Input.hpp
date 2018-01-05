@@ -19,7 +19,6 @@ namespace fender::systems::SFMLSystems
             Init = 0,
             Run
         };
-        int state{Init};
 
         void checkInputs();
         void reset();

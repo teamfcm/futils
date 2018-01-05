@@ -9,12 +9,12 @@
 namespace fender::systems::SFMLSystems {
     void Grid::draw(sf::RenderWindow &window, components::Camera &cam)
     {
+        if (cam.debugMode == false)
+            return;
         auto worlds = entityManager->get<components::World>();
         if (worlds.empty())
             return ;
         auto world = worlds.front();
-        if (cam.debugMode == false)
-            return;
         sf::Vertex vertical[] = {
                 sf::Vertex(sf::Vector2f(0, 0)),
                 sf::Vertex(sf::Vector2f(0, window.getSize().y))
@@ -24,8 +24,8 @@ namespace fender::systems::SFMLSystems {
                 sf::Vertex(sf::Vector2f(window.getSize().x, 0))
         };
         auto &camPos = cam.getEntity().get<components::Transform>();
-        ssize_t x{(int)camPos.position.x % world->unit};
-        ssize_t y{(int)camPos.position.y % world->unit};
+        ssize_t x{-(int)camPos.position.x % world->unit};
+        ssize_t y{-(int)camPos.position.y % world->unit};
         while (x < window.getSize().x) {
             vertical[0].position.x = x;
             vertical[1].position.x = x;
