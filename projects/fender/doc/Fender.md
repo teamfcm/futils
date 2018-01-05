@@ -344,6 +344,56 @@ struct GridRendered
 
 > Insert screenshot of grid
 
+## Border
+
+> Used to know where objects are. Simplified view of gameObjects
+
+### Component
+
+```c++
+struct Border : futils::IComponent
+{
+	int thickness;
+   	futils::Color color;
+   	bool right;
+   	bool left;
+   	bool up;
+   	bool down;
+   	bool visible;
+}
+```
+
+### Entity
+
+```c++
+
+```
+
+### System
+
+#### Required Events
+
+```c++
+
+```
+
+#### Events emitted
+
+```c++
+
+```
+
+#### Run pseudocode
+
+```c++
+void Border::run(float)
+{
+	// Foreach component
+	// If GameObject->visible && component->visible
+	// drawBorder(component)
+}
+```
+
 ## ImageRenderer
 
 // Now that we have a framework for modular rendering, we can code an independant system that displays images. It will wait for the RenderingLayer event, and for each entity, take (Image) and render it to the screen.
