@@ -6,6 +6,7 @@
 
 #include "Camera.hpp"
 #include "Window.hpp"
+#include "inputKeys.hpp"
 
 namespace fender::systems::SFMLSystems
 {
@@ -15,6 +16,57 @@ namespace fender::systems::SFMLSystems
         addReaction<ResponseWindow>([this](futils::IMediatorPacket &pkg){
             auto &packet = futils::Mediator::rebuild<ResponseWindow>(pkg);
             camToWindow[packet.camera] = packet.window;
+        });
+        addReaction<futils::Keys>([this](futils::IMediatorPacket &pkg){
+            auto &key = futils::Mediator::rebuild<futils::Keys>(pkg);
+            if (key == futils::Keys::ArrowRight)
+            {
+                auto cams = entityManager->get<components::Camera>();
+                for (auto &cam : cams)
+                {
+                    if (cam->activated)
+                    {
+                        auto &pos = cam->getEntity().get<components::Transform>();
+                        pos.position.x += 10;
+                    }
+                }
+            }
+            else if (key == futils::Keys::ArrowLeft)
+            {
+                auto cams = entityManager->get<components::Camera>();
+                for (auto &cam : cams)
+                {
+                    if (cam->activated)
+                    {
+                        auto &pos = cam->getEntity().get<components::Transform>();
+                        pos.position.x -= 10;
+                    }
+                }
+            }
+            else if (key == futils::Keys::ArrowUp)
+            {
+                auto cams = entityManager->get<components::Camera>();
+                for (auto &cam : cams)
+                {
+                    if (cam->activated)
+                    {
+                        auto &pos = cam->getEntity().get<components::Transform>();
+                        pos.position.y -= 10;
+                    }
+                }
+            }
+            else if (key == futils::Keys::ArrowDown)
+            {
+                auto cams = entityManager->get<components::Camera>();
+                for (auto &cam : cams)
+                {
+                    if (cam->activated)
+                    {
+                        auto &pos = cam->getEntity().get<components::Transform>();
+                        pos.position.y += 10;
+                    }
+                }
+            }
         });
         phase = Run;
     }

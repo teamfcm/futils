@@ -4,6 +4,7 @@
 
 #include "WindowTest.hpp"
 #include "Components/Color.hpp"
+#include "Components/World.hpp"
 #include "inputKeys.hpp"
 
 void WindowTest::initWindow()
@@ -14,13 +15,17 @@ void WindowTest::initWindow()
     {
 
     } else {
-        win.title = "TestWindow";
         win.size.w = 1024;
         win.size.h = 780;
         win.position.x = 0;
         win.position.y = 0;
         win.visible = true;
         win.style = futils::WStyle::None;
+        auto &world = window->attach<fender::components::World>();
+        world.unit = 64;
+        world.name = "Project Elixia";
+        win.title = world.name;
+        world.size = fender::vec3f(100, 100, 100);
         auto &color = window->attach<fender::components::Color>();
 
         color.color = futils::Granite;
