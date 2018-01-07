@@ -8,9 +8,9 @@
 #include <fender.hpp>
 
 namespace fender::components {
-    struct AbsoluteTransform {
-        vec2i position;
-        vec2i size;
+    struct AbsoluteTransform : futils::IComponent {
+        vec2ui position;
+        vec2ui size;
     };
 }
 

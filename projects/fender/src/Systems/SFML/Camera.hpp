@@ -10,6 +10,7 @@
 # include "Entities/Window.hpp"
 # include "Entities/GameObject.hpp"
 # include "Components/Camera.hpp"
+# include "Components/World.hpp"
 
 namespace fender::systems::SFMLSystems
 {
@@ -28,6 +29,7 @@ namespace fender::systems::SFMLSystems
 
         void drawCamCrosshair(components::Camera &, sf::RenderWindow *);
         void sortGameObjects();
+        void renderCam(futils::IEntity &, components::Camera &, components::World &);
         void renderEachCam();
         void init();
     public:
@@ -48,4 +50,14 @@ namespace fender::systems::SFMLSystems
         sf::RenderWindow *window;
         components::Camera *camData;
     };
+}
+
+inline sf::Color &operator << (sf::Color &lhs, futils::Color const &rhs)
+{
+    //TODO: Big endian//litte endian ??
+    lhs.r = rhs.rgba[2];
+    lhs.g = rhs.rgba[1];
+    lhs.b = rhs.rgba[0];
+    lhs.a = rhs.rgba[3];
+    return lhs;
 }
