@@ -150,6 +150,33 @@ src/Components/AbsoluteTransform.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/AbsoluteTransform.cpp.s
 .PHONY : src/Components/AbsoluteTransform.cpp.s
 
+src/Components/Border.o: src/Components/Border.cpp.o
+
+.PHONY : src/Components/Border.o
+
+# target to build an object file
+src/Components/Border.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Border.cpp.o
+.PHONY : src/Components/Border.cpp.o
+
+src/Components/Border.i: src/Components/Border.cpp.i
+
+.PHONY : src/Components/Border.i
+
+# target to preprocess a source file
+src/Components/Border.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Border.cpp.i
+.PHONY : src/Components/Border.cpp.i
+
+src/Components/Border.s: src/Components/Border.cpp.s
+
+.PHONY : src/Components/Border.s
+
+# target to generate assembly for a file
+src/Components/Border.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Components/Border.cpp.s
+.PHONY : src/Components/Border.cpp.s
+
 src/Components/Camera.o: src/Components/Camera.cpp.o
 
 .PHONY : src/Components/Camera.o
@@ -555,6 +582,33 @@ src/Systems/Log.cpp.s:
 	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/Log.cpp.s
 .PHONY : src/Systems/Log.cpp.s
 
+src/Systems/SFML/Border.o: src/Systems/SFML/Border.cpp.o
+
+.PHONY : src/Systems/SFML/Border.o
+
+# target to build an object file
+src/Systems/SFML/Border.cpp.o:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Border.cpp.o
+.PHONY : src/Systems/SFML/Border.cpp.o
+
+src/Systems/SFML/Border.i: src/Systems/SFML/Border.cpp.i
+
+.PHONY : src/Systems/SFML/Border.i
+
+# target to preprocess a source file
+src/Systems/SFML/Border.cpp.i:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Border.cpp.i
+.PHONY : src/Systems/SFML/Border.cpp.i
+
+src/Systems/SFML/Border.s: src/Systems/SFML/Border.cpp.s
+
+.PHONY : src/Systems/SFML/Border.s
+
+# target to generate assembly for a file
+src/Systems/SFML/Border.cpp.s:
+	$(MAKE) -f CMakeFiles/fender.dir/build.make CMakeFiles/fender.dir/src/Systems/SFML/Border.cpp.s
+.PHONY : src/Systems/SFML/Border.cpp.s
+
 src/Systems/SFML/Camera.o: src/Systems/SFML/Camera.cpp.o
 
 .PHONY : src/Systems/SFML/Camera.o
@@ -729,6 +783,9 @@ help:
 	@echo "... src/Components/AbsoluteTransform.o"
 	@echo "... src/Components/AbsoluteTransform.i"
 	@echo "... src/Components/AbsoluteTransform.s"
+	@echo "... src/Components/Border.o"
+	@echo "... src/Components/Border.i"
+	@echo "... src/Components/Border.s"
 	@echo "... src/Components/Camera.o"
 	@echo "... src/Components/Camera.i"
 	@echo "... src/Components/Camera.s"
@@ -774,6 +831,9 @@ help:
 	@echo "... src/Systems/Log.o"
 	@echo "... src/Systems/Log.i"
 	@echo "... src/Systems/Log.s"
+	@echo "... src/Systems/SFML/Border.o"
+	@echo "... src/Systems/SFML/Border.i"
+	@echo "... src/Systems/SFML/Border.s"
 	@echo "... src/Systems/SFML/Camera.o"
 	@echo "... src/Systems/SFML/Camera.i"
 	@echo "... src/Systems/SFML/Camera.s"

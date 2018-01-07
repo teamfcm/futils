@@ -38,6 +38,7 @@
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/include"/>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/utils"/>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/src"/>
+					<Add directory="/home/arroganz/cpp/futils/projects/fender/libraries/SFML/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward"/>
@@ -64,6 +65,7 @@
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/include"/>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/utils"/>
 					<Add directory="/home/arroganz/cpp/futils/projects/fender/src"/>
+					<Add directory="/home/arroganz/cpp/futils/projects/fender/libraries/SFML/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/x86_64-pc-linux-gnu"/>
 					<Add directory="/usr/lib/gcc/x86_64-pc-linux-gnu/7.2.0/../../../../include/c++/7.2.0/backward"/>
@@ -100,6 +102,12 @@
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/AbsoluteTransform.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Border.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Border.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Components/Camera.cpp">
@@ -187,6 +195,12 @@
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/Log.hpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Border.cpp">
+			<Option target="fender"/>
+		</Unit>
+		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Border.hpp">
 			<Option target="fender"/>
 		</Unit>
 		<Unit filename="/home/arroganz/cpp/futils/projects/fender/src/Systems/SFML/Camera.cpp">

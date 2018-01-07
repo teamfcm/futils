@@ -31,6 +31,8 @@ namespace fender
     using vec3f = futils::Vec3<float>;
     using vec2i = futils::Vec2<int>;
     using vec3i = futils::Vec3<int>;
+    using vec2ui = futils::Vec2<unsigned int>;
+    using vec3ui = futils::Vec3<unsigned int>;
 
     class Fender
     {
