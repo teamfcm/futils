@@ -150,7 +150,6 @@ namespace fender::systems::SFMLSystems
                         if (action.key == key && action.state == state)
                             count++;
                     }
-                    std::cout << count << " " << size << std::endl;
                     if (count == size)
                         func();
                 }

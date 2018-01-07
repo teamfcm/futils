@@ -8,6 +8,7 @@
 #include "Camera.hpp"
 #include "Grid.hpp"
 #include "Children.hpp"
+#include "Border.hpp"
 
 fender::systems::SFMLRenderer::SFMLRenderer()
 {
@@ -21,6 +22,7 @@ void fender::systems::SFMLRenderer::init() {
     entityManager->addSystem<SFMLSystems::Camera>();
     entityManager->addSystem<SFMLSystems::Grid>();
     entityManager->addSystem<SFMLSystems::Children>();
+    entityManager->addSystem<SFMLSystems::Border>();
     addReaction<events::Shutdown>([this](futils::IMediatorPacket &){
         entityManager->removeSystem(name);
     });
