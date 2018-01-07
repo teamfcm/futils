@@ -91,5 +91,21 @@ void WindowTest::run(float) {
     if (window == nullptr) {
         initWindow();
         initInputs();
+    } else
+    {
+        static int i = 0;
+        if (i== 0)
+        {
+            i++;
+            auto &go = entityManager->create<fender::entities::GameObject>();
+            auto &border = go.get<fender::components::Border>();
+            border.color = futils::Hotpink;
+            auto &pos = go.get<fender::components::Transform>();
+            pos.position.x = 0;
+            pos.position.y = 0;
+            pos.position.z = 2;
+            pos.size.w = 1;
+            pos.size.h = 2;
+        }
     }
 }

@@ -138,7 +138,6 @@ namespace fender::systems::SFMLSystems
             RenderLayer event;
             event.layer = currentLayer;
             event.camData = &cam;
-
             // Maintenant, on va chercher dans chaque layer quels objets sont visible par CETTE camera
             auto range = layout.equal_range(currentLayer);
             for (auto it = range.first; it != range.second; it++)
@@ -159,6 +158,8 @@ namespace fender::systems::SFMLSystems
                     event.objects.push_back(it->second);
             }
             event.window = realWindow;
+//            if (!event.objects.empty())
+//                std::cout << "Sending " << event.objects.size() << " objects on layer " << currentLayer << std::endl;
             events->send<RenderLayer>(event);
             currentLayer++;
         }

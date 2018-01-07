@@ -4,6 +4,11 @@
 
 #pragma once
 
+# include <vector>
+# include <string>
+# include <sstream>
+# include "math.hpp"
+
 namespace futils {
     enum class EventType
     {

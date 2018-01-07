@@ -5,6 +5,7 @@
 #include "Components/Window.hpp"
 #include "Window.hpp"
 #include "Entities/Camera.hpp"
+#include "Camera.hpp"
 
 namespace fender::systems::SFMLSystems
 {
@@ -119,8 +120,6 @@ namespace fender::systems::SFMLSystems
             events->send<sf::Event>(event);
             count++;
         }
-        if (count > 0)
-            events->send<std::string>("Processed " + std::to_string(count) + " events for window " + real.data->title);
     }
 
     void Window::updateTitle(RealWindow &real)
