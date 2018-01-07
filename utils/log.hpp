@@ -88,7 +88,7 @@ namespace flog
         template    <typename T>
         void        err(T const &obj, std::string const &func = DEFAULT_FUNC_NAME)
         {
-            std::scoped_lock    lock(this->mutex);
+            std::scoped_lock<std::mutex>    lock(this->mutex);
 
             if (this->previousFunc != func)
             {
