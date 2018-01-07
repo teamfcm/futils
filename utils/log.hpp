@@ -100,7 +100,6 @@ namespace flog
             {
                 std::cerr << "==>\t" << obj << std::endl;
             }
-
         }
 
         template    <typename T>

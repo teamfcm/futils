@@ -31,13 +31,16 @@ set(SOURCE_FILES
 		)
 
 if (UNIX)
-	add_compile_options(-Wall -Wextra -Werror -g3)
+	add_compile_options(-Wall -Wextra -Werror)
 endif(UNIX)
 
 add_library(fender STATIC ${SOURCE_FILES})
-#if (UNIX)
-#	target_link_libraries(fender ncurses)
-#endif (UNIX)
-target_link_libraries(fender sfml-system sfml-window sfml-audio sfml-graphics)
+
+if (UNIX)
+	target_link_libraries(fender sfml-system sfml-window sfml-audio sfml-graphics)
+endif (UNIX)
+if (WIN32)
+	target_link_libraries(fender libraries/SFML/lib/sfml-system libraries/SFML/lib/sfml-window libraries/SFML/lib/sfml-audio libraries/SFML/lib/sfml-graphics)
+endif(WIN32)
 target_link_libraries(fender -lstdc++fs)
-include_directories(release include utils src)
+include_directories(release include utils src libraries/SFML/include)
