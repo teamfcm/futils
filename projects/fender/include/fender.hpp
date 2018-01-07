@@ -48,6 +48,12 @@ namespace fender
             entityManager->addSystem<System>(args...);
         };
 
+		template <typename System>
+		void addSystem()
+		{
+			entityManager->addSystem<System>();
+		}
+		
         template <typename System>
         void removeSystem() {
             entityManager->removeSystem(futils::demangle<System>());
