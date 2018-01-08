@@ -78,7 +78,8 @@ void testGO(futils::EntityManager &em, int x, int y, int w, int h, int z)
 {
     auto &go = em.create<fender::entities::GameObject>();
     auto &border = go.get<fender::components::Border>();
-    border.color = futils::Violetred;
+    futils::IntegralRange<int> rng(0, futils::allColors.size());
+    border.color = futils::allColors[rng.getRandom()];
     auto &pos = go.get<fender::components::Transform>();
     pos.position.x = x;
     pos.position.y = y;
