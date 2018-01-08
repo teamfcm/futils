@@ -20,10 +20,7 @@ namespace fender::systems::SFMLSystems
         });
         addReaction<futils::Keys>([this](futils::IMediatorPacket &pkg){
             auto &key = futils::Mediator::rebuild<futils::Keys>(pkg);
-            auto worlds = entityManager->get<components::World>();
-            int step = 1;
-            if (!worlds.empty())
-                step = worlds.front()->unit / 3;
+            auto step = 0.1;
             if (key == futils::Keys::ArrowRight)
             {
                 auto cams = entityManager->get<components::Camera>();
@@ -148,6 +145,7 @@ namespace fender::systems::SFMLSystems
                 auto unit = world.unit;
                 auto zoom = 1; // TODO : add zoom
 
+                std::cout << camPos.position.x << " " << camPos.position.y << " -> cam" << std::endl;
                 absolute.position.x = (int)(windowSize.x / 2 + (transform.position.x - camPos.position.x) * unit * zoom);
                 absolute.position.y = (int)(windowSize.y / 2 + (transform.position.y - camPos.position.y) * unit * zoom);
                 absolute.size.x = (int)(transform.size.x * unit * zoom);

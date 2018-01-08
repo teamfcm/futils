@@ -5,6 +5,7 @@
 #pragma once
 
 # include "fender.hpp"
+# include "rendering.hpp"
 
 namespace fender::entities
 {
@@ -13,6 +14,11 @@ namespace fender::entities
 
 namespace fender::components {
     struct Children : futils::IComponent {
+        bool reversed;
+        float padding;
+        futils::Align align;
+        futils::VAlign valign;
+        futils::Ordering order;
         std::vector<entities::GameObject *> content;
     };
 }
