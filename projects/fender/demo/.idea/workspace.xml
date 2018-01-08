@@ -32,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="App.cpp" pinned="false" current-in-tab="true">
+      <file leaf-file-name="App.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/App/App.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="546">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state relative-caret-position="442">
+              <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
               <folding>
                 <element signature="e#43#62#0" expanded="true" />
               </folding>
@@ -44,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WindowTest.cpp" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WindowTest.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/App/Modules/WindowTest.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="92" column="14" lean-forward="true" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
+            <state relative-caret-position="275">
+              <caret line="93" column="13" lean-forward="false" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
               <folding>
                 <element signature="e#41#66#0" expanded="true" />
               </folding>
@@ -931,11 +931,12 @@
       <workItem from="1515411539274" duration="871000" />
       <workItem from="1515421003304" duration="234000" />
       <workItem from="1515421637709" duration="108000" />
+      <workItem from="1515439040127" duration="334000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="563641000" />
+    <option name="totallyTimeSpent" value="563975000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1302,22 +1303,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/Modules/WindowTest.cpp">
+    <entry file="file://$PROJECT_DIR$/src/App/App.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="92" column="14" lean-forward="true" selection-start-line="92" selection-start-column="14" selection-end-line="92" selection-end-column="14" />
+        <state relative-caret-position="442">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding>
-            <element signature="e#41#66#0" expanded="true" />
+            <element signature="e#43#62#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/App/App.cpp">
+    <entry file="file://$PROJECT_DIR$/src/App/Modules/WindowTest.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="546">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+        <state relative-caret-position="275">
+          <caret line="93" column="13" lean-forward="false" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
           <folding>
-            <element signature="e#43#62#0" expanded="true" />
+            <element signature="e#41#66#0" expanded="true" />
           </folding>
         </state>
       </provider>
