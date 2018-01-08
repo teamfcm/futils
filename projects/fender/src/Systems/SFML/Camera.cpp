@@ -109,10 +109,10 @@ namespace fender::systems::SFMLSystems
 
     void Camera::renderCam(futils::IEntity &entity, components::Camera &cam, components::World &world)
     {
-        // Je get la vraie window attachee a la cam
         RequestWindow request;
         request.camera = &entity;
         events->send<RequestWindow>(request);
+
         // camToWindow est update par la reaction a ResponseWindow
         auto realWindow = camToWindow[&entity];
         // Si tout va bien, on peut commencer a render, donc on clear.
@@ -125,20 +125,20 @@ namespace fender::systems::SFMLSystems
             events->send<std::string>("Cannot render because Camera system failed to find realWindow");
             return ;
         }
-        // Maintenant on get les components transform pour savoir qui est visible.
         auto &camPos = entity.get<components::Transform>();
         int currentLayer = camPos.position.z - cam.viewDistance;
 
         while (currentLayer < camPos.position.z)
         {
-            // On prepare l'event
             RenderLayer event;
             event.layer = currentLayer;
             event.camData = &cam;
-            // Maintenant, on va chercher dans chaque layer quels objets sont visible par CETTE camera
+
             auto range = layout.equal_range(currentLayer);
+            int rangeCount = 0;
             for (auto it = range.first; it != range.second; it++)
             {
+                rangeCount++;
                 auto &absolute = it->second->get<components::AbsoluteTransform>();
                 auto &transform = it->second->get<components::Transform>();
                 auto windowSize = realWindow->getSize();
@@ -149,15 +149,13 @@ namespace fender::systems::SFMLSystems
                 absolute.position.y = (int)(windowSize.y / 2 + (transform.position.y - camPos.position.y) * unit * zoom);
                 absolute.size.x = (int)(transform.size.x * unit * zoom);
                 absolute.size.y = (int)(transform.size.y * unit * zoom);
-                if ((absolute.position.x > 0 && absolute.position.y > 0
-                     && absolute.position.x < (int)windowSize.x && absolute.position.y < (int)windowSize.y)
-                    || (absolute.position.x + absolute.size.w > 0 && absolute.position.x + absolute.size.w < (int)windowSize.x)
-                    || (absolute.position.y + absolute.size.h > 0 && absolute.position.y + absolute.size.h < (int)windowSize.y))
-                    event.objects.push_back(it->second);
+//                if ((absolute.position.x > 0 && absolute.position.y > 0
+//                     && absolute.position.x < (int)windowSize.x && absolute.position.y < (int)windowSize.y)
+//                    || (absolute.position.x + absolute.size.w > 0 && absolute.position.x + absolute.size.w < (int)windowSize.x)
+//                    || (absolute.position.y + absolute.size.h > 0 && absolute.position.y + absolute.size.h < (int)windowSize.y))
+                event.objects.push_back(it->second);
             }
             event.window = realWindow;
-//            if (!event.objects.empty())
-//                std::cout << "Sending " << event.objects.size() << " objects on layer " << currentLayer << std::endl;
             events->send<RenderLayer>(event);
             currentLayer++;
         }

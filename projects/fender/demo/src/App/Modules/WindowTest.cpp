@@ -87,6 +87,19 @@ void WindowTest::initInputs()
     };
 }
 
+void testGO(futils::EntityManager &em, int x, int y, int w, int h, int z)
+{
+    auto &go = em.create<fender::entities::GameObject>();
+    auto &border = go.get<fender::components::Border>();
+    border.color = futils::Violetred;
+    auto &pos = go.get<fender::components::Transform>();
+    pos.position.x = x;
+    pos.position.y = y;
+    pos.position.z = z;
+    pos.size.w = w;
+    pos.size.h = h;
+}
+
 void WindowTest::run(float) {
     if (window == nullptr) {
         initWindow();
@@ -94,18 +107,12 @@ void WindowTest::run(float) {
     } else
     {
         static int i = 0;
-        if (i== 0)
+        if (i == 0)
         {
             i++;
-            auto &go = entityManager->create<fender::entities::GameObject>();
-            auto &border = go.get<fender::components::Border>();
-            border.color = futils::Hotpink;
-            auto &pos = go.get<fender::components::Transform>();
-            pos.position.x = 0;
-            pos.position.y = 0;
-            pos.position.z = 2;
-            pos.size.w = 1;
-            pos.size.h = 2;
+            testGO(*entityManager, 0, 0, 2, 2, 2);
+            testGO(*entityManager, 1, 1, 3, 3, 3);
+            testGO(*entityManager, 2, 2, 4, 4, 4);
         }
     }
 }
