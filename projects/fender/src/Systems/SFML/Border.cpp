@@ -16,7 +16,7 @@ namespace fender::systems::SFMLSystems
         sf::RectangleShape shape;
         sf::Color color;
         color << border.color;
-        shape.setFillColor(sf::Color::Transparent);
+        shape.setFillColor(sf::Color::White);
         shape.setOutlineThickness(border.thickness);
         shape.setOutlineColor(color);
         shape.setSize(sf::Vector2f(absolute.size.w, absolute.size.h));
@@ -37,20 +37,12 @@ namespace fender::systems::SFMLSystems
             this->shouldPrint = false;
         });
         addReaction<RenderLayer>([this](futils::IMediatorPacket &pkg){
+            return ;
             auto &packet = futils::Mediator::rebuild<RenderLayer>(pkg);
-//            if (!packet.objects.empty()) {
-//                std::cout << "Rendering borders on layer : " << packet.layer << std::endl;
-//                for (auto &obj:packet.objects)
-//                {
-//                    auto &border = obj->get<components::Border>();
-//                    std::cout << border.visible << std::endl;
-//                }
-//            }
             for (auto &obj: packet.objects)
             {
                 auto &border = obj->get<components::Border>();
-                if (border.visible)
-                {
+                if (border.visible) {
                     renderBorder(border, *packet.window);
                 }
             }

@@ -87,6 +87,7 @@ namespace fender::systems::SFMLSystems
         if (real.win == nullptr)
         {
             real.win = new sf::RenderWindow(sf::VideoMode(data.size.w, data.size.h), data.title);
+            real.win->setFramerateLimit(60);
             if (real.win->isOpen()) {
                 data.isOpen = true;
                 data.isClose = false;

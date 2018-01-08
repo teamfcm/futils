@@ -22,7 +22,7 @@ namespace futils
         float elapsed{0.0};
 
     public:
-        static void sleep(Step time)
+        static void sleep(Step time) // In seconds
         {
             auto duration = std::chrono::duration<Step>(time);
             std::this_thread::sleep_for(duration);
@@ -35,9 +35,11 @@ namespace futils
 
         float       loop()
         {
-            elapsed = std::chrono::duration<Step>(this->endPoint - this->startPoint).count();
+            static auto previous = clock::now();
+            elapsed = std::chrono::duration<Step>(clock::now() - previous).count();
             buffer += elapsed;
-            return this->elapsed;
+            previous = clock::now();
+            return elapsed;
         }
         float       elapsedTime()
         {
