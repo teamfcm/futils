@@ -1,3 +1,0 @@
-/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/fender.dir
-/home/arroganz/cpp/futils/projects/fender/cmake-build-debug/CMakeFiles/edit_cache.dir
