@@ -158,6 +158,25 @@ namespace futils
         Black = 0xff000000
     };
 
+    enum VAlign
+    {
+        Top,
+        Middle,
+        Bottom,
+    };
+    enum Align
+    {
+        Left,
+        Center,
+        Right
+    };
+    enum Ordering
+    {
+        Vertical,
+        Horizontal
+    };
+
+
     struct Color
     {
         union {

@@ -5,7 +5,9 @@
 #pragma once
 
 # include "System.hpp"
+# include "rendering.hpp"
 # include "Components/Children.hpp"
+# include "Components/ChildInfo.hpp"
 
 namespace fender::systems::SFMLSystems
 {
