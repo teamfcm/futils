@@ -89,11 +89,11 @@ void testGO(futils::EntityManager &em, int x, int y, int w, int h, int z)
 
 void createGo(futils::EntityManager &em)
 {
-    static int count =0;
+    static int count = 0;
     for(auto i = 0; i<10; i++) {
-        futils::IntegralRange<int> rng(-500, 500);
+        futils::IntegralRange<int> rng(-50, 50);
         futils::IntegralRange<int> zrng(1, 10);
-        testGO(em, rng.getRandom(), rng.getRandom(), 2 + zrng.getRandom(), 1 + zrng.getRandom(),
+        testGO(em, rng.getRandom(), rng.getRandom(), 1, 1,
                zrng.getRandom());
         count++;
         std::cout << count << std::endl;
