@@ -73,19 +73,6 @@ void WindowTest::initWindow()
     }
 }
 
-void WindowTest::initInputs()
-{
-    input = &entityManager->create<fender::entities::Input>();
-    auto &component = input->get<fender::components::Input>();
-    component.name = "WindowTest";
-    component.activated = true;
-    futils::InputSequence escape;
-    futils::InputAction action(futils::Keys::Escape, futils::InputState::Down);
-    escape.actions.push_back(action);
-    component.map[escape] = [this](){
-        events->send<fender::events::Shutdown>();
-    };
-}
 
 void testGO(futils::EntityManager &em, int x, int y, int w, int h, int z)
 {
@@ -100,6 +87,34 @@ void testGO(futils::EntityManager &em, int x, int y, int w, int h, int z)
     pos.size.h = h;
 }
 
+void createGo(futils::EntityManager &em)
+{
+    futils::IntegralRange<int> rng(-50, 50);
+    futils::IntegralRange<int> zrng(0, 10);
+    testGO(em, rng.getRandom(), rng.getRandom(), 2 + zrng.getRandom() % 3, 1 + zrng.getRandom() % 3, zrng.getRandom());
+}
+
+
+void WindowTest::initInputs()
+{
+    input = &entityManager->create<fender::entities::Input>();
+    auto &component = input->get<fender::components::Input>();
+    component.name = "WindowTest";
+    component.activated = true;
+    futils::InputSequence escape;
+    futils::InputAction action(futils::Keys::Escape, futils::InputState::Down);
+    escape.actions.push_back(action);
+
+    futils::InputSequence generate;
+    futils::InputAction gen_action(futils::Keys::Space, futils::InputState::Down);
+    generate.actions.push_back(gen_action);
+    component.map[escape] = [this](){
+        events->send<fender::events::Shutdown>();
+    };
+    component.map[generate] = [this](){
+        createGo(*entityManager);
+    };
+}
 void WindowTest::run(float) {
     if (window == nullptr) {
         initWindow();
@@ -109,10 +124,10 @@ void WindowTest::run(float) {
         static int i = 0;
         if (i == 0)
         {
-            i++;
-            testGO(*entityManager, 0, 0, 2, 2, 2);
-            testGO(*entityManager, 1, 1, 3, 3, 3);
-            testGO(*entityManager, 2, 2, 4, 4, 4);
+            while (i < 10) {
+                i++;
+                createGo(*entityManager);
+            }
         }
     }
 }

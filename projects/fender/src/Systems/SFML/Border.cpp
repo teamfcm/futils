@@ -37,7 +37,6 @@ namespace fender::systems::SFMLSystems
             this->shouldPrint = false;
         });
         addReaction<RenderLayer>([this](futils::IMediatorPacket &pkg){
-            return ;
             auto &packet = futils::Mediator::rebuild<RenderLayer>(pkg);
             for (auto &obj: packet.objects)
             {
@@ -47,6 +46,7 @@ namespace fender::systems::SFMLSystems
                 }
             }
         });
+        phase = Run;
     }
 
     void Border::run(float) {
