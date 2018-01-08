@@ -24,15 +24,18 @@ namespace fender::systems::SFMLSystems {
                 sf::Vertex(sf::Vector2f(window.getSize().x, 0))
         };
         auto &camPos = cam.getEntity().get<components::Transform>();
-        int x{-(int)camPos.position.x % world->unit};
-        int y{-(int)camPos.position.y % world->unit};
-        while (x < (int)window.getSize().x) {
+        auto x{camPos.position.x - (int)camPos.position.x};
+        auto y{camPos.position.y - (int)camPos.position.y};
+        x *= -world->unit;
+        y *= -world->unit;
+        std::cout << "Starting at " << "(" << x << "," << y << ")" << std::endl;
+        while (x < window.getSize().x) {
             vertical[0].position.x = x;
             vertical[1].position.x = x;
             window.draw(vertical, 2, sf::Lines);
             x += world->unit;
         }
-        while (y < (int)window.getSize().y)
+        while (y < window.getSize().y)
         {
             horizontal[0].position.y  = y;
             horizontal[1].position.y = y;
