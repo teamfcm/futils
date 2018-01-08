@@ -9,8 +9,8 @@
 
 namespace fender::components {
     struct AbsoluteTransform : futils::IComponent {
-        vec2ui position;
-        vec2ui size;
+        vec2i position;
+        vec2i size;
     };
 }
 

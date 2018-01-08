@@ -145,14 +145,14 @@ namespace fender::systems::SFMLSystems
                 auto unit = world.unit;
                 auto zoom = 1; // TODO : add zoom
 
-                std::cout << camPos.position.x << " " << camPos.position.y << " -> cam" << std::endl;
                 absolute.position.x = (int)(windowSize.x / 2 + (transform.position.x - camPos.position.x) * unit * zoom);
                 absolute.position.y = (int)(windowSize.y / 2 + (transform.position.y - camPos.position.y) * unit * zoom);
                 absolute.size.x = (int)(transform.size.x * unit * zoom);
                 absolute.size.y = (int)(transform.size.y * unit * zoom);
-                if ((absolute.position.x + absolute.size.w > 0 && absolute.position.y + absolute.size.h > 0)
-                        || (absolute.position.x > 0 && absolute.position.y > 0
-                            && absolute.position.x < windowSize.x && absolute.position.y < windowSize.y))
+                if ((absolute.position.x > 0 && absolute.position.y > 0
+                     && absolute.position.x < (int)windowSize.x && absolute.position.y < (int)windowSize.y)
+                    || (absolute.position.x + absolute.size.w > 0 && absolute.position.x + absolute.size.w < (int)windowSize.x)
+                    || (absolute.position.y + absolute.size.h > 0 && absolute.position.y + absolute.size.h < (int)windowSize.y))
                     event.objects.push_back(it->second);
             }
             event.window = realWindow;
