@@ -16,7 +16,6 @@ namespace fender::systems::SFMLSystems
         sf::RectangleShape shape;
         sf::Color color;
         color << border.color;
-        shape.setFillColor(sf::Color::White);
         shape.setOutlineThickness(border.thickness);
         shape.setOutlineColor(color);
         shape.setSize(sf::Vector2f(absolute.size.w, absolute.size.h));
