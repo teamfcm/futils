@@ -28,7 +28,6 @@ namespace fender::systems::SFMLSystems {
         float y{camPos.position.y - (int)camPos.position.y};
         x *= -world->unit;
         y *= -world->unit;
-        std::cout << " -> " << x << ", " << y << std::endl;
         while (x < window.getSize().x) {
             vertical[0].position.x = x;
             vertical[1].position.x = x;
