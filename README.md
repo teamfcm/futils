@@ -8,7 +8,7 @@ Futils is a namespace containing numerous tools that I built over time depending
 
 You will find in the tests directory all the necessary tests to check the well-being of these utils. 
 
-## [Fender](./projects/fender/docs/readme.md)
+## Fender
 
 > A Game Engine that can be used with several libraries.
 
