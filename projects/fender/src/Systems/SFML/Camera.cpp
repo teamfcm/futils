@@ -20,7 +20,7 @@ namespace fender::systems::SFMLSystems
         });
         addReaction<futils::Keys>([this](futils::IMediatorPacket &pkg){
             auto &key = futils::Mediator::rebuild<futils::Keys>(pkg);
-            auto step = 0.1;
+            int step = 500;
             if (key == futils::Keys::ArrowRight)
             {
                 auto cams = entityManager->get<components::Camera>();
@@ -29,7 +29,7 @@ namespace fender::systems::SFMLSystems
                     if (cam->activated)
                     {
                         auto &pos = cam->getEntity().get<components::Transform>();
-                        pos.position.x += step;
+                        pos.position.x += step / 1000.0;
                     }
                 }
             }
@@ -41,7 +41,7 @@ namespace fender::systems::SFMLSystems
                     if (cam->activated)
                     {
                         auto &pos = cam->getEntity().get<components::Transform>();
-                        pos.position.x -= step;
+                        pos.position.x -= step / 1000.0;
                     }
                 }
             }
@@ -53,7 +53,7 @@ namespace fender::systems::SFMLSystems
                     if (cam->activated)
                     {
                         auto &pos = cam->getEntity().get<components::Transform>();
-                        pos.position.y -= step;
+                        pos.position.y -= step / 1000.0;
                     }
                 }
             }
@@ -65,7 +65,7 @@ namespace fender::systems::SFMLSystems
                     if (cam->activated)
                     {
                         auto &pos = cam->getEntity().get<components::Transform>();
-                        pos.position.y += step;
+                        pos.position.y += step / 1000.0;
                     }
                 }
             }
